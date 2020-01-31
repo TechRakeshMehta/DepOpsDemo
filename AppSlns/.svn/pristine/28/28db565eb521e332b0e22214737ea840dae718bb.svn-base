@@ -1,0 +1,64 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Linq;
+using System.Web;
+
+namespace INTSOF.COMPLIO.TALKDESK.Handlers
+{
+    public static class APPSettingHandler
+    {
+        public static readonly string COFingerprintingConnString;
+        public static readonly string TalkDeskApiBaseURL;
+        public static readonly string TalkDeskOAuthTokenURL;
+        public static readonly string TalkDeskCreateReportJobURL;
+        public static readonly string TalkDeskOAuthClientID;
+        public static readonly string TalkDeskOAuthClientSecret;
+        public static readonly string TalkDeskLiveDataDate;
+        public static readonly string CreateReportJobTimelag;
+        public static readonly string UpdateReportJobTimeLag;
+        public static readonly List<string> HTTPSuccessRequestCode;
+        public static readonly string DefaultTimeZone;
+        public static readonly bool EnforceTimeZone;
+        public static readonly Int16 CreateReportJobEndTimelag;
+        public static readonly bool IsTestModeOn;
+
+        static APPSettingHandler()
+        {
+            TalkDeskApiBaseURL = ConfigurationManager.AppSettings["TalkDeskApiBaseURL"];
+            TalkDeskCreateReportJobURL = ConfigurationManager.AppSettings["TalkDeskCreateReportJobURL"];
+            TalkDeskOAuthTokenURL = ConfigurationManager.AppSettings["TalkDeskOAuthTokenURL"];
+            TalkDeskOAuthClientID = ConfigurationManager.AppSettings["TalkDeskOAuthClientID"];
+            TalkDeskOAuthClientSecret = ConfigurationManager.AppSettings["TalkDeskOAuthClientSecret"];
+            TalkDeskLiveDataDate = ConfigurationManager.AppSettings["TalkDeskLiveDataDate"];
+            CreateReportJobTimelag = ConfigurationManager.AppSettings["CreateReportJobTimelag"];
+            COFingerprintingConnString = ConfigurationManager.ConnectionStrings["COFingerprintingConnString"].ConnectionString;
+            UpdateReportJobTimeLag = ConfigurationManager.AppSettings["UpdateReportJobTimeLag"];
+            DefaultTimeZone = ConfigurationManager.AppSettings["DefaultTimeZone"];
+            
+            var _httpSuccessRequestCode = ConfigurationManager.AppSettings["HTTPSuccessRequestCode"];
+            if (_httpSuccessRequestCode.Contains(","))
+            {
+                var _splitHttpSuccessRequestCode = _httpSuccessRequestCode.Split(',');
+                List<string> _httpSuccessRequestCodeList = _splitHttpSuccessRequestCode.ToList();
+                HTTPSuccessRequestCode = _httpSuccessRequestCodeList;
+            }
+            else {
+                HTTPSuccessRequestCode.Add(_httpSuccessRequestCode);
+            }
+                        
+            bool result;
+            if (bool.TryParse(ConfigurationManager.AppSettings["EnforceTimeZone"], out result))
+            {
+                EnforceTimeZone = result;
+            }
+            else
+            {
+                EnforceTimeZone = false;
+            }
+
+            CreateReportJobEndTimelag = Convert.ToInt16(ConfigurationManager.AppSettings["CreateReportJobEndTimelag"]);
+            IsTestModeOn = Convert.ToBoolean(ConfigurationManager.AppSettings["IsTestModeOn"]);
+        }
+    }
+}

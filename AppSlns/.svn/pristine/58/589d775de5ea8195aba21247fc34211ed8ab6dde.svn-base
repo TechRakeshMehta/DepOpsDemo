@@ -1,0 +1,101 @@
+<div id="bodyBlock" class="container-fluid">
+
+        <section class="p-2">
+                <div class="row">
+                        <div *ngIf="!IsEditProfile" class="col-md-12 font-weight-bold">
+                                <label id="CREATODR"></label> (
+                                <label id="STEP"></label> {{orderInfo.CurrentStep}} <label id="OF"></label> {{orderInfo.TotalSteps}})
+                        </div>
+                        <div class="col-md-12 text-center">
+                          
+                                <h3 style="display: inline" *ngIf="IsEditProfile" id="UPDATE"></h3>
+                <h3 style="display: inline" id="PERSONALINFO"></h3>
+                        </div>
+
+                        <div class="col-md-12 bg-white shadow-sm rounded py-3">
+                                <form [formGroup]="addressForm">
+                                        <div class="row">
+                                                <div class="col-md-6 mb-2 ">
+                                                        <label class="required" id="ADDRESS"></label>
+                                                        <input type="text" class="form-control" maxlength="100" [ngClass]="displayFieldCss('address')" formControlName="address">
+                                                        <app-field-error-display [displayError]="isError('address')" errorMsg="{{errorMessage('address')}}">
+                                                        </app-field-error-display>
+
+                                                </div>
+                                                <div class="col-md-6 mb-2 ">
+                                                        <label class="required" id="COUNTRY"></label>
+                                                        <select (change)="onCountrySelected($event.target.value,this)" [(ngModel)]="selectedCountryId" class="custom-select" [ngClass]="displayFieldCss('Country')"
+                                                                formControlName="Country">
+                                                                <option disabled hidden [value]="selectUndefinedOptionValue">
+                                                                        <label name="PLEASESELECT"></label>
+                                                                </option>
+                                                                <option *ngFor="let country of lstCountry" value={{country.ID}}>
+                                                                        {{country.Name}}
+                                                                </option>
+                                                        </select>
+                                                        <app-field-error-display [displayError]="isError('Country')" errorMsg="{{errorMessage('Country')}}">
+                                                        </app-field-error-display>
+                                                </div>
+                                                <div class="col-md-6 mb-2" [hidden]="HideState == true">
+                                                        <label class="required" id="STATE"></label>
+                                                        <select id="State" (change)="onStateSelected($event.target.value)" [(ngModel)]="selectedState" class="custom-select" [ngClass]="displayFieldCss('State')"
+                                                                formControlName="State">
+                                                                <option disabled hidden [value]="selectUndefinedOptionValue">
+                                                                        <label name="PLEASESELECT"></label>
+                                                                </option>
+                                                                <option *ngFor="let State of lstStates" value="{{State.Name}}">
+                                                                        {{State.Name}}
+                                                                </option>
+                                                        </select>
+                                                        <app-field-error-display [displayError]="isError('State')" errorMsg="{{errorMessage('State')}}">
+                                                        </app-field-error-display>
+
+                                                </div>
+                                                <div class="col-md-6 mb-2">
+                                                        <label class="required" id="CITY"></label>
+                                                        <input type="text" class="form-control" maxlength="30" formControlName="city" [ngClass]="displayFieldCss('city')">
+                                                        <app-field-error-display [displayError]="isError('city')" errorMsg="{{errorMessage('city')}}">
+                                                        </app-field-error-display>
+
+
+                                                </div>
+                                                <div class="col-md-6 mb-2">
+                                                        <label class="required" [hidden]="!IsZipCodeLabel" id="ZIPCODE"></label>
+                                                        <label class="required" [hidden]="IsZipCodeLabel" id="POSTALCODE"></label>
+                                                        <!-- <label class="required">{{IsZipCodeLabel ?'Zip Code':'Postal Code'}}</label> -->
+
+                                                        <input id="Zipcode" type="text" maxlength="15" class="form-control" formControlName="Zipcode" [ngClass]="displayFieldCss('Zipcode')">
+                                                        <app-field-error-display [displayError]="isError('Zipcode')" errorMsg="{{errorMessage('Zipcode')}}">
+                                                        </app-field-error-display>
+                                                </div>
+                                        </div>
+                                        <br>
+                                        <div class="row">
+                                                <div class="col-md-12 d-flex justify-content-center">
+                                                        <button type="button" autofocus="false" class="btn btn-primary fixedWidthBtn" (click)="goBack()">
+                                                                <i class="fas fa-arrow-left pr-1"></i>
+                                                                <label id="PREVIOUS"></label>
+                                                        </button>
+
+                                                        <button type="button" autofocus="false" (click)="onSubmit()" class="btn btn-primary mx-1 fixedWidthBtn">
+                                                                <label id="NEXT"></label>
+                                                                <i class="fas fa-arrow-right pl-1"></i>
+                                                        </button>
+                                                        <div *ngIf="!IsEditProfile">
+                                                                        <cancel-order-button></cancel-order-button>
+                                                        </div>
+                                                        
+                                                        <button *ngIf="IsEditProfile" type="button" routerLink="/userDashboard" class="btn btn-primary fixedWidthBtn mx-1">
+                                                                <i class="fas fa-times pr-1"></i>
+                                                                <label id="CNCL" class="label-on-button "></label>
+                                                
+                                                
+                                                
+                                                              </button>
+                                                </div>
+                                        </div>
+                                </form>
+                        </div>
+                </div>
+        </section>
+</div>

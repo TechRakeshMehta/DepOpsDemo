@@ -1,0 +1,109 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace INTSOF.COMPLIO.TALKDESK.Handlers
+{
+    public class TimezoneHandler
+    {
+        #region Variables
+
+        #region public Variables
+        public static Int32 TimeZoneOffset
+        {
+            get
+            {
+                //return _enforceTimeZone ? _defaultTimeZoneOffset : _timeZoneOffset;
+                return _defaultTimeZoneOffset;
+            }
+        }
+        #endregion
+
+        #region Private Variables
+        private static DateTime _dateTime { get; set; }
+        private static Boolean _enforceTimeZone
+        {
+            get
+            {
+                return APPSettingHandler.EnforceTimeZone;
+            }
+        }
+
+        public static Int32 GetDefaultTimeZoneOffset
+        {
+            get
+            {
+                string defaultTimeZone = APPSettingHandler.DefaultTimeZone;
+
+                TimeZoneInfo tzi = TimeZoneInfo.Local;
+
+                if (defaultTimeZone != null)
+                    tzi = TimeZoneInfo.FindSystemTimeZoneById(defaultTimeZone);
+                return Convert.ToInt32(tzi.GetUtcOffset(DateTime.UtcNow).TotalMinutes * -1);
+            }
+        }
+
+        private static Int32 _defaultTimeZoneOffset
+        {
+            get
+            {
+                string defaultTimeZone = APPSettingHandler.DefaultTimeZone;
+                TimeZoneInfo tzi = TimeZoneInfo.Local;
+                if (defaultTimeZone != null)
+                    tzi = TimeZoneInfo.FindSystemTimeZoneById(defaultTimeZone);
+                return Convert.ToInt32(tzi.GetUtcOffset(_dateTime).TotalMinutes * -1);
+            }
+        }
+
+
+        //private static Int32 _timeZoneOffset
+        //{
+        //    get
+        //    {
+        //        if (BALUtils.SessionService == null || string.IsNullOrEmpty(BALUtils.SessionService.TimeZoneOffSet))
+        //            return 0;
+        //        return Convert.ToInt32(BALUtils.SessionService.TimeZoneOffSet);
+        //    }
+        //}
+        #endregion
+
+        #endregion
+
+        #region Constructor
+
+        /// <summary>
+        /// Default constructor to initialize class level variables.
+        /// </summary>
+      
+        #endregion
+
+        #region Public Methods
+        public static DateTime GetUserTime(DateTime dateTime)
+        {
+            _dateTime = dateTime;
+            if (DateTime.Compare(_dateTime, DateTime.MaxValue.Date) < 0)
+                return _dateTime.AddMinutes(-TimeZoneOffset);
+            return _dateTime;
+        }
+
+        public static DateTime SetUserTime(DateTime dateTime)
+        {
+            _dateTime = dateTime;
+            if (DateTime.Compare(_dateTime, DateTime.MaxValue.Date) < 0)
+                return _dateTime.AddMinutes(TimeZoneOffset);
+            return _dateTime;
+        }
+
+        public static DateTime SetDefaultTime(DateTime dateTime)
+        {
+            _dateTime = dateTime;
+            return _dateTime.AddMinutes(-_defaultTimeZoneOffset);
+        }
+        #endregion
+
+        #region Private Methods
+
+        #endregion
+    }
+}

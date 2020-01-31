@@ -1,0 +1,49 @@
+<div id="bodyBlock" class="container-fluid">
+  <section class="p-2">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h3 *ngIf="isSendForOnline != true" id="RSCHDLAPPNMNT"></h3>
+        <h3 *ngIf="isSendForOnline == true" id="CMPLTORDER"></h3>
+      </div>
+      <div class="col-md-12 bg-white shadow-sm rounded py-3">
+        <form [formGroup]="scheudlecalender">
+
+          <div class="col-lg-12 d-flex flex-row justify-content-center" style="text-align: center">
+            <div class="pr-2">
+              <i class="fas fa-square pr-1 selected-slotcolor">
+                <label id="SELECTED"></label>
+              </i>
+            </div>
+            <div class="pr-2">
+              <i class="fas fa-square pr-1 avaliable-slotcolor">
+                <label id="AVAILABLE"></label>
+              </i>
+            </div>
+            <div>
+              <i class="fas fa-square pr-1 notavaliable-slotcolor">
+                <label id="NOTAVAILABLE"></label>
+              </i>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div *ngIf="calendarOptions">
+              <ng-fullcalendar #ucCalendar [options]="calendarOptions" (dayRender)="dayRender($event.detail)" (dayClick)="dayClick($event.detail)"></ng-fullcalendar>
+            </div>
+          </div>
+          <div class="col-md-12 mt-2 d-flex justify-content-center">
+            <button [hidden]="!IsPreviousButtonVisible" type="button" (click)="goBack()" class="btn btn-primary">
+              <i class="fas fa-arrow-left pr-1"></i>
+              <label id="PREVIOUS"></label>
+            </button>
+            <button type="button" [autofocus]="false" [disabled]="!IsScheduleDateSelected" (click)="onSubmit()" class="btn btn-primary mx-1">
+              <label id="NEXT"></label>
+              <i class="fas fa-arrow-right pl-1"></i>
+            </button>
+            <cancel-rescheduling-button></cancel-rescheduling-button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </section>
+</div>

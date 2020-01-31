@@ -1,0 +1,256 @@
+﻿.dashboard_commands a
+{
+    font-family: 'Titillium Web', sans-serif !important;
+    font-size: 18px !important;
+    /*height: 23px;*/
+}
+
+
+
+.RadDock_Silk div.rdTitleBar em
+{
+    font-family: 'Titillium Web', sans-serif !important;
+    font-weight: 400;
+}
+
+.k-grid table
+{
+    font-family: 'Titillium Web', sans-serif !important;
+    font-weight: 400;
+}
+  .k-window-titlebar.k-header {
+    
+    height: 38px;
+    line-height: 26px;
+    font-size: 20px;
+}
+.k-window-actions.k-header {
+    top:4px;
+}
+.k-window-action.k-link {
+width:20px;
+height:20px;
+}
+.k-window-titlebar.k-header
+{
+    height: 38px;
+    line-height: 26px;
+    font-size: 20px;
+}
+
+.k-window-actions.k-header
+{
+    top: 4px;
+}
+
+.k-window-action.k-link
+{
+    width: 20px;
+    height: 20px;
+}
+
+.k-button
+{
+    background-color: #8C1921 !important;
+    background-image: none !important;
+    border: medium none !important;
+    border-radius: 7px !important;
+    color: #fff !important;
+    height: 30px !important;
+    line-height: 30px !important;
+    padding: 0 15px !important;
+}
+
+    .k-button:hover
+    {
+        background-color: #2E3347 !important;
+        color: #fff !important;
+    }
+
+a:link
+{
+    text-decoration: none;
+}
+
+h2, h1
+{
+    font-family: 'Titillium Web', sans-serif !important;
+    font-weight: 700;
+    font-size: 15px;
+    margin: 0px !important;
+    padding: 0px;
+}
+
+    h1.videoTitle
+    {
+        font-family: 'Titillium Web', sans-serif !important;
+        font-weight: 700;
+        font-size: 15px;
+    }
+ 
+/*.k-window-titlebar .k-header {
+    height:30px;
+   
+}*/
+/*.k-window-titlebar .k-header {
+    height:30px;
+   
+}*/
+h2
+{
+    padding: 5px 0px !important;
+}
+
+    h2.orange span
+    {
+        font-family: 'Titillium Web', sans-serif !important;
+        font-weight: 700;
+        font-size: 15px;
+        margin: 0px !important;
+        padding: 10px 0px !important;
+        color: #eb986a !important;
+    } 
+
+.k-grid-header .k-header
+{
+    background-color: #ccc;
+    font-weight: bold;
+}
+
+.k-alt, .k-separator
+{
+    background-color: #f2f2f2;
+}
+
+.container-fluid h1.link
+{
+    font-family: 'Titillium Web', sans-serif !important;
+    font-weight: 700;
+    font-size: 15px;
+}
+/*.k-widget.k-window
+{
+    top:138.5px !important;
+}*/
+.section, .tabvw
+{
+    margin-bottom: 10px;
+    padding: 6px;
+}
+
+div.k-window-content
+{
+    min-height: 400px;
+    height:inherit;
+}
+
+.whatNewBlock
+{
+    float: left;
+    width: 98%;
+    border: 2px dotted #808080;
+    padding: 5px !important;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    position: relative;
+}
+
+    .whatNewBlock a
+    {
+        text-decoration: none !important;
+        font-weight: 700;
+    }
+
+    .whatNewBlock h1.videoTitle
+    {
+        font-size: 13px;
+        color: #808080;
+        font-weight: bold;
+        padding-bottom: 6px;
+    }
+
+
+    .whatNewBlock h1.link
+    {
+        font-size: 15px;
+        color: #808080;
+        padding: 5px 0px !important;
+        font-weight: normal;
+    }
+
+    .whatNewBlock a.lnkbtn
+    {
+        font-size: 14px;
+        color: #808080;
+        padding-bottom: 5px !important;
+        text-decoration: none;
+        width: 21px;
+        height: 21px;
+        float: right;
+    }
+
+    .whatNewBlock p
+    {
+        font-weight: 700;
+        color: #808080;
+        padding-bottom: 0px !important;
+        padding-top: 6px;
+        margin: 0px !important;
+    }
+
+.section
+{
+    border: none !important;
+}
+
+#grdNewVideoTutorial
+{
+    border: none !important;
+}
+
+div.play
+{
+    /*background-image: url("../../../Resources/Mod/WebSite/video_icon.png") !Important;*/
+    background-image: url("../../../Resources/Mod/Dashboard/images/playIconred.png") !Important;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    width: 21px;
+    height: 21px;
+}
+
+.k-widget
+{
+    border: none;
+}
+
+.collapsed
+{
+    background-color: #E9EEF3;
+    border-bottom: 1px solid #C6C6C6;
+    border-top: 1px solid white;
+}
+
+.section .mhdr
+{
+    cursor: pointer;
+    font-size: 100% !important;
+    margin: 0 !important;
+    padding: 0 0 8px;
+}
+
+.colps
+{
+    background: url("../../../Resources/Themes/Default/images/plus.png") no-repeat scroll -4px 2px transparent;
+    color: #ADADAD;
+}
+
+h1
+{
+    color: #bd6a38;
+}
+
+.rdTop
+{
+}

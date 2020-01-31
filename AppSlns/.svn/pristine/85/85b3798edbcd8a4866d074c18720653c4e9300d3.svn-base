@@ -1,0 +1,27 @@
+﻿table.GreenLines
+{
+    padding:10px;
+  
+    }
+    
+table.GreenLines td
+    
+    {
+        border:3px solid green;
+        
+        }
+        table.GreenLines td td
+    
+    {
+        border:0 none;
+        
+        }
+        
+        
+          .basewrap {width: 1024px; margin: auto; height: 100%; min-height: 350px;}
+        .logbox {height: 200px; left: 500px; position: absolute; top: 75px; width: 400px;}
+        .logoWrpr {height:100px; width:100%; text-align:center; border:3px solid Green; vertical-align:middle;}
+        .logoWrpr img {margin-top:30px;}
+        .cntntWrpr {border:3px solid Green; border-top:0; width:100%;}
+        .btnWrpr {height:60px; width:100%; text-align:center; border:3px solid Green; border-top:0;}
+        .gapHgt {height:10px;}

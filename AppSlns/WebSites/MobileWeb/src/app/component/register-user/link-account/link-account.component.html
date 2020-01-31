@@ -1,0 +1,33 @@
+<div id="bodyBlock" class="container-fluid">
+  <section class="p-2">
+    <div class="row">
+        <div class="col-md-12 d-flex"></div>
+        <div class="col-md-12 text-center"><h3 id="LINKACCOUNT"></h3></div>
+        <div class="col-md-12 bg-white shadow-sm rounded py-3">
+          <div class="row mb-2">
+            <label class="col-md-12 text-center" id="ALREADYEXISTINPROFILEMSG">              
+            </label>
+          </div>
+          <div  style="color: #a94442" [hidden]="hideAccountLinkError">{{accountLinkError}}</div>
+          <form>
+            <div>
+            <div class="custom-control custom-radio" *ngFor="let item of lookupContracts; let i = index">
+                <input type="radio" [value]="item.UserID" id="{{'test'+i}}" [(ngModel)]="selectedAccountCode" name="selectAccount" class="custom-control-input">
+                <label class="custom-control-label" for="{{'test'+i}}">{{item.Name}}</label>
+              </div>              
+            </div>              
+              <div class="row">
+                  <div class="col-md-12 d-flex justify-content-center">                                                                                         
+                   <button type="button" [disabled]="! selectedAccountCode" (click)="onSubmit()" class="btn btn-primary mx-1 fixedWidthBtn">
+      
+                      <label id="NEXT"></label>
+                      <i class="fas fa-arrow-right pl-1"></i>
+                   </button>
+                    <cancel-registration-button></cancel-registration-button>
+                  </div>
+                </div>
+          </form>          
+        </div>
+    </div>
+  </section>
+</div>

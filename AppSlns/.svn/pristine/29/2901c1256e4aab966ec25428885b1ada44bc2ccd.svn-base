@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<FolderToList>
+  <MessageFolder FolderID="1" FolderDesc="Inbox" ImageName="Inbox" IsDefault="1" CreatedByID="13" CreatedOn="2011-12-12T00:00:00" ModifiedOn="2012-01-03T11:39:02.623"/>
+  <MessageFolder FolderID="3" FolderDesc="Drafts" ImageName="Drafts" IsDefault="1" CreatedByID="13" CreatedOn="2011-12-12T00:00:00" ModifiedOn="2012-01-03T11:39:02.623"/>
+  <MessageFolder FolderID="2" FolderDesc="Sent Items" ImageName="Sent Items" IsDefault="1" CreatedByID="13" CreatedOn="2011-12-12T00:00:00" ModifiedOn="2012-01-03T11:39:02.623"/>
+  <MessageFolder FolderID="4" FolderDesc="Junk E-mail" ImageName="Junk E-mail" IsDefault="1" CreatedByID="13" CreatedOn="2011-12-12T00:00:00" ModifiedOn="2012-01-03T11:39:02.623"/> 
+</FolderToList>

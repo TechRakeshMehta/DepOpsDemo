@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3eb5c5322fcb45a5ace1e51681c047ed" Name="Diagram1" ZoomLevel="78" >
+        <EntityTypeShape EntityType="ADB_LocationDataModel.Schedule" Width="1.5" PointX="3" PointY="6.375" />
+        <EntityTypeShape EntityType="ADB_LocationDataModel.ScheduleMaster" Width="1.5" PointX="0.75" PointY="13.5" />
+        <AssociationConnector Association="ADB_LocationDataModel.FK_Schedule_ScheduleMaster" />
+        <EntityTypeShape EntityType="ADB_LocationDataModel.EnrollerLocationPermission" Width="1.5" PointX="8.25" PointY="17.75" />
+        <EntityTypeShape EntityType="ADB_LocationDataModel.lkpPermission" Width="1.5" PointX="6" PointY="32.25" />
+        <AssociationConnector Association="ADB_LocationDataModel.FK_EnrollerLocationPermission_lkpPermission" />
+        <EntityTypeShape EntityType="ADB_LocationDataModel.lkpPaymentOption" Width="1.5" PointX="8" PointY="7" />
+        <EntityTypeShape EntityType="ADB_LocationDataModel.LocationPaymentOption" Width="1.5" PointX="10.25" PointY="13.875" />
+        <AssociationConnector Association="ADB_LocationDataModel.FK_LocationPaymentOptions_lkpPaymentOptions" />
+        <EntityTypeShape EntityType="ADB_LocationDataModel.FingerPrintLocationImage" Width="1.5" PointX="5.25" PointY="11.375" />
+        <EntityTypeShape EntityType="ADB_LocationDataModel.lkpAppointmentStatu" Width="1.5" PointX="5.25" PointY="2.375" />
+        <EntityTypeShape EntityType="ADB_LocationDataModel.FingerPrintLocationEvent" Width="1.5" PointX="5.25" PointY="23.25" />
+        <EntityTypeShape EntityType="ADB_LocationDataModel.lkpAppointmentRevokeType" Width="1.5" PointX="5.25" PointY="28.125" />
+        <EntityTypeShape EntityType="ADB_LocationDataModel.ReservedSlot" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ADB_LocationDataModel.FingerPrintScheduleSlot" Width="1.5" PointX="5.25" PointY="6.625" />
+        <AssociationConnector Association="ADB_LocationDataModel.FK_FingerPrintScheduleSlot_Schedule" />
+        <EntityTypeShape EntityType="ADB_LocationDataModel.FingerPrintLocationTimeoff" Width="1.5" PointX="5.25" PointY="19" />
+        <EntityTypeShape EntityType="ADB_LocationDataModel.FingerPrintEventsSlot" Width="1.5" PointX="7.5" PointY="23.5" />
+        <AssociationConnector Association="ADB_LocationDataModel.FK_FingerPrintEventsSlot_FingerPrintLocationEvents" />
+        <EntityTypeShape EntityType="ADB_LocationDataModel.FingerPrintApplicantAppointment" Width="1.5" PointX="10.635806846728459" PointY="22.012404168961758" />
+        <AssociationConnector Association="ADB_LocationDataModel.FK_FingerPrintApplicantAppointment_FingerPrintScheduleSlot" />
+        <AssociationConnector Association="ADB_LocationDataModel.FK_FingerPrintApplicantAppointment_lkpAppointmentRevokeType" />
+        <AssociationConnector Association="ADB_LocationDataModel.FK_FingerPrintApplicantAppointment_lkpAppointmentStatus" />
+        <EntityTypeShape EntityType="ADB_LocationDataModel.CDRExportData" Width="1.5" PointX="3.9963284842652866" PointY="20.653740907392343" />
+        <EntityTypeShape EntityType="ADB_LocationDataModel.CDRFileDetail" Width="1.5" PointX="5.2518245583641452" PointY="2.8769763423488364" />
+        <AssociationConnector Association="ADB_LocationDataModel.FK_CDRExportData_CDRFileDetails" />
+        <EntityTypeShape EntityType="ADB_LocationDataModel.CBIResultFile" Width="1.5" PointX="1.3949889863817901" PointY="2.04627002870956" />
+        <EntityTypeShape EntityType="ADB_LocationDataModel.FingerPrintOrderKeyData" Width="1.5" PointX="7.24041082488392" PointY="31.5625795272936" />
+        <EntityTypeShape EntityType="ADB_LocationDataModel.FingerPrintLocation" Width="1.5" PointX="6.0709787970739324" PointY="7.894950274329144" />
+        <AssociationConnector Association="ADB_LocationDataModel.FK_EnrollerLocationPermission_FingerPrintLocation" />
+        <AssociationConnector Association="ADB_LocationDataModel.FK_FingerPrintApplicantAppointment_FingerPrintLocation" />
+        <AssociationConnector Association="ADB_LocationDataModel.FK_FingerPrintLocation_ScheduleMaster" />
+        <AssociationConnector Association="ADB_LocationDataModel.FK_FingerPrintLocationEvents_FingerPrintLocation" />
+        <AssociationConnector Association="ADB_LocationDataModel.FK_FingerPrintLocationImages_FingerPrintLocation" />
+        <AssociationConnector Association="ADB_LocationDataModel.FK_FingerPrintLocationTimeoff_FingerPrintLocation" />
+        <AssociationConnector Association="ADB_LocationDataModel.FK_LocationPaymentOptions_FingerPrintLocation" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

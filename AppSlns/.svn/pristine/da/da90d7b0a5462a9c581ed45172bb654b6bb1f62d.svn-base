@@ -1,0 +1,26 @@
+﻿using INTSOF.COMPLIO.TALKDESK.Handlers;
+using System;
+using System.Threading.Tasks;
+using System.Web.Http;
+
+namespace INTSOF.COMPLIO.TALKDESK.Controllers
+{
+    [RoutePrefix("TalkDeskAuth")]
+    public class TalkDeskAuthController : ApiController
+    {
+        [Route("GetTalkDeskApiToken")]
+        [HttpGet]
+        public async Task<string> GetTalkDeskApiToken()
+        {
+            try
+            {
+                TalkDeskTokenHandler talkDeskTokenHandler = new TalkDeskTokenHandler();                
+                return await talkDeskTokenHandler.GetTalkDeskToken();                
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
+    }
+}

@@ -1,0 +1,24 @@
+<GetServiceFields xmlns="">
+  <ErrorStatus>
+    <Code>0</Code>
+    <Type></Type>
+    <Message></Message>
+  </ErrorStatus>
+  <ServiceField>
+    <sServiceNo>AMER_00678</sServiceNo>
+    <iFieldID>187129</iFieldID>
+    <sLabel>State</sLabel>
+    <sColumnName>Country</sColumnName>
+    <iDisplayOrder>1</iDisplayOrder>
+    <bRequired>false</bRequired>
+    <bVisible>false</bVisible>
+    <sDefaultValue />
+    <sLocationField />
+    <bPurgeData>false</bPurgeData>
+    <sPurgeReplaceValue />
+    <sCreatedBy>Existing</sCreatedBy>
+    <sCreatedAt>2014-07-09T14:48:18.75-04:00</sCreatedAt>
+    <sModifiedBy>AMERAZDcadmin</sModifiedBy>
+    <sModifiedAt>2014-07-09T14:58:52.693-04:00</sModifiedAt>
+  </ServiceField>
+</GetServiceFields>

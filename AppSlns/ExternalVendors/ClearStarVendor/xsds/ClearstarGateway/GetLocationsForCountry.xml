@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<GetLocationsForCountry xmlns="">
+<ErrorStatus>
+  <Code></Code>
+  <Type></Type>
+  <Message></Message>
+</ErrorStatus>
+<Location>
+  <State></State>
+  <County></County>
+  <City></City>
+  <ZipCode></ZipCode>
+</Location>
+</GetLocationsForCountry>

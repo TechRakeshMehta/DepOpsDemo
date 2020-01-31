@@ -1,0 +1,88 @@
+<div id="bodyBlock" class="container-fluid">
+  <section class="p-2">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h3 *ngIf="isSendForOnline != true" id="RSCHDLAPPNMNT"></h3>
+        <h3 *ngIf="isSendForOnline == true" id="COMPLETEORDER">Complete Your Order</h3>
+      </div>
+      <div class="col-md-12 font-weight-bold">             
+        <span id="SLOTEXPINSTRUCTION"></span>
+      </div>
+      <div class="col-md-12 bg-white shadow-sm rounded py-3">
+        <form [formGroup]="scheudleslot">
+          <div class="row" [hidden]="hideEventDetails">
+            <div class="col-md-6 mb-1">
+              <label class="is-required" id="EVNTNAMENDES"></label>
+              <input type="text" class="form-control" value="{{EventDescription}}" disabled>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12" style="text-align: center">
+              <span style="color: #335;font-weight: bold;font-size: 12px" [hidden]="selectedSlotID != 0" id="AVLBLSLOTS"></span>
+              <span style="color: #335;font-weight: bold;font-size: 12px" [hidden]="selectedSlotID != 0" id="FOR"></span>
+              <span style="color: #335;font-weight: bold;font-size: 12px" [hidden]="selectedSlotID != 0">:</span>
+              <span [hidden]="selectedSlotID != 0">
+                <span [hidden]="!hideDateSlotInSpanish" style="color: #335;font-weight: bold;font-size: 12px" id="dateSlotInEnglish">
+                  {{this.orderInfo.LocationDetail.SlotDate | date:'EEEE, MMMM d, y'}}
+                </span>
+                <span [hidden]="hideDateSlotInSpanish" style="color: #335;font-weight: bold;font-size: 12px" id="dateSlotInSpanish">
+                  {{dateSlotInSpanish}}
+                </span>
+              </span>
+              <span style="color: red" [hidden]="ErrorMessage == ''">{{ErrorCustMessage}}</span>
+              <span style="color: red" [hidden]="selectedSlotID == 0" id="SLCTEDDATETIME"></span>
+              <span style="color: red" [hidden]="selectedSlotID == 0 ">
+                <span [hidden]="hideDateSlotInSpanish">{{dateSlotInSpanish}}</span>
+                <span [hidden]="!hideDateSlotInSpanish"> {{SelectedStartTime | date:'EEEE, MMMM d, y' }}</span> ({{SelectedStartTime | date:'h:mm a'}} - {{SelectedEndTime
+                | date:'h:mm a'}})</span>
+            </div>
+            <div class="col-lg-12 d-flex flex-row justify-content-center" style="text-align: center">
+              <div class="pr-2">
+                <i class="fas fa-square pr-1 selected-slotcolor">
+                  <label id="SELECTED"></label>
+                </i>
+              </div>
+              <div class="pr-2">
+                <i class="fas fa-square pr-1 avaliable-slotcolor">
+                  <label id="AVAILABLE"></label>
+                </i>
+              </div>
+              <div>
+                <i class="fas fa-square pr-1 notavaliable-slotcolor">
+                  <label id="NOTAVAILABLE"></label>
+                </i>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-1" *ngFor="let slots of lstScheduleSlots">
+              <button type="button" [disabled]="slots.IsAvailable != true" [ngStyle]="{'background-color': slots.SlotID == selectedSlotID?'#3f98e3':slots.IsAvailable == true?'#abd686':'#cbcbb4'
+                    ,'border-color': slots.IsAvailable == true?'#abd686':'#cbcbb4'}" (click)="onslotselected(slots.SlotID,slots.StartDateTime,slots.EndDateTime)"
+                class="btn btn-primary btn-block">{{slots.StartDateTime | date:'h:mm a'}} - {{slots.EndDateTime | date:'h:mm a'}}</button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12" style="text-align: center">
+              <span style="color: red" [hidden]="IsSlotSelected" id="SLCTAPPOINTMENT"></span>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12 d-flex justify-content-center">
+              <button type="button" [autofocus]="false" (click)="goBack()" class="btn btn-primary">
+                <i class="fas fa-arrow-left pr-1"></i>
+                <label id="PREVIOUS"></label>
+              </button>
+              <button type="button" [autofocus]="false" (click)="onSubmit()" class="btn btn-primary mx-1">
+                <label class="label-on-button" id="NEXT"></label>
+                <i class="fas fa-arrow-right pl-1"></i>
+              </button>
+              <cancel-rescheduling-button></cancel-rescheduling-button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,79 @@
+﻿
+    <logout-app></logout-app>
+    <div class="container align-items-center p-2">
+        <div class="row justify-content-center text-center" id="mainDiv">
+            <div class="col-12">
+                <div class="alert welcome-alert" role="alert">
+                    <strong><i class="fa fa-user" aria-hidden="true"></i> Welcome, {{applicantName}}</strong>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="text-md ">Upload Pictures</div>
+                <label for="capture-img" class="alert icon-div  p-5 w-50 div-shadow" role="">
+                    <i class=" fa fa-2x fa-camera" aria-hidden="true"></i>
+                </label>
+                <input id="capture-img" type="file" (change)='fileUploadEvent($event)' class="d-none" accept="image/*" multiple="">
+            </div>
+            <div class="line"></div>
+            <div class="col-12"  (click)='getApplicantPackages()'>
+                <div class="text-md ">Compliance Status</div>
+                    <div class="alert offset-3 icon-div p-5 div-shadow w-50" id="complianceBtn" role="">
+                        <i class=" fa fa-2x fa-check-square-o" aria-hidden="true"></i>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <router-outlet></router-outlet>
+    <script>
+        // $(document).ready(function () {
+        //     $("#confirmation-div").hide();
+        //     $("#success-div").hide();
+        //     $("#capture-img").on("change", function (event) {
+        //         var files = event.target.files;
+        //         var fileList = [];
+        //         $('.remove-data').parent().remove();
+        //         for (var i = 0; i < files.length; i++) {
+        //             var file = files[i];
+        //             var picReader = new FileReader();
+        //             picReader.onload = function (event) {
+        //                 var picFile = event.target;
+        //                 var div = '<div class="col-12 p-2"><img class="d-inline" src="' + picFile.result + '" style="height:40px; width:40px"/><input id="description["+i+"]" type="text" class="form-control w-50 border-bottom d-inline" placeholder="Description" /><span class="remove-data" onclick="removeSection(this)"><i class="fa fa-times"></i></span></div>';
+        //                 $("#result").append(div);
+        //             };
+        //             picReader.readAsDataURL(file);
+        //         }
+        //         $('#mainDiv').hide('slide', { direction: 'left' }, 1000);
+        //         $("#confirmation-div").show();
+        //         $("#result").show();
+        //         $("#capture-img").val('');
+        //     });
+
+        // });
+        // function removeSection(event) {
+        //     $(event).parent().remove();
+        //     if ($('.remove-data').length == 0) {
+        //         $("#result").hide();
+        //         $("#confirmation-div").hide();
+        //         $("#mainDiv").show();
+        //     }
+        // }
+        // $(".back-dashboard").on('click', function () {
+        //     $("#result").hide();
+        //     $("#confirmation-div").hide();
+        //     $("#mainDiv").show();
+        // });
+        // $("#submitBtn").on('click', function () {
+        //     $("#result").hide();
+        //     $("#confirmation-div").hide();
+        //     $("#success-div").show();
+        // });
+        // $("#complianceBtn").on('click', function () {
+        //     var a = window.location.href
+        //     a = a.substring(0, a.lastIndexOf('/') + 1)
+        //     window.location.href = a + 'description.html';
+        // });
+        // $("#back-dashboard").on('click', function () {
+        //     $("#success-div").hide();
+        //     $("#mainDiv").show();
+        // });
+    </script>

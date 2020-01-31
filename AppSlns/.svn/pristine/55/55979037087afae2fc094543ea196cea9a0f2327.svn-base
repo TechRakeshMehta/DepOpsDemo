@@ -1,0 +1,25 @@
+<div id="bodyBlock" class="container-fluid">
+  <section class="p-2">
+    <div class="row">
+        <div class="col-md-12 d-flex"></div>
+        <div class="col-md-12 text-center"><h3 id="ACCTHASBNLNKD"></h3></div>
+        <div class="col-md-12 bg-white shadow-sm rounded py-3">         
+          <form>
+              <div class="row">                    
+                  <div class="col-md-12 d-flex justify-content-center">
+                <label id="THANKUFORREGISTERING"></label><label> <b>{{' ' + Email}}.</b></label>                              
+                </div>                
+            </div>          
+            <div class="row">                    
+                <div class="col-md-12 d-flex justify-content-center">
+                   <!-- <a href="#">Click here to login.</a> -->                
+                <button type="button" class="btn btn-primary fixedWidthBtn" (click)="onRedirectToLogin()">
+                    <label class="label-on-button" id="CLICKHERETOLOGIN"></label>                  
+                 </button>
+                  </div>                
+                </div>                          
+          </form>          
+        </div>
+    </div>
+  </section>
+</div>

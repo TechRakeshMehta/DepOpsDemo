@@ -1,0 +1,407 @@
+<div id="bodyBlock" class="container-fluid">
+        <section class="p-2">
+                <div class="row">
+                        <div *ngIf="isSendForOnline != true" class="col-12 font-weight-bold">
+                                <label id="CREATODR">Create Order</label> (
+                                <label id="STEP">Step</label>
+                                <label *ngIf="orderInfo">{{orderInfo.CurrentStep}}
+                                        <label id="OF"></label> {{orderInfo.TotalSteps}})</label>
+                        </div>
+                        <div *ngIf="isSendForOnline == true" class="col-12 font-weight-bold">
+                                <label id="CMPLTORDER"></label>
+                        </div>
+                </div>
+                <div class="row">
+                        <div class="col-md-12 redColor">
+                                <label id="THANKSORDERCONFIRMD"></label>
+                        </div>
+                </div>
+                <div class="row">
+                        <div class="col-md-12 redColor">
+                                <span class="font-weight-bold" id="ORDERSUMMARY"></span>
+                        </div>
+                </div>
+                <div class="row border p-1">
+                        <div class="col-md-12">
+
+                                <span class="redColor font-weight-bold" Name="ORDSELDTLS"></span>
+                        </div>
+                        <div class="col-md-12">
+                                <div class="row">
+                                        <div class="col-md-6">
+                                                <div class="row">
+                                                        <div class="col-md-6">
+                                                                <label id="ODRNUMBER"></label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                                <span class="font-weight-bold" *ngIf="orderInfo">{{orderInfo.OrderNumber}}</span>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                                <div class="row">
+                                                        <div class="col-md-6">
+                                                                <label id="TOTALPRICE"></label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                                <span class="font-weight-bold" *ngIf="orderInfo">${{orderInfo.GrandTotal | number:'1.2-2'}}</span>
+                                                        </div>
+                                                </div>
+                                        </div>
+
+                                </div>
+                        </div>
+                        <div class="col-md-12 mt-3">
+
+                                <span class="redColor font-weight-bold" id="ORDRDTLS"></span>
+                        </div>
+                        <div class="col-md-12">
+                                <div class="row">
+                                        <div class="col-md-6">
+                                                <div class="row">
+                                                        <div class="col-md-6">
+                                                                <label id="ORDSELDTLS"></label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                                <span class="font-weight-bold" *ngIf="orderInfo">{{orderInfo.packageName}}</span>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <!-- <div class="col-md-6">
+                                                <div class="row">
+                                                        <div class="col-md-6">
+                                                                <label name="PAYMENTTYPE"></label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                                <span class="font-weight-bold">{{orderInfo.PaymentType}}</span>
+                                                        </div>
+                                                </div>
+                                        </div> -->
+                                </div>
+                        </div>
+                        <div class="col-md-12 mt-3">
+                                <span class="redColor font-weight-bold" name="PAYMENTTYPES"></span>
+                        </div>
+                        <div class="col-md-12">
+                                <div *ngFor="let item of lstPayments;let i=index">
+
+                                        <div class="row">
+                                                <div class="col-md-6">
+                                                        <div class="row">
+                                                                <div class="col-md-6">
+                                                                        <label name="PAYMENTTYPE">Payment Type</label>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                        <span class="font-weight-bold">{{item.PaymentType}}</span>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                        <div class="row">
+                                                                <div class="col-md-6" [hidden]="item.PaymentTypeCode != 'PTINA'">
+                                                                        <label id="PAIDBYINST">Paid By Institution</label>
+                                                                </div>
+                                                                <div class="col-md-6" [hidden]="item.PaymentTypeCode == 'PTINA'">
+                                                                        <label name="AMOUNT" [hidden]="!HideBalAmount">Amount</label>
+                                                                        <label name="BALANCEAMT" [hidden]="HideBalAmount">Balance Amount</label>
+                                                                </div>
+
+                                                                <div class="col-md-6">
+                                                                        <span class="font-weight-bold">${{item.Amount | number:'1.2-2'}}</span>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="col-md-12 mt-3">
+                                <span class="redColor font-weight-bold" id="PROFILEDETAILS"></span>
+                        </div>
+                        <div class="col-md-12">
+                                <div class="row">
+                                        <div class="col-md-6">
+                                                <div class="row">
+                                                        <div class="col-md-6">
+                                                                <label id="FIRSTNAME"></label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                                <span class="font-weight-bold" *ngIf="userInfo">{{userInfo.FirstName}}</span>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                                <div class="row">
+                                                        <div class="col-md-6">
+                                                                <label id="MIDDLENAME"></label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                                <span class="font-weight-bold" *ngIf="userInfo">{{userInfo.MiddleName}}</span>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="col-md-12">
+                                <div class="row">
+                                        <div class="col-md-6">
+                                                <div class="row">
+                                                        <div class="col-md-6">
+                                                                <label id="LASTNAME"></label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                                <span class="font-weight-bold" *ngIf="userInfo">{{userInfo.LastName}}</span>
+                                                                <span *ngIf="userInfo && userInfo.Suffix != ''" class="font-weight-bold"> - {{userInfo.Suffix}}</span>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <!-- <div class="col-md-6">
+                                                <div class="row">
+                                                        <div class="col-md-6">
+                                                                <label id="ENTERSUFFIX"></label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                                <span class="font-weight-bold">{{userInfo.Suffix}}</span>
+                                                        </div>
+                                                </div>
+                                        </div> -->
+                                </div>
+                        </div>
+                        <div class="col-md-12">
+                                <div class="row">
+                                        <div class="col-md-6">
+                                                <div class="row">
+                                                        <div class="col-md-6">
+                                                                <label id="GENDER"></label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                                <span class="font-weight-bold" *ngIf="userInfo">{{userInfo.Gender}}</span>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                                <div class="row">
+                                                        <div class="col-md-6">
+                                                                <label id="DOB"></label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                                <span class="font-weight-bold" *ngIf="userInfo">{{userInfo.DOB | date : "MM-dd-####"}}</span>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="col-md-12">
+                                <div class="row">
+                                        <div class="col-md-6">
+                                                <div class="row">
+                                                        <div class="col-md-6">
+                                                                <label id="EMAILADD"></label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                                <span class="font-weight-bold" *ngIf="userInfo">{{userInfo.PrimaryEmail}}</span>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                                <div class="row">
+                                                        <div class="col-md-6">
+                                                                <label id="PHONENUM"></label>
+                                                        </div>
+                                                        <div class="col-md-6">
+
+                                                                <!-- <span class="font-weight-bold" *ngIf="userInfo">{{userInfo.PrimaryPhone}}</span> -->
+
+                                                                <span class="font-weight-bold" *ngIf="userInfo">{{PrimaryPhone}}</span>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="col-md-12">
+                                <div class="row">
+                                        <div class="col-md-6">
+                                                <div class="row">
+                                                        <div class="col-md-6">
+                                                                <label id="ADDRESS"></label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                                <span class="font-weight-bold" *ngIf="userInfo">{{userInfo.Address}}</span>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                                <div class="row">
+                                                        <div class="col-md-6">
+                                                                <label id="CITY"></label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                                <span class="font-weight-bold text-uppercase" *ngIf="userInfo">{{userInfo.CityName}}</span>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="col-md-12" [hidden]="HideState">
+                                <div class="row">
+                                        <div class="col-md-6">
+                                                <div class="row">
+                                                        <div class="col-md-6">
+                                                                <label name="COUNTRY"></label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                                <span class="font-weight-bold" *ngIf="userInfo">{{userInfo.CountryName}}</span>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                                <!-- <div class="row" *ngIf="userInfo && userInfo.StateName != 'SITI@4863'"> -->
+                                                <div class="row">
+                                                        <div class="col-md-6">
+                                                                <label id="STATE"></label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                                <span class="font-weight-bold text-uppercase" *ngIf="userInfo">{{userInfo.StateName}}</span>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="col-md-12" [hidden]="HideState">
+                                <div class="row">
+                                        <div class="col-md-6">
+                                                <div class="row">
+                                                        <div class="col-md-6">
+                                                                <!-- {{IsZipCodeLabel?'Zip Code':'Postal Code'}} -->
+                                                                <LABEL [hidden]="!IsZipCodeLabel" name="ZIPCODE"></LABEL>
+                                                                <label [hidden]="IsZipCodeLabel" name="POSTALCODE"></label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                                <span class="font-weight-bold" *ngIf="userInfo">{{userInfo.PostalCode}}</span>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="col-md-6" [hidden]="HideSSN">
+                                                <div class="row">
+                                                        <div class="col-md-6">
+                                                                <label name="SSN"></label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                                <span class="font-weight-bold">{{SSNMaskedText}}</span>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="col-md-12" [hidden]="!HideState">
+                                <div class="row">
+                                        <div class="col-md-6">
+                                                <div class="row">
+                                                        <div class="col-md-6">
+                                                                <label name="COUNTRY"></label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                                <span class="font-weight-bold" *ngIf="userInfo">{{userInfo.CountryName}}</span>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                                <div class="row">
+                                                        <div class="col-md-6">
+                                                                <!-- {{IsZipCodeLabel?'Zip Code':'Postal Code'}} -->
+                                                                <LABEL [hidden]="!IsZipCodeLabel" name="ZIPCODE"></LABEL>
+                                                                <label [hidden]="IsZipCodeLabel" name="POSTALCODE"></label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                                <span class="font-weight-bold" *ngIf="userInfo">{{userInfo.PostalCode}}</span>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="col-md-12" [hidden]="!HideState">
+                                <div class="row">
+                                        <div class="col-md-6" [hidden]="HideSSN">
+                                                <div class="row">
+                                                        <div class="col-md-6">
+                                                                <label name="SSN"></label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                                <span class="font-weight-bold">{{SSNMaskedText}}</span>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="w-100" *ngFor="let attributegroup of lstCustomAttributeGroup;let i = index">
+                                <div href="attributegroup.GroupName">
+                                        <div class="col-md-12 mt-3">
+                                                <span class="redColor font-weight-bold" *ngIf="lstCustomAttributeGroup">{{attributegroup.GroupName}}</span>
+                                        </div>
+
+                                        <div id={{attributegroup.GroupName}}>
+                                                <form>
+                                                        <div class="col-md-12">
+                                                                <div class="row">
+                                                                        <div class="col-md-6" *ngFor="let value of attributegroup.Attributes">
+                                                                                <div class="row">
+                                                                                        <div class="col-md-6">{{value.AttributeName}}</div>
+                                                                                        <div class="col-md-6" style="display: inline-table !important;">
+                                                                                                <span class="font-weight-bold text-uppercase">{{value.AttributeDataValue}}</span>
+                                                                                        </div>
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                </form>
+                                        </div>
+                                </div>
+                        </div>
+                        <!-- <div class="col-md-12 mt-3">
+                                <span class="redColor font-weight-bold" name="PAYMENTINST"></span>
+                                <span class="redColor font-weight-bold">Payment Instructions</span>                          
+                        </div> -->
+                        <div class="col-md-12">
+                                <div *ngFor="let item of lstPayments;let i=index">
+                                        <div class="row" [hidden]="(item.InstructionText == null || item.InstructionText == '')">
+                                                <div class="col-md-12 redColor">
+                                                        <label name="PAYMENTINST"></label>
+                                                        <label *ngIf="orderInfo"> ({{item.PaymentType}})</label>
+                                                </div>
+                                                <!-- <label>Payment Instructions</label> ({{orderInfo.PaymentType}})</div> -->
+                                                <div class="col-md-12">
+                                                        <small class=" font-weight-bold" [innerHTML]=item.InstructionText> </small>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+
+                        <div [hidden]="!showAgreement">
+                                <div class="col-md-12 redColor">
+                                        <label class="redColor font-weight-bold" id="USERAGRMNT"></label>
+                                        <!-- <label>User Aggrement</label> -->
+                                        <!-- <span class="redColor font-weight-bold">User Agreement</span> -->
+                                </div>
+                                <div class="col-md-12" *ngIf="orderInfo">{{AggrementText}} </div>
+                        </div>
+
+                </div>
+                <div class="row my-2">
+                        <div class="col-md-12 d-flex justify-content-center">
+                                <div class="row">
+                                        <div class="col-md-12 d-flex justify-content-center">
+                                                <button type="button" autofocus="false" (click)="goBackToDashboard()" class="btn btn-primary">
+                                                        <i class="fas fa-home pr-1"></i>
+                                                        <label id="GOTODASHBOARD"></label>
+                                                        <!-- <label class="label-on-button">Go To Dashboard</label> -->
+                                                </button>
+                                                <button class="btn btn-primary mx-1" autofocus="false" ng-print print-element-id="printThisElement" (click)="downloadOrderReceipt()">
+                                                        <label id="PRINT"></label>
+                                                        <i class="fa fa-print"></i>
+                                                        <!-- <label class="label-on-button">Print</label>                                                         -->
+                                                </button>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </section>
+</div>

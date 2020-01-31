@@ -1,0 +1,22 @@
+﻿#box_content H2
+{
+    font-size: 100% !important;
+}
+div.AlertHigh
+{
+    background-color: Red;
+    border: 2px solid white;
+    padding: 2px 2px 2px 2px;
+}
+div.AlertMedium
+{
+    background-color: Yellow;
+    border: 2px solid white;
+    padding: 2px 2px 2px 2px;
+}
+div.AlertLow
+{
+    background-color: Green;
+    border: 2px solid white;
+    padding: 2px 2px 2px 2px;
+}

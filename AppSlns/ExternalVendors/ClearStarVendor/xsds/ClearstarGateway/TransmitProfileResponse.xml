@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<TransmitProfile xmlns=""> 
+  <ErrorStatus>
+      <Code>  
+      </Code>
+      <Type>
+      </Type>
+      <Message>
+      </Message>
+  </ErrorStatus> 
+  <Profile>
+    <sProfNo></sProfNo> 
+    <bTransmitted></bTransmitted> 
+  </Profile> 
+</TransmitProfile>

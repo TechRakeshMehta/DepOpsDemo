@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="https://gateway.clearstar.net/csgwpostmaster/postmaster.asmx?wsdl" docRef="https://gateway.clearstar.net/csgwpostmaster/postmaster.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="https://gateway.clearstar.net/csgwpostmaster/postmaster.asmx" xmlns:q1="http://clearstar.net/Gateway/PostMaster" binding="q1:PostMasterSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="https://gateway.clearstar.net/csgwpostmaster/postmaster.asmx" xmlns:q2="http://clearstar.net/Gateway/PostMaster" binding="q2:PostMasterSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

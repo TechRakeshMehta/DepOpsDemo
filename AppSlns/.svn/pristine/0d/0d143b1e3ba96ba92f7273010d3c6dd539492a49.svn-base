@@ -1,0 +1,84 @@
+import { Component, OnInit } from "@angular/core";
+import { FormGroup } from "@angular/forms";
+import { ClientSettingCustomAttributeContract } from '../../../models/custom-forms/custom-attribute';
+import { UtilityService } from "../../../services/shared-services/utility.service";
+
+@Component({
+    selector: "app-inputnumeric",
+    template: `    <style>
+    .error-msg {
+        color: #a94442;
+    }
+
+    .fix-error-icon {
+        top: 27px;
+    }
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { 
+      -webkit-appearance: none; 
+      margin: 0; 
+    }
+     </style>
+     <div  [formGroup]="group">
+     <label [hidden]="!field.DisplayLabel" class="required">{{field.AttributeName}}</label>
+     <input [formControlName]="field.AttributeName" [ngClass]="displayFieldCss(field.AttributeName)"
+         [placeholder]="field.AttributeName" [(ngModel)]="field.AttributeDataValue"
+         type="number" class="form-control mb-1">
+     <div *ngIf="field.IsRequired">
+         <app-field-error-display [displayError]="isError(field.AttributeName)" errorMsg="{{errorMessage(field.AttributeName)}}">
+         </app-field-error-display>
+     </div>
+ </div>
+`,
+    styles: []
+})
+
+export class InputNumericComponent implements OnInit {
+    field: ClientSettingCustomAttributeContract;
+    group: FormGroup;
+
+    constructor(private utilityService: UtilityService) { }
+    ngOnInit() {
+
+    }
+
+    displayFieldCss(field: string) {
+        return this.utilityService.displayFieldCss(this.group, field);
+    }
+
+    isError(fieldName: any): any {
+        const control = this.group.get(fieldName);
+
+        if (this.field.IsRequired != undefined && this.field.IsRequired) {
+            var hasError = control.hasError('required');
+            if (hasError != undefined && hasError && control.touched) {
+                return true;
+            }
+        }
+        if (this.field.ValidateExpression != undefined && this.field.ValidateExpression != '') {
+            var hasError = control.hasError('pattern');
+            if (hasError != undefined && hasError && control.touched) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    errorMessage(fieldName: any): any {
+
+        const control = this.group.get(fieldName);
+        if (this.field.IsRequired != undefined && this.field.IsRequired) {
+            var hasError = control.hasError('required');
+            if (hasError != undefined && hasError && control.touched) {
+                return this.field.AttributeName + " is required.";
+            }
+        }
+        if (this.field.ValidateExpression != undefined && this.field.ValidateExpression != '') {
+            var hasError = control.hasError('pattern');
+            if (hasError != undefined && hasError && control.touched) {
+                return this.field.ValidationMessage;
+            }
+        }
+        return "";
+    }
+}

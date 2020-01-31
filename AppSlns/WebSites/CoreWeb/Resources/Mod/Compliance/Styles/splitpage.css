@@ -1,0 +1,58 @@
+﻿html, body, #frmmod, #UpdatePanel1, #box_content
+{
+    height: 100% !important;
+}
+
+
+.split_modhdr
+{
+    background-image:url(../images/modhdr.png);
+    background-repeat:repeat-x;
+    height:40px;
+}
+
+.split_modhdr h1
+{
+    padding:4px 8px!important;
+    
+    margin:0!important;
+    font-size:20px!important;
+    color:White;
+}
+
+.split_modhdr .modhdr_cmds
+{
+    position:absolute;
+    right:25px;
+    top:10px;
+    color:White;
+}
+
+.modhdr_cmds a
+{
+    color:White;
+}
+
+.framebar
+{
+    background-image: url(../images/bkg-top.png);
+    background-repeat: repeat-x;
+    height: 50px;
+    background-position: -1px -10px;
+    position: relative;
+}
+
+.framebar .title
+{
+    font-size: 13px;
+    padding-top: 10px;
+    padding-left: 10px;
+    font-weight:bold;
+}
+
+.framebar .commands
+{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}

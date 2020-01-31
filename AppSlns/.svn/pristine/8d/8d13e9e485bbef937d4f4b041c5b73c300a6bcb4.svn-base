@@ -1,0 +1,16 @@
+﻿<root>
+
+  <!--<tools name="MainToolbar" dockable="true" enabled="true">
+   
+  </tools>
+
+  <tools name="Formatting" enabled="true" dockable="true">
+
+  </tools>-->
+
+  <!--<tools name="MainToolbar" dockable="true" enabled="true" />-->
+  <cssFiles>
+    <item name="~/App_Themes/Default/CustomStyles.css" />
+  </cssFiles>
+
+</root>

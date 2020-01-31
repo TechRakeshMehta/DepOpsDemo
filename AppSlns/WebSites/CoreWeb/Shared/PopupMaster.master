@@ -1,0 +1,74 @@
+﻿<%-- 
+Copyright 2011 Intersoft Data Labs.
+All rights are reserved.  Reproduction or transmission in whole or in part, in
+any form or by any means, electronic, mechanical or otherwise, is prohibited
+without the prior written consent of the copyright owner.
+
+Filename:  DefaultMaster.Master
+Purpose:  Creates a master layout for the module page of the application
+
+Revisions:
+Author           Date               Comment
+------           ----------         -------------------------------------------------
+Ashish Daniel    Ashish Daniel    12-Dec-2012 0920   - File updated / cleaned up
+--%>
+
+<%@ Master Language="C#" AutoEventWireup="true"
+    Inherits="CoreWeb.Shell.MasterPages.PopupMaster" Codebehind="PopupMaster.master.cs" %>
+
+<%@ Register TagPrefix="infs" Namespace="INTERSOFT.WEB.UI.WebControls" Assembly="INTERSOFT.WEB.UI" %>
+<%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="frmPopup" runat="server" style="height: 100%">
+    <%-- Managers --%>
+    <div>
+        <asp:ScriptManager ID="scmPage" runat="server" EnablePageMethods="true" EnablePartialRendering="true"
+            AsyncPostBackTimeout="360000" ScriptMode="Release">
+        </asp:ScriptManager>
+        <infs:WclStyleSheetManager runat="server" ID="cssMgrPage">
+        </infs:WclStyleSheetManager>
+        <infs:WclResourceManager runat="server" ID="rsrMgr" EnableBrowserSupport="true" SupportCssPath="~/Resources/Generic/Client"
+            SupportScriptPath="~/Resources/Generic/Client" OnInit="rsrMgr_Init" AllowTheming="true"
+            ThemesFolder="~/Resources/Themes" ThemeFiles="colors.css" WindowCheckFailUrl="Default.aspx"
+            EnableWindowCheck="true" IFrameMode="true" SupportedBrowsers="ie8,ie9" SupportedEngines="trident">
+            <infs:LinkedResource Path="~/Resources/Generic/popup.min.js" ResourceType="JavaScript" />
+        </infs:WclResourceManager>
+    </div>
+    <infs:WclSplitter ID="rdspMain" runat="server" Orientation="Horizontal" FullScreenMode="true"
+        BorderSize="0" BorderWidth="0" ResizeWithBrowserWindow="true" ClientKey="pageSplitter" >
+        <infs:WclPane runat="server" CssClass="relpos popupCnt" ID="rdpnContent" Scrolling="Both">
+            <asp:UpdatePanel ID="updpPopupContent" runat="server" UpdateMode="Always">
+                <ContentTemplate>
+                    <div class="msgbox" id="pageMsgBox">
+                        <asp:Label EnableViewState="false" runat="server" ID="lblError">
+                            <asp:ContentPlaceHolder ID="MessageContent" runat="server" />
+                        </asp:Label>
+                    </div>
+                    <asp:ContentPlaceHolder ID="PoupContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </infs:WclPane>
+        <infs:WclPane ID="rdpnCommands" runat="server" MinHeight="30" Height="30" CssClass="relpos"
+            Scrolling="None" Collapsed="true">
+            <asp:UpdatePanel ID="updpPopupCommands" runat="server" UpdateMode="Always">
+                <ContentTemplate>
+                    <div class="popupCmd">
+                        <asp:ContentPlaceHolder ID="CommandContent" runat="server" OnPreRender="CommandContent_PreRender" />
+                    </div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </infs:WclPane>
+    </infs:WclSplitter>
+    <div id="popupProgress">
+        <div class="msg">
+            Please wait...</div>
+    </div>
+    </form>
+</body>
+</html>

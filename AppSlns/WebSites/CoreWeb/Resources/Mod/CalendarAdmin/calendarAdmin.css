@@ -1,0 +1,103 @@
+﻿#calAdminWrapper
+{
+    float: left;
+    margin: 0;
+    width: 100%;
+    padding: 0;
+}
+#dateCalWrapper
+{
+    float: left;
+    width: 38%;
+    padding-top: 10px;
+}
+#buttonsWrapper
+{
+    float: left;
+    padding-top: 14px;
+    width: 2%;
+    height: 225px;
+    vertical-align: middle;
+}
+.dateMover
+{
+    float: left;
+    padding-top: 100px;
+    text-align: center;
+}
+#selectedDateWrapper
+{
+    float: left;
+    width: 30%;
+}
+.deleteSelectedDates
+{
+    float: left;
+    padding-left: 5px;
+}
+#actionBtnWrapper
+{
+    float: left;
+    width: 80%;
+    text-align: center;
+}
+
+.RadListBox_Default .rlbGroup
+{
+    height: 200px;
+}
+.sx2sp .cx
+{
+    padding-top: 12px !important;
+}
+.sxlmcldr
+{
+    float: left;
+    display: inline-block;
+    width: auto;
+    margin-right: 20px;
+}
+.sxlmcldrlst
+{
+    float: left;
+    display: inline-block;
+    width: auto;
+    margin-right: 10px;
+}
+.sxlmcldrbtn
+{
+    padding-top: 15px;
+    width: auto;
+}
+fieldset .sx1co .sxlb
+{
+    width: 40%;
+}
+fieldset .sx1co .sxlm
+{
+    width: 60%;
+}
+.vgap
+{
+    height: 5px;
+}
+.wrp
+{
+    float: left;
+    margin-left: 10px;
+    width: 220px;
+}
+.lstBDays .rlbGroup
+{
+    height: 194px;
+}
+
+div.RadListBox .rlbEmptyMessage
+{
+    font-weight: bold;
+}
+
+
+.wbusiness {
+    width: 180px;   
+}

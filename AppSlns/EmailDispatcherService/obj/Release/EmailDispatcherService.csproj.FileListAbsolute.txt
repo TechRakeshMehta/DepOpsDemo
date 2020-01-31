@@ -1,0 +1,5 @@
+C:\Project\Complio\AppSlns\EmailDispatcherService\obj\Release\EmailDispatcherService.csprojAssemblyReference.cache
+C:\Project\Complio\AppSlns\EmailDispatcherService\obj\Release\EmailDispatcherService.ProjectInstaller.resources
+C:\Project\Complio\AppSlns\EmailDispatcherService\obj\Release\EmailDispatcherService.EmailDispatcherService.resources
+C:\Project\Complio\AppSlns\EmailDispatcherService\obj\Release\EmailDispatcherService.csproj.GenerateResource.cache
+C:\Project\Complio\AppSlns\EmailDispatcherService\obj\Release\EmailDispatcherService.csproj.CoreCompileInputs.cache

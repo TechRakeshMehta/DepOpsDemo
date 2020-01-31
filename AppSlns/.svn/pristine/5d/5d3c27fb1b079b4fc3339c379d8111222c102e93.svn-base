@@ -1,0 +1,5 @@
+<div class="container align-items-center p-2">
+    <div class="col-12 p-1 text-right">
+        <button type="button" id="submitBtn" (click)="logout()" class="btn btn-sm btn-primary"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;Logout </button>
+    </div>
+</div>

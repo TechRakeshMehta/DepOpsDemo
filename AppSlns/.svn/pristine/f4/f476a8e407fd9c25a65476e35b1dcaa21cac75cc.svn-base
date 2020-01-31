@@ -1,0 +1,16 @@
+﻿.tlbxicon
+{
+    vertical-align: middle;
+}
+.focusField
+{
+    border: solid 1px #73A6FF;
+    background: #EFF5FF;
+    color: #000;
+}
+.idleField
+{
+    background: #ff9f9f;
+    color: #ffffff;
+}
+.tlbficon{background-image:url(images/find.png);background-position:right;background-repeat:no-repeat; padding-right: 19px;}

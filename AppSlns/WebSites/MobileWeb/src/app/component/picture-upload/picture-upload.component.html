@@ -1,0 +1,23 @@
+<logout-app></logout-app>
+<div class="container" style="width: 100vw;">
+    <form #descriptionForm="ngForm" style="height: 80vh;overflow-y: auto;">
+    <div class="row">
+        <div class="col-10 offset-2 p-2" *ngFor='let url of urls;let i = index;'>
+            <img class="d-inline" [src]="url" style="height:40px; width:40px"/>
+            *<input id="i" required type="text" class="form-control w-50 border-bottom d-inline" placeholder="Description" name='description[{{i}}]' ngModel/>
+            <!-- <span class="remove-data" (click)="removeSection($event)">
+                <i class="fa fa-times"></i>
+            </span> -->
+        </div>
+    </div>
+    </form>
+    <div class="col-12 text-center pb-2" id="confirmation-div">
+            <button type="button" [disabled]='!descriptionForm.valid' (click)="postUploadData(descriptionForm.value)" style="float: right" id="submitBtn" class="btn btn-primary">
+                <i class="fa fa-2x fa-arrow-circle-right" aria-hidden="true"></i>
+            </button>
+            <button type="button" (click)='getApplicantPackages()'  style="float: left" id="next-page" class="btn btn-primary backBtn">
+                <i class="fa fa-2x fa-arrow-circle-left" aria-hidden="true"></i>
+            </button>
+        </div>
+</div>
+<router-outlet></router-outlet>

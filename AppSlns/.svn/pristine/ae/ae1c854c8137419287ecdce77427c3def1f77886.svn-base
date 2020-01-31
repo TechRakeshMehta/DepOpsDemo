@@ -1,0 +1,113 @@
+<div style="padding-top: 25px;" class="container-fluid">
+
+    <section class="p-2">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="redColor font-weight-bold" id="INFOFINGERPRINT">Complio Account Verification</h3>
+            </div>
+            <div class="col-md-12 bg-white shadow-sm rounded py-3">
+                <span style="color: red" *ngIf="errMessage != ''">{{errMessage}}</span>
+                <form [formGroup]="accountVerificationForm">
+                    <div *ngIf="dvSectionWithAnyPrmsn">
+                        <div class="row">
+                            <div class="col-md-12 ">
+                                <label class="required" id="Answer">Please choose the verification question of your choice and then provide corresponding answer
+                                    <span class='reqd'></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-1">
+                                <select (change)="onQuestionSelected($event.target.value)" [(ngModel)]="SelectedQuestion" class="custom-select" formControlName="Questions">
+                                    <option disabled hidden [value]="selectUndefinedOptionValue">
+                                        <label name="PLEASESELECT">Please Select</label>
+                                    </option>
+                                    <option *ngFor="let question of lstQuestions" value={{question.Code}}>
+                                        {{question.Name}}
+                                    </option>
+                                </select>
+                                <app-field-error-display [displayError]="isFieldValid('Questions')" errorMsg="{{errorMessage('Questions')}}">
+                                </app-field-error-display>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div *ngIf="IsShowLabel " class="col-md-12 ">
+                                <label class="required" id="Answer">Answer
+                                    <span class='reqd'></span>
+                                </label>
+
+                            </div>
+                            <div class="col-md-6 mb-1">
+
+                                <input type="date" [hidden]="hideDOBAny" class="form-control" [ngClass]="displayFieldCss('DOBAny')" [ngModel]="BirthDate | date:'yyyy-MM-dd'"
+                                    formControlName="DOBAny">
+                                <input type="text" [hidden]="hideSSNAny" class="form-control" [ngClass]="displayFieldCss('SSNAny')" formControlName="SSNAny"
+                                    placeholder="___-__-____" [textMask]="{mask: mask}">
+                                <input type="text" [hidden]="hideLastSSNAny" class="form-control" [ngClass]="displayFieldCss('LastSSNAny')" formControlName="LastSSNAny"
+                                    placeholder="____" [textMask]="{mask: LastSSNmask}">
+
+                                <!-- <input type="text" class="form-control" [ngClass]="displayFieldCss('StudentId')" formControlName="StudentId"> -->
+
+                                <app-field-error-display [displayError]="isError('DOBAny')" errorMsg="{{errorMessage('DOBAny')}}"></app-field-error-display>
+                                <app-field-error-display [displayError]="isError('SSNAny')" errorMsg="{{errorMessage('SSNAny')}}"></app-field-error-display>
+                                <app-field-error-display [displayError]="isError('LastSSNAny')" errorMsg="{{errorMessage('LastSSNAny')}}"></app-field-error-display>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div *ngIf="dvSectionWithAllPrmsn">
+                        <div class="row">
+                            <div class="col-md-12 mb-1">
+                                <span class="cptn">Please provide answer corresponding to each verification question</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-1" *ngIf="AccVerificationProcessDOBSetting">
+                                <label class="required">{{AccVerificationProcessDOBTextSetting}}
+                                    <span class='reqd'></span>
+                                </label>
+                                <input type="date" class="form-control" [ngClass]="displayFieldCss('DOBALL')" [ngModel]="BirthDate | date:'yyyy-MM-dd'" formControlName="DOBALL">
+                                <app-field-error-display [displayError]="isError('DOBALL')" errorMsg="{{errorMessage('DOBALL')}}">
+                                </app-field-error-display>
+                            </div>
+                            <div class="col-md-6 mb-1" *ngIf="AccVerificationProcessSSNSetting">
+                                <label class="required">{{AccVerificationProcessSSNTextSetting}}
+                                    <span class='reqd'></span>
+                                </label>
+                                <input type="text" class="form-control" [ngClass]="displayFieldCss('SSN')" formControlName="SSN" placeholder="___-__-____"
+                                    [textMask]="{mask: mask}">
+                                <app-field-error-display [displayError]="isError('SSN')" errorMsg="{{errorMessage('SSN')}}">
+                                </app-field-error-display>
+                            </div>
+                            <div class="col-md-6 mb-1" *ngIf="AccVerificationProcessLSSNSetting">
+                                <label class="required">{{AccVerificationProcessLSSNTextSetting}}
+                                    <span class='reqd'></span>
+                                </label>
+                                <input type="text" class="form-control" [ngClass]="displayFieldCss('LSSN')" formControlName="LSSN" placeholder="____" [textMask]="{mask: LastSSNmask}">
+                                <app-field-error-display [displayError]="isError('LSSN')" errorMsg="{{errorMessage('LSSN')}}">
+                                </app-field-error-display>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div *ngIf="AccVerificationProcessProfCustAttrSetting">
+                    <dynamic-form *ngIf="lstcustomField && lstcustomField.length > 0" [fields]="lstcustomField"></dynamic-form>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 d-flex justify-content-center">
+                        <button type="button" autofocus="false" class="btn btn-primary fixedWidthBtn" (click)="SubmitClick()">
+                            <i class="fas fa-check"></i>
+                            <label id="btnVrAcc" class="label-on-button ">Verify Account</label>
+                        </button>
+                        <button type="button" class="btn btn-primary fixedWidthBtn mx-1" (click)="CancelClick()">
+                            <i class="fas fa-times pr-1"></i>
+                            <label id="CNCL" class="label-on-button">Cancel</label>
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

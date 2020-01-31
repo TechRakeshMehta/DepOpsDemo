@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org">
+      <s:element name="GetDonorCCF">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BOID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DonorID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDonorCCFResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDonorCCFResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCCFPDF">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BOID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RegistrationID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCCFPDFResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCCFPDFResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFormPDF">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BOID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="type" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="testID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="callbackUrl" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFormPDFResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFormPDFResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTestingAuthorityList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BOID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTestingAuthorityListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTestingAuthorityListResult" type="tns:ArrayOfTestingAuthority" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTestingAuthority">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TestingAuthority" nillable="true" type="tns:TestingAuthority" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TestingAuthority">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTestReasonList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BOID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTestReasonListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTestReasonListResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CopyRegistration">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BOID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="utcExpiration" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="registrationID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CopyRegistrationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CopyRegistrationResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendEmailForNewRegistration">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="registrationID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendEmailForNewRegistrationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendEmailForNewRegistrationResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSites">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="BOID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Services" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="zipCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSitesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSitesResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetDonorCCFSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDonorCCF" />
+  </wsdl:message>
+  <wsdl:message name="GetDonorCCFSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDonorCCFResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCCFPDFSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCCFPDF" />
+  </wsdl:message>
+  <wsdl:message name="GetCCFPDFSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCCFPDFResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFormPDFSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFormPDF" />
+  </wsdl:message>
+  <wsdl:message name="GetFormPDFSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFormPDFResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTestingAuthorityListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTestingAuthorityList" />
+  </wsdl:message>
+  <wsdl:message name="GetTestingAuthorityListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTestingAuthorityListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTestReasonListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTestReasonList" />
+  </wsdl:message>
+  <wsdl:message name="GetTestReasonListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTestReasonListResponse" />
+  </wsdl:message>
+  <wsdl:message name="CopyRegistrationSoapIn">
+    <wsdl:part name="parameters" element="tns:CopyRegistration" />
+  </wsdl:message>
+  <wsdl:message name="CopyRegistrationSoapOut">
+    <wsdl:part name="parameters" element="tns:CopyRegistrationResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendEmailForNewRegistrationSoapIn">
+    <wsdl:part name="parameters" element="tns:SendEmailForNewRegistration" />
+  </wsdl:message>
+  <wsdl:message name="SendEmailForNewRegistrationSoapOut">
+    <wsdl:part name="parameters" element="tns:SendEmailForNewRegistrationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSitesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSites" />
+  </wsdl:message>
+  <wsdl:message name="GetSitesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSitesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="DonorCCFSoap">
+    <wsdl:operation name="GetDonorCCF">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns XmlNode containing Donor CCF information.</wsdl:documentation>
+      <wsdl:input message="tns:GetDonorCCFSoapIn" />
+      <wsdl:output message="tns:GetDonorCCFSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCCFPDF">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns XmlNode containing Donor CCF PDF.</wsdl:documentation>
+      <wsdl:input message="tns:GetCCFPDFSoapIn" />
+      <wsdl:output message="tns:GetCCFPDFSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFormPDF">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns XmlNode containing the registration or requisition form.</wsdl:documentation>
+      <wsdl:input message="tns:GetFormPDFSoapIn" />
+      <wsdl:output message="tns:GetFormPDFSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTestingAuthorityList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the list of testing authorities - Code, Description</wsdl:documentation>
+      <wsdl:input message="tns:GetTestingAuthorityListSoapIn" />
+      <wsdl:output message="tns:GetTestingAuthorityListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTestReasonList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the contents of the list on the Test Reason tab - Code, Description, Lab.</wsdl:documentation>
+      <wsdl:input message="tns:GetTestReasonListSoapIn" />
+      <wsdl:output message="tns:GetTestReasonListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CopyRegistration">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns XmlNode containing Copy Donor CCF registration status.</wsdl:documentation>
+      <wsdl:input message="tns:CopyRegistrationSoapIn" />
+      <wsdl:output message="tns:CopyRegistrationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendEmailForNewRegistration">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sends Email For a Newly Created Registration.</wsdl:documentation>
+      <wsdl:input message="tns:SendEmailForNewRegistrationSoapIn" />
+      <wsdl:output message="tns:SendEmailForNewRegistrationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSites">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns XmlNode containing a Sampling of available sites.</wsdl:documentation>
+      <wsdl:input message="tns:GetSitesSoapIn" />
+      <wsdl:output message="tns:GetSitesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DonorCCFSoap" type="tns:DonorCCFSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetDonorCCF">
+      <soap:operation soapAction="http://tempuri.org/GetDonorCCF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCCFPDF">
+      <soap:operation soapAction="http://tempuri.org/GetCCFPDF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormPDF">
+      <soap:operation soapAction="http://tempuri.org/GetFormPDF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTestingAuthorityList">
+      <soap:operation soapAction="http://tempuri.org/GetTestingAuthorityList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTestReasonList">
+      <soap:operation soapAction="http://tempuri.org/GetTestReasonList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CopyRegistration">
+      <soap:operation soapAction="http://tempuri.org/CopyRegistration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendEmailForNewRegistration">
+      <soap:operation soapAction="http://tempuri.org/SendEmailForNewRegistration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSites">
+      <soap:operation soapAction="http://tempuri.org/GetSites" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DonorCCFSoap12" type="tns:DonorCCFSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetDonorCCF">
+      <soap12:operation soapAction="http://tempuri.org/GetDonorCCF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCCFPDF">
+      <soap12:operation soapAction="http://tempuri.org/GetCCFPDF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormPDF">
+      <soap12:operation soapAction="http://tempuri.org/GetFormPDF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTestingAuthorityList">
+      <soap12:operation soapAction="http://tempuri.org/GetTestingAuthorityList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTestReasonList">
+      <soap12:operation soapAction="http://tempuri.org/GetTestReasonList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CopyRegistration">
+      <soap12:operation soapAction="http://tempuri.org/CopyRegistration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendEmailForNewRegistration">
+      <soap12:operation soapAction="http://tempuri.org/SendEmailForNewRegistration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSites">
+      <soap12:operation soapAction="http://tempuri.org/GetSites" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DonorCCF">
+    <wsdl:port name="DonorCCFSoap" binding="tns:DonorCCFSoap">
+      <soap:address location="https://staging.webccf.com/Service/DonorCCF.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DonorCCFSoap12" binding="tns:DonorCCFSoap12">
+      <soap12:address location="https://staging.webccf.com/Service/DonorCCF.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

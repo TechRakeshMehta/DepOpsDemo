@@ -1,0 +1,40 @@
+﻿<HTML>
+<body>
+    <h1 id="errorMsg"></h1>
+    <script>
+        (function () {
+            var errorLogNumber = "2147467259";
+            var errMsg = 'Something went wrong. Please try again later.';
+            var genericXSSandHTMLMessage = 'An exception occurred while connecting to the server. Injection of Special character(s), where not allowed (for example using < > in filters or forms), Please  remove special characters. If problem persists contact System Admin.';
+            var baseUrl = window.location.origin;
+            if (baseUrl.indexOf('abi') >= 0
+                || baseUrl.indexOf('cbi') >= 0) {
+                errMsg = 'Your session timed out or you have multiple tabs open in the same browser. Log out, login and try again.'
+            }
+            if (parent.parent.document.getElementById("progswr") != null &&
+                parent.parent.document.getElementById("progswr").style["display"] !== '') {
+                    parent.parent.document.getElementById("progswr").style["display"] = "none";
+            }
+
+            if (document.body.innerHTML.indexOf('-' + errorLogNumber) >= 0) {
+                document.body.innerHTML = '';
+                if (parent.parent.document.getElementById("hdnGenericExceptionMsgXSSANDHTML") != null) {
+                    var getHiddenValue = parent.parent.document.getElementById("hdnGenericExceptionMsgXSSANDHTML").value;
+                    if (getHiddenValue != '' && getHiddenValue !== null) {
+                        document.body.innerHTML += '<h1>' + getHiddenValue + '</h1 > ';
+                    }
+                    else {
+                        document.body.innerHTML += '<h1>' + genericXSSandHTMLMessage + '</h1 > ';
+                    }
+                }
+                else {
+                    document.body.innerHTML += '<h1>' + genericXSSandHTMLMessage + '</h1 > ';
+                }
+            }
+            else {
+                document.body.innerHTML += '<h1>' + errMsg + '</h1 > ';
+            }
+        })();
+    </script>
+</body>
+</HTML>

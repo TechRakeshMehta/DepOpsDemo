@@ -1,0 +1,317 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{79F18A05-E628-4C59-AD95-40640F0260DA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>INTSOF.Utils</RootNamespace>
+    <AssemblyName>INTSOF.Utils</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;CONTRACTS_FULL</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <CodeAnalysisRuleSet>..\WebSites\CoreWeb\ComplioEmptyRuleSet.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;CONTRACTS_FULL</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <CodeAnalysisRuleSet>..\WebSites\CoreWeb\ComplioEmptyRuleSet.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AWSSDK.Core">
+      <HintPath>..\Library\AWSSDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.S3">
+      <HintPath>..\Library\AWSSDK.S3.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.SimpleNotificationService">
+      <HintPath>..\Library\AWSSDK.SimpleNotificationService.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\ThirdParty\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Intsof.SMTPService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d2e1941283e579c5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Intsof.SMTPService.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\Library\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI">
+      <HintPath>..\Library\ThirdParty\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.0.6.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\ThirdParty\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.0.6.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\ThirdParty\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.0.6.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\ThirdParty\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="StackExchange.Redis.StrongName, Version=1.2.6.0, Culture=neutral, PublicKeyToken=c219ff1ca8c2ce46, processorArchitecture=MSIL">
+      <HintPath>..\packages\StackExchange.Redis.StrongName.1.2.6\lib\net46\StackExchange.Redis.StrongName.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AgencyExcelDataContract.cs" />
+    <Compile Include="AmazonS3Documents.cs" />
+    <Compile Include="ApplicantDetailContract.cs" />
+    <Compile Include="ApplicationConstants.cs" />
+    <Compile Include="AssetAttributeTypeList.cs" />
+    <Compile Include="AssetAttributeValueList.cs" />
+    <Compile Include="AssignQueueRecordsForMultipleTenant.cs" />
+    <Compile Include="BusinessChannelTypeMappingData.cs" />
+    <Compile Include="CommonFileManager.cs" />
+    <Compile Include="CommonPocoClasses.cs" />
+    <Compile Include="ComplianceVerificationControls.cs" />
+    <Compile Include="Consts\DataFeedConstants.cs" />
+    <Compile Include="Consts\EmailFieldConstants.cs" />
+    <Compile Include="Consts\ExcelReaderConstants.cs" />
+    <Compile Include="Consts\QueueConstants.cs" />
+    <Compile Include="Consts\SysXAlertMaintenanceConst.cs" />
+    <Compile Include="Consts\SysXClientConsts.cs" />
+    <Compile Include="Consts\SysXHelpConsts.cs" />
+    <Compile Include="Consts\ResourceConst.cs" />
+    <Compile Include="Consts\SysXCachingConst.cs" />
+    <Compile Include="Consts\AppConsts.cs" />
+    <Compile Include="Consts\SysXDBConsts.cs" />
+    <Compile Include="Consts\SysXExceptionConsts.cs" />
+    <Compile Include="Consts\SysXSearchConsts.cs" />
+    <Compile Include="Consts\SysXSecurityConst.cs" />
+    <Compile Include="Cryptography.cs" />
+    <Compile Include="CustomPagingArgsContract.cs" />
+    <Compile Include="DataContractSerializer.cs" />
+    <Compile Include="DynamicCopy.cs" />
+    <Compile Include="EntityFramework\ExpressionVisitor.cs" />
+    <Compile Include="EnumHelper.cs" />
+    <Compile Include="Enums\ApplicationEnum.cs" />
+    <Compile Include="Enums\DataFeedEnum.cs" />
+    <Compile Include="Enums\ServiceUrlEnums.cs" />
+    <Compile Include="Events\DeleteEntityEventArgs.cs" />
+    <Compile Include="Events\RetrivingEntitiesEventArgs.cs" />
+    <Compile Include="ExcelReader.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="FileManager.cs" />
+    <Compile Include="FingerPrint\NISTSpecification.cs" />
+    <Compile Include="FPFileApplicantImage.cs" />
+    <Compile Include="IPersistViewState.cs" />
+    <Compile Include="ItemVerificationQueueData.cs" />
+    <Compile Include="LegacyArchive\Cryption.cs" />
+    <Compile Include="LegacyArchive\DataFormat.cs" />
+    <Compile Include="LegacyArchive\DisplayField.cs" />
+    <Compile Include="LegacyArchive\DisplayFlags.cs" />
+    <Compile Include="LegacyArchive\DisplayMappingAttribute.cs" />
+    <Compile Include="LegacyArchive\LegacyArchiveExtensions.cs" />
+    <Compile Include="LegacyArchive\LegacyArchiveUtil.cs" />
+    <Compile Include="LookupInfo.cs" />
+    <Compile Include="EntityFramework\PrediateQuery.cs" />
+    <Compile Include="EntityFramework\PredicateQueryProvider.cs" />
+    <Compile Include="EntityFramework\ExpressionExpander.cs" />
+    <Compile Include="EntityFramework\Extensions.cs" />
+    <Compile Include="EntityFramework\PredicateBuilder.cs" />
+    <Compile Include="PdfHelper\DocumentPdfMapper.cs" />
+    <Compile Include="PdfHelper\ITextSharpPdfWrapper.cs" />
+    <Compile Include="PdfHelper\PdfOrderData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RedisOutputCacheProvider\BinarySerializer.cs" />
+    <Compile Include="RedisOutputCacheProvider\IOutputCacheConnection.cs" />
+    <Compile Include="RedisOutputCacheProvider\IRedisClientConnection.cs" />
+    <Compile Include="RedisOutputCacheProvider\ISerializer.cs" />
+    <Compile Include="RedisOutputCacheProvider\LogUtility.cs" />
+    <Compile Include="RedisOutputCacheProvider\ProviderConfiguration.cs" />
+    <Compile Include="RedisOutputCacheProvider\RedisCacheProvider.cs" />
+    <Compile Include="RedisOutputCacheProvider\RedisNull.cs" />
+    <Compile Include="RedisOutputCacheProvider\RedisOutputCacheConnectionWrapper.cs" />
+    <Compile Include="RedisOutputCacheProvider\RedisProviderResource.Designer.cs" />
+    <Compile Include="RedisOutputCacheProvider\RedisSharedConnection.cs" />
+    <Compile Include="RedisOutputCacheProvider\RedisUtility.cs" />
+    <Compile Include="RedisOutputCacheProvider\StackExchangeClientConnection.cs" />
+    <Compile Include="RedisOutputCacheProvider\ValueWrapper.cs" />
+    <Compile Include="Service References\EmailService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\PDFConversion\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="SMSNotification\ApplicantSMSNotificationDataContract.cs" />
+    <Compile Include="SMSNotification\SMSNotification.cs" />
+    <Compile Include="SPI\Email\IEmailService.cs" />
+    <Compile Include="SPI\PDFConversion\IPDFConversion.cs" />
+    <Compile Include="SsoHandlers\BsuSsoHandler.cs" />
+    <Compile Include="SsoHandlers\NscSsoHandler.cs" />
+    <Compile Include="SsoHandlers\NyuSsoHandler.cs" />
+    <Compile Include="SsoHandlers\RossSSOHandler.cs" />
+    <Compile Include="SsoHandlers\SsoHandler.cs" />
+    <Compile Include="SsoHandlers\SsoHandlerContract.cs" />
+    <Compile Include="SsoHandlers\UconnSsoHandler.cs" />
+    <Compile Include="SsoHandlers\UPENNDENTALSsoHandler.cs" />
+    <Compile Include="SsoHandlers\UPENNSsoHandler.cs" />
+    <Compile Include="SsoHandlers\WGUSsoHandler.cs" />
+    <Compile Include="SysXEmailService.cs" />
+    <Compile Include="SysXException.cs" />
+    <Compile Include="SysXMembershipUtil.cs" />
+    <Compile Include="SysXPageViewStatePersister.cs" />
+    <Compile Include="RedisPersistViewStateProvider.cs" />
+    <Compile Include="SysXPersistViewStateProvider.cs" />
+    <Compile Include="SysXResources.cs" />
+    <Compile Include="SysXSearchOptions.cs" />
+    <Compile Include="SysXUtils.cs" />
+    <Compile Include="UserContext.cs" />
+    <Compile Include="WebServiceInvoker.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="key.snk" />
+    <None Include="packages.config" />
+    <None Include="Service References\EmailService\EmailService.wsdl" />
+    <None Include="Service References\EmailService\EmailService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EmailService\EmailService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EmailService\EmailService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EmailService\EmailService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PDFConversion\INTSOF.Utils.PDFConversion.ApplicantDoc.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PDFConversion\INTSOF.Utils.PDFConversion.ApplicantDocMerging.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PDFConversion\PDFConversion.wsdl" />
+    <None Include="Service References\PDFConversion\PDFConversion.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PDFConversion\PDFConversion1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PDFConversion\PDFConversion2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\INTSOF.Logger\INTSOF.Logger.csproj">
+      <Project>{20595140-2FD9-4DF4-83E3-0D0ED819D4D1}</Project>
+      <Name>INTSOF.Logger</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\EmailService\" />
+    <WCFMetadataStorage Include="Service References\PDFConversion\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EmailService\EmailService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EmailService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EmailService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EmailService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PDFConversion\PDFConversion.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PDFConversion\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PDFConversion\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PDFConversion\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="RedisOutputCacheProvider\RedisProviderResource.resx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

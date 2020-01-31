@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<DetermineReassignment xmlns="http://tempuri.org/ADBEmails.xsd">
+  <Contents>
+    <DecisionText></DecisionText>
+    <DecisionDescription></DecisionDescription >
+  </Contents>
+</DetermineReassignment>

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<NewAccount xmlns="http://tempuri.org/ADBEmails.xsd">
+  <Contents>
+    <FirstName></FirstName>
+    <LastName></LastName>
+    <LoweredUserName></LoweredUserName>
+    <DefaultPassword></DefaultPassword>
+    <Role></Role>
+  </Contents>
+</NewAccount>

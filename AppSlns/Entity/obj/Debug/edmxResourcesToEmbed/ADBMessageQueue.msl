@@ -1,0 +1,586 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ADBMessageDB_DevModelStoreContainer" CdmEntityContainer="ADBMessageDB_DevEntities">
+    <FunctionImportMapping FunctionImportName="SendGenMsgToApplicantQueue" FunctionName="ADBMessageDB_DevModel.Store.SendGenMsgToApplicantQueue" />
+    <FunctionImportMapping FunctionImportName="GetADBMessageContents" FunctionName="ADBMessageDB_DevModel.Store.GetADBMessageContent">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ADBMessageDB_DevModel.GetADBMessageContentResult">
+          <ScalarProperty Name="DocumentName" ColumnName="DocumentName" />
+          <ScalarProperty Name="EVaultDocumentID" ColumnName="EVaultDocumentID" />
+          <ScalarProperty Name="MessageBody" ColumnName="MessageBody" />
+          <ScalarProperty Name="OriginalDocumentName" ColumnName="OriginalDocumentName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetUniqueTemplateName" FunctionName="ADBMessageDB_DevModel.Store.GetUniqueTemplateName" />
+    <FunctionImportMapping FunctionImportName="ApplyMessageRulesOnCreation" FunctionName="ADBMessageDB_DevModel.Store.ApplyMessageRulesOnCreation" />
+    <EntitySetMapping Name="CommunicationMockUpDatas">
+      <EntityTypeMapping TypeName="ADBMessageDB_DevModel.CommunicationMockUpData">
+        <MappingFragment StoreEntitySet="CommunicationMockUpData">
+          <ScalarProperty Name="ComplianceItemExpiryDate" ColumnName="ComplianceItemExpiryDate" />
+          <ScalarProperty Name="ComplianceItemName" ColumnName="ComplianceItemName" />
+          <ScalarProperty Name="ComplianceExpiryDate" ColumnName="ComplianceExpiryDate" />
+          <ScalarProperty Name="ComplianceName" ColumnName="ComplianceName" />
+          <ScalarProperty Name="EventNewEndDate" ColumnName="EventNewEndDate" />
+          <ScalarProperty Name="EventNewStartDate" ColumnName="EventNewStartDate" />
+          <ScalarProperty Name="EventEndDate" ColumnName="EventEndDate" />
+          <ScalarProperty Name="EventStartDate" ColumnName="EventStartDate" />
+          <ScalarProperty Name="EventName" ColumnName="EventName" />
+          <ScalarProperty Name="MBSPaymentDetails" ColumnName="MBSPaymentDetails" />
+          <ScalarProperty Name="MoneyOrderDetails" ColumnName="MoneyOrderDetails" />
+          <ScalarProperty Name="CreditCardDetails" ColumnName="CreditCardDetails" />
+          <ScalarProperty Name="ComplianceStatus" ColumnName="ComplianceStatus" />
+          <ScalarProperty Name="AccountStatus" ColumnName="AccountStatus" />
+          <ScalarProperty Name="SubscriptionEndDate" ColumnName="SubscriptionEndDate" />
+          <ScalarProperty Name="SubscriptionStartDate" ColumnName="SubscriptionStartDate" />
+          <ScalarProperty Name="SubscriptionName" ColumnName="SubscriptionName" />
+          <ScalarProperty Name="ProgramName" ColumnName="ProgramName" />
+          <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
+          <ScalarProperty Name="OrderContent" ColumnName="OrderContent" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="ReceiverOrganizationUserID" ColumnName="ReceiverOrganizationUserID" />
+          <ScalarProperty Name="SubEventID" ColumnName="SubEventID" />
+          <ScalarProperty Name="CommunicationMockUpDataID" ColumnName="CommunicationMockUpDataID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CommunicationTemplatePlaceHolders">
+      <EntityTypeMapping TypeName="ADBMessageDB_DevModel.CommunicationTemplatePlaceHolder">
+        <MappingFragment StoreEntitySet="CommunicationTemplatePlaceHolders">
+          <ScalarProperty Name="ModifyUserID" ColumnName="ModifyUserID" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="CreateUserID" ColumnName="CreateUserID" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Property" ColumnName="Property" />
+          <ScalarProperty Name="PlaceHolder" ColumnName="PlaceHolder" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CommunicationTemplatePlaceHolderID" ColumnName="CommunicationTemplatePlaceHolderID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CommunicationTemplatePlaceHolderSubEvents">
+      <EntityTypeMapping TypeName="ADBMessageDB_DevModel.CommunicationTemplatePlaceHolderSubEvent">
+        <MappingFragment StoreEntitySet="CommunicationTemplatePlaceHolderSubEvents">
+          <ScalarProperty Name="CommunicationSubEventID" ColumnName="CommunicationSubEventID" />
+          <ScalarProperty Name="CommunicationTemplatePlaceHolderID" ColumnName="CommunicationTemplatePlaceHolderID" />
+          <ScalarProperty Name="CommunicationTemplatePlaceHolderSubEventID" ColumnName="CommunicationTemplatePlaceHolderSubEventID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="lkpCommunicationEvents">
+      <EntityTypeMapping TypeName="ADBMessageDB_DevModel.lkpCommunicationEvent">
+        <MappingFragment StoreEntitySet="lkpCommunicationEvent">
+          <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CommunicationEventID" ColumnName="CommunicationEventID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="lkpCommunicationTypes">
+      <EntityTypeMapping TypeName="ADBMessageDB_DevModel.lkpCommunicationType">
+        <MappingFragment StoreEntitySet="lkpCommunicationType">
+          <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CommunicationTypeID" ColumnName="CommunicationTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserCommunicationSubscriptionSettings">
+      <EntityTypeMapping TypeName="ADBMessageDB_DevModel.UserCommunicationSubscriptionSetting">
+        <MappingFragment StoreEntitySet="UserCommunicationSubscriptionSettings">
+          <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="IsSubscribedToAdmin" ColumnName="IsSubscribedToAdmin" />
+          <ScalarProperty Name="IsSubscribedToUser" ColumnName="IsSubscribedToUser" />
+          <ScalarProperty Name="CommunicationEventID" ColumnName="CommunicationEventID" />
+          <ScalarProperty Name="CommunicationTypeID" ColumnName="CommunicationTypeID" />
+          <ScalarProperty Name="OrganizationUserID" ColumnName="OrganizationUserID" />
+          <ScalarProperty Name="UserCommunicationSubscriptionSettingID" ColumnName="UserCommunicationSubscriptionSettingID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwCommunicationTypes">
+      <EntityTypeMapping TypeName="ADBMessageDB_DevModel.vwCommunicationType">
+        <MappingFragment StoreEntitySet="vwCommunicationType">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="CommunicationTypeId" ColumnName="CommunicationTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwMessages">
+      <EntityTypeMapping TypeName="ADBMessageDB_DevModel.vwMessage">
+        <MappingFragment StoreEntitySet="vwMessage">
+          <ScalarProperty Name="ADBMessageId" ColumnName="ADBMessageId" />
+          <ScalarProperty Name="ReceiveDate" ColumnName="ReceiveDate" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="From" ColumnName="From" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ADBMessages">
+      <EntityTypeMapping TypeName="ADBMessageDB_DevModel.ADBMessage">
+        <MappingFragment StoreEntitySet="ADBMessage">
+          <ScalarProperty Name="IsUnread" ColumnName="IsUnread" />
+          <ScalarProperty Name="TemplateName" ColumnName="TemplateName" />
+          <ScalarProperty Name="CommunicationTypeID" ColumnName="CommunicationTypeID" />
+          <ScalarProperty Name="IsFollowUp" ColumnName="IsFollowUp" />
+          <ScalarProperty Name="IsHighImportant" ColumnName="IsHighImportant" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="DocumentName" ColumnName="DocumentName" />
+          <ScalarProperty Name="OriginalDocumentName" ColumnName="OriginalDocumentName" />
+          <ScalarProperty Name="MessageMode" ColumnName="MessageMode" />
+          <ScalarProperty Name="ParentMessageID" ColumnName="ParentMessageID" />
+          <ScalarProperty Name="ConversationHandleID" ColumnName="ConversationHandleID" />
+          <ScalarProperty Name="ReceiveDate" ColumnName="ReceiveDate" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="From" ColumnName="From" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="ADBMessageID" ColumnName="ADBMessageID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_groupMessages">
+      <EntityTypeMapping TypeName="ADBMessageDB_DevModel.vw_groupMessages">
+        <MappingFragment StoreEntitySet="vw_groupMessages">
+          <ScalarProperty Name="SenderUser" ColumnName="SenderUser" />
+          <ScalarProperty Name="ToUserList" ColumnName="ToUserList" />
+          <ScalarProperty Name="MessageBody" ColumnName="MessageBody" />
+          <ScalarProperty Name="ReceiveDate" ColumnName="ReceiveDate" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IsCC" ColumnName="IsCC" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserGroupID" ColumnName="UserGroupID" />
+          <ScalarProperty Name="ADBMessageToUserGroupID" ColumnName="ADBMessageToUserGroupID" />
+          <ScalarProperty Name="IsUnread" ColumnName="IsUnread" />
+          <ScalarProperty Name="TemplateName" ColumnName="TemplateName" />
+          <ScalarProperty Name="IsFollowUp" ColumnName="IsFollowUp" />
+          <ScalarProperty Name="IsHighImportant" ColumnName="IsHighImportant" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="DocumentName" ColumnName="DocumentName" />
+          <ScalarProperty Name="OriginalDocumentName" ColumnName="OriginalDocumentName" />
+          <ScalarProperty Name="MessageMode" ColumnName="MessageMode" />
+          <ScalarProperty Name="ParentMessageID" ColumnName="ParentMessageID" />
+          <ScalarProperty Name="ConversationHandleID" ColumnName="ConversationHandleID" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="From" ColumnName="From" />
+          <ScalarProperty Name="ADBMessageID" ColumnName="ADBMessageID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SendGenMsgToADBQueue" FunctionName="ADBMessageDB_DevModel.Store.SendGenMsgToADBQueue" />
+    <FunctionImportMapping FunctionImportName="ReplyGenMsgToADB" FunctionName="ADBMessageDB_DevModel.Store.ReplyGenMsgToADBQueue" />
+    <EntitySetMapping Name="ADBMessageToUserGroups">
+      <EntityTypeMapping TypeName="ADBMessageDB_DevModel.ADBMessageToUserGroup">
+        <MappingFragment StoreEntitySet="ADBMessageToUserGroup">
+          <ScalarProperty Name="ConversationGroupID" ColumnName="ConversationGroupID" />
+          <ScalarProperty Name="ConversationHandleID" ColumnName="ConversationHandleID" />
+          <ScalarProperty Name="ConversationID" ColumnName="ConversationID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsCC" ColumnName="IsCC" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserGroupID" ColumnName="UserGroupID" />
+          <ScalarProperty Name="ADBMessageID" ColumnName="ADBMessageID" />
+          <ScalarProperty Name="ADBMessageToUserGroupID" ColumnName="ADBMessageToUserGroupID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SystemCommunications">
+      <EntityTypeMapping TypeName="ADBMessageDB_DevModel.SystemCommunication">
+        <MappingFragment StoreEntitySet="SystemCommunication">
+          <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="SenderName" ColumnName="SenderName" />
+          <ScalarProperty Name="SenderEmailID" ColumnName="SenderEmailID" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="CommunicationSubEventID" ColumnName="CommunicationSubEventID" />
+          <ScalarProperty Name="SystemCommunicationID" ColumnName="SystemCommunicationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ADBMessageToLists">
+      <EntityTypeMapping TypeName="ADBMessageDB_DevModel.ADBMessageToList">
+        <MappingFragment StoreEntitySet="ADBMessageToList">
+          <ScalarProperty Name="IsBcc" ColumnName="IsBcc" />
+          <ScalarProperty Name="IsFollowup" ColumnName="IsFollowup" />
+          <ScalarProperty Name="IsUnread" ColumnName="IsUnread" />
+          <ScalarProperty Name="FolderID" ColumnName="FolderID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsCC" ColumnName="IsCC" />
+          <ScalarProperty Name="ADBMessageID" ColumnName="ADBMessageID" />
+          <ScalarProperty Name="EntityID" ColumnName="EntityID" />
+          <ScalarProperty Name="ConversationGroupID" ColumnName="ConversationGroupID" />
+          <ScalarProperty Name="ConversationHandleID" ColumnName="ConversationHandleID" />
+          <ScalarProperty Name="ConversationID" ColumnName="ConversationID" />
+          <ScalarProperty Name="ADBMessageToListID" ColumnName="ADBMessageToListID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CommunicationCCMasters">
+      <EntityTypeMapping TypeName="ADBMessageDB_DevModel.CommunicationCCMaster">
+        <MappingFragment StoreEntitySet="CommunicationCCMaster">
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CommunicationSubEventID" ColumnName="CommunicationSubEventID" />
+          <ScalarProperty Name="TenantID" ColumnName="TenantID" />
+          <ScalarProperty Name="CommunicationCCMasterID" ColumnName="CommunicationCCMasterID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CommunicationCCUsers">
+      <EntityTypeMapping TypeName="ADBMessageDB_DevModel.CommunicationCCUser">
+        <MappingFragment StoreEntitySet="CommunicationCCUsers">
+          <ScalarProperty Name="IsOnlyRotationCreatedNotification" ColumnName="IsOnlyRotationCreatedNotification" />
+          <ScalarProperty Name="IsEmail" ColumnName="IsEmail" />
+          <ScalarProperty Name="IsCommunicationCentre" ColumnName="IsCommunicationCentre" />
+          <ScalarProperty Name="CopyTypeID" ColumnName="CopyTypeID" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="OrganizationUserID" ColumnName="OrganizationUserID" />
+          <ScalarProperty Name="CommunicationCCMasterID" ColumnName="CommunicationCCMasterID" />
+          <ScalarProperty Name="CommunicationCCUsersID" ColumnName="CommunicationCCUsersID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="usp_GetCommunicationCCusersData" FunctionName="ADBMessageDB_DevModel.Store.usp_GetCommunicationCCusersData">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ADBMessageDB_DevModel.GetCommunicationCCusersList">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="lkpSubEventCategoryTypes">
+      <EntityTypeMapping TypeName="ADBMessageDB_DevModel.lkpSubEventCategoryType">
+        <MappingFragment StoreEntitySet="lkpSubEventCategoryType">
+          <ScalarProperty Name="SCT_BusinessChannelType" ColumnName="SCT_BusinessChannelType" />
+          <ScalarProperty Name="SCT_Description" ColumnName="SCT_Description" />
+          <ScalarProperty Name="SCT_Name" ColumnName="SCT_Name" />
+          <ScalarProperty Name="SCT_Code" ColumnName="SCT_Code" />
+          <ScalarProperty Name="SCT_ID" ColumnName="SCT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="lkpCopyTypes">
+      <EntityTypeMapping TypeName="ADBMessageDB_DevModel.lkpCopyType">
+        <MappingFragment StoreEntitySet="lkpCopyType">
+          <ScalarProperty Name="CT_CreatedOn" ColumnName="CT_CreatedOn" />
+          <ScalarProperty Name="CT_CreatedBy" ColumnName="CT_CreatedBy" />
+          <ScalarProperty Name="CT_IsDeleted" ColumnName="CT_IsDeleted" />
+          <ScalarProperty Name="CT_Description" ColumnName="CT_Description" />
+          <ScalarProperty Name="CT_Code" ColumnName="CT_Code" />
+          <ScalarProperty Name="CT_Name" ColumnName="CT_Name" />
+          <ScalarProperty Name="CT_Id" ColumnName="CT_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExternalCopyUsers">
+      <EntityTypeMapping TypeName="ADBMessageDB_DevModel.ExternalCopyUser">
+        <MappingFragment StoreEntitySet="ExternalCopyUsers">
+          <ScalarProperty Name="ECU_ModifiedByID" ColumnName="ECU_ModifiedByID" />
+          <ScalarProperty Name="ECU_ModifiedOn" ColumnName="ECU_ModifiedOn" />
+          <ScalarProperty Name="ECU_CreatedByID" ColumnName="ECU_CreatedByID" />
+          <ScalarProperty Name="ECU_CreatedOn" ColumnName="ECU_CreatedOn" />
+          <ScalarProperty Name="ECU_IsDeleted" ColumnName="ECU_IsDeleted" />
+          <ScalarProperty Name="ECU_CommunicationSubEventID" ColumnName="ECU_CommunicationSubEventID" />
+          <ScalarProperty Name="ECU_CopyTypeID" ColumnName="ECU_CopyTypeID" />
+          <ScalarProperty Name="ECU_HierarchyNodeID" ColumnName="ECU_HierarchyNodeID" />
+          <ScalarProperty Name="ECU_TenantID" ColumnName="ECU_TenantID" />
+          <ScalarProperty Name="ECU_EmailID" ColumnName="ECU_EmailID" />
+          <ScalarProperty Name="ECU_LastName" ColumnName="ECU_LastName" />
+          <ScalarProperty Name="ECU_FirstName" ColumnName="ECU_FirstName" />
+          <ScalarProperty Name="ECU_ID" ColumnName="ECU_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HierarchyNotificationMappings">
+      <EntityTypeMapping TypeName="ADBMessageDB_DevModel.HierarchyNotificationMapping">
+        <MappingFragment StoreEntitySet="HierarchyNotificationMapping">
+          <ScalarProperty Name="HNM_ModifiedOn" ColumnName="HNM_ModifiedOn" />
+          <ScalarProperty Name="HNM_ModifiedByID" ColumnName="HNM_ModifiedByID" />
+          <ScalarProperty Name="HNM_CreatedOn" ColumnName="HNM_CreatedOn" />
+          <ScalarProperty Name="HNM_CreatedByID" ColumnName="HNM_CreatedByID" />
+          <ScalarProperty Name="HNM_IsDeleted" ColumnName="HNM_IsDeleted" />
+          <ScalarProperty Name="HNM_IsEmail" ColumnName="HNM_IsEmail" />
+          <ScalarProperty Name="HNM_IsCommunicationCenter" ColumnName="HNM_IsCommunicationCenter" />
+          <ScalarProperty Name="HNM_SubEventID" ColumnName="HNM_SubEventID" />
+          <ScalarProperty Name="HNM_CopyTypeID" ColumnName="HNM_CopyTypeID" />
+          <ScalarProperty Name="HNM_HierarchyNodeID" ColumnName="HNM_HierarchyNodeID" />
+          <ScalarProperty Name="HNM_HierarchyContactMappingID" ColumnName="HNM_HierarchyContactMappingID" />
+          <ScalarProperty Name="HNM_TenantID" ColumnName="HNM_TenantID" />
+          <ScalarProperty Name="HNM_ID" ColumnName="HNM_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CommunicationTemplateEntities">
+      <EntityTypeMapping TypeName="ADBMessageDB_DevModel.CommunicationTemplateEntity">
+        <MappingFragment StoreEntitySet="CommunicationTemplateEntity">
+          <ScalarProperty Name="CTE_ModifiedOn" ColumnName="CTE_ModifiedOn" />
+          <ScalarProperty Name="CTE_ModifiedBy" ColumnName="CTE_ModifiedBy" />
+          <ScalarProperty Name="CTE_CreatedOn" ColumnName="CTE_CreatedOn" />
+          <ScalarProperty Name="CTE_CreatedBy" ColumnName="CTE_CreatedBy" />
+          <ScalarProperty Name="CTE_IsDeleted" ColumnName="CTE_IsDeleted" />
+          <ScalarProperty Name="CTE_EntityID" ColumnName="CTE_EntityID" />
+          <ScalarProperty Name="CTE_CommunicationEntityTypeID" ColumnName="CTE_CommunicationEntityTypeID" />
+          <ScalarProperty Name="CTE_TemplateID" ColumnName="CTE_TemplateID" />
+          <ScalarProperty Name="CTE_ID" ColumnName="CTE_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="lkpCommunicationEntityTypes">
+      <EntityTypeMapping TypeName="ADBMessageDB_DevModel.lkpCommunicationEntityType">
+        <MappingFragment StoreEntitySet="lkpCommunicationEntityType">
+          <ScalarProperty Name="CET_ModifiedOn" ColumnName="CET_ModifiedOn" />
+          <ScalarProperty Name="CET_ModifiedBy" ColumnName="CET_ModifiedBy" />
+          <ScalarProperty Name="CET_CreatedOn" ColumnName="CET_CreatedOn" />
+          <ScalarProperty Name="CET_CreatedBy" ColumnName="CET_CreatedBy" />
+          <ScalarProperty Name="CET_IsDeleted" ColumnName="CET_IsDeleted" />
+          <ScalarProperty Name="CET_Code" ColumnName="CET_Code" />
+          <ScalarProperty Name="CET_Name" ColumnName="CET_Name" />
+          <ScalarProperty Name="CET_ID" ColumnName="CET_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="lkpDocumentAttachmentTypes">
+      <EntityTypeMapping TypeName="ADBMessageDB_DevModel.lkpDocumentAttachmentType">
+        <MappingFragment StoreEntitySet="lkpDocumentAttachmentType">
+          <ScalarProperty Name="DAT_ModifiedOn" ColumnName="DAT_ModifiedOn" />
+          <ScalarProperty Name="DAT_ModifiedBy" ColumnName="DAT_ModifiedBy" />
+          <ScalarProperty Name="DAT_CreatedOn" ColumnName="DAT_CreatedOn" />
+          <ScalarProperty Name="DAT_CreatedBy" ColumnName="DAT_CreatedBy" />
+          <ScalarProperty Name="DAT_IsDeleted" ColumnName="DAT_IsDeleted" />
+          <ScalarProperty Name="DAT_Code" ColumnName="DAT_Code" />
+          <ScalarProperty Name="DAT_Name" ColumnName="DAT_Name" />
+          <ScalarProperty Name="DAT_ID" ColumnName="DAT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SystemCommunicationAttachments">
+      <EntityTypeMapping TypeName="ADBMessageDB_DevModel.SystemCommunicationAttachment">
+        <MappingFragment StoreEntitySet="SystemCommunicationAttachment">
+          <ScalarProperty Name="SCA_ModifiedOn" ColumnName="SCA_ModifiedOn" />
+          <ScalarProperty Name="SCA_ModifiedBy" ColumnName="SCA_ModifiedBy" />
+          <ScalarProperty Name="SCA_CreatedOn" ColumnName="SCA_CreatedOn" />
+          <ScalarProperty Name="SCA_CreatedBy" ColumnName="SCA_CreatedBy" />
+          <ScalarProperty Name="SCA_IsDeleted" ColumnName="SCA_IsDeleted" />
+          <ScalarProperty Name="SCA_TenantID" ColumnName="SCA_TenantID" />
+          <ScalarProperty Name="SCA_DocAttachmentTypeID" ColumnName="SCA_DocAttachmentTypeID" />
+          <ScalarProperty Name="SCA_SystemCommunicationID" ColumnName="SCA_SystemCommunicationID" />
+          <ScalarProperty Name="SCA_DocumentSize" ColumnName="SCA_DocumentSize" />
+          <ScalarProperty Name="SCA_DocumentPath" ColumnName="SCA_DocumentPath" />
+          <ScalarProperty Name="SCA_OriginalDocumentName" ColumnName="SCA_OriginalDocumentName" />
+          <ScalarProperty Name="SCA_OriginalDocumentID" ColumnName="SCA_OriginalDocumentID" />
+          <ScalarProperty Name="SCA_ID" ColumnName="SCA_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ADBMessageDocuments">
+      <EntityTypeMapping TypeName="ADBMessageDB_DevModel.ADBMessageDocument">
+        <MappingFragment StoreEntitySet="ADBMessageDocument">
+          <ScalarProperty Name="SystemCommunicationAttachmentID" ColumnName="SystemCommunicationAttachmentID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="DocumentSize" ColumnName="DocumentSize" />
+          <ScalarProperty Name="OriginalDocumentName" ColumnName="OriginalDocumentName" />
+          <ScalarProperty Name="DocumentName" ColumnName="DocumentName" />
+          <ScalarProperty Name="DocumentId" ColumnName="DocumentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SystemCommunicationDeliveries">
+      <EntityTypeMapping TypeName="ADBMessageDB_DevModel.SystemCommunicationDelivery">
+        <MappingFragment StoreEntitySet="SystemCommunicationDelivery">
+          <ScalarProperty Name="NotificationDeliveryTypeID" ColumnName="NotificationDeliveryTypeID" />
+          <ScalarProperty Name="RetryErrorMessage" ColumnName="RetryErrorMessage" />
+          <ScalarProperty Name="RetryErrorDate" ColumnName="RetryErrorDate" />
+          <ScalarProperty Name="RetryCount" ColumnName="RetryCount" />
+          <ScalarProperty Name="IsBCC" ColumnName="IsBCC" />
+          <ScalarProperty Name="IsCC" ColumnName="IsCC" />
+          <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="IsDispatched" ColumnName="IsDispatched" />
+          <ScalarProperty Name="DispatchedDate" ColumnName="DispatchedDate" />
+          <ScalarProperty Name="RecieverName" ColumnName="RecieverName" />
+          <ScalarProperty Name="RecieverEmailID" ColumnName="RecieverEmailID" />
+          <ScalarProperty Name="ReceiverOrganizationUserID" ColumnName="ReceiverOrganizationUserID" />
+          <ScalarProperty Name="SystemCommunicationTypeID" ColumnName="SystemCommunicationTypeID" />
+          <ScalarProperty Name="SystemCommunicationDeliveryID" ColumnName="SystemCommunicationDeliveryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CommunicationCCUsersSettings">
+      <EntityTypeMapping TypeName="ADBMessageDB_DevModel.CommunicationCCUsersSetting">
+        <MappingFragment StoreEntitySet="CommunicationCCUsersSettings">
+          <ScalarProperty Name="CCUS_ModifiedOn" ColumnName="CCUS_ModifiedOn" />
+          <ScalarProperty Name="CCUS_ModifiedBy" ColumnName="CCUS_ModifiedBy" />
+          <ScalarProperty Name="CCUS_CreatedOn" ColumnName="CCUS_CreatedOn" />
+          <ScalarProperty Name="CCUS_CreatedBy" ColumnName="CCUS_CreatedBy" />
+          <ScalarProperty Name="CCUS_IsDeleted" ColumnName="CCUS_IsDeleted" />
+          <ScalarProperty Name="CCUS_RecordId" ColumnName="CCUS_RecordId" />
+          <ScalarProperty Name="CCUS_ObjectTypeId" ColumnName="CCUS_ObjectTypeId" />
+          <ScalarProperty Name="CCUS_CommunicationCCUsersID" ColumnName="CCUS_CommunicationCCUsersID" />
+          <ScalarProperty Name="CCUS_Id" ColumnName="CCUS_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="lkpRecordObjectTypes">
+      <EntityTypeMapping TypeName="ADBMessageDB_DevModel.lkpRecordObjectType">
+        <MappingFragment StoreEntitySet="lkpRecordObjectType">
+          <ScalarProperty Name="OT_ModifiedOn" ColumnName="OT_ModifiedOn" />
+          <ScalarProperty Name="OT_ModifiedByID" ColumnName="OT_ModifiedByID" />
+          <ScalarProperty Name="OT_CreatedOn" ColumnName="OT_CreatedOn" />
+          <ScalarProperty Name="OT_CreatedByID" ColumnName="OT_CreatedByID" />
+          <ScalarProperty Name="OT_IsDeleted" ColumnName="OT_IsDeleted" />
+          <ScalarProperty Name="OT_Description" ColumnName="OT_Description" />
+          <ScalarProperty Name="OT_Name" ColumnName="OT_Name" />
+          <ScalarProperty Name="OT_Code" ColumnName="OT_Code" />
+          <ScalarProperty Name="OT_ID" ColumnName="OT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="lkpNotificationDeliveryTypes">
+      <EntityTypeMapping TypeName="ADBMessageDB_DevModel.lkpNotificationDeliveryType">
+        <MappingFragment StoreEntitySet="lkpNotificationDeliveryType">
+          <ScalarProperty Name="NDT_CreatedOn" ColumnName="NDT_CreatedOn" />
+          <ScalarProperty Name="NDT_CreatedBy" ColumnName="NDT_CreatedBy" />
+          <ScalarProperty Name="NDT_IsDeleted" ColumnName="NDT_IsDeleted" />
+          <ScalarProperty Name="NDT_Description" ColumnName="NDT_Description" />
+          <ScalarProperty Name="NDT_Name" ColumnName="NDT_Name" />
+          <ScalarProperty Name="NDT_Code" ColumnName="NDT_Code" />
+          <ScalarProperty Name="NDT_ID" ColumnName="NDT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="lkpCommunicationSubEvents">
+      <EntityTypeMapping TypeName="ADBMessageDB_DevModel.lkpCommunicationSubEvent">
+        <MappingFragment StoreEntitySet="lkpCommunicationSubEvents">
+          <ScalarProperty Name="IsHierarchySpecific" ColumnName="IsHierarchySpecific" />
+          <ScalarProperty Name="CategoryTypeID" ColumnName="CategoryTypeID" />
+          <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CommunicationEventID" ColumnName="CommunicationEventID" />
+          <ScalarProperty Name="CommunicationTypeID" ColumnName="CommunicationTypeID" />
+          <ScalarProperty Name="CommunicationSubEventID" ColumnName="CommunicationSubEventID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="lkpScreeningResultTypes">
+      <EntityTypeMapping TypeName="ADBMessageDB_DevModel.lkpScreeningResultType">
+        <MappingFragment StoreEntitySet="lkpScreeningResultType">
+          <ScalarProperty Name="SRT_ModifiedOn" ColumnName="SRT_ModifiedOn" />
+          <ScalarProperty Name="SRT_ModifiedBy" ColumnName="SRT_ModifiedBy" />
+          <ScalarProperty Name="SRT_CreatedOn" ColumnName="SRT_CreatedOn" />
+          <ScalarProperty Name="SRT_CreatedBy" ColumnName="SRT_CreatedBy" />
+          <ScalarProperty Name="SRT_IsDeleted" ColumnName="SRT_IsDeleted" />
+          <ScalarProperty Name="SRT_Code" ColumnName="SRT_Code" />
+          <ScalarProperty Name="SRT_Name" ColumnName="SRT_Name" />
+          <ScalarProperty Name="SRT_ID" ColumnName="SRT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CommunicationTemplates">
+      <EntityTypeMapping TypeName="ADBMessageDB_DevModel.CommunicationTemplate">
+        <MappingFragment StoreEntitySet="CommunicationTemplates">
+          <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+          <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CommunicationSubEventID" ColumnName="CommunicationSubEventID" />
+          <ScalarProperty Name="CommunicationTemplateID" ColumnName="CommunicationTemplateID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SMSTemplates">
+      <EntityTypeMapping TypeName="ADBMessageDB_DevModel.SMSTemplate">
+        <MappingFragment StoreEntitySet="SMSTemplates">
+          <ScalarProperty Name="SMST_LanguageId" ColumnName="SMST_LanguageId" />
+          <ScalarProperty Name="SMST_ModifiedOn" ColumnName="SMST_ModifiedOn" />
+          <ScalarProperty Name="SMST_ModifiedBy" ColumnName="SMST_ModifiedBy" />
+          <ScalarProperty Name="SMST_CreatedOn" ColumnName="SMST_CreatedOn" />
+          <ScalarProperty Name="SMST_CreatedBy" ColumnName="SMST_CreatedBy" />
+          <ScalarProperty Name="SMST_IsDeleted" ColumnName="SMST_IsDeleted" />
+          <ScalarProperty Name="SMST_Description" ColumnName="SMST_Description" />
+          <ScalarProperty Name="SMST_Content" ColumnName="SMST_Content" />
+          <ScalarProperty Name="SMST_Subject" ColumnName="SMST_Subject" />
+          <ScalarProperty Name="SMST_Name" ColumnName="SMST_Name" />
+          <ScalarProperty Name="SMST_CommuncicationSubEventID" ColumnName="SMST_CommuncicationSubEventID" />
+          <ScalarProperty Name="SMST_ID" ColumnName="SMST_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SystemEventSettings">
+      <EntityTypeMapping TypeName="ADBMessageDB_DevModel.SystemEventSetting">
+        <MappingFragment StoreEntitySet="SystemEventSettings">
+          <ScalarProperty Name="InstHierarchyNodeID" ColumnName="InstHierarchyNodeID" />
+          <ScalarProperty Name="AgencyHierarchyID" ColumnName="AgencyHierarchyID" />
+          <ScalarProperty Name="IsNotificationBlocked" ColumnName="IsNotificationBlocked" />
+          <ScalarProperty Name="DaysBefore" ColumnName="DaysBefore" />
+          <ScalarProperty Name="SES_NodeNotificationMappingID" ColumnName="SES_NodeNotificationMappingID" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="NoOfDays" ColumnName="NoOfDays" />
+          <ScalarProperty Name="Frequency" ColumnName="Frequency" />
+          <ScalarProperty Name="CommunicationSubEventID" ColumnName="CommunicationSubEventID" />
+          <ScalarProperty Name="CommunicationTemplateID" ColumnName="CommunicationTemplateID" />
+          <ScalarProperty Name="ComplianceItemID" ColumnName="ComplianceItemID" />
+          <ScalarProperty Name="ComplianceCategoryID" ColumnName="ComplianceCategoryID" />
+          <ScalarProperty Name="TenantID" ColumnName="TenantID" />
+          <ScalarProperty Name="SES_ID" ColumnName="SES_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

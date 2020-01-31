@@ -1,0 +1,68 @@
+<!-- Begin page content -->
+<div id="bodyBlock" class="container-fluid">
+
+
+        <section class="p-2">
+
+                <div class="col-md-12 bg-white shadow-sm rounded py-3">
+                        <div class="w-100 d-flex justify-content-center">
+
+                                <div class="media w-100">
+                                        <!-- <div class="mr-3 text-center">
+                                                                                <img class="d-block" src="../../../images/notAvaliable.jpg" alt="Generic placeholder image">
+                                                                                <a href="#">Change</a>
+                                                                        </div> -->
+                                        <div class="media-body col-md-12" id="textAlignSolution">
+                                                <div class="row">
+                                                        <div class="col-md-12">
+                                                                <div class="row">
+                                                                        <div class="col-md-6 text-right">
+                                                                                <h5 class="my-0" id="APPLICANT" style="font-weight: 600;"></h5>
+                                                                        </div>
+                                                                        <!-- <label>:</label> -->
+                                                                        <div class="col-md-6">
+                                                                                <span class="mt-0">{{applicantName}}</span>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                                <div class="row">
+                                                        <div class="col-md-12">
+                                                                <div class="row">
+                                                                        <div class="col-md-6 text-right">
+                                                                                <h5 class="my-0 pr-2" id="INSTITUTE" style="font-weight: 600;"></h5>
+                                                                        </div>
+                                                                        <!-- <label>:</label> -->
+                                                                        <div class="col-md-6">
+                                                                                <span class="mt-0">{{tenantName}}</span>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="row py-5">
+                                        <div class="col-md-12 d-flex justify-content-center pb-3">
+                                                        <a (click)="EditProfile()" class="btn btn-primary text-white mr-1" style="min-width: 192px;">
+                                                                <i class="far fa-address-book pl-1"></i>
+                                                                <label id="EDITPROFILE"></label>
+                                                        </a>
+                                                </div>
+                                <div class="col-md-12 d-flex justify-content-center pb-3">
+                                        <a (click)="createOrder()" class="btn btn-primary text-white mr-1" style="min-width: 192px;">
+                                                <i class="fas fa-shopping-cart pl-1"></i>
+                                                <label id="PLACEORDER"></label>
+                                        </a>
+                                </div>
+                                
+                                <div class="col-md-12 d-flex justify-content-center">
+                                        <a [hidden]="!IsOrderAvailable" class="btn btn-primary text-white" (click)="OrderHistory()" style="min-width: 192px;">
+                                                <i class="fas fa-history pl-1"></i>
+                                                <label id="ODRHISTORY"></label>
+                                        </a>
+                                </div>
+                        </div>
+                </div>
+        </section>
+</div>

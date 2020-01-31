@@ -1,0 +1,92 @@
+<AddOrder xmlns="AddOrder.xsd">
+<Order 
+	NewOrderID="1" 
+	ProfNo="" 
+	ServiceNo="ABC_00003"
+	Country="USA" 
+	State="GA" 
+	County="Fulton" 
+	City="" 
+	Zip="" 
+	Instruct=""
+	Stage="DRAFT" 
+	IsMultiLoc="false" 
+	AliasID="0"
+xmlns:d2p1="AddOrder.xsd"/>
+	
+<Order 
+	NewOrderID="2" 
+	ProfNo="" 
+	ServiceNo="ABC_00010"
+	Country="University of Georgia" 
+	State="Athens" 
+	County="GA"
+	City="(770)123-4567" 
+	Zip="(770)123-6789" 
+	Instruct="" 
+	Stage="DRAFT"
+	IsMultiLoc="false" 
+	AliasID="0" 
+xmlns:d2p1="AddOrder.xsd"/>
+
+<OrderField 
+	NewOrderID="2" 
+	FieldID="21679" 
+	Value=""
+xmlns:d2p1="AddOrder.xsd"/>
+
+<OrderField 
+	NewOrderID="2" 
+	FieldID="21680" 
+	Value="9/80 – 5/85"
+xmlns:d2p1="AddOrder.xsd"/>
+
+<OrderField 
+	NewOrderID="2" 
+	FieldID="21681" 
+	Value="B.S."
+xmlns:d2p1="AddOrder.xsd"/>
+
+<OrderField 
+	NewOrderID="2" 
+	FieldID="21682" 
+	Value="Business Management" 
+xmlns:d2p1="AddOrder.xsd"/>
+
+<OrderField 
+	NewOrderID="2" 
+	FieldID="21683" 
+	Value="Unknown"
+xmlns:d2p1="AddOrder.xsd"/>
+
+<Order 
+	NewOrderID="3" 
+	ProfNo="" 
+	ServiceNo="ABC_00013"
+	Country="ABC_METRO" 
+	State="GA" 
+	County="Atlanta Metro" 
+	City="" 
+	Zip=""
+	Instruct="" 
+	Stage="DRAFT" 
+	IsMultiLoc="true" 
+	AliasID="0"
+xmlns:d2p1="AddOrder.xsd"/>
+
+Compass Confidential 11 Creating a Profile and Related Orders
+<Order 
+	NewOrderID="4" 
+	ProfNo="" 
+	ServiceNo="ABC_00012"
+	Country="USA" 
+	State="GA" 
+	County="1234567890" 
+	City="7Y" 
+	Zip=""
+	Instruct="" 
+	Stage="DRAFT" 
+	IsMultiLoc="false" 
+	AliasID="0"
+xmlns:d2p1="AddOrder.xsd"/>
+</AddOrder>

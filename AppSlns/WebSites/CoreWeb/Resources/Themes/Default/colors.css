@@ -1,0 +1,384 @@
+﻿/*
+----------------------------------------------------------
+Copyright (C) Copyright Intersoft Data Labs Inc. All rights reserved.
+----------------------------------------------------------
+File: colors.css
+Version: 2012.12.12.1015*/
+
+/*General*/
+
+
+/*Application*/
+
+#userinfo_wrap {
+    background-color: Black;
+}
+.marginRight4 {
+    margin-right:4px!important;
+}
+.marginTop15 {
+    margin-top: 15px !important;
+}
+.marginTop30 {
+    margin-top: 30px !important;
+}
+.signOutIcon .rbBlank {
+    background-image: url('../../Generic/images/sign-out.png') !important;
+    background-repeat: no-repeat;
+    background-position: 0px 0px !important;
+}
+#userinfo_bar {
+    background-image: url(images/userbarbkg.png);
+    background-repeat: repeat;
+    border-color: black;
+    color: White;
+}
+
+    #userinfo_bar .user {
+        color: #00FFFF;
+        font-weight: bold;
+    }
+
+    #userinfo_bar a.logoutbtn {
+        color: #FFA915;
+    }
+
+        #userinfo_bar a.logoutbtn:visited {
+            color: #80e9fb;
+        }
+
+        #userinfo_bar a.logoutbtn:hover {
+            text-decoration: none;
+        }
+
+
+
+/*FormUI*/
+
+* {
+    border-color: #adadad;
+}
+
+body {
+    background-color: #F8F8F8;
+    ;
+}
+
+.tplTopPanel {
+    background-color: #eee;
+}
+
+#appttl {
+    color: #2b5c96;
+}
+
+#apptag {
+    color: #555;
+}
+
+#appportl {
+    border-left-color: #a4a4a4;
+    color: #a4a4a4;
+}
+
+#appmenuwr {
+    border-top-color: #fff;
+}
+/*.astlegnd{background-image:url(images/alegnd.png);background-repeat:no-repeat;background-position:top left;background-color:#fff}*/
+
+#modhdr {
+    margin-top: 13px;
+}
+
+    #modhdr h1 {
+        font-weight: bolder;
+        font-size: 18px;
+    }
+
+#modwrapo {
+    border-bottom: none;
+    font-size: 11px;
+    font-family: Arial;
+}
+
+#modwrapi {
+    padding-top: 5px;
+}
+
+#breadcmb {
+    position: absolute;
+}
+
+    #breadcmb a {
+        color: #000;
+        font-weight: normal;
+    }
+
+        #breadcmb a:hover {
+            color: #8C1921;
+        }
+
+#modhdr .phdr {
+    font-size: 15px;
+}
+
+/*footer*/
+#footer-wrapper {
+    background-image: url(images/footerbkg.png);
+    background-repeat: repeat-x;
+    height: 30px;
+    border-top: 1px solid #a7a7a7;
+}
+
+.msgbx {
+    color: red;
+    background-image: url('images/error.png');
+    background-repeat: no-repeat;
+    background-color: #ffffe1;
+    background-position: 10px 8px;
+}
+
+.colps {
+    background: url("images/plus.png") no-repeat scroll -4px 2px transparent;
+    color: #adadad;
+}
+
+.section, .tabvw {
+    background-repeat: repeat-x;
+    background-position: bottom;
+    border-top-color: #efefef;
+    background-color: transparent;
+}
+
+    .section .content .shdr {
+        color: #2E3347;
+    }
+
+.tabvw {
+    background-image: url(images/tabbdr.png);
+    border-right-color: #efefef;
+}
+
+    .tabvw .section {
+        background: none;
+        border: none;
+    }
+
+.sxform {
+    background-color: #DEDEDE;
+}
+
+.sxro .ronly {
+    background-color: #f8f8f8;
+}
+
+.sxpnl .sxro .sxlb {
+    background-color: #EEEEEE;
+    color: #333333;
+}
+
+.sxpnl .sxro .sxlb, .sxpnl .sxro .sxlm, .sxpnl .sxtable td {
+    border-color: #DEDEDE;
+}
+
+.sxlm .msg {
+    color: red;
+}
+
+span.errmsg {
+    color: red;
+}
+
+.reqd {
+    color: red;
+}
+
+.emph {
+    color: #ffa500;
+}
+
+.msgbox .error {
+    color: #ff8c08 !important;
+    background-image: url('images/error.png');
+    background-color: #fffef0;
+    background-position: 10px 8px;
+    background-repeat: no-repeat;
+    border-color: #ff8c08;
+}
+
+.msgbox .info {
+    color: #3071cd !important;
+    background-image: url('images/info.png');
+    background-color: #fffef0;
+    background-position: 10px 8px;
+    background-repeat: no-repeat;
+}
+
+.msgbox .sucs {
+    color: green !important;
+    background-image: url('images/success.png');
+    background-color: #fffef0;
+    background-position: 10px 8px;
+    background-repeat: no-repeat;
+    border-color: green;
+}
+
+.hsep {
+    background-color: #fff;
+}
+
+.rgEditForm {
+    background-color: #efefef;
+}
+
+    .rgEditForm .section {
+        border: none;
+        background: none;
+    }
+
+        .rgEditForm .section .content .sxform {
+            border-top: 1px solid #fff;
+        }
+
+.rtlEditForm {
+    background-color: #efefef;
+}
+
+    .rtlEditForm .section {
+        border: none;
+        background: none;
+    }
+
+        .rtlEditForm .section .content .sxform {
+            border-top: 1px solid #fff;
+        }
+
+.rtVisibleCallout .rbText {
+    color: #000 !important;
+}
+
+ /*.rbLinkButton {
+    /*background-color: transparent !important;*/
+
+
+.grdCmdGrp .rbLinkButton {
+    /*color: white !important;*/
+    background-color: transparent !important;
+}
+
+
+.rbLinkButton:hover {
+    /*background-color: chocolate !important;
+    color: Black !important;*/
+    background-color: #d5e5ff !important;
+}
+
+
+.h_border-color {
+    border-color: #2B5C96;
+}
+
+
+
+
+/*
+ NEW COLORS
+*/
+
+
+#applodr h1 {
+    color: #2b5c96;
+}
+
+
+
+h1,h2, h3, h4, h5, h6 {
+    color: #8C1921;
+}
+
+#topbar-wrap {
+    background-color: #8C1921;
+    color: #fff;
+}
+/*charanjot*/
+#complio_box {
+    color: #fff;
+    text-shadow: 1px 1px #93400E;
+    background: url("images/complio.png") no-repeat scroll 5px 1px #8C1921;
+}
+
+#userbar-wrap .logoutbtn {
+    color: White;
+    font-weight: bold;
+}
+/*charanjot*/
+
+#apphdrwr {
+    background-color: #ebebeb;
+    border-bottom-color: #fff;
+}
+
+.tplTopPanel {
+    border-bottom-color: #dadada;
+    border-bottom-width: 1px;
+}
+
+.rmRootGroup .rmItem > a.rmRootLink {
+    color: #676767!important;
+    font-weight: bold;
+}
+
+#modwrapo {
+    background-color: #ebebeb;
+}
+
+#modhdr h1 {
+    color: #333;
+}
+
+#modhdr .phdr {
+    color: #2E3347;
+}
+
+.colps {
+    color: #F7ECD5;
+}
+
+.collapsed {
+    background-color: #2E3347 !important;
+    border-bottom: 1px solid #C6C6C6;
+    border-top: 1px solid white;
+}
+
+    .collapsed h1 {
+        color: #F7ECD5 !important;
+    }
+
+#userbar-wrap a.user {
+    color: #fff;
+    text-transform: capitalize;
+}
+
+.sxform h1, .sxform h2, .sxform h3, .sxform h4 {
+    color: #333;
+}
+
+.rtlEditForm h1, .rtlEditForm h2, .rtlEditForm h3 {
+    color: #333;
+}
+
+
+.setup-menu .rmRootGroup .rmItem > a.rmRootLink {
+    color: #333!important;
+}
+
+
+.sxlm .riTextBox:focus {
+    background-color: #fff282!important;
+}
+
+.sxlm .riRead, .sxlm .ronly, .sxlm .riDisabled, .sxlm .riDisabled:focus, .sxlm .riRead:focus {
+    color: #000!important;
+    border-width: 0!important;
+    background-color: #dedede!important;
+}

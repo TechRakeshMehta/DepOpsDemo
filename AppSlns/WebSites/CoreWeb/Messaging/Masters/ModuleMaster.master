@@ -1,0 +1,75 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true"  MasterPageFile="~/Shared/DefaultMaster.master" 
+    Inherits="CoreWeb.Messaging.MasterPages.ModuleMaster" Codebehind="ModuleMaster.master.cs" %>
+<%@ Register TagPrefix="infs" Namespace="INTERSOFT.WEB.UI.WebControls" Assembly="INTERSOFT.WEB.UI" %>
+<%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
+<%@ Register Src="~/CommonControls/UserControl/PageBreadCrumb.ascx" TagName="PageBreadCrumb"
+    TagPrefix="infsu" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="PageHeadContent" runat="server">
+    <style type="text/css">
+        html, body, #frmmod, #UpdatePanel1, #box_content
+        {
+            height: 100% !important;
+        }
+    </style>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="DefaultContent" runat="server">
+    <infs:WclSplitter ID="WclSplitter1" runat="server" LiveResize="true" Orientation="Horizontal"
+        Height="100%" Width="100%" BorderSize="0" BorderWidth="0" ResizeWithParentPane="true">
+        <infs:WclPane ID="pnBreadCrumb" runat="server" MinHeight="50" Height="50" Width="100%"
+            Scrolling="None" Collapsed="false">
+            <div id="modwrapo">
+                <div id="modwrapi">
+                    <div id="breadcmb">
+                        <infsu:PageBreadCrumb ID="breadcrum" runat="server" />
+                    </div>
+                    <div id="modhdr">
+                        <h1>
+                            <asp:Label Text="<%$ Resources:Language, COMCNTR %>" runat="server" ID="lblModHdr" />&nbsp;<asp:Label
+                                Text="<%$ Resources:Language, MESSAGING %>" runat="server" ID="lblPageHdr" CssClass="phdr" /></h1>
+                    </div>
+                </div>
+            </div>
+        </infs:WclPane>
+        <infs:WclPane ID="rdpnToolbar" runat="server" MinHeight="32" Height="32" Width="100%" Scrolling="None"
+            Collapsed="false">
+            <asp:ContentPlaceHolder runat="server" ID="ToolBarContent">
+            </asp:ContentPlaceHolder>
+        </infs:WclPane>
+        <infs:WclPane ID="rdpnMsgBottomPane" runat="server" Scrolling="None" Width="100%" >
+            <infs:WclSplitter ID="WclSplitter2" runat="server" LiveResize="true" Orientation="Vertical"
+                Height="100%" Width="100%" BorderSize="0" BorderWidth="0" ResizeWithParentPane="true">
+                <infs:WclPane ID="WclPane1" runat="server" Height="100%" Width="150" MinWidth="150" Scrolling="None" Collapsed="false">
+                    <infs:WclSplitter ID="WclSplitter3" runat="server" LiveResize="true" Orientation="Horizontal"
+                        Height="100%" Width="100%" BorderSize="0" BorderWidth="0" ResizeWithParentPane="true">
+                        <infs:WclPane ID="WclPane3" runat="server" Scrolling="Both" Collapsed="false">
+                            <asp:ContentPlaceHolder runat="server" ID="OptionsContent">
+                            </asp:ContentPlaceHolder>
+                        </infs:WclPane>
+                        <infs:WclPane ID="WclPane4" runat="server" MinHeight="26" Height="26" Scrolling="None"
+                            Collapsed="false">
+                            <infs:WclPanelBar ID="WclPanelBar1" runat="server" RenderMode="Lightweight" Height="100%"
+                                Width="100%" OnClientItemClicking="OnClientItemClicking">
+                                <Items>
+                                   <%-- <telerik:RadPanelItem Text="Messages" Expanded="true" ImageUrl="~/Resources/Mod/Messaging/Icons/emails.png" Selected="true">
+                                    </telerik:RadPanelItem>--%>
+                                   <%-- <telerik:RadPanelItem Text="Calander" ImageUrl="~/Resources/Mod/Messaging/Icons/calender.png">
+                                    </telerik:RadPanelItem>--%>
+                                    <telerik:RadPanelItem Text="Settings" ImageUrl="~/Resources/Mod/Messaging/Icons/mailsetting.png">
+                                    </telerik:RadPanelItem>
+                                </Items>
+                            </infs:WclPanelBar>
+                        </infs:WclPane>
+                    </infs:WclSplitter>
+                </infs:WclPane>
+                <infs:WclSplitBar ID="WclSplitBar1" runat="server" CollapseMode="None"></infs:WclSplitBar>
+                <infs:WclPane ID="WclPane2" runat="server" Height="100%" Scrolling="None" Collapsed="false">
+                    <asp:ContentPlaceHolder runat="server" ID="MainContent">
+                    </asp:ContentPlaceHolder>
+                </infs:WclPane>
+            </infs:WclSplitter>
+        </infs:WclPane>
+    </infs:WclSplitter>
+    <%-- dumb window --%>
+    <infs:WclWindow ID="WclWindow1" runat="server">
+    </infs:WclWindow>
+</asp:Content>

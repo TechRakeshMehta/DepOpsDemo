@@ -1,0 +1,17 @@
+﻿using INTSOF.COMPLIO.TALKDESK.DAL;
+using INTSOF.COMPLIO.TALKDESK.DAL.Interfaces;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace INTSOF.COMPLIO.TALKDESK.Business
+{
+    internal static class BALUtils
+    {
+        public static IReportJobRepository GetReportJobRepoInstance()
+        {
+            return new ReportJobRepository();
+        }
+    }
+}

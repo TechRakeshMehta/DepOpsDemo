@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<UnableToLocate xmlns="http://tempuri.org/ADBEmails.xsd">
+  <Contents>
+    <ServiceRequestId></ServiceRequestId>
+    <DecisionDescription></DecisionDescription>
+    <Address1></Address1>
+    <Address2></Address2>
+    <city></city>
+    <statename></statename >
+    <zipCode></zipCode >
+    <country></country >  
+  </Contents>
+</UnableToLocate>

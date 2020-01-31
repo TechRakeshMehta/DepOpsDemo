@@ -1,0 +1,29 @@
+﻿<GetProfileStatus xmlns="">
+  <ErrorStatus>
+    <Code></Code>
+    <Type></Type>
+    <Message></Message>
+  </ErrorStatus>
+  <Profile>
+    <Prof_No></Prof_No>
+    <SubjectType></SubjectType>
+    <SSN></SSN>
+    <Last_Name>t</Last_Name>
+    <First_Name></First_Name>
+    <Status></Status>
+    <Stage></Stage>
+    <ProfileStatusID></ProfileStatusID>
+    <Entered></Entered>
+    <Entered_By></Entered_By>
+    <Completed />
+    <Completed_By />
+    <Highlighted></Highlighted>
+    <CustID></CustID>
+    <CustName></CustName>
+    <OrderCount></OrderCount>
+    <CompletedCount></CompletedCount>
+    <HasHeldServices></HasHeldServices>
+    <HasFlaggedOrders></HasFlaggedOrders>
+    <HasStatusDetail></HasStatusDetail>
+  </Profile>
+</GetProfileStatus>

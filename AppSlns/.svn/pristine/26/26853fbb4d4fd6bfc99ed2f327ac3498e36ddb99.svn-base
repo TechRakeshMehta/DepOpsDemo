@@ -1,0 +1,169 @@
+﻿
+#accordion > .card > .card-header {
+  background-image: -ms-linear-gradient(top, #563D7C 0%, #425C8D 100%);
+  background-image: -moz-linear-gradient(top, #563D7C 0%, #425C8D 100%);
+  background-image: -o-linear-gradient(top, #563D7C 0%, #425C8D 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #563D7C), color-stop(100, #425C8D));
+  background-image: -webkit-linear-gradient(top, #563D7C 0%, #425C8D 100%);
+  background-image: linear-gradient(to bottom, #563D7C 0%, #425C8D 100%);
+  color: #fff;
+  font-weight: bold;
+}
+
+.card-header > span:first-of-type {
+  font-weight: bold;
+  display: inline-block;
+}
+.container{
+  width: 100vw;
+}
+.card-body {
+  padding: 0.25rem;
+}
+
+.card {
+  border: none !important;
+}
+
+#accordion {
+  border: 1px solid #000;
+}
+
+#accordion1, #accordion2, #accordion3, #accordion4, #accordion5 {
+  color: #9c9c9c;
+  margin: 2%;
+  box-shadow: 0px 0px 5px 5px #bcbcbc;
+}
+
+  #accordion1 .card-header, #accordion2 .card-header, #accordion3 .card-header, #accordion4 .card-header, #accordion5 .card-header {
+    background-image: -ms-linear-gradient(top, #6E141A 0%, #8C1921 100%);
+    background-image: -moz-linear-gradient(top, #6E141A 0%, #8C1921 100%);
+    background-image: -o-linear-gradient(top, #6E141A 0%, #8C1921 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #6E141A), color-stop(100, #8C1921));
+    background-image: -webkit-linear-gradient(top, #6E141A 0%, #8C1921 100%);
+    background-image: linear-gradient(to bottom, #6E141A 0%, #8C1921 100%);
+    /*background-color: #8C1921;*/
+    color: #FFF;
+  }
+
+tr {
+  border-bottom: 2px solid #cccccc !important;
+}
+
+.fa-sort-desc {
+  transition: transform .2s;
+}
+
+  .fa-sort-desc.active {
+    transform: rotateZ(180deg);
+  }
+
+.alert-dark {
+  color: #3c3c3c;
+  background: #fff !important;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  -webkit-animation-name: fadeIn; /* Fade in the background */
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s
+}
+
+/* Modal Content */
+.modal-content {
+  position: fixed;
+  bottom: 0;
+  background-color: #fefefe;
+  width: 100%;
+  -webkit-animation-name: slideIn;
+  -webkit-animation-duration: 0.4s;
+  animation-name: slideIn;
+  animation-duration: 0.4s
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+
+.modal-body {
+  padding: 2px 16px;
+}
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+
+/* Add Animation */
+@-webkit-keyframes slideIn {
+  from {
+    bottom: -300px;
+    opacity: 0
+  }
+
+  to {
+    bottom: 0;
+    opacity: 1
+  }
+}
+
+@keyframes slideIn {
+  from {
+    bottom: -300px;
+    opacity: 0
+  }
+
+  to {
+    bottom: 0;
+    opacity: 1
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0
+  }
+
+  to {
+    opacity: 1
+  }
+}

@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CreateOrderTest>
+  <ClientReferenceID>40200</ClientReferenceID>
+  <PersonalData>
+    <ContactMethod>
+      <Telephone type="Home">
+        <FormattedNumber>5555555555</FormattedNumber>
+      </Telephone>
+      <Telephone type="Work">
+        <FormattedNumber>5555555555</FormattedNumber>
+      </Telephone>
+    </ContactMethod>
+    <DateofBirth>1965/09/09</DateofBirth>
+    <Gender>
+      <IdValue />
+    </Gender>
+    <PersonName>
+      <FamilyName>AddReq1</FamilyName>
+      <GivenName>Test</GivenName>
+      <MiddleName />
+    </PersonName>
+    <PostalAddress>
+      <CountryCode>US</CountryCode>
+      <DeliveryAddress>
+        <AddressLine />
+      </DeliveryAddress>
+      <Manicipality>Wilm</Manicipality>
+      <PostalCode>28403</PostalCode>
+      <Region>NC</Region>
+    </PostalAddress>
+    <PrimaryID>111-11-1111</PrimaryID>
+    <PrimaryIDType>SSN</PrimaryIDType>
+  </PersonalData>
+  <ProcessType>T</ProcessType>
+  <Screenings>
+    <CollectionSiteID>NC403</CollectionSiteID>
+    <DateOrdered />
+    <ExpirationDate>2011/10/07 00:00:00</ExpirationDate>
+    <HardExpire>N</HardExpire>
+    <ReasonForTest>
+      <IdName>Other</IdName>
+      <IdValue>99</IdValue>
+    </ReasonForTest>
+    <ScheduledDate />
+    <Screening type="Drug">
+      <DOTTest />
+      <LaboratoryAccount>41107363</LaboratoryAccount>
+      <LaboratoryID>QUEST</LaboratoryID>
+      <OrderCommentsToCollector />
+      <RequestObservation />
+      <RequestSplitSample />
+      <TestProcedure>
+        <IdSampleType>UR</IdSampleType>
+        <IdTestMethod>1</IdTestMethod>
+      </TestProcedure>
+      <UnitCodes>
+        <IdValue>1747N</IdValue>
+      </UnitCodes>
+    </Screening>
+    <WhoOrderedTest>Frank Davis</WhoOrderedTest>
+  </Screenings>
+  <SendingFacility>AmericanDB</SendingFacility>
+  <SendingFacilityTimeZone />
+</CreateOrderTest>
+
+
+

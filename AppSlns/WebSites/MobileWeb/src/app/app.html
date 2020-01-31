@@ -1,0 +1,26 @@
+﻿
+    <!-- <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <div class="w-100 d-flex">
+                <div  class="mr-auto"> <img height="31" src="../../../images/sponser1.png"> </div><div><img height="31" src="../../../images/sponser2.png"></div>
+                </div>
+        </nav>
+      </header> -->
+<app-layout-header *ngIf="IsLogin==true"></app-layout-header> 
+<app-header-register *ngIf="IsLogin==false" ></app-header-register>
+
+  <router-outlet (activate)="setWindowScrollToTop()"></router-outlet>
+
+  <footer class="footer" >
+      <div class="container-fluid text-center">
+       
+        <span class="text-muted">Copyright © 2019 ADB</span>
+     
+      </div>
+    </footer>
+
+  <loader-app style="    position: absolute;
+  top: 0;
+  left: 0;"></loader-app>
+
+

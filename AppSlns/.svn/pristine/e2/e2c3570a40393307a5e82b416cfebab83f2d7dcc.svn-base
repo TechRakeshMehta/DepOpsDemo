@@ -1,0 +1,47 @@
+﻿using INTSOF.COMPLIO.TALKDESK.Models;
+using System;
+using System.Threading.Tasks;
+
+namespace INTSOF.COMPLIO.TALKDESK.Handlers
+{
+    public class TalkDeskTokenHandler
+    {
+        private static String talkDeskAuthToken;
+        private static DateTime lastTokenTime;
+
+
+        public async Task<string> GetTalkDeskToken()
+        {
+            try
+            {
+                if (DateTime.Now > lastTokenTime + new TimeSpan(0, 9, 0))
+                {
+                    string postContent = "grant_type=client_credentials&scope = reports:read reports:write";
+                    RestHttpClientHandler restHttpClient = new RestHttpClientHandler();
+                    System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
+                    var getAPIresponse = await restHttpClient.PostRequestAsyncGetToken(APPSettingHandler.TalkDeskOAuthTokenURL, postContent);
+                    if (getAPIresponse.IsSuccessStatusCode)
+                    {
+                        var _jsonResponse = await getAPIresponse.Content.ReadAsStringAsync();
+                        var _authorizationTokenResponse = JsonHandler.ConvertJSONToAPIResponseModel<AuthorizationTokenResponse>(_jsonResponse);
+                        TalkDeskTokenHandler.talkDeskAuthToken = _authorizationTokenResponse.access_token;
+                        TalkDeskTokenHandler.lastTokenTime = DateTime.Now;
+                    }
+                    else
+                    {
+                        //updating the last token time in this case as well, to make sure that we do not send a toekn request in 9 minutes even when last request failed.
+                        TalkDeskTokenHandler.lastTokenTime = DateTime.Now;
+                        return "Failed get Token";
+                        
+                    }
+                }
+                return TalkDeskTokenHandler.talkDeskAuthToken;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+    }
+}

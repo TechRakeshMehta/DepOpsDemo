@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://secure.totalcompnet.com/TCNTestResultWS" xmlns="https://secure.totalcompnet.com/TCNTestResultWS" elementFormDefault="unqualified" attributeFormDefault="qualified">
+  <!-- *** definition of simple elements *** -->
+  <xs:element name="ClientName" type="xs:string"/>
+  <xs:element name="Location" type="xs:string"/>
+  <xs:element name="TestResult" type="Result"/>
+  <xs:element name="DrugName" type="Drug"/>
+  <xs:element name="DonorFirstName" type="xs:string"/>
+  <xs:element name="DonorLastName" type="xs:string"/>
+  <xs:element name="DonorId" type="xs:string"/>
+  <xs:element name="ReasonForTest" type="TestReason"/>
+  <xs:element name="CollectionDate" type="xs:string"/>
+  <xs:element name="TestType" type="TypeOfTest"/>
+  <xs:element name="Panel" type="TestPanel"/>
+  <xs:element name="TestComment" type="xs:string"/>
+  <xs:element name="ReportingMRO" type="xs:string"/>
+  <xs:element name="MROName" type="xs:string"/>
+  <xs:element name="MROAddress" type="xs:string"/>
+  <xs:element name="MROCity" type="xs:string"/>
+  <xs:element name="MROState" type="xs:string"/>
+  <xs:element name="MROZipCode" type="xs:string"/>
+  <xs:element name="MROPhone" type="xs:string"/>
+  <xs:element name="MROFax" type="xs:string"/>
+  <!-- *** definition of attributes *** -->
+  <xs:attribute name="TestId" type="xs:string"/>
+  <!-- *** definition of enumerations *** -->
+  <xs:simpleType name="TestReason">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Blood Alcohol"/>
+      <xs:enumeration value="Breathalizer"/>
+      <xs:enumeration value="Confirmation Test"/>
+      <xs:enumeration value="DOT/Random"/>
+      <xs:enumeration value="DOT/Follow-Up"/>
+      <xs:enumeration value="DOT/Other"/>
+      <xs:enumeration value="DOT/Post Accident"/>
+      <xs:enumeration value="DOT/Pre-Employment"/>
+      <xs:enumeration value="DOT/Reasonable Suspicion"/>
+      <xs:enumeration value="DOT/Return To Work"/>
+      <xs:enumeration value="DOT/Routine Fitness"/>
+      <xs:enumeration value="DOT/Routine Fitness for Duty"/>
+      <xs:enumeration value="Follow-Up"/>
+      <xs:enumeration value="Hair/Random"/>
+      <xs:enumeration value="Hair/Follow-Up"/>
+      <xs:enumeration value="Hair/Other"/>
+      <xs:enumeration value="Hair/Post Accident"/>
+      <xs:enumeration value="Hair/Pre-Employment"/>
+      <xs:enumeration value="Hair/Promotion"/>
+      <xs:enumeration value="Hair/Reasonable Suspicion"/>
+      <xs:enumeration value="Hair/Reaturn To Work"/>
+      <xs:enumeration value="Hair/Routine Fitness"/>
+      <xs:enumeration value="Hair/Routine Fitness for Duty"/>
+      <xs:enumeration value="Lab Confirmation"/>
+      <xs:enumeration value="MPP/Follow-Up"/>
+      <xs:enumeration value="MPP/Other"/>
+      <xs:enumeration value="MPP/Post Accident"/>
+      <xs:enumeration value="MPP/Pre-Employment"/>
+      <xs:enumeration value="MPP/Promotion"/>
+      <xs:enumeration value="MPP/Random"/>
+      <xs:enumeration value="MPP/Reasonable Suspicion"/>
+      <xs:enumeration value="MPP/Return To Work"/>
+      <xs:enumeration value="MPP/Routine Fitness"/>
+      <xs:enumeration value="MPP/Routine Fitness for Duty"/>
+      <xs:enumeration value="Other"/>
+      <xs:enumeration value="Physical"/>
+      <xs:enumeration value="POC/Confirmation"/>
+      <xs:enumeration value="POC/Follow-Up"/>
+      <xs:enumeration value="POC/Other"/>
+      <xs:enumeration value="POC/Physical"/>
+      <xs:enumeration value="POC/Post Accident"/>
+      <xs:enumeration value="POC/Pre-Employment"/>
+      <xs:enumeration value="POC/Promotion"/>
+      <xs:enumeration value="POC/Random"/>
+      <xs:enumeration value="POC/Reasonable Suspicion"/>
+      <xs:enumeration value="POC/Return to Work"/>
+      <xs:enumeration value="POC/Routine Fitness"/>
+      <xs:enumeration value="POC/Routine Fitness for Duty"/>
+      <xs:enumeration value="Post Accident"/>
+      <xs:enumeration value="Pre-Employment"/>
+      <xs:enumeration value="Promotion"/>
+      <xs:enumeration value="Random"/>
+      <xs:enumeration value="Reasonable Suspicion"/>
+      <xs:enumeration value="Return To Work"/>
+      <xs:enumeration value="Routine Fitness for Duty"/>
+      <xs:enumeration value="Saliva/Follow-Up"/>
+      <xs:enumeration value="Saliva/Other"/>
+      <xs:enumeration value="Saliva/Post Accident"/>
+      <xs:enumeration value="Saliva/Pre-Employment"/>
+      <xs:enumeration value="Saliva/Promotion"/>
+      <xs:enumeration value="Saliva/Random"/>
+      <xs:enumeration value="Saliva/Reasonable"/>
+      <xs:enumeration value="Saliva/Reasonable Suspicion"/>
+      <xs:enumeration value="Saliva/Return to Work"/>
+      <xs:enumeration value="Saliva/Routine Fitness"/>
+      <xs:enumeration value="Saliva/Routine Fitness for Duty"/>
+      <xs:enumeration value="Urine Alcohol"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TestPanel">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="4 Panel"/>
+      <xs:enumeration value="5 Panel"/>
+      <xs:enumeration value="7 Panel"/>
+      <xs:enumeration value="8 Panel"/>
+      <xs:enumeration value="9 Panel"/>
+      <xs:enumeration value="10 Panel"/>
+      <xs:enumeration value="Blood Alcohol"/>
+      <xs:enumeration value="Breathalizer"/>
+      <xs:enumeration value="Urine_Alcohol"/>
+      <xs:enumeration value="Physical"/>
+      <xs:enumeration value="POC Test"/>
+      <xs:enumeration value="Medical Professional Panel"/>
+      <xs:enumeration value="Saliva"/>
+      <xs:enumeration value="Urine"/>
+      <xs:enumeration value="Nicotine"/>
+      <xs:enumeration value="Steroid"/>
+      <xs:enumeration value="Hair/Drug of Abuse"/>
+      <xs:enumeration value="N/A"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TypeOfTest">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="HRS"/>
+      <xs:enumeration value="DOT"/>
+      <xs:enumeration value="SAP"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Result">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Negative"/>
+      <xs:enumeration value="Positive"/>
+      <xs:enumeration value="Test Not Performed"/>
+      <xs:enumeration value="Adulterated"/>
+      <xs:enumeration value="Unsatisfactory"/>
+      <xs:enumeration value="Substituted"/>
+	  <xs:enumeration value="Cancelled"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Drug">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="6 MAM"/>
+      <xs:enumeration value="6-MAM Neg"/>
+      <xs:enumeration value="6-MAM Pos"/>
+      <xs:enumeration value="Adulterated"/>
+      <xs:enumeration value="Amphetamines"/>
+      <xs:enumeration value="Barbiturates"/>
+      <xs:enumeration value="Benzodiazepines"/>
+      <xs:enumeration value="Blood Alcohol"/>
+	  <xs:enumeration value="Buprenorphine"/>
+      <xs:enumeration value="Cannabinoids/THC"/>
+      <xs:enumeration value="Cocaine"/>
+      <xs:enumeration value="Cotinine"/>
+      <xs:enumeration value="D and L Isomer"/>
+      <xs:enumeration value="Demerol"/>
+      <xs:enumeration value="Ecstasy"/>
+      <xs:enumeration value="Fentanyl"/>
+      <xs:enumeration value="Hydrocodone"/>
+      <xs:enumeration value="Hydromorphone"/>
+      <xs:enumeration value="Level Request"/>
+      <xs:enumeration value="Meperidine"/>
+      <xs:enumeration value="Methamphetamine"/>
+      <xs:enumeration value="Methaqualone"/>
+	  <xs:enumeration value="Nalbuphine"/>
+      <xs:enumeration value="Opiates"/>
+      <xs:enumeration value="Opiates Codeine"/>
+      <xs:enumeration value="Opiates Hydrocodone"/>
+      <xs:enumeration value="Opiates Morphine"/>
+      <xs:enumeration value="Oxycodone"/>
+      <xs:enumeration value="Oxymorphone"/>
+      <xs:enumeration value="PCP"/>
+      <xs:enumeration value="Propoxyphene"/>
+      <xs:enumeration value="Pyridine"/>
+      <xs:enumeration value="See Below"/>
+      <xs:enumeration value="Steroid"/>
+      <xs:enumeration value="Tramadol"/>
+      <xs:enumeration value="Tramadol Metabolite"/>
+      <xs:enumeration value="Urine Alcohol"/>
+      <xs:enumeration value="None"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!-- *** definition of complex elements *** -->
+  <xs:element name="Test">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ClientName"/>
+        <xs:element ref="Location"/>
+        <!-- Location value optional -->
+        <xs:element ref="TestResult"/>
+        <xs:element ref="DrugName" maxOccurs="unbounded"/>
+        <!-- DrugName is "None" on Negatives -->
+        <xs:element ref="DonorFirstName"/>
+        <xs:element ref="DonorLastName"/>
+        <xs:element ref="DonorId"/>
+        <!-- DonorId value optional -->
+        <xs:element ref="ReasonForTest"/>
+        <xs:element ref="CollectionDate"/>
+        <xs:element ref="TestType"/>
+        <xs:element ref="Panel"/>
+        <xs:element ref="TestComment"/>
+        <!-- TestComment value optional -->
+        <xs:element ref="ReportingMRO"/>
+        <xs:element ref="MROName"/>
+        <xs:element ref="MROAddress"/>
+        <xs:element ref="MROCity"/>
+        <xs:element ref="MROState"/>
+        <xs:element ref="MROZipCode"/>
+        <xs:element ref="MROPhone"/>
+        <xs:element ref="MROFax"/>
+      </xs:sequence>
+      <xs:attribute ref="TestId" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TestResults">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Test" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

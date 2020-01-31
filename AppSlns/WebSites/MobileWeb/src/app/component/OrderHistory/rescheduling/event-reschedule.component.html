@@ -1,0 +1,43 @@
+<div id="bodyBlock" class="container-fluid">
+    <section class="p-2">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3 id="RSCHDLAPPNMNT"></h3>
+              </div>
+            <div class="col-md-12 bg-white shadow-sm rounded py-3">
+                <h6 class="required">
+                    <label id="ENTREVENTCODE"></label>
+                </h6>
+                <form [formGroup]="EventDetailForm">
+                    <input type="text" formControlName="eventCode" [(ngModel)]="eventCode"  maxlength="25" class="form-control mb-1" [ngClass]="displayFieldCss('eventCode')">
+
+                    <app-field-error-display [displayError]="isError('eventCode')" errorMsg="{{errorMessage('eventCode')}}">
+                    </app-field-error-display>
+                    <app-field-error-display [displayError]="!IsValidEventCode" errorMsg="{{EventCodeCusMsg}}">
+                    </app-field-error-display>
+                    <!-- <app-field-error-display [displayError]="isFieldValid('eventCode')" errorMsg="">
+                    </app-field-error-display>
+                    <app-field-error-display [displayError]="IsValidEventCode != 'True'" errorMsg={{ErrorMessage}}>
+                    </app-field-error-display> -->
+                    <div class="row">
+                        <div class="col-md-12 d-flex justify-content-center">
+                            <button type="button" autofocus="false" (click)="goBack()" class="btn btn-primary">
+                                <i class="fas fa-arrow-left pr-1">
+
+                                </i>
+                                <label id="PREVIOUS"></label>
+                            </button>
+                            <button type="button" autofocus="false" (click)="onSubmit()" class="btn btn-primary mx-1">
+                                <label id="NEXT"></label>
+                                <i class="fas fa-arrow-right pl-1">
+
+                                </i>
+                            </button>
+                            <cancel-rescheduling-button></cancel-rescheduling-button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>

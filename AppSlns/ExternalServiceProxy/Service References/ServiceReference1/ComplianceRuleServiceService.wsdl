@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ComplianceRuleServiceService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:50109/ComplianceRuleService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:50109/ComplianceRuleService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:50109/ComplianceRuleService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ExternalServices" />
+      <xsd:import schemaLocation="http://localhost:50109/ComplianceRuleService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:50109/ComplianceRuleService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/ExternalServices.DataContracts" />
+      <xsd:import schemaLocation="http://localhost:50109/ComplianceRuleService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Entity" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IComplianceRuleService_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="IComplianceRuleService_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComplianceRuleService_GetDataUsingDataContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
+  </wsdl:message>
+  <wsdl:message name="IComplianceRuleService_GetDataUsingDataContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComplianceRuleService_GetComplianceRuleConstantTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetComplianceRuleConstantTypes" />
+  </wsdl:message>
+  <wsdl:message name="IComplianceRuleService_GetComplianceRuleConstantTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetComplianceRuleConstantTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComplianceRuleService_GetComplianceItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetComplianceItems" />
+  </wsdl:message>
+  <wsdl:message name="IComplianceRuleService_GetComplianceItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetComplianceItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComplianceRuleService_SaveComplianceItemRule_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveComplianceItemRule" />
+  </wsdl:message>
+  <wsdl:message name="IComplianceRuleService_SaveComplianceItemRule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveComplianceItemRuleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComplianceRuleService_GetRule_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRule" />
+  </wsdl:message>
+  <wsdl:message name="IComplianceRuleService_GetRule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRuleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComplianceRuleService_GetComplianceItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetComplianceItem" />
+  </wsdl:message>
+  <wsdl:message name="IComplianceRuleService_GetComplianceItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetComplianceItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComplianceRuleService_GetComplianceTimeSpanTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetComplianceTimeSpanTypes" />
+  </wsdl:message>
+  <wsdl:message name="IComplianceRuleService_GetComplianceTimeSpanTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetComplianceTimeSpanTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComplianceRuleService_ValidateRule_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateRule" />
+  </wsdl:message>
+  <wsdl:message name="IComplianceRuleService_ValidateRule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateRuleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComplianceRuleService_AddComplianceItemAttributeExpression_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddComplianceItemAttributeExpression" />
+  </wsdl:message>
+  <wsdl:message name="IComplianceRuleService_AddComplianceItemAttributeExpression_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddComplianceItemAttributeExpressionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IComplianceRuleService">
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComplianceRuleService/GetData" message="tns:IComplianceRuleService_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComplianceRuleService/GetDataResponse" message="tns:IComplianceRuleService_GetData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComplianceRuleService/GetDataUsingDataContract" message="tns:IComplianceRuleService_GetDataUsingDataContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComplianceRuleService/GetDataUsingDataContractResponse" message="tns:IComplianceRuleService_GetDataUsingDataContract_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetComplianceRuleConstantTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComplianceRuleService/GetComplianceRuleConstantTypes" message="tns:IComplianceRuleService_GetComplianceRuleConstantTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComplianceRuleService/GetComplianceRuleConstantTypesResponse" message="tns:IComplianceRuleService_GetComplianceRuleConstantTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetComplianceItems">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComplianceRuleService/GetComplianceItems" message="tns:IComplianceRuleService_GetComplianceItems_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComplianceRuleService/GetComplianceItemsResponse" message="tns:IComplianceRuleService_GetComplianceItems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveComplianceItemRule">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComplianceRuleService/SaveComplianceItemRule" message="tns:IComplianceRuleService_SaveComplianceItemRule_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComplianceRuleService/SaveComplianceItemRuleResponse" message="tns:IComplianceRuleService_SaveComplianceItemRule_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRule">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComplianceRuleService/GetRule" message="tns:IComplianceRuleService_GetRule_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComplianceRuleService/GetRuleResponse" message="tns:IComplianceRuleService_GetRule_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetComplianceItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComplianceRuleService/GetComplianceItem" message="tns:IComplianceRuleService_GetComplianceItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComplianceRuleService/GetComplianceItemResponse" message="tns:IComplianceRuleService_GetComplianceItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetComplianceTimeSpanTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComplianceRuleService/GetComplianceTimeSpanTypes" message="tns:IComplianceRuleService_GetComplianceTimeSpanTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComplianceRuleService/GetComplianceTimeSpanTypesResponse" message="tns:IComplianceRuleService_GetComplianceTimeSpanTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateRule">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComplianceRuleService/ValidateRule" message="tns:IComplianceRuleService_ValidateRule_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComplianceRuleService/ValidateRuleResponse" message="tns:IComplianceRuleService_ValidateRule_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddComplianceItemAttributeExpression">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComplianceRuleService/AddComplianceItemAttributeExpression" message="tns:IComplianceRuleService_AddComplianceItemAttributeExpression_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComplianceRuleService/AddComplianceItemAttributeExpressionResponse" message="tns:IComplianceRuleService_AddComplianceItemAttributeExpression_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IComplianceRuleService" type="tns:IComplianceRuleService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://tempuri.org/IComplianceRuleService/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <soap:operation soapAction="http://tempuri.org/IComplianceRuleService/GetDataUsingDataContract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetComplianceRuleConstantTypes">
+      <soap:operation soapAction="http://tempuri.org/IComplianceRuleService/GetComplianceRuleConstantTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetComplianceItems">
+      <soap:operation soapAction="http://tempuri.org/IComplianceRuleService/GetComplianceItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveComplianceItemRule">
+      <soap:operation soapAction="http://tempuri.org/IComplianceRuleService/SaveComplianceItemRule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRule">
+      <soap:operation soapAction="http://tempuri.org/IComplianceRuleService/GetRule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetComplianceItem">
+      <soap:operation soapAction="http://tempuri.org/IComplianceRuleService/GetComplianceItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetComplianceTimeSpanTypes">
+      <soap:operation soapAction="http://tempuri.org/IComplianceRuleService/GetComplianceTimeSpanTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateRule">
+      <soap:operation soapAction="http://tempuri.org/IComplianceRuleService/ValidateRule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddComplianceItemAttributeExpression">
+      <soap:operation soapAction="http://tempuri.org/IComplianceRuleService/AddComplianceItemAttributeExpression" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ComplianceRuleServiceService">
+    <wsdl:port name="BasicHttpBinding_IComplianceRuleService" binding="tns:BasicHttpBinding_IComplianceRuleService">
+      <soap:address location="http://localhost:50109/ComplianceRuleService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

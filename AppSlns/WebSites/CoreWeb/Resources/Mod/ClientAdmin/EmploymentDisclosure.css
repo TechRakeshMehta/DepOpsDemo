@@ -1,0 +1,44 @@
+﻿.frmRptVwr {
+    height: 65vh !important;
+    width: 100% !important;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    text-align: center;
+}
+
+.content-wrapper {
+    position: relative !important;
+    width: 75% !important;
+    margin: 0 auto !important;
+}
+
+.dvCommon {
+    text-align: center;
+    padding: 5px;
+}
+
+.dvHeading {
+    color: #8C1921;
+    font-weight: 500;
+    word-spacing: 2px;
+}
+
+.pad {
+    position: relative;
+    cursor: url("../../Resources/Mod/Signature/pen.cur"), crosshair;
+    /*cursor: url("pen.cur") 16 16, crosshair;*/
+    -ms-touch-action: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    border: 1px solid #000000;
+}
+
+/*.clearButton {
+    font-size: 10px;
+    list-style: outside none none;
+    margin-right: 50px;
+    text-align: center;
+}*/

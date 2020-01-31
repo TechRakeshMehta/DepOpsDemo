@@ -1,0 +1,85 @@
+<div id="bodyBlock" class="container-fluid">
+  <section class="p-2">
+    <div class="row">
+      <div *ngIf="isSendForOnline != true" class="col-12 font-weight-bold">
+        <label id="CREATODR"></label> (
+        <label id="STEP"></label> {{orderInfo.CurrentStep}} <label id="OF"></label> {{orderInfo.TotalSteps}})
+      </div>
+      <div *ngIf="isSendForOnline == true" class="col-12 font-weight-bold">
+          <label id="CMPLTORDER"></label>
+        </div>
+      <div class="col-md-12 redColor">
+        <label id="SLOTEXPALRTMSG"></label>
+        <label id="OK"></label>
+        <label id="LSTITMN"></label>
+        <label id="PRCHSDTL"></label>
+      </div>
+      <div class="col-md-12 bg-secondary my-2 ">
+        <div class="row">
+          <!-- <div class="col-lg-6 py-2 text-white">Total Price: ${{TotalPrice |number:'1.2-2'}}</div> -->
+            <div class="col-lg-6 py-2 text-white">
+                <label class="font-weight-bold" id="ORDERSELECTION"></label> {{PackageName}}</div>
+            <div class="col-lg-6 py-2 text-white" id="dvPaidByInst" [hidden]="HidePaymentByInst">
+                <label class="font-weight-bold" id="PAIDBYINST"></label> ${{PricePaidByInstitution | number:'1.2-2'}}</div>
+                <div class="col-lg-6 py-2 text-white" id="dvBalanceAmount" [hidden]="HideBalAmount">
+                    <label class="font-weight-bold" id="BALANCEAMT"></label> ${{BalanceAmount | number:'1.2-2'}}</div>
+                    <div class="col-lg-6 py-2 text-white">
+                        <label class="font-weight-bold" id="TOTALPRICE"></label> ${{TotalPrice | number:'1.2-2'}}</div>
+        </div>
+      </div>
+      <div [hidden]="PaymentByInstAlone">
+      <div class="col-md-12">
+        <div class="row my-2">
+          <form>
+            <div class="col-md-12" [hidden]="PaymentByInstAlone">
+              <label id="PAYMENTTYPE"></label>
+              <select (change)="onChange($event.target.value)" class="custom-select w-100">
+                <option *ngFor="let type of lstPayments" value="{{type.PaymentOptionId}}">{{type.PaymentOptionName}}</option>
+              </select>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div [hidden]="HideInstructionText" class="row col-md-12">
+      <div class="col-md-12 redColor"><label name="PAYMENTINST"></label> ({{PaymentOptionName}})</div>
+      <div class="col-md-12">
+        <small class=" font-weight-bold" [innerHTML]="InstructionText"> </small>
+      </div>
+    </div> 
+       <div [hidden]="HideInstructionTextPaidByInst" class="row col-md-12">
+      <div id="dvPaidByInstInstruction" [hidden] = "HidePaymentByInst">
+          <div class="col-md-12 redColor"><label name="PAYMENTINST"></label> ({{PaymentOptionNamePaidByInst}})</div>
+          <div class="col-md-12">
+            <small class="font-weight-bold" [innerHTML]="InstructionTextPaidByInst"> </small>
+          </div>
+        </div>
+      </div>
+      <div [hidden]="!showAgreement">
+        <div class="col-md-12 redColor">
+          <label id="USERAGRMNT"></label>
+        </div>
+        <div class="col-md-12">{{AggrementText}} </div>
+        <div class="row">
+        <div class="col-md-12 d-flex my-2 justify-content-center">
+          <div class="custom-control custom-checkbox">              
+            <input class="custom-control-input" id="customControlAutosizing" type="checkbox" value="" (click)="CheckBoxEvent($event)">
+            <label class="custom-control-label" for="customControlAutosizing" id="HAVEREADUSERAGRMNT"></label>       
+          </div>
+        </div></div>
+      </div>
+    </div>
+      <div class="col-md-12 d-flex justify-content-center">
+        <button type="button" autofocus="false" class="btn btn-primary fixedWidthBtn" (click)="goBack()">
+          <i class="fas fa-arrow-left pr-1"></i>
+          <label id="PREVIOUS"></label>
+        </button>
+        <button type="button" autofocus="false" class="btn btn-primary mx-1 fixedWidthBtn" [disabled]="IsDisabled" (click)="IsReservedSlotExpired()">
+          <label id="NEXT"></label>
+          <i class="fas fa-arrow-right pl-1"></i>
+        </button>
+        <cancel-order-button></cancel-order-button>
+      </div>
+    </div>
+  </section>
+
+</div>

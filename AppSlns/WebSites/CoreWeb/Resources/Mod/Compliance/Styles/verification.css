@@ -1,0 +1,165 @@
+﻿html,body,#frmmod,#UpdatePanel1,#box_content{height:100%!important}
+.reset{clear:both}
+
+#vermod_cmds{padding-top:15px;padding-right:10px;position:absolute;right:10px;}
+#vermod_cmds a,#vermod_cmds a:visited{color:#333}
+
+.framehead{position: fixed;width:inherit;height:50px;padding:0;}
+.framebar{background-image:url(../images/bkg-top.png);background-repeat:repeat-x;height:50px;background-position:-1px -10px;position:relative}
+.framebar .title{font-size:13px;padding-left:10px;padding-top:8px;font-weight:700;text-transform:capitalize}
+.framebar .user{padding-left:23px;background-image:url(../images/user.png);background-position:2px 10px;background-repeat:no-repeat}
+.framebar .user .dob{font-size:90%;font-weight:normal;color:blue}
+.framebar .commands{position:absolute;top:9px;right:5px}
+.framebar .commands a {text-decoration:none;display:inline-block;margin-left:3px;}
+
+.framebody{margin-top:50px;}
+
+#profile_info{padding:10px;display:none;}
+#profile_info .top .right{float:right}
+#profile_info .top .left{float:left}
+#profile_info .top .right .img_wrapper{width:72px;height:77px;position:relative;background-color:#ededed;color:#fff;border:1px solid #FFF;padding:5px}
+#profile_info .top .right .thumb{width:72px;height:77px;position:absolute}
+#profile_info .top .right .name-in{margin-top:23px;text-align:center;font-size:25px;font-weight:700;text-transform:uppercase}
+#profile_info .top .left .compliance_info{margin-top:10px}
+#profile_info .top .left .compliance_info .c_title{display:block}
+#profile_info .top .left .compliance_info .error{color:Red}
+#profile_info .top .left .compliance_info .sucs{color:green}
+#profile_info .top .left .compliance_info img{vertical-align:text-bottom;}
+#profile_info .bottom .row{padding-top:5px;line-height:120%;padding-bottom:5px;border-top: 1px solid #DEDEDE;}
+#profile_info .bottom .hier{border-top:none;}
+
+
+.bar_icon{background-repeat:no-repeat;vertical-align:middle;display:inline-block;cursor:pointer;margin-right:5px;}
+.filterbar{text-align:right;padding:10px;position:relative;}
+.filterbar .bar_icon{background-image:url(../images/filter.png);height:23px;width:23px;}
+.bar_cmds{vertical-align:middle;}
+.filterbar .hid{display:none;}
+.filterbar .vis{display:inline-block;}
+.filter-inuse {position:absolute;right:50px;z-index:-1;top:13px;color:#AFAFAF;font-weight:bold;}
+.bar_cmds a,.bar_cmds a:visited{color:Black;text-decoration:none;}
+.bar_cmds a:hover{text-decoration:underline;}
+
+
+
+.section .sec_cmds{position:absolute;top:0;right:1px;}
+.sec_cmds .ihelp{background:url(../images/help_off.png) 7px 4px no-repeat;height:23px;width:27px;margin:0;}
+.sec_cmds .help_on{background-image:url(../images/help.png);}
+.sec_cmds .ihelp:hover{background-image:url(../images/help.png);}
+.colps .ihelp:hover{background-image:url(../images/help_off.png);}
+
+.showing{background-color:White;}
+
+.section:hover{background-color:#efefef;}
+
+.tab-block {display:block;margin-bottom:10px;}
+.tab-block .tabs span{display:inline-block;padding:5px;margin-right:2px;background-color:#dfdfdf;border:1px solid #555;border-bottom:none;cursor:pointer;}
+.tab-block .tabs span.focused{background-color:White;}
+.tab-block .tab-content{padding:10px;background-color:White;border:1px solid #555;border-top-color:#C9C9C9;display:none;}
+.tab-block .focused{display:block;}
+
+
+.section .sxlm .remove_btn{display:inline-block;margin-left:5px;vertical-align:middle;}
+
+.category{color:#ff6600;}
+
+.auto .sxro .radio-list{margin-left:20px;}
+.auto .sxro .radio-list label{margin-right:5px;}
+.sxro .no-data{color:#adadad;font-style:italic;display:inline-block;padding-left:5px;}
+
+
+.thumb-rotator
+{
+    width:526px;
+    min-width:526px;
+    max-width:526px;
+    overflow:hidden;
+    margin:0 auto;
+    height:104px;
+    min-height:104px;
+}
+
+.thumb-rotator .thumb
+{
+    width:60px;
+    padding:2px;
+    height:86px;
+    margin:0px;
+    overflow:hidden;
+}
+
+.page_cmd_main{margin-top:30px;padding-top:10px;border-top:2px solid #777;}
+.sectionblock{position:relative;padding:10px}
+.sectionblock .title{font-weight:700}
+.sectionblock .commands{position:absolute;top:10px;right:10px}
+.helpblock{position:relative;display:none}
+.helpblock .commands{position:relative;top:auto;right:auto}
+.sectionblock .formblock table.form{width:100%;margin-top:10px}
+.formblock .lbl{width:150px}
+table.form tr.separator td{border-bottom:2px solid #adadad}
+table.form tr.separator + tr td.lbl,table.form tr.separator + tr td.elm{padding-top:10px}
+.formblock .elm{width:200px;padding-bottom:5px}
+.sectionblock .cmdbar{text-align:right;padding:5px}
+.help{margin-top:10px;border:1px solid #adadad;display:none;background-color:#FFF;padding:5px}
+.help h1{font-size:13px!important}
+.profile_data td{padding:5px}
+.profile_img{float:left;width:81px;height:91px;background-image:url(../images/noimg.png)}
+.profile_block .compliance_info{float:left;min-width:100px;padding:0 10px}
+#imglist_block{background-color:Red;height:90px;margin-top:-3px;position:relative;overflow:hidden;padding:0 12px}
+#imglist_block #btnleft{position:absolute;background-color:#FF0;top:35px;height:20px;width:20px;left:0}
+#imglist_block #btnright{position:absolute;background-color:#FF0;top:35px;height:20px;width:20px;right:0}
+#imglist_block #list{background-color:Green;overflow:visible}
+#imglist_block #list .img{background-color:#555;display:inline-block}
+#imglist_block #list .img .thumb{background-color:blue;height:80px;width:60px}
+#imglist_block #list .img .title{background-color:#ADADAD;height:80px;opacity:0.5;overflow:hidden;position:absolute;text-align:center;top:0;width:60px;word-wrap:break-word}
+.profile_block .compliance_info .true{color:Green;font-weight:700;font-size:13px}
+.profile_block .compliance_info .false{color:Red;font-weight:700;font-size:13px;vertical-align:middle}
+.profile_block div.profile_data{margin:10px 0}
+.profile_block table.profile_data tr td:first-child{padding-right:10px}
+.profile_block .username{font-weight:700;color:#000;font-size:inherit}
+.profile_block .packinfo{display:block;padding-top:10px;color:Green;font-weight:700}
+#profile_info .top .left .order_info .o_val,#profile_info .top .left .compliance_info .c_val{font-weight:700;font-size:110%}
+.formblock .aligntop,.profile_block table.profile_data td{vertical-align:top}
+
+
+/*Icons*/
+.email {background: no-repeat url(../icons/email.png);}
+.ph {background: no-repeat url(../icons/phone.png);}
+.als {background: no-repeat url(../icons/alias.png);}
+.usrGrp {background: no-repeat url(../icons/usergrp.png);
+         background-size:18px 18px;
+}
+.home {background: no-repeat url(../icons/home.png) 0px 7px!important;}
+.ssn {background: no-repeat url(../icons/ssn.jpg);}
+.hier {background: no-repeat url(../icons/tree.png);font-weight:bold;cursor:pointer;min-height:15px;}
+.icon {padding-left:20px;background-position:0px 5px;}
+
+.hier .hie_nodes{font-weight:bold;font-style:normal}
+.hier .hie_nodes:before {content: '\2192  '; color:black!important;font-weight:normal;}
+.selected_row {background-color:#E1E6E6;}
+
+/*2/17/2014*/
+.pn-container{position:relative;}
+.fixed_box {position:absolute;width:100%;*position:relative;}
+/*#applicant_data {border-bottom: 47px solid transparent;height: inherit;margin-top: 47px;overflow-y: auto;*margin-top: 0px;*overflow:visible;}*/
+#applicant_data {height: inherit;margin-top: 47px;overflow-y: auto;*margin-top: 0px;*overflow:visible;}
+#cmd_profile_info {margin-left:10px;margin-bottom:7px;cursor:pointer;font-weight:bold;}
+.expdd {background: url(../images/exp_col.png) no-repeat 97px -16px;}
+.colsd {background: url(../images/exp_col.png) no-repeat 107px 0px;}
+
+/*2/18/2014*/
+.vdatapn-top {height: inherit;overflow-y: auto;*margin-top: 0px;*overflow:visible;}
+.vdatapn-botom {bottom:0;height:37px; position:relative;width:inherit;background:url(../images/cmdbar.png) repeat-x;}
+.pn-datapanel{padding-bottom:0px!important;}
+.vdatapn-botom .left {position:absolute;top:5px;left:0;width:147px;}
+.vdatapn-botom  .right{position:absolute;top:5px;right:0;width:407px;}
+.vdatapn-botom  .right .RadButton {margin-left:3px;}
+.page_cmd_main {border:none;margin:0;}
+.cat-icon {background: url("../../../../app_themes/Default/images/icons/cat.gif") no-repeat scroll 7px 9px transparent;padding-left:27px!important; }
+.docs-icon {background: url("../icons/docp.png") no-repeat scroll 5px 9px transparent;padding-left:21px!important; }
+
+
+/*2/19/2014*/
+a.cat_lslnk {text-decoration:none; width:100%;height:100%;display:inline-block;color:#000;}
+a.cat_lslnk:visited {color:#000;}
+a.cat_lslnk:hover {color:blue}
+.list_cate .rlbItem {border-bottom:1px solid #D3D3D3;padding:3px;}

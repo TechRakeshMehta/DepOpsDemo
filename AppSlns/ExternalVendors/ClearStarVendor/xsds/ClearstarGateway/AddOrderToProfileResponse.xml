@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<AddOrderToProfile xmlns="">
+  <ErrorStatus>
+    <Code></Code>
+    <Type></Type>
+    <Message></Message>
+  </ErrorStatus>
+  <Profile>
+    <sProf_No></sProf_No>
+    <NewOrderID></NewOrderID>
+    <iApp_ID></iApp_ID>
+    <iAddr_ID></iAddr_ID>
+    <sAddOrderResult></sAddOrderResult>
+  </Profile>
+</AddOrderToProfile>

@@ -1,0 +1,100 @@
+﻿.wrapper
+{
+    font-size: 13px !important;
+    max-width: 1024px;
+    margin: 0 auto;
+    font-family: Arial;
+}
+
+.page_head
+{
+    margin-top: 100px;
+    color: #555;
+}
+
+.page_head h1
+{
+    border-bottom: 1px solid;
+}
+
+p.page_ins
+{
+    margin-bottom: 20px;
+}
+
+.req
+{
+    font-weight: bold;
+}
+
+
+.subhead
+{
+    font-size: 18px;
+    margin-top: 37px;
+}
+
+.lbl
+{
+   margin-bottom:5px;
+}
+
+.row
+{
+    margin-bottom:15px;
+}
+
+.col
+{
+    display:inline-block;
+    width:150px;
+    margin-right:20px;
+}
+
+.w_col
+{
+    width:300px;
+}
+
+.col, .w_col
+{
+    vertical-align:top;
+}
+
+.sxro
+{
+    width:170px;
+    display:inline-block;
+    vertical-align:top;
+}
+
+.sxlb
+{
+    margin-bottom:5px;
+}
+
+.btn_upload  .ruBrowse
+{
+    margin-left:0 !important;
+}
+
+.captcha
+{
+    margin:30px 0;
+}
+
+.captcha img
+{
+    margin-bottom:10px;
+}
+
+.msgbox 
+{
+    color:Red;
+}
+
+.hint
+{
+    color:#555;
+    font-size:10px;
+}

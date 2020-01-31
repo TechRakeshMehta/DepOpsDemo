@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CancelProfile xmlns="">
+  <ErrorStatus>
+    <Code></Code>
+    <Type></Type>
+    <Message></Message>
+  </ErrorStatus>
+  <Profile>
+    <sProfNo></sProfNo>
+    <bCanceled></bCanceled>
+  </Profile>
+</CancelProfile>

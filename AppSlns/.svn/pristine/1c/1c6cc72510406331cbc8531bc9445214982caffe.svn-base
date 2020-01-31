@@ -1,0 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace INTSOF.COMPLIO.TALKDESK.DAL.DataModels
+{
+    public class ReportJob
+    {
+        public int JobID { get; set; }
+        public string JobNumber { get; set; }
+        public int JobStatusID { get; set; }
+        public string JobStatusCode { get; set; }
+        public string JobStatusName { get; set; }
+        public DateTime? JobCreatedDate { get; set; }
+        public DateTime? JobFrom { get; set; }
+        public DateTime? JobTo { get; set; }
+        public string SelfHref { get; set; }
+        public string FilesHref { get; set; }
+    }
+}

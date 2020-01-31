@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="GetListOfProfiles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="TotalResults" type="xs:string" minOccurs="0" />
+        <xs:element name="ErrorStatus" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Code" type="xs:string" minOccurs="0" />
+              <xs:element name="Type" type="xs:string" minOccurs="0" />
+              <xs:element name="Message" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Profile" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RowNum" type="xs:string" minOccurs="0" />
+              <xs:element name="Prof_No" type="xs:string" minOccurs="0" />
+              <xs:element name="SubjectType" type="xs:string" minOccurs="0" />
+              <xs:element name="SSN" type="xs:string" minOccurs="0" />
+              <xs:element name="Last_Name" type="xs:string" minOccurs="0" />
+              <xs:element name="First_Name" type="xs:string" minOccurs="0" />
+              <xs:element name="Middle_Name" type="xs:string" minOccurs="0" />
+              <xs:element name="Suffix" type="xs:string" minOccurs="0" />
+              <xs:element name="Status" type="xs:string" minOccurs="0" />
+              <xs:element name="Stage" type="xs:string" minOccurs="0" />
+              <xs:element name="Entered" type="xs:string" minOccurs="0" />
+              <xs:element name="Entered_By" type="xs:string" minOccurs="0" />
+              <xs:element name="Completed" type="xs:string" minOccurs="0" />
+              <xs:element name="Completed_By" type="xs:string" minOccurs="0" />
+              <xs:element name="Highlighted" type="xs:string" minOccurs="0" />
+              <xs:element name="ActionFlags" type="xs:string" minOccurs="0" />
+              <xs:element name="CustID" type="xs:string" minOccurs="0" />
+              <xs:element name="CustName" type="xs:string" minOccurs="0" />
+              <xs:element name="FolderName" type="xs:string" minOccurs="0" />
+              <xs:element name="OrderCount" type="xs:string" minOccurs="0" />
+              <xs:element name="CompletedCount" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="GetListOfProfiles" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

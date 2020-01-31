@@ -1,0 +1,719 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+
+  <configSections>
+    <!--<sectionGroup name="compositeWeb" >
+      <section name="modules"  type="Microsoft.Practices.CompositeWeb.Configuration.ModulesConfigurationSection, Microsoft.Practices.CompositeWeb"/>
+      <section name="authorization"  type="Microsoft.Practices.CompositeWeb.Configuration.AuthorizationConfigurationSection, Microsoft.Practices.CompositeWeb" />
+    </sectionGroup>-->
+    <section name="dataCacheClient" type="Microsoft.ApplicationServer.Caching.DataCacheClientSection,Microsoft.ApplicationServer.Caching.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" allowLocation="true" allowDefinition="Everywhere" />
+    <section name="securityConfiguration" type="Microsoft.Practices.EnterpriseLibrary.Security.Configuration.SecuritySettings, Microsoft.Practices.EnterpriseLibrary.Security, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <section name="loggingConfiguration" type="Microsoft.Practices.EnterpriseLibrary.Logging.Configuration.LoggingSettings, Microsoft.Practices.EnterpriseLibrary.Logging, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <section name="exceptionHandling" type="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Configuration.ExceptionHandlingSettings, Microsoft.Practices.EnterpriseLibrary.ExceptionHandling, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <section name="unity" type="Microsoft.Practices.Unity.Configuration.UnityConfigurationSection, Microsoft.Practices.Unity.Configuration" />
+    <section name="adbThemes" type="INTERSOFT.WEB.UI.Config.WclThemeSection, INTERSOFT.WEB.UI" />
+    <section name="sysxCacheConfiguration" type="CoreWeb.IntsofCachingModel.Config.SysXCacheConfigHandler, CoreWeb.IntsofCachingModel, Version=1.0.0.0, publicKeyToken=null" />
+    <section name="cachingConfiguration" type="Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.CacheManagerSettings, Microsoft.Practices.EnterpriseLibrary.Caching, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" requirePermission="true" />
+    <section name="botDetect" requirePermission="false" type="BotDetect.Configuration.BotDetectConfigurationSection, BotDetect" />
+    <section name="wclConfiguration" type="INTERSOFT.WEB.UI.Config.WclConfigurationSection, INTERSOFT.WEB.UI" />
+    <section name="entityFramework" type="System.Data.Entity.Internal.ConfigFile.EntityFrameworkSection, EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false" />
+    <!-- For more information on  Entity Framework configuration, visit http://go.microsoft.com/fwlink/?LinkID=237468 -->
+    <sectionGroup name="applicationSettings" type="System.Configuration.ApplicationSettingsGroup, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <section name="Business.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false" />
+      <section name="ExternalVendors.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false" />
+    </sectionGroup>
+  </configSections>
+  <!-- botDetect Configuration -->
+  <botDetect>
+    <captchaImage>
+      <helpLink enabled="false" mode="image" />
+    </captchaImage>
+    <captchaSessionTroubleshooting enabled="false" />
+  </botDetect>
+  <dataCacheClient>
+    <localCache isEnabled="true" />
+    <hosts>
+      <host name="127.0.0.1" cachePort="22233" />
+    </hosts>
+  </dataCacheClient>
+  <cachingConfiguration defaultCacheManager="Cache Manager">
+    <cacheManagers>
+      <add expirationPollFrequencyInSeconds="60" maximumElementsInCacheBeforeScavenging="10000" numberToRemoveWhenScavenging="10" backingStoreName="Null Storage" type="Microsoft.Practices.EnterpriseLibrary.Caching.CacheManager, Microsoft.Practices.EnterpriseLibrary.Caching, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" name="Cache Manager" />
+    </cacheManagers>
+    <backingStores>
+      <add encryptionProviderName="" type="Microsoft.Practices.EnterpriseLibrary.Caching.BackingStoreImplementations.NullBackingStore, Microsoft.Practices.EnterpriseLibrary.Caching, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" name="Null Storage" />
+    </backingStores>
+  </cachingConfiguration>
+  <unity>
+    <alias alias="IMessageQueue" type="INTSOF.UnityHelper.Interfaces.IMessageQueue, INTSOF.UnityHelper" />
+    <alias alias="IAgencyHierarchy" type="INTSOF.ServiceInterface.Modules.AgencyHierarchy.IAgencyHierarchy, INTSOF.ServiceInterface" />
+    <alias alias="IApplicantClinicalRotation" type="INTSOF.ServiceInterface.Modules.ApplicantClinicalRotation.IApplicantClinicalRotation, INTSOF.ServiceInterface" />
+    <alias alias="IClientContact" type="INTSOF.ServiceInterface.Modules.ClinicalRotation.IClientContact, INTSOF.ServiceInterface" />
+    <alias alias="IClinicalRotation" type="INTSOF.ServiceInterface.Modules.ClinicalRotation.IClinicalRotation, INTSOF.ServiceInterface" />
+    <alias alias="IRequirementPackage" type="INTSOF.ServiceInterface.Modules.RequirementPackage.IRequirementPackage, INTSOF.ServiceInterface" />
+    <containers>
+      <container>
+        <register type="IMessageQueue" name="MessageQueue" mapTo="DAL.Repository.MessageRepository, DAL" />
+        <register type="IAgencyHierarchy" name="IAgencyHierarchy" mapTo="INTSOF.Service.Modules.AgencyHierarchy.AgencyHierarchy, INTSOF.Service" />
+        <register type="IApplicantClinicalRotation" name="IApplicantClinicalRotation" mapTo="INTSOF.Service.Modules.ApplicantClinicalRotation.ApplicantClinicalRotation, INTSOF.Service" />
+        <register type="IClientContact" name="IClientContact" mapTo="INTSOF.Service.Modules.ClinicalRotation.ClientContact, INTSOF.Service" />
+        <register type="IClinicalRotation" name="IClinicalRotation" mapTo="INTSOF.Service.Modules.ClinicalRotation.ClinicalRotation, INTSOF.Service" />
+        <register type="IRequirementPackage" name="IRequirementPackage" mapTo="INTSOF.Service.Modules.RequirementPackage.RequirementPackage, INTSOF.Service" />
+      </container>
+    </containers>
+  </unity>
+  <applicationSettings>
+    <Business.Properties.Settings>
+      <setting name="Business_ReportExecutionService_ReportExecutionService" serializeAs="String">
+        <!--<value>http://172.16.1.14:3569/ReportServer_SQL2012STD/ReportExecution2005.asmx</value>-->
+        <value>http://vbs-chd-db3:3569/ReportServer_SQL2016DB3/ReportExecution2005.asmx</value>
+      </setting>
+    </Business.Properties.Settings>
+    <ExternalVendors.Properties.Settings>
+      <setting name="ExternalVendors_ClearstarGatewayDocumentService_Document" serializeAs="String">
+        <value>https://gateway.clearstar.net/CSGWDocument/Document.asmx</value>
+      </setting>
+      <setting name="ExternalVendors_ClearstarGateway_Profile" serializeAs="String">
+        <value>https://gateway.clearstar.net/CSGWProfile/Profile.asmx</value>
+      </setting>
+      <setting name="ExternalVendors_ClearstarGatewayOrder_Order" serializeAs="String">
+        <value>https://gateway.clearstar.net/CSGWOrder/Order.asmx</value>
+      </setting>
+      <setting name="ExternalVendors_ClearstarGatewayInvoice_Invoice" serializeAs="String">
+        <value>https://gateway.clearstar.net/CSGWInvoice/Invoice.asmx</value>
+      </setting>
+      <setting name="ExternalVendors_ClearstarGatewayLookup_LookUp" serializeAs="String">
+        <value>https://gateway.clearstar.net/CSGWLookup/Lookup.asmx</value>
+      </setting>
+      <setting name="ExternalVendors_UpdateWebCCFClearStarOrder_ClearStarOrderInfo" serializeAs="String">
+        <value>https://staging.webccf.com/Service/ClearStarOrderInfo.asmx</value>
+      </setting>
+      <setting name="ExternalVendors_QuestDiagnostics_ESService" serializeAs="String">
+        <value>https://qcs-qa.qdx.com/services/esservice.asmx</value>
+      </setting>
+      <setting name="ExternalVendors_QuestESResultService_ESResultService" serializeAs="String">
+        <value>http://localhost/ADBQESOutboundWS/ESResultService.asmx</value>
+      </setting>
+      <setting name="ExternalVendors_ADBMROTCNTestResult_TCNTestResultWS" serializeAs="String">
+        <value>http://secure.totalcompnet.com/TCNTestResultWS/testresult.asmx</value>
+      </setting>
+      <setting name="ExternalVendors_ClearstarPostmaster_PostMaster" serializeAs="String">
+        <value>https://gateway.clearstar.net/csgwpostmaster/postmaster.asmx</value>
+      </setting>
+      <setting name="ExternalVendors_ClearstarWebCCF_DonorCCF" serializeAs="String">
+        <value>https://staging.webccf.com/Service/DonorCCF.asmx</value>
+      </setting>
+      <setting name="ExternalVendors_ServiceGateWay_Service" serializeAs="String">
+        <value>https://gateway.clearstar.net/CSGWService/Service.asmx</value>
+      </setting>
+      <setting name="ExternalVendors_ClearstarGatewayService_Document" serializeAs="String">
+        <value>https://gateway.clearstar.net/CSGWService/Service.asmx</value>
+      </setting>
+      <setting name="ExternalVendors_ClearstarGatewayDocument_Document" serializeAs="String">
+        <value>https://gateway.clearstar.net/CSGWDocument/Document.asmx</value>
+      </setting>
+      <setting name="ExternalVendors_ClearstarClearMD_DonorCCF" serializeAs="String">
+        <value>https://staging.webccf.com/Service/DonorCCF.asmx</value>
+        <!--<value>https://widget.webccf.com/service/donorccf.asmx</value>-->
+      </setting>
+    </ExternalVendors.Properties.Settings>
+  </applicationSettings>
+  <system.net>
+    <mailSettings>
+      <smtp deliveryMethod="Network" from="info.apps@intsof.com">
+        <network defaultCredentials="true" host="smtp.emailsrvr.com" port="25" userName="yqvW3brwZ6Lwusib6wa9Zb9wQS2cE2rkTUkPkbmqln6+4tNEEkpwhy72/qvyw1tT" password="DGCYEK30TqtXPNv2zeo0kXBng32ZY8mfPV8giF5Y4sg=" />
+      </smtp>
+    </mailSettings>
+  </system.net>
+  <appSettings>
+    <add key="ADBMobileClientUser" value="http://localhost:54130/" />
+    <add key="AgencyHierarchySvcUrl" value="http://localhost:50982/AgencyHierarchy.svc" />
+    <add key="ApplicantClinicalRotationSvcUrl" value="http://localhost:50982/ApplicantClinicalRotation.svc" />
+    <add key="ApplicantFileLocation" value="C:\ApplicantFileAttachments\" />
+    <add key="aspnet:MaxHttpCollectionKeys" value="9999" />
+    <add key="AWSAccessKey" value="AKIAJQ37FUXSMKSRXWJQ" />
+    <add key="AWSBucket" value="complio.uatdocs.adb" />
+    <add key="AWSDirPathInBucket" value="Offshore/QADocuments" />
+    <add key="AWSRegion" value="s3-us-west-2.amazonaws.com" />
+    <add key="AWSSecretKey" value="ZPy3SALfS3XNqndPaB2mKbbWgHqBFkpdPtISdRZB" />
+    <add key="AWSTopicDiplayName" value="Complio" />
+    <add key="AWSUseS3" value="false" />
+    <add key="CacheName" value="default" />
+    <add key="cachePath" value="C:\Intersoft AppPool\Cache\" />
+    <add key="CacheSlidingExpiration" value="10" />
+    <add key="Cachetype" value="System" />
+    <add key="CaseBaseUrl" value="~/MVCApplication/" />
+    <add key="CentralLoginUrl" value="Institution6.ComplioQA19.com" />
+    <add key="checkWebsiteURL" value="false" />
+    <add key="ClearstarBOID" value="59" />
+    <!--<add key="ClearstarPassword" value="Password@13" />
+<add key="ClearstarUserName" value="AnilAroraTest" />-->
+
+    <add key="ClearstarUserName" value="ljankowski" />
+    <add key="ClearstarPassword" value="AMERStage#1!" />
+    <add key="ClearstarWidgetUrl" value="https://staging.webccf.com/widget.site" />
+    <add key="ClearstarClientId" value="ljankowski-widget" />
+    <add key="ClearstarClientSecret" value="4b874f2c-5b8a-4b88-8478-e8b06ff93722" />
+    <add key="ClearstarOauthTokenURL" value="https://staging.webccf.com/AdminApi/api/token" />
+
+    <add key="ClientContactSvcUrl" value="http://localhost:50982/ClientContact.svc" />
+    <add key="ClinicalRotationSvcUrl" value="http://localhost:50982/ClinicalRotation.svc" />
+    <add key="CommandBarButtonsPosition" value="Right" />
+    <add key="CommandBarButtonType" value="StandardButton" />
+    <add key="countrySortPreferenceForABIAddress" value="UNITED STATES of AMERICA,CANADA,MEXICO"/>
+    <add key="countrySortPreferenceForCascadingAttributes" value="UNITED STATES of AMERICA,UNITED STATES of AMERICA - STATE,UNITED STATES of AMERICA - Territory,CANADA,MEXICO"/>
+    <add key="CurrentEnvironment" value="ILab" />
+    <add key="DefaultMaxOccurrence" value="25" />
+    <add key="DefaultTenantID" value="1" />
+    <add key="DefaultTheme" value="Default" />
+    <add key="Delimiter" value="$$$" />
+    <add key="DrivingDirectionUrl" value="https://maps.google.com/?saddr=My%20Location&amp;daddr={0}"/>
+    <!--<add key="EmailServiceUri" value="http://localhost:56548/EmailService.svc" />-->
+    <add key="EmailServiceUri" value="http://172.16.1.45/QueueService/EmailService.svc" />
+    <add key="EntityCommandTimeoutSetting" value="60" />
+    <add key="ExceptionEmail_SubPrefix" value="500 error (.NET)" />
+    <add key="ExceptionEmail_ToAddress" value="support.SystemX@intsof.com" />
+    <add key="ExceptionEmailNotification" value="false" />
+    <add key="ExecuteBuisnessRule" value="true" />
+    <add key="FileManagerMode" value="S3" />
+    <add key="GoogleRecaptchaKey" value="6LcOUBsUAAAAAF0-G-8jn8jjeFq8xMQjXz2eM9tw" />
+    <add key="IgnoreSuffixesNamesInSupplements" value="Jr.,Jr,Sr.,Sr,II,III,IV,V" />
+    <add key="ImageFileHandler" value="~/ImageFileHandler.ashx" />
+    <add key="IsCacheLogEnable" value="false" />
+    <add key="IsCreateOrderSummaryHTMLFileOnRender" value="true" />
+    <add key="IsHelpenabled" value="false" />
+    <add key="IsLanguageTranslation" value="true" />
+    <add key="IsLogOnlinePayment" value="true" />
+    <add key="IsPolicyEnable" value="true" />
+    <add key="IsRadEditorEnabled" value="true" />
+    <add key="IsSmtpDataEncypted" value="true" />
+    <add key="IsSMTPSectionDefined" value="true" />
+    <add key="IsUIValidationApplicable" value="true" />
+    <add key="LiveChatUrl" value="http://americandatabank.intersoftdatalabs.org/livesupport/" />
+    <add key="lkpTableNonSqlDependent" value="" />
+    <add key="LocationTenantFileLocation" value="C:\LocationFileAttachments\"/>
+    <add key="LogDataEntryXml" value="true" />
+    <add key="LogFolderPath" value="C:/Intersoft AppPool/MVP/" />
+    <add key="LoggerClassName" value="INTSOF.Logger.LogManager" />
+    <add key="LoggerType" value="FileLoggerAndDBLogger" />
+    <add key="LogLevel" value="DEBUG" />
+    <add key="LogOnlinePaymentFolderPath" value="C:/Intersoft AppPool/MVP/OnlinePayment/LOGAuthorizeDotNet" />
+    <add key="logSwitch" value="1" />
+    <add key="mailSenderName" value="ADB support team" />
+    <add key="MaxFileSizeAllowed" value="5242880" />
+    <add key="MaxPasswordAttempt" value="4" />
+    <add key="MessageFileLocation" value="C:\MessageAttachments\" />
+    <add key="MinApplicantSignLength" value="5000" />
+    <add key="MinAttestationSignLength" value="3500" />
+    <add key="ManualFingerprintFileExtention" value=".nist"/>
+    <add key="MobileUrlPrefix" value="m." />
+    <add key="NoMiddleNameText" value="-----" />
+    <add key="owin:AutomaticAppStartup" value="false" />
+    <add key="PdfServiceUri" value="http://localhost:56548/PDFConversion.svc" />
+    <add key="RadPdfConnectionString" value="Server=172.16.1.43\SQL2016DB3;Database=RadPdf;user id=radpdf_demo; password=radpdf_demo;" />
+    <add key="RadPdfLicenseKey" value="p2l6BpuvJWi+qPOD9cdyawgwqGc5yritaON+lenUTAEDXYV1VaOEH9Z6rGOr5/AXXPK4WP0dsCrMzpIr40ZsJsDG+r5IUR+WJzmoSinRJBCJ3mhk7Qecnmc5Zzxl2y7mdEhZA+lmDnA4pZyYZLn0hSDTALW+Yqr0PlxnY+RLMocA/wQAAAAAABbe0h8PgdRIFp6ZmOCf1UhBbWVyaWNhbiBEYXRhYmFuaw==" />
+    <add key="RadPdfServiceLocation" value="172.16.1.45:18104" />
+    <add key="redirectToMobileSite" value="true" />
+    <add key="ReportPath" value="ADBReports_Dev" />
+    <!--<add key="ReportPath" value="ADBReports_Srvr19"/>-->
+    <add key="ReportServerUrl" value="http://vbs-chd-db3:3569/ReportServer_SQL2016DB3" />
+    <add key="ReportViewerDomain" value="vserv-it" />
+    <add key="ReportViewerPassword" value="Pass@123$" />
+    <add key="ReportViewerUser" value="adb" />
+    <add key="RequirementPackageSvcUrl" value="http://localhost:50982/RequirementPackage.svc" />
+    <add key="ResourceFileName" value="SysXMessages" />
+    <add key="RestrictOrderFlow" value="false" />
+    <add key="S3ImageManagerDirectory" value="Offshore/InstitutionImages/" />
+    <add key="SenderEmailId" value="non-reply@americandatabank.com" />
+    <add key="SenderName" value="ADB" />
+    <add key="ServiceUrl" value="http://localhost:62617/ComplioAPI.svc" />
+
+    <add key="shareduserloginurl" value="localhost1" />
+
+    <add key="StartCacheDependency" value="false" />
+    <add key="SystemDocumentLocation" value="C:\SystemDocumentLocation" />
+    <add key="TemporaryFileLocation" value="C:\TemporaryFileLocation\" />
+    <add key="ThemeSection" value="adbThemes" />
+    <add key="ToolTipForControls" value="WclTextBox,WclButton,WclMaskedTextBox,WclDatePicker,WclComboBox,WclCheckBox,WclListBox" />
+    <add key="UseAuthorizeDotNetTls_1_2" value="true" />
+    <add key="UseClearstarTls_1_2" value="true" />
+    <add key="UsePaypalTls_1_2" value="false" />
+    <add key="UserAccessTimeExpire" value="15" />
+    <add key="UserAttestationFormLocation" value="C:\UserAttestationFormLocation\" />
+    <add key="VideoTutorialsHtml" value="/Testvideos.html" />
+    <add key="VimeoUrlReplacementKey" value="player.vimeo.com/video/$1" />
+    <add key="WCFServiceTimeOut" value="5" />
+    <add key="websiteImages" value="C:\InstitutionImages" />
+    <add key="WidgetServiceUri" value="http://localhost:25143/widgetdata.asmx/Get" />
+    <add key="YouTubeUrlReplacementKey" value="youtube.com/embed/$1" />
+    <add key="GoogleMapKey" value="AIzaSyC55XPohGymt1rgigNTsO3y0CDb4uTiCpM"></add>
+
+    <!-- Admin Entry Portal Website Url Prefix-->
+    <add key="AdminPortalAppUrlPrefix" value="" />
+    <!-- Admin entry portal react app landing component path from mvp redirection -->
+    <add key="ComponentRoutePath" value="/Auth"/>
+
+    <add key="IsAssemblyBindingEnabled" value="true" />
+  </appSettings>
+  <connectionStrings>
+
+    <!--Dev  -->
+    <add name="ConnectionName" connectionString="data source=172.16.1.33\SQL2014DEV;initial catalog=ADB_Prod_Framework;persist security info=True;user id=adb_prod;password=adb_prod;multipleactiveresultsets=True;"      providerName="System.Data.EntityClient" />
+    <add name="SysXAppDBEntities" connectionString="metadata=res://*/SysXEntities.csdl|res://*/SysXEntities.ssdl|res://*/SysXEntities.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=172.16.1.33\SQL2014DEV;;Initial Catalog=ADB_Prod_Framework;Persist Security Info=True;user id=adb_prod;password=adb_prod;Connection Timeout=600;MultipleActiveResultSets=True;Application Name=EntityFramework&quot;"      providerName="System.Data.EntityClient" />
+    <add name="SysXAppDBCaching" connectionString="data source=172.16.1.33\SQL2014DEV;;initial catalog=ADB_Prod_Framework;persist security info=True;user id=startUser;password=startUser;Max Pool Size=5;Pooling=true" />
+    <add name="SysXAppDBSubscriberCaching" connectionString="data source=172.16.1.33\SQL2014DEV;;initial catalog=ADB_Prod_Framework;persist security info=True;user id=subscribeUser;password=subscribeUser;Max Pool Size=5;Pooling=true" />
+    <add name="MessagingDBCaching" connectionString="data source=172.16.1.33\SQL2014DEV;;initial catalog=ADB_Prod_Messaging;persist security info=True;user id=startUser;password=startUser;Max Pool Size=5;Pooling=true" />
+    <add name="MessagingDBSubscriberCaching" connectionString="data source=172.16.1.33\SQL2014DEV;;initial catalog=ADB_Prod_Messaging;persist security info=True;user id=subscribeUser;password=subscribeUser;Max Pool Size=5;Pooling=true" />
+    <add name="ADBMessageDB_DevEntities" connectionString="metadata=res://*/ADBMessageQueue.csdl|res://*/ADBMessageQueue.ssdl|res://*/ADBMessageQueue.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=172.16.1.33\SQL2014DEV;;initial catalog=ADB_Prod_Messaging;persist security info=True;user id=adb_prod;password=adb_prod;multipleactiveresultsets=True;App=EntityFramework&quot;"      providerName="System.Data.EntityClient" />
+    <add name="ADBApplicantMessageDB_DevEntities" connectionString="metadata=res://*/ApplicantMessageQueue.csdl|res://*/ApplicantMessageQueue.ssdl|res://*/ApplicantMessageQueue.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=172.16.1.33\SQL2014DEV;;initial catalog=ADB_Prod_Messaging;persist security info=True;user id=adb_prod;password=adb_prod;multipleactiveresultsets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />
+    <add name="ADB_SharedDataEntities" connectionString="metadata=res://*/SharedDataEntity.ADBSharedDataEntity.csdl|res://*/SharedDataEntity.ADBSharedDataEntity.ssdl|res://*/SharedDataEntity.ADBSharedDataEntity.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=172.16.1.33\SQL2014DEV;;initial catalog=ADB_Prod_SharedData;persist security info=True;user id=adb_prod;password=adb_prod;MultipleActiveResultSets=True;App=EntityFramework&quot;"      providerName="System.Data.EntityClient" />
+    <add name="ADB_Security_Rotation_PackageConnectionString" connectionString="Data Source=172.16.1.33\SQL2014DEV;Initial Catalog=ADB_Prod_Framework;Persist Security Info=True;User ID=adb_prod;Password=adb_prod" providerName="System.Data.SqlClient" />
+    <add name="ADB_LocationDataEntities" connectionString="metadata=res://*/LocationEntity.ADBLocationEntity.csdl|res://*/LocationEntity.ADBLocationEntity.ssdl|res://*/LocationEntity.ADBLocationEntity.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=172.16.1.33\SQL2014DEV;initial catalog=ADB_Prod_LocationData;persist security info=True;user id=adb_prod;password=adb_prod;MultipleActiveResultSets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />
+
+    <!--Working Prod -->
+    <!--<add name="ConnectionName" connectionString="data source=172.16.1.33\SQL2014DEV;initial catalog=ADB_ANLS_Framework;persist security info=True;user id=adb_prod;password=adb_prod;multipleactiveresultsets=True;" providerName="System.Data.EntityClient" />
+    <add name="SysXAppDBEntities" connectionString="metadata=res://*/SysXEntities.csdl|res://*/SysXEntities.ssdl|res://*/SysXEntities.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=172.16.1.33\SQL2014DEV;;Initial Catalog=ADB_ANLS_Framework;Persist Security Info=True;user id=adb_prod;password=adb_prod;Connection Timeout=600;MultipleActiveResultSets=True;Application Name=EntityFramework&quot;" providerName="System.Data.EntityClient" />
+    <add name="SysXAppDBCaching" connectionString="data source=172.16.1.33\SQL2014DEV;;initial catalog=ADB_ANLS_Framework;persist security info=True;user id=startUser;password=startUser;Max Pool Size=5;Pooling=true" />
+    <add name="SysXAppDBSubscriberCaching" connectionString="data source=172.16.1.33\SQL2014DEV;;initial catalog=ADB_ANLS_Framework;persist security info=True;user id=subscribeUser;password=subscribeUser;Max Pool Size=5;Pooling=true" />
+    <add name="MessagingDBCaching" connectionString="data source=172.16.1.33\SQL2014DEV;;initial catalog=ADB_ANLS_Messaging;persist security info=True;user id=startUser;password=startUser;Max Pool Size=5;Pooling=true" />
+    <add name="MessagingDBSubscriberCaching" connectionString="data source=172.16.1.33\SQL2014DEV;;initial catalog=ADB_anls_Messagingg;persist security info=True;user id=subscribeUser;password=subscribeUser;Max Pool Size=5;Pooling=true" />
+    <add name="ADBMessageDB_DevEntities" connectionString="metadata=res://*/ADBMessageQueue.csdl|res://*/ADBMessageQueue.ssdl|res://*/ADBMessageQueue.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=172.16.1.33\SQL2014DEV;;initial catalog=ADB_ANLS_Messaging;persist security info=True;user id=adb_prod;password=adb_prod;multipleactiveresultsets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />
+    <add name="ADBApplicantMessageDB_DevEntities" connectionString="metadata=res://*/ApplicantMessageQueue.csdl|res://*/ApplicantMessageQueue.ssdl|res://*/ApplicantMessageQueue.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=172.16.1.33\SQL2014DEV;;initial catalog=ADB_ANLS_Messaging;persist security info=True;user id=adb_prod;password=adb_prod;multipleactiveresultsets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />
+    <add name="ADB_SharedDataEntities" connectionString="metadata=res://*/SharedDataEntity.ADBSharedDataEntity.csdl|res://*/SharedDataEntity.ADBSharedDataEntity.ssdl|res://*/SharedDataEntity.ADBSharedDataEntity.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=172.16.1.33\SQL2014DEV;;initial catalog=ADB_ANLS_SharedData;persist security info=True;user id=adb_prod;password=adb_prod;MultipleActiveResultSets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />
+    <add name="ADB_LocationDataEntities" connectionString="metadata=res://*/LocationEntity.ADBLocationEntity.csdl|res://*/LocationEntity.ADBLocationEntity.ssdl|res://*/LocationEntity.ADBLocationEntity.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=172.16.1.33\SQL2014DEV;initial catalog=ADB_ANLS_LocationData;persist security info=True;user id=adb_prod;password=adb_prod;MultipleActiveResultSets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />
+    <add name="ADB_Security_Rotation_PackageConnectionString" connectionString="Data Source=172.16.1.33\SQL2014DEV;Initial Catalog=ADB_ANLS_Framework;Persist Security Info=True;User ID=adb_prod;Password=adb_prod" providerName="System.Data.SqlClient" />-->
+
+    <!--QA  
+    <add name="ConnectionName" connectionString="data source=172.16.1.43\SQL2016DB3;initial catalog=ADB_Prod_Framework;persist security info=True;user id=adbQA_prod;password=adbQA_prod;multipleactiveresultsets=True;" providerName="System.Data.EntityClient" />
+    <add name="SysXAppDBEntities" connectionString="metadata=res://*/SysXEntities.csdl|res://*/SysXEntities.ssdl|res://*/SysXEntities.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=172.16.1.43\SQL2016DB3;Initial Catalog=ADB_Prod_Framework;Persist Security Info=True;user id=adbQA_prod;password=adbQA_prod;Connection Timeout=600;MultipleActiveResultSets=True;Application Name=EntityFramework&quot;" providerName="System.Data.EntityClient" />
+    <add name="SysXAppDBCaching" connectionString="data source=172.16.1.43\SQL2016DB3;initial catalog=ADB_Prod_Framework;persist security info=True;user id=startUser;password=startUser;Max Pool Size=5;Pooling=true" />
+    <add name="SysXAppDBSubscriberCaching" connectionString="data source=172.16.1.43\SQL2016DB3;initial catalog=ADB_Prod_Framework;persist security info=True;user id=subscribeUser;password=subscribeUser;Max Pool Size=5;Pooling=true" />
+    <add name="ADBMessageDB_DevEntities" connectionString="metadata=res://*/ADBMessageQueue.csdl|res://*/ADBMessageQueue.ssdl|res://*/ADBMessageQueue.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=172.16.1.43\SQL2016DB3;initial catalog=ADB_Prod_Messaging;persist security info=True;user id=adbQA_prod;password=adbQA_prod;multipleactiveresultsets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />
+    <add name="ADBApplicantMessageDB_DevEntities" connectionString="metadata=res://*/ApplicantMessageQueue.csdl|res://*/ApplicantMessageQueue.ssdl|res://*/ApplicantMessageQueue.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=172.16.1.43\SQL2016DB3;initial catalog=ADB_Prod_Messaging;persist security info=True;user id=adbQA_prod;password=adbQA_prod;multipleactiveresultsets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />
+    <add name="MessagingDBCaching" connectionString="data source=172.16.1.43\SQL2016DB3;initial catalog=ADB_Prod_Messaging;persist security info=True;user id=startUser;password=startUser;Max Pool Size=5;Pooling=true" />
+    <add name="MessagingDBSubscriberCaching" connectionString="data source=172.16.1.43\SQL2016DB3;initial catalog=ADB_Prod_Messaging;persist security info=True;user id=subscribeUser;password=subscribeUser;Max Pool Size=5;Pooling=true" />
+    <add name="ADB_SharedDataEntities" connectionString="metadata=res://*/SharedDataEntity.ADBSharedDataEntity.csdl|res://*/SharedDataEntity.ADBSharedDataEntity.ssdl|res://*/SharedDataEntity.ADBSharedDataEntity.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=172.16.1.43\SQL2016DB3;initial catalog=ADB_Prod_SharedData;persist security info=True;user id=adbQA_prod;password=adbQA_prod;MultipleActiveResultSets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />
+    <add name="ADB_LocationDataEntities" connectionString="metadata=res://*/LocationEntity.ADBLocationEntity.csdl|res://*/LocationEntity.ADBLocationEntity.ssdl|res://*/LocationEntity.ADBLocationEntity.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=172.16.1.43\SQL2016DB3;initial catalog=ADB_Prod_LocationData;persist security info=True;user id=adbQA_prod;password=adbQA_prod;MultipleActiveResultSets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />
+ -->
+    <!-- Analysis 44 
+
+    <add name="ConnectionName" connectionString="data source=172.16.1.44\SQL2016DB4;initial catalog=ADB_ANLS_Framework;persist security info=True;user id=ADB_ANLS;password=ADB_ANLS;multipleactiveresultsets=True;" providerName="System.Data.EntityClient" />
+    <add name="SysXAppDBEntities" connectionString="metadata=res://*/SysXEntities.csdl|res://*/SysXEntities.ssdl|res://*/SysXEntities.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=172.16.1.44\SQL2016DB4;Initial Catalog=ADB_ANLS_Framework;Persist Security Info=True;user id=ADB_ANLS;password=ADB_ANLS;Connection Timeout=600;MultipleActiveResultSets=True;Application Name=EntityFramework&quot;" providerName="System.Data.EntityClient" />
+    <add name="SysXAppDBCaching" connectionString="data source=172.16.1.44\SQL2016DB4;initial catalog=ADB_ANLS_Framework;persist security info=True;user id=startUser;password=startUser;Max Pool Size=5;Pooling=true" />
+    <add name="SysXAppDBSubscriberCaching" connectionString="data source=172.16.1.44\SQL2016DB4;initial catalog=ADB_ANLS_Framework;persist security info=True;user id=subscribeUser;password=subscribeUser;Max Pool Size=5;Pooling=true" />
+    <add name="ADBMessageDB_DevEntities" connectionString="metadata=res://*/ADBMessageQueue.csdl|res://*/ADBMessageQueue.ssdl|res://*/ADBMessageQueue.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=172.16.1.44\SQL2016DB4;initial catalog=ADB_ANLS_Messaging;persist security info=True;user id=ADB_ANLS;password=ADB_ANLS;multipleactiveresultsets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />
+    <add name="ADBApplicantMessageDB_DevEntities" connectionString="metadata=res://*/ApplicantMessageQueue.csdl|res://*/ApplicantMessageQueue.ssdl|res://*/ApplicantMessageQueue.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=172.16.1.44\SQL2016DB4;initial catalog=ADB_ANLS_Messaging;persist security info=True;user id=ADB_ANLS;password=ADB_ANLS;multipleactiveresultsets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />
+    <add name="MessagingDBCaching" connectionString="data source=172.16.1.44\SQL2016DB4;initial catalog=ADB_ANLS_Messaging;persist security info=True;user id=startUser;password=startUser;Max Pool Size=5;Pooling=true" />
+    <add name="MessagingDBSubscriberCaching" connectionString="data source=172.16.1.44\SQL2016DB4;initial catalog=ADB_ANLS_Messaging;persist security info=True;user id=subscribeUser;password=subscribeUser;Max Pool Size=5;Pooling=true" />
+    <add name="ADB_SharedDataEntities" connectionString="metadata=res://*/SharedDataEntity.ADBSharedDataEntity.csdl|res://*/SharedDataEntity.ADBSharedDataEntity.ssdl|res://*/SharedDataEntity.ADBSharedDataEntity.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=172.16.1.44\SQL2016DB4;initial catalog=ADB_ANLS_SharedData;persist security info=True;user id=ADB_ANLS;password=ADB_ANLS;MultipleActiveResultSets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />
+    <add name="ADB_LocationDataEntities" connectionString="metadata=res://*/LocationEntity.ADBLocationEntity.csdl|res://*/LocationEntity.ADBLocationEntity.ssdl|res://*/LocationEntity.ADBLocationEntity.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=172.16.1.44\SQL2016DB4;initial catalog=ADB_ANLS_LocationData;persist security info=True;user id= ADB_ANLS;password=ADB_ANLS;MultipleActiveResultSets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />
+
+-->
+    <!--Working 12 server QA  
+    <add name="ConnectionName" connectionString="data source=172.16.1.43\SQL2016DB3;initial catalog=ADB_QA_Srvr12_Security;persist security info=True;user id=adbQA_prod;password=adbQA_prod;multipleactiveresultsets=True;" providerName="System.Data.EntityClient" />
+    <add name="SysXAppDBEntities" connectionString="metadata=res://*/SysXEntities.csdl|res://*/SysXEntities.ssdl|res://*/SysXEntities.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=172.16.1.43\SQL2016DB3;Initial Catalog=ADB_QA_Srvr12_Security;Persist Security Info=True;user id=adbQA_prod;password=adbQA_prod;Connection Timeout=600;MultipleActiveResultSets=True;Application Name=EntityFramework&quot;" providerName="System.Data.EntityClient" />
+    <add name="SysXAppDBCaching" connectionString="data source=172.16.1.43\SQL2016DB3;initial catalog=ADB_QA_Srvr12_Security;persist security info=True;user id=startUser;password=startUser;Max Pool Size=5;Pooling=true" />
+    <add name="SysXAppDBSubscriberCaching" connectionString="data source=172.16.1.43\SQL2016DB3;initial catalog=ADB_QA_Srvr12_Security;persist security info=True;user id=subscribeUser;password=subscribeUser;Max Pool Size=5;Pooling=true" />
+    <add name="ADBMessageDB_DevEntities" connectionString="metadata=res://*/ADBMessageQueue.csdl|res://*/ADBMessageQueue.ssdl|res://*/ADBMessageQueue.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=172.16.1.43\SQL2016DB3;initial catalog=ADB_QA_Srvr12_Messaging;persist security info=True;user id=adbQA_prod;password=adbQA_prod;multipleactiveresultsets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />
+    <add name="ADBApplicantMessageDB_DevEntities" connectionString="metadata=res://*/ApplicantMessageQueue.csdl|res://*/ApplicantMessageQueue.ssdl|res://*/ApplicantMessageQueue.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=172.16.1.43\SQL2016DB3;initial catalog=ADB_QA_Srvr12_Messaging;persist security info=True;user id=adbQA_prod;password=adbQA_prod;multipleactiveresultsets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />
+    <add name="MessagingDBCaching" connectionString="data source=172.16.1.43\SQL2016DB3;initial catalog=ADB_QA_Srvr12_Messaging;persist security info=True;user id=startUser;password=startUser;Max Pool Size=5;Pooling=true" />
+    <add name="MessagingDBSubscriberCaching" connectionString="data source=172.16.1.43\SQL2016DB3;initial catalog=ADB_QA_Srvr12_Messaging;persist security info=True;user id=subscribeUser;password=subscribeUser;Max Pool Size=5;Pooling=true" />
+    <add name="ADB_SharedDataEntities" connectionString="metadata=res://*/SharedDataEntity.ADBSharedDataEntity.csdl|res://*/SharedDataEntity.ADBSharedDataEntity.ssdl|res://*/SharedDataEntity.ADBSharedDataEntity.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=172.16.1.43\SQL2016DB3;initial catalog=ADB_QA_Srvr12_SharedData;persist security info=True;user id=adbQA_prod;password=adbQA_prod;MultipleActiveResultSets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />
+    <add name="ADB_LocationDataEntities" connectionString="metadata=res://*/LocationEntity.ADBLocationEntity.csdl|res://*/LocationEntity.ADBLocationEntity.ssdl|res://*/LocationEntity.ADBLocationEntity.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=172.16.1.43\SQL2016DB3;initial catalog=ADB_QA_Srvr12_LocationData;persist security info=True;user id=adbQA_prod;password=adbQA_prod;MultipleActiveResultSets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />
+-->
+    <!--Production 
+    <add name="ConnectionName" connectionString="data source=35.161.21.214;initial catalog=ADB_Prod_Framework;persist security info=True;user id=adb_prod;password=adb_prod;multipleactiveresultsets=True;"      providerName="System.Data.EntityClient" />
+    <add name="SysXAppDBEntities" connectionString="metadata=res://*/SysXEntities.csdl|res://*/SysXEntities.ssdl|res://*/SysXEntities.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=35.161.21.214;Initial Catalog=ADB_Prod_Framework;Persist Security Info=True;user id=adb_prod;password=adb_prod;Connection Timeout=600;MultipleActiveResultSets=True;Application Name=EntityFramework&quot;"      providerName="System.Data.EntityClient" />
+    <add name="SysXAppDBCaching" connectionString="data source=35.161.21.214;initial catalog=ADB_Prod_Framework;persist security info=True;user id=startUser;password=startUser;Max Pool Size=5;Pooling=true" />
+    <add name="SysXAppDBSubscriberCaching" connectionString="data source=35.161.21.214;initial catalog=ADB_Prod_Framework;persist security info=True;user id=subscribeUser;password=subscribeUser;Max Pool Size=5;Pooling=true" />
+    <add name="MessagingDBCaching" connectionString="data source=35.161.21.214;initial catalog=ADB_Prod_Messaging;persist security info=True;user id=startUser;password=startUser;Max Pool Size=5;Pooling=true" />
+    <add name="MessagingDBSubscriberCaching" connectionString="data source=35.161.21.214;initial catalog=ADB_Prod_Messaging;persist security info=True;user id=subscribeUser;password=subscribeUser;Max Pool Size=5;Pooling=true" />
+    <add name="ADBMessageDB_DevEntities" connectionString="metadata=res://*/ADBMessageQueue.csdl|res://*/ADBMessageQueue.ssdl|res://*/ADBMessageQueue.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=35.161.21.214;initial catalog=ADB_Prod_Messaging;persist security info=True;user id=adb_prod;password=adb_prod;multipleactiveresultsets=True;App=EntityFramework&quot;"      providerName="System.Data.EntityClient" />
+    <add name="ADBApplicantMessageDB_DevEntities" connectionString="metadata=res://*/ApplicantMessageQueue.csdl|res://*/ApplicantMessageQueue.ssdl|res://*/ApplicantMessageQueue.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=35.161.21.214;initial catalog=ADB_Prod_Messaging;persist security info=True;user id=adb_prod;password=adb_prod;multipleactiveresultsets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />
+    <add name="ADB_SharedDataEntities" connectionString="metadata=res://*/SharedDataEntity.ADBSharedDataEntity.csdl|res://*/SharedDataEntity.ADBSharedDataEntity.ssdl|res://*/SharedDataEntity.ADBSharedDataEntity.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=35.161.21.214;initial catalog=ADB_Prod_SharedData;persist security info=True;user id=adb_prod;password=adb_prod;MultipleActiveResultSets=True;App=EntityFramework&quot;"      providerName="System.Data.EntityClient" />
+    <add name="ADB_Security_Rotation_PackageConnectionString" connectionString="Data Source=35.161.21.214;Initial Catalog=ADB_Prod_Framework;Persist Security Info=True;User ID=adb_prod;Password=adb_prod"
+      providerName="System.Data.SqlClient" /> 
+     -->
+
+  </connectionStrings>
+  <loggingConfiguration name="Logging Application Block" tracingEnabled="true" defaultCategory="General" logWarningsWhenNoCategoriesMatch="true">
+    <listeners>
+      <add source="Enterprise Library Logging" formatter="Text Formatter" log="Application" machineName="" listenerDataType="Microsoft.Practices.EnterpriseLibrary.Logging.Configuration.FormattedEventLogTraceListenerData, Microsoft.Practices.EnterpriseLibrary.Logging, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" traceOutputOptions="None" type="Microsoft.Practices.EnterpriseLibrary.Logging.TraceListeners.FormattedEventLogTraceListener, Microsoft.Practices.EnterpriseLibrary.Logging, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" name="Formatted EventLog TraceListener" />
+    </listeners>
+    <formatters>
+      <add template="Timestamp: {timestamp}&#xA;Message: {message}&#xA;Category: {category}&#xA;Priority: {priority}&#xA;EventId: {eventid}&#xA;Severity: {severity}&#xA;Title:{title}&#xA;Machine: {machine}&#xA;Application Domain: {appDomain}&#xA;Process Id: {processId}&#xA;Process Name: {processName}&#xA;Win32 Thread Id: {win32ThreadId}&#xA;Thread Name: {threadName}&#xA;Extended Properties: {dictionary({key} - {value}&#xA;)}" type="Microsoft.Practices.EnterpriseLibrary.Logging.Formatters.TextFormatter, Microsoft.Practices.EnterpriseLibrary.Logging, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" name="Text Formatter" />
+    </formatters>
+    <categorySources>
+      <add switchValue="All" name="General">
+        <listeners>
+          <add name="Formatted EventLog TraceListener" />
+        </listeners>
+      </add>
+    </categorySources>
+    <specialSources>
+      <allEvents switchValue="All" name="All Events" />
+      <notProcessed switchValue="All" name="Unprocessed Category" />
+      <errors switchValue="All" name="Logging Errors &amp; Warnings">
+        <listeners>
+          <add name="Formatted EventLog TraceListener" />
+        </listeners>
+      </errors>
+    </specialSources>
+  </loggingConfiguration>
+  <exceptionHandling>
+    <exceptionPolicies>
+      <add name="GlobalExceptionLogger">
+        <exceptionTypes>
+          <add type="System.Exception, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" postHandlingAction="ThrowNewException" name="Exception">
+            <exceptionHandlers>
+              <!-- <add logCategory="General" eventId="100" severity="Error" title="Enterprise Library Exception Handling" formatterType="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.TextExceptionFormatter, Microsoft.Practices.EnterpriseLibrary.ExceptionHandling, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" priority="0" type="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.LoggingExceptionHandler, Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" name="Logging Handler" /> -->
+              <add type="CoreWeb.IntsofExceptionModel.SysXExceptionHander,INTSOF.ServiceModel, Version=1.0.0.0, Culture=neutral,PublickeyToken=null" name="SysXExceptionHander" postHandlingAction="NotifyRethrow" />
+            </exceptionHandlers>
+          </add>
+        </exceptionTypes>
+      </add>
+    </exceptionPolicies>
+  </exceptionHandling>
+  <system.codedom>
+    <compilers>
+      <compiler language="vj#;vjs;vjsharp" extension=".jsl;.java" type="Microsoft.VJSharp.VJSharpCodeProvider, VJSharpCodeProvider, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    </compilers>
+  </system.codedom>
+  <!--
+    For a description of web.config changes for .NET 4.5 see http://go.microsoft.com/fwlink/?LinkId=235367.
+
+    The following attributes can be set on the <httpRuntime> tag.
+      <system.Web>
+        <httpRuntime targetFramework="4.5" />
+      </system.Web>
+  -->
+  <system.web>
+    <globalization culture="en-US" />
+    <healthMonitoring enabled="true">
+      <eventMappings>
+        <clear />
+        <add name="All Errors" type="System.Web.Management.WebBaseErrorEvent, System.Web,Version=2.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a" startEventCode="0" endEventCode="2147483647" />
+      </eventMappings>
+      <providers>
+        <clear />
+        <add name="EmailErrorProvider" type="System.Web.Management.SimpleMailWebEventProvider" to="rjha@ADB.com" from="rjha@ADB.com" buffer="false" subjectPrefix="ADB Error Occurred." bodyHeader="This email is generated from my application." />
+      </providers>
+      <rules>
+        <clear />
+        <add name="Testing Mail Event Providers" eventName="All Errors" provider="EmailErrorProvider" profile="Default" minInstances="1" maxLimit="Infinite" minInterval="00:01:00" custom="" />
+      </rules>
+    </healthMonitoring>
+    <!--<profile defaultProvider="AspNetSqlProfileProvider">
+        <providers>
+          <clear/>
+          <add name="AspNetSqlProfileProvider" connectionStringName="ConnectionName" applicationName="ADB" type="System.Web.Profile.SqlProfileProvider "/>
+        </providers>
+        <properties>
+          <add name="PageSize" defaultValue="50" type="System.Int32" />
+        </properties>
+      </profile>-->
+    <browserCaps>
+      <case>
+        RequiresControlStateInSession=true
+      </case>
+    </browserCaps>
+    <compilation debug="true" defaultLanguage="c#" targetFramework="4.7.2">
+      <assemblies>
+        <add assembly="System.Data.Entity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089" />
+        <add assembly="System.Transactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089" />
+        <add assembly="System.Data.Linq, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089" />
+        <add assembly="Microsoft.ApplicationServer.Caching.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
+        <add assembly="Microsoft.ApplicationServer.Caching.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
+        <add assembly="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=B03F5F7F11D50A3A" />
+        <add assembly="netstandard, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51"/>
+      </assemblies>
+      <expressionBuilders>
+        <add expressionPrefix="Code" type="CoreWeb.CodeExpressionBuilder" />
+      </expressionBuilders>
+    </compilation>
+    <authentication mode="Forms">
+      <forms loginUrl="Login.aspx" name=".ASPXFORMSAUTH" enableCrossAppRedirects="true" requireSSL="false" cookieless="UseCookies" protection="All" timeout="40" path="/" />
+    </authentication>
+    <machineKey validationKey="C04B2017175412EAE4461650557A22DE2FC3590EF59ACF859A95FB1A9D595BFEF062817917DCF2C2E2431C052A9D3780AD2F8A478869D8FBCECA7E9706CE376A,IsolateApps" decryptionKey="7A227C51AA2BEFF91553C99C9571AF1181AB099AB90D79C0612E2F87D55BE758,IsolateApps" validation="SHA1" decryption="AES" />
+    <!-- Session State Connection-->
+    <!--<sessionState mode="Custom" customProvider="MySessionStateStore">
+      <providers>
+        <add name="MySessionStateStore" type="Microsoft.Web.Redis.RedisSessionStateProvider" host="35.160.224.96:6379" accessKey="" ssl="false" applicationName="Dev" />
+      </providers>
+    </sessionState>-->
+
+    <!--Offshore Session Connection-->
+    <!--<sessionState mode="SQLServer" allowCustomSqlDatabase="true" sqlConnectionString="Data Source=172.16.1.43\SQL2016DB3;Initial Catalog=ASPState;persist security info=True;user id=ADB_QA;password=ADB_QA;Application Name=ADB" timeout="30" />-->
+    <sessionState mode="InProc" timeout="30"></sessionState>
+    <!--Onsite Session Connection-->
+    <!--<sessionState mode="SQLServer" allowCustomSqlDatabase="true" sqlConnectionString="Data Source=10.0.1.60;Initial Catalog=ASPState;persist security info=True;user id=adb_user;password=adb_user;Application Name=ADB;" timeout="30" />-->
+    <!--Local DB Session Connection-->
+    <!--<sessionState mode="SQLServer" allowCustomSqlDatabase="true" sqlConnectionString="Data Source=.;Initial Catalog=ASPState;persist security info=True;user id=local_user;password=Password1;Application Name=ADB;" timeout="30" />-->
+    <!--<sessionState mode="Custom" customProvider="AppFabricCacheSessionStoreProvider">
+      <providers>
+        <add name="AppFabricCacheSessionStoreProvider" type="Microsoft.ApplicationServer.Caching.DataCacheSessionStoreProvider" cacheName="Session"/>
+      </providers>
+    </sessionState>-->
+    <membership defaultProvider="SysXMembershipProvider" userIsOnlineTimeWindow="15">
+      <providers>
+        <add name="SysXMembershipProvider" type="CoreWeb.IntsofSecurityModel.Providers.SysXMembershipProvider, CoreWeb.IntsofSecurityModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" applicationName="ADB" enablePasswordRetrieval="false" enablePasswordReset="true" requiresQuestionAndAnswer="true" requiresUniqueEmail="true" passwordFormat="Hashed" />
+      </providers>
+    </membership>
+    <roleManager enabled="true" defaultProvider="SysXRoleProvider" cacheRolesInCookie="false">
+      <providers>
+        <add name="SysXRoleProvider" type="CoreWeb.IntsofSecurityModel.Providers.SysXRoleProvider, CoreWeb.IntsofSecurityModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" applicationName="ADB" />
+      </providers>
+    </roleManager>
+    <!--<siteMap defaultProvider="DefaultSiteMapProvider" enabled="true">
+      <providers>
+        <add name="DefaultSiteMapProvider" type="CoreWeb.IntsofSecurityModel.Providers.SysXSiteMapProvider, CoreWeb.IntsofSecurityModel" securityTrimmingEnabled="true" />
+        <add name="SecuritySiteMapProvider" type="CoreWeb.IntsofSecurityModel.Providers.SysXSecuritySiteMapProvider, CoreWeb.IntsofSecurityModel" securityTrimmingEnabled="true" />
+      </providers>
+    </siteMap>-->
+    <customErrors mode="On" defaultRedirect="~/Errors/GenericErrorMessage.htm">
+      <error statusCode="403" redirect="~/Errors/AccessDenied.htm" />
+      <!-- Bad Request -->
+      <error statusCode="400" redirect="~/Errors/ResourceNotFound.htm" />
+      <!-- The resource cannot be found. -->
+      <error statusCode="404" redirect="~/Errors/ResourceNotFound.htm" />
+    </customErrors>
+    <pages styleSheetTheme="Default" validateRequest="true" controlRenderingCompatibilityVersion="4.0" />
+    <httpModules>
+
+      <!--<add name="ExceptionLoggerHttpModule" type="Microsoft.Practices.CompositeWeb.EnterpriseLibrary.ExceptionLogger, Microsoft.Practices.CompositeWeb.EnterpriseLibrary" />
+      <add name="SysXGlobalExceptionModule" type="CoreWeb.IntsofExceptionModel.SysXGlobalExceptionModule,INTSOF.ServiceModel, Version=1.0.0.0, Culture=neutral,PublickeyToken=null" />-->
+      <add name="ThemeModule" type="CoreWeb.IntsofThemeModel.ThemeModule,CoreWeb.IntsofThemeModel, Version=1.0.0.0, Culture=neutral, PublickeyToken=null" />
+      <add name="CuteWebUI.UploadModule" type="CuteWebUI.UploadModule, CuteWebUI.AjaxUploader" />
+    </httpModules>
+    <httpRuntime executionTimeout="999999" maxQueryStringLength="2097151" maxUrlLength="2097151" maxRequestLength="2097151" requestLengthDiskThreshold="80" useFullyQualifiedRedirectUrl="false" minFreeThreads="8" minLocalRequestFreeThreads="4" appRequestQueueLimit="5000" enableKernelOutputCache="true" enableVersionHeader="false" requireRootedSaveAsPath="true" enable="true" shutdownTimeout="90" delayNotificationTimeout="5" waitChangeNotification="0" maxWaitChangeNotification="0" enableHeaderChecking="true" sendCacheControlHeader="true" apartmentThreading="false" requestValidationMode="4.5" requestPathInvalidCharacters="&lt;,>,*,%,&amp;,:,\,?" />
+    <httpHandlers>
+      <add path="Telerik.Web.UI.SpellCheckHandler.axd" type="Telerik.Web.UI.SpellCheckHandler" verb="*" validate="false" />
+      <add path="Telerik.Web.UI.DialogHandler.aspx" type="Telerik.Web.UI.DialogHandler" verb="*" validate="false" />
+      <add path="Telerik.Web.UI.DialogHandler.axd" type="Telerik.Web.UI.DialogHandler" verb="*" validate="false" />
+      <add path="Telerik.RadUploadProgressHandler.ashx" type="Telerik.Web.UI.RadUploadProgressHandler" verb="*" validate="false" />
+      <add path="Telerik.Web.UI.WebResource.axd" type="Telerik.Web.UI.WebResource" verb="*" validate="false" />
+      <add path="ChartImage.axd" verb="*" type="Telerik.Web.UI.ChartHttpHandler, Telerik.Web.UI, Version=2011.3.1115.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4" validate="false" />
+      <!-- <add path="Reserved.ReportViewerWebControl.axd" verb="*" type="System.ServiceModel.Activation.HttpHandler, System.ServiceModel.Activation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" validate="false"/> -->
+      <add path="Reserved.ReportViewerWebControl.axd" verb="*" type="Microsoft.Reporting.WebForms.HttpHandler, Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" validate="false" />
+      <add path="BotDetectCaptcha.ashx" verb="GET" type="BotDetect.Web.CaptchaHandler, BotDetect" />
+      <add path="RadPdf.axd" verb="GET,POST" type="RadPdf.Web.HttpHandler.PdfHttpHandler" />
+    </httpHandlers>
+    <caching>
+      <sqlCacheDependency enabled="true">
+        <databases>
+          <!--<add name="SysXAppDB" connectionStringName="SysXAppDBCaching" pollTime="60000"/>-->
+        </databases>
+      </sqlCacheDependency>
+    </caching>
+    <!--<httpCookies httpOnlyCookies="true" requireSSL="true" lockItem="true" />-->
+  </system.web>
+  <!-- ForgotPassword, Allow this page to access for Non-authentication user. -->
+  <location path="ForgotPassword.aspx">
+    <system.web>
+      <authorization>
+        <allow users="*" />
+      </authorization>
+    </system.web>
+  </location>
+  <system.webServer>
+    <rewrite>
+      <outboundRules rewriteBeforeCache="true">
+        <rule name="Remove Server header">
+          <match serverVariable="RESPONSE_Server" pattern=".+" />
+          <action type="Rewrite" value="American DataBank Group" />
+        </rule>
+      </outboundRules>
+    </rewrite>
+    <!--OPTIONS http method disabled -->
+    <security>
+      <requestFiltering>
+        <verbs allowUnlisted="true">
+          <add verb="OPTIONS" allowed="false" />
+        </verbs>
+      </requestFiltering>
+    </security>
+    <validation validateIntegratedModeConfiguration="false" />
+    <handlers>
+      <add name="Telerik_Web_UI_DialogHandler_aspx" path="Telerik.Web.UI.DialogHandler.aspx" type="Telerik.Web.UI.DialogHandler" verb="*" preCondition="integratedMode,runtimeVersionv4.0" />
+      <add name="Telerik_Web_UI_DialogHandler_axd" path="Telerik.Web.UI.DialogHandler.axd" type="Telerik.Web.UI.DialogHandler" verb="*" preCondition="integratedMode" />
+      <add name="Telerik_RadUploadProgressHandler_ashx" path="Telerik.RadUploadProgressHandler.ashx" type="Telerik.Web.UI.RadUploadProgressHandler" verb="*" preCondition="integratedMode,runtimeVersionv4.0" />
+      <add name="Telerik_Web_UI_WebResource_axd" path="Telerik.Web.UI.WebResource.axd" type="Telerik.Web.UI.WebResource" verb="*" preCondition="integratedMode,runtimeVersionv4.0" />
+      <!-- <add name="ReportViewerWebControlHandler" preCondition="integratedMode" verb="*" path="Reserved.ReportViewerWebControl.axd" type="System.ServiceModel.Activation.HttpHandler, System.ServiceModel.Activation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"/> -->
+      <remove name="BotDetectCaptchaHandler" />
+      <add name="BotDetectCaptchaHandler" preCondition="integratedMode" verb="GET" path="BotDetectCaptcha.ashx" type="BotDetect.Web.CaptchaHandler, BotDetect" />
+      <add name="ReportViewerWebControlHandler" preCondition="integratedMode" verb="*" path="Reserved.ReportViewerWebControl.axd" type="Microsoft.Reporting.WebForms.HttpHandler, Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+      <add path="RadPdf.axd" verb="GET,POST" name="RadPdfHandler" type="RadPdf.Web.HttpHandler.PdfHttpHandler" />
+    </handlers>
+    <modules>
+      <add name="ThemeModule" type="CoreWeb.IntsofThemeModel.ThemeModule" preCondition="managedHandler" />
+      <remove name="Session" />
+      <add name="Session" type="Microsoft.AspNet.SessionState.SessionStateModuleAsync, Microsoft.AspNet.SessionState.SessionStateModule, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" preCondition="integratedMode" />
+
+    </modules>
+    <defaultDocument>
+      <files>
+        <clear />
+        <add value="Login.aspx" />
+        <add value="iisstart.htm" />
+        <add value="Default.htm" />
+        <add value="Default.asp" />
+        <add value="index.htm" />
+        <add value="index.html" />
+        <add value="default.aspx" />
+      </files>
+    </defaultDocument>
+    <httpErrors errorMode="Custom" >
+      <remove statusCode="404" subStatusCode="-1" />
+	  <remove statusCode="500" subStatusCode="-1" />
+      <error statusCode="404" prefixLanguageFilePath="" path="/Errors/ResourceNotFound.htm"  responseMode="ExecuteURL" />
+	  <error statusCode="500" prefixLanguageFilePath="" path="/Errors/ResourceNotFound.htm"  responseMode="ExecuteURL" />
+    </httpErrors>
+    <httpRedirect enabled="false" destination="" exactDestination="false" />
+  </system.webServer>
+  <system.serviceModel>
+    <bindings>
+      <basicHttpBinding>
+        <binding name="BasicHttpBinding_IEmailService" closeTimeout="10:01:00" openTimeout="10:01:00" receiveTimeout="10:10:00" sendTimeout="10:01:00" maxBufferPoolSize="2147483647" maxReceivedMessageSize="2147483647" useDefaultWebProxy="true" maxBufferSize="2147483647">
+          <security mode="None" />
+          <readerQuotas maxDepth="2147483647" maxStringContentLength="2147483647" maxArrayLength="2147483647" maxBytesPerRead="2147483647" maxNameTableCharCount="2147483647" />
+        </binding>
+        <!--<binding name="BasicHttpBinding_IComplianceRuleService" closeTimeout="00:01:00" openTimeout="00:01:00" receiveTimeout="00:10:00" sendTimeout="00:01:00" allowCookies="false" bypassProxyOnLocal="false" maxBufferPoolSize="524288" maxReceivedMessageSize="200000000" useDefaultWebProxy="true" />-->
+        <binding name="BasicHttpBinding_IPDFConversion" closeTimeout="10:01:00" openTimeout="10:01:00" receiveTimeout="10:10:00" sendTimeout="10:01:00" maxBufferPoolSize="2147483647" maxReceivedMessageSize="2147483647" useDefaultWebProxy="true" maxBufferSize="2147483647" />
+      </basicHttpBinding>
+      <wsHttpBinding />
+    </bindings>
+    <client>
+      <!--<endpoint address="http://localhost:50109/ComplianceRuleService.svc" binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IComplianceRuleService" contract="ComplianceRuleServiceReference.IComplianceRuleService" name="BasicHttpBinding_IComplianceRuleService" />-->
+      <!--<endpoint address="net.tcp://192.168.1.126:28008/SysXUIRuleService" binding="netTcpBinding" contract="CoreWeb.SPI.Rule.UI.ISysXUIRulesManager" name="TcpUIRule"/>
+      <endpoint address="net.tcp://localhost:28009/SysXCacheService" binding="netTcpBinding" contract="CoreWeb.SPI.Caching.ISysXCacheManager" name="TcpSysXCaching"/>-->
+      <endpoint address="http://localhost:56548/EmailService.svc/EmailService" binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IEmailService" contract="EmailService.IEmailService" name="BasicHttpBinding_IEmailService" />
+      <endpoint address="http://localhost:56548/PDFConversion.svc/PDFConversion" binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IPDFConversion" contract="PDFConversion.IPDFConversion" name="BasicHttpBinding_IPDFConversion" />
+    </client>
+  </system.serviceModel>
+  <sysxCacheConfiguration>
+    <sqlCacheTables>
+      <!--<cacheTable>HelpMain</cacheTable>
+      <cacheTable>HelpContent</cacheTable>
+      <cacheTable>sysxconfig</cacheTable>-->
+    </sqlCacheTables>
+  </sysxCacheConfiguration>
+  <runtime>
+    <disableStackOverflowProbing enabled="true" />
+    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+      <dependentAssembly>
+        <assemblyIdentity name="EntityFramework" publicKeyToken="b77a5c561934e089" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-4.1.0.0" newVersion="4.1.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="Newtonsoft.Json" publicKeyToken="30ad4fe6b2a6aeed" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-4.5.0.0" newVersion="4.5.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="Microsoft.Owin" publicKeyToken="31bf3856ad364e35" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-3.1.0.0" newVersion="3.1.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Buffers" publicKeyToken="cc7b13ffcd2ddd51" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-4.0.2.0" newVersion="4.0.2.0" />
+      </dependentAssembly>
+
+    </assemblyBinding>
+  </runtime>
+  <system.web.extensions>
+    <scripting>
+      <webServices>
+        <jsonSerialization maxJsonLength="50000000" />
+      </webServices>
+    </scripting>
+  </system.web.extensions>
+  <!-- Theme Configuration -->
+  <adbThemes>
+    <themes>
+      <WclTheme name="Default">
+        <skins>
+          <WclThemeSkin control="WclButton" skin="Outlook" />
+          <WclThemeSkin control="WclCalendar" skin="Web20" />
+          <WclThemeSkin control="WclComboBox" skin="Outlook" />
+          <WclThemeSkin control="WclDatePicker" skin="Default" />
+          <WclThemeSkin control="WclDateTimePicker" skin="Default" />
+          <WclThemeSkin control="WclDock" skin="Silk" />
+          <WclThemeSkin control="WclDockZone" skin="Web20" />
+          <WclThemeSkin control="WclMenu" skin="Glow" />
+          <WclThemeSkin control="WclPanelBar" skin="Default" />
+          <WclThemeSkin control="WclRotator" skin="Web20" />
+          <WclThemeSkin control="WclSplitter" skin="Default" />
+          <WclThemeSkin control="WclTabStrip" skin="Web20" />
+          <WclThemeSkin control="WclTextBox" skin="Web20" />
+          <WclThemeSkin control="WclTimePicker" skin="Web20" />
+          <WclThemeSkin control="WclToolBar" skin="Default" />
+          <WclThemeSkin control="WclToolTipManager" skin="Default" />
+          <WclThemeSkin control="WclUpload" skin="Web20" />
+          <WclThemeSkin control="WclWindow" skin="Default" />
+          <WclThemeSkin control="WclAjaxLoadingPanel" skin="Web20" />
+          <WclThemeSkin control="WclAsyncUpload" skin="Windows7" />
+          <WclThemeSkin control="WclListBox" skin="Default" />
+          <WclThemeSkin control="WclTreeList" skin="Default" />
+          <WclThemeSkin control="WclTreeView" skin="Office2010Silver" />
+          <WclThemeSkin control="WclWindowManager" skin="Web20" />
+          <WclThemeSkin control="WclNotification" skin="Web20" />
+          <WclThemeSkin control="WclToolTip" skin="Default" />
+          <WclThemeSkin control="WclNumericTextBox" skin="Web20" />
+          <WclThemeSkin control="WclMultiPage" skin="Web20" />
+          <WclThemeSkin control="WclMaskedTextBox" skin="Web20" />
+          <WclThemeSkin control="WclGrid" skin="Default" />
+          <WclThemeSkin control="WclAutoCompleteBox" skin="Web20" />
+          <WclThemeSkin control="WclDropDownList" skin="Outlook" />
+        </skins>
+      </WclTheme>
+    </themes>
+  </adbThemes>
+  <!-- Intersoft's Web Control Library Configuration-->
+  <wclConfiguration>
+    <controls>
+      <control name="WclGrid">
+        <defaultProperties>
+          <property name="ShowAllExportButtons" value="false" overrideDeclared="true" />
+          <property name="ExcludedFilterItems" value="Between, NotBetween, IsNull, NotIsNull, NotIsEmpty" />
+          <property name="GroupingSettings-CaseSensitive" value="false" overrideDeclared="true" />
+          <property name="EnableCachedExport" value="false" />
+          <property name="ExportCachePath" value="~/GridTemp" />
+          <property name="EnableCustomExporting" value="true" />
+          <property name="CustomExportButtonText" value="Download" />
+          <property name="ExportSettings-FileName" value="ADBExportedData" overrideDeclared="true" />
+          <property name="ShowClearFiltersButton" value="true" />
+          <property name="MasterTableView.PageSize" value="10" />
+          <property name="MasterTableView.PagerStyle.PageSizes" value="10,25,50,100" />
+
+        </defaultProperties>
+        <globalEventHandlers>
+          <handler targetEvent="PreRender" sourceType="CoreWeb.GlobalEventHandlers, CoreWeb" handlerName="Grid_PreRender" enabled="true" />
+          <handler targetEvent="Load" sourceType="CoreWeb.GlobalEventHandlers, CoreWeb" handlerName="Grid_Load" enabled="true" />
+          <handler targetEvent="PageSizeChanged" sourceType="CoreWeb.GlobalEventHandlers, CoreWeb" handlerName="Grid_PageSizeChanged" enabled="true" />
+          <handler targetEvent="ItemCreated" sourceType="CoreWeb.GlobalEventHandlers, CoreWeb" handlerName="Grid_ItemCreated" enabled="true" />
+        </globalEventHandlers>
+      </control>
+      <control name="WclDatePicker">
+        <defaultProperties>
+          <property name="MinDate" value="1901/01/01" overrideDeclared="true" />
+        </defaultProperties>
+      </control>
+      <control name="WclComboBox">
+        <globalEventHandlers>
+          <handler targetEvent="OnClientDropDownClosed" sourceType="CoreWeb.GlobalEventHandlers, CoreWeb" handlerName="onComboDropDownClosed" enabled="true"></handler>
+          <handler targetEvent="PreRender" sourceType="CoreWeb.GlobalEventHandlers, CoreWeb" handlerName="RadComboBox_PreRender" enabled="true" />
+        </globalEventHandlers>
+      </control>
+      <control name="WclDropDownList">
+        <globalEventHandlers>
+          <handler targetEvent="PreRender" sourceType="CoreWeb.GlobalEventHandlers, CoreWeb" handlerName="RadDropDownList_PreRender" enabled="true" />
+        </globalEventHandlers>
+      </control>
+    </controls>
+  </wclConfiguration>
+  <entityFramework>
+    <defaultConnectionFactory type="System.Data.Entity.Infrastructure.SqlConnectionFactory, EntityFramework" />
+    <providers>
+      <provider invariantName="System.Data.SqlClient" type="System.Data.Entity.SqlServer.SqlProviderServices, EntityFramework.SqlServer" />
+    </providers>
+  </entityFramework>
+</configuration>

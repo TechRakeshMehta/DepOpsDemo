@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>System-X Error </title>
+        <script language="javascript" type="text/javascript">
+        function ShowError() {
+
+            if (window.location.search.length > 0) {
+                var query = window.location.search.substring(1);
+
+                if (query.length > 0) {
+
+                    if (query != null || query != '') {
+
+                        var parms = query.split('=');
+
+                        if (parms[1] != '') {
+                            document.getElementById('txtError').style.display = "block";
+                            document.getElementById('txtError').innerHTML = ReplaceAll(parms[1], '%20', ' ');
+                        } else {
+                            document.getElementById('txtError').style = "display:none;";
+                        }
+
+                    } else {
+                        document.getElementById('txtError').innerHTML = '';
+                    }
+                }
+            }
+        }
+
+        function ReplaceAll(source, stringToFind, stringToReplace) {
+
+            var temp = source;
+            var index = temp.indexOf(stringToFind);
+
+            while (index != -1) {
+                temp = temp.replace(stringToFind, stringToReplace);
+                index = temp.indexOf(stringToFind);
+            }
+            return temp;
+        }
+ 
+    </script>
+    </head>
+    <body onload="ShowError()">
+        <h1>
+            Error occurred in the application -Please Contact Administrator
+        </h1>
+        <h2>
+            <span id="txtError"></span>
+        </h2>
+        <table>
+            <tr>
+                <td>
+                    <a href="../Login.aspx">Return to Login Page</a>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

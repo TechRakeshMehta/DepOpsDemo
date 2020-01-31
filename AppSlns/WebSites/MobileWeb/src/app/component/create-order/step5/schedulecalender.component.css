@@ -1,0 +1,18 @@
+.avaliable-slotcolor
+{
+ background-color: "#abd686";
+}
+
+.notavaliable-slotcolor
+{
+ background-color: "#cbcbb4";
+}
+.selected-slotcolor
+{
+  background-color:"#3f98e3";
+}
+
+.disabled-day {  
+    cursor: not-allowed;
+    background-color: "#cbcbb4";
+  }

@@ -1,0 +1,133 @@
+﻿.borderR {
+    box-sizing: border-box;
+    border-right: 1px solid #828282;
+    text-align: center;
+}
+
+.borderB {
+    box-sizing: border-box;
+    border-bottom: 1px solid #828282;
+    text-align: center;
+}
+
+.borderL {
+    box-sizing: border-box;
+    border-left: 1px solid #828282;
+    text-align: center;
+}
+
+.borderT {
+    box-sizing: border-box;
+    border-top: 1px solid #828282;
+    text-align: center;
+}
+
+.borderA {
+    box-sizing: border-box;
+    border: 1px solid #828282;
+    text-align: center;
+}
+
+table {
+    border-top: 1px solid #828282;
+    border-left: 1px solid #828282;
+    border-right: 1px solid #828282;
+}
+
+
+    table th,
+    table td {
+        padding: 4px;
+    }
+
+
+.btnRightMarg {
+    float: right !important;
+}
+
+.btnLeftMarg {
+    float: left !important;
+}
+
+
+.sxcbar {
+    padding-left: 0px;
+}
+
+.section .content {
+}
+
+.l .sxcmds {
+    text-align: center;
+}
+
+.rbSkinnedButton {
+    margin-right: 5px;
+}
+
+/*To Fix Height Of RadSplitter*/
+html, body, #frmmod, #UpdatePanel1, #box_content {
+    height: 100%!important;
+}
+
+.RadSplitter, .RadSplitter .rspSlideZone, .RadSplitter .rspSlideContainer, .RadSplitter .rspPaneTabContainer, .RadSplitter .rspPane, .RadSplitter .rspResizeBar, .RadSplitter .rspSlideContainerResize, .RadSplitter .rspPaneHorizontal, .RadSplitter .rspResizeBarHorizontal, .RadSplitter .rspSlideContainerResizeHorizontal {
+    border-style: solid;
+    border-width: 0;
+    height: 100% !important;
+}
+
+#ctl00_DefaultContent_ucDynamicControl_sptrMain {
+    height: 78% !important;
+}
+
+.section, .tabvw {
+    height: 100% !important;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+#frmMod {
+    /*height: 87% !important;*/
+    overflow-y: hidden;
+}
+
+
+#tblForm {
+    margin-top: -27px;
+}
+
+.heighFixed {
+    height: 41px !important;
+}
+
+.item_highlight {
+    color: red !important;
+}
+
+.colTextAlign {
+    text-align: left;
+}
+
+.bullet ul {
+    margin-left: 10px;
+    padding-left: 10px !important;
+}
+
+.bullet li {
+    list-style-position: inside;
+    list-style: disc;
+}
+
+.bullet ol {
+    list-style-type: decimal;
+    margin-left: 10px;
+    padding-left: 10px;
+}
+
+    .bullet ol li {
+        list-style: decimal;
+    }
+
+.itemSeries_highlight {
+    color: darkgreen !important;
+}

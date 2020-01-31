@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="GetOrderFields" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="GetOrderFields" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ErrorStatus">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Code" type="xs:string" minOccurs="0" />
+              <xs:element name="Type" type="xs:string" minOccurs="0" />
+              <xs:element name="Message" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="OrderField">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="iOrderID" type="xs:string" minOccurs="0" />
+              <xs:element name="iFieldID" type="xs:string" minOccurs="0" />
+              <xs:element name="sValue" type="xs:string" minOccurs="0" />
+              <xs:element name="sLabel" type="xs:string" minOccurs="0" />
+              <xs:element name="sColumnName" type="xs:string" minOccurs="0" />
+              <xs:element name="sVisible" type="xs:string" minOccurs="0" />
+              <xs:element name="iDisplayOrder" type="xs:string" minOccurs="0" />
+              <xs:element name="sRequired" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Order">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="sInstruction" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

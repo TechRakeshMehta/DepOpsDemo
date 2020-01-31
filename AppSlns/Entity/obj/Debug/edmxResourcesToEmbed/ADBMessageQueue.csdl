@@ -1,0 +1,1177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ADBMessageDB_DevModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ADBMessageDB_DevEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+    <FunctionImport Name="SendGenMsgToApplicantQueue">
+      <Parameter Name="ExecMessage" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SendGenMsgToADBQueue">
+      <Parameter Name="ExecMessage" Mode="In" Type="String" />
+      <Parameter Name="DatabaseName" Mode="In" Type="String" />
+      <Parameter Name="SenderId" Mode="In" Type="Int32" />
+      <Parameter Name="Subject" Mode="In" Type="String" />
+      <Parameter Name="MessageID" Mode="InOut" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="GetADBMessageContents" ReturnType="Collection(ADBMessageDB_DevModel.GetADBMessageContentResult)">
+      <Parameter Name="CurrentMessageId" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="ReplyGenMsgToADB">
+      <Parameter Name="MessageID" Mode="In" Type="Guid" />
+      <Parameter Name="MessageContent" Mode="In" Type="String" />
+      <Parameter Name="DatabaseName" Mode="In" Type="String" />
+      <Parameter Name="Subject" Mode="In" Type="String" />
+      <Parameter Name="SenderId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetUniqueTemplateName" ReturnType="Collection(String)">
+      <Parameter Name="ADBMessageId" Mode="In" Type="Guid" />
+      <Parameter Name="From" Mode="In" Type="Int32" />
+      <Parameter Name="TemplateName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ApplyMessageRulesOnCreation">
+      <Parameter Name="DatabaseName" Mode="In" Type="String" />
+      <Parameter Name="RuleOwnerId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="CommunicationMockUpDatas" EntityType="ADBMessageDB_DevModel.CommunicationMockUpData" />
+    <EntitySet Name="CommunicationTemplatePlaceHolders" EntityType="ADBMessageDB_DevModel.CommunicationTemplatePlaceHolder" />
+    <EntitySet Name="CommunicationTemplatePlaceHolderSubEvents" EntityType="ADBMessageDB_DevModel.CommunicationTemplatePlaceHolderSubEvent" />
+    <EntitySet Name="lkpCommunicationEvents" EntityType="ADBMessageDB_DevModel.lkpCommunicationEvent" />
+    <EntitySet Name="lkpCommunicationTypes" EntityType="ADBMessageDB_DevModel.lkpCommunicationType" />
+    <EntitySet Name="UserCommunicationSubscriptionSettings" EntityType="ADBMessageDB_DevModel.UserCommunicationSubscriptionSetting" />
+    <EntitySet Name="vwCommunicationTypes" EntityType="ADBMessageDB_DevModel.vwCommunicationType" />
+    <EntitySet Name="vwMessages" EntityType="ADBMessageDB_DevModel.vwMessage" />
+    <AssociationSet Name="FK_CommunicationTemplatePlaceHolders_CommunicationTemplatePlaceHolderSubEvents" Association="ADBMessageDB_DevModel.FK_CommunicationTemplatePlaceHolders_CommunicationTemplatePlaceHolderSubEvents">
+      <End Role="CommunicationTemplatePlaceHolder" EntitySet="CommunicationTemplatePlaceHolders" />
+      <End Role="CommunicationTemplatePlaceHolderSubEvent" EntitySet="CommunicationTemplatePlaceHolderSubEvents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_lkpCommunicationType_CommunicationSubscriptionSettings" Association="ADBMessageDB_DevModel.FK_lkpCommunicationType_CommunicationSubscriptionSettings">
+      <End Role="lkpCommunicationType" EntitySet="lkpCommunicationTypes" />
+      <End Role="UserCommunicationSubscriptionSetting" EntitySet="UserCommunicationSubscriptionSettings" />
+    </AssociationSet>
+    <EntitySet Name="ADBMessages" EntityType="ADBMessageDB_DevModel.ADBMessage" />
+    <AssociationSet Name="FK_ADBMessage_ADBMessage" Association="ADBMessageDB_DevModel.FK_ADBMessage_ADBMessage">
+      <End Role="ADBMessage" EntitySet="ADBMessages" />
+      <End Role="ADBMessage1" EntitySet="ADBMessages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_lkpCommunicationType_ADBMessage" Association="ADBMessageDB_DevModel.FK_lkpCommunicationType_ADBMessage">
+      <End Role="lkpCommunicationType" EntitySet="lkpCommunicationTypes" />
+      <End Role="ADBMessage" EntitySet="ADBMessages" />
+    </AssociationSet>
+    <EntitySet Name="vw_groupMessages" EntityType="ADBMessageDB_DevModel.vw_groupMessages" />
+    <EntitySet Name="ADBMessageToUserGroups" EntityType="ADBMessageDB_DevModel.ADBMessageToUserGroup" />
+    <AssociationSet Name="FK_ADBMessage_ADBMessageToUserGroup" Association="ADBMessageDB_DevModel.FK_ADBMessage_ADBMessageToUserGroup">
+      <End Role="ADBMessage" EntitySet="ADBMessages" />
+      <End Role="ADBMessageToUserGroup" EntitySet="ADBMessageToUserGroups" />
+    </AssociationSet>
+    <EntitySet Name="SystemCommunications" EntityType="ADBMessageDB_DevModel.SystemCommunication" />
+    <EntitySet Name="ADBMessageToLists" EntityType="ADBMessageDB_DevModel.ADBMessageToList" />
+    <AssociationSet Name="FK_ADBMessage_ADBMessageToList" Association="ADBMessageDB_DevModel.FK_ADBMessage_ADBMessageToList">
+      <End Role="ADBMessage" EntitySet="ADBMessages" />
+      <End Role="ADBMessageToList" EntitySet="ADBMessageToLists" />
+    </AssociationSet>
+    <EntitySet Name="CommunicationCCMasters" EntityType="ADBMessageDB_DevModel.CommunicationCCMaster" />
+    <EntitySet Name="CommunicationCCUsers" EntityType="ADBMessageDB_DevModel.CommunicationCCUser" />
+    <AssociationSet Name="FK_CommunicationCCUsers_CommunicationCCMaster" Association="ADBMessageDB_DevModel.FK_CommunicationCCUsers_CommunicationCCMaster">
+      <End Role="CommunicationCCMaster" EntitySet="CommunicationCCMasters" />
+      <End Role="CommunicationCCUser" EntitySet="CommunicationCCUsers" />
+    </AssociationSet>
+    <FunctionImport Name="usp_GetCommunicationCCusersData" ReturnType="Collection(ADBMessageDB_DevModel.GetCommunicationCCusersList)">
+      <Parameter Name="CommunicationSubEventId" Mode="In" Type="Int32" />
+      <Parameter Name="TenantId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="lkpSubEventCategoryTypes" EntityType="ADBMessageDB_DevModel.lkpSubEventCategoryType" />
+    <EntitySet Name="lkpCopyTypes" EntityType="ADBMessageDB_DevModel.lkpCopyType" />
+    <AssociationSet Name="FK_CommunicationCCUsers_CommunicationCCMaster1" Association="ADBMessageDB_DevModel.FK_CommunicationCCUsers_CommunicationCCMaster1">
+      <End Role="lkpCopyType" EntitySet="lkpCopyTypes" />
+      <End Role="CommunicationCCUser" EntitySet="CommunicationCCUsers" />
+    </AssociationSet>
+    <EntitySet Name="ExternalCopyUsers" EntityType="ADBMessageDB_DevModel.ExternalCopyUser" />
+    <AssociationSet Name="FK_ExternalCopyUsers_lkpCopyType" Association="ADBMessageDB_DevModel.FK_ExternalCopyUsers_lkpCopyType">
+      <End Role="lkpCopyType" EntitySet="lkpCopyTypes" />
+      <End Role="ExternalCopyUser" EntitySet="ExternalCopyUsers" />
+    </AssociationSet>
+    <EntitySet Name="HierarchyNotificationMappings" EntityType="ADBMessageDB_DevModel.HierarchyNotificationMapping" />
+    <AssociationSet Name="FK_HierarchyNotificationMapping_lkpCopyType" Association="ADBMessageDB_DevModel.FK_HierarchyNotificationMapping_lkpCopyType">
+      <End Role="lkpCopyType" EntitySet="lkpCopyTypes" />
+      <End Role="HierarchyNotificationMapping" EntitySet="HierarchyNotificationMappings" />
+    </AssociationSet>
+    <EntitySet Name="CommunicationTemplateEntities" EntityType="ADBMessageDB_DevModel.CommunicationTemplateEntity" />
+    <EntitySet Name="lkpCommunicationEntityTypes" EntityType="ADBMessageDB_DevModel.lkpCommunicationEntityType" />
+    <AssociationSet Name="FK_CommunicationTemplateEntity_lkpCommunicationEntityType" Association="ADBMessageDB_DevModel.FK_CommunicationTemplateEntity_lkpCommunicationEntityType">
+      <End Role="lkpCommunicationEntityType" EntitySet="lkpCommunicationEntityTypes" />
+      <End Role="CommunicationTemplateEntity" EntitySet="CommunicationTemplateEntities" />
+    </AssociationSet>
+    <EntitySet Name="lkpDocumentAttachmentTypes" EntityType="ADBMessageDB_DevModel.lkpDocumentAttachmentType" />
+    <EntitySet Name="SystemCommunicationAttachments" EntityType="ADBMessageDB_DevModel.SystemCommunicationAttachment" />
+    <AssociationSet Name="FK_SystemCommunicationAttachment_lkpDocumentAttachmentType" Association="ADBMessageDB_DevModel.FK_SystemCommunicationAttachment_lkpDocumentAttachmentType">
+      <End Role="lkpDocumentAttachmentType" EntitySet="lkpDocumentAttachmentTypes" />
+      <End Role="SystemCommunicationAttachment" EntitySet="SystemCommunicationAttachments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SystemCommunicationAttachment_SystemCommunication" Association="ADBMessageDB_DevModel.FK_SystemCommunicationAttachment_SystemCommunication">
+      <End Role="SystemCommunication" EntitySet="SystemCommunications" />
+      <End Role="SystemCommunicationAttachment" EntitySet="SystemCommunicationAttachments" />
+    </AssociationSet>
+    <EntitySet Name="ADBMessageDocuments" EntityType="ADBMessageDB_DevModel.ADBMessageDocument" />
+    <AssociationSet Name="FK_ADBMessageDocument_SystemCommunicationAttachment" Association="ADBMessageDB_DevModel.FK_ADBMessageDocument_SystemCommunicationAttachment">
+      <End Role="SystemCommunicationAttachment" EntitySet="SystemCommunicationAttachments" />
+      <End Role="ADBMessageDocument" EntitySet="ADBMessageDocuments" />
+    </AssociationSet>
+    <EntitySet Name="SystemCommunicationDeliveries" EntityType="ADBMessageDB_DevModel.SystemCommunicationDelivery" />
+    <AssociationSet Name="FK_SystemCommunication_SystemCommunicationDelivery" Association="ADBMessageDB_DevModel.FK_SystemCommunication_SystemCommunicationDelivery">
+      <End Role="SystemCommunication" EntitySet="SystemCommunications" />
+      <End Role="SystemCommunicationDelivery" EntitySet="SystemCommunicationDeliveries" />
+    </AssociationSet>
+    <EntitySet Name="CommunicationCCUsersSettings" EntityType="ADBMessageDB_DevModel.CommunicationCCUsersSetting" />
+    <EntitySet Name="lkpRecordObjectTypes" EntityType="ADBMessageDB_DevModel.lkpRecordObjectType" />
+    <AssociationSet Name="FK_CommunicationCCUsersSettings_CommunicationCCUsers" Association="ADBMessageDB_DevModel.FK_CommunicationCCUsersSettings_CommunicationCCUsers">
+      <End Role="CommunicationCCUser" EntitySet="CommunicationCCUsers" />
+      <End Role="CommunicationCCUsersSetting" EntitySet="CommunicationCCUsersSettings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CommunicationCCUsersSettings_lkpRecordObjectType" Association="ADBMessageDB_DevModel.FK_CommunicationCCUsersSettings_lkpRecordObjectType">
+      <End Role="lkpRecordObjectType" EntitySet="lkpRecordObjectTypes" />
+      <End Role="CommunicationCCUsersSetting" EntitySet="CommunicationCCUsersSettings" />
+    </AssociationSet>
+    <EntitySet Name="lkpNotificationDeliveryTypes" EntityType="ADBMessageDB_DevModel.lkpNotificationDeliveryType" />
+    <AssociationSet Name="FK_SystemCommunicationDelivery_lkpNotificationDeliveryType" Association="ADBMessageDB_DevModel.FK_SystemCommunicationDelivery_lkpNotificationDeliveryType">
+      <End Role="lkpNotificationDeliveryType" EntitySet="lkpNotificationDeliveryTypes" />
+      <End Role="SystemCommunicationDelivery" EntitySet="SystemCommunicationDeliveries" />
+    </AssociationSet>
+    <EntitySet Name="lkpCommunicationSubEvents" EntityType="ADBMessageDB_DevModel.lkpCommunicationSubEvent" />
+    <AssociationSet Name="FK_CommunicationCCMaster_lkpCommunicationSubEvents" Association="ADBMessageDB_DevModel.FK_CommunicationCCMaster_lkpCommunicationSubEvents">
+      <End Role="lkpCommunicationSubEvent" EntitySet="lkpCommunicationSubEvents" />
+      <End Role="CommunicationCCMaster" EntitySet="CommunicationCCMasters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_lkpCommunicationSubEvents_CommunicationTemplatePlaceHolderSubEvents" Association="ADBMessageDB_DevModel.FK_lkpCommunicationSubEvents_CommunicationTemplatePlaceHolderSubEvents">
+      <End Role="lkpCommunicationSubEvent" EntitySet="lkpCommunicationSubEvents" />
+      <End Role="CommunicationTemplatePlaceHolderSubEvent" EntitySet="CommunicationTemplatePlaceHolderSubEvents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ExternalCopyUsers_lkpCommunicationSubEvents" Association="ADBMessageDB_DevModel.FK_ExternalCopyUsers_lkpCommunicationSubEvents">
+      <End Role="lkpCommunicationSubEvent" EntitySet="lkpCommunicationSubEvents" />
+      <End Role="ExternalCopyUser" EntitySet="ExternalCopyUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HierarchyNotificationMapping_lkpCommunicationSubEvents" Association="ADBMessageDB_DevModel.FK_HierarchyNotificationMapping_lkpCommunicationSubEvents">
+      <End Role="lkpCommunicationSubEvent" EntitySet="lkpCommunicationSubEvents" />
+      <End Role="HierarchyNotificationMapping" EntitySet="HierarchyNotificationMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_lkpcommunicationEvent_lkpCommunicationSubEvents" Association="ADBMessageDB_DevModel.FK_lkpcommunicationEvent_lkpCommunicationSubEvents">
+      <End Role="lkpCommunicationEvent" EntitySet="lkpCommunicationEvents" />
+      <End Role="lkpCommunicationSubEvent" EntitySet="lkpCommunicationSubEvents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_lkpCommunicationSubEvents_lkpSubEventCategoryType" Association="ADBMessageDB_DevModel.FK_lkpCommunicationSubEvents_lkpSubEventCategoryType">
+      <End Role="lkpSubEventCategoryType" EntitySet="lkpSubEventCategoryTypes" />
+      <End Role="lkpCommunicationSubEvent" EntitySet="lkpCommunicationSubEvents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_lkpCommunicationSubEvents_SystemCommunication" Association="ADBMessageDB_DevModel.FK_lkpCommunicationSubEvents_SystemCommunication">
+      <End Role="lkpCommunicationSubEvent" EntitySet="lkpCommunicationSubEvents" />
+      <End Role="SystemCommunication" EntitySet="SystemCommunications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_lkpCommunicationType_lkpCommunicationSubEvents" Association="ADBMessageDB_DevModel.FK_lkpCommunicationType_lkpCommunicationSubEvents">
+      <End Role="lkpCommunicationType" EntitySet="lkpCommunicationTypes" />
+      <End Role="lkpCommunicationSubEvent" EntitySet="lkpCommunicationSubEvents" />
+    </AssociationSet>
+    <EntitySet Name="lkpScreeningResultTypes" EntityType="ADBMessageDB_DevModel.lkpScreeningResultType" />
+    <EntitySet Name="CommunicationTemplates" EntityType="ADBMessageDB_DevModel.CommunicationTemplate" />
+    <EntitySet Name="SMSTemplates" EntityType="ADBMessageDB_DevModel.SMSTemplate" />
+    <AssociationSet Name="FK_CommunicationTemplateEntity_CommunicationTemplates" Association="ADBMessageDB_DevModel.FK_CommunicationTemplateEntity_CommunicationTemplates">
+      <End Role="CommunicationTemplate" EntitySet="CommunicationTemplates" />
+      <End Role="CommunicationTemplateEntity" EntitySet="CommunicationTemplateEntities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_lkpCommunicationSubEvents_CommunicationTemplates" Association="ADBMessageDB_DevModel.FK_lkpCommunicationSubEvents_CommunicationTemplates">
+      <End Role="lkpCommunicationSubEvent" EntitySet="lkpCommunicationSubEvents" />
+      <End Role="CommunicationTemplate" EntitySet="CommunicationTemplates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SMSTemplates_lkpCommunicationSubEvents" Association="ADBMessageDB_DevModel.FK_SMSTemplates_lkpCommunicationSubEvents">
+      <End Role="lkpCommunicationSubEvent" EntitySet="lkpCommunicationSubEvents" />
+      <End Role="SMSTemplate" EntitySet="SMSTemplates" />
+    </AssociationSet>
+    <EntitySet Name="SystemEventSettings" EntityType="ADBMessageDB_DevModel.SystemEventSetting" />
+    <AssociationSet Name="FK_SystemEventSettings_CommunicationTemplates" Association="ADBMessageDB_DevModel.FK_SystemEventSettings_CommunicationTemplates">
+      <End Role="CommunicationTemplate" EntitySet="CommunicationTemplates" />
+      <End Role="SystemEventSetting" EntitySet="SystemEventSettings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SystemEventSettings_lkpCommunicationSubEvents" Association="ADBMessageDB_DevModel.FK_SystemEventSettings_lkpCommunicationSubEvents">
+      <End Role="lkpCommunicationSubEvent" EntitySet="lkpCommunicationSubEvents" />
+      <End Role="SystemEventSetting" EntitySet="SystemEventSettings" />
+    </AssociationSet>
+  </EntityContainer>
+  <ComplexType Name="GetADBMessageContentResult">
+    <Property Type="String" Name="DocumentName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="EVaultDocumentID" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="MessageBody" Nullable="true" MaxLength="1000" />
+    <Property Type="String" Name="OriginalDocumentName" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <EntityType Name="CommunicationMockUpData">
+    <Key>
+      <PropertyRef Name="CommunicationMockUpDataID" />
+    </Key>
+    <Property Type="Int32" Name="CommunicationMockUpDataID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="SubEventID" />
+    <Property Type="Int32" Name="ReceiverOrganizationUserID" Nullable="false" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="FullName" Nullable="false" MaxLength="75" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="EmailID" Nullable="false" MaxLength="75" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Password" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="OrderNo" />
+    <Property Type="DateTime" Name="OrderDate" Precision="3" />
+    <Property Type="String" Name="OrderContent" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="OrderStatus" />
+    <Property Type="String" Name="ProgramName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="SubscriptionName" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="SubscriptionStartDate" Precision="3" />
+    <Property Type="DateTime" Name="SubscriptionEndDate" Precision="3" />
+    <Property Type="Boolean" Name="AccountStatus" />
+    <Property Type="Boolean" Name="ComplianceStatus" />
+    <Property Type="String" Name="CreditCardDetails" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="MoneyOrderDetails" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="MBSPaymentDetails" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="EventName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="EventStartDate" Precision="3" />
+    <Property Type="DateTime" Name="EventEndDate" Precision="3" />
+    <Property Type="DateTime" Name="EventNewStartDate" Precision="3" />
+    <Property Type="DateTime" Name="EventNewEndDate" Precision="3" />
+    <Property Type="String" Name="ComplianceName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ComplianceExpiryDate" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ComplianceItemName" MaxLength="75" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="ComplianceItemExpiryDate" Precision="3" />
+  </EntityType>
+  <EntityType Name="CommunicationTemplatePlaceHolder">
+    <Key>
+      <PropertyRef Name="CommunicationTemplatePlaceHolderID" />
+    </Key>
+    <Property Type="Int32" Name="CommunicationTemplatePlaceHolderID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PlaceHolder" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Property" MaxLength="75" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsDeleted" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="CreateUserID" />
+    <Property Type="DateTime" Name="ModifyDate" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="ModifyUserID" />
+    <NavigationProperty Name="CommunicationTemplatePlaceHolderSubEvents" Relationship="ADBMessageDB_DevModel.FK_CommunicationTemplatePlaceHolders_CommunicationTemplatePlaceHolderSubEvents" FromRole="CommunicationTemplatePlaceHolder" ToRole="CommunicationTemplatePlaceHolderSubEvent" />
+  </EntityType>
+  <EntityType Name="CommunicationTemplatePlaceHolderSubEvent">
+    <Key>
+      <PropertyRef Name="CommunicationTemplatePlaceHolderSubEventID" />
+    </Key>
+    <Property Type="Int32" Name="CommunicationTemplatePlaceHolderSubEventID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="CommunicationTemplatePlaceHolderID" Nullable="false" />
+    <Property Type="Int32" Name="CommunicationSubEventID" Nullable="false" />
+    <NavigationProperty Name="CommunicationTemplatePlaceHolder" Relationship="ADBMessageDB_DevModel.FK_CommunicationTemplatePlaceHolders_CommunicationTemplatePlaceHolderSubEvents" FromRole="CommunicationTemplatePlaceHolderSubEvent" ToRole="CommunicationTemplatePlaceHolder" />
+    <NavigationProperty Name="lkpCommunicationSubEvent" Relationship="ADBMessageDB_DevModel.FK_lkpCommunicationSubEvents_CommunicationTemplatePlaceHolderSubEvents" FromRole="CommunicationTemplatePlaceHolderSubEvent" ToRole="lkpCommunicationSubEvent" />
+  </EntityType>
+  <EntityType Name="lkpCommunicationEvent">
+    <Key>
+      <PropertyRef Name="CommunicationEventID" />
+    </Key>
+    <Property Type="Int32" Name="CommunicationEventID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Code" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Description" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="CreatedByID" Nullable="false" />
+    <Property Type="DateTime" Name="ModifiedOn" Precision="3" />
+    <Property Type="Int32" Name="ModifiedByID" />
+    <NavigationProperty Name="lkpCommunicationSubEvents" Relationship="ADBMessageDB_DevModel.FK_lkpcommunicationEvent_lkpCommunicationSubEvents" FromRole="lkpCommunicationEvent" ToRole="lkpCommunicationSubEvent" />
+  </EntityType>
+  <EntityType Name="lkpCommunicationType">
+    <Key>
+      <PropertyRef Name="CommunicationTypeID" />
+    </Key>
+    <Property Type="Int32" Name="CommunicationTypeID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="Name" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Code" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Description" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsDeleted" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="CreatedByID" Nullable="false" />
+    <Property Type="DateTime" Name="ModifiedOn" Precision="3" />
+    <Property Type="Int32" Name="ModifiedByID" />
+    <NavigationProperty Name="UserCommunicationSubscriptionSettings" Relationship="ADBMessageDB_DevModel.FK_lkpCommunicationType_CommunicationSubscriptionSettings" FromRole="lkpCommunicationType" ToRole="UserCommunicationSubscriptionSetting" />
+    <NavigationProperty Name="ADBMessages" Relationship="ADBMessageDB_DevModel.FK_lkpCommunicationType_ADBMessage" FromRole="lkpCommunicationType" ToRole="ADBMessage" />
+    <NavigationProperty Name="lkpCommunicationSubEvents" Relationship="ADBMessageDB_DevModel.FK_lkpCommunicationType_lkpCommunicationSubEvents" FromRole="lkpCommunicationType" ToRole="lkpCommunicationSubEvent" />
+  </EntityType>
+  <EntityType Name="UserCommunicationSubscriptionSetting">
+    <Key>
+      <PropertyRef Name="UserCommunicationSubscriptionSettingID" />
+    </Key>
+    <Property Type="Int32" Name="UserCommunicationSubscriptionSettingID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="OrganizationUserID" Nullable="false" />
+    <Property Type="Int32" Name="CommunicationTypeID" Nullable="false" />
+    <Property Type="Int32" Name="CommunicationEventID" Nullable="false" />
+    <Property Type="Boolean" Name="IsSubscribedToUser" Nullable="false" />
+    <Property Type="Boolean" Name="IsSubscribedToAdmin" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="CreatedByID" Nullable="false" />
+    <Property Type="DateTime" Name="ModifiedOn" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="ModifiedByID" />
+    <NavigationProperty Name="lkpCommunicationType" Relationship="ADBMessageDB_DevModel.FK_lkpCommunicationType_CommunicationSubscriptionSettings" FromRole="UserCommunicationSubscriptionSetting" ToRole="lkpCommunicationType" />
+  </EntityType>
+  <EntityType Name="vwCommunicationType">
+    <Key>
+      <PropertyRef Name="CommunicationTypeId" />
+    </Key>
+    <Property Type="Int32" Name="CommunicationTypeId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="Code" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Name" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Description" MaxLength="250" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="vwMessage">
+    <Key>
+      <PropertyRef Name="ADBMessageId" />
+    </Key>
+    <Property Type="Int32" Name="From" />
+    <Property Type="String" Name="Subject" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="ReceiveDate" Precision="3" />
+    <Property Type="Guid" Name="ADBMessageId" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_CommunicationTemplatePlaceHolders_CommunicationTemplatePlaceHolderSubEvents">
+    <End Type="ADBMessageDB_DevModel.CommunicationTemplatePlaceHolder" Role="CommunicationTemplatePlaceHolder" Multiplicity="1" />
+    <End Type="ADBMessageDB_DevModel.CommunicationTemplatePlaceHolderSubEvent" Role="CommunicationTemplatePlaceHolderSubEvent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CommunicationTemplatePlaceHolder">
+        <PropertyRef Name="CommunicationTemplatePlaceHolderID" />
+      </Principal>
+      <Dependent Role="CommunicationTemplatePlaceHolderSubEvent">
+        <PropertyRef Name="CommunicationTemplatePlaceHolderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_lkpCommunicationType_CommunicationSubscriptionSettings">
+    <End Type="ADBMessageDB_DevModel.lkpCommunicationType" Role="lkpCommunicationType" Multiplicity="1" />
+    <End Type="ADBMessageDB_DevModel.UserCommunicationSubscriptionSetting" Role="UserCommunicationSubscriptionSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lkpCommunicationType">
+        <PropertyRef Name="CommunicationTypeID" />
+      </Principal>
+      <Dependent Role="UserCommunicationSubscriptionSetting">
+        <PropertyRef Name="CommunicationTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="ADBMessage">
+    <Key>
+      <PropertyRef Name="ADBMessageID" />
+    </Key>
+    <Property Type="Guid" Name="ADBMessageID" Nullable="false" />
+    <Property Type="String" Name="Message" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="From" />
+    <Property Type="String" Name="Subject" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="ReceiveDate" Precision="3" />
+    <Property Type="Guid" Name="ConversationHandleID" />
+    <Property Type="Guid" Name="ParentMessageID" />
+    <Property Type="String" Name="MessageMode" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="OriginalDocumentName" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="DocumentName" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+    <Property Type="Boolean" Name="IsHighImportant" Nullable="false" />
+    <Property Type="Boolean" Name="IsFollowUp" Nullable="false" />
+    <Property Type="Int32" Name="CommunicationTypeID" />
+    <Property Type="String" Name="TemplateName" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsUnread" Nullable="false" />
+    <NavigationProperty Name="ADBMessage1" Relationship="ADBMessageDB_DevModel.FK_ADBMessage_ADBMessage" FromRole="ADBMessage" ToRole="ADBMessage1" />
+    <NavigationProperty Name="ADBMessage2" Relationship="ADBMessageDB_DevModel.FK_ADBMessage_ADBMessage" FromRole="ADBMessage1" ToRole="ADBMessage" />
+    <NavigationProperty Name="lkpCommunicationType" Relationship="ADBMessageDB_DevModel.FK_lkpCommunicationType_ADBMessage" FromRole="ADBMessage" ToRole="lkpCommunicationType" />
+    <NavigationProperty Name="ADBMessageToUserGroups" Relationship="ADBMessageDB_DevModel.FK_ADBMessage_ADBMessageToUserGroup" FromRole="ADBMessage" ToRole="ADBMessageToUserGroup" />
+    <NavigationProperty Name="ADBMessageToLists" Relationship="ADBMessageDB_DevModel.FK_ADBMessage_ADBMessageToList" FromRole="ADBMessage" ToRole="ADBMessageToList" />
+  </EntityType>
+  <Association Name="FK_ADBMessage_ADBMessage">
+    <End Type="ADBMessageDB_DevModel.ADBMessage" Role="ADBMessage" Multiplicity="0..1" />
+    <End Type="ADBMessageDB_DevModel.ADBMessage" Role="ADBMessage1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ADBMessage">
+        <PropertyRef Name="ADBMessageID" />
+      </Principal>
+      <Dependent Role="ADBMessage1">
+        <PropertyRef Name="ParentMessageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_lkpCommunicationType_ADBMessage">
+    <End Type="ADBMessageDB_DevModel.lkpCommunicationType" Role="lkpCommunicationType" Multiplicity="0..1" />
+    <End Type="ADBMessageDB_DevModel.ADBMessage" Role="ADBMessage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lkpCommunicationType">
+        <PropertyRef Name="CommunicationTypeID" />
+      </Principal>
+      <Dependent Role="ADBMessage">
+        <PropertyRef Name="CommunicationTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="vw_groupMessages">
+    <Key>
+      <PropertyRef Name="ADBMessageID" />
+      <PropertyRef Name="IsActive" />
+      <PropertyRef Name="IsDeleted" />
+      <PropertyRef Name="IsHighImportant" />
+      <PropertyRef Name="IsFollowUp" />
+      <PropertyRef Name="IsUnread" />
+      <PropertyRef Name="ADBMessageToUserGroupID" />
+      <PropertyRef Name="UserGroupID" />
+      <PropertyRef Name="Message" />
+    </Key>
+    <Property Type="Guid" Name="ADBMessageID" Nullable="false" />
+    <Property Type="Int32" Name="From" />
+    <Property Type="String" Name="Subject" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Guid" Name="ConversationHandleID" />
+    <Property Type="Guid" Name="ParentMessageID" />
+    <Property Type="String" Name="MessageMode" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="OriginalDocumentName" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="DocumentName" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+    <Property Type="Boolean" Name="IsHighImportant" Nullable="false" />
+    <Property Type="Boolean" Name="IsFollowUp" Nullable="false" />
+    <Property Type="String" Name="TemplateName" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsUnread" Nullable="false" />
+    <Property Type="Int32" Name="ADBMessageToUserGroupID" Nullable="false" />
+    <Property Type="Int32" Name="UserGroupID" Nullable="false" />
+    <Property Type="Int32" Name="UserID" />
+    <Property Type="Boolean" Name="IsCC" />
+    <Property Type="String" Name="Name" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Code" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Message" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="ReceiveDate" Precision="3" />
+    <Property Type="String" Name="MessageBody" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ToUserList" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="SenderUser" MaxLength="250" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ADBMessageToUserGroup">
+    <Key>
+      <PropertyRef Name="ADBMessageToUserGroupID" />
+    </Key>
+    <Property Type="Int32" Name="ADBMessageToUserGroupID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Guid" Name="ADBMessageID" Nullable="false" />
+    <Property Type="Int32" Name="UserGroupID" Nullable="false" />
+    <Property Type="Int32" Name="UserID" />
+    <Property Type="Boolean" Name="IsCC" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+    <Property Type="Guid" Name="ConversationID" Nullable="false" />
+    <Property Type="Guid" Name="ConversationHandleID" Nullable="false" />
+    <Property Type="Guid" Name="ConversationGroupID" Nullable="false" />
+    <NavigationProperty Name="ADBMessage" Relationship="ADBMessageDB_DevModel.FK_ADBMessage_ADBMessageToUserGroup" FromRole="ADBMessageToUserGroup" ToRole="ADBMessage" />
+  </EntityType>
+  <Association Name="FK_ADBMessage_ADBMessageToUserGroup">
+    <End Type="ADBMessageDB_DevModel.ADBMessage" Role="ADBMessage" Multiplicity="1" />
+    <End Type="ADBMessageDB_DevModel.ADBMessageToUserGroup" Role="ADBMessageToUserGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ADBMessage">
+        <PropertyRef Name="ADBMessageID" />
+      </Principal>
+      <Dependent Role="ADBMessageToUserGroup">
+        <PropertyRef Name="ADBMessageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="SystemCommunication">
+    <Key>
+      <PropertyRef Name="SystemCommunicationID" />
+    </Key>
+    <Property Type="Int32" Name="SystemCommunicationID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="CommunicationSubEventID" />
+    <Property Type="String" Name="Subject" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Content" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="SenderEmailID" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="SenderName" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="CreatedByID" Nullable="false" />
+    <Property Type="DateTime" Name="ModifiedOn" Precision="3" />
+    <Property Type="Int32" Name="ModifiedByID" />
+    <NavigationProperty Name="SystemCommunicationAttachments" Relationship="ADBMessageDB_DevModel.FK_SystemCommunicationAttachment_SystemCommunication" FromRole="SystemCommunication" ToRole="SystemCommunicationAttachment" />
+    <NavigationProperty Name="SystemCommunicationDeliveries" Relationship="ADBMessageDB_DevModel.FK_SystemCommunication_SystemCommunicationDelivery" FromRole="SystemCommunication" ToRole="SystemCommunicationDelivery" />
+    <NavigationProperty Name="lkpCommunicationSubEvent" Relationship="ADBMessageDB_DevModel.FK_lkpCommunicationSubEvents_SystemCommunication" FromRole="SystemCommunication" ToRole="lkpCommunicationSubEvent" />
+  </EntityType>
+  <EntityType Name="ADBMessageToList">
+    <Key>
+      <PropertyRef Name="ADBMessageToListID" />
+    </Key>
+    <Property Type="Int32" Name="ADBMessageToListID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Guid" Name="ConversationID" Nullable="false" />
+    <Property Type="Guid" Name="ConversationHandleID" Nullable="false" />
+    <Property Type="Guid" Name="ConversationGroupID" Nullable="false" />
+    <Property Type="Int32" Name="EntityID" />
+    <Property Type="Guid" Name="ADBMessageID" />
+    <Property Type="Boolean" Name="IsCC" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+    <Property Type="Int32" Name="FolderID" Nullable="false" />
+    <Property Type="Boolean" Name="IsUnread" Nullable="false" />
+    <Property Type="Boolean" Name="IsFollowup" Nullable="false" />
+    <Property Type="Boolean" Name="IsBcc" />
+    <NavigationProperty Name="ADBMessage" Relationship="ADBMessageDB_DevModel.FK_ADBMessage_ADBMessageToList" FromRole="ADBMessageToList" ToRole="ADBMessage" />
+  </EntityType>
+  <Association Name="FK_ADBMessage_ADBMessageToList">
+    <End Type="ADBMessageDB_DevModel.ADBMessage" Role="ADBMessage" Multiplicity="0..1" />
+    <End Type="ADBMessageDB_DevModel.ADBMessageToList" Role="ADBMessageToList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ADBMessage">
+        <PropertyRef Name="ADBMessageID" />
+      </Principal>
+      <Dependent Role="ADBMessageToList">
+        <PropertyRef Name="ADBMessageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="CommunicationCCMaster">
+    <Key>
+      <PropertyRef Name="CommunicationCCMasterID" />
+    </Key>
+    <Property Type="Int32" Name="CommunicationCCMasterID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="TenantID" />
+    <Property Type="Int32" Name="CommunicationSubEventID" Nullable="false" />
+    <Property Type="Boolean" Name="IsDeleted" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="ModifiedBy" />
+    <Property Type="DateTime" Name="ModifiedOn" Precision="3" />
+    <NavigationProperty Name="CommunicationCCUsers" Relationship="ADBMessageDB_DevModel.FK_CommunicationCCUsers_CommunicationCCMaster" FromRole="CommunicationCCMaster" ToRole="CommunicationCCUser" />
+    <NavigationProperty Name="lkpCommunicationSubEvent" Relationship="ADBMessageDB_DevModel.FK_CommunicationCCMaster_lkpCommunicationSubEvents" FromRole="CommunicationCCMaster" ToRole="lkpCommunicationSubEvent" />
+  </EntityType>
+  <EntityType Name="CommunicationCCUser">
+    <Key>
+      <PropertyRef Name="CommunicationCCUsersID" />
+    </Key>
+    <Property Type="Int32" Name="CommunicationCCUsersID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="CommunicationCCMasterID" />
+    <Property Type="Int32" Name="OrganizationUserID" />
+    <Property Type="Boolean" Name="IsDeleted" />
+    <Property Type="Int32" Name="CreatedBy" />
+    <Property Type="DateTime" Name="CreatedOn" Precision="3" />
+    <Property Type="Int32" Name="ModifiedBy" />
+    <Property Type="DateTime" Name="ModifiedOn" Precision="3" />
+    <NavigationProperty Name="CommunicationCCMaster" Relationship="ADBMessageDB_DevModel.FK_CommunicationCCUsers_CommunicationCCMaster" FromRole="CommunicationCCUser" ToRole="CommunicationCCMaster" />
+    <Property Type="Int16" Name="CopyTypeID" />
+    <Property Type="Boolean" Name="IsCommunicationCentre" />
+    <Property Type="Boolean" Name="IsEmail" />
+    <NavigationProperty Name="lkpCopyType" Relationship="ADBMessageDB_DevModel.FK_CommunicationCCUsers_CommunicationCCMaster1" FromRole="CommunicationCCUser" ToRole="lkpCopyType" />
+    <NavigationProperty Name="CommunicationCCUsersSettings" Relationship="ADBMessageDB_DevModel.FK_CommunicationCCUsersSettings_CommunicationCCUsers" FromRole="CommunicationCCUser" ToRole="CommunicationCCUsersSetting" />
+    <Property Type="Boolean" Name="IsOnlyRotationCreatedNotification" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_CommunicationCCUsers_CommunicationCCMaster">
+    <End Type="ADBMessageDB_DevModel.CommunicationCCMaster" Role="CommunicationCCMaster" Multiplicity="0..1" />
+    <End Type="ADBMessageDB_DevModel.CommunicationCCUser" Role="CommunicationCCUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CommunicationCCMaster">
+        <PropertyRef Name="CommunicationCCMasterID" />
+      </Principal>
+      <Dependent Role="CommunicationCCUser">
+        <PropertyRef Name="CommunicationCCMasterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="GetCommunicationCCusersList">
+    <Property Type="Int32" Name="UserID" Nullable="false" />
+    <Property Type="String" Name="EmailAddress" Nullable="false" />
+    <Property Type="String" Name="UserName" Nullable="false" />
+    <Property Type="String" Name="CopyCode" Nullable="false" />
+    <Property Type="String" Name="CopyName" Nullable="false" />
+    <Property Type="Boolean" Name="IsCommunicationCentre" Nullable="false" />
+    <Property Type="Boolean" Name="IsEmail" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="lkpSubEventCategoryType">
+    <Key>
+      <PropertyRef Name="SCT_ID" />
+    </Key>
+    <Property Type="Int16" Name="SCT_ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="SCT_Code" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="SCT_Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="SCT_Description" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="SCT_BusinessChannelType" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="lkpCommunicationSubEvents" Relationship="ADBMessageDB_DevModel.FK_lkpCommunicationSubEvents_lkpSubEventCategoryType" FromRole="lkpSubEventCategoryType" ToRole="lkpCommunicationSubEvent" />
+  </EntityType>
+  <EntityType Name="lkpCopyType">
+    <Key>
+      <PropertyRef Name="CT_Id" />
+    </Key>
+    <Property Type="Int16" Name="CT_Id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="CT_Name" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CT_Code" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CT_Description" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="CT_IsDeleted" />
+    <Property Type="Int32" Name="CT_CreatedBy" Nullable="false" />
+    <Property Type="DateTime" Name="CT_CreatedOn" Nullable="false" Precision="3" />
+    <NavigationProperty Name="CommunicationCCUsers" Relationship="ADBMessageDB_DevModel.FK_CommunicationCCUsers_CommunicationCCMaster1" FromRole="lkpCopyType" ToRole="CommunicationCCUser" />
+    <NavigationProperty Name="ExternalCopyUsers" Relationship="ADBMessageDB_DevModel.FK_ExternalCopyUsers_lkpCopyType" FromRole="lkpCopyType" ToRole="ExternalCopyUser" />
+    <NavigationProperty Name="HierarchyNotificationMappings" Relationship="ADBMessageDB_DevModel.FK_HierarchyNotificationMapping_lkpCopyType" FromRole="lkpCopyType" ToRole="HierarchyNotificationMapping" />
+  </EntityType>
+  <Association Name="FK_CommunicationCCUsers_CommunicationCCMaster1">
+    <End Type="ADBMessageDB_DevModel.lkpCopyType" Role="lkpCopyType" Multiplicity="0..1" />
+    <End Type="ADBMessageDB_DevModel.CommunicationCCUser" Role="CommunicationCCUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lkpCopyType">
+        <PropertyRef Name="CT_Id" />
+      </Principal>
+      <Dependent Role="CommunicationCCUser">
+        <PropertyRef Name="CopyTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="ExternalCopyUser">
+    <Key>
+      <PropertyRef Name="ECU_ID" />
+    </Key>
+    <Property Type="Int32" Name="ECU_ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="ECU_FirstName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ECU_LastName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ECU_EmailID" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="ECU_TenantID" />
+    <Property Type="Int32" Name="ECU_HierarchyNodeID" />
+    <Property Type="Int16" Name="ECU_CopyTypeID" />
+    <Property Type="Int32" Name="ECU_CommunicationSubEventID" Nullable="false" />
+    <Property Type="Boolean" Name="ECU_IsDeleted" />
+    <Property Type="DateTime" Name="ECU_CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="ECU_CreatedByID" Nullable="false" />
+    <Property Type="DateTime" Name="ECU_ModifiedOn" Precision="3" />
+    <Property Type="Int32" Name="ECU_ModifiedByID" />
+    <NavigationProperty Name="lkpCopyType" Relationship="ADBMessageDB_DevModel.FK_ExternalCopyUsers_lkpCopyType" FromRole="ExternalCopyUser" ToRole="lkpCopyType" />
+    <NavigationProperty Name="lkpCommunicationSubEvent" Relationship="ADBMessageDB_DevModel.FK_ExternalCopyUsers_lkpCommunicationSubEvents" FromRole="ExternalCopyUser" ToRole="lkpCommunicationSubEvent" />
+  </EntityType>
+  <Association Name="FK_ExternalCopyUsers_lkpCopyType">
+    <End Type="ADBMessageDB_DevModel.lkpCopyType" Role="lkpCopyType" Multiplicity="0..1" />
+    <End Type="ADBMessageDB_DevModel.ExternalCopyUser" Role="ExternalCopyUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lkpCopyType">
+        <PropertyRef Name="CT_Id" />
+      </Principal>
+      <Dependent Role="ExternalCopyUser">
+        <PropertyRef Name="ECU_CopyTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="HierarchyNotificationMapping">
+    <Key>
+      <PropertyRef Name="HNM_ID" />
+    </Key>
+    <Property Type="Int32" Name="HNM_ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="HNM_TenantID" />
+    <Property Type="Int32" Name="HNM_HierarchyContactMappingID" />
+    <Property Type="Int32" Name="HNM_HierarchyNodeID" />
+    <Property Type="Int16" Name="HNM_CopyTypeID" />
+    <Property Type="Int32" Name="HNM_SubEventID" />
+    <Property Type="Boolean" Name="HNM_IsCommunicationCenter" Nullable="false" />
+    <Property Type="Boolean" Name="HNM_IsEmail" Nullable="false" />
+    <Property Type="Boolean" Name="HNM_IsDeleted" Nullable="false" />
+    <Property Type="Int32" Name="HNM_CreatedByID" Nullable="false" />
+    <Property Type="DateTime" Name="HNM_CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="HNM_ModifiedByID" />
+    <Property Type="DateTime" Name="HNM_ModifiedOn" Precision="3" />
+    <NavigationProperty Name="lkpCopyType" Relationship="ADBMessageDB_DevModel.FK_HierarchyNotificationMapping_lkpCopyType" FromRole="HierarchyNotificationMapping" ToRole="lkpCopyType" />
+    <NavigationProperty Name="lkpCommunicationSubEvent" Relationship="ADBMessageDB_DevModel.FK_HierarchyNotificationMapping_lkpCommunicationSubEvents" FromRole="HierarchyNotificationMapping" ToRole="lkpCommunicationSubEvent" />
+  </EntityType>
+  <Association Name="FK_HierarchyNotificationMapping_lkpCopyType">
+    <End Type="ADBMessageDB_DevModel.lkpCopyType" Role="lkpCopyType" Multiplicity="0..1" />
+    <End Type="ADBMessageDB_DevModel.HierarchyNotificationMapping" Role="HierarchyNotificationMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lkpCopyType">
+        <PropertyRef Name="CT_Id" />
+      </Principal>
+      <Dependent Role="HierarchyNotificationMapping">
+        <PropertyRef Name="HNM_CopyTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="CommunicationTemplateEntity">
+    <Key>
+      <PropertyRef Name="CTE_ID" />
+    </Key>
+    <Property Type="Int32" Name="CTE_ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="CTE_TemplateID" Nullable="false" />
+    <Property Type="Int32" Name="CTE_CommunicationEntityTypeID" Nullable="false" />
+    <Property Type="Int32" Name="CTE_EntityID" Nullable="false" />
+    <Property Type="Boolean" Name="CTE_IsDeleted" Nullable="false" />
+    <Property Type="Int32" Name="CTE_CreatedBy" Nullable="false" />
+    <Property Type="DateTime" Name="CTE_CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="CTE_ModifiedBy" />
+    <Property Type="DateTime" Name="CTE_ModifiedOn" Precision="3" />
+    <NavigationProperty Name="lkpCommunicationEntityType" Relationship="ADBMessageDB_DevModel.FK_CommunicationTemplateEntity_lkpCommunicationEntityType" FromRole="CommunicationTemplateEntity" ToRole="lkpCommunicationEntityType" />
+    <NavigationProperty Name="CommunicationTemplate" Relationship="ADBMessageDB_DevModel.FK_CommunicationTemplateEntity_CommunicationTemplates" FromRole="CommunicationTemplateEntity" ToRole="CommunicationTemplate" />
+  </EntityType>
+  <EntityType Name="lkpCommunicationEntityType">
+    <Key>
+      <PropertyRef Name="CET_ID" />
+    </Key>
+    <Property Type="Int32" Name="CET_ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="CET_Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CET_Code" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Type="Boolean" Name="CET_IsDeleted" Nullable="false" />
+    <Property Type="Int32" Name="CET_CreatedBy" Nullable="false" />
+    <Property Type="DateTime" Name="CET_CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="CET_ModifiedBy" />
+    <Property Type="DateTime" Name="CET_ModifiedOn" Precision="3" />
+    <NavigationProperty Name="CommunicationTemplateEntities" Relationship="ADBMessageDB_DevModel.FK_CommunicationTemplateEntity_lkpCommunicationEntityType" FromRole="lkpCommunicationEntityType" ToRole="CommunicationTemplateEntity" />
+  </EntityType>
+  <Association Name="FK_CommunicationTemplateEntity_lkpCommunicationEntityType">
+    <End Type="ADBMessageDB_DevModel.lkpCommunicationEntityType" Role="lkpCommunicationEntityType" Multiplicity="1" />
+    <End Type="ADBMessageDB_DevModel.CommunicationTemplateEntity" Role="CommunicationTemplateEntity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lkpCommunicationEntityType">
+        <PropertyRef Name="CET_ID" />
+      </Principal>
+      <Dependent Role="CommunicationTemplateEntity">
+        <PropertyRef Name="CTE_CommunicationEntityTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="lkpDocumentAttachmentType">
+    <Key>
+      <PropertyRef Name="DAT_ID" />
+    </Key>
+    <Property Type="Int16" Name="DAT_ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="DAT_Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="DAT_Code" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Type="Boolean" Name="DAT_IsDeleted" Nullable="false" />
+    <Property Type="Int32" Name="DAT_CreatedBy" Nullable="false" />
+    <Property Type="DateTime" Name="DAT_CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="DAT_ModifiedBy" />
+    <Property Type="DateTime" Name="DAT_ModifiedOn" Precision="3" />
+    <NavigationProperty Name="SystemCommunicationAttachments" Relationship="ADBMessageDB_DevModel.FK_SystemCommunicationAttachment_lkpDocumentAttachmentType" FromRole="lkpDocumentAttachmentType" ToRole="SystemCommunicationAttachment" />
+  </EntityType>
+  <EntityType Name="SystemCommunicationAttachment">
+    <Key>
+      <PropertyRef Name="SCA_ID" />
+    </Key>
+    <Property Type="Int32" Name="SCA_ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="SCA_OriginalDocumentID" Nullable="false" />
+    <Property Type="String" Name="SCA_OriginalDocumentName" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="SCA_DocumentPath" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="SCA_DocumentSize" Nullable="false" />
+    <Property Type="Int32" Name="SCA_SystemCommunicationID" Nullable="false" />
+    <Property Type="Int16" Name="SCA_DocAttachmentTypeID" Nullable="false" />
+    <Property Type="Int32" Name="SCA_TenantID" />
+    <Property Type="Boolean" Name="SCA_IsDeleted" Nullable="false" />
+    <Property Type="Int32" Name="SCA_CreatedBy" Nullable="false" />
+    <Property Type="DateTime" Name="SCA_CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="SCA_ModifiedBy" />
+    <Property Type="DateTime" Name="SCA_ModifiedOn" Precision="3" />
+    <NavigationProperty Name="lkpDocumentAttachmentType" Relationship="ADBMessageDB_DevModel.FK_SystemCommunicationAttachment_lkpDocumentAttachmentType" FromRole="SystemCommunicationAttachment" ToRole="lkpDocumentAttachmentType" />
+    <NavigationProperty Name="SystemCommunication" Relationship="ADBMessageDB_DevModel.FK_SystemCommunicationAttachment_SystemCommunication" FromRole="SystemCommunicationAttachment" ToRole="SystemCommunication" />
+    <NavigationProperty Name="ADBMessageDocuments" Relationship="ADBMessageDB_DevModel.FK_ADBMessageDocument_SystemCommunicationAttachment" FromRole="SystemCommunicationAttachment" ToRole="ADBMessageDocument" />
+  </EntityType>
+  <Association Name="FK_SystemCommunicationAttachment_lkpDocumentAttachmentType">
+    <End Type="ADBMessageDB_DevModel.lkpDocumentAttachmentType" Role="lkpDocumentAttachmentType" Multiplicity="1" />
+    <End Type="ADBMessageDB_DevModel.SystemCommunicationAttachment" Role="SystemCommunicationAttachment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lkpDocumentAttachmentType">
+        <PropertyRef Name="DAT_ID" />
+      </Principal>
+      <Dependent Role="SystemCommunicationAttachment">
+        <PropertyRef Name="SCA_DocAttachmentTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SystemCommunicationAttachment_SystemCommunication">
+    <End Type="ADBMessageDB_DevModel.SystemCommunication" Role="SystemCommunication" Multiplicity="1" />
+    <End Type="ADBMessageDB_DevModel.SystemCommunicationAttachment" Role="SystemCommunicationAttachment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SystemCommunication">
+        <PropertyRef Name="SystemCommunicationID" />
+      </Principal>
+      <Dependent Role="SystemCommunicationAttachment">
+        <PropertyRef Name="SCA_SystemCommunicationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="ADBMessageDocument">
+    <Key>
+      <PropertyRef Name="DocumentId" />
+    </Key>
+    <Property Type="Int32" Name="DocumentId" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="DocumentName" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="OriginalDocumentName" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="DocumentSize" Nullable="false" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+    <Property Type="Int32" Name="SystemCommunicationAttachmentID" />
+    <NavigationProperty Name="SystemCommunicationAttachment" Relationship="ADBMessageDB_DevModel.FK_ADBMessageDocument_SystemCommunicationAttachment" FromRole="ADBMessageDocument" ToRole="SystemCommunicationAttachment" />
+  </EntityType>
+  <Association Name="FK_ADBMessageDocument_SystemCommunicationAttachment">
+    <End Type="ADBMessageDB_DevModel.SystemCommunicationAttachment" Role="SystemCommunicationAttachment" Multiplicity="0..1" />
+    <End Type="ADBMessageDB_DevModel.ADBMessageDocument" Role="ADBMessageDocument" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SystemCommunicationAttachment">
+        <PropertyRef Name="SCA_ID" />
+      </Principal>
+      <Dependent Role="ADBMessageDocument">
+        <PropertyRef Name="SystemCommunicationAttachmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="SystemCommunicationDelivery">
+    <Key>
+      <PropertyRef Name="SystemCommunicationDeliveryID" />
+    </Key>
+    <Property Type="Int32" Name="SystemCommunicationDeliveryID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="SystemCommunicationTypeID" Nullable="false" />
+    <Property Type="Int32" Name="ReceiverOrganizationUserID" Nullable="false" />
+    <Property Type="String" Name="RecieverEmailID" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RecieverName" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="DispatchedDate" Precision="3" />
+    <Property Type="Boolean" Name="IsDispatched" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="CreatedByID" Nullable="false" />
+    <Property Type="DateTime" Name="ModifiedOn" Precision="3" />
+    <Property Type="Int32" Name="ModifiedByID" />
+    <Property Type="Boolean" Name="IsCC" />
+    <Property Type="Boolean" Name="IsBCC" />
+    <Property Type="Int32" Name="RetryCount" Nullable="false" />
+    <Property Type="DateTime" Name="RetryErrorDate" Precision="3" />
+    <Property Type="String" Name="RetryErrorMessage" MaxLength="4096" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="SystemCommunication" Relationship="ADBMessageDB_DevModel.FK_SystemCommunication_SystemCommunicationDelivery" FromRole="SystemCommunicationDelivery" ToRole="SystemCommunication" />
+    <Property Type="Int32" Name="NotificationDeliveryTypeID" Nullable="false" a:StoreGeneratedPattern="None" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" ConcurrencyMode="None" DefaultValue="1" />
+    <NavigationProperty Name="lkpNotificationDeliveryType" Relationship="ADBMessageDB_DevModel.FK_SystemCommunicationDelivery_lkpNotificationDeliveryType" FromRole="SystemCommunicationDelivery" ToRole="lkpNotificationDeliveryType" />
+  </EntityType>
+  <Association Name="FK_SystemCommunication_SystemCommunicationDelivery">
+    <End Type="ADBMessageDB_DevModel.SystemCommunication" Role="SystemCommunication" Multiplicity="1" />
+    <End Type="ADBMessageDB_DevModel.SystemCommunicationDelivery" Role="SystemCommunicationDelivery" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SystemCommunication">
+        <PropertyRef Name="SystemCommunicationID" />
+      </Principal>
+      <Dependent Role="SystemCommunicationDelivery">
+        <PropertyRef Name="SystemCommunicationTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="CommunicationCCUsersSetting">
+    <Key>
+      <PropertyRef Name="CCUS_Id" />
+    </Key>
+    <Property Type="Int32" Name="CCUS_Id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="CCUS_CommunicationCCUsersID" Nullable="false" />
+    <Property Type="Int32" Name="CCUS_ObjectTypeId" Nullable="false" />
+    <Property Type="Int32" Name="CCUS_RecordId" Nullable="false" />
+    <Property Type="Boolean" Name="CCUS_IsDeleted" Nullable="false" />
+    <Property Type="Int32" Name="CCUS_CreatedBy" Nullable="false" />
+    <Property Type="DateTime" Name="CCUS_CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="CCUS_ModifiedBy" />
+    <Property Type="DateTime" Name="CCUS_ModifiedOn" Precision="3" />
+    <NavigationProperty Name="CommunicationCCUser" Relationship="ADBMessageDB_DevModel.FK_CommunicationCCUsersSettings_CommunicationCCUsers" FromRole="CommunicationCCUsersSetting" ToRole="CommunicationCCUser" />
+    <NavigationProperty Name="lkpRecordObjectType" Relationship="ADBMessageDB_DevModel.FK_CommunicationCCUsersSettings_lkpRecordObjectType" FromRole="CommunicationCCUsersSetting" ToRole="lkpRecordObjectType" />
+  </EntityType>
+  <EntityType Name="lkpRecordObjectType">
+    <Key>
+      <PropertyRef Name="OT_ID" />
+    </Key>
+    <Property Type="Int32" Name="OT_ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="OT_Code" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="OT_Name" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="OT_Description" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="OT_IsDeleted" Nullable="false" />
+    <Property Type="Int32" Name="OT_CreatedByID" Nullable="false" />
+    <Property Type="DateTime" Name="OT_CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="OT_ModifiedByID" />
+    <Property Type="DateTime" Name="OT_ModifiedOn" Precision="3" />
+    <NavigationProperty Name="CommunicationCCUsersSettings" Relationship="ADBMessageDB_DevModel.FK_CommunicationCCUsersSettings_lkpRecordObjectType" FromRole="lkpRecordObjectType" ToRole="CommunicationCCUsersSetting" />
+  </EntityType>
+  <Association Name="FK_CommunicationCCUsersSettings_CommunicationCCUsers">
+    <End Type="ADBMessageDB_DevModel.CommunicationCCUser" Role="CommunicationCCUser" Multiplicity="1" />
+    <End Type="ADBMessageDB_DevModel.CommunicationCCUsersSetting" Role="CommunicationCCUsersSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CommunicationCCUser">
+        <PropertyRef Name="CommunicationCCUsersID" />
+      </Principal>
+      <Dependent Role="CommunicationCCUsersSetting">
+        <PropertyRef Name="CCUS_CommunicationCCUsersID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CommunicationCCUsersSettings_lkpRecordObjectType">
+    <End Type="ADBMessageDB_DevModel.lkpRecordObjectType" Role="lkpRecordObjectType" Multiplicity="1" />
+    <End Type="ADBMessageDB_DevModel.CommunicationCCUsersSetting" Role="CommunicationCCUsersSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lkpRecordObjectType">
+        <PropertyRef Name="OT_ID" />
+      </Principal>
+      <Dependent Role="CommunicationCCUsersSetting">
+        <PropertyRef Name="CCUS_ObjectTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="lkpNotificationDeliveryType">
+    <Key>
+      <PropertyRef Name="NDT_ID" />
+    </Key>
+    <Property Type="Int32" Name="NDT_ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="NDT_Code" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="NDT_Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="NDT_Description" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="NDT_IsDeleted" Nullable="false" />
+    <Property Type="Int32" Name="NDT_CreatedBy" Nullable="false" />
+    <Property Type="DateTime" Name="NDT_CreatedOn" Nullable="false" Precision="3" />
+    <NavigationProperty Name="SystemCommunicationDeliveries" Relationship="ADBMessageDB_DevModel.FK_SystemCommunicationDelivery_lkpNotificationDeliveryType" FromRole="lkpNotificationDeliveryType" ToRole="SystemCommunicationDelivery" />
+  </EntityType>
+  <Association Name="FK_SystemCommunicationDelivery_lkpNotificationDeliveryType">
+    <End Type="ADBMessageDB_DevModel.lkpNotificationDeliveryType" Role="lkpNotificationDeliveryType" Multiplicity="1" />
+    <End Type="ADBMessageDB_DevModel.SystemCommunicationDelivery" Role="SystemCommunicationDelivery" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lkpNotificationDeliveryType">
+        <PropertyRef Name="NDT_ID" />
+      </Principal>
+      <Dependent Role="SystemCommunicationDelivery">
+        <PropertyRef Name="NotificationDeliveryTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="lkpCommunicationSubEvent">
+    <Key>
+      <PropertyRef Name="CommunicationSubEventID" />
+    </Key>
+    <Property Type="Int32" Name="CommunicationSubEventID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="CommunicationTypeID" Nullable="false" />
+    <Property Type="Int32" Name="CommunicationEventID" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Code" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Description" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsDeleted" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="CreatedByID" Nullable="false" />
+    <Property Type="DateTime" Name="ModifiedOn" Precision="3" />
+    <Property Type="Int32" Name="ModifiedByID" />
+    <Property Type="Int16" Name="CategoryTypeID" />
+    <Property Type="Boolean" Name="IsHierarchySpecific" Nullable="false" />
+    <NavigationProperty Name="CommunicationCCMasters" Relationship="ADBMessageDB_DevModel.FK_CommunicationCCMaster_lkpCommunicationSubEvents" FromRole="lkpCommunicationSubEvent" ToRole="CommunicationCCMaster" />
+    <NavigationProperty Name="CommunicationTemplatePlaceHolderSubEvents" Relationship="ADBMessageDB_DevModel.FK_lkpCommunicationSubEvents_CommunicationTemplatePlaceHolderSubEvents" FromRole="lkpCommunicationSubEvent" ToRole="CommunicationTemplatePlaceHolderSubEvent" />
+    <NavigationProperty Name="ExternalCopyUsers" Relationship="ADBMessageDB_DevModel.FK_ExternalCopyUsers_lkpCommunicationSubEvents" FromRole="lkpCommunicationSubEvent" ToRole="ExternalCopyUser" />
+    <NavigationProperty Name="HierarchyNotificationMappings" Relationship="ADBMessageDB_DevModel.FK_HierarchyNotificationMapping_lkpCommunicationSubEvents" FromRole="lkpCommunicationSubEvent" ToRole="HierarchyNotificationMapping" />
+    <NavigationProperty Name="lkpCommunicationEvent" Relationship="ADBMessageDB_DevModel.FK_lkpcommunicationEvent_lkpCommunicationSubEvents" FromRole="lkpCommunicationSubEvent" ToRole="lkpCommunicationEvent" />
+    <NavigationProperty Name="lkpSubEventCategoryType" Relationship="ADBMessageDB_DevModel.FK_lkpCommunicationSubEvents_lkpSubEventCategoryType" FromRole="lkpCommunicationSubEvent" ToRole="lkpSubEventCategoryType" />
+    <NavigationProperty Name="SystemCommunications" Relationship="ADBMessageDB_DevModel.FK_lkpCommunicationSubEvents_SystemCommunication" FromRole="lkpCommunicationSubEvent" ToRole="SystemCommunication" />
+    <NavigationProperty Name="lkpCommunicationType" Relationship="ADBMessageDB_DevModel.FK_lkpCommunicationType_lkpCommunicationSubEvents" FromRole="lkpCommunicationSubEvent" ToRole="lkpCommunicationType" />
+    <NavigationProperty Name="CommunicationTemplates" Relationship="ADBMessageDB_DevModel.FK_lkpCommunicationSubEvents_CommunicationTemplates" FromRole="lkpCommunicationSubEvent" ToRole="CommunicationTemplate" />
+    <NavigationProperty Name="SMSTemplates" Relationship="ADBMessageDB_DevModel.FK_SMSTemplates_lkpCommunicationSubEvents" FromRole="lkpCommunicationSubEvent" ToRole="SMSTemplate" />
+    <NavigationProperty Name="SystemEventSettings" Relationship="ADBMessageDB_DevModel.FK_SystemEventSettings_lkpCommunicationSubEvents" FromRole="lkpCommunicationSubEvent" ToRole="SystemEventSetting" />
+  </EntityType>
+  <Association Name="FK_CommunicationCCMaster_lkpCommunicationSubEvents">
+    <End Type="ADBMessageDB_DevModel.lkpCommunicationSubEvent" Role="lkpCommunicationSubEvent" Multiplicity="1" />
+    <End Type="ADBMessageDB_DevModel.CommunicationCCMaster" Role="CommunicationCCMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lkpCommunicationSubEvent">
+        <PropertyRef Name="CommunicationSubEventID" />
+      </Principal>
+      <Dependent Role="CommunicationCCMaster">
+        <PropertyRef Name="CommunicationSubEventID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_lkpCommunicationSubEvents_CommunicationTemplatePlaceHolderSubEvents">
+    <End Type="ADBMessageDB_DevModel.lkpCommunicationSubEvent" Role="lkpCommunicationSubEvent" Multiplicity="1" />
+    <End Type="ADBMessageDB_DevModel.CommunicationTemplatePlaceHolderSubEvent" Role="CommunicationTemplatePlaceHolderSubEvent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lkpCommunicationSubEvent">
+        <PropertyRef Name="CommunicationSubEventID" />
+      </Principal>
+      <Dependent Role="CommunicationTemplatePlaceHolderSubEvent">
+        <PropertyRef Name="CommunicationSubEventID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ExternalCopyUsers_lkpCommunicationSubEvents">
+    <End Type="ADBMessageDB_DevModel.lkpCommunicationSubEvent" Role="lkpCommunicationSubEvent" Multiplicity="1" />
+    <End Type="ADBMessageDB_DevModel.ExternalCopyUser" Role="ExternalCopyUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lkpCommunicationSubEvent">
+        <PropertyRef Name="CommunicationSubEventID" />
+      </Principal>
+      <Dependent Role="ExternalCopyUser">
+        <PropertyRef Name="ECU_CommunicationSubEventID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HierarchyNotificationMapping_lkpCommunicationSubEvents">
+    <End Type="ADBMessageDB_DevModel.lkpCommunicationSubEvent" Role="lkpCommunicationSubEvent" Multiplicity="0..1" />
+    <End Type="ADBMessageDB_DevModel.HierarchyNotificationMapping" Role="HierarchyNotificationMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lkpCommunicationSubEvent">
+        <PropertyRef Name="CommunicationSubEventID" />
+      </Principal>
+      <Dependent Role="HierarchyNotificationMapping">
+        <PropertyRef Name="HNM_SubEventID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_lkpcommunicationEvent_lkpCommunicationSubEvents">
+    <End Type="ADBMessageDB_DevModel.lkpCommunicationEvent" Role="lkpCommunicationEvent" Multiplicity="1" />
+    <End Type="ADBMessageDB_DevModel.lkpCommunicationSubEvent" Role="lkpCommunicationSubEvent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lkpCommunicationEvent">
+        <PropertyRef Name="CommunicationEventID" />
+      </Principal>
+      <Dependent Role="lkpCommunicationSubEvent">
+        <PropertyRef Name="CommunicationEventID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_lkpCommunicationSubEvents_lkpSubEventCategoryType">
+    <End Type="ADBMessageDB_DevModel.lkpSubEventCategoryType" Role="lkpSubEventCategoryType" Multiplicity="0..1" />
+    <End Type="ADBMessageDB_DevModel.lkpCommunicationSubEvent" Role="lkpCommunicationSubEvent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lkpSubEventCategoryType">
+        <PropertyRef Name="SCT_ID" />
+      </Principal>
+      <Dependent Role="lkpCommunicationSubEvent">
+        <PropertyRef Name="CategoryTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_lkpCommunicationSubEvents_SystemCommunication">
+    <End Type="ADBMessageDB_DevModel.lkpCommunicationSubEvent" Role="lkpCommunicationSubEvent" Multiplicity="0..1" />
+    <End Type="ADBMessageDB_DevModel.SystemCommunication" Role="SystemCommunication" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lkpCommunicationSubEvent">
+        <PropertyRef Name="CommunicationSubEventID" />
+      </Principal>
+      <Dependent Role="SystemCommunication">
+        <PropertyRef Name="CommunicationSubEventID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_lkpCommunicationType_lkpCommunicationSubEvents">
+    <End Type="ADBMessageDB_DevModel.lkpCommunicationType" Role="lkpCommunicationType" Multiplicity="1" />
+    <End Type="ADBMessageDB_DevModel.lkpCommunicationSubEvent" Role="lkpCommunicationSubEvent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lkpCommunicationType">
+        <PropertyRef Name="CommunicationTypeID" />
+      </Principal>
+      <Dependent Role="lkpCommunicationSubEvent">
+        <PropertyRef Name="CommunicationTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="lkpScreeningResultType">
+    <Key>
+      <PropertyRef Name="SRT_ID" />
+    </Key>
+    <Property Type="Int32" Name="SRT_ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="SRT_Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="SRT_Code" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Type="Boolean" Name="SRT_IsDeleted" Nullable="false" />
+    <Property Type="Int32" Name="SRT_CreatedBy" Nullable="false" />
+    <Property Type="DateTime" Name="SRT_CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="SRT_ModifiedBy" />
+    <Property Type="DateTime" Name="SRT_ModifiedOn" Precision="3" />
+  </EntityType>
+  <EntityType Name="CommunicationTemplate">
+    <Key>
+      <PropertyRef Name="CommunicationTemplateID" />
+    </Key>
+    <Property Type="Int32" Name="CommunicationTemplateID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="CommunicationSubEventID" />
+    <Property Type="String" Name="Name" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Subject" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Description" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Content" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsDeleted" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="CreatedByID" Nullable="false" />
+    <Property Type="DateTime" Name="ModifiedOn" Precision="3" />
+    <Property Type="Int32" Name="ModifiedByID" />
+    <Property Type="Int32" Name="LanguageId" Nullable="false" />
+    <NavigationProperty Name="CommunicationTemplateEntities" Relationship="ADBMessageDB_DevModel.FK_CommunicationTemplateEntity_CommunicationTemplates" FromRole="CommunicationTemplate" ToRole="CommunicationTemplateEntity" />
+    <NavigationProperty Name="lkpCommunicationSubEvent" Relationship="ADBMessageDB_DevModel.FK_lkpCommunicationSubEvents_CommunicationTemplates" FromRole="CommunicationTemplate" ToRole="lkpCommunicationSubEvent" />
+    <NavigationProperty Name="SystemEventSettings" Relationship="ADBMessageDB_DevModel.FK_SystemEventSettings_CommunicationTemplates" FromRole="CommunicationTemplate" ToRole="SystemEventSetting" />
+  </EntityType>
+  <EntityType Name="SMSTemplate">
+    <Key>
+      <PropertyRef Name="SMST_ID" />
+    </Key>
+    <Property Type="Int32" Name="SMST_ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="SMST_CommuncicationSubEventID" Nullable="false" />
+    <Property Type="String" Name="SMST_Name" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="SMST_Subject" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="SMST_Content" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="SMST_Description" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="SMST_IsDeleted" Nullable="false" />
+    <Property Type="Int32" Name="SMST_CreatedBy" Nullable="false" />
+    <Property Type="DateTime" Name="SMST_CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="SMST_ModifiedBy" />
+    <Property Type="DateTime" Name="SMST_ModifiedOn" Precision="3" />
+    <Property Type="Int32" Name="SMST_LanguageId" Nullable="false" />
+    <NavigationProperty Name="lkpCommunicationSubEvent" Relationship="ADBMessageDB_DevModel.FK_SMSTemplates_lkpCommunicationSubEvents" FromRole="SMSTemplate" ToRole="lkpCommunicationSubEvent" />
+  </EntityType>
+  <Association Name="FK_CommunicationTemplateEntity_CommunicationTemplates">
+    <End Type="ADBMessageDB_DevModel.CommunicationTemplate" Role="CommunicationTemplate" Multiplicity="1" />
+    <End Type="ADBMessageDB_DevModel.CommunicationTemplateEntity" Role="CommunicationTemplateEntity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CommunicationTemplate">
+        <PropertyRef Name="CommunicationTemplateID" />
+      </Principal>
+      <Dependent Role="CommunicationTemplateEntity">
+        <PropertyRef Name="CTE_TemplateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_lkpCommunicationSubEvents_CommunicationTemplates">
+    <End Type="ADBMessageDB_DevModel.lkpCommunicationSubEvent" Role="lkpCommunicationSubEvent" Multiplicity="0..1" />
+    <End Type="ADBMessageDB_DevModel.CommunicationTemplate" Role="CommunicationTemplate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lkpCommunicationSubEvent">
+        <PropertyRef Name="CommunicationSubEventID" />
+      </Principal>
+      <Dependent Role="CommunicationTemplate">
+        <PropertyRef Name="CommunicationSubEventID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SMSTemplates_lkpCommunicationSubEvents">
+    <End Type="ADBMessageDB_DevModel.lkpCommunicationSubEvent" Role="lkpCommunicationSubEvent" Multiplicity="1" />
+    <End Type="ADBMessageDB_DevModel.SMSTemplate" Role="SMSTemplate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lkpCommunicationSubEvent">
+        <PropertyRef Name="CommunicationSubEventID" />
+      </Principal>
+      <Dependent Role="SMSTemplate">
+        <PropertyRef Name="SMST_CommuncicationSubEventID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="SystemEventSetting">
+    <Key>
+      <PropertyRef Name="SES_ID" />
+    </Key>
+    <Property Type="Int32" Name="SES_ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="TenantID" />
+    <Property Type="Int32" Name="ComplianceCategoryID" />
+    <Property Type="Int32" Name="ComplianceItemID" />
+    <Property Type="Int32" Name="CommunicationTemplateID" Nullable="false" />
+    <Property Type="Int32" Name="CommunicationSubEventID" Nullable="false" />
+    <Property Type="Int32" Name="Frequency" />
+    <Property Type="Int32" Name="NoOfDays" />
+    <Property Type="Boolean" Name="IsDeleted" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="ModifiedBy" />
+    <Property Type="DateTime" Name="ModifiedOn" Precision="3" />
+    <Property Type="Int32" Name="SES_NodeNotificationMappingID" />
+    <Property Type="String" Name="DaysBefore" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsNotificationBlocked" Nullable="false" />
+    <Property Type="Int32" Name="AgencyHierarchyID" />
+    <Property Type="Int32" Name="InstHierarchyNodeID" />
+    <NavigationProperty Name="CommunicationTemplate" Relationship="ADBMessageDB_DevModel.FK_SystemEventSettings_CommunicationTemplates" FromRole="SystemEventSetting" ToRole="CommunicationTemplate" />
+    <NavigationProperty Name="lkpCommunicationSubEvent" Relationship="ADBMessageDB_DevModel.FK_SystemEventSettings_lkpCommunicationSubEvents" FromRole="SystemEventSetting" ToRole="lkpCommunicationSubEvent" />
+  </EntityType>
+  <Association Name="FK_SystemEventSettings_CommunicationTemplates">
+    <End Type="ADBMessageDB_DevModel.CommunicationTemplate" Role="CommunicationTemplate" Multiplicity="1" />
+    <End Type="ADBMessageDB_DevModel.SystemEventSetting" Role="SystemEventSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CommunicationTemplate">
+        <PropertyRef Name="CommunicationTemplateID" />
+      </Principal>
+      <Dependent Role="SystemEventSetting">
+        <PropertyRef Name="CommunicationTemplateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SystemEventSettings_lkpCommunicationSubEvents">
+    <End Type="ADBMessageDB_DevModel.lkpCommunicationSubEvent" Role="lkpCommunicationSubEvent" Multiplicity="1" />
+    <End Type="ADBMessageDB_DevModel.SystemEventSetting" Role="SystemEventSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lkpCommunicationSubEvent">
+        <PropertyRef Name="CommunicationSubEventID" />
+      </Principal>
+      <Dependent Role="SystemEventSetting">
+        <PropertyRef Name="CommunicationSubEventID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

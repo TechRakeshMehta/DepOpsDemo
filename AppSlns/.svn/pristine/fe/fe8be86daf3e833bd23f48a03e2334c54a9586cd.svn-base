@@ -1,0 +1,67 @@
+﻿
+<div id="bodyBlock"  class="container-fluid">
+
+    <section class="p-2">
+  
+    <div class="row justify-content-center">
+      <logout-app></logout-app>
+      <div class="col-12 text-center mt-3">
+        <div class="alert alert-info" id="label-header" [routerLink]="['/package']" style="background: #2d3346;color: #fff" role="alert">
+          <strong>
+            {{SelectedPackage.PackageName}}
+          </strong>
+        </div>
+      </div>
+      <div class="col-12 text-center m-2 " data-toggle="collapse" data-target="#demo">
+        <h6 class="p-2" style="background: #d2d8ed">
+          <strong>
+            <span style="color: #ee0000"><i class="fa fa-times-circle" aria-hidden="true"></i>&nbsp; </span>
+            Compliance Status<span style="color: #ee0000"> {{SelectedPackage.PackageStatus}} </span>
+          </strong>
+        </h6>
+      </div>
+      <div class="col-12 text-right">
+
+        <span class="d-block" style="float:right" (click)='dataShow()' id="myBtn">
+          <u style="color: #0000ff">
+            Category Status Help
+          </u>&nbsp;&nbsp;<i class="fa fa-question-circle"></i>
+        </span>
+
+      </div>
+      <div class="col-12" id="demo" style="height: auto; overflow-y: auto">
+        <div id="accordion" >
+          <div class="card" *ngFor="let value of SelectedPackage.lstCategory; let i = index">
+            <div class="card-header p-2" data-parent="#accordion"  (click)="ShowItem(value.CategoryId,i)" href="#collapseOne" data-toggle="collapse">
+              <!--data-toggle="collapse"-->
+              <span *ngIf="value.CategoryStatus == 'Pending Review'"><img src="images/attn16.png" style="border-radius: 50%;" alt="MISSING JPG" /></span>
+              <span *ngIf="value.CategoryStatus == 'Optional'"><img src="images/optional.png" style="border-radius: 50%;" alt="MISSING JPG" /></span>
+              <span *ngIf="value.CategoryStatus == 'Incomplete'"><img src="images/no16.png" style="border-radius: 50%;" alt="MISSING JPG" /></span>
+              <span *ngIf="value.CategoryStatus == 'Exceptionally Approved'"><img src="images/yesx16.png" style="border-radius: 50%;" alt="MISSING JPG" /></span>
+              <span *ngIf="value.CategoryStatus == 'Approved'"><img src="images/yes16.png" style="border-radius: 50%;" alt="MISSING JPG" /></span>
+              <span class="card-link">
+                {{value.CategoryName}}
+              </span>
+              <i class="fa fa-sort-desc" [hidden]="current == i || value.lstItem.length == 0" style="float: right" aria-hidden="true"></i>
+              <i class="fa fa fa-sort-asc" [hidden]="current != i || value.lstItem.length == 0" style="float: right" aria-hidden="true"></i>
+            </div>
+            <div id="collapseOne" [class.collapse]='current != i' [hidden]="value.lstItem.length == 0">
+              <div class="card-body">
+                <span class="date-msg alert-dark  d-block text-right" *ngIf="value.CategoryNonCompliancedate != ''" style="font-weight: bold">Category Non-Compliance Date : {{value.CategoryNonCompliancedate}}</span>
+                <compliance-item-aap *ngIf="SelectedCategoryID != '' && SelectedCategoryID == value.CategoryId " [itemForCategory]="itemForCategory">
+                </compliance-item-aap>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 text-center p-2" id="confirmation-div" (click)='ReturntodashBoard()'>
+        <button type="button" id="backBtn" class="btn btn-primary backBtn">
+          <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>&nbsp;Return to Dashboard
+        </button>
+      </div>
+   
+  </div> 
+  </section>
+  </div>
+  <status-description-app [hidden]='!showData' (show)='show($event)'></status-description-app>

@@ -1,0 +1,86 @@
+
+   <div id="bodyBlock"  class="container-fluid p-0">
+
+    <section class="p-0">
+            <div class="row">
+<div class="col-md-12">
+    <form [formGroup]="AliasForm">
+        <div *ngIf="IsInvalidName"class="d-block validationColor">{{InvalidNameMsg}}</div>
+        <div *ngIf="IsDuplicateName"class="d-block validationColor">{{DuplicateNameMsg}}</div>
+        <div *ngIf="IsEditError" class="d-block validationColor">{{IsEditError && IsEditAddUpdateError? EditAddUpdateErrorMsg:OneEditErrorMsg}}</div>
+           
+          <div class="row">
+                <div class="col-md-6 mb-1">
+                    <label class="required" Name="ALIASFIRSTNAME"></label>
+                    <input type="text" maxlength="30"  [ngClass]="displayFieldCss('firstName')" [readonly]="AliasReadonly" class="form-control" formControlName="firstName"  >
+                    <app-field-error-display [displayError]="isError('firstName')" errorMsg="{{errorMessage('firstName')}}">
+                        </app-field-error-display>
+           
+                </div>
+                <div class="col-md-6 mb-1">
+                    <label Name="ALIASMIDDLENAME"></label>
+                    <input type="text"  [readonly]="AliasReadonly" maxlength="30" formControlName="middleName"   class="form-control" >
+                    <!-- <input type="checkbox" (click)="middleNameCheck($event,i)"> Middle Name not applicable to this Alias -->
+                    <app-field-error-display [displayError]="isError('middleName')" errorMsg="{{errorMessage('middleName')}}">
+                        </app-field-error-display>
+                </div>
+               
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-1">
+                    <label class="required" Name="ALIASLASTNAME"></label>
+                    <input type="text" maxlength="30" [ngClass]="displayFieldCss('lastName')" [readonly]="AliasReadonly" class="form-control" formControlName="lastName"  >
+                    <app-field-error-display [displayError]="isError('lastName')" errorMsg="{{errorMessage('lastName')}}">
+                        </app-field-error-display>
+                </div>
+                <div class="col-md-6 mb-1">
+                    <label Name="SUFFIX"></label>
+                    <div *ngIf="!IsSuffixDropDown else suffixDropDown">
+                        <input type="text" [readonly]="AliasReadonly" formControlName="suffix" class="form-control" >
+                        <app-field-error-display [displayError]="isError('suffix')" errorMsg="{{errorMessage('suffix')}}">
+                            </app-field-error-display>
+                    </div>
+                    <ng-template #suffixDropDown>
+                        <select class="custom-select" [attr.disabled] = "AliasReadonly ? 'disabled' : null" [ngClass]="displayFieldCss('suffix')" formControlName="suffix">
+                            <option value="">
+                                <label name="SELECTSUFFIX"></label>
+                            </option>
+                            <option *ngFor="let s of suffixlist" value="{{s.Suffix}}">
+                                {{ s.Suffix }}
+                            </option>
+                        </select>
+                    </ng-template>
+                </div>
+            </div>
+            <div class="row mb-1">
+                <div class="col-md-12 d-flex justify-content-end">
+
+                    <hr>
+                </div>
+                <div class="col-md-12  d-flex justify-content-center">
+                        <button [hidden]="hdnSaveAliasButton" autofocus="false" type="button" (click)="onSubmit()" class="btn btn-primary mr-1">
+                                <label class="label-on-button"  name="SAVE" id="SAVE"></label>
+                            <i class="fas fa-save pl-1"></i></button>
+                    <button [hidden]="hdnEditButton" autofocus="false" (click)="onEdit()" type="button"  class="btn btn-primary mr-1">
+                            <i class="fas fa-edit"></i>
+                            <label class="label-on-button mb-0"  name="EDIT" id="EDIT"></label>
+                    </button>
+                    <button [hidden]="hdnDeleteButton" autofocus="false" id="BTNDLT" type="button" (click)="onDelete(IdForIndex)" class="btn  btn-primary">
+                            <i class="fas fa-trash-alt"></i>
+                            <label class="label-on-button"  name="DLT"></label>
+                        </button>
+                        <button [hidden]="hdnCancelButton" autofocus="false" id="BTNCNL" type="button" (click)="onDelete(IdForIndex)" class="btn  btn-primary">
+                                <i class="far fa-window-close"></i>
+                            <label class="label-on-button"  name="CNCL"></label>
+                        </button>
+                   
+                    <!-- <button  [hidden]="hdnDeleteButton" id="DLT" type="button" (click)="onDelete(Id)" class="btn btn-primary mr-1"></button> -->
+                </div>
+            </div>
+       
+   
+   
+      </form>
+    </div></div>
+</section>
+</div>

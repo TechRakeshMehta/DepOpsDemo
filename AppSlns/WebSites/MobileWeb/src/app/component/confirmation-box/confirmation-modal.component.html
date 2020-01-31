@@ -1,0 +1,11 @@
+<div class="modal-header" *ngIf="title">
+    <h4 class="modal-title pull-left">{{title}}</h4>        
+</div>     
+<div class="modal-body">
+    <p style="white-space: pre-line">{{message}}</p>
+</div>
+<label id="Continue">Continue</label>
+<div class="modal-footer">        
+    <button type="button" [hidden]='hideConfirmBtn' class="btn btn-primary" (click)="confirm()" >{{confirmBtnName}}</button>
+    <button type="button" [hidden]='hideCloseBtn' class="btn btn-primary" (click)="decline()" >{{closeBtnName}}</button>
+</div>

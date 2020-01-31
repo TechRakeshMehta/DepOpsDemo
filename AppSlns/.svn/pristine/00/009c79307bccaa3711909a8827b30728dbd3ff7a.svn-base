@@ -1,0 +1,186 @@
+<div id="bodyBlock" class="container-fluid">
+
+
+    <section class="p-2">
+        <div class="row">
+            <div *ngIf="!IsEditProfile" class="col-md-12 font-weight-bold">
+                <label id="CREATODR"></label> (
+                <label id="STEP"></label> {{orderInfo.CurrentStep}}
+                <label id="OF"></label> {{orderInfo.TotalSteps}})
+            </div>
+            <div class="col-md-12 text-center">
+                <h3 style="display: inline" *ngIf="IsEditProfile" name="UPDATE"></h3>
+                <h3 style="display: inline" id="PERSONALINFO"></h3>
+            </div>
+            <div style="color: #abd686" [hidden]="hideUserUpdateMsg">{{userCreationError}}</div>
+            <div class="col-md-12 bg-white shadow-sm rounded py-3">
+                <form [formGroup]="contactForm">
+                    <div class="row">
+                        <div class="col-md-6 mb-2">
+                            <label class="mb-0 required" id="EMAIL"></label>
+                            <input type="email" class="form-control" maxlength="250" [readonly]="IsEmailReadOnly" [ngClass]="displayFieldCss('primaryEmail')"
+                                formControlName="primaryEmail">
+                            <app-field-error-display [displayError]="isError('primaryEmail')" errorMsg="{{errorMessage('primaryEmail')}}">
+                            </app-field-error-display>
+                            <!-- 
+                            <div class="errorColor" [hidden]="!isError('primaryEmail')">{{ErrorMessage}}</div> -->
+
+                        </div>
+                        <div *ngIf="IsEditProfile" class="col-md-6 mb-2">
+                            <label id="CNFRMMAIL" class="mb-0 required"></label>
+                            <input type="email" class="form-control" maxlength="250" [ngClass]="displayFieldCss('confirmPrimaryEmail')" formControlName="confirmPrimaryEmail">
+                            <app-field-error-display [displayError]="isError('confirmPrimaryEmail')" errorMsg="{{errorMessage('confirmPrimaryEmail')}}">
+                            </app-field-error-display>
+                            <div class="errorColor" [hidden]="IsPrimaryEmailMatch">{{EmailAddressNotMatchMsg}}</div>
+                        </div>
+                    </div>
+                    <div *ngIf="IsEditProfile" class="row"> 
+                        <div class="col-md-6 mb-2"> 
+                                <label id="PWDRECVRYEMAIL" class="mb-0"></label>
+                                <input type="email" [readonly]="true" class="form-control" formControlName="PassRecEmail">
+                        </div>
+                        <div class="col-md-6 mb-2">
+                                <label  class="mb-0"></label>
+                            <div class="custom-control custom-checkbox mr-sm-2">
+                                <input type="checkbox" id="maiden1" class="custom-control-input" formControlName="UpdateAspnetEmail" value="0"  >
+                                <label class="custom-control-label" for="maiden1" id="SNDPWDRECVYEMAILALSOPRMRYADDRS"></label>
+                              </div> 
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-2">
+                            <label class="mb-0" id="SECEMAIL"></label>
+                            <input type="email" class="form-control" maxlength="250" [ngClass]="displayFieldCss('secondaryEmail')" formControlName="secondaryEmail">
+                            <app-field-error-display [displayError]="isError('secondaryEmail')" errorMsg="{{errorMessage('secondaryEmail')}}">
+                            </app-field-error-display>
+                        </div>
+                        <div class="col-md-6 mb-1">
+                            <label class="mb-0" id="CSECEMAIL"></label>
+                            <input type="email" class="form-control" formControlName="confirmSecondaryEmail" maxlength="250">
+                            <app-field-error-display [displayError]="isError('confirmSecondaryEmail')" errorMsg="{{errorMessage('confirmSecondaryEmail')}}">
+                            </app-field-error-display>
+                            <div class="errorColor" [hidden]="IsSecondaryEmailMatch">{{EmailAddressNotMatchMsg}}</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-2">
+                            <label class="mb-0 required" id="PRPHONE"></label>
+                            <input type="text" class="form-control" placeholder="(___)-___-____" [textMask]="{mask: mask}" [ngClass]="displayFieldCss('primaryPhone')"
+                                formControlName="primaryPhone">
+                            <app-field-error-display [displayError]="isError('primaryPhone')" errorMsg="{{errorMessage('primaryPhone')}}">
+                            </app-field-error-display>
+                        </div>
+                        <div class="col-md-6 mb-2">
+                            <label class="mb-0" id="SECPHONE"></label>
+                            <input type="text" class="form-control" placeholder="(___)-___-____" [textMask]="{mask: mask}" formControlName="secondaryPhone">
+                            <!-- <app-field-error-display [displayError]="isFieldValid('secondaryPhone')" errorMsg="Please enter your Secondary Phone">
+                            </app-field-error-display> -->
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-2">
+                            <label id="RECIEVETEXTNOTIFICATION"></label>
+                            <div class="row">
+                                <div class="col-md-12 d-flex justify-content-left">
+                                    <div class="custom-control custom-radio mr-2">
+                                        <input type="radio" id="ReceiveTextNotification1" formControlName="IsReceiveTextNotification" (change)="ShowTxtNotification($event)"
+                                            value="1" name="IsReceiveTextNotification" class="custom-control-input">
+                                        <label class="custom-control-label" for="ReceiveTextNotification1" name="LSTITMY"></label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="ReceiveTextNotification2" formControlName="IsReceiveTextNotification" (change)="HideTxtNotification($event)"
+                                            value="0" name="IsReceiveTextNotification" class="custom-control-input">
+                                        <label class="custom-control-label" for="ReceiveTextNotification2" name="LSTITMN"></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-2" id="dvTxtNotification" [hidden]="hdnRcvTextNotification">
+                            <label class="mb-0 required" id="CELLULARPHNNUM"></label>
+                            <input type="text" class="form-control" placeholder="(___)-___-____" [textMask]="{mask: mask}" [ngClass]="displayFieldCss('cellularPhone')"
+                                formControlName="cellularPhone">
+                            <app-field-error-display [displayError]="isError('cellularPhone')" errorMsg="{{errorMessage('cellularPhone')}}">
+                            </app-field-error-display>
+                        </div>
+                    </div>
+                    <br>
+                    <div *ngIf="IsEditProfile" class="row">
+                        <div class="col-md-6 mb-2">
+                            <label id="USERNAME" class="mb-0 required"></label>
+                            <input type="text" class="form-control" maxlength="256" [ngClass]="displayFieldCss('userName')" formControlName="userName">
+                            <app-field-error-display [displayError]="isError('userName')" errorMsg="{{errorMessage('userName')}}">
+                            </app-field-error-display>
+                        </div>
+                        <div class="col-md-6 mb-2">
+                            <label class="mb-0"></label>
+
+                            <button type="button" (click)="CheckUser()" class="align-self-end d-block btn btn-sm btn-primary px-2">
+                                <i class="fas fa-user-check mr-1"></i>
+                                <label id="CHECK"></label>
+                            </button>
+                            <!-- <label [(ngModel)]="proportion" class="mb-0" [ngStyle]="{'color': proportion === '100' ? 'green' : 'red'}"> {{UsernameMsg}}</label> -->
+                            <div [ngStyle]="{'color':GetColor()}" class="d-block">{{UsernameMsg}}</div>
+
+                        </div>
+                    </div>
+
+                    <div *ngIf="IsEditProfile" class="row">
+                        <div class="col-md-6 mb-2">
+                            <a href="#" routerLink="/changePassword">
+                                <label id="CHGEPASSWRD" style="cursor: pointer; text-decoration: underline"></label>
+                            </a>
+                        </div>
+
+                    </div>
+                    <!-- <div class="row">
+                        <div class="col-md-12 d-flex justify-content-center">
+                                <button type="button" autofocus="false" class="btn btn-primary fixedWidthBtn" (click)="goBack()">
+                                        <i class="fas fa-arrow-left pr-1"></i>
+                                        <label id="PREVIOUS"></label>
+                                      </button>                                                              
+                                      <button *ngIf="IsEditProfile" type="button" autofocus="false" (click)="onUpdate()" class="btn btn-primary mx-1">
+
+                                            <label id="UPDATE"></label>
+                                            <i class="fas fa-arrow-right pl-1"></i>
+                                        </button>
+                                      
+                        <button type="button" autofocus="false"  (click)="onSubmit()" class="btn btn-primary mx-1 fixedWidthBtn">
+
+                                <label id="NEXT"></label>
+                                <i class="fas fa-arrow-right pl-1"></i>
+                                </button>
+                            <cancel-order-button></cancel-order-button>
+                        </div>
+                    </div> -->
+                    <div class="row">
+                        <div class="col-md-12 d-flex justify-content-center">
+                            <button type="button" autofocus="false" class="btn btn-primary mx-1 fixedWidthBtn" (click)="goBack()">
+                                <i class="fas fa-arrow-left pr-1"></i>
+                                <label id="PREVIOUS"></label>
+                            </button>
+                            <button *ngIf="IsEditProfile" type="button" autofocus="false" (click)="onUpdate()" class="btn btn-primary mx-1 fixedWidthBtn">
+
+                                <label id="btnUpdate" name="UPDATE"></label>
+                                <i class="fas fa-arrow-right pl-1"></i>
+                            </button>
+                            <button type="button" *ngIf="!IsEditProfile" autofocus="false" (click)="onSubmit()" class="btn btn-primary mx-1 fixedWidthBtn">
+
+                                <label id="NEXT"></label>
+                                <i class="fas fa-arrow-right pl-1"></i>
+                            </button>
+                            <div *ngIf="!IsEditProfile">
+                                <cancel-order-button ></cancel-order-button>
+                            </div>
+
+                            <button *ngIf="IsEditProfile" type="button" routerLink="/userDashboard" class="btn btn-primary fixedWidthBtn mx-1">
+                                <i class="fas fa-times pr-1"></i>
+                                <label id="CNCL" class="label-on-button "></label>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>

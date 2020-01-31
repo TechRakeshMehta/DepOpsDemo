@@ -1,0 +1,20 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace INTSOF.COMPLIO.TALKDESK.Models
+{
+    public class CreateJobRequest
+    {
+        public string format { get; set; }
+        public CreateJobRequestTimespan timespan { get; set; }        
+    }
+
+    public class CreateJobRequestTimespan
+    {
+        public string from { get; set; }
+
+        public string to { get; set; }
+    }
+}

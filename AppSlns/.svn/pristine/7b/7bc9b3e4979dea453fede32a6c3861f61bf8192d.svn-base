@@ -1,0 +1,79 @@
+<div id="bodyBlock" class="container-fluid">
+  <section class="p-2">
+    <div class="row">
+      <div class="col-md-12 text-center">
+          <h3 *ngIf="isSendForOnline != true" id="RSCHDLAPPNMNT"></h3> 
+          <h3 *ngIf="isSendForOnline == true" id="CMPLTORDER"></h3> 
+      </div>
+      <div class="col-md-12 rounded py-3">
+        <h5 class="font-weight-bold"> <label id="FNDLOC"></label></h5>
+      </div>
+      <div class="col-md-12">
+        <form [formGroup]="LocationForm">
+          <div class="row">
+            <div class="col-md-12">
+              <label for="staticEmail" class="required" id="ENTRZIPCODE"></label>
+              <input type="text"  maxlength="5"  formControlName="Zipcode" autofocus class="form-control">
+              <app-field-error-display [displayError]="isFieldValid('Zipcode')" errorMsg="{{errorMessage('Zipcode')}}">
+              </app-field-error-display>
+              <div class="errorColor" [hidden]="IsLocationsAvail">{{NoLocationAvailMsg}}</div>
+            </div>
+            <div class="col-md-12 my-2">
+              <div class="d-flex justify-content-center">
+                <button type="button" id="SEARCH" (click)="onSearch()" class="btn btn-primary">
+                  <i class="fas fa-search pr-1"></i></button>
+                  <button type="button" [disabled]="IsDisabled" (click)="onSubmit()" class="btn btn-primary ml-1">
+                      <label class="mb-0" name="NEXT"></label>  
+                    <i class="fas fa-arrow-right pl-1"></i>
+                    </button>
+              </div>            
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-12">
+        <table class="table table-bordered">
+          <thead class="thead-dark">
+            <tr>
+              <th></th>
+              <th scope="col"><label id="NAME"></label></th>
+              <th scope="col"><label id="ADDRESS"></label></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let location of result">
+              <td>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" (click)="selectLocation(location.LocationID)" name="exampleRadios" id="exampleRadios1"
+                    [checked]="locationID == location.LocationID">
+                  <label class="form-check-label" for="exampleRadios1">
+                  </label>
+                </div>
+              </td>
+              <td>{{location.LocationName}}</td>
+              <td> {{location.FullAddress}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-12">
+        <!-- <label *ngIf="IsValid" id="CHSLOC"></label> -->
+        <label [hidden]="!IsValid" id="CHSLOC"></label>
+        <div class="row">
+          <div class="col-md-12 d-flex justify-content-center">
+            <button [hidden]="!IsPreviousButtonVisible" type="button" autofocus="false" (click)="goBack()" class="btn btn-primary">
+              <i class="fas fa-arrow-left"></i>
+              <label id="PREVIOUS"></label>
+            </button>
+
+            <button type="button" autofocus="false" [disabled]="IsDisabled" (click)="onSubmit()" class="btn btn-primary mx-1">
+                <label class="mb-0" name="NEXT"></label>
+              <i class="fas fa-arrow-right pl-1"></i>
+            </button>
+            <cancel-rescheduling-button></cancel-rescheduling-button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

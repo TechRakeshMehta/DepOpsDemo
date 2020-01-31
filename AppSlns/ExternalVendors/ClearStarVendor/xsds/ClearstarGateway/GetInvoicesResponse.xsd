@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="GetInvoices" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="GetInvoices" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ErrorStatus">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Code" type="xs:string" minOccurs="0" />
+              <xs:element name="Type" type="xs:string" minOccurs="0" />
+              <xs:element name="Message" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Invoice">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="iInvoiceNo" type="xs:string" minOccurs="0" />
+              <xs:element name="sInvoiceDate" type="xs:string" minOccurs="0" />
+              <xs:element name="iProfiles" type="xs:string" minOccurs="0" />
+              <xs:element name="iOrders" type="xs:string" minOccurs="0" />
+              <xs:element name="sInvPeriodBegin" type="xs:string" minOccurs="0" />
+              <xs:element name="sInvPeriodEnd" type="xs:string" minOccurs="0" />
+              <xs:element name="sFees" type="xs:string" minOccurs="0" />
+              <xs:element name="sAdjustments" type="xs:string" minOccurs="0" />
+              <xs:element name="sSubTotal" type="xs:string" minOccurs="0" />
+              <xs:element name="sTax" type="xs:string" minOccurs="0" />
+              <xs:element name="sTotal" type="xs:string" minOccurs="0" />
+              <xs:element name="sBalance" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

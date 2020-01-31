@@ -1,0 +1,466 @@
+﻿
+table.topbar {
+    border: none;
+    width: 100%;
+    height: 118px;
+    margin-bottom: 10px;
+}
+
+.topbar td.tltl {
+    background-image: url(images/left.png);
+    background-repeat: no-repeat;
+    width: 25px;
+}
+
+.topbar td.trtl {
+    background-image: url(images/right.png);
+    background-repeat: no-repeat;
+    width: 25px;
+}
+
+.topbar td {
+    background-image: url(images/main.png);
+    background-repeat: repeat-x;
+    vertical-align: middle;
+}
+
+    .topbar td.tsep {
+        background-image: url(images/sep.png);
+        background-repeat: no-repeat;
+        width: 25px;
+    }
+
+div.summary {
+    border-radius: 5px;
+    background-color: #abc;
+    padding: 5px;
+    height: 110px;
+    width: 200px;
+}
+
+span.fln {
+    font-size: 1.04rem;
+    display: block;
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+
+@media only screen and (max-width : 1152px) {
+    span.fln {
+        font-size: 0.9rem;
+        display: block;
+        font-weight: bold;
+    }
+}
+
+@media only screen and (max-width : 1080px) {
+    span.fln {
+        font-size: 0.8rem;
+        display: block;
+        font-weight: bold;
+    }
+}
+
+@media only screen and (max-width : 1024px) {
+    span.fln {
+        font-size: 0.7rem;
+        display: block;
+        font-weight: bold;
+    }
+}
+
+span.ln {
+    display: block;
+}
+
+    span.ln .heavy, .heavy {
+        font-weight: bold;
+    }
+
+td img {
+    vertical-align: bottom;
+}
+
+.abut a {
+    display: block;
+    border: none;
+    text-decoration: none;
+    color: #555;
+    padding: 5px;
+}
+
+div.abut:hover {
+    background-color: White;
+}
+
+.abut div.ico {
+    display: inline-block;
+    width: 32px;
+    margin-right: 7px;
+}
+
+.abut div.cont {
+    display: inline-block;
+}
+
+a.catname {
+    font-size: 16px;
+    font-weight: bold;
+    color: #555!important;
+    padding: 5px 0;
+    text-decoration: none;
+}
+
+span.reqname {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+div.cmdbox {
+    padding: 5px;
+}
+
+div.databox {
+}
+
+    div.databox table, div.databox table td {
+        border-style: none !important;
+    }
+
+table.datatable {
+    width: 100%;
+}
+
+    table.datatable td {
+        vertical-align: top;
+    }
+
+div.databox .value {
+    font-weight: bold;
+}
+
+div.databox .usernote {
+}
+
+
+span.expl-title {
+    font-weight: bold;
+}
+
+span.expl-dur {
+    color: Red;
+}
+
+.topbar .incomplete {
+    color: Red;
+    font-size: 14px;
+}
+
+.pack_info {
+    color: #555;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-top: -10px;
+    padding-left: 15px;
+}
+
+
+.strong {
+    font-weight: bold;
+}
+
+.status_box {
+    background-color: #EFEFEF;
+    border-radius: 5px 5px 5px 5px;
+    height: 20px;
+    padding: 5px;
+    padding-bottom: 7px;
+    margin-top: 5px;
+}
+
+    .status_box .not {
+        color: Red;
+    }
+
+    .status_box img.img_status {
+        vertical-align: text-bottom;
+        padding-bottom: 2px;
+    }
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+    margin-right: 25px;
+}
+
+.pack_info .right {
+    text-align: right;
+}
+
+.img_cat_stat {
+    vertical-align: top;
+}
+
+.datatable .td_attr {
+    width: 40%;
+}
+
+.datatable .td_note {
+    width: 60%;
+}
+
+.td_attr tr td:first-child {
+    color: Red;
+}
+
+.tooltip_hint {
+    height: 100%;
+    width: 100%;
+}
+
+.icon_block {
+    display: inline-block;
+}
+
+.item_info {
+    margin-bottom: 10px;
+    text-decoration: underline;
+    padding-left: 5px;
+}
+
+.item_info_bottom {
+    border-top: 1px solid #adadad;
+    border-bottom: 1px solid #efefef;
+    margin: 10px 0;
+}
+
+.main_pnl {
+    min-height: 67px;
+}
+
+.sxpnl .RadUpload .ruBrowse {
+    margin-left: 0;
+}
+
+#vermod_cmds {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+}
+
+    #vermod_cmds a, #vermod_cmds a:visited {
+        color: #333;
+    }
+
+
+.lnkToggleButton {
+    font-size: 90%;
+    color: Blue;
+    text-decoration: underline!important;
+}
+
+
+a.catname:hover {
+    text-decoration: underline;
+}
+
+
+.RadTreeList .rtlHBorders .rtlR > td, .RadTreeList .rtlHBorders .rtlA > td, .RadTreeList .rtlHBorders .rtlREdit > td, .RadTreeList .rtlHBorders .rtlRFooter > td {
+    padding: 8px 7px 8px;
+}
+
+.tbl-data {
+    width: 100%;
+    margin: 20px 0;
+    font-size: 11px;
+}
+
+.tbl-data-col {
+    width: 33%;
+    vertical-align: top;
+    border-bottom: none!important;
+    min-width: 190px;
+}
+
+.tbl-data .col-one {
+    border: none!important;
+}
+
+.tbl-data-col .col-hdr {
+    color: #333;
+    font-size: 100%!important;
+    border-bottom: 1px solid #333;
+    margin: 0;
+}
+
+.tbl-data td.td-one {
+    display: none;
+}
+
+.tbl-data {
+    float: none;
+    width: 100%;
+}
+
+.attr_details table:first-child, .attr_grp1 table:first-child, .attr_grp2 table:first-child {
+    width: 100%!important;
+    border-collapse: separate;
+    border-spacing: 2px;
+}
+
+.attr_grp2 table:first-child {
+    margin-top: -2px;
+}
+
+    .attr_details table:first-child td.td-two, .attr_grp1 table:first-child td.td-two, .attr_grp2 table:first-child td.td-two {
+        font-weight: bold;
+        width: 40%;
+        border-bottom: 1px solid #A3A3A3!important;
+        background-color: #DFDFDF;
+    }
+
+    .attr_details table:first-child td.td-three, .attr_grp1 table:first-child td.td-three, .attr_grp2 table:first-child td.td-three {
+        border-bottom: 1px solid #A3A3A3!important;
+        background-color: #fff;
+    }
+
+.attr_details table:first-child td.td-two {
+}
+
+.attr_details table:first-child td.td-three {
+    background-color: aliceblue!important;
+}
+
+.usernote {
+}
+
+
+.clickable .attr_val {
+    text-decoration: underline;
+    cursor: pointer;
+    color: Blue;
+}
+
+.clickable td {
+}
+
+.pkg_info {
+    padding: 10px 5px 0;
+}
+
+    .pkg_info img {
+        vertical-align: bottom;
+    }
+
+/*Data Box*/
+.item_name img {
+    vertical-align: bottom;
+}
+
+/*Admin comments*/
+.adm_notes {
+}
+
+    .adm_notes br:first-child {
+        display: none;
+    }
+
+/*Commands*/
+.cmdbox a {
+    display: inline-block;
+    padding: 5px;
+}
+
+
+.RadTreeList .rtlEditForm, .rtlREdit {
+    background-color: #EBEBEB;
+}
+
+
+.tooltipCustom {
+    margin: -20px 20px 20px 150px;
+    border: none;
+    background-color: white;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    z-index: 2;
+    padding: 5px;
+    max-width: 400px;
+}
+
+.bullet ul {
+    margin-left: 10px;
+    padding-left: 10px !important;
+}
+
+.bullet li {
+    list-style-position: inside;
+    list-style: disc;
+}
+
+.tooltipCustom ul {
+    margin-left: 10px;
+    padding-left: 10px !important;
+}
+
+.tooltipCustom li {
+    list-style-position: inside;
+    list-style: disc;
+}
+
+.bullet ol {
+    list-style-type: decimal;
+    margin-left: 10px;
+    padding-left: 10px;
+}
+
+    .bullet ol li {
+        list-style: decimal;
+    }
+
+.tooltipCustom ol {
+    list-style-type: decimal;
+    margin-left: 10px;
+    padding-left: 10px;
+}
+
+    .tooltipCustom ol li {
+        list-style: decimal;
+    }
+
+.RadTreeList .rtlRemove {
+    background-image: Url('/App_Themes/Default/images/Delete.gif');
+    background-repeat: no-repeat;
+    padding-left: 18px;
+}
+
+.RadTreeList .rtlAddException {
+    background-image: Url('/Resources/Mod/Compliance/icons/applyexceptn.png');
+    background-repeat: no-repeat;
+    padding-left: 18px;
+}
+
+.expNotes.msgbox .info {
+    color: black !important;
+}
+
+.expNotes {
+    color: black !important;
+}
+
+
+.lnkButtonAsHyperlink,
+.lnkButtonAsHyperlink:hover {
+    background-color: transparent !important;
+    background-image: none !important;
+    text-decoration:underline !important;
+    border-collapse: collapse !important;
+    color: blue !important; /* optional, depending on the background */  
+    outline: none !important;
+}
+
+
+

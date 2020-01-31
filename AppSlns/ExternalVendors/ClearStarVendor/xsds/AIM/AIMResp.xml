@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nbdresponse>
+  <requestinformation code="100">
+    <codemessage>Records Found</codemessage>
+    <inputs>
+      <firstname/>
+      <lastname/><dob day="0" month="0" year="0"/>
+      <ssn>568568397</ssn>
+      <state/>
+      <endusercode>American</endusercode>
+      <enduserstate>CO</enduserstate>
+      <reportusestate>CO</reportusestate>
+      <permissiblepurpose>00</permissiblepurpose>
+      <version>2.0</version>
+      <product>AIM</product>
+      <quoteback/>
+    </inputs>
+  </requestinformation>
+  <ssn-validation>
+    <message>SSN is valid.Issued in California</message>
+    <year>Issued In Year 1958-1959</year>
+  </ssn-validation>
+  <records count="11">
+    <record>
+      <firstname>CARLOS</firstname>
+      <middlename>A</middlename>
+      <lastname>CASTANEDA</lastname>
+      <namesuffix/>
+      <address>
+        <street-number/>
+        <street-pre-direction/>
+        <street-name/>
+        <street-post-direction/>
+        <street-suffix/>
+        <unit-designation/>
+        <unit-number/>
+        <city/>
+        <state/>
+        <zip>90025</zip>
+        <zip4/>
+        <county/>
+      </address>
+      <verified/>
+      <phonenumberdetails>
+        <phonenumber/>
+        <listed/>
+        <firstname/>
+        <middlename/>
+        <lastname/>
+        <namesuffix/>
+        <dualname/>
+        <companyname/>
+      </phonenumberdetails>
+      <dob day="25" month="12" year="1925"/>
+      <age> 82</age>
+      <age-at-death>72</age-at-death>
+      <death-verification-code>V</death-verification-code>
+      <date-first month="04" year="1998"/><date-last month="04" year="1998"/>
+    </record>
+    <record><firstname>CARLOS</firstname><middlename>A</middlename><lastname>CASTANEDA</lastname><namesuffix/><address><street-number>183</street-number><street-pre-direction>N</street-pre-direction><street-name>MARTEL</street-name><street-post-direction/><street-suffix>AVE</street-suffix><unit-designation>STE</unit-designation><unit-number>220</unit-number><city>LOS ANGELES</city><state>CA</state><zip>90036</zip><zip4>2736</zip4><county>LOS ANGELES</county></address><verified/><phonenumberdetails><phonenumber/><listed/><firstname/><middlename/><lastname/><namesuffix/><dualname/><companyname/></phonenumberdetails><dob day="25" month="12" year="1925"/><age> 82</age><age-at-death>72</age-at-death><death-verification-code>V</death-verification-code><date-first month="01" year="1997"/><date-last month="01" year="1997"/></record><record><firstname>C</firstname><middlename>A</middlename><lastname>CASTANEDA</lastname><namesuffix/><address><street-number>10474</street-number><street-pre-direction/><street-name>SANTA MONICA 308</street-name><street-post-direction/><street-suffix/><unit-designation/><unit-number/><city>VISTA</city><state>CA</state><zip>92084</zip><zip4/><county>SAN DIEGO</county></address><verified/><phonenumberdetails><phonenumber/><listed/><firstname/><middlename/><lastname/><namesuffix/><dualname/><companyname/></phonenumberdetails><dob day="25" month="12" year="1925"/><age> 82</age><age-at-death>72</age-at-death><death-verification-code>V</death-verification-code><date-first month="02" year="1993"/><date-last month="01" year="1995"/></record><record><firstname>C</firstname><middlename>A</middlename><lastname>CASTANEDA</lastname><namesuffix/><address><street-number/><street-pre-direction/><street-name>TUCKER MORGN MARTN</street-name><street-post-direction/><street-suffix/><unit-designation/><unit-number/><city>LOS ANGELES</city><state>CA</state><zip>90069</zip><zip4/><county>LOS ANGELES</county></address><verified/><phonenumberdetails><phonenumber/><listed/><firstname/><middlename/><lastname/><namesuffix/><dualname/><companyname/></phonenumberdetails><dob day="25" month="12" year="1925"/><age> 82</age><age-at-death>72</age-at-death><death-verification-code>V</death-verification-code><date-first month="01" year="1983"/><date-last month="12" year="1992"/></record><record><firstname>CARLOS</firstname><middlename>A</middlename><lastname>CASTANEDA</lastname><namesuffix/><address><street-number>9200</street-number><street-pre-direction>W</street-pre-direction><street-name>SUNSET</street-name><street-post-direction/><street-suffix>BLVD</street-suffix><unit-designation/><unit-number/><city>WEST HOLLYWOOD</city><state>CA</state><zip>90069</zip><zip4>3502</zip4><county>LOS ANGELES</county></address><verified/><phonenumberdetails><phonenumber/><listed/><firstname/><middlename/><lastname/><namesuffix/><dualname/><companyname/></phonenumberdetails><dob day="25" month="12" year="1925"/><age> 82</age><age-at-death>72</age-at-death><death-verification-code>V</death-verification-code><date-first month="09" year="1984"/><date-last month="04" year="1986"/></record><record><firstname>CARLOS</firstname><middlename>A</middlename><lastname>CASTANEDA</lastname><namesuffix/><address><street-number>10474</street-number><street-pre-direction/><street-name>SANTA MONICA</street-name><street-post-direction/><street-suffix>BLVD</street-suffix><unit-designation/><unit-number/><city>LOS ANGELES</city><state>CA</state><zip>90025</zip><zip4>6929</zip4><county>LOS ANGELES</county></address><verified/><phonenumberdetails><phonenumber/><listed/><firstname/><middlename/><lastname/><namesuffix/><dualname/><companyname/></phonenumberdetails><dob day="25" month="12" year="1925"/><age> 82</age><age-at-death>72</age-at-death><death-verification-code>V</death-verification-code><date-first month="" year=""/><date-last month="" year=""/></record><record><firstname>CARLOS</firstname><middlename>A</middlename><lastname>CASTANEDA</lastname><namesuffix/><address><street-number>11901</street-number><street-pre-direction/><street-name>SANTA MONICA</street-name><street-post-direction/><street-suffix>BLVD</street-suffix><unit-designation>APT</unit-designation><unit-number>596</unit-number><city>LOS ANGELES</city><state>CA</state><zip>90025</zip><zip4>2767</zip4><county>LOS ANGELES</county></address><verified/><phonenumberdetails><phonenumber/><listed/><firstname/><middlename/><lastname/><namesuffix/><dualname/><companyname/></phonenumberdetails><dob day="25" month="12" year="1925"/><age> 82</age><age-at-death>72</age-at-death><death-verification-code>V</death-verification-code><date-first month="" year=""/><date-last month="" year=""/></record><record><firstname>CARLOS</firstname><middlename>A</middlename><lastname>CASTANEDA</lastname><namesuffix/><address><street-number>11901</street-number><street-pre-direction/><street-name>STA MONICA</street-name><street-post-direction/><street-suffix/><unit-designation>APT</unit-designation><unit-number>596</unit-number><city>LOS ANGELES</city><state>CA</state><zip>90025</zip><zip4/><county>LOS ANGELES</county></address><verified/><phonenumberdetails><phonenumber/><listed/><firstname/><middlename/><lastname/><namesuffix/><dualname/><companyname/></phonenumberdetails><dob day="25" month="12" year="1925"/><age> 82</age><age-at-death>72</age-at-death><death-verification-code>V</death-verification-code><date-first month="" year=""/><date-last month="" year=""/></record><record><firstname>CARLOS</firstname><middlename>A</middlename><lastname>CASTANEDA</lastname><namesuffix/><address><street-number>9060</street-number><street-pre-direction/><street-name>SANTA MONICA</street-name><street-post-direction/><street-suffix>BLVD</street-suffix><unit-designation>APT</unit-designation><unit-number>305</unit-number><city>WEST HOLLYWOOD</city><state>CA</state><zip>90069</zip><zip4>5538</zip4><county>LOS ANGELES</county></address><verified/><phonenumberdetails><phonenumber/><listed/><firstname/><middlename/><lastname/><namesuffix/><dualname/><companyname/></phonenumberdetails><dob day="25" month="12" year="1925"/><age> 82</age><age-at-death>72</age-at-death><death-verification-code>V</death-verification-code><date-first month="" year=""/><date-last month="" year=""/></record><record><firstname>CARLOS</firstname><middlename>A</middlename><lastname>CASTANEDA</lastname><namesuffix/><address><street-number>10474</street-number><street-pre-direction/><street-name>SANTA MONICA</street-name><street-post-direction/><street-suffix/><unit-designation>#</unit-designation><unit-number>308</unit-number><city>VISTA</city><state>CA</state><zip>92084</zip><zip4/><county>SAN DIEGO</county></address><verified/><phonenumberdetails><phonenumber/><listed/><firstname/><middlename/><lastname/><namesuffix/><dualname/><companyname/></phonenumberdetails><dob day="25" month="12" year="1925"/><age> 82</age><age-at-death>72</age-at-death><death-verification-code>V</death-verification-code><date-first month="" year=""/><date-last month="" year=""/></record><record><firstname>CARLOS</firstname><middlename>A</middlename><lastname>CASTANEDA</lastname><namesuffix/><address><street-number>10474</street-number><street-pre-direction/><street-name>SANTA MONICA 308</street-name><street-post-direction/><street-suffix/><unit-designation/><unit-number/><city>VISTA</city><state>CA</state><zip>92084</zip><zip4/><county>SAN DIEGO</county></address><verified/><phonenumberdetails><phonenumber/><listed/><firstname/><middlename/><lastname/><namesuffix/><dualname/><companyname/></phonenumberdetails><dob day="25" month="12" year="1925"/><age> 82</age><age-at-death>72</age-at-death><death-verification-code>V</death-verification-code><date-first month="" year=""/><date-last month="" year=""/></record></records><ReportDisclaimers><Disclaimer><DisclaimerSource>Fair Credit Reporting Act</DisclaimerSource><DisclaimerTitle>Permissible Purpose</DisclaimerTitle><DisclaimerText><![CDATA[The federal Fair Credit Reporting Act imposes criminal penalties-including a fine, up to two years in prison, or both against anyone who knowingly and willfully obtains information on a consumer from a consumer reporting agency under false pretenses, and other penalties for anyone who obtains such information without a permissible purpose.]]></DisclaimerText></Disclaimer></ReportDisclaimers></nbdresponse>

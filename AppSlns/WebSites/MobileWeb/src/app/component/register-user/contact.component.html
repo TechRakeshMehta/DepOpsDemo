@@ -1,0 +1,114 @@
+
+  <div id="bodyBlock"  class="container-fluid">
+    
+
+    <section class="p-2">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3 id="CRTACCOUNT"></h3>
+            </div>
+            <div  style="color: #a94442" [hidden]="hideUserCreationError">{{userCreationError}}</div>
+            <div style="color: #a94442">{{accountLinkError}}</div>
+            <div class="col-md-12 bg-white shadow-sm rounded py-3">
+                <form [formGroup]="contactForm">
+                    <div class="row">
+                        <div class="col-md-6 mb-2">
+                            <label id="EMAIL" class="mb-0 required"></label>
+                            <input type="email" class="form-control" maxlength="250"
+                            [ngClass]="displayFieldCss('primaryEmail')" formControlName="primaryEmail">
+                            <app-field-error-display  [displayError]="isError('primaryEmail')" errorMsg="{{errorMessage('primaryEmail')}}">
+                            </app-field-error-display>
+                        </div>
+                        <div class="col-md-6 mb-2">
+                                <label id="CNFRMMAIL" class="mb-0 required"></label>
+                            <input type="email" class="form-control" maxlength="250"
+                            [ngClass]="displayFieldCss('confirmPrimaryEmail')" formControlName="confirmPrimaryEmail">
+                            <app-field-error-display [displayError]="isError('confirmPrimaryEmail')" errorMsg="{{errorMessage('confirmPrimaryEmail')}}">
+                                </app-field-error-display>
+                                <div class="errorColor" [hidden]="IsPrimaryEmailMatch">{{EmailAddressNotMatchMsg}}</div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                            <div class="col-md-6 mb-2">
+                                <label id="SECEMAIL" class="mb-0"></label>
+                            <input type="email" class="form-control" maxlength="250"
+                            [ngClass]="displayFieldCss('secondaryEmail')" formControlName="secondaryEmail">
+                            <app-field-error-display [displayError]="isError('secondaryEmail')" errorMsg="{{errorMessage('secondaryEmail')}}">
+                            </app-field-error-display>
+                        </div>
+                        <div class="col-md-6 mb-1">
+                                <label id="CSECEMAIL" class="mb-0"></label>
+                            <input type="email" class="form-control" formControlName="confirmSecondaryEmail" maxlength="250">
+                            <app-field-error-display [displayError]="isError('confirmSecondaryEmail')" errorMsg="{{errorMessage('confirmSecondaryEmail')}}">
+                                </app-field-error-display>
+                            <div  class="errorColor" [hidden]="IsSecondaryEmailMatch" >{{EmailAddressNotMatchMsg}}</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                            <div class="col-md-6 mb-2">
+                                <label id="PRPHONE" class="mb-0 required"></label>
+                            <input type="text" class="form-control" placeholder="(___)-___-____" [textMask]="{mask: mask}"
+                            [ngClass]="displayFieldCss('primaryPhone')" formControlName="primaryPhone">
+                            <app-field-error-display [displayError]="isError('primaryPhone')" errorMsg="{{errorMessage('primaryPhone')}}">
+                            </app-field-error-display>
+                        </div>
+                        <div class="col-md-6 mb-2">
+                                <label id="SECPHONE" class="mb-0"></label>
+                            <input type="text" class="form-control" placeholder="(___)-___-____" [textMask]="{mask: mask}"
+                             formControlName="secondaryPhone">
+                            <!-- <app-field-error-display [displayError]="isFieldValid('secondaryPhone')" errorMsg="Please enter your Secondary Phone">
+                            </app-field-error-display> -->
+
+                        </div>
+                    </div>
+                    <div class="row">
+                            <div class="col-md-6 mb-2">
+                                <label id="USERNAME" class="mb-0 required"></label>
+                            <input type="text" class="form-control" maxlength="256"
+                            [ngClass]="displayFieldCss('userName')" formControlName="userName">
+                            <app-field-error-display [displayError]="isError('userName')" errorMsg="{{errorMessage('userName')}}">
+                                </app-field-error-display>
+                        </div>
+                        <div class="col-md-6 mb-2">
+                                <label class="mb-0"></label>
+                            
+                            <button type="button" (click)="CheckUser()" style="min-width: 95px;" class="align-self-end d-block btn btn-sm btn-primary px-2"><i class="fas fa-user-check mr-1"></i><label id="CHECK"></label></button>
+                            <!-- <label [(ngModel)]="proportion" class="mb-0" [ngStyle]="{'color': proportion === '100' ? 'green' : 'red'}"> {{UsernameMsg}}</label> -->
+                        <div [ngStyle]="{'color':GetColor()}" class="d-block">{{UsernameMsg}}</div>
+                        
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-2">
+                                <label id="PASSWORD" class="mb-0 required"></label>
+                            <input type="password" formControlName="password" maxlength="15"
+                            [ngClass]="displayFieldCss('password')" class="form-control" >
+                            <app-field-error-display [displayError]="isError('password')" errorMsg="{{errorMessage('password')}}">
+                                </app-field-error-display>
+                        </div>
+                        <div class="col-md-6 mb-2">
+                                <label id="CNFMPASSWORD" class="mb-0 required"></label>
+                            <input type="password" class="form-control" maxlength="15"
+                            [ngClass]="displayFieldCss('confirmPassword')" formControlName="confirmPassword">
+                            <app-field-error-display [displayError]="isError('confirmPassword')" errorMsg="{{errorMessage('confirmPassword')}}">
+                                </app-field-error-display>
+                                <div class="errorColor" [hidden]="IsPasswordMatch"> <label id="PWDDIDNOTMATCH"></label> </div>
+
+                        </div>
+                        <re-captcha formControlName="recaptchaReactive" #captchaRef="reCaptcha" size="invisible"  (resolved)="$event && onSubmit()"></re-captcha>
+                        
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-12 d-flex justify-content-center">
+                            <button type="button" (click)="goBack()" class="btn btn-primary mr-1 fixedWidthBtn"><i class="fas fa-arrow-left pr-1"></i><label id="PREVIOUS"></label></button>                                
+                            <button type="button" (click)="onCaptcha()" class="btn btn-primary mr-1" style="min-width: 170px;"><i class="fas fa-user-plus pr-1"></i><label id="CRTACCNT"></label></button>
+                            <cancel-registration-button></cancel-registration-button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+  

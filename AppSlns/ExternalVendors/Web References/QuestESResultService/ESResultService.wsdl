@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://americandatabank.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://americandatabank.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://americandatabank.com/">
+      <s:element name="ReceiveCollectionResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="collectionResultXML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReceiveCollectionResultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReceiveCollectionResultResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReceiveCollectionStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="collectionStatusXML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReceiveCollectionStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReceiveCollectionStatusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReceiveLabTestResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="labResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReceiveLabTestResultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReceiveLabTestResultResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReceiveLabReqStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="labReqStatus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReceiveLabReqStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReceiveLabReqStatusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ReceiveCollectionResultSoapIn">
+    <wsdl:part name="parameters" element="tns:ReceiveCollectionResult" />
+  </wsdl:message>
+  <wsdl:message name="ReceiveCollectionResultSoapOut">
+    <wsdl:part name="parameters" element="tns:ReceiveCollectionResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReceiveCollectionStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:ReceiveCollectionStatus" />
+  </wsdl:message>
+  <wsdl:message name="ReceiveCollectionStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:ReceiveCollectionStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReceiveLabTestResultSoapIn">
+    <wsdl:part name="parameters" element="tns:ReceiveLabTestResult" />
+  </wsdl:message>
+  <wsdl:message name="ReceiveLabTestResultSoapOut">
+    <wsdl:part name="parameters" element="tns:ReceiveLabTestResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReceiveLabReqStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:ReceiveLabReqStatus" />
+  </wsdl:message>
+  <wsdl:message name="ReceiveLabReqStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:ReceiveLabReqStatusResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ESResultServiceSoap">
+    <wsdl:operation name="ReceiveCollectionResult">
+      <wsdl:input message="tns:ReceiveCollectionResultSoapIn" />
+      <wsdl:output message="tns:ReceiveCollectionResultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveCollectionStatus">
+      <wsdl:input message="tns:ReceiveCollectionStatusSoapIn" />
+      <wsdl:output message="tns:ReceiveCollectionStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveLabTestResult">
+      <wsdl:input message="tns:ReceiveLabTestResultSoapIn" />
+      <wsdl:output message="tns:ReceiveLabTestResultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveLabReqStatus">
+      <wsdl:input message="tns:ReceiveLabReqStatusSoapIn" />
+      <wsdl:output message="tns:ReceiveLabReqStatusSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ESResultServiceSoap" type="tns:ESResultServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ReceiveCollectionResult">
+      <soap:operation soapAction="http://americandatabank.com/ReceiveCollectionResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveCollectionStatus">
+      <soap:operation soapAction="http://americandatabank.com/ReceiveCollectionStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveLabTestResult">
+      <soap:operation soapAction="http://americandatabank.com/ReceiveLabTestResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveLabReqStatus">
+      <soap:operation soapAction="http://americandatabank.com/ReceiveLabReqStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ESResultServiceSoap12" type="tns:ESResultServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ReceiveCollectionResult">
+      <soap12:operation soapAction="http://americandatabank.com/ReceiveCollectionResult" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveCollectionStatus">
+      <soap12:operation soapAction="http://americandatabank.com/ReceiveCollectionStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveLabTestResult">
+      <soap12:operation soapAction="http://americandatabank.com/ReceiveLabTestResult" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveLabReqStatus">
+      <soap12:operation soapAction="http://americandatabank.com/ReceiveLabReqStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ESResultService">
+    <wsdl:port name="ESResultServiceSoap" binding="tns:ESResultServiceSoap">
+      <soap:address location="http://localhost/ADBQESOutboundWS/ESResultService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ESResultServiceSoap12" binding="tns:ESResultServiceSoap12">
+      <soap12:address location="http://localhost/ADBQESOutboundWS/ESResultService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

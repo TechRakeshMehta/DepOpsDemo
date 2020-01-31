@@ -1,0 +1,148 @@
+<div id="bodyBlock" class="container-fluid">
+
+        <section class="p-2">
+                <div class="row">
+                        <div *ngIf="!IsEditProfile" class="col-md-12 font-weight-bold">
+                                <label id="CREATODR"></label> (
+                                <label id="STEP"></label> {{orderInfo.CurrentStep}}
+                                <label id="OF"></label> {{orderInfo.TotalSteps}})
+                        </div>
+                        <div class="col-md-12 text-center">
+                                <h3 style="display: inline" *ngIf="IsEditProfile" id="UPDATE"></h3>
+                                <h3 style="display: inline" id="PERSONALINFO"></h3>
+
+                        </div>
+
+                        <div *ngIf="IsInvalidName" class="d-block validationColor">{{ InvalidNameMsg }}</div>
+                        <div *ngIf="IsDuplicateName" class="d-block validationColor">{{ DuplicateNameMsg }}</div>
+                        <div class="col-md-12 bg-white shadow-sm rounded py-3">
+                                <form [formGroup]="personalForm">
+                                        <div class="row">
+                                                <div class="col-md-6 mb-1">
+
+                                                        <label class="required" id="FIRSTNAME"></label>
+                                                        <input type="text" maxlength="50" class="form-control" formControlName="firstName" [ngClass]="displayFieldCss('firstName')">
+                                                        <app-field-error-display [displayError]="isError('firstName')" errorMsg="{{errorMessage('firstName')}}">
+                                                        </app-field-error-display>
+                                                </div>
+                                                <div class="col-md-6 mb-1">
+                                                        <label id="MIDDLENAME"></label>
+                                                        <input type="text" maxlength="50" class="form-control" formControlName="middleName" [ngClass]="displayFieldCss('middleName')">
+                                                        <app-field-error-display [displayError]="isError('middleName')" errorMsg="{{errorMessage('middleName')}}">
+                                                        </app-field-error-display>
+                                                </div>
+                                        </div>
+
+                                        <div class="row">
+                                                <div class="col-md-6 mb-1">
+                                                        <label class="required" id="LASTNAME"></label>
+                                                        <input type="text" maxlength="50" class="form-control" formControlName="lastName" [ngClass]="displayFieldCss('lastName')">
+                                                        <app-field-error-display [displayError]="isError('lastName')" errorMsg="{{errorMessage('lastName')}}">
+                                                        </app-field-error-display>
+                                                </div>
+                                                <div class="col-md-6 mb-1">
+                                                        <label id="SUFFIX"></label>
+                                                        <div *ngIf="!IsSuffixDropDown">
+                                                                <input type="text" [ngClass]="displayFieldCss('suffix')" class="form-control" formControlName="suffix">
+                                                                <app-field-error-display [displayError]="isError('suffix')" errorMsg="{{errorMessage('suffix')}}">
+                                                                </app-field-error-display>
+                                                        </div>
+                                                        <div *ngIf="IsSuffixDropDown">
+                                                                <select [(ngModel)]="selectedSuffixID" class="custom-select" [ngClass]="displayFieldCss('dropDownSuffix')" formControlName="dropDownSuffix">
+                                                                        <option  value="0">
+                                                                                <label name="SELECTSUFFIX"></label>
+                                                                            </option>
+                                                                        <option *ngFor="let s of suffixlist" value="{{s.SuffixID}}">
+                                                                                {{ s.Suffix }}
+                                                                        </option>
+                                                                </select>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="row">
+                                                <div class="col-md-6 mb-1">
+                                                        <label class="required" id="GENDER"></label>
+                                                        <select [(ngModel)]="SelectedGenderDefaultLanID" class="custom-select" [ngClass]="displayFieldCss('Gender')" formControlName="Gender">
+                                                                <!-- <option value="1">Male </option> -->
+                                                                <option disabled hidden [value]="selectUndefinedOptionValue">
+                                                                        <label name="PLEASESELECT"></label>
+                                                                </option>
+                                                                <option *ngFor="let Gender of lstGender" value={{Gender.DefaultLanguageKeyID}}>
+                                                                        {{Gender.Name}}
+                                                                </option>
+                                                        </select>
+                                                        <app-field-error-display [displayError]="isError('Gender')" errorMsg="{{errorMessage('Gender')}}">
+                                                        </app-field-error-display>
+                                                </div>
+                                               
+                                                <div class="col-md-6 mb-1">
+                                                        <label class="" id="PRFRDCOMCTNLANG"></label>
+                                                        <select [(ngModel)]="selectedCommLanguageId" class="custom-select" [ngClass]="displayFieldCss('CommLanguage')" formControlName="CommLanguage">
+                                                                <option *ngFor="let lang of lstCommLanguages" value="{{lang.LanguageID}}">
+                                                                        {{ lang.LanguageName }}
+                                                                </option>
+                                                        </select>
+                                                </div>
+                                        </div>
+
+                                        <div class="row">
+                                              
+                                                <div *ngIf="!IsEditProfile" id="dob" class="col-md-6 mb-1">
+                                                        <label class="required" id="DOB"></label>
+                                                        <!--<input type="date" class="form-control" [ngClass]="displayFieldCss('DOB')" [ngModel]="BirthDate | date:'yyyy-MM-dd'" (change)="validateDOB()"
+                                                                formControlName="DOB"> -->
+                                                        <my-date-picker [hidden]='isSpanishDobCalander' name="DOB" [options]="EnglishMyDatePickerOptions" formControlName="DOB"></my-date-picker>
+                                                        <my-date-picker [hidden]='!isSpanishDobCalander' name="DOB" [options]="SpanishMyDatePickerOptions" formControlName="DOB"></my-date-picker>
+                                                        <app-field-error-display [displayError]="isError('DOB')" errorMsg="{{errorMessage('DOB')}}">
+                                                        </app-field-error-display>
+                                                        <app-field-error-display [displayError]="!isValidDob" errorMsg="{{dobCustMessage}}">
+                                                        </app-field-error-display>
+                                                </div>
+
+                                                <div *ngIf="!IsEditProfile" class="col-md-6 mb-1">
+                                                        <label [ngClass]="{'required': IsSSNReqd}" id="SSN"></label>
+                                                        <input type="text" class="form-control" [ngClass]="displayFieldCss('SSN')" formControlName="SSN" placeholder="___-__-____"
+                                                                [textMask]="{mask: mask}">
+                                                        <app-field-error-display [displayError]="isError('SSN')" errorMsg="{{errorMessage('SSN')}}">
+                                                        </app-field-error-display>
+
+                                                </div>
+                                                <!-- <div class="col-md-6 mb-1">
+                                                        <label class="" id="PRFRDCOMCTNLANG"></label>
+                                                        <select [(ngModel)]="selectedCommLanguageId" class="custom-select" [ngClass]="displayFieldCss('CommLanguage')" formControlName="CommLanguage">
+                                                                <option *ngFor="let lang of lstCommLanguages" value="{{lang.LanguageID}}">
+                                                                        {{ lang.LanguageName }}
+                                                                </option>
+                                                        </select>
+                                                </div> -->
+
+                                        </div>
+                                        <br>
+                                        <div class="row">
+                                                <div class="col-md-12 d-flex justify-content-center">
+                                                        <button type="button" autofocus="false" class="btn btn-primary fixedWidthBtn" (click)="goBack()">
+                                                                <i class="fas fa-arrow-left pr-1"></i>
+                                                                <label id="PREVIOUS"></label>
+                                                        </button>
+
+                                                        <button type="button" autofocus="false" (click)="onSubmit()" class="btn btn-primary mx-1 fixedWidthBtn">
+
+                                                                <label id="NEXT"></label>
+                                                                <i class="fas fa-arrow-right pl-1"></i>
+                                                        </button>
+                                                        <div *ngIf="!IsEditProfile">
+                                                                <cancel-order-button></cancel-order-button>
+                                                        </div>
+
+                                                        <button *ngIf="IsEditProfile" type="button" routerLink="/userDashboard" class="btn btn-primary fixedWidthBtn mx-1">
+                                                                <i class="fas fa-times pr-1"></i>
+                                                                <label id="CNCL" class="label-on-button "></label>
+                                                        </button>
+                                                </div>
+                                        </div>
+
+                                </form>
+                        </div>
+                </div>
+        </section>
+</div>

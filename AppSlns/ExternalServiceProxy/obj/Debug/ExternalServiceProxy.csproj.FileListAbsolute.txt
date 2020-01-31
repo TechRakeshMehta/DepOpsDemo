@@ -1,0 +1,13 @@
+C:\Project\Compolio\AppSlns\ExternalServiceProxy\bin\Debug\ExternalServiceProxy.dll.config
+C:\Project\Compolio\AppSlns\ExternalServiceProxy\bin\Debug\ExternalServiceProxy.dll
+C:\Project\Compolio\AppSlns\ExternalServiceProxy\bin\Debug\ExternalServiceProxy.pdb
+C:\Project\Compolio\AppSlns\ExternalServiceProxy\obj\Debug\ExternalServiceProxy.csproj.CoreCompileInputs.cache
+C:\Project\Compolio\AppSlns\ExternalServiceProxy\obj\Debug\ExternalServiceProxy.dll
+C:\Project\Compolio\AppSlns\ExternalServiceProxy\obj\Debug\ExternalServiceProxy.pdb
+C:\Project\Complio\AppSlns\ExternalServiceProxy\bin\Debug\ExternalServiceProxy.dll.config
+C:\Project\Complio\AppSlns\ExternalServiceProxy\bin\Debug\ExternalServiceProxy.dll
+C:\Project\Complio\AppSlns\ExternalServiceProxy\bin\Debug\ExternalServiceProxy.pdb
+C:\Project\Complio\AppSlns\ExternalServiceProxy\obj\Debug\ExternalServiceProxy.csproj.CoreCompileInputs.cache
+C:\Project\Complio\AppSlns\ExternalServiceProxy\obj\Debug\ExternalServiceProxy.dll
+C:\Project\Complio\AppSlns\ExternalServiceProxy\obj\Debug\ExternalServiceProxy.pdb
+C:\Project\Complio\AppSlns\ExternalServiceProxy\obj\Debug\ExternalServiceProxy.csprojAssemblyReference.cache

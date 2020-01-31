@@ -1,0 +1,10 @@
+﻿<?xml version="1.0"?>
+<ApplicantEmailAddressChange xmlns="http://tempuri.org/ADBEmails.xsd">
+  <Contents>
+    <FirstName></FirstName>
+    <LastName></LastName>
+    <TenantName></TenantName>
+    <LoginURL></LoginURL>
+    <NewEmailAddress></NewEmailAddress>
+  </Contents>
+</ApplicantEmailAddressChange>

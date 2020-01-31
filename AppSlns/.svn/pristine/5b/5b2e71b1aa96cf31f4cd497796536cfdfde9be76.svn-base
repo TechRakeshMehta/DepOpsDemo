@@ -1,0 +1,277 @@
+﻿using INTSOF.COMPLIO.TALKDESK.Business;
+using INTSOF.COMPLIO.TALKDESK.Handlers;
+using INTSOF.COMPLIO.TALKDESK.Models;
+using NLog;
+using System;
+using System.Net;
+using System.Net.Http;
+using System.Threading.Tasks;
+using System.Web.Http;
+
+namespace INTSOF.COMPLIO.TALKDESK.Controllers
+{
+    [RoutePrefix("ComplioTalkDeskJob")]
+    public class ComplioTalkDeskJobController : BaseAPIController
+    {
+        private static Logger logger = LogManager.GetCurrentClassLogger();
+
+        [Route("CreateReportJob")]
+        [HttpGet]
+        public async Task<HttpResponseMessage> CreateTalkDeskReportJobAsync()
+        {
+            logger.Info("Start Complio TalkDesk Create Report Job API call.");
+            HttpResponseMessage responseMessage = new HttpResponseMessage();
+            try
+            {
+                DateTime _currentDateTime = DateTime.Now;
+                DateTime _currentDateTimeUTC = DateTime.UtcNow;
+                var _reportJobData = ReportJobManager.GetReportJobData();
+                DateTime _fromDate = _currentDateTime;
+                DateTime _endDate = _currentDateTime;
+
+                if (_reportJobData == null)
+                {
+                    /*
+                    This means that Background service did not create any job yet and should create a job from the begining. 
+                    The 'TalkDeskLiveDataDate' setting in the web config will be used to create the first job.  
+                    */
+
+                    string[] validDateFormat = new string[] { "MM/dd/yyyy hh:mm:ss", "MM-dd-yyyy hh:mm:ss"
+                                                                , "yyyy/MM/dd hh:mm:ss", "yyyy-MM-dd hh:mm:ss" };
+                    DateTime.TryParseExact(APPSettingHandler.TalkDeskLiveDataDate, validDateFormat
+                                          , System.Globalization.CultureInfo.InvariantCulture,
+                                          System.Globalization.DateTimeStyles.None, out _fromDate);
+                    _endDate = _currentDateTimeUTC;
+                    /*RoundDateTime(_currentDateTimeUTC, RoundTo.Hour, true);*/
+                }
+                else if (_reportJobData != null)
+                {
+                    double _createReportJobTimelag = Convert.ToDouble(APPSettingHandler.CreateReportJobTimelag);
+
+                    //if (_reportJobData.JobTo.HasValue && (_currentDateTimeUTC > _reportJobData.JobTo.Value.AddMinutes(_createReportJobTimelag)))
+                    if (_reportJobData.JobTo.HasValue)
+                    {
+                        double _totalMins = (_currentDateTimeUTC - _reportJobData.JobTo).Value.TotalMinutes;
+                        if (_totalMins >= (_createReportJobTimelag + APPSettingHandler.CreateReportJobEndTimelag))
+                        {
+                            _fromDate = _reportJobData.JobTo.Value;
+                            //_endDate = RoundDateTime(_currentDateTimeUTC, RoundTo.Hour, true);
+                            _endDate = _currentDateTimeUTC;
+                        }
+                        else
+                        {
+                            responseMessage.StatusCode = HttpStatusCode.PreconditionFailed;
+                            responseMessage.ReasonPhrase = "The Pre-condition failed for Job creation start date and end date. Please try later after sometime.";
+                            return responseMessage;
+                        }
+                    }
+                }
+
+                //string _fromDateUTC = TimezoneHandler.SetUserTime(_fromDate).ToString();
+                string _fromDateUTC = _fromDate.ToString("yyyy-MM-dd HH:mm:ss UTC"); 
+                string _endDateUTC = _endDate.AddMinutes(-(APPSettingHandler.CreateReportJobEndTimelag)).ToString("yyyy-MM-dd HH:mm:ss UTC");
+
+                CreateJobRequest createJobRequest = new CreateJobRequest
+                {
+                    format = "json",
+                    timespan = new CreateJobRequestTimespan
+                    {
+                        from = _fromDateUTC,
+                        to = _endDateUTC
+                    }
+                };
+                
+
+                string _jsonPostData = JsonHandler.ConvertAPIRequestModelToJSON<Models.CreateJobRequest>(createJobRequest);
+
+                //Newtonsoft.Json.JsonConvert.SerializeObject(createJobRequest);
+
+                RestHttpClientHandler restHttpClient = new RestHttpClientHandler();
+                string _createJobURL = APPSettingHandler.TalkDeskApiBaseURL + APPSettingHandler.TalkDeskCreateReportJobURL;
+
+                try
+                {
+                    TalkDeskTokenHandler talkDeskTokenHandler = new TalkDeskTokenHandler();                   
+                    var _bearerTokenResponse = await talkDeskTokenHandler.GetTalkDeskToken();
+                    if (_bearerTokenResponse == "Failed get Token")
+                    {
+                        logger.Error("Failed get token");
+                    }
+                    var getresponse = await restHttpClient.PostRequestAsyncWithToken(_createJobURL, _jsonPostData, _bearerTokenResponse);
+
+                    //if (getresponse.StatusCode == HttpStatusCode.Accepted)
+                    if (getresponse.IsSuccessStatusCode)
+                    {
+                        var _responseContent = await getresponse.Content.ReadAsStringAsync();
+                        //Save Job data into Database and return Success code
+                        if (ReportJobManager.SaveReportJob(_responseContent))
+                        {
+                            responseMessage.StatusCode = HttpStatusCode.Accepted;
+                            responseMessage.ReasonPhrase = "Successfully Processed";
+                        }
+                        else
+                        {
+                            responseMessage.StatusCode = HttpStatusCode.Accepted;
+                            responseMessage.ReasonPhrase = String.Format("Successfully created the Report Job in TalkDesk but unable to save the data. Job ID: {0}", Newtonsoft.Json.Linq.JObject.Parse(_responseContent)["id"].ToString());
+                        }
+                    }
+                    else
+                    {
+                        responseMessage.StatusCode = getresponse.StatusCode;
+                        responseMessage.ReasonPhrase = "TalkDesk API success Failed and Not accepted. Error in TalkDesk Api Create Job response.";
+                        logger.Error(string.Format("TalkDesk API success Failed and Not accepted.Error in TalkDesk Api Create Job response. Status Code from TalkDesk API: {0}, StartDate: {1}, EndData:{2} "
+                            , getresponse.StatusCode, createJobRequest.timespan.from, createJobRequest.timespan.to));
+                    }
+                }
+                catch (Exception ex)
+                {
+                    if (responseMessage == null)
+                    {
+                        responseMessage = new HttpResponseMessage();
+                    }
+                    responseMessage.StatusCode = HttpStatusCode.InternalServerError;
+                    responseMessage.ReasonPhrase = string.Format("An exception occurred in TalkDesk Create Job API: {0}", ex);
+                    logger.Error(ex, "An exception occurred in TalkDesk Create Job API.");
+                }
+            }
+            catch (Exception ex)
+            {
+                if (responseMessage == null)
+                {
+                    responseMessage = new HttpResponseMessage();
+                }
+                responseMessage.StatusCode = HttpStatusCode.InternalServerError;
+                responseMessage.ReasonPhrase = string.Format("An exception occurred in Complio TalkDesk Create Report Job API: {0}", ex);
+                logger.Error(ex, "An error occurred in Complio TalkDesk Create Report Job API.");
+            }
+            logger.Info("End Complio TalkDesk Create Report Job API call.");
+            return responseMessage;
+        }
+
+        //Checking A Report Job Status
+        [Route("UpdateReportJob")]
+        [HttpGet]
+        public async Task<HttpResponseMessage> UpdateTalkDeskReportJobAsync()
+        {
+            logger.Info("Start Complio TalkDesk Update Report Job API call.");
+
+            //Get the list of "TalkDesk pending jobs" from database and process the jobs one by one. 
+            HttpResponseMessage responseMessage = new HttpResponseMessage();
+            bool isSuccess = true;
+            try
+            {
+                //get the pnding jobs from the database. Pending jobs will be those having status as 'created' or 'processing'.
+                var pendingReportJob = ReportJobManager.GetPendingReportJobs(APPSettingHandler.UpdateReportJobTimeLag);
+
+                foreach (var item in pendingReportJob)
+                {
+                    string _jobID = item.JobNumber;
+                    try
+                    {
+                        RestHttpClientHandler restHttpClient = new RestHttpClientHandler();
+                        string _createJobURL = item.SelfHref;
+                        //string _createJobURL = APPSettingHandler.TalkDeskApiBaseURL + APPSettingHandler.TalkDeskCreateReportJobURL + "/" + _jobID;
+
+                        TalkDeskTokenHandler talkDeskTokenHandler = new TalkDeskTokenHandler();
+                        var _bearerTokenResponse = await talkDeskTokenHandler.GetTalkDeskToken();
+                        if (_bearerTokenResponse == "Failed get Token")
+                        {
+                            logger.Error("Failed get token");
+                            isSuccess = false;
+                            break;
+                        }
+                        var getresponse = await restHttpClient.GetRequestAsyncWithToken(_createJobURL, _bearerTokenResponse, false);
+                        if (getresponse.IsSuccessStatusCode || APPSettingHandler.HTTPSuccessRequestCode.Contains(Convert.ToString(Convert.ToInt32((getresponse.StatusCode)))))
+                        {
+                            //update job data into Database and return Success code
+                            var _responseContent = await getresponse.Content.ReadAsStringAsync();
+                            if (!ReportJobManager.UpdateReportJobData(_responseContent))
+                            {
+                                isSuccess = false;
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        isSuccess = false;
+                        logger.Error(ex, string.Format("An exception occurred in TalkDesk Update Report Job for TalkDesk Job #: {0}", _jobID));
+                    }
+                }
+
+                if (isSuccess)
+                {
+                    responseMessage.StatusCode = HttpStatusCode.Accepted;
+                    responseMessage.ReasonPhrase = "Successfully Processed update job data.";
+                }
+                else
+                {
+                    responseMessage.StatusCode = HttpStatusCode.ExpectationFailed;
+                    responseMessage.ReasonPhrase = "Partially Processed update Report Job data. See logs for failed records.";
+                }
+
+            }
+            catch (Exception ex)
+            {
+                if (responseMessage == null)
+                {
+                    responseMessage = new HttpResponseMessage();
+                }
+                responseMessage.StatusCode = HttpStatusCode.InternalServerError;
+                responseMessage.ReasonPhrase = string.Format("An exception occurred in Complio TalkDesk Update Report Job API: {0}", ex);
+                logger.Error(ex, "An error occurred in Complio TalkDesk Update Report Job API.");
+            }
+            logger.Info("End Complio TalkDesk Update Report Job API call.");
+            return responseMessage;
+        }
+
+        //DateTime GetJobEndDate(DateTime _dateTime)
+        //{
+        //    var dt = RoundUp(_dateTime, TimeSpan.FromHours(1));
+        //    return dt;
+        //}
+
+        //DateTime GetJobEndDateForFirstTime(DateTime _dateTime)
+        //{
+        //    var updated = _dateTime.AddHours(30);
+        //    return new DateTime(updated.Year, updated.Month, updated.Day,
+        //                         updated.Hour, 0, 0, _dateTime.Kind);
+        //}
+
+        //DateTime RoundUp(DateTime dt, TimeSpan d)
+        //{
+        //    return new DateTime((dt.Ticks + d.Ticks - 1) / d.Ticks * d.Ticks, dt.Kind);
+        //}
+
+        public static DateTime RoundDateTime(DateTime d, RoundTo rt, bool isIgnoreThirtyMin)
+        {
+            DateTime dtRounded = new DateTime();
+
+            switch (rt)
+            {
+                case RoundTo.Second:
+                    dtRounded = new DateTime(d.Year, d.Month, d.Day, d.Hour, d.Minute, d.Second);
+                    if (d.Millisecond >= 500 && !isIgnoreThirtyMin) dtRounded = dtRounded.AddSeconds(1);
+                    break;
+                case RoundTo.Minute:
+                    dtRounded = new DateTime(d.Year, d.Month, d.Day, d.Hour, d.Minute, 0);
+                    if (d.Second >= 30 && !isIgnoreThirtyMin) dtRounded = dtRounded.AddMinutes(1);
+                    break;
+                case RoundTo.Hour:
+                    dtRounded = new DateTime(d.Year, d.Month, d.Day, d.Hour, 0, 0);
+                    if (d.Minute >= 30 && !isIgnoreThirtyMin) dtRounded = dtRounded.AddHours(1);
+                    break;
+                case RoundTo.Day:
+                    dtRounded = new DateTime(d.Year, d.Month, d.Day, 0, 0, 0);
+                    if (d.Hour >= 12 && !isIgnoreThirtyMin) dtRounded = dtRounded.AddDays(1);
+                    break;
+            }
+
+            return dtRounded;
+        }
+
+        public enum RoundTo
+        {
+            Second, Minute, Hour, Day
+        }
+    }
+}

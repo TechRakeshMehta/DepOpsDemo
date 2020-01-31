@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<xmlgw>
+  <session>
+    <user_id>AMDATXML</user_id>
+    <password>375CCT</password>
+    <customer_reference>reference</customer_reference>
+  </session>
+  <search_request>
+    <search>skiptraceplus</search>
+    <search_identifier>search-id</search_identifier>
+    <search_criteria>
+      <ssn>568568397</ssn>
+    </search_criteria>
+  </search_request>
+</xmlgw>

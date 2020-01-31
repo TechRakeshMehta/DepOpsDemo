@@ -1,0 +1,6 @@
+﻿<div class="col-12 p-2"><img class="d-inline" src="' + picFile.result + '" style="height:40px; width:40px"/>
+    <input id="description["+i+"]" type="text" class="form-control w-50 border-bottom d-inline" placeholder="Description" />
+    <span class="remove-data" onclick="removeSection(this)">
+        <i class="fa fa-times"></i>
+    </span>
+</div>

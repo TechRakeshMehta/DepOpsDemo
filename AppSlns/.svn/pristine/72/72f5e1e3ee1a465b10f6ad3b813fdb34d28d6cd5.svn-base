@@ -1,0 +1,66 @@
+﻿
+#dvSharedUserBreadcrumb {
+   font-family:"Titillium Web",sans-serif !important;
+}
+#dvSharedUserBreadcrumb.container-fluid {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+
+}
+ #dvSharedUserBreadcrumb.container-fluid a {
+        color:#CCCCCC !important;
+    }
+#dvSharedUserBreadcrumb.container-fluid h1 {
+   color: #8C1921;
+    font-size: 18px !important;
+    font-weight: 600;
+    margin: 0;
+    padding-top: 10px;
+}
+   #dvSharedUserBreadcrumb.container-fluid a {
+    
+      text-decoration:none;
+    }  #dvSharedUserBreadcrumb.container-fluid a:hover {
+    color:#23527c;
+    }
+ #dvSharedUserBreadcrumb.container-fluid h1 span {
+  color: #333;
+  font-size: 15px !important;
+}
+#dvSharedUserBreadcrumb .row {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+#dvSharedUserBreadcrumb .text-right {
+  text-align: right;
+}
+#dvSharedUserBreadcrumb .col-md-12 {
+ 
+padding-left: 15px;
+padding-right: 15px;
+
+}
+#dvSharedUserBreadcrumb.container-fluid h1 span {
+   color: #8C1921;
+    font-size: 18px !important;
+    font-weight: 600;
+    margin: 0;
+    padding-top: 10px;
+}
+#dvSharedUserBreadcrumb.container-fluid h1 span.phdr {
+   color: #333333;
+    font-size: 15px !important;
+    font-weight: 600;
+    margin: 0;
+    padding-top: 10px;
+}
+.breadcrumb
+{
+    background: none !important;
+    font-size: 11px !important;
+    color: #CCCCCC !important;
+    margin: 0px;
+    padding: 0px;
+}

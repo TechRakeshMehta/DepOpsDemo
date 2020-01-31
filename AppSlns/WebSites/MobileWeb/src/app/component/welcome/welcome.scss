@@ -1,0 +1,77 @@
+.welcome-alert {
+            background-color: #8b1820 !important;
+            color: #fff;
+        }
+
+        .text-md {
+            font-size: 16px !important;
+            font-weight: bold;
+            width: 50%;
+            margin-left: 25%;
+            padding: 2% 0px;
+            border: 2px solid #cccccc;
+            border-bottom: none;
+            background: #2d3346;
+            color: #fff;
+        }
+        .icon-div> .fa-2x {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            box-shadow: 0px 0px 7px 7px #ddd;
+            text-align: center;
+            line-height: 75px;
+            vertical-align: middle;
+            background-color: rgb(139,24,32);
+            color: #fff;
+        }
+        .icon-div{
+            background: #fff;
+        }
+        .line {
+            height: 2px;
+            width: 60%;
+            background-color: #CCCCCC;
+            margin: 1rem 0px;
+        }
+
+        .div-shadow {
+            border: 1px solid #ccc;
+        }
+
+        #mainDiv {
+            transition: 0.3s;
+        }
+
+        #result > i {
+            background-color: rgb(139,24,32);
+            color: #fff;
+        }
+
+        #result > i:hover {
+            background-color: rgb(45,51,70);
+            color: #fff;
+        }
+
+        #confirmation-div {
+            bottom: 0;
+            position: absolute;
+        }
+
+        #result {
+            max-height: 90%;
+            overflow-y: auto;
+        }
+        #success-div {
+            margin-top: 50%;
+            box-shadow: 0px 0px 7px 8px rgb(161, 162, 163);
+            width: 90%;
+            margin-left: 5%;
+            padding: 2%;
+        }
+        .fa-check-circle {
+            background-color: #5b965b;
+            color: rgb(255, 255, 255);
+            width: 20%;
+            margin-left: 40%;
+        }

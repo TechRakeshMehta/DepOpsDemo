@@ -1,0 +1,129 @@
+<div id="bodyBlock" class="container-fluid">
+  <section class="p-2">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h3 id="CHSLOC"></h3>
+      </div>
+      <div class="col-md-12 font-weight-bold">
+        <label id="CREATODR"></label> (
+        <label id="STEP"></label> {{orderInfo.CurrentStep}})
+      </div>
+      <div class="col-md-12 rounded py-3">
+        <h5 class="font-weight-bold">
+          <label id="FNDLOC"></label>
+        </h5>
+      </div>
+      <div class="col-md-12">
+        <form [formGroup]="LocationForm">
+          <div class="row">
+            <div class="col-md-12">
+              <label for="staticEmail" class="required" id="ENTRZIPCODE"></label>
+              <input type="text" maxlength="5" formControlName="Zipcode" autofocus class="form-control">
+              <app-field-error-display [displayError]="isFieldValid('Zipcode')" errorMsg="{{errorMessage('Zipcode')}}">
+              </app-field-error-display>
+              <div class="errorColor" [hidden]="IsLocationsAvail">{{NoLocationAvailMsg}}</div>
+            </div>
+            <div class="col-md-12 my-2">
+              <div class="d-flex justify-content-center">
+                <button type="button" id="SEARCH" (click)="onSearch()" class="btn btn-primary fixedWidthBtn">
+                  <i class="fas fa-search pr-1"></i>
+                </button>
+                <button type="button" [disabled]="IsDisabled" (click)="onSubmit()" class="btn btn-primary ml-1 fixedWidthBtn">
+                  <label class="mb-0" name="NEXT"></label>
+                  <i class="fas fa-arrow-right pl-1"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-12">
+        <table class="table table-bordered">
+          <thead class="thead-dark">
+            <tr>
+              <th></th>
+              <th scope="col">
+                <label id="NAME"></label>
+              </th>
+              <th scope="col">
+                <label id="ADDRESS"></label>
+              </th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let location of result">
+              <td>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" (click)="selectLocation(location.LocationID)" name="exampleRadios" id="exampleRadios1"
+                    [checked]="locationID == location.LocationID">
+                  <label class="form-check-label" for="exampleRadios1">
+                  </label>
+                </div>
+              </td>
+              <td>{{location.LocationName}}</td>
+              <td> {{location.FullAddress}}</td>
+              <td style="cursor: pointer;">
+                <!--  -->
+                <button type="button" autofocus="false" (click)="openModal(template,location.LocationID,location.LocationName)" class="btn btn-primary fixedWidthBtn ml-1 ">
+                  <label class="mb-0" name="IMAGES"></label>
+
+                  <!-- <i class="fas fa-arrow-right pl-1"></i> -->
+                </button>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-12">
+        <!-- <label *ngIf="IsValid" id="CHSLOC"></label> -->
+        <label [hidden]="!IsValid" id="CHSLOC"></label>
+        <br>
+        <div class="row">
+          <div class="col-md-12 d-flex justify-content-center">
+            <button type="button" autofocus="false" (click)="goBack()" class="btn btn-primary fixedWidthBtn">
+              <i class="fas fa-arrow-left"></i>
+              <label id="PREVIOUS"></label>
+            </button>
+
+            <button type="button" autofocus="false" [disabled]="IsDisabled" (click)="onSubmit()" class="btn btn-primary fixedWidthBtn ml-1 ">
+              <label class="mb-0" name="NEXT"></label>
+              <i class="fas fa-arrow-right pl-1"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">{{locationName}}</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body text-center">
+    <div *ngIf="!IsImageError">
+      <carousel [showIndicators]="False" [interval]="-1" >
+        <slide *ngFor="let a of Locations">
+          <img src="data:image/jpg;base64,{{a.LocationImages}}" alt="first slide" style="display: block; width: 100%;height:400px">
+        </slide>
+      </carousel>
+    </div>
+    <div *ngIf="Locations!=null && Locations.length==0 ">
+      <label class="noImgMsg" id="IMGSNOTAVAIL">{{NoImgMsg}}</label>
+    </div>
+    <div *ngIf="IsImageError==true">
+      <label class="noImgMsg m-0" id="RFRESHMSG">{{refreshMsg}}</label>
+      <button type="button" (click)="refreshModel()"  class="btn btn-primary fixedWidthBtn  ">
+  
+        <i class="fas fa-sync-alt"></i>
+        <label id="REFRESH">{{refresh}}</label>  
+      </button>
+
+    </div>
+  </div>
+</ng-template>

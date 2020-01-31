@@ -1,0 +1,24 @@
+﻿/*LIVE HELP STYLES*/
+
+/*Override the CSS due to flickering issue in LIVE HELP. */
+/*.lhn_help_btn:hover,*/ .lhn_help_btn, .lhn_help_btn:visited 
+{
+    background: url("images/gethelp.png") no-repeat scroll 0 0 transparent !important;
+    height: 125px !important;
+    width: 31px !important;
+    bottom:100px!important;
+    top:auto!important;
+}
+/*.lhn_help_container
+{
+    top:auto!important;
+    bottom:67px!important;
+}*/
+
+
+.lhn_options_outer, .lhn_knowledge_container
+{
+    background-color:#d45500!important;
+}
+
+.lhn_kb_articles{ max-height:207px!important;}

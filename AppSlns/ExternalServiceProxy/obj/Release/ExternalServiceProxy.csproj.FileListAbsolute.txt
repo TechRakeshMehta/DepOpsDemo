@@ -1,0 +1,6 @@
+C:\Project\Complio\AppSlns\ExternalServiceProxy\bin\Release\ExternalServiceProxy.dll.config
+C:\Project\Complio\AppSlns\ExternalServiceProxy\bin\Release\ExternalServiceProxy.dll
+C:\Project\Complio\AppSlns\ExternalServiceProxy\bin\Release\ExternalServiceProxy.pdb
+C:\Project\Complio\AppSlns\ExternalServiceProxy\obj\Release\ExternalServiceProxy.csproj.CoreCompileInputs.cache
+C:\Project\Complio\AppSlns\ExternalServiceProxy\obj\Release\ExternalServiceProxy.dll
+C:\Project\Complio\AppSlns\ExternalServiceProxy\obj\Release\ExternalServiceProxy.pdb

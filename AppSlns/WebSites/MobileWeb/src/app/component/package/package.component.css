@@ -1,0 +1,40 @@
+﻿.card-header > span:first-of-type {
+  font-weight: bold;
+  display: inline-block;
+}
+
+.card-body {
+  padding: 0.25rem;
+}
+
+.card {
+  border: none !important;
+}
+
+tr {
+  border-bottom: 2px solid #cccccc !important;
+}
+
+.fa-sort-desc {
+  transition: transform .2s;
+}
+.container{
+  width: 100vw;
+}
+  .fa-sort-desc.active {
+    transform: rotateZ(180deg);
+  }
+
+.label-header {
+  background: #2d3346;
+  color: #fff
+}
+.btn-primary {
+  background-color: rgb(139,24,32);
+  border: none;
+}
+
+  .btn-primary:hover {
+      background-color: rgb(45,51,70);
+      border: none;
+  }

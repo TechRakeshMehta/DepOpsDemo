@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<OrderTestResults>
+  <ClientReferenceID></ClientReferenceID>
+  <RequestStatus>x:Rejected</RequestStatus>
+  <ReferenceTestID>XXXXXXX</ReferenceTestID>
+  <ErrorSummary>
+    <ErrorDetail>Missing required field - Primary Donor ID</ErrorDetail>
+  </ErrorSummary>
+</OrderTestResults>
+

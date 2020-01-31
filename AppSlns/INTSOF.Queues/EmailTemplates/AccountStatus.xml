@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<AccountStatus xmlns="http://tempuri.org/ADBEmails.xsd">
+  <Contents>
+    <FirstName></FirstName>
+    <LastName></LastName>
+    <Message></Message>
+  </Contents>
+</AccountStatus>

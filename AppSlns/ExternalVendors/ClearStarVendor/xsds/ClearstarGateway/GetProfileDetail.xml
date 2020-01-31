@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<GetProfileDetail xmlns="">
+  <ErrorStatus>
+    <Code></Code>
+    <Type></Type>
+    <Message></Message>
+  </ErrorStatus>
+  <Profile>
+    <Prof_No></Prof_No>
+    <SubjectType></SubjectType>
+    <SSN></SSN>
+    <Last_Name></Last_Name>
+    <First_Name></First_Name>
+    <Status></Status>
+    <Stage></Stage>
+    <Entered></Entered>
+    <Entered_By></Entered_By>
+    <Completed />
+    <Completed_By />
+    <Highlighted></Highlighted>
+    <CustID></CustID>
+    <CustName></CustName>
+    <OrderCount></OrderCount>
+    <CompletedCount></CompletedCount>
+    <HasHeldServices></HasHeldServices>
+    <HasFlaggedOrders></HasFlaggedOrders>
+    <HasStatusDetail></HasStatusDetail>
+    <Order>
+      <OrderID></OrderID>
+      <Prof_No></Prof_No>
+      <ServiceNo></ServiceNo>
+      <Country/>
+      <State/>
+      <County/>
+      <City/>
+      <Zip/>
+      <Ordered></Ordered>
+      <Processed></Processed>
+      <Received></Received>
+      <Instruction/>
+      <HitFlag></HitFlag>
+      <AliasID></AliasID>
+      <SvcUsesCoreInfo></SvcUsesCoreInfo>
+      <SvcDescrip></SvcDescrip>
+      <SvcType></SvcType>
+      <SvcPageName />
+      <SvcIsMultiLoc></SvcIsMultiLoc>
+      <ProfSvcStatus></ProfSvcStatus>
+      <ProfSvcPending></ProfSvcPending>
+      <SrcStatusDetail />
+      <BOStatusDetail />
+      <PkgServiceNo />
+      <CustCanRelHold></CustCanRelHold>
+      <IsPackageDef></IsPackageDef>
+      <Qty></Qty>
+      <UnitCost></UnitCost>
+      <SubTotal></SubTotal>
+      <Adjustment></Adjustment>
+      <Fees></Fees>
+      <Total></Total>
+      <PkgOrderID></PkgOrderID>
+      <OrderNote />
+      <OrderXML />
+      <OrderStatus></OrderStatus>
+      <FName>Testing</FName>
+      <MName></MName>
+      <LName>Detail</LName>
+    </Order>
+    <EmptyService>
+      <Prof_No></Prof_No>
+      <ServiceNo></ServiceNo>
+      <ServiceName></ServiceName>
+      <CustomName></CustomName>
+      <PkgServiceNo>
+      </PkgServiceNo>
+      <IsPackageDef></IsPackageDef>
+      </EmptyService>
+    <Alias>
+      <AliasID></AliasID>
+      <LastName></LastName>
+      <FirstName></FirstName>
+      <MiddleName></MiddleName>
+      <Suffix></Suffix>
+      <AliasType></AliasType>
+    </Alias>
+    <Address>
+      <AppID></AppID>
+      <AddrID></AddrID>
+      <Addr1 />
+      <Addr2 />
+      <City />
+      <State />
+      <County/>
+      <ZipCode></ZipCode>
+      <FromDate></FromDate>
+      <ToDate></ToDate>
+    </Address>
+  </Profile>
+</GetProfileDetail>

@@ -1,0 +1,476 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E882F896-9BF5-425A-91ED-90F87B3174F6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>INTSOF.UI.Contract</RootNamespace>
+    <AssemblyName>INTSOF.UI.Contract</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <CodeAnalysisRuleSet>..\WebSites\CoreWeb\ComplioEmptyRuleSet.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <CodeAnalysisRuleSet>..\WebSites\CoreWeb\ComplioEmptyRuleSet.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminEntryPortal\AdminEntryUserLoginContract.cs" />
+    <Compile Include="AdminEntryPortal\AutoArchivedTimeLineDays.cs" />
+    <Compile Include="AdminEntryPortal\CompleteStatusOrders.cs" />
+    <Compile Include="AdminEntryPortal\SendInvitationPendingOrderNotificationtoApplicantContract.cs" />
+    <Compile Include="BkgOperations\AdminCreateOrderContract.cs" />
+    <Compile Include="BkgOperations\AdminOrderDetailReadyToTransmitContract.cs" />
+    <Compile Include="BkgOperations\AdminOrderSearchContract.cs" />
+    <Compile Include="BkgOperations\AlertMailForBlockedOrderContract.cs" />
+    <Compile Include="BkgOperations\ApplicantBackgroundSummaryContract.cs" />
+    <Compile Include="BkgOperations\ApplicantDocumentContract.cs" />
+    <Compile Include="BkgOperations\AttributesForCustomFormContract.cs" />
+    <Compile Include="BkgOperations\BackgroundDailyReport.cs" />
+    <Compile Include="BkgOperations\BackgroundProcessOrderContract.cs" />
+    <Compile Include="BkgOperations\BackroundOrderContract.cs" />
+    <Compile Include="BkgOperations\BackroundOrderSearchContract.cs" />
+    <Compile Include="BkgOperations\BackroundServiceGroupContract.cs" />
+    <Compile Include="BkgOperations\BackroundServicesContract.cs" />
+    <Compile Include="BkgOperations\BkgCopyPackageDataContract.cs" />
+    <Compile Include="BkgOperations\BkgOrderNotificationDataContract.cs" />
+    <Compile Include="BkgOperations\BkgOrderPricingData.cs" />
+    <Compile Include="BkgOperations\BkgOrderQueueNotesContract.cs" />
+    <Compile Include="BkgOperations\BkgOrderReviewQueueContract.cs" />
+    <Compile Include="BkgOperations\BkgOrderSearchContract.cs" />
+    <Compile Include="BkgOperations\BkgOrderSearchQueueContract.cs" />
+    <Compile Include="BkgOperations\BkgServiceGroupMailContract.cs" />
+    <Compile Include="BkgOperations\BkgSSNExceptionNotificationDataContract.cs" />
+    <Compile Include="BkgOperations\BkgSupplementOrderPricingData.cs" />
+    <Compile Include="BkgOperations\ClearStarWebCCFContract.cs" />
+    <Compile Include="BkgOperations\CountryIdentificationDetailContract.cs" />
+    <Compile Include="BkgOperations\CustomFormDataContract.cs" />
+    <Compile Include="BkgOperations\CustomFormUserData.cs" />
+    <Compile Include="BkgOperations\DRDocsMappingContract.cs" />
+    <Compile Include="BkgOperations\SystemDocBkgSvcMapping.cs" />
+    <Compile Include="BkgOperations\VendorProfileSvcLineItemContract.cs" />
+    <Compile Include="BkgSetup\AdminEntryNodeTemplate.cs" />
+    <Compile Include="BkgSetup\BkgPackageTypeContract.cs" />
+    <Compile Include="ComplianceManagement\ComplianceAttributeDocMappings.cs" />
+    <Compile Include="ComplianceManagement\DiscardedDocumentAuditContract.cs" />
+    <Compile Include="ComplianceManagement\DocumentUrlContract.cs" />
+    <Compile Include="ComplianceManagement\RuleMappingContract.cs" />
+    <Compile Include="ComplianceOperation\OrderLineItems.cs" />
+    <Compile Include="FingerPrintSetup\ApplicantFingerPrintFileImageContract.cs" />
+    <Compile Include="FingerPrintSetup\BackgroundServiceContract.cs" />
+    <Compile Include="FingerPrintSetup\FingerPrintArchivedOrderContract.cs" />
+    <Compile Include="FingerPrintSetup\FingerPrintOrderKeyDataContract.cs" />
+    <Compile Include="ComplianceManagement\TrackingPackageRequiredContract.cs" />
+    <Compile Include="ComplianceOperation\CustomComplianceContract.cs" />
+    <Compile Include="ComplianceOperation\PackageBundleContract.cs" />
+    <Compile Include="BkgOperations\ManualServiceFormContract.cs" />
+    <Compile Include="BkgOperations\ManualServiceFormsSearchContract.cs" />
+    <Compile Include="BkgOperations\OrderEventHistoryContract.cs" />
+    <Compile Include="BkgOperations\OrderNotificationHistoryContract.cs" />
+    <Compile Include="BkgOperations\PackageDetailsContract.cs" />
+    <Compile Include="BkgOperations\PackageGroupContract.cs" />
+    <Compile Include="BkgOperations\ServiceLevelDetailsForOrderContract.cs" />
+    <Compile Include="BkgOperations\SourceServiceDetailForSupplement.cs" />
+    <Compile Include="BkgOperations\SupplementAdditionalSearchContract.cs" />
+    <Compile Include="BkgOperations\SupplementOrderApplicantDataContract.cs" />
+    <Compile Include="BkgOperations\SupplementOrderContract.cs" />
+    <Compile Include="BkgOperations\SupplementServicesInformation.cs" />
+    <Compile Include="BkgOperations\SysDocumentFieldMappingContract.cs" />
+    <Compile Include="BkgSetup\BkgCompliancePackageMappingSearchData.cs" />
+    <Compile Include="BkgSetup\BkgComplPkgDataMappingContract.cs" />
+    <Compile Include="BkgSetup\BkgPackageStateSearchContract.cs" />
+    <Compile Include="BkgSetup\CascadingAttributeOptionsContract.cs" />
+    <Compile Include="BkgSetup\ClientServiceVendorContract.cs" />
+    <Compile Include="BkgSetup\InstituteHierarchyBkgTreeDataContract.cs" />
+    <Compile Include="BkgSetup\ServiceAttachedFormContract.cs" />
+    <Compile Include="BkgSetup\ServiceFormsDispatchTypesContract.cs" />
+    <Compile Include="BkgSetup\ServiceFormTenantMappingContract.cs" />
+    <Compile Include="BkgSetup\CustomFormConfigurationContract.cs" />
+    <Compile Include="BkgSetup\CustomFormContract.cs" />
+    <Compile Include="BkgSetup\DAndRAttributeGroupMappingContract.cs" />
+    <Compile Include="BkgSetup\FeeItemContract.cs" />
+    <Compile Include="BkgSetup\FeeRecordContract.cs" />
+    <Compile Include="BkgSetup\ManageOrderColorStatusContract.cs" />
+    <Compile Include="BkgSetup\ManageServiceAttribute.cs" />
+    <Compile Include="BkgSetup\MapServicesToClientContract.cs" />
+    <Compile Include="BkgSetup\OrderClientStatusContract.cs" />
+    <Compile Include="BkgSetup\PkgSvcSetupContract.cs" />
+    <Compile Include="BkgSetup\AttributeSetupContract.cs" />
+    <Compile Include="BkgSetup\ManageServiceContract.cs" />
+    <Compile Include="BkgSetup\ServiceAttributeContract.cs" />
+    <Compile Include="BkgSetup\ServiceAttributeGroupContract.cs" />
+    <Compile Include="BkgSetup\ServiceFeeItemRecordContract.cs" />
+    <Compile Include="BkgSetup\ServiceGroupContract.cs" />
+    <Compile Include="BkgSetup\SupplementOrderCart.cs" />
+    <Compile Include="BkgSetup\VendorsDetailsContract.cs" />
+    <Compile Include="BkgSetup\VendorServiceMappingContract.cs" />
+    <Compile Include="ClinicalRotation\AgencyRotationMapping.cs" />
+    <Compile Include="ClinicalRotation\ClinicalRotationMemberDetail.cs" />
+    <Compile Include="ClinicalRotation\UniversalAttrOptionMappingContract.cs" />
+    <Compile Include="ClinicalRotation\InputTypeRotationAttributeContract.cs" />
+    <Compile Include="ClinicalRotation\UniversalRotationMappingViewContract.cs" />
+    <Compile Include="CommonControls\AccountLinkingProfileContract.cs" />
+    <Compile Include="CommonControls\ColumnsConfigurationContract.cs" />
+    <Compile Include="CommonControls\PreHiddenColumnsContract.cs" />
+    <Compile Include="ComplianceManagement\AdminAuditHistory.cs" />
+    <Compile Include="Alumni\AlumniPackageSubscription.cs" />
+    <Compile Include="ComplianceManagement\ApplicantComplianceAttributeDataContract.cs" />
+    <Compile Include="ComplianceManagement\ApplicantComplianceCategoryDataContract.cs" />
+    <Compile Include="ComplianceManagement\ApplicantComplianceItemDataContract.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ComplianceManagement\AssignmentHierarchyEditableByContract.cs" />
+    <Compile Include="ComplianceManagement\ClientLoginSearchContract.cs" />
+    <Compile Include="ComplianceManagement\ClientComplianceItemsContract.cs" />
+    <Compile Include="ComplianceManagement\ClientUserSearchContract.cs" />
+    <Compile Include="ComplianceManagement\ComplianceAttributeContract.cs" />
+    <Compile Include="ComplianceManagement\ComplianceCategoryItemContract.cs" />
+    <Compile Include="ComplianceManagement\ComplianceCategoryContract.cs" />
+    <Compile Include="ComplianceManagement\ComplianceDetailsContract.cs" />
+    <Compile Include="ComplianceManagement\ComplianceItemAttributeContract.cs" />
+    <Compile Include="ComplianceManagement\ComplianceItemAttributesContract.cs" />
+    <Compile Include="ComplianceManagement\ComplianceItemsContract.cs" />
+    <Compile Include="ComplianceManagement\CompliancePackageContract.cs" />
+    <Compile Include="ComplianceManagement\ComplianceRuleSetContract.cs" />
+    <Compile Include="ComplianceManagement\ComplianceSetUpContract.cs" />
+    <Compile Include="ComplianceManagement\ComplianceTreeUIContract.cs" />
+    <Compile Include="ComplianceManagement\ComplianceVerificationDetailsContract.cs" />
+    <Compile Include="ComplianceManagement\GenericSystemDocumentMappingContract.cs" />
+    <Compile Include="ComplianceManagement\ItemSeriesItemContract.cs" />
+    <Compile Include="ComplianceManagement\NodesContract.cs" />
+    <Compile Include="ComplianceManagement\PackageSubscriptionNotificationDataContract.cs" />
+    <Compile Include="ComplianceManagement\SalesForceContract.cs" />
+    <Compile Include="ComplianceManagement\SeriesAttributeContract.cs" />
+    <Compile Include="ComplianceManagement\SeriesItemContract.cs" />
+    <Compile Include="ComplianceManagement\RuleDetailsForTestContract.cs" />
+    <Compile Include="ComplianceManagement\ShotSeriesSaveResponse.cs" />
+    <Compile Include="ComplianceManagement\SvcFrmDisNotificationContract.cs" />
+    <Compile Include="ComplianceManagement\ExceptionRejectionContract.cs" />
+    <Compile Include="ComplianceManagement\CustomAttributeContract.cs" />
+    <Compile Include="ComplianceManagement\ExternalCopyUserContract.cs" />
+    <Compile Include="ComplianceManagement\InstitutionContactContract.cs" />
+    <Compile Include="ComplianceManagement\NagEmailData.cs" />
+    <Compile Include="ComplianceManagement\NodeNotificationSettingsContract.cs" />
+    <Compile Include="ComplianceManagement\OrderContract.cs" />
+    <Compile Include="ComplianceManagement\OrderPaymentDetailsContract.cs" />
+    <Compile Include="ComplianceManagement\PriceContract.cs" />
+    <Compile Include="ComplianceManagement\ReminderContract.cs" />
+    <Compile Include="ComplianceManagement\RuleProcessingResult.cs" />
+    <Compile Include="ComplianceManagement\SearchItemDataContract.cs" />
+    <Compile Include="ComplianceManagement\UniversalMappingContract.cs" />
+    <Compile Include="ComplianceManagement\UserGroupContract.cs" />
+    <Compile Include="ComplianceOperation\BadgeFormDocumentDataContract.cs" />
+    <Compile Include="ComplianceOperation\BadgeFormNotificationDataContract.cs" />
+    <Compile Include="ComplianceOperation\BulkOrderUploadContract.cs" />
+    <Compile Include="ComplianceOperation\AdminDataEntryUIContract.cs" />
+    <Compile Include="ComplianceOperation\AdminDataEntrySaveContract.cs" />
+    <Compile Include="ComplianceOperation\AllApplicantDocuments.cs" />
+    <Compile Include="ComplianceOperation\ApplicantCustomAttributeContract.cs" />
+    <Compile Include="ComplianceOperation\ApplicantDataSummaryContract.cs" />
+    <Compile Include="ComplianceOperation\ApplicantInstitutionHierarchyMapping.cs" />
+    <Compile Include="ComplianceOperation\ApplicantOrderCart_Temp.cs" />
+    <Compile Include="ComplianceOperation\ApplicantOrderDataContract.cs" />
+    <Compile Include="ComplianceOperation\ApplicantSearchDataContract.cs" />
+    <Compile Include="ComplianceOperation\AvailablePackageContarct.cs" />
+    <Compile Include="ComplianceOperation\BackgroundPackagesContract.cs" />
+    <Compile Include="ComplianceOperation\ApplicantDocuments.cs" />
+    <Compile Include="ComplianceOperation\ApplicantMessageDetails.cs" />
+    <Compile Include="ComplianceOperation\ApplicantOrder.cs" />
+    <Compile Include="ComplianceOperation\ApplicantOrderCart.cs" />
+    <Compile Include="ComplianceOperation\ApplicantDataAuditHistoryContract.cs" />
+    <Compile Include="ComplianceOperation\CancelledBkgCompliancePackageContract.cs" />
+    <Compile Include="ComplianceOperation\ApplicantRequiredDocumentsContract.cs" />
+    <Compile Include="ComplianceOperation\ClientDataUploadContract.cs" />
+    <Compile Include="ComplianceOperation\CompliancePriorityObjectContract.cs" />
+    <Compile Include="ComplianceOperation\ComplianceSearchNotesContract.cs" />
+    <Compile Include="ComplianceOperation\AutoAssignItemsToUserContract.cs" />
+    <Compile Include="ComplianceOperation\ItemPaymentContract.cs" />
+    <Compile Include="ComplianceOperation\InputTypeComplianceAttributeContract.cs" />
+    <Compile Include="ComplianceOperation\InvoiceGroupContract.cs" />
+    <Compile Include="ComplianceOperation\DataEntryQueueContract.cs" />
+    <Compile Include="ComplianceOperation\DataEntryTrackingContract.cs" />
+    <Compile Include="ComplianceOperation\DataReconciliationQueueContract.cs" />
+    <Compile Include="ComplianceOperation\ExpiredCategoryDataListContract.cs" />
+    <Compile Include="ComplianceOperation\ItemDataSearchContract.cs" />
+    <Compile Include="ComplianceOperation\OrderPackageSelection.cs" />
+    <Compile Include="ComplianceOperation\ReconciliationDetailsDataContract.cs" />
+    <Compile Include="ComplianceOperation\RejectedItemListContract.cs" />
+    <Compile Include="ComplianceOperation\StudentBucketAssignmentContract.cs" />
+    <Compile Include="ComplianceOperation\SubscriptionFrequency.cs" />
+    <Compile Include="ComplianceOperation\TenantUserMappingContract.cs" />
+    <Compile Include="ComplianceOperation\ThirdPartyDataUploadResponseTypeContract.cs" />
+    <Compile Include="ComplianceOperation\TrackingAssignmentConfigurationContract.cs" />
+    <Compile Include="ComplianceOperation\TrackingConfigObjectMappingContract.cs" />
+    <Compile Include="ComplianceOperation\UniversalComplianceMappingViewContract.cs" />
+    <Compile Include="ComplianceOperation\UpcomingExpirationContract.cs" />
+    <Compile Include="ComplianceOperation\UploadedDocumentApplicantDataContract.cs" />
+    <Compile Include="ComplianceOperation\MultiInstitutionAssignmentDataContract.cs" />
+    <Compile Include="ComplianceOperation\GetverificationDataSynced.cs" />
+    <Compile Include="ComplianceOperation\OrderApprovalQueueContract.cs" />
+    <Compile Include="ComplianceOperation\OrderStatusDataContract.cs" />
+    <Compile Include="ComplianceOperation\PackageDocumentDataPointContract.cs" />
+    <Compile Include="ComplianceOperation\DisclosureDocument.cs" />
+    <Compile Include="ComplianceOperation\LookupContract.cs" />
+    <Compile Include="ComplianceOperation\PaymentOptions.cs" />
+    <Compile Include="ComplianceOperation\PersonAliasContract.cs" />
+    <Compile Include="ComplianceOperation\POCOClasses.cs" />
+    <Compile Include="ComplianceOperation\PreviousAddressContract.cs" />
+    <Compile Include="ComplianceOperation\ScheduledTaskContract.cs" />
+    <Compile Include="ComplianceOperation\UserNodePermissionsContract.cs" />
+    <Compile Include="ComplianceOperation\VerificationDetailsContract.cs" />
+    <Compile Include="ComplianceOperation\VerificationQueueContract.cs" />
+    <Compile Include="ComplianceOperation\ViewDocumentDetailsContract.cs" />
+    <Compile Include="ComplianceOperation\WeeklyNonCompliantReportDataContract.cs" />
+    <Compile Include="ComplianceRuleEngine\ClientComplianceItemValidationsContract.cs" />
+    <Compile Include="ComplianceRuleEngine\ComplianceCategoryItemValidationsContract.cs" />
+    <Compile Include="ComplianceRuleEngine\RuleObjectMapping.cs" />
+    <Compile Include="ContractManagement\ContactContract.cs" />
+    <Compile Include="ContractManagement\ContractDocumentContract.cs" />
+    <Compile Include="ContractManagement\ContractManagementContract.cs" />
+    <Compile Include="ContractManagement\SiteContract.cs" />
+    <Compile Include="DataFeed Framework\DataFeedSettingContract.cs" />
+    <Compile Include="DataFeed Framework\XMLFormat.cs" />
+    <Compile Include="FingerPrintSetup\AppointmentContract.cs" />
+    <Compile Include="FingerPrintSetup\AppointmentSlotContract.cs" />
+    <Compile Include="FingerPrintSetup\AppointmentOrderScheduleContract.cs" />
+    <Compile Include="FingerPrintSetup\CancelOrderDataContract.cs" />
+    <Compile Include="FingerPrintSetup\CBIBillingStatusContract.cs" />
+    <Compile Include="FingerPrintSetup\CDRFileDetailContract.cs" />
+    <Compile Include="FingerPrintSetup\FingerPrintApplicantLocationImageContract.cs" />
+    <Compile Include="FingerPrintSetup\FingerPrintEventSlotContract.cs" />
+    <Compile Include="FingerPrintSetup\FingerprintLocationGroupContract.cs" />
+    <Compile Include="FingerPrintSetup\FingerPrintLocationImagesContract.cs" />
+    <Compile Include="FingerPrintSetup\FingerPrintOrderContract.cs" />
+    <Compile Include="FingerPrintSetup\FingerPrintRecieptContract.cs" />
+    <Compile Include="FingerPrintSetup\HrAdminPermissionContract.cs" />
+    <Compile Include="FingerPrintSetup\LanguageTranslateContract.cs" />
+    <Compile Include="FingerPrintSetup\LocationContract.cs" />
+    <Compile Include="FingerPrintSetup\LocationServiceAppointmentAuditContract.cs" />
+    <Compile Include="FingerPrintSetup\ManageEnrollerMappingContract.cs" />
+    <Compile Include="FingerPrintSetup\ManageOnsiteEventsContract.cs" />
+    <Compile Include="FingerPrintSetup\ManageScheduleTimeContract.cs" />
+    <Compile Include="FingerPrintSetup\FileResultStatusUpdateContract.cs" />
+    <Compile Include="FingerPrintSetup\PaymentDetailContract.cs" />
+    <Compile Include="FingerPrintSetup\OrderDetailContract.cs" />
+    <Compile Include="FingerPrintSetup\ScheduleInformationContract.cs" />
+    <Compile Include="FingerPrintSetup\ServiceStatusContract.cs" />
+    <Compile Include="FingerPrintSetup\ValidateRegexDataContract.cs" />
+    <Compile Include="FingerPrintSetup\ReserveSlotContract.cs" />
+    <Compile Include="Globalization\LanguageContract.cs" />
+    <Compile Include="Messaging\MessageSearchContract.cs" />
+    <Compile Include="Messaging\MessagingRulesContract.cs" />
+    <Compile Include="MobileAPI\ApplicantOrderContract.cs" />
+    <Compile Include="MobileAPI\AuthorizeNetInfo.cs" />
+    <Compile Include="MobileAPI\OrderDetailsContract.cs" />
+    <Compile Include="MobileAPI\OrderDocumentContract.cs" />
+    <Compile Include="MobileAPI\LinkAccountContract.cs" />
+    <Compile Include="Mobility\CmplnceItemMappingDetailContract.cs" />
+    <Compile Include="Mobility\MobilityMappingVerification.cs" />
+    <Compile Include="Mobility\MobilityProgramChange.cs" />
+    <Compile Include="Mobility\MobilitySearchDataContract.cs" />
+    <Compile Include="Mobility\SourceTargetSubscriptionID.cs" />
+    <Compile Include="AdminEntryPortal\SendDraftOrderNotificationtoAdminContract.cs" />
+    <Compile Include="PackageBundleManagement\AnnouncementContract.cs" />
+    <Compile Include="PackageBundleManagement\BulletinContract.cs" />
+    <Compile Include="PackageBundleManagement\ManagePackageBundleContract.cs" />
+    <Compile Include="PackageBundleManagement\PackageBundlePackages.cs" />
+    <Compile Include="PersonalSettings\BookmarkedFeatureContact.cs" />
+    <Compile Include="PlacementMatching\DepartmentContract.cs" />
+    <Compile Include="PlacementMatching\InstitutionRequestPieChartContract.cs" />
+    <Compile Include="PlacementMatching\PlacementMatchingContract.cs" />
+    <Compile Include="PlacementMatching\PlacementRequestAuditContract.cs" />
+    <Compile Include="PlacementMatching\PlacementSearchContract.cs" />
+    <Compile Include="PlacementMatching\RequestDetailContract.cs" />
+    <Compile Include="PlacementMatching\RequestStatusContract.cs" />
+    <Compile Include="PlacementMatching\SharedCustomAttributesContract.cs" />
+    <Compile Include="PlacementMatching\ShiftDetails.cs" />
+    <Compile Include="PlacementMatching\SpecialtyContract.cs" />
+    <Compile Include="PlacementMatching\StudentTypeContract.cs" />
+    <Compile Include="PlacementMatching\AgencyLocationDepartmentContract.cs" />
+    <Compile Include="ProfileSharing\AgencyApplicantShareHistoryContract.cs" />
+    <Compile Include="ProfileSharing\AgencyUserReportPermissionContract.cs" />
+    <Compile Include="ProfileSharing\ItemDocNotificationRequestDataContract.cs" />
+    <Compile Include="ProfileSharing\ItemDocumentNotificationDataContract.cs" />
+    <Compile Include="ProfileSharing\ManageAgencyContract.cs" />
+    <Compile Include="ProfileSharing\AgencyApplicantStatusContract.cs" />
+    <Compile Include="ProfileSharing\AgencyContract.cs" />
+    <Compile Include="ProfileSharing\AgencyHierarchyContract.cs" />
+    <Compile Include="ProfileSharing\AgencyInstitutionsContract.cs" />
+    <Compile Include="ProfileSharing\AgencySharingDataContract.cs" />
+    <Compile Include="ProfileSharing\AgencyUserAuditHistoryContract.cs" />
+    <Compile Include="ProfileSharing\AgencyUserContract.cs" />
+    <Compile Include="ProfileSharing\AgencyUserDashboardDetailsContract.cs" />
+    <Compile Include="ProfileSharing\AgencyUserInfoContract.cs" />
+    <Compile Include="ProfileSharing\AgencyUserPermissionContract.cs" />
+    <Compile Include="ProfileSharing\AgencyUserPermissionTemplateContract.cs" />
+    <Compile Include="ProfileSharing\AgencyUserPermissionTemplateMappingContract.cs" />
+    <Compile Include="ProfileSharing\ApprovedProfileSharingEmailContract.cs" />
+    <Compile Include="ProfileSharing\BackgroundDocumentPermissionContract.cs" />
+    <Compile Include="ProfileSharing\AgencyUserUnifiedDocumentContract.cs" />
+    <Compile Include="ProfileSharing\DashBoardRotationDataContract.cs" />
+    <Compile Include="ProfileSharing\InstitutionProfileContract.cs" />
+    <Compile Include="ProfileSharing\ProfileSharingDataContract.cs" />
+    <Compile Include="ProfileSharing\ProfileSharingInvitationGroupContract.cs" />
+    <Compile Include="ProfileSharing\SharedInvitationSubscriptionContract.cs" />
+    <Compile Include="ProfileSharing\SharedRotationInvitationDetailContarct.cs" />
+    <Compile Include="ProfileSharing\InvitationDataContract.cs" />
+    <Compile Include="ProfileSharing\InvitationDetailsContract.cs" />
+    <Compile Include="ProfileSharing\InvitationDocumentContract.cs" />
+    <Compile Include="ProfileSharing\InvitationSearchContract.cs" />
+    <Compile Include="ProfileSharing\ProfileSharingPackages.cs" />
+    <Compile Include="ProfileSharing\SharedUserDashboardDetailsContract.cs" />
+    <Compile Include="ProfileSharing\SharedUserInvitationDetailContarct.cs" />
+    <Compile Include="ProfileSharing\SharedUserInvitationDocumentContract.cs" />
+    <Compile Include="ProfileSharing\SharedUserInvitationReviewStatusContract.cs" />
+    <Compile Include="ProfileSharing\SharedUserReiewQueueContract.cs" />
+    <Compile Include="ProfileSharing\SharedUserSubscriptionSnapshotContract.cs" />
+    <Compile Include="ProfileSharing\ShareHistoryDataContract.cs" />
+    <Compile Include="ProfileSharing\ShareHistorySearchContract.cs" />
+    <Compile Include="ProfileSharing\SharingPackageDataContract.cs" />
+    <Compile Include="ProfileSharing\SheduledInvitationContract.cs" />
+    <Compile Include="ProfileSharing\TenantDetailsContract.cs" />
+    <Compile Include="QueueManagement\ItemReconciliationAvailiblityContract.cs" />
+    <Compile Include="QueueManagement\ManageRandomReviewsContract.cs" />
+    <Compile Include="QueueManagement\OrganizationUserContract.cs" />
+    <Compile Include="QueueManagement\QueueAuditRecordContract.cs" />
+    <Compile Include="QueueManagement\QueueFrameworkSearchDataContract.cs" />
+    <Compile Include="RecounciliationQueue\RecounciliationProductivityData.cs" />
+    <Compile Include="Report\FavReportParamContract.cs" />
+    <Compile Include="RotationPackages\RequirementCategoriesBeforeGoingToBeRequiredContract.cs" />
+    <Compile Include="RotationPackages\RequirementItemsAboutToExpireContract.cs" />
+    <Compile Include="RotationPackages\RequirementPkgSubscriptionStatusContract.cs" />
+    <Compile Include="RotationPackages\RequirmentPkgSubscriptionDataContract.cs" />
+    <Compile Include="RotationPackages\RequirementRuleData.cs" />
+    <Compile Include="ScheduleTask\ScheduleTaskContract.cs" />
+    <Compile Include="SearchUI\ApplicantData.cs" />
+    <Compile Include="SearchUI\ApplicantProfileNotesContract.cs" />
+    <Compile Include="SearchUI\ComplianceDocumentSearchContract.cs" />
+    <Compile Include="SearchUI\ManageMultipleSubscriptionContract.cs" />
+    <Compile Include="SearchUI\SharedUserSearchContract.cs" />
+    <Compile Include="SearchUI\SharedUserSearchInvitationDetailsContract.cs" />
+    <Compile Include="SearchUI\SupportPortalOrderDetailContract.cs" />
+    <Compile Include="Services\ServiceLoggingContract.cs" />
+    <Compile Include="SystemSetUp\AccountInvitationContract.cs" />
+    <Compile Include="SystemSetUp\CompliancePkgDetailContract.cs" />
+    <Compile Include="SystemSetUp\ClientSettingCustomAttributeContract.cs" />
+    <Compile Include="SystemSetUp\ScreeningDetailsForConfigurationContract.cs" />
+    <Compile Include="SystemSetUp\InstitutionConfigurationDetailsContract.cs" />
+    <Compile Include="SysXSecurityModel\ApplicantInsituteDataContract.cs" />
+    <Compile Include="SysXSecurityModel\ChangePasswordContract.cs" />
+    <Compile Include="SysXSecurityModel\ExternalLoginDataContract.cs" />
+    <Compile Include="SysXSecurityModel\AgencyUsrTempPermisisonsContract.cs" />
+    <Compile Include="SysXSecurityModel\OrganizationUserContract.cs" />
+    <Compile Include="SysXSecurityModel\FeatureActionContract.cs" />
+    <Compile Include="SysXSecurityModel\ForgotPasswordContract.cs" />
+    <Compile Include="SysXSecurityModel\InstitutionDataContract.cs" />
+    <Compile Include="SysXSecurityModel\ManageBuisnessChannelTypeContract.cs" />
+    <Compile Include="SysXSecurityModel\ManageConfigurationContract.cs" />
+    <Compile Include="SysXSecurityModel\ManageDepartmentContract.cs" />
+    <Compile Include="SysXSecurityModel\ManageFeatureContract.cs" />
+    <Compile Include="SysXSecurityModel\ManageGradeContract.cs" />
+    <Compile Include="SysXSecurityModel\ManageItemsContract.cs" />
+    <Compile Include="SysXSecurityModel\ManagePermissionContract.cs" />
+    <Compile Include="SysXSecurityModel\ManagePermissionTypeContract.cs" />
+    <Compile Include="SysXSecurityModel\ManageProgramsContract.cs" />
+    <Compile Include="SysXSecurityModel\ManageRoleContract.cs" />
+    <Compile Include="SysXSecurityModel\ManageRulesContract.cs" />
+    <Compile Include="SysXSecurityModel\ManageServicesFootPrintContract.cs" />
+    <Compile Include="SysXSecurityModel\ManageTenantContract.cs" />
+    <Compile Include="SysXSecurityModel\ManageUserGroupContract.cs" />
+    <Compile Include="SysXSecurityModel\ManageUsersContract.cs" />
+    <Compile Include="SysXSecurityModel\MapBlockFeatureContract.cs" />
+    <Compile Include="SysXSecurityModel\MapProductFeatureContract.cs" />
+    <Compile Include="SysXSecurityModel\MapRoleFeatureContract.cs" />
+    <Compile Include="SysXSecurityModel\MapRolePolicyContract.cs" />
+    <Compile Include="SysXSecurityModel\MapUserRoleContract.cs" />
+    <Compile Include="SysXSecurityModel\PermissionTypeEditContract.cs" />
+    <Compile Include="SysXSecurityModel\PolicyRegisterControlMappingsContract.cs" />
+    <Compile Include="SysxContract.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SysXSecurityModel\ManageBlockContract.cs" />
+    <Compile Include="SysXSecurityModel\RoleConfigurationContract.cs" />
+    <Compile Include="SysXSecurityModel\RoleFeatureActionContract.cs" />
+    <Compile Include="SysXSecurityModel\SessionSharingContract.cs" />
+    <Compile Include="Templates\CommunicationCopySettingsOverrideContract.cs" />
+    <Compile Include="Templates\CommunicationTemplateContract.cs" />
+    <Compile Include="TicketsCentre\ClientSrvcMappingContract.cs" />
+    <Compile Include="TicketsCentre\ClientUsers.cs" />
+    <Compile Include="TicketsCentre\DocumentDetailContract.cs" />
+    <Compile Include="TicketsCentre\DocumentsContract.cs" />
+    <Compile Include="TicketsCentre\TicketIssueSrvcStepMapping.cs" />
+    <Compile Include="TicketsCentre\TicketIssueSrvcStepMappingContract.cs" />
+    <Compile Include="TicketsCentre\TicketsContract.cs" />
+    <Compile Include="TicketsCentre\TicketSearchContract.cs" />
+    <Compile Include="MobileAPI\UserContract.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entity\Entity.csproj">
+      <Project>{CE8D45E6-4B39-4D12-82F9-11F691D64E21}</Project>
+      <Name>Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\INTSOF.Utils\INTSOF.Utils.csproj">
+      <Project>{79F18A05-E628-4C59-AD95-40640F0260DA}</Project>
+      <Name>INTSOF.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

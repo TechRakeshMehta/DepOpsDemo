@@ -1,0 +1,69 @@
+﻿.container_wrap{margin-top:20px;}
+.image_box{width:110px;float:left;}
+.form_box{width:902px;float:right;}
+
+.row {margin-bottom:5px;}
+.row .col {display:inline-block;vertical-align:top;*display: inline;*zoom: 1;}
+.row .lbl, .row .sxlb { background-color: #EFEFEF;display: inline-block;margin-left: 5px;padding: 2px 5px;width: 158px;vertical-align:top;*display: inline;*zoom: 1;}
+.row .sxlm{display: inline-block; width:160px;vertical-align:top;*display: inline;*zoom: 1;}
+
+.subhead{font-size:12px;margin:0 0 5px;padding:0;border-bottom:1px dotted black}
+
+
+.errmsg {color:Red;}
+
+.vldx{font-size:10px;padding-left:10px;}
+
+
+
+.btn_upload  .ruBrowse
+{
+    margin-left:0 !important;
+}
+
+.captcha .cap_tbl{width:100%;}
+
+.captcha
+{
+    margin:25px 0;
+}
+
+.captcha .lbl{font-weight:bold;}
+.captcha img
+{
+    margin-bottom:10px;
+}
+
+.msgbox 
+{
+    color:Red;
+}
+
+.pwd_hint
+{
+   padding:10px;
+}
+
+.pwd_hint ul
+{
+    margin: 10px 0;
+    padding:0;
+}
+
+.pwd_hint ul li
+{
+    list-style:none;
+    margin-left:10px;
+    margin-bottom:5px;
+    padding-left:20px;    
+}
+.reqd{color:Red}
+
+.btn_upload{margin-top:-1px;}
+
+
+.no {background-image:url(images/no16.png);background-repeat:no-repeat;}
+.yes {background-image:url(images/yes16.png);background-repeat:no-repeat;}
+
+.loc_row .vldx {padding:0;margin:0; margin-left:-168px}
+.loc_row .vldx .vldx {margin-left: 0;}

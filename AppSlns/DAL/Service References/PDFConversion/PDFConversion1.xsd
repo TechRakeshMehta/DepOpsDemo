@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/INTSOF.Queues" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/INTSOF.Queues" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:56548/PDFConversion.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfApplicantDoc">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ApplicantDoc" nillable="true" type="tns:ApplicantDoc" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfApplicantDoc" nillable="true" type="tns:ArrayOfApplicantDoc" />
+  <xs:complexType name="ApplicantDoc">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApplicantDocumentID" type="xs:int" />
+      <xs:element minOccurs="0" name="Code" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="ConversionNotes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedByID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CreatedOn" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocumentPath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocumentType" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsCompressed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsDeleted" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MIME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModifiedByID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ModifiedOn" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OrganizationUserID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OriginalDocMD5Hash" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OriginalDocSize" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PdfDocPath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PdfFileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Size" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalPages" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ApplicantDoc" nillable="true" type="tns:ApplicantDoc" />
+  <xs:complexType name="ArrayOfApplicantDocToBeMerged">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ApplicantDocToBeMerged" nillable="true" type="tns:ApplicantDocToBeMerged" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfApplicantDocToBeMerged" nillable="true" type="tns:ArrayOfApplicantDocToBeMerged" />
+  <xs:complexType name="ApplicantDocToBeMerged">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApplicantDocumentID" type="xs:int" />
+      <xs:element minOccurs="0" name="PdfDocPath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalPages" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ApplicantDocToBeMerged" nillable="true" type="tns:ApplicantDocToBeMerged" />
+  <xs:complexType name="ArrayOfApplicantDocMerging">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ApplicantDocMerging" nillable="true" type="tns:ApplicantDocMerging" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfApplicantDocMerging" nillable="true" type="tns:ArrayOfApplicantDocMerging" />
+  <xs:complexType name="ApplicantDocMerging">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ADM_ApplicantDocumentID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ADM_CreatedByID" type="xs:int" />
+      <xs:element minOccurs="0" name="ADM_CreatedOn" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ADM_DocumentStatusID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ADM_EndPageNum" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ADM_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ADM_IsDeleted" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ADM_MergingNotes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ADM_ModifiedByID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ADM_ModifiedOn" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ADM_SequenceOrder" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ADM_StartPageNum" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ADM_TotalPages" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ADM_UnifiedPdfDocumentID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UnifiedDocumentPath" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ApplicantDocMerging" nillable="true" type="tns:ApplicantDocMerging" />
+</xs:schema>

@@ -1,0 +1,921 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ADB_AdbUniversity_DevModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ADB_AdbUniversity_DevEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+    <EntitySet Name="ApplicantComplianceAttributeDatas" EntityType="ADB_AdbUniversity_DevModel.ApplicantComplianceAttributeData" />
+    <EntitySet Name="ApplicantComplianceCategoryDatas" EntityType="ADB_AdbUniversity_DevModel.ApplicantComplianceCategoryData" />
+    <EntitySet Name="ApplicantComplianceDocumentMaps" EntityType="ADB_AdbUniversity_DevModel.ApplicantComplianceDocumentMap" />
+    <EntitySet Name="ApplicantComplianceItemDatas" EntityType="ADB_AdbUniversity_DevModel.ApplicantComplianceItemData" />
+    <EntitySet Name="ApplicantExceptions" EntityType="ADB_AdbUniversity_DevModel.ApplicantException" />
+    <EntitySet Name="ApplicantUploadedDocuments" EntityType="ADB_AdbUniversity_DevModel.ApplicantUploadedDocument" />
+    <EntitySet Name="ClientComplianceAttributeOptions" EntityType="ADB_AdbUniversity_DevModel.ClientComplianceAttributeOption" />
+    <EntitySet Name="ClientComplianceCategories" EntityType="ADB_AdbUniversity_DevModel.ClientComplianceCategory" />
+    <EntitySet Name="ClientComplianceCategoryItemValidations" EntityType="ADB_AdbUniversity_DevModel.ClientComplianceCategoryItemValidation" />
+    <EntitySet Name="ClientComplianceItemAttributes" EntityType="ADB_AdbUniversity_DevModel.ClientComplianceItemAttribute" />
+    <EntitySet Name="ClientComplianceItemEditableBies" EntityType="ADB_AdbUniversity_DevModel.ClientComplianceItemEditableBy" />
+    <EntitySet Name="ClientComplianceItems" EntityType="ADB_AdbUniversity_DevModel.ClientComplianceItem" />
+    <EntitySet Name="ClientCompliancePackages" EntityType="ADB_AdbUniversity_DevModel.ClientCompliancePackage" />
+    <EntitySet Name="lkpCategoryComplianceStatus" EntityType="ADB_AdbUniversity_DevModel.lkpCategoryComplianceStatu" />
+    <EntitySet Name="lkpComplianceAttributeDatatypes" EntityType="ADB_AdbUniversity_DevModel.lkpComplianceAttributeDatatype" />
+    <EntitySet Name="lkpComplianceAttributeTypes" EntityType="ADB_AdbUniversity_DevModel.lkpComplianceAttributeType" />
+    <EntitySet Name="lkpItemComplianceStatus" EntityType="ADB_AdbUniversity_DevModel.lkpItemComplianceStatu" />
+    <EntitySet Name="lkpPackageActivityTypes" EntityType="ADB_AdbUniversity_DevModel.lkpPackageActivityType" />
+    <EntitySet Name="lkpPackageComplianceStatus" EntityType="ADB_AdbUniversity_DevModel.lkpPackageComplianceStatu" />
+    <EntitySet Name="PackageSubscriptions" EntityType="ADB_AdbUniversity_DevModel.PackageSubscription" />
+    <AssociationSet Name="FK_ApplicantComplianceAttributeData_ApplicantComplianceDocumentMap" Association="ADB_AdbUniversity_DevModel.FK_ApplicantComplianceAttributeData_ApplicantComplianceDocumentMap">
+      <End Role="ApplicantComplianceAttributeData" EntitySet="ApplicantComplianceAttributeDatas" />
+      <End Role="ApplicantComplianceDocumentMap" EntitySet="ApplicantComplianceDocumentMaps" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ApplicantComplianceItemData_ApplicantComplianceAttributeData" Association="ADB_AdbUniversity_DevModel.FK_ApplicantComplianceItemData_ApplicantComplianceAttributeData">
+      <End Role="ApplicantComplianceItemData" EntitySet="ApplicantComplianceItemDatas" />
+      <End Role="ApplicantComplianceAttributeData" EntitySet="ApplicantComplianceAttributeDatas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClientComplianceItemAttribute_ApplicantComplianceAttributeData" Association="ADB_AdbUniversity_DevModel.FK_ClientComplianceItemAttribute_ApplicantComplianceAttributeData">
+      <End Role="ClientComplianceItemAttribute" EntitySet="ClientComplianceItemAttributes" />
+      <End Role="ApplicantComplianceAttributeData" EntitySet="ApplicantComplianceAttributeDatas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ApplicantComplianceCategoryData_ApplicantComplianceItemData" Association="ADB_AdbUniversity_DevModel.FK_ApplicantComplianceCategoryData_ApplicantComplianceItemData">
+      <End Role="ApplicantComplianceCategoryData" EntitySet="ApplicantComplianceCategoryDatas" />
+      <End Role="ApplicantComplianceItemData" EntitySet="ApplicantComplianceItemDatas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClientComplianceCategory_ApplicantComplianceCategoryData" Association="ADB_AdbUniversity_DevModel.FK_ClientComplianceCategory_ApplicantComplianceCategoryData">
+      <End Role="ClientComplianceCategory" EntitySet="ClientComplianceCategories" />
+      <End Role="ApplicantComplianceCategoryData" EntitySet="ApplicantComplianceCategoryDatas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_lkpCategoryComplianceStatus_ApplicantComplianceCategoryData" Association="ADB_AdbUniversity_DevModel.FK_lkpCategoryComplianceStatus_ApplicantComplianceCategoryData">
+      <End Role="lkpCategoryComplianceStatu" EntitySet="lkpCategoryComplianceStatus" />
+      <End Role="ApplicantComplianceCategoryData" EntitySet="ApplicantComplianceCategoryDatas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PackageSubscription_ApplicantComplianceCategoryData" Association="ADB_AdbUniversity_DevModel.FK_PackageSubscription_ApplicantComplianceCategoryData">
+      <End Role="PackageSubscription" EntitySet="PackageSubscriptions" />
+      <End Role="ApplicantComplianceCategoryData" EntitySet="ApplicantComplianceCategoryDatas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ApplicantUploadedDocument_ApplicantComplianceDocumentMap" Association="ADB_AdbUniversity_DevModel.FK_ApplicantUploadedDocument_ApplicantComplianceDocumentMap">
+      <End Role="ApplicantUploadedDocument" EntitySet="ApplicantUploadedDocuments" />
+      <End Role="ApplicantComplianceDocumentMap" EntitySet="ApplicantComplianceDocumentMaps" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClientComplianceItems_ApplicantComplianceItemData" Association="ADB_AdbUniversity_DevModel.FK_ClientComplianceItems_ApplicantComplianceItemData">
+      <End Role="ClientComplianceItem" EntitySet="ClientComplianceItems" />
+      <End Role="ApplicantComplianceItemData" EntitySet="ApplicantComplianceItemDatas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_lkpItemComplianceStatus_ApplicantComplianceItemData" Association="ADB_AdbUniversity_DevModel.FK_lkpItemComplianceStatus_ApplicantComplianceItemData">
+      <End Role="lkpItemComplianceStatu" EntitySet="lkpItemComplianceStatus" />
+      <End Role="ApplicantComplianceItemData" EntitySet="ApplicantComplianceItemDatas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClientComplianceItemAttribute_ClientComplianceAttributeOption" Association="ADB_AdbUniversity_DevModel.FK_ClientComplianceItemAttribute_ClientComplianceAttributeOption">
+      <End Role="ClientComplianceItemAttribute" EntitySet="ClientComplianceItemAttributes" />
+      <End Role="ClientComplianceAttributeOption" EntitySet="ClientComplianceAttributeOptions" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ClientComplianceCategory_ClientComplianceItems" Association="ADB_AdbUniversity_DevModel.FK__ClientComplianceCategory_ClientComplianceItems">
+      <End Role="ClientComplianceCategory" EntitySet="ClientComplianceCategories" />
+      <End Role="ClientComplianceItem" EntitySet="ClientComplianceItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClientComplianceCategory_ClientComplianceCategory" Association="ADB_AdbUniversity_DevModel.FK_ClientComplianceCategory_ClientComplianceCategory">
+      <End Role="ClientComplianceCategory" EntitySet="ClientComplianceCategories" />
+      <End Role="ClientComplianceCategory1" EntitySet="ClientComplianceCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClientComplianceCategory_ClientComplianceCategoryItemValidations" Association="ADB_AdbUniversity_DevModel.FK_ClientComplianceCategory_ClientComplianceCategoryItemValidations">
+      <End Role="ClientComplianceCategory" EntitySet="ClientComplianceCategories" />
+      <End Role="ClientComplianceCategoryItemValidation" EntitySet="ClientComplianceCategoryItemValidations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClientCompliancePackage_ClientComplianceCategory" Association="ADB_AdbUniversity_DevModel.FK_ClientCompliancePackage_ClientComplianceCategory">
+      <End Role="ClientCompliancePackage" EntitySet="ClientCompliancePackages" />
+      <End Role="ClientComplianceCategory" EntitySet="ClientComplianceCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClientComplianceItems_ClientComplianceCategoryItemValidations" Association="ADB_AdbUniversity_DevModel.FK_ClientComplianceItems_ClientComplianceCategoryItemValidations">
+      <End Role="ClientComplianceItem" EntitySet="ClientComplianceItems" />
+      <End Role="ClientComplianceCategoryItemValidation" EntitySet="ClientComplianceCategoryItemValidations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClientComplianceItemAttribute_ClientComplianceItemAttribute" Association="ADB_AdbUniversity_DevModel.FK_ClientComplianceItemAttribute_ClientComplianceItemAttribute">
+      <End Role="ClientComplianceItemAttribute" EntitySet="ClientComplianceItemAttributes" />
+      <End Role="ClientComplianceItemAttribute1" EntitySet="ClientComplianceItemAttributes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClientComplianceItems_ClientComplianceItemAttribute" Association="ADB_AdbUniversity_DevModel.FK_ClientComplianceItems_ClientComplianceItemAttribute">
+      <End Role="ClientComplianceItem" EntitySet="ClientComplianceItems" />
+      <End Role="ClientComplianceItemAttribute" EntitySet="ClientComplianceItemAttributes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_lkpComplianceAttributeDatatype_ClientComplianceItemAttribute" Association="ADB_AdbUniversity_DevModel.FK_lkpComplianceAttributeDatatype_ClientComplianceItemAttribute">
+      <End Role="lkpComplianceAttributeDatatype" EntitySet="lkpComplianceAttributeDatatypes" />
+      <End Role="ClientComplianceItemAttribute" EntitySet="ClientComplianceItemAttributes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_lkpComplianceAttributeType_ClientComplianceItemAttribute" Association="ADB_AdbUniversity_DevModel.FK_lkpComplianceAttributeType_ClientComplianceItemAttribute">
+      <End Role="lkpComplianceAttributeType" EntitySet="lkpComplianceAttributeTypes" />
+      <End Role="ClientComplianceItemAttribute" EntitySet="ClientComplianceItemAttributes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClientComplianceItems_ClientComplianceItemEditableBy" Association="ADB_AdbUniversity_DevModel.FK_ClientComplianceItems_ClientComplianceItemEditableBy">
+      <End Role="ClientComplianceItem" EntitySet="ClientComplianceItems" />
+      <End Role="ClientComplianceItemEditableBy" EntitySet="ClientComplianceItemEditableBies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClientComplianceItems_ClientComplianceItems" Association="ADB_AdbUniversity_DevModel.FK_ClientComplianceItems_ClientComplianceItems">
+      <End Role="ClientComplianceItem" EntitySet="ClientComplianceItems" />
+      <End Role="ClientComplianceItem1" EntitySet="ClientComplianceItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClientCompliancePackage_ClientCompliancePackage" Association="ADB_AdbUniversity_DevModel.FK_ClientCompliancePackage_ClientCompliancePackage">
+      <End Role="ClientCompliancePackage" EntitySet="ClientCompliancePackages" />
+      <End Role="ClientCompliancePackage1" EntitySet="ClientCompliancePackages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClientCompliancePackage_PackageSubscription" Association="ADB_AdbUniversity_DevModel.FK_ClientCompliancePackage_PackageSubscription">
+      <End Role="ClientCompliancePackage" EntitySet="ClientCompliancePackages" />
+      <End Role="PackageSubscription" EntitySet="PackageSubscriptions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_lkpPackageActivityType_PackageSubscription" Association="ADB_AdbUniversity_DevModel.FK_lkpPackageActivityType_PackageSubscription">
+      <End Role="lkpPackageActivityType" EntitySet="lkpPackageActivityTypes" />
+      <End Role="PackageSubscription" EntitySet="PackageSubscriptions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_lkpPackageComplianceStatus_PackageSubscription" Association="ADB_AdbUniversity_DevModel.FK_lkpPackageComplianceStatus_PackageSubscription">
+      <End Role="lkpPackageComplianceStatu" EntitySet="lkpPackageComplianceStatus" />
+      <End Role="PackageSubscription" EntitySet="PackageSubscriptions" />
+    </AssociationSet>
+    <EntitySet Name="ExceptionDocuments" EntityType="ADB_AdbUniversity_DevModel.ExceptionDocument" />
+    <EntitySet Name="lkpComplianceItemEditableBies" EntityType="ADB_AdbUniversity_DevModel.lkpComplianceItemEditableBy" />
+    <EntitySet Name="lkpComplianceItemTypes" EntityType="ADB_AdbUniversity_DevModel.lkpComplianceItemType" />
+    <AssociationSet Name="FK_ApplicantException_ExceptionDocument" Association="ADB_AdbUniversity_DevModel.FK_ApplicantException_ExceptionDocument">
+      <End Role="ApplicantException" EntitySet="ApplicantExceptions" />
+      <End Role="ExceptionDocument" EntitySet="ExceptionDocuments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ApplicantUploadedDocument_ExceptionDocument" Association="ADB_AdbUniversity_DevModel.FK_ApplicantUploadedDocument_ExceptionDocument">
+      <End Role="ApplicantUploadedDocument" EntitySet="ApplicantUploadedDocuments" />
+      <End Role="ExceptionDocument" EntitySet="ExceptionDocuments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_lkpComplianceItemEditableBy_ClientComplianceItemEditableBy" Association="ADB_AdbUniversity_DevModel.FK_lkpComplianceItemEditableBy_ClientComplianceItemEditableBy">
+      <End Role="lkpComplianceItemEditableBy" EntitySet="lkpComplianceItemEditableBies" />
+      <End Role="ClientComplianceItemEditableBy" EntitySet="ClientComplianceItemEditableBies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_lkpComplianceItemType_ClientComplianceItems" Association="ADB_AdbUniversity_DevModel.FK_lkpComplianceItemType_ClientComplianceItems">
+      <End Role="lkpComplianceItemType" EntitySet="lkpComplianceItemTypes" />
+      <End Role="ClientComplianceItem" EntitySet="ClientComplianceItems" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="ApplicantComplianceAttributeData">
+    <Key>
+      <PropertyRef Name="ApplicantComplianceAttributeDataID" />
+    </Key>
+    <Property Type="Int32" Name="ApplicantComplianceAttributeDataID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="ApplicantComplianceItemDataID" Nullable="false" />
+    <Property Type="Int32" Name="ComplianceItemAttributeID" Nullable="false" />
+    <Property Type="String" Name="AttributeValue" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+    <Property Type="Int32" Name="CreatedByID" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" />
+    <Property Type="Int32" Name="ModifiedByID" />
+    <Property Type="DateTime" Name="ModifiedOn" />
+    <NavigationProperty Name="ApplicantComplianceDocumentMaps" Relationship="ADB_AdbUniversity_DevModel.FK_ApplicantComplianceAttributeData_ApplicantComplianceDocumentMap" FromRole="ApplicantComplianceAttributeData" ToRole="ApplicantComplianceDocumentMap" />
+    <NavigationProperty Name="ApplicantComplianceItemData" Relationship="ADB_AdbUniversity_DevModel.FK_ApplicantComplianceItemData_ApplicantComplianceAttributeData" FromRole="ApplicantComplianceAttributeData" ToRole="ApplicantComplianceItemData" />
+    <NavigationProperty Name="ClientComplianceItemAttribute" Relationship="ADB_AdbUniversity_DevModel.FK_ClientComplianceItemAttribute_ApplicantComplianceAttributeData" FromRole="ApplicantComplianceAttributeData" ToRole="ClientComplianceItemAttribute" />
+  </EntityType>
+  <EntityType Name="ApplicantComplianceCategoryData">
+    <Key>
+      <PropertyRef Name="ApplicantComplianceCategoryDataID" />
+    </Key>
+    <Property Type="Int32" Name="ApplicantComplianceCategoryDataID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="PackageSubscriptionID" Nullable="false" />
+    <Property Type="Int32" Name="ComplianceCategoryID" Nullable="false" />
+    <Property Type="Int32" Name="ReviewStatusTypeID" Nullable="false" />
+    <Property Type="String" Name="Notes" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+    <Property Type="Int32" Name="CreatedByID" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" />
+    <Property Type="Int32" Name="ModifiedByID" />
+    <Property Type="DateTime" Name="ModifiedOn" />
+    <NavigationProperty Name="ApplicantComplianceItemDatas" Relationship="ADB_AdbUniversity_DevModel.FK_ApplicantComplianceCategoryData_ApplicantComplianceItemData" FromRole="ApplicantComplianceCategoryData" ToRole="ApplicantComplianceItemData" />
+    <NavigationProperty Name="ClientComplianceCategory" Relationship="ADB_AdbUniversity_DevModel.FK_ClientComplianceCategory_ApplicantComplianceCategoryData" FromRole="ApplicantComplianceCategoryData" ToRole="ClientComplianceCategory" />
+    <NavigationProperty Name="lkpCategoryComplianceStatu" Relationship="ADB_AdbUniversity_DevModel.FK_lkpCategoryComplianceStatus_ApplicantComplianceCategoryData" FromRole="ApplicantComplianceCategoryData" ToRole="lkpCategoryComplianceStatu" />
+    <NavigationProperty Name="PackageSubscription" Relationship="ADB_AdbUniversity_DevModel.FK_PackageSubscription_ApplicantComplianceCategoryData" FromRole="ApplicantComplianceCategoryData" ToRole="PackageSubscription" />
+  </EntityType>
+  <EntityType Name="ApplicantComplianceDocumentMap">
+    <Key>
+      <PropertyRef Name="ApplicantComplianceDocumentMapID" />
+    </Key>
+    <Property Type="Int32" Name="ApplicantComplianceDocumentMapID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="ApplicantComplianceAttributeDataID" Nullable="false" />
+    <Property Type="Int32" Name="ApplicantUploadedDocumentID" Nullable="false" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+    <Property Type="Int32" Name="CreatedByID" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" />
+    <Property Type="Int32" Name="ModifiedByID" />
+    <Property Type="DateTime" Name="ModifiedOn" />
+    <NavigationProperty Name="ApplicantComplianceAttributeData" Relationship="ADB_AdbUniversity_DevModel.FK_ApplicantComplianceAttributeData_ApplicantComplianceDocumentMap" FromRole="ApplicantComplianceDocumentMap" ToRole="ApplicantComplianceAttributeData" />
+    <NavigationProperty Name="ApplicantUploadedDocument" Relationship="ADB_AdbUniversity_DevModel.FK_ApplicantUploadedDocument_ApplicantComplianceDocumentMap" FromRole="ApplicantComplianceDocumentMap" ToRole="ApplicantUploadedDocument" />
+  </EntityType>
+  <EntityType Name="ApplicantComplianceItemData">
+    <Key>
+      <PropertyRef Name="ApplicantComplianceItemDataID" />
+    </Key>
+    <Property Type="Int32" Name="ApplicantComplianceItemDataID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="ApplicantComplianceCategoryDataID" Nullable="false" />
+    <Property Type="Int32" Name="ComplianceItemID" Nullable="false" />
+    <Property Type="Int32" Name="ReviewStatusTypeID" Nullable="false" />
+    <Property Type="String" Name="Notes" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+    <Property Type="Int32" Name="CreatedByID" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" />
+    <Property Type="Int32" Name="ModifiedByID" />
+    <Property Type="DateTime" Name="ModifiedOn" />
+    <NavigationProperty Name="ApplicantComplianceAttributeDatas" Relationship="ADB_AdbUniversity_DevModel.FK_ApplicantComplianceItemData_ApplicantComplianceAttributeData" FromRole="ApplicantComplianceItemData" ToRole="ApplicantComplianceAttributeData" />
+    <NavigationProperty Name="ApplicantComplianceCategoryData" Relationship="ADB_AdbUniversity_DevModel.FK_ApplicantComplianceCategoryData_ApplicantComplianceItemData" FromRole="ApplicantComplianceItemData" ToRole="ApplicantComplianceCategoryData" />
+    <NavigationProperty Name="ClientComplianceItem" Relationship="ADB_AdbUniversity_DevModel.FK_ClientComplianceItems_ApplicantComplianceItemData" FromRole="ApplicantComplianceItemData" ToRole="ClientComplianceItem" />
+    <NavigationProperty Name="lkpItemComplianceStatu" Relationship="ADB_AdbUniversity_DevModel.FK_lkpItemComplianceStatus_ApplicantComplianceItemData" FromRole="ApplicantComplianceItemData" ToRole="lkpItemComplianceStatu" />
+  </EntityType>
+  <EntityType Name="ApplicantException">
+    <Key>
+      <PropertyRef Name="ApplicantExceptionID" />
+    </Key>
+    <Property Type="Int32" Name="ApplicantExceptionID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="ApplicantComplianceCategoryDataID" />
+    <Property Type="String" Name="Description" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+    <Property Type="Int32" Name="CreatedByID" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" />
+    <Property Type="Int32" Name="ModifiedByID" />
+    <Property Type="DateTime" Name="ModifiedOn" />
+    <NavigationProperty Name="ExceptionDocuments" Relationship="ADB_AdbUniversity_DevModel.FK_ApplicantException_ExceptionDocument" FromRole="ApplicantException" ToRole="ExceptionDocument" />
+  </EntityType>
+  <EntityType Name="ApplicantUploadedDocument">
+    <Key>
+      <PropertyRef Name="ApplicantUploadedDocumentID" />
+    </Key>
+    <Property Type="Int32" Name="ApplicantUploadedDocumentID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="OrganizationUserID" />
+    <Property Type="String" Name="FileName" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Size" />
+    <Property Type="String" Name="Description" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="DocumentPath" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+    <Property Type="Int32" Name="CreatedByID" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" />
+    <Property Type="Int32" Name="ModifiedByID" />
+    <Property Type="DateTime" Name="ModifiedOn" />
+    <NavigationProperty Name="ApplicantComplianceDocumentMaps" Relationship="ADB_AdbUniversity_DevModel.FK_ApplicantUploadedDocument_ApplicantComplianceDocumentMap" FromRole="ApplicantUploadedDocument" ToRole="ApplicantComplianceDocumentMap" />
+    <NavigationProperty Name="ExceptionDocuments" Relationship="ADB_AdbUniversity_DevModel.FK_ApplicantUploadedDocument_ExceptionDocument" FromRole="ApplicantUploadedDocument" ToRole="ExceptionDocument" />
+  </EntityType>
+  <EntityType Name="ClientComplianceAttributeOption">
+    <Key>
+      <PropertyRef Name="ClientComplianceAttributeOptionID" />
+    </Key>
+    <Property Type="Int32" Name="ClientComplianceAttributeOptionID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="ClientComplianceItemAttributeID" Nullable="false" />
+    <Property Type="String" Name="OptionText" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="OptionValue" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+    <Property Type="Int32" Name="CreatedByID" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" />
+    <Property Type="Int32" Name="ModifiedByID" />
+    <Property Type="DateTime" Name="ModifiedOn" />
+    <NavigationProperty Name="ClientComplianceItemAttribute" Relationship="ADB_AdbUniversity_DevModel.FK_ClientComplianceItemAttribute_ClientComplianceAttributeOption" FromRole="ClientComplianceAttributeOption" ToRole="ClientComplianceItemAttribute" />
+  </EntityType>
+  <EntityType Name="ClientComplianceCategory">
+    <Key>
+      <PropertyRef Name="ClientComplianceCategoryID" />
+    </Key>
+    <Property Type="Int32" Name="ClientComplianceCategoryID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="ClientCompliancePackageID" Nullable="false" />
+    <Property Type="Int32" Name="MasterComplianceCategoryID" />
+    <Property Type="Int32" Name="CopiedClientCategoryID" />
+    <Property Type="String" Name="CategoryName" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Description" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="EffectiveFrom" />
+    <Property Type="Int32" Name="DisplayOrder" Nullable="false" />
+    <Property Type="String" Name="CategoryLabel" MaxLength="75" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="Active" />
+    <Property Type="String" Name="ExplanatoryNotes" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RuleSetElements" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+    <Property Type="Int32" Name="CreatedByID" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" />
+    <Property Type="Int32" Name="ModifiedByID" />
+    <Property Type="DateTime" Name="ModifiedOn" />
+    <NavigationProperty Name="ApplicantComplianceCategoryDatas" Relationship="ADB_AdbUniversity_DevModel.FK_ClientComplianceCategory_ApplicantComplianceCategoryData" FromRole="ClientComplianceCategory" ToRole="ApplicantComplianceCategoryData" />
+    <NavigationProperty Name="ClientComplianceItems" Relationship="ADB_AdbUniversity_DevModel.FK__ClientComplianceCategory_ClientComplianceItems" FromRole="ClientComplianceCategory" ToRole="ClientComplianceItem" />
+    <NavigationProperty Name="ClientComplianceCategory1" Relationship="ADB_AdbUniversity_DevModel.FK_ClientComplianceCategory_ClientComplianceCategory" FromRole="ClientComplianceCategory" ToRole="ClientComplianceCategory1" />
+    <NavigationProperty Name="ClientComplianceCategory2" Relationship="ADB_AdbUniversity_DevModel.FK_ClientComplianceCategory_ClientComplianceCategory" FromRole="ClientComplianceCategory1" ToRole="ClientComplianceCategory" />
+    <NavigationProperty Name="ClientComplianceCategoryItemValidations" Relationship="ADB_AdbUniversity_DevModel.FK_ClientComplianceCategory_ClientComplianceCategoryItemValidations" FromRole="ClientComplianceCategory" ToRole="ClientComplianceCategoryItemValidation" />
+    <NavigationProperty Name="ClientCompliancePackage" Relationship="ADB_AdbUniversity_DevModel.FK_ClientCompliancePackage_ClientComplianceCategory" FromRole="ClientComplianceCategory" ToRole="ClientCompliancePackage" />
+  </EntityType>
+  <EntityType Name="ClientComplianceCategoryItemValidation">
+    <Key>
+      <PropertyRef Name="ClientComplianceCategoryItemValidationID" />
+    </Key>
+    <Property Type="Int32" Name="ClientComplianceCategoryItemValidationID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="ClientComplianceItemID" Nullable="false" />
+    <Property Type="Int32" Name="ClientComplianceCategoryID" Nullable="false" />
+    <Property Type="Int32" Name="MasterComplianceItemValidationID" />
+    <Property Type="Int32" Name="CopiedClientComplianceItemValidationID" />
+    <Property Type="String" Name="ValidationMessage" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ValidationElements" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+    <Property Type="Int32" Name="CreatedByID" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" />
+    <Property Type="Int32" Name="ModifiedByID" />
+    <Property Type="DateTime" Name="ModifiedOn" />
+    <NavigationProperty Name="ClientComplianceCategory" Relationship="ADB_AdbUniversity_DevModel.FK_ClientComplianceCategory_ClientComplianceCategoryItemValidations" FromRole="ClientComplianceCategoryItemValidation" ToRole="ClientComplianceCategory" />
+    <NavigationProperty Name="ClientComplianceItem" Relationship="ADB_AdbUniversity_DevModel.FK_ClientComplianceItems_ClientComplianceCategoryItemValidations" FromRole="ClientComplianceCategoryItemValidation" ToRole="ClientComplianceItem" />
+  </EntityType>
+  <EntityType Name="ClientComplianceItemAttribute">
+    <Key>
+      <PropertyRef Name="ClientComplianceItemAttributeID" />
+    </Key>
+    <Property Type="Int32" Name="ClientComplianceItemAttributeID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="ClientComplianceItemID" Nullable="false" />
+    <Property Type="Int32" Name="ComplianceAttributeTypeID" Nullable="false" />
+    <Property Type="Int32" Name="ComplianceAttributeDatatypeID" Nullable="false" />
+    <Property Type="Int32" Name="MasterComplianceItemAttributeID" />
+    <Property Type="Int32" Name="CopiedClientItemAttributeID" />
+    <Property Type="String" Name="Name" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ExplanatoryNotes" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="AttributeLabel" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="DisplayOrder" Nullable="false" />
+    <Property Type="Boolean" Name="Visible" />
+    <Property Type="Boolean" Name="Required" />
+    <Property Type="String" Name="Description" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="MinimumDate" />
+    <Property Type="DateTime" Name="MaximumDate" />
+    <Property Type="Int32" Name="MinimumValue" />
+    <Property Type="Int32" Name="MaximumValue" />
+    <Property Type="Int32" Name="MaximumCharacters" />
+    <Property Type="String" Name="DefaultSelectedValue" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CalculationExpression" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+    <Property Type="Int32" Name="CreatedByID" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" />
+    <Property Type="Int32" Name="ModifiedByID" />
+    <Property Type="DateTime" Name="ModifiedOn" />
+    <NavigationProperty Name="ApplicantComplianceAttributeDatas" Relationship="ADB_AdbUniversity_DevModel.FK_ClientComplianceItemAttribute_ApplicantComplianceAttributeData" FromRole="ClientComplianceItemAttribute" ToRole="ApplicantComplianceAttributeData" />
+    <NavigationProperty Name="ClientComplianceAttributeOptions" Relationship="ADB_AdbUniversity_DevModel.FK_ClientComplianceItemAttribute_ClientComplianceAttributeOption" FromRole="ClientComplianceItemAttribute" ToRole="ClientComplianceAttributeOption" />
+    <NavigationProperty Name="ClientComplianceItemAttribute1" Relationship="ADB_AdbUniversity_DevModel.FK_ClientComplianceItemAttribute_ClientComplianceItemAttribute" FromRole="ClientComplianceItemAttribute" ToRole="ClientComplianceItemAttribute1" />
+    <NavigationProperty Name="ClientComplianceItemAttribute2" Relationship="ADB_AdbUniversity_DevModel.FK_ClientComplianceItemAttribute_ClientComplianceItemAttribute" FromRole="ClientComplianceItemAttribute1" ToRole="ClientComplianceItemAttribute" />
+    <NavigationProperty Name="ClientComplianceItem" Relationship="ADB_AdbUniversity_DevModel.FK_ClientComplianceItems_ClientComplianceItemAttribute" FromRole="ClientComplianceItemAttribute" ToRole="ClientComplianceItem" />
+    <NavigationProperty Name="lkpComplianceAttributeDatatype" Relationship="ADB_AdbUniversity_DevModel.FK_lkpComplianceAttributeDatatype_ClientComplianceItemAttribute" FromRole="ClientComplianceItemAttribute" ToRole="lkpComplianceAttributeDatatype" />
+    <NavigationProperty Name="lkpComplianceAttributeType" Relationship="ADB_AdbUniversity_DevModel.FK_lkpComplianceAttributeType_ClientComplianceItemAttribute" FromRole="ClientComplianceItemAttribute" ToRole="lkpComplianceAttributeType" />
+  </EntityType>
+  <EntityType Name="ClientComplianceItemEditableBy">
+    <Key>
+      <PropertyRef Name="ClientComplianceItemEditableByID" />
+    </Key>
+    <Property Type="Int32" Name="ClientComplianceItemEditableByID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="ClientComplianceItemID" Nullable="false" />
+    <Property Type="Int32" Name="ComplianceItemEditableByID" Nullable="false" />
+    <NavigationProperty Name="ClientComplianceItem" Relationship="ADB_AdbUniversity_DevModel.FK_ClientComplianceItems_ClientComplianceItemEditableBy" FromRole="ClientComplianceItemEditableBy" ToRole="ClientComplianceItem" />
+    <NavigationProperty Name="lkpComplianceItemEditableBy" Relationship="ADB_AdbUniversity_DevModel.FK_lkpComplianceItemEditableBy_ClientComplianceItemEditableBy" FromRole="ClientComplianceItemEditableBy" ToRole="lkpComplianceItemEditableBy" />
+  </EntityType>
+  <EntityType Name="ClientComplianceItem">
+    <Key>
+      <PropertyRef Name="ClientComplianceItemID" />
+    </Key>
+    <Property Type="Int32" Name="ClientComplianceItemID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="ClientComplianceCategoryID" />
+    <Property Type="Int32" Name="MasterComplianceItemID" />
+    <Property Type="Int32" Name="ComplianceItemTypeID" Nullable="false" />
+    <Property Type="Int32" Name="CopiedClientItemID" />
+    <Property Type="String" Name="Name" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Description" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="EffectiveDate" />
+    <Property Type="String" Name="ItemLabel" MaxLength="75" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="DisplayOrder" />
+    <Property Type="String" Name="ExplanatoryNotes" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RuleElements" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+    <Property Type="Int32" Name="CreatedBy" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" />
+    <Property Type="Int32" Name="ModifiedBy" />
+    <Property Type="DateTime" Name="ModifiedOn" />
+    <NavigationProperty Name="ApplicantComplianceItemDatas" Relationship="ADB_AdbUniversity_DevModel.FK_ClientComplianceItems_ApplicantComplianceItemData" FromRole="ClientComplianceItem" ToRole="ApplicantComplianceItemData" />
+    <NavigationProperty Name="ClientComplianceCategory" Relationship="ADB_AdbUniversity_DevModel.FK__ClientComplianceCategory_ClientComplianceItems" FromRole="ClientComplianceItem" ToRole="ClientComplianceCategory" />
+    <NavigationProperty Name="ClientComplianceCategoryItemValidations" Relationship="ADB_AdbUniversity_DevModel.FK_ClientComplianceItems_ClientComplianceCategoryItemValidations" FromRole="ClientComplianceItem" ToRole="ClientComplianceCategoryItemValidation" />
+    <NavigationProperty Name="ClientComplianceItemAttributes" Relationship="ADB_AdbUniversity_DevModel.FK_ClientComplianceItems_ClientComplianceItemAttribute" FromRole="ClientComplianceItem" ToRole="ClientComplianceItemAttribute" />
+    <NavigationProperty Name="ClientComplianceItemEditableBies" Relationship="ADB_AdbUniversity_DevModel.FK_ClientComplianceItems_ClientComplianceItemEditableBy" FromRole="ClientComplianceItem" ToRole="ClientComplianceItemEditableBy" />
+    <NavigationProperty Name="ClientComplianceItems1" Relationship="ADB_AdbUniversity_DevModel.FK_ClientComplianceItems_ClientComplianceItems" FromRole="ClientComplianceItem" ToRole="ClientComplianceItem1" />
+    <NavigationProperty Name="ClientComplianceItem1" Relationship="ADB_AdbUniversity_DevModel.FK_ClientComplianceItems_ClientComplianceItems" FromRole="ClientComplianceItem1" ToRole="ClientComplianceItem" />
+    <NavigationProperty Name="lkpComplianceItemType" Relationship="ADB_AdbUniversity_DevModel.FK_lkpComplianceItemType_ClientComplianceItems" FromRole="ClientComplianceItem" ToRole="lkpComplianceItemType" />
+  </EntityType>
+  <EntityType Name="ClientCompliancePackage">
+    <Key>
+      <PropertyRef Name="ClientCompliancePackageID" />
+    </Key>
+    <Property Type="Int32" Name="ClientCompliancePackageID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="TenantID" Nullable="false" />
+    <Property Type="Int32" Name="MasterCompliancePackageID" />
+    <Property Type="Int32" Name="CopiedClientPackageID" />
+    <Property Type="String" Name="PackageName" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="State" Nullable="false" />
+    <Property Type="String" Name="Description" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="EffectiveFrom" />
+    <Property Type="String" Name="ExplanatoryNotes" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ExceptionDescription" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+    <Property Type="Int32" Name="CreatedByID" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" />
+    <Property Type="Int32" Name="ModifiedByID" />
+    <Property Type="DateTime" Name="ModifiedOn" />
+    <NavigationProperty Name="ClientComplianceCategories" Relationship="ADB_AdbUniversity_DevModel.FK_ClientCompliancePackage_ClientComplianceCategory" FromRole="ClientCompliancePackage" ToRole="ClientComplianceCategory" />
+    <NavigationProperty Name="ClientCompliancePackage1" Relationship="ADB_AdbUniversity_DevModel.FK_ClientCompliancePackage_ClientCompliancePackage" FromRole="ClientCompliancePackage" ToRole="ClientCompliancePackage1" />
+    <NavigationProperty Name="ClientCompliancePackage2" Relationship="ADB_AdbUniversity_DevModel.FK_ClientCompliancePackage_ClientCompliancePackage" FromRole="ClientCompliancePackage1" ToRole="ClientCompliancePackage" />
+    <NavigationProperty Name="PackageSubscriptions" Relationship="ADB_AdbUniversity_DevModel.FK_ClientCompliancePackage_PackageSubscription" FromRole="ClientCompliancePackage" ToRole="PackageSubscription" />
+  </EntityType>
+  <EntityType Name="lkpCategoryComplianceStatu">
+    <Key>
+      <PropertyRef Name="CategoryComplianceStatusID" />
+    </Key>
+    <Property Type="Int32" Name="CategoryComplianceStatusID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="Name" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Code" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+    <Property Type="Int32" Name="CreatedByID" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" />
+    <Property Type="Int32" Name="ModifiedByID" />
+    <Property Type="DateTime" Name="ModifiedOn" />
+    <NavigationProperty Name="ApplicantComplianceCategoryDatas" Relationship="ADB_AdbUniversity_DevModel.FK_lkpCategoryComplianceStatus_ApplicantComplianceCategoryData" FromRole="lkpCategoryComplianceStatu" ToRole="ApplicantComplianceCategoryData" />
+  </EntityType>
+  <EntityType Name="lkpComplianceAttributeDatatype">
+    <Key>
+      <PropertyRef Name="ComplianceAttributeDatatypeID" />
+    </Key>
+    <Property Type="Int32" Name="ComplianceAttributeDatatypeID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="Name" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Code" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="CreatedByID" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" />
+    <Property Type="Int32" Name="ModifiedByID" />
+    <Property Type="DateTime" Name="ModifiedOn" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+    <NavigationProperty Name="ClientComplianceItemAttributes" Relationship="ADB_AdbUniversity_DevModel.FK_lkpComplianceAttributeDatatype_ClientComplianceItemAttribute" FromRole="lkpComplianceAttributeDatatype" ToRole="ClientComplianceItemAttribute" />
+  </EntityType>
+  <EntityType Name="lkpComplianceAttributeType">
+    <Key>
+      <PropertyRef Name="ComplianceAttributeTypeID" />
+    </Key>
+    <Property Type="Int32" Name="ComplianceAttributeTypeID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="Name" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Code" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="CreatedByID" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" />
+    <Property Type="Int32" Name="ModifiedByID" />
+    <Property Type="DateTime" Name="ModifiedOn" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+    <NavigationProperty Name="ClientComplianceItemAttributes" Relationship="ADB_AdbUniversity_DevModel.FK_lkpComplianceAttributeType_ClientComplianceItemAttribute" FromRole="lkpComplianceAttributeType" ToRole="ClientComplianceItemAttribute" />
+  </EntityType>
+  <EntityType Name="lkpItemComplianceStatu">
+    <Key>
+      <PropertyRef Name="ItemComplianceStatusID" />
+    </Key>
+    <Property Type="Int32" Name="ItemComplianceStatusID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="Name" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Code" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+    <Property Type="Int32" Name="CreatedByID" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" />
+    <Property Type="Int32" Name="ModifiedByID" />
+    <Property Type="DateTime" Name="ModifiedOn" />
+    <NavigationProperty Name="ApplicantComplianceItemDatas" Relationship="ADB_AdbUniversity_DevModel.FK_lkpItemComplianceStatus_ApplicantComplianceItemData" FromRole="lkpItemComplianceStatu" ToRole="ApplicantComplianceItemData" />
+  </EntityType>
+  <EntityType Name="lkpPackageActivityType">
+    <Key>
+      <PropertyRef Name="PackageActivityTypeID" />
+    </Key>
+    <Property Type="Int32" Name="PackageActivityTypeID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="Name" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Code" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Description" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="Isdeleted" Nullable="false" />
+    <Property Type="Int32" Name="CreatedByID" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" />
+    <Property Type="Int32" Name="ModifiedByID" />
+    <Property Type="DateTime" Name="ModifiedOn" />
+    <NavigationProperty Name="PackageSubscriptions" Relationship="ADB_AdbUniversity_DevModel.FK_lkpPackageActivityType_PackageSubscription" FromRole="lkpPackageActivityType" ToRole="PackageSubscription" />
+  </EntityType>
+  <EntityType Name="lkpPackageComplianceStatu">
+    <Key>
+      <PropertyRef Name="PackageComplianceStatusID" />
+    </Key>
+    <Property Type="Int32" Name="PackageComplianceStatusID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="Name" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Code" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+    <Property Type="Int32" Name="CreatedByID" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" />
+    <Property Type="Int32" Name="ModifiedByID" />
+    <Property Type="DateTime" Name="ModifiedOn" />
+    <NavigationProperty Name="PackageSubscriptions" Relationship="ADB_AdbUniversity_DevModel.FK_lkpPackageComplianceStatus_PackageSubscription" FromRole="lkpPackageComplianceStatu" ToRole="PackageSubscription" />
+  </EntityType>
+  <EntityType Name="PackageSubscription">
+    <Key>
+      <PropertyRef Name="PackageSubscriptionID" />
+    </Key>
+    <Property Type="Int32" Name="PackageSubscriptionID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="CompliancePackageID" Nullable="false" />
+    <Property Type="Int32" Name="OrganizationUserID" />
+    <Property Type="DateTime" Name="LastActivityDate" />
+    <Property Type="Int32" Name="LastActivityType" />
+    <Property Type="Int32" Name="ComplianceStatusID" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+    <Property Type="Int32" Name="CreatedByID" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" />
+    <Property Type="Int32" Name="ModifiedByID" />
+    <Property Type="DateTime" Name="ModifiedOn" />
+    <NavigationProperty Name="ApplicantComplianceCategoryDatas" Relationship="ADB_AdbUniversity_DevModel.FK_PackageSubscription_ApplicantComplianceCategoryData" FromRole="PackageSubscription" ToRole="ApplicantComplianceCategoryData" />
+    <NavigationProperty Name="ClientCompliancePackage" Relationship="ADB_AdbUniversity_DevModel.FK_ClientCompliancePackage_PackageSubscription" FromRole="PackageSubscription" ToRole="ClientCompliancePackage" />
+    <NavigationProperty Name="lkpPackageActivityType" Relationship="ADB_AdbUniversity_DevModel.FK_lkpPackageActivityType_PackageSubscription" FromRole="PackageSubscription" ToRole="lkpPackageActivityType" />
+    <NavigationProperty Name="lkpPackageComplianceStatu" Relationship="ADB_AdbUniversity_DevModel.FK_lkpPackageComplianceStatus_PackageSubscription" FromRole="PackageSubscription" ToRole="lkpPackageComplianceStatu" />
+  </EntityType>
+  <Association Name="FK_ApplicantComplianceAttributeData_ApplicantComplianceDocumentMap">
+    <End Type="ADB_AdbUniversity_DevModel.ApplicantComplianceAttributeData" Role="ApplicantComplianceAttributeData" Multiplicity="1" />
+    <End Type="ADB_AdbUniversity_DevModel.ApplicantComplianceDocumentMap" Role="ApplicantComplianceDocumentMap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ApplicantComplianceAttributeData">
+        <PropertyRef Name="ApplicantComplianceAttributeDataID" />
+      </Principal>
+      <Dependent Role="ApplicantComplianceDocumentMap">
+        <PropertyRef Name="ApplicantComplianceAttributeDataID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ApplicantComplianceItemData_ApplicantComplianceAttributeData">
+    <End Type="ADB_AdbUniversity_DevModel.ApplicantComplianceItemData" Role="ApplicantComplianceItemData" Multiplicity="1" />
+    <End Type="ADB_AdbUniversity_DevModel.ApplicantComplianceAttributeData" Role="ApplicantComplianceAttributeData" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ApplicantComplianceItemData">
+        <PropertyRef Name="ApplicantComplianceItemDataID" />
+      </Principal>
+      <Dependent Role="ApplicantComplianceAttributeData">
+        <PropertyRef Name="ApplicantComplianceItemDataID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClientComplianceItemAttribute_ApplicantComplianceAttributeData">
+    <End Type="ADB_AdbUniversity_DevModel.ClientComplianceItemAttribute" Role="ClientComplianceItemAttribute" Multiplicity="1" />
+    <End Type="ADB_AdbUniversity_DevModel.ApplicantComplianceAttributeData" Role="ApplicantComplianceAttributeData" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClientComplianceItemAttribute">
+        <PropertyRef Name="ClientComplianceItemAttributeID" />
+      </Principal>
+      <Dependent Role="ApplicantComplianceAttributeData">
+        <PropertyRef Name="ComplianceItemAttributeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ApplicantComplianceCategoryData_ApplicantComplianceItemData">
+    <End Type="ADB_AdbUniversity_DevModel.ApplicantComplianceCategoryData" Role="ApplicantComplianceCategoryData" Multiplicity="1" />
+    <End Type="ADB_AdbUniversity_DevModel.ApplicantComplianceItemData" Role="ApplicantComplianceItemData" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ApplicantComplianceCategoryData">
+        <PropertyRef Name="ApplicantComplianceCategoryDataID" />
+      </Principal>
+      <Dependent Role="ApplicantComplianceItemData">
+        <PropertyRef Name="ApplicantComplianceCategoryDataID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClientComplianceCategory_ApplicantComplianceCategoryData">
+    <End Type="ADB_AdbUniversity_DevModel.ClientComplianceCategory" Role="ClientComplianceCategory" Multiplicity="1" />
+    <End Type="ADB_AdbUniversity_DevModel.ApplicantComplianceCategoryData" Role="ApplicantComplianceCategoryData" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClientComplianceCategory">
+        <PropertyRef Name="ClientComplianceCategoryID" />
+      </Principal>
+      <Dependent Role="ApplicantComplianceCategoryData">
+        <PropertyRef Name="ComplianceCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_lkpCategoryComplianceStatus_ApplicantComplianceCategoryData">
+    <End Type="ADB_AdbUniversity_DevModel.lkpCategoryComplianceStatu" Role="lkpCategoryComplianceStatu" Multiplicity="1" />
+    <End Type="ADB_AdbUniversity_DevModel.ApplicantComplianceCategoryData" Role="ApplicantComplianceCategoryData" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lkpCategoryComplianceStatu">
+        <PropertyRef Name="CategoryComplianceStatusID" />
+      </Principal>
+      <Dependent Role="ApplicantComplianceCategoryData">
+        <PropertyRef Name="ReviewStatusTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PackageSubscription_ApplicantComplianceCategoryData">
+    <End Type="ADB_AdbUniversity_DevModel.PackageSubscription" Role="PackageSubscription" Multiplicity="1" />
+    <End Type="ADB_AdbUniversity_DevModel.ApplicantComplianceCategoryData" Role="ApplicantComplianceCategoryData" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PackageSubscription">
+        <PropertyRef Name="PackageSubscriptionID" />
+      </Principal>
+      <Dependent Role="ApplicantComplianceCategoryData">
+        <PropertyRef Name="PackageSubscriptionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ApplicantUploadedDocument_ApplicantComplianceDocumentMap">
+    <End Type="ADB_AdbUniversity_DevModel.ApplicantUploadedDocument" Role="ApplicantUploadedDocument" Multiplicity="1" />
+    <End Type="ADB_AdbUniversity_DevModel.ApplicantComplianceDocumentMap" Role="ApplicantComplianceDocumentMap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ApplicantUploadedDocument">
+        <PropertyRef Name="ApplicantUploadedDocumentID" />
+      </Principal>
+      <Dependent Role="ApplicantComplianceDocumentMap">
+        <PropertyRef Name="ApplicantUploadedDocumentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClientComplianceItems_ApplicantComplianceItemData">
+    <End Type="ADB_AdbUniversity_DevModel.ClientComplianceItem" Role="ClientComplianceItem" Multiplicity="1" />
+    <End Type="ADB_AdbUniversity_DevModel.ApplicantComplianceItemData" Role="ApplicantComplianceItemData" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClientComplianceItem">
+        <PropertyRef Name="ClientComplianceItemID" />
+      </Principal>
+      <Dependent Role="ApplicantComplianceItemData">
+        <PropertyRef Name="ComplianceItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_lkpItemComplianceStatus_ApplicantComplianceItemData">
+    <End Type="ADB_AdbUniversity_DevModel.lkpItemComplianceStatu" Role="lkpItemComplianceStatu" Multiplicity="1" />
+    <End Type="ADB_AdbUniversity_DevModel.ApplicantComplianceItemData" Role="ApplicantComplianceItemData" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lkpItemComplianceStatu">
+        <PropertyRef Name="ItemComplianceStatusID" />
+      </Principal>
+      <Dependent Role="ApplicantComplianceItemData">
+        <PropertyRef Name="ReviewStatusTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClientComplianceItemAttribute_ClientComplianceAttributeOption">
+    <End Type="ADB_AdbUniversity_DevModel.ClientComplianceItemAttribute" Role="ClientComplianceItemAttribute" Multiplicity="1" />
+    <End Type="ADB_AdbUniversity_DevModel.ClientComplianceAttributeOption" Role="ClientComplianceAttributeOption" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClientComplianceItemAttribute">
+        <PropertyRef Name="ClientComplianceItemAttributeID" />
+      </Principal>
+      <Dependent Role="ClientComplianceAttributeOption">
+        <PropertyRef Name="ClientComplianceItemAttributeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ClientComplianceCategory_ClientComplianceItems">
+    <End Type="ADB_AdbUniversity_DevModel.ClientComplianceCategory" Role="ClientComplianceCategory" Multiplicity="0..1" />
+    <End Type="ADB_AdbUniversity_DevModel.ClientComplianceItem" Role="ClientComplianceItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClientComplianceCategory">
+        <PropertyRef Name="ClientComplianceCategoryID" />
+      </Principal>
+      <Dependent Role="ClientComplianceItem">
+        <PropertyRef Name="ClientComplianceCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClientComplianceCategory_ClientComplianceCategory">
+    <End Type="ADB_AdbUniversity_DevModel.ClientComplianceCategory" Role="ClientComplianceCategory" Multiplicity="0..1" />
+    <End Type="ADB_AdbUniversity_DevModel.ClientComplianceCategory" Role="ClientComplianceCategory1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClientComplianceCategory">
+        <PropertyRef Name="ClientComplianceCategoryID" />
+      </Principal>
+      <Dependent Role="ClientComplianceCategory1">
+        <PropertyRef Name="CopiedClientCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClientComplianceCategory_ClientComplianceCategoryItemValidations">
+    <End Type="ADB_AdbUniversity_DevModel.ClientComplianceCategory" Role="ClientComplianceCategory" Multiplicity="1" />
+    <End Type="ADB_AdbUniversity_DevModel.ClientComplianceCategoryItemValidation" Role="ClientComplianceCategoryItemValidation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClientComplianceCategory">
+        <PropertyRef Name="ClientComplianceCategoryID" />
+      </Principal>
+      <Dependent Role="ClientComplianceCategoryItemValidation">
+        <PropertyRef Name="ClientComplianceCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClientCompliancePackage_ClientComplianceCategory">
+    <End Type="ADB_AdbUniversity_DevModel.ClientCompliancePackage" Role="ClientCompliancePackage" Multiplicity="1" />
+    <End Type="ADB_AdbUniversity_DevModel.ClientComplianceCategory" Role="ClientComplianceCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClientCompliancePackage">
+        <PropertyRef Name="ClientCompliancePackageID" />
+      </Principal>
+      <Dependent Role="ClientComplianceCategory">
+        <PropertyRef Name="ClientCompliancePackageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClientComplianceItems_ClientComplianceCategoryItemValidations">
+    <End Type="ADB_AdbUniversity_DevModel.ClientComplianceItem" Role="ClientComplianceItem" Multiplicity="1" />
+    <End Type="ADB_AdbUniversity_DevModel.ClientComplianceCategoryItemValidation" Role="ClientComplianceCategoryItemValidation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClientComplianceItem">
+        <PropertyRef Name="ClientComplianceItemID" />
+      </Principal>
+      <Dependent Role="ClientComplianceCategoryItemValidation">
+        <PropertyRef Name="ClientComplianceItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClientComplianceItemAttribute_ClientComplianceItemAttribute">
+    <End Type="ADB_AdbUniversity_DevModel.ClientComplianceItemAttribute" Role="ClientComplianceItemAttribute" Multiplicity="0..1" />
+    <End Type="ADB_AdbUniversity_DevModel.ClientComplianceItemAttribute" Role="ClientComplianceItemAttribute1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClientComplianceItemAttribute">
+        <PropertyRef Name="ClientComplianceItemAttributeID" />
+      </Principal>
+      <Dependent Role="ClientComplianceItemAttribute1">
+        <PropertyRef Name="CopiedClientItemAttributeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClientComplianceItems_ClientComplianceItemAttribute">
+    <End Type="ADB_AdbUniversity_DevModel.ClientComplianceItem" Role="ClientComplianceItem" Multiplicity="1" />
+    <End Type="ADB_AdbUniversity_DevModel.ClientComplianceItemAttribute" Role="ClientComplianceItemAttribute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClientComplianceItem">
+        <PropertyRef Name="ClientComplianceItemID" />
+      </Principal>
+      <Dependent Role="ClientComplianceItemAttribute">
+        <PropertyRef Name="ClientComplianceItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_lkpComplianceAttributeDatatype_ClientComplianceItemAttribute">
+    <End Type="ADB_AdbUniversity_DevModel.lkpComplianceAttributeDatatype" Role="lkpComplianceAttributeDatatype" Multiplicity="1" />
+    <End Type="ADB_AdbUniversity_DevModel.ClientComplianceItemAttribute" Role="ClientComplianceItemAttribute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lkpComplianceAttributeDatatype">
+        <PropertyRef Name="ComplianceAttributeDatatypeID" />
+      </Principal>
+      <Dependent Role="ClientComplianceItemAttribute">
+        <PropertyRef Name="ComplianceAttributeDatatypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_lkpComplianceAttributeType_ClientComplianceItemAttribute">
+    <End Type="ADB_AdbUniversity_DevModel.lkpComplianceAttributeType" Role="lkpComplianceAttributeType" Multiplicity="1" />
+    <End Type="ADB_AdbUniversity_DevModel.ClientComplianceItemAttribute" Role="ClientComplianceItemAttribute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lkpComplianceAttributeType">
+        <PropertyRef Name="ComplianceAttributeTypeID" />
+      </Principal>
+      <Dependent Role="ClientComplianceItemAttribute">
+        <PropertyRef Name="ComplianceAttributeTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClientComplianceItems_ClientComplianceItemEditableBy">
+    <End Type="ADB_AdbUniversity_DevModel.ClientComplianceItem" Role="ClientComplianceItem" Multiplicity="1" />
+    <End Type="ADB_AdbUniversity_DevModel.ClientComplianceItemEditableBy" Role="ClientComplianceItemEditableBy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClientComplianceItem">
+        <PropertyRef Name="ClientComplianceItemID" />
+      </Principal>
+      <Dependent Role="ClientComplianceItemEditableBy">
+        <PropertyRef Name="ClientComplianceItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClientComplianceItems_ClientComplianceItems">
+    <End Type="ADB_AdbUniversity_DevModel.ClientComplianceItem" Role="ClientComplianceItem" Multiplicity="0..1" />
+    <End Type="ADB_AdbUniversity_DevModel.ClientComplianceItem" Role="ClientComplianceItem1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClientComplianceItem">
+        <PropertyRef Name="ClientComplianceItemID" />
+      </Principal>
+      <Dependent Role="ClientComplianceItem1">
+        <PropertyRef Name="CopiedClientItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClientCompliancePackage_ClientCompliancePackage">
+    <End Type="ADB_AdbUniversity_DevModel.ClientCompliancePackage" Role="ClientCompliancePackage" Multiplicity="0..1" />
+    <End Type="ADB_AdbUniversity_DevModel.ClientCompliancePackage" Role="ClientCompliancePackage1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClientCompliancePackage">
+        <PropertyRef Name="ClientCompliancePackageID" />
+      </Principal>
+      <Dependent Role="ClientCompliancePackage1">
+        <PropertyRef Name="CopiedClientPackageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClientCompliancePackage_PackageSubscription">
+    <End Type="ADB_AdbUniversity_DevModel.ClientCompliancePackage" Role="ClientCompliancePackage" Multiplicity="1" />
+    <End Type="ADB_AdbUniversity_DevModel.PackageSubscription" Role="PackageSubscription" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClientCompliancePackage">
+        <PropertyRef Name="ClientCompliancePackageID" />
+      </Principal>
+      <Dependent Role="PackageSubscription">
+        <PropertyRef Name="CompliancePackageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_lkpPackageActivityType_PackageSubscription">
+    <End Type="ADB_AdbUniversity_DevModel.lkpPackageActivityType" Role="lkpPackageActivityType" Multiplicity="0..1" />
+    <End Type="ADB_AdbUniversity_DevModel.PackageSubscription" Role="PackageSubscription" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lkpPackageActivityType">
+        <PropertyRef Name="PackageActivityTypeID" />
+      </Principal>
+      <Dependent Role="PackageSubscription">
+        <PropertyRef Name="LastActivityType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_lkpPackageComplianceStatus_PackageSubscription">
+    <End Type="ADB_AdbUniversity_DevModel.lkpPackageComplianceStatu" Role="lkpPackageComplianceStatu" Multiplicity="0..1" />
+    <End Type="ADB_AdbUniversity_DevModel.PackageSubscription" Role="PackageSubscription" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lkpPackageComplianceStatu">
+        <PropertyRef Name="PackageComplianceStatusID" />
+      </Principal>
+      <Dependent Role="PackageSubscription">
+        <PropertyRef Name="ComplianceStatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="ExceptionDocument">
+    <Key>
+      <PropertyRef Name="ExceptionDocumentID" />
+    </Key>
+    <Property Type="Int32" Name="ExceptionDocumentID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="ApplicantExceptionID" Nullable="false" />
+    <Property Type="Int32" Name="ApplicantUploadedDocumentID" Nullable="false" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+    <Property Type="Int32" Name="CreatedByID" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" />
+    <Property Type="Int32" Name="ModifiedByID" />
+    <Property Type="DateTime" Name="ModifiedOn" />
+    <NavigationProperty Name="ApplicantException" Relationship="ADB_AdbUniversity_DevModel.FK_ApplicantException_ExceptionDocument" FromRole="ExceptionDocument" ToRole="ApplicantException" />
+    <NavigationProperty Name="ApplicantUploadedDocument" Relationship="ADB_AdbUniversity_DevModel.FK_ApplicantUploadedDocument_ExceptionDocument" FromRole="ExceptionDocument" ToRole="ApplicantUploadedDocument" />
+  </EntityType>
+  <EntityType Name="lkpComplianceItemEditableBy">
+    <Key>
+      <PropertyRef Name="ComplianceItemEditableByID" />
+    </Key>
+    <Property Type="Int32" Name="ComplianceItemEditableByID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="Name" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Code" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" />
+    <Property Type="Int32" Name="ModifiedBy" />
+    <Property Type="DateTime" Name="ModifiedOn" />
+    <NavigationProperty Name="ClientComplianceItemEditableBies" Relationship="ADB_AdbUniversity_DevModel.FK_lkpComplianceItemEditableBy_ClientComplianceItemEditableBy" FromRole="lkpComplianceItemEditableBy" ToRole="ClientComplianceItemEditableBy" />
+  </EntityType>
+  <EntityType Name="lkpComplianceItemType">
+    <Key>
+      <PropertyRef Name="ComplianceItemTypeID" />
+    </Key>
+    <Property Type="Int32" Name="ComplianceItemTypeID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="Name" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Code" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" />
+    <Property Type="Int32" Name="ModifiedBy" />
+    <Property Type="DateTime" Name="ModifiedOn" />
+    <NavigationProperty Name="ClientComplianceItems" Relationship="ADB_AdbUniversity_DevModel.FK_lkpComplianceItemType_ClientComplianceItems" FromRole="lkpComplianceItemType" ToRole="ClientComplianceItem" />
+  </EntityType>
+  <Association Name="FK_ApplicantException_ExceptionDocument">
+    <End Type="ADB_AdbUniversity_DevModel.ApplicantException" Role="ApplicantException" Multiplicity="1" />
+    <End Type="ADB_AdbUniversity_DevModel.ExceptionDocument" Role="ExceptionDocument" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ApplicantException">
+        <PropertyRef Name="ApplicantExceptionID" />
+      </Principal>
+      <Dependent Role="ExceptionDocument">
+        <PropertyRef Name="ApplicantExceptionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ApplicantUploadedDocument_ExceptionDocument">
+    <End Type="ADB_AdbUniversity_DevModel.ApplicantUploadedDocument" Role="ApplicantUploadedDocument" Multiplicity="1" />
+    <End Type="ADB_AdbUniversity_DevModel.ExceptionDocument" Role="ExceptionDocument" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ApplicantUploadedDocument">
+        <PropertyRef Name="ApplicantUploadedDocumentID" />
+      </Principal>
+      <Dependent Role="ExceptionDocument">
+        <PropertyRef Name="ApplicantUploadedDocumentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_lkpComplianceItemEditableBy_ClientComplianceItemEditableBy">
+    <End Type="ADB_AdbUniversity_DevModel.lkpComplianceItemEditableBy" Role="lkpComplianceItemEditableBy" Multiplicity="1" />
+    <End Type="ADB_AdbUniversity_DevModel.ClientComplianceItemEditableBy" Role="ClientComplianceItemEditableBy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lkpComplianceItemEditableBy">
+        <PropertyRef Name="ComplianceItemEditableByID" />
+      </Principal>
+      <Dependent Role="ClientComplianceItemEditableBy">
+        <PropertyRef Name="ComplianceItemEditableByID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_lkpComplianceItemType_ClientComplianceItems">
+    <End Type="ADB_AdbUniversity_DevModel.lkpComplianceItemType" Role="lkpComplianceItemType" Multiplicity="1" />
+    <End Type="ADB_AdbUniversity_DevModel.ClientComplianceItem" Role="ClientComplianceItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lkpComplianceItemType">
+        <PropertyRef Name="ComplianceItemTypeID" />
+      </Principal>
+      <Dependent Role="ClientComplianceItem">
+        <PropertyRef Name="ComplianceItemTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

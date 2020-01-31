@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace INTSOF.Utils
+{
+    [Serializable]
+    public class AssignQueueRecordsForMultipleTenant
+    {
+        public Int32 TenantID { get; set; }
+        public String QueueXML { get; set; }
+        public Int32 CurrentLoggedInUserID { get; set; }
+        public Int32 AssignToUserID { get; set; }
+    }
+}

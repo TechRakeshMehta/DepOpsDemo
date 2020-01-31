@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B2A1BF5E-27CF-4749-9D18-2C79D9357BDD}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>INTSOF.Queues</RootNamespace>
+    <AssemblyName>INTSOF.Queues</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\WebSites\CoreWeb\ComplioEmptyRuleSet.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\WebSites\CoreWeb\ComplioEmptyRuleSet.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AWSSDK.Core">
+      <HintPath>..\Library\AWSSDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.S3">
+      <HintPath>..\Library\AWSSDK.S3.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.SimpleNotificationService">
+      <HintPath>..\Library\AWSSDK.SimpleNotificationService.dll</HintPath>
+    </Reference>
+    <Reference Include="Intsof.SMTPService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d2e1941283e579c5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Intsof.SMTPService.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\Library\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common">
+      <HintPath>..\Library\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\Library\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\Library\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="RadPdf, Version=2.23.0.1, Culture=neutral, PublicKeyToken=ceef76a2a0e50e3b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\ThirdParty\RadPdf.dll</HintPath>
+    </Reference>
+    <Reference Include="SautinSoft.PdfVision">
+      <HintPath>..\Library\ThirdParty\SautinSoft.PdfVision.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.ServiceModel.Activation" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UseOffice">
+      <HintPath>..\Library\ThirdParty\UseOffice.dll</HintPath>
+    </Reference>
+    <Reference Include="wnvhtmltopdf">
+      <HintPath>..\Library\wnvhtmltopdf.dll</HintPath>
+    </Reference>
+    <Reference Include="wnvpdfmerge, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b12703d35a33ff98, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\ThirdParty\wnvpdfmerge.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EmailService.svc" />
+    <Content Include="EmailTemplates\AccountStatus.xml" />
+    <Content Include="EmailTemplates\AccountStatus.xslt" />
+    <Content Include="EmailTemplates\ApplicantAlertEmailAddressChange.xml" />
+    <Content Include="EmailTemplates\ApplicantAlertEmailAddressChange.xslt" />
+    <Content Include="EmailTemplates\ApplicantEmailAddressChange.xml" />
+    <Content Include="EmailTemplates\ApplicantEmailAddressChange.xslt" />
+    <Content Include="EmailTemplates\ApplicantInstitutionChange.xml" />
+    <Content Include="EmailTemplates\ApplicantInstitutionChange.xslt" />
+    <Content Include="EmailTemplates\BulkUploadResult.xml" />
+    <Content Include="EmailTemplates\BulkUploadResult.xslt" />
+    <Content Include="EmailTemplates\DetermineReassignment.xml" />
+    <Content Include="EmailTemplates\DetermineReassignment.xslt" />
+    <Content Include="EmailTemplates\DetermineReassignmentSupplier.xml" />
+    <Content Include="EmailTemplates\DetermineReassignmentSupplier.xslt" />
+    <Content Include="EmailTemplates\Exception.xml" />
+    <Content Include="EmailTemplates\Exception.xslt" />
+    <Content Include="EmailTemplates\ExtensionRequest.xml" />
+    <Content Include="EmailTemplates\ExtensionRequest.xslt" />
+    <Content Include="EmailTemplates\ExtensionRequestToSupplier.xml" />
+    <Content Include="EmailTemplates\ExtensionRequestToSupplier.xslt" />
+    <Content Include="EmailTemplates\ForgotPasswordReset.xml" />
+    <Content Include="EmailTemplates\ForgotPasswordReset.xslt" />
+    <Content Include="EmailTemplates\ForgotUserNameReset.xml" />
+    <Content Include="EmailTemplates\ForgotUserNameReset.xslt" />
+    <Content Include="EmailTemplates\InsuranceLossComment.xml" />
+    <Content Include="EmailTemplates\InsuranceLossComment.xslt" />
+    <Content Include="EmailTemplates\NewAccount.xml" />
+    <Content Include="EmailTemplates\NewAccount.xslt" />
+    <Content Include="EmailTemplates\NewAccountForAdmins.xml" />
+    <Content Include="EmailTemplates\NewAccountForAdmins.xslt" />
+    <Content Include="EmailTemplates\NewApplicantAccount.xml" />
+    <Content Include="EmailTemplates\NewApplicantAccount.xslt" />
+    <Content Include="EmailTemplates\PasswordReset.xml" />
+    <Content Include="EmailTemplates\PasswordReset.xslt" />
+    <Content Include="EmailTemplates\RoleUpdate.xml" />
+    <Content Include="EmailTemplates\RoleUpdate.xslt" />
+    <Content Include="EmailTemplates\UnableToLocate.xml" />
+    <Content Include="EmailTemplates\UnableToLocate.xslt" />
+    <Content Include="EmailTemplates\UnableToLocateCancelRequest.xml" />
+    <Content Include="EmailTemplates\UnableToLocateCancelRequest.xslt" />
+    <Content Include="EmailTemplates\UnableToLocateClientInfo.xml" />
+    <Content Include="EmailTemplates\UnableToLocateClientInfo.xslt" />
+    <Content Include="EmailTemplates\VerficationCode.xml" />
+    <Content Include="EmailTemplates\VerficationCode.xslt" />
+    <Content Include="EmailTemplates\VerficationCodeUserName.xml" />
+    <Content Include="EmailTemplates\VerficationCodeUserName.xslt" />
+    <Content Include="EmailTemplates\VerificationCodeForEmailChange.xml" />
+    <Content Include="EmailTemplates\VerificationCodeForEmailChange.xslt" />
+    <Content Include="PDFConversion.svc" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommonFileManager.cs" />
+    <Compile Include="EmailService.svc.cs">
+      <DependentUpon>EmailService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="IEmailService.cs" />
+    <Compile Include="IPDFConversion.cs" />
+    <Compile Include="PDFConversion.svc.cs">
+      <DependentUpon>PDFConversion.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="EmailTemplates\ADBEmails.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\INTSOF.Logger\INTSOF.Logger.csproj">
+      <Project>{20595140-2fd9-4df4-83e3-0d0ed819d4d1}</Project>
+      <Name>INTSOF.Logger</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>56548</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:56232/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

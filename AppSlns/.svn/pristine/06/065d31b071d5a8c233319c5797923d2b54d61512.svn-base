@@ -1,0 +1,108 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true"
+    Inherits="CoreWeb.Shell.MasterPages.PublicPageMaster" CodeBehind="PublicPageMaster.master.cs" %>
+
+<%@ Register TagPrefix="infs" Namespace="INTERSOFT.WEB.UI.WebControls" Assembly="INTERSOFT.WEB.UI" %>
+<%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head" runat="server">
+    <asp:ContentPlaceHolder ID="PageHeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="mainForm" runat="server">
+        <asp:ScriptManager ID="scmPage" runat="server" EnablePageMethods="true" EnablePartialRendering="true"
+            AsyncPostBackTimeout="360000" ScriptMode="Release">
+        </asp:ScriptManager>
+        <infs:WclStyleSheetManager runat="server" ID="cssMgrPage">
+        </infs:WclStyleSheetManager>
+        <infs:WclResourceManager ID="LoginSysXResourceManager" runat="server" SupportedBrowsers="ie7"
+            SupportCssPath="~/Resources/Generic/client" SupportScriptPath="~/Resources/Generic/client"
+            AllowTheming="false" EnableBrowserSupport="true" IFrameMode="false">
+            <infs:LinkedResource ResourceType="StyleSheet" Path="~/Resources/Mod/Shared/public_pages/core.css" />
+        </infs:WclResourceManager>
+        <%-- AD: Adding window again and style tag due to height and z-index--%>
+        <infs:WclWindowManager ID="wndManager" ShowContentDuringLoad="false" VisibleStatusbar="false"
+            ReloadOnShow="true" runat="server" EnableShadow="true" Behaviors="Move,None"
+            KeepInScreenBounds="true" AutoSize="false" AutoSkinMode="false" Skin="Windows7" MinHeight="200px" MinWidth="200px"
+            Modal="true" Style="z-index: 7001">
+            <Windows>
+                <infs:WclWindow ID="wndCommon" runat="server" Modal="true" CssClass="appPopup noicon">
+                </infs:WclWindow>
+            </Windows>
+            <AlertTemplate>
+                <div class="rwDialogPopup radalert">
+                    <div class="rwDialogText">
+                        {1}
+                    </div>
+                    <div class="swDialogCmds">
+                        <a onclick="$find('{0}').close();" class="rwPopupButton" href="javascript:void(0);">
+                            <span class="rwOuterSpan"><span class="rwInnerSpan">##LOC[OK]##</span> </span>
+                        </a>
+                    </div>
+                </div>
+            </AlertTemplate>
+            <ConfirmTemplate>
+                <div class="rwDialogPopup radconfirm">
+                    <div class="rwDialogText">
+                        {1}
+                    </div>
+                    <div class="swDialogCmds">
+                        <a onclick="$find('{0}').close(true);" class="rwPopupButton" href="javascript:void(0);">
+                            <span class="rwOuterSpan"><span class="rwInnerSpan">##LOC[OK]##</span></span></a>
+                        <a onclick="$find('{0}').close(false);" class="rwPopupButton" href="javascript:void(0);">
+                            <span class="rwOuterSpan"><span class="rwInnerSpan">##LOC[Cancel]##</span></span></a>
+                    </div>
+                </div>
+            </ConfirmTemplate>
+        </infs:WclWindowManager>
+        <div class="page-wrapper">
+            <div class="hdr-wrap">
+                <div class="content-wrapper">
+                    <h1 class="header no-box"></h1>
+                    <div class="poweredby">
+                    </div>
+                </div>
+            </div>
+            <div class="main-wrapper">
+                <div class="content-wrapper">
+                    <div class="client-logo" id="divClientLogo" runat="server">
+                        <asp:Image ID="imgLogo" runat="server" />                        
+                        <asp:Image id="imgRightLogo" runat="server" Visible="false" style="float: right;"/>
+                    </div>
+                    <asp:ContentPlaceHolder ID="DefaultContent" runat="server" />
+                </div>
+            </div>
+            <div class="push">
+            </div>
+        </div>
+        <div class="footer-wrapper">
+            <div class="content-wrapper">
+                <div class="dynamic">
+                    <asp:Literal ID="litFooter" runat="server"></asp:Literal>
+                </div>
+                 <div class="static" id="IsLocAddress" runat="server">
+                 <strong><asp:Label runat="server" ID="lblLocGrpName"></asp:Label></strong>
+
+                     <br />110 16th St 8th Floor, Denver, CO 80202
+
+                     <br />720-292-2722, info@coloradofingerprinting.com
+
+                </div>
+
+                <div class="static" id="CustomAddress" runat="server">
+                    <strong>American DataBank Group</strong>, Copyright ©<%=CopyRightYear %>. All Rights Reserved
+                <br />
+                    110 16th Street 8th Fl. Denver, CO 80202
+                <br />
+                    Business Hours: 8:00am - 6:00pm (MT) Mon - Fri
+                </div>
+                <div class="reset">
+                </div>
+            </div>
+        </div>
+    </form>
+    <asp:ContentPlaceHolder ID="BodyContentOutsideForm" runat="server">
+    </asp:ContentPlaceHolder>
+</body>
+</html>

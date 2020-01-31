@@ -1,0 +1,57 @@
+<div class="container-fluid" id="bodyBlock">
+  <section class="p-2">
+    <div class="row">
+      <div *ngIf="!IsEditProfile" class="col-md-12 font-weight-bold">
+        <label id="CREATODR"></label> (
+        <label id="STEP"></label> {{orderInfo.CurrentStep}}
+        <label id="OF"></label> {{orderInfo.TotalSteps}})
+      </div>
+      <div class="col-md-12 text-center">
+        <h3 style="display: inline" *ngIf="IsEditProfile" id="UPDATE"></h3>
+        <h3 style="display: inline" id="PERSONALINFO"></h3>
+      </div>
+      <div class="col-md-12 bg-white shadow-sm rounded py-3">
+        <div *ngIf="IsOneAliasRequired" class="d-block validationColor">{{OneAliasRequiredMsg}}</div>
+        <div class="custom-control custom-checkbox mr-sm-2">
+          <input class="custom-control-input" type="checkbox" [disabled]="IsAliasInfoCheckboxDisable" [(ngModel)]="IsAliasInfoCheckboxChecked"
+            (change)="AddAliasInfo($event)" id="maiden1">
+          <label class="custom-control-label" for="maiden1" id="ISALIASNAME"></label>
+        </div>
+        <aliasInfo-info (Next)="onNext($event)" (ShowHideAddMoreButton)="onShowHideAddMoreButton($event)" *ngFor="let alias of userInfo.PersonAliasList"
+          [alias]="alias"></aliasInfo-info>
+        <div class="row mt-1">
+          <div class="col-md-12 d-flex justify-content-right">
+            <button [hidden]="hdnAddMoreAliasbtn" autofocus="false" type="button" (click)="AddMoreAlias()" class="btn btn-primary">
+              <i class="fas fa-plus-circle mr-1"></i>
+              <label class="label-on-button" id="ADDMORE"></label>
+            </button>
+          </div>
+        </div>
+
+        <div class="row mt-2">
+          <div class="col-md-12 d-flex justify-content-center">
+            <button type="button" autofocus="false" (click)="onBack()" class="btn btn-primary mr-1 fixedWidthBtn">
+              <i class="fas fa-arrow-left pr-1"></i>
+              <label id="PREVIOUS"></label>
+            </button>
+            <button type="button" autofocus="false" [disabled]="IsNextButtonDisabled" (click)="onSubmit()" class="btn btn-primary mr-1 fixedWidthBtn">
+              <label id="NEXT"></label>
+              <i class="fas fa-arrow-right pl-1"></i>
+            </button>
+            <div *ngIf="!IsEditProfile">
+              <cancel-order-button></cancel-order-button>
+            </div>
+
+            <button *ngIf="IsEditProfile" type="button" routerLink="/userDashboard" class="btn btn-primary fixedWidthBtn mx-1">
+              <i class="fas fa-times pr-1"></i>
+              <label id="CNCL" class="label-on-button "></label>
+
+
+
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

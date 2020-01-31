@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="1ab06822-6a94-47fb-bf41-fe1ad08b578e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:61041/BatchImport.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="BatchImport.wsdl" MetadataType="Wsdl" ID="2e3f5552-51b1-48a5-a8da-3e6a38ec4efd" SourceId="1" SourceUrl="http://localhost:61041/BatchImport.svc?wsdl" />
+    <MetadataFile FileName="BatchImport.disco" MetadataType="Disco" ID="1ef64d8a-57ca-4837-9625-45c0f3a349f1" SourceId="1" SourceUrl="http://localhost:61041/BatchImport.svc?disco" />
+    <MetadataFile FileName="BatchImport.xsd" MetadataType="Schema" ID="9513407e-31bd-4cea-b3d1-4301699771d8" SourceId="1" SourceUrl="http://localhost:61041/BatchImport.svc?xsd=xsd1" />
+    <MetadataFile FileName="BatchImport1.xsd" MetadataType="Schema" ID="ded6527d-6a2e-439d-a8e3-b827c12a23a5" SourceId="1" SourceUrl="http://localhost:61041/BatchImport.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

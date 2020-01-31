@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<BulkUploadResult xmlns="http://tempuri.org/ADBEmails.xsd">
+  <Contents>
+    <ClientId></ClientId>
+    <LoanNumber></LoanNumber>
+    <BusinessSucess></BusinessSucess>
+    <ServiceRequestID></ServiceRequestID >
+  </Contents>
+</BulkUploadResult>

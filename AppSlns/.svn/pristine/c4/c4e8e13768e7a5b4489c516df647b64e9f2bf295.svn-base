@@ -1,0 +1,76 @@
+body, html, #UpdatePanel1, #box_content{
+    height:100%!important;
+}
+#modwrapo {
+    margin-bottom:0px;
+}
+
+#summaryBar{
+	height:42px;
+	background:url(bkg.png) repeat-x;
+    border-bottom:1px solid #BBBBBB;
+    padding:0 10px;   
+    overflow:hidden;     
+    font-size:12px;   
+}
+
+#summaryBar .lbl{
+    display:inline;
+}
+#summaryInner {
+    min-width:2000px; 
+}
+.summaryBlock {
+    display:inline-block;
+    padding-top:14px;
+    margin-right:20px;
+}
+
+.icon {
+    display:inline-block;
+    vertical-align:middle;
+}
+
+.icon img{
+    
+}
+
+#summaryBar .highlighed{
+    font-weight:bold;
+}
+
+.user {
+    background-image:url(../CommonIcons/user.png);
+    width:16px;
+    height:16px;
+    background-repeat:no-repeat;
+}
+
+.payment {
+    background-image:url(../CommonIcons/dollar.png);
+    width:16px;
+    height:16px;
+    background-repeat:no-repeat;
+}
+
+
+
+table#main-page{
+    width:100%;
+    border:none;
+    height:100%;
+}
+
+td#left-page{
+    width:200px;
+    vertical-align:top;
+}
+
+td#right-page{
+    vertical-align:top;
+}
+
+.frame_orderpages {
+    width:100%;
+    min-height:800px;
+}

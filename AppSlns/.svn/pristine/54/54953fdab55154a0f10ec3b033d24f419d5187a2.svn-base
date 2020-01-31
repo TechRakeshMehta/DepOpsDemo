@@ -1,0 +1,70 @@
+﻿<%-- 
+Copyright 2011 Intersoft Data Labs.
+All rights are reserved.  Reproduction or transmission in whole or in part, in
+any form or by any means, electronic, mechanical or otherwise, is prohibited
+without the prior written consent of the copyright owner.
+
+Filename:  DynamicPageMaster.Master
+Purpose:  Creates a master layout for the custom pages of the application
+
+Revisions:
+Author           Date               Comment
+------           ----------         -------------------------------------------------
+Sachin Singh    27-Sep-2013 0900   - Created DynamicPageMaster
+
+--%>
+
+<%@ Master Language="C#" AutoEventWireup="true"
+    Inherits="CoreWeb.Shell.MasterPages.DynamicPageMaster" Codebehind="DynamicPageMaster.master.cs" %>
+
+<%@ Register TagPrefix="infs" Namespace="INTERSOFT.WEB.UI.WebControls" Assembly="INTERSOFT.WEB.UI" %>
+<%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
+<%@ Register TagPrefix="infsu" TagName="Toolbar" Src="~/Shared/Controls/ToolBar.ascx" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="AppHead" runat="server">
+    <%-- Bug#7391 - Removing title  --%>
+    <%-- <asp:ContentPlaceHolder ID="AppHeadContent" runat="server">
+    </asp:ContentPlaceHolder>--%>
+    <!--[if gte IE 6]>
+        <style>
+            #ost-user-info, #ost-user-session {padding-top:2px;}
+        </style>
+    <![endif]-->
+</head>
+<body>
+    <form id="frmApp" runat="server">
+    <%-- Managers --%>
+    <div>
+        <asp:ScriptManager ID="scmApp" runat="server" EnablePartialRendering="true" AsyncPostBackTimeout="360000"
+            ScriptMode="Release">
+        </asp:ScriptManager>
+        <infs:WclStyleSheetManager runat="server" ID="cssMgr">
+        </infs:WclStyleSheetManager>
+        <infs:WclResourceManager runat="server" ID="rsrMgr" EnableBrowserSupport="true" SupportCssPath="~/Resources/Generic/Client"
+            SupportScriptPath="~/Resources/Generic/Client" OnInit="rsrMgr_Init" AllowTheming="true"
+            ThemesFolder="~/Resources/Themes" ThemeFiles="colors.css" WindowCheckFailUrl="/Default.aspx"
+            EnableWindowCheck="true" SupportedBrowsers="ie7,ie8,ie9" SupportedEngines="trident"
+            EnableEngineSupport="true" />
+    </div>
+    <div id="base_wrapper">
+        <infs:WclSplitter ID="rdspTwoRows" runat="server" Orientation="Horizontal" FullScreenMode="true"
+            BorderSize="0" BorderWidth="0" ResizeWithBrowserWindow="true">
+            <infs:WclPane ID="rdpnTopRow" runat="server" MinHeight="120" Height="80" Scrolling="X"
+                CssClass="tplTopPanel">
+                <div id="apphdrwr">
+                    <div id="apphdr">
+                        <asp:Literal ID="litHeader" runat="server"></asp:Literal>
+                    </div>
+                </div>
+            </infs:WclPane>
+            <infs:WclPane ID="rdpnButtomRow" runat="server" Scrolling="X" CssClass="relpos">
+                <div id="modoutwr" style="overflow: auto;">
+                    <asp:ContentPlaceHolder ID="DefaultContent" runat="server" />
+                </div>
+            </infs:WclPane>
+        </infs:WclSplitter>
+    </div>
+    </form>
+</body>
+</html>

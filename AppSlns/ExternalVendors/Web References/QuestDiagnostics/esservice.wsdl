@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://wssim.labone.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://wssim.labone.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Employer Services Web Service Interface</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://wssim.labone.com/">
+      <s:element name="CreateOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrderXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateOrderResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrderXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateOrderResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TestID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RemoveOrderResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FullRetrieveCollectionSiteDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FullRetrieveCollectionSiteDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FullRetrieveCollectionSiteDetailsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateRetrieveCollectionSiteDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fromDate" nillable="true" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateRetrieveCollectionSiteDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateRetrieveCollectionSiteDetailsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CreateOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateOrder" />
+  </wsdl:message>
+  <wsdl:message name="CreateOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateOrder" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveOrder" />
+  </wsdl:message>
+  <wsdl:message name="RemoveOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="FullRetrieveCollectionSiteDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:FullRetrieveCollectionSiteDetails" />
+  </wsdl:message>
+  <wsdl:message name="FullRetrieveCollectionSiteDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:FullRetrieveCollectionSiteDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRetrieveCollectionSiteDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateRetrieveCollectionSiteDetails" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRetrieveCollectionSiteDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateRetrieveCollectionSiteDetailsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ESServiceSoap">
+    <wsdl:operation name="CreateOrder">
+      <wsdl:input message="tns:CreateOrderSoapIn" />
+      <wsdl:output message="tns:CreateOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrder">
+      <wsdl:input message="tns:UpdateOrderSoapIn" />
+      <wsdl:output message="tns:UpdateOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveOrder">
+      <wsdl:input message="tns:RemoveOrderSoapIn" />
+      <wsdl:output message="tns:RemoveOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FullRetrieveCollectionSiteDetails">
+      <wsdl:input message="tns:FullRetrieveCollectionSiteDetailsSoapIn" />
+      <wsdl:output message="tns:FullRetrieveCollectionSiteDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRetrieveCollectionSiteDetails">
+      <wsdl:input message="tns:UpdateRetrieveCollectionSiteDetailsSoapIn" />
+      <wsdl:output message="tns:UpdateRetrieveCollectionSiteDetailsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ESServiceSoap" type="tns:ESServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateOrder">
+      <soap:operation soapAction="http://wssim.labone.com/CreateOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrder">
+      <soap:operation soapAction="http://wssim.labone.com/UpdateOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveOrder">
+      <soap:operation soapAction="http://wssim.labone.com/RemoveOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FullRetrieveCollectionSiteDetails">
+      <soap:operation soapAction="http://wssim.labone.com/FullRetrieveCollectionSiteDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRetrieveCollectionSiteDetails">
+      <soap:operation soapAction="http://wssim.labone.com/UpdateRetrieveCollectionSiteDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ESServiceSoap12" type="tns:ESServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateOrder">
+      <soap12:operation soapAction="http://wssim.labone.com/CreateOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrder">
+      <soap12:operation soapAction="http://wssim.labone.com/UpdateOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveOrder">
+      <soap12:operation soapAction="http://wssim.labone.com/RemoveOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FullRetrieveCollectionSiteDetails">
+      <soap12:operation soapAction="http://wssim.labone.com/FullRetrieveCollectionSiteDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRetrieveCollectionSiteDetails">
+      <soap12:operation soapAction="http://wssim.labone.com/UpdateRetrieveCollectionSiteDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ESService">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Employer Services Web Service Interface</wsdl:documentation>
+    <wsdl:port name="ESServiceSoap" binding="tns:ESServiceSoap">
+      <soap:address location="https://qcs-qa.qdx.com/services/esservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ESServiceSoap12" binding="tns:ESServiceSoap12">
+      <soap12:address location="https://qcs-qa.qdx.com/services/esservice.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

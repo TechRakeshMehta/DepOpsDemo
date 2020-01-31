@@ -1,0 +1,13 @@
+.btn-primary {
+    background-color: rgb(139,24,32) !important;
+    border: none !important;
+  }
+  
+    .btn-primary:hover {
+        background-color: rgb(45,51,70) !important;
+        border: none !important;
+    }
+
+    .container{
+        width: 100vw;
+    }

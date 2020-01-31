@@ -1,0 +1,375 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Data>
+  <Users>
+    <User ID="auttam" Email="auttam@americandatabank.com" Institution="ADB" Role="ADMIN" Location="Colorado" FirstName="Ashish" LastName="Uttam"/>
+    <User ID="mdabas" Email="mdabas@americandatabank.com" Institution="Liberty" Role="ADMIN" Location="Colorado" FirstName="Manish" LastName="Dabas"/>
+    <User ID="akaur" Email="akaur@americandatabank.com" Institution="Liberty" Role="CLIENT" Location="Colorado" FirstName="Amandeep" LastName="Kaur"/>
+  </Users>
+  <Messaging>
+    <Inbox>
+      <Message IsFlagged="" Important="" HasAttachement="" From="Ashish Uttam" Subject="Test Message" Date="2/3/2013" Message="This is a test message" Organization="Liberty University" Location="Colorado"/>
+      <Message IsFlagged="" Important="" HasAttachement="" From="Ashish Uttam" Subject="Test Message" Date="2/3/2013" Message="This is a test message" Organization="Liberty University" Location="Colorado"/>
+      <Message IsFlagged="" Important="" HasAttachement="" From="Ashish Uttam" Subject="Test Message" Date="2/3/2013" Message="This is a test message" Organization="Liberty University" Location="Colorado"/>
+      <Message IsFlagged="" Important="" HasAttachement="" From="Ashish Uttam" Subject="Test Message" Date="2/3/2013" Message="This is a test message" Organization="Liberty University" Location="Colorado"/>
+      <Message IsFlagged="" Important="" HasAttachement="" From="Manish Dabas" Subject="Test Message" Date="2/5/2013" Message="This is a test message" Organization="Liberty University" Location="Colorado"/>
+      <Message IsFlagged="" Important="" HasAttachement="" From="Manish Dabas" Subject="Test Message" Date="2/5/2013" Message="This is a test message" Organization="Liberty University" Location="Colorado"/>
+      <Message IsFlagged="" Important="" HasAttachement="" From="Manish Dabas" Subject="Test Message" Date="2/5/2013" Message="This is a test message" Organization="Liberty University" Location="Colorado"/>
+      <Message IsFlagged="" Important="" HasAttachement="" From="Manish Dabas" Subject="Test Message" Date="2/5/2013" Message="This is a test message" Organization="Liberty University" Location="Colorado"/>
+      <Message IsFlagged="" Important="" HasAttachement="" From="Manish Dabas" Subject="Test Message" Date="2/5/2013" Message="This is a test message" Organization="Liberty University" Location="Colorado"/>
+      <Message IsFlagged="" Important="" HasAttachement="" From="Manish Dabas" Subject="Test Message" Date="2/5/2013" Message="This is a test message" Organization="Liberty University" Location="Colorado"/>
+      <Message IsFlagged="" Important="" HasAttachement="" From="Manish Dabas" Subject="Test Message" Date="2/5/2013" Message="This is a test message" Organization="Liberty University" Location="Colorado"/>
+      <Message IsFlagged="" Important="" HasAttachement="" From="Manish Dabas" Subject="Test Message" Date="2/5/2013" Message="This is a test message" Organization="Liberty University" Location="Colorado"/>
+      <Message IsFlagged="" Important="" HasAttachement="" From="Manish Dabas" Subject="Test Message" Date="2/5/2013" Message="This is a test message" Organization="Liberty University" Location="Colorado"/>
+      <Message IsFlagged="" Important="" HasAttachement="" From="Manish Dabas" Subject="Test Message" Date="2/5/2013" Message="This is a test message" Organization="Liberty University" Location="Colorado"/>
+      <Message IsFlagged="" Important="" HasAttachement="" From="Manish Dabas" Subject="Test Message" Date="2/5/2013" Message="This is a test message" Organization="Liberty University" Location="Colorado"/>
+      <Message IsFlagged="" Important="" HasAttachement="" From="Manish Dabas" Subject="Test Message" Date="2/5/2013" Message="This is a test message" Organization="Liberty University" Location="Colorado"/>
+      <Message IsFlagged="" Important="" HasAttachement="" From="Manish Dabas" Subject="Test Message" Date="2/5/2013" Message="This is a test message" Organization="Liberty University" Location="Colorado"/>
+      <Message IsFlagged="" Important="" HasAttachement="" From="Manish Dabas" Subject="Test Message" Date="2/5/2013" Message="This is a test message" Organization="Liberty University" Location="Colorado"/>
+      <Message IsFlagged="" Important="" HasAttachement="" From="Manish Dabas" Subject="Test Message" Date="2/5/2013" Message="This is a test message" Organization="Liberty University" Location="Colorado"/>
+      <Message IsFlagged="" Important="" HasAttachement="" From="Manish Dabas" Subject="Test Message" Date="2/5/2013" Message="This is a test message" Organization="Liberty University" Location="Colorado"/>
+      <Message IsFlagged="" Important="" HasAttachement="" From="Manish Dabas" Subject="Test Message" Date="2/5/2013" Message="This is a test message" Organization="Liberty University" Location="Colorado"/>
+      <Message IsFlagged="" Important="" HasAttachement="" From="Manish Dabas" Subject="Test Message" Date="2/5/2013" Message="This is a test message" Organization="Liberty University" Location="Colorado"/>
+      <Message IsFlagged="" Important="" HasAttachement="" From="Manish Dabas" Subject="Test Message" Date="2/5/2013" Message="This is a test message" Organization="Liberty University" Location="Colorado"/>
+      <Message IsFlagged="" Important="" HasAttachement="" From="Manish Dabas" Subject="Test Message" Date="2/5/2013" Message="This is a test message" Organization="Liberty University" Location="Colorado"/>
+      <Message IsFlagged="" Important="" HasAttachement="" From="Manish Dabas" Subject="Test Message" Date="2/5/2013" Message="This is a test message" Organization="Liberty University" Location="Colorado"/>
+      <Message IsFlagged="" Important="" HasAttachement="" From="Amandeep Kaur" Subject="Test Message" Date="2/8/2013" Message="This is a test message" Organization="Liberty University" Location="Ohio"/>
+      <Message IsFlagged="" Important="" HasAttachement="" From="Amandeep Kaur" Subject="Test Message" Date="2/8/2013" Message="This is a test message" Organization="Liberty University" Location="Ohio"/>
+      <Message IsFlagged="" Important="" HasAttachement="" From="Amandeep Kaur" Subject="Test Message" Date="2/8/2013" Message="This is a test message" Organization="Liberty University" Location="Ohio"/>
+      <Message IsFlagged="" Important="" HasAttachement="" From="Amandeep Kaur" Subject="Test Message" Date="2/8/2013" Message="This is a test message" Organization="Liberty University" Location="Ohio"/>
+      <Message IsFlagged="" Important="" HasAttachement="" From="Amandeep Kaur" Subject="Test Message" Date="2/8/2013" Message="This is a test message" Organization="Liberty University" Location="Ohio"/>
+      <Message IsFlagged="" Important="" HasAttachement="" From="Amandeep Kaur" Subject="Test Message" Date="2/8/2013" Message="This is a test message" Organization="Liberty University" Location="Ohio"/>
+      <Message IsFlagged="" Important="" HasAttachement="" From="Amandeep Kaur" Subject="Test Message" Date="2/8/2013" Message="This is a test message" Organization="Liberty University" Location="Ohio"/>
+      <Message IsFlagged="" Important="" HasAttachement="" From="Amandeep Kaur" Subject="Test Message" Date="2/8/2013" Message="This is a test message" Organization="Liberty University" Location="Ohio"/>
+      <Message IsFlagged="" Important="" HasAttachement="" From="Amandeep Kaur" Subject="Test Message" Date="2/8/2013" Message="This is a test message" Organization="Liberty University" Location="Ohio"/>
+
+    </Inbox>
+  </Messaging>
+  <ComplianceMaster>
+    <CategoryMaster>
+      <item CategoryID="1" ParentID="" CategoryName="MMR" Description="Main Categtory - MMR" Active="Yes" IsItem="false"/>
+      <item CategoryID="2" ParentID="" CategoryName="Category 2" Description="Category Description" Active="Yes" IsItem="false"/>
+      <item CategoryID="3" ParentID="" CategoryName="Category 3" Description="Category Description" Active="Yes" IsItem="false"/>
+      <item CategoryID="4" ParentID="" CategoryName="Category 4" Description="Category Description" Active="No" IsItem="false"/>
+      <item CategoryID="5" ParentID="" CategoryName="Category 5" Description="Category Description" Active="No" IsItem="false"/>
+    </CategoryMaster>
+
+    <ItemMaster>
+      <item ItemID="1" Name="MMR 1st" Description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ItemID consequat arcu, quis ultricies tortor." ItemType="Vaccination" ResultType="Yes/No" />
+      <item ItemID="2" Name="MMR 2nd" Description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ItemID consequat arcu, quis ultricies tortor." ItemType="Vaccination" ResultType="Yes/No" />
+      <item ItemID="3" Name="Measles Dose 1" Description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ItemID consequat arcu, quis ultricies tortor. Quisque malesuada luctus condimentum. In congue ligula sed risus congue mollis." ItemType="Dose" ResultType="Yes/No" />
+      <item ItemID="4" Name="Measles Dose 2" Description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ItemID consequat arcu, quis ultricies tortor. Quisque malesuada luctus condimentum. In congue ligula sed risus congue mollis." ItemType="Dose" ResultType="Positive/Negative" />
+      <item ItemID="5" Name="Titer Measles" Description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ItemID consequat arcu, quis ultricies tortor." ItemType="Vaccination" ResultType="Yes/No" />
+      <item ItemID="6" Name="Rubella Dose 1" Description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ItemID consequat arcu, quis ultricies tortor. Quisque malesuada luctus condimentum. In congue ligula sed risus congue mollis." ItemType="Dose" ResultType="Yes/No" />
+      <item ItemID="7" Name="Rubella Dose 2" Description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ItemID consequat arcu, quis ultricies tortor. Quisque malesuada luctus condimentum. In congue ligula sed risus congue mollis." ItemType="Dose" ResultType="Yes/No" />
+      <item ItemID="8" Name="Titer Rubella" Description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ItemID consequat arcu, quis ultricies tortor. Quisque malesuada luctus condimentum. In congue ligula sed risus congue mollis." ItemType="Vaccination" ResultType="Positive/Negative" />
+      <item ItemID="9" Name="Mumps Dose 1" Description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ItemID consequat arcu, quis ultricies tortor. Quisque malesuada luctus condimentum. In congue ligula sed risus congue mollis." ItemType="Dose" ResultType="Yes/No" />
+      <item ItemID="10" Name="Mumps Dose 2" Description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ItemID consequat arcu, quis ultricies tortor." ItemType="Dose" ResultType="Positive/Negative" />
+      <item ItemID="11" Name="Titer Mumps" Description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ItemID consequat arcu, quis ultricies tortor." ItemType="Vaccination" ResultType="Yes/No" />
+      <item ItemID="12" Name="Hepatitis B 1st Shot" Description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ItemID consequat arcu, quis ultricies tortor." ItemType="Vaccination" ResultType="Positive/Negative" />
+      <item ItemID="13" Name="Hepatitis B 2nd Shot" Description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ItemID consequat arcu, quis ultricies tortor." ItemType="Vaccination" ResultType="Yes/No" />
+      <item ItemID="14" Name="Hepatitis B 3rd Shot" Description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ItemID consequat arcu, quis ultricies tortor." ItemType="Vaccination" ResultType="Yes/No" />
+      <item ItemID="15" Name="Titier Hepatitis B" Description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ItemID consequat arcu, quis ultricies tortor." ItemType="Vaccination" ResultType="Positive/Negative" />
+      <item ItemID="16" Name="Varicella Dose 1" Description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ItemID consequat arcu, quis ultricies tortor." ItemType="Dose" ResultType="Yes/No" />
+      <item ItemID="17" Name="Varicella Dose 2" Description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ItemID consequat arcu, quis ultricies tortor." ItemType="Dose" ResultType="Yes/No" />
+      <item ItemID="18" Name="Titier Varicella" Description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ItemID consequat arcu, quis ultricies tortor." ItemType="Vaccination" ResultType="Positive/Negative" />
+      <item ItemID="19" Name="Tetanus / Td" Description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ItemID consequat arcu, quis ultricies tortor." ItemType="Vaccination" ResultType="Yes/No" />
+      <item ItemID="20" Name="Flu Shot" Description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ItemID consequat arcu, quis ultricies tortor." ItemType="Vaccination" ResultType="Yes/No" />
+      <item ItemID="21" Name="Meningitis" Description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ItemID consequat arcu, quis ultricies tortor." ItemType="Vaccination" ResultType="Positive/Negative" />
+      <item ItemID="22" Name="PPD" Description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ItemID consequat arcu, quis ultricies tortor. Quisque malesuada luctus condimentum. In congue ligula sed risus congue mollis." ItemType="Vaccination" ResultType="Positive/Negative" />
+      <item ItemID="23" Name="PPD Positive" Description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ItemID consequat arcu, quis ultricies tortor. Quisque malesuada luctus condimentum. In congue ligula sed risus congue mollis." ItemType="Vaccination" ResultType="Yes/No" />
+      <item ItemID="24" Name="Chest X-Ray" Description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ItemID consequat arcu, quis ultricies tortor. Quisque malesuada luctus condimentum. In congue ligula sed risus congue mollis." ItemType="Other" ResultType="Yes/No" />
+      <item ItemID="25" Name="CPR AHA BLS" Description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id consequat arcu, quis ultricies tortor. Quisque malesuada luctus condimentum. In congue ligula sed risus congue mollis." ItemType="Other" ResultType="Yes/No" />
+    </ItemMaster>
+    <ComplianceTemplate>
+      <item CategoryID="1" ParentID="" CategoryName="MMR" Description="Main Categtory - MMR" Active="Yes" />
+      <item CategoryID="2" ParentID="" CategoryName="Category 2" Description="Category Description" Active="Yes" />
+      <item CategoryID="3" ParentID="" CategoryName="Category 3" Description="Category Description" Active="Yes" />
+      <item CategoryID="4" ParentID="" CategoryName="Category 4" Description="Category Description" Active="No" />
+      <item CategoryID="5" ParentID="" CategoryName="Category 5" Description="Category Description" Active="No" />
+    </ComplianceTemplate>
+    <CompliancePackages>
+      <item PackageName="Sophomore Compliance Requirements" State="Active" Description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."/>
+      <item PackageName="Junior &amp; Senior Compliance Requirements" State="Active" Description="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
+    </CompliancePackages>
+    <ItemAttributes>
+      <item ID="1" AttributeName="Start Date" Description="" AttributeType="Manual" DataType="Date" Visible="True" Editable="True" DisplayOrder="1" />
+      <item ID="2" AttributeName="Expiry Date" Description="" AttributeType="Calculated" DataType="Date" Visible="True" Editable="False" DisplayOrder="2" />
+      <item ID="3" AttributeName="Provider Name" Description="" AttributeType="Manual" DataType="Text" Visible="True" Editable="True" DisplayOrder="3" />
+      <item ID="4" AttributeName="Result Type" Description="" AttributeType="Manual" DataType="List" Visible="True" Editable="True" DisplayOrder="5" />
+      <!--<item ID="5" AttributeName="Result Type" Description="Yes/No Type" AttributeType="Manual" DataType="List" Visible="True" Editable="True" DisplayOrder="4" />      
+      <item ID="6" AttributeName="Result Type" Description="Positive/Negative Type" AttributeType="Manual" DataType="List" Visible="True" Editable="True" DisplayOrder="6" />
+      <item ID="7" AttributeName="Other Field" Description="Other Field Description" AttributeType="Manual" DataType="List" Visible="True" Editable="True" DisplayOrder="7" />-->
+    </ItemAttributes>
+    <AttributeTypes>
+      <item ID="1" Name="Manual" />
+      <item ID="2" Name="WorkFlow Result" />
+    </AttributeTypes>
+    <DataTypes>
+      <data Name="Date" Control="WclDatePicker" />
+      <data Name="Text" Control="WclTextBox" />
+      <data Name="List" Control="WclCombobox" />
+      <data Name="Upload" Control="WclFileUpload" />
+    </DataTypes>
+    <!--<AllRequirements>
+      <item ParentID="" ItemID="1" Name="MMR"  ItemType="Vaccination" ResultType="Yes/No" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="1" />
+      <item ParentID="" ItemID="2" Name="Hepatitis"  ItemType="Vaccination" ResultType="Yes/No" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" />
+      <item ParentID="" ItemID="3" Name="Varicella"  ItemType="Vaccination" ResultType="Yes/No" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" />
+      <item ParentID="" ItemID="4" Name="Tetanus / Td"  ItemType="Vaccination" ResultType="Yes/No" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" />
+      <item ParentID="" ItemID="5" Name="Flu Shot"  ItemType="Vaccination" ResultType="Yes/No" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" />
+      <item ParentID="" ItemID="6" Name="Meningitis"  ItemType="Vaccination" ResultType="Yes/No" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" />
+      <item ParentID="" ItemID="7" Name="PPD"  ItemType="Vaccination" ResultType="Yes/No" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" />
+      <item ParentID="" ItemID="8" Name="CPR AHA BLS"  ItemType="Vaccination" ResultType="Yes/No" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" />
+      <item ParentID="" ItemID="9" Name="Sample"  ItemType="Vaccination" ResultType="Yes/No" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" />
+      <item ParentID="9" ItemID="11" Name="MMR 1st"  ItemType="Vaccination" ResultType="Yes/No" ComplianceStatus="Compliant" ReviewStatus="Not Reviewed" HasDocument="1" />
+      <item ParentID="9" ItemID="12" Name="MMR 2nd"  ItemType="Vaccination" ResultType="Yes/No" ComplianceStatus="Compliant" ReviewStatus="Not Reviewed" HasDocument="1" />
+      <item ParentID="9" ItemID="13" Name="Measles Dose 1"  ItemType="Dose" ResultType="Yes/No" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" />
+      <item ParentID="9" ItemID="14" Name="Measles Dose 2"  ItemType="Dose" ResultType="Positive/Negative" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="1" />
+      <item ParentID="9" ItemID="15" Name="Titer Measles"  ItemType="Vaccination" ResultType="Yes/No" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" />
+      <item ParentID="9" ItemID="16" Name="Rubella Dose 1"  ItemType="Dose" ResultType="Yes/No" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" />
+      <item ParentID="9" ItemID="17" Name="Rubella Dose 2"  ItemType="Dose" ResultType="Yes/No" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="1" />
+      <item ParentID="9" ItemID="18" Name="Titer Rubella"  ItemType="Vaccination" ResultType="Positive/Negative" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" />
+      <item ParentID="9" ItemID="19" Name="Mumps Dose 1"  ItemType="Dose" ResultType="Yes/No" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" />
+      <item ParentID="9" ItemID="110" Name="Mumps Dose 2"  ItemType="Dose" ResultType="Positive/Negative" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" />
+      <item ParentID="9" ItemID="111" Name="Titer Mumps"  ItemType="Vaccination" ResultType="Yes/No" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" />
+      <item ParentID="5" ItemID="120" Name="Flu Shot"  ItemType="Vaccination" ResultType="Yes/No" ComplianceStatus="Compliant" ReviewStatus="Reviewed" HasDocument="0" />
+    </AllRequirements>-->
+    <!--<AllRequirements>
+      <item ParentID="" ItemID="1" Name="MMR"  ItemType="Vaccination" ResultType="Yes/No" ComplianceStatus="Compliant" ReviewStatus="Reviewed" HasDocument="1" />
+      <item ParentID="" ItemID="2" Name="Hepatitis"  ItemType="Vaccination" ResultType="Yes/No" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" />
+      <item ParentID="" ItemID="3" Name="Varicella"  ItemType="Vaccination" ResultType="Yes/No" ComplianceStatus="Compliant" ReviewStatus="Reviewed" HasDocument="0" />
+      <item ParentID="" ItemID="4" Name="Tetanus / Td"  ItemType="Vaccination" ResultType="Yes/No" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" />
+      <item ParentID="" itemID="5" Name="Flu Shot"  ItemType="Vaccination" ResultType="Yes/No" ComplianceStatus="Compliant" ReviewStatus="Reviewed" HasDocument="0" />
+      <item ParentID="" ItemID="6" Name="Meningitis"  ItemType="Vaccination" ResultType="Yes/No" ComplianceStatus="Compliant" ReviewStatus="Reviewed" HasDocument="0" />
+      <item ParentID="" ItemID="7" Name="PPD"  ItemType="Vaccination" ResultType="Yes/No" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" />
+      <item ParentID="" ItemID="8" Name="CPR AHA BLS"  ItemType="Vaccination" ResultType="Yes/No" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" />
+      <item ParentID="1" ItemID="11" Name="MMR 1st"  ItemType="Vaccination" ResultType="Yes/No" ComplianceStatus="Compliant" ReviewStatus="Not Reviewed" HasDocument="1" />
+      <item ParentID="1" ItemID="12" Name="MMR 2nd"  ItemType="Vaccination" ResultType="Yes/No" ComplianceStatus="Compliant" ReviewStatus="Not Reviewed" HasDocument="1" />
+      <item ParentID="1" ItemID="13" Name="Measles Dose 1"  ItemType="Dose" ResultType="Yes/No" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" />
+      <item ParentID="1" ItemID="14" Name="Measles Dose 2"  ItemType="Dose" ResultType="Positive/Negative" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="1" />
+      <item ParentID="1" ItemID="15" Name="Titer Measles"  ItemType="Vaccination" ResultType="Yes/No" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" />
+      <item ParentID="1" ItemID="16" Name="Rubella Dose 1"  ItemType="Dose" ResultType="Yes/No" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" />
+      <item ParentID="1" ItemID="17" Name="Rubella Dose 2"  ItemType="Dose" ResultType="Yes/No" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="1" />
+      <item ParentID="1" ItemID="18" Name="Titer Rubella"  ItemType="Vaccination" ResultType="Positive/Negative" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" />
+      <item ParentID="1" ItemID="19" Name="Mumps Dose 1"  ItemType="Dose" ResultType="Yes/No" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" />
+      <item ParentID="1" ItemID="110" Name="Mumps Dose 2"  ItemType="Dose" ResultType="Positive/Negative" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" />
+      <item ParentID="1" ItemID="111" Name="Titer Mumps"  ItemType="Vaccination" ResultType="Yes/No" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" />
+      <item ParentID="2" ItemID="112" Name="Hepatitis B 1st Shot"  ItemType="Vaccination" ResultType="Positive/Negative" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" />
+      <item ParentID="2" ItemID="113" Name="Hepatitis B 2nd Shot"  ItemType="Vaccination" ResultType="Yes/No" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="1" />
+      <item ParentID="2" ItemID="114" Name="Hepatitis B 3rd Shot"  ItemType="Vaccination" ResultType="Yes/No" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" />
+      <item ParentID="2" ItemID="115" Name="Titier Hepatitis B"  ItemType="Vaccination" ResultType="Positive/Negative" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" />
+      <item ParentID="3" ItemID="116" Name="Varicella Dose 1"  ItemType="Dose" ResultType="Yes/No" ComplianceStatus="Compliant" ReviewStatus="Reviewed" HasDocument="0" />
+      <item ParentID="3" ItemID="117" Name="Varicella Dose 2"  ItemType="Dose" ResultType="Yes/No" ComplianceStatus="Compliant" ReviewStatus="Reviewed" HasDocument="0" />
+      <item ParentID="3" ItemID="118" Name="Titier Varicella"  ItemType="Vaccination" ResultType="Positive/Negative" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" />
+      <item ParentID="4" ItemID="119" Name="Tetanus / Td"  ItemType="Vaccination" ResultType="Yes/No" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" />
+      <item ParentID="5" ItemID="120" Name="Flu Shot"  ItemType="Vaccination" ResultType="Yes/No" ComplianceStatus="Compliant" ReviewStatus="Reviewed" HasDocument="0" />
+      <item ParentID="6" ItemID="121" Name="Meningitis"  ItemType="Vaccination" ResultType="Positive/Negative" ComplianceStatus="Compliant" ReviewStatus="Reviewed" HasDocument="0" />
+      <item ParentID="7" ItemID="122" Name="PPD"  ItemType="Vaccination" ResultType="Positive/Negative" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" />
+      <item ParentID="7" ItemID="123" Name="PPD Positive"  ItemType="Vaccination" ResultType="Yes/No" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" />
+      <item ParentID="7" ItemID="124" Name="Chest X-Ray"  ItemType="Other" ResultType="Yes/No" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" />
+      <item ParentID="8" ItemID="125" Name="CPR AHA BLS"  ItemType="Other" ResultType="Yes/No" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" />
+    </AllRequirements>-->
+
+    <ComplianceSetup>
+      <Categories>
+        <item  ID="1" Name="MMR" Label="MMR" State="Active" Description="" />
+        <item  ID="2" Name="Hepatitis" Label="Hepatitis" State="Active" Description="" />
+        <item  ID="3" Name="Varicella" Label="Varicella" State="Active" Description="" />
+        <item  ID="4" Name="Tetanus / Td" Label="Tetanus / Td" State="Active" Description="" />
+        <item  ID="5" Name="Flu Shot" Label="Flu Shot" State="Active" Description="" />
+        <item  ID="6" Name="Meningitis" Label="Meningitis" State="Active" Description="" />
+        <item  ID="7" Name="PPD" Label="PPD" State="Active" Description="" />
+        <item  ID="8" Name="CPR AHA BLS" Label="CPR AHA BLS" State="Active" Description="" />
+      </Categories>
+      <Items>
+        <item ID="1" Name="MMR 1st" Description="Lorem ipsum dolor sit amet, consectetur adipiscing elit." ItemType="Vaccination"  />
+        <item ID="2" Name="MMR 2nd" Description="Lorem ipsum dolor sit amet, consectetur adipiscing elit." ItemType="Vaccination"  />
+        <item ID="3" Name="Measles Dose 1" Description="Lorem ipsum dolor sit amet, consectetur adipiscing elit." ItemType="Dose"  />
+        <item ID="4" Name="Measles Dose 2" Description="Lorem ipsum dolor sit amet, consectetur adipiscing elit." ItemType="Dose"  />
+        <item ID="5" Name="Titer Measles" Description="Lorem ipsum dolor sit amet, consectetur adipiscing elit." ItemType="Vaccination"  />
+        <item ID="6" Name="Rubella Dose 1" Description="Lorem ipsum dolor sit amet, consectetur adipiscing elit." ItemType="Dose"  />
+        <item ID="7" Name="Rubella Dose 2" Description="Lorem ipsum dolor sit amet, consectetur adipiscing elit." ItemType="Dose"  />
+        <item ID="8" Name="Titer Rubella" Description="Lorem ipsum dolor sit amet, consectetur adipiscing elit." ItemType="Vaccination"  />
+        <item ID="9" Name="Mumps Dose 1" Description="Lorem ipsum dolor sit amet, consectetur adipiscing elit." ItemType="Dose"  />
+        <item ID="10" Name="Mumps Dose 2" Description="Lorem ipsum dolor sit amet, consectetur adipiscing elit." ItemType="Dose"  />
+        <item ID="11" Name="Titer Mumps" Description="Lorem ipsum dolor sit amet, consectetur adipiscing elit." ItemType="Vaccination"  />
+      </Items>
+      <Attributes>
+        <item ID="1" Name="Start Date" Label="Start Date" Description="Lorem ipsum dolor sit amet." AttributeType="Manual" DataType="Date" DisplayOrder="1" />
+        <item ID="2" Name="Expiry Date" Label="Expiry Date" Description="Lorem ipsum dolor sit amet." AttributeType="Calculated" DataType="Date"  DisplayOrder="2" />
+        <item ID="3" Name="Provider Name" Label="Provider Date" Description="Lorem ipsum dolor sit amet." AttributeType="Manual" DataType="Text" DisplayOrder="3" />
+        <item ID="3" Name="Documents" Label="Documents" Description="Lorem ipsum dolor sit amet." AttributeType="Manual" DataType="Text" DisplayOrder="4" />
+      </Attributes>
+    </ComplianceSetup>
+
+    <DataEntry>
+      <Data>
+        <item CategoryID="" ItemID="1" Name="MMR" ReviewStatus="Incomplete" HasDocument="1"  Exception="" />
+        <item CategoryID="" ItemID="2" Name="Hepatitis" ReviewStatus="Incomplete" HasDocument="0"  Exception="" />
+        <item CategoryID="" ItemID="3" Name="Varicella" ReviewStatus="Incomplete" HasDocument="0"  Exception="" />
+        <item CategoryID="" ItemID="4" Name="Tetanus / Td" ReviewStatus="Incomplete" HasDocument="0"  Exception="" />
+        <item CategoryID="" itemID="5" Name="Flu Shot" ReviewStatus="Incomplete" HasDocument="0"  Exception="" />
+        <item CategoryID="" ItemID="6" Name="Meningitis" ReviewStatus="Incomplete" HasDocument="0"  Exception="" />
+        <item CategoryID="" ItemID="7" Name="PPD" ReviewStatus="Incomplete" HasDocument="0"  Exception="" />
+        <item CategoryID="" ItemID="8" Name="CPR AHA BLS" ReviewStatus="Incomplete" HasDocument="0"  Exception="" />
+
+        <item CategoryID="1" ItemID="11" Name="MMR 1st" ReviewStatus="Pending for review" HasDocument="1"  Exception="" />
+        <!--<item CategoryID="9" ItemID="12" Name="MMR 2nd" ReviewStatus="Approved" HasDocument="1"  Exception="" />
+        <item CategoryID="1" ItemID="13" Name="Measles Dose 1" ReviewStatus="Approved" HasDocument="0"  Exception="" />
+        <item CategoryID="1" ItemID="14" Name="Measles Dose 2" ReviewStatus="Approved" HasDocument="1"  Exception="" />
+        <item CategoryID="9" ItemID="15" Name="Titer Measles" ReviewStatus="Approved" HasDocument="0"  Exception="" />
+        <item CategoryID="9" ItemID="16" Name="Rubella Dose 1" ReviewStatus="Approved" HasDocument="0"  Exception="" />
+        <item CategoryID="9" ItemID="17" Name="Rubella Dose 2" ReviewStatus="Approved" HasDocument="1"  Exception="" />
+        <item CategoryID="1" ItemID="18" Name="Titer Rubella" ReviewStatus="Approved" HasDocument="0"  Exception="" />
+        <item CategoryID="9" ItemID="19" Name="Mumps Dose 1" ReviewStatus="Approved" HasDocument="0"  Exception="" />
+        <item CategoryID="9" ItemID="110" Name="Mumps Dose 2" ReviewStatus="Approved" HasDocument="0"  Exception="" />
+        <item CategoryID="1" ItemID="111" Name="Titer Mumps" ReviewStatus="Approved" HasDocument="0"  Exception="" />
+        <item CategoryID="2" ItemID="112" Name="Hepatitis B 1st Shot" ReviewStatus="Pending Review" HasDocument="0"  Exception="Yes" />
+        <item CategoryID="2" ItemID="113" Name="Hepatitis B 2nd Shot" ReviewStatus="Pending Review" HasDocument="1"  Exception="Yes" />
+        <item CategoryID="2" ItemID="114" Name="Hepatitis B 3rd Shot" ReviewStatus="Pending Review" HasDocument="0"  Exception="" />
+        <item CategoryID="2" ItemID="115" Name="Titier Hepatitis B" ReviewStatus="Pending Review" HasDocument="0"  Exception="" />
+        <item CategoryID="3" ItemID="116" Name="Varicella Dose 1" ReviewStatus="Pending Review" HasDocument="0"  Exception="" />
+        <item CategoryID="3" ItemID="117" Name="Varicella Dose 2" ReviewStatus="Pending Review" HasDocument="0"  Exception="" />
+        <item CategoryID="3" ItemID="118" Name="Titier Varicella" ReviewStatus="Pending Review" HasDocument="0"  Exception="" />
+        <item CategoryID="4" ItemID="119" Name="Tetanus / Td" ReviewStatus="Pending Review" HasDocument="0"  Exception="" />
+        <item CategoryID="5" ItemID="120" Name="Flu Shot" ReviewStatus="Pending Review" HasDocument="0"  Exception="" />
+        <item CategoryID="6" ItemID="121" Name="Meningitis" ReviewStatus="Pending Review" HasDocument="0"  Exception="" />
+        <item CategoryID="7" ItemID="122" Name="PPD" ReviewStatus="Pending Review" HasDocument="0"  Exception="" />
+        <item CategoryID="7" ItemID="123" Name="PPD Positive" ReviewStatus="Pending Review" HasDocument="0"  Exception="" />
+        <item CategoryID="7" ItemID="124" Name="Chest X-Ray" ReviewStatus="Pending Review" HasDocument="0"  Exception="" />
+        <item CategoryID="8" ItemID="125" Name="CPR AHA BLS" ReviewStatus="Pending Review" HasDocument="0"  Exception="" />-->
+      </Data>
+    </DataEntry>
+    <CategoryTree>
+      <item ParentID="" ItemID="1" Name="MMR"  ItemType="Vaccination" ResultType="Yes/No" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="1" >
+        <item ParentID="1" ItemID="11" Name="MMR 1st"  ItemType="Vaccination" ResultType="Yes/No" ComplianceStatus="Compliant" ReviewStatus="Not Reviewed" HasDocument="1" />
+        <item ParentID="1" ItemID="12" Name="MMR 2nd"  ItemType="Vaccination" ResultType="Yes/No" ComplianceStatus="Compliant" ReviewStatus="Not Reviewed" HasDocument="1" />
+        <item ParentID="1" ItemID="13" Name="Measles Dose 1"  ItemType="Dose" ResultType="Yes/No" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" />
+        <item ParentID="1" ItemID="14" Name="Measles Dose 2"  ItemType="Dose" ResultType="Positive/Negative" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="1" />
+        <item ParentID="1" ItemID="15" Name="Titer Measles"  ItemType="Vaccination" ResultType="Yes/No" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" />
+        <item ParentID="1" ItemID="16" Name="Rubella Dose 1"  ItemType="Dose" ResultType="Yes/No" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" />
+        <item ParentID="1" ItemID="17" Name="Rubella Dose 2"  ItemType="Dose" ResultType="Yes/No" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="1" />
+        <item ParentID="1" ItemID="18" Name="Titer Rubella"  ItemType="Vaccination" ResultType="Positive/Negative" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" />
+        <item ParentID="1" ItemID="19" Name="Mumps Dose 1"  ItemType="Dose" ResultType="Yes/No" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" />
+        <item ParentID="1" ItemID="110" Name="Mumps Dose 2"  ItemType="Dose" ResultType="Positive/Negative" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" />
+        <item ParentID="1" ItemID="111" Name="Titer Mumps"  ItemType="Vaccination" ResultType="Yes/No" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" />
+      </item>
+      <item ParentID="" ItemID="2" Name="Hepatitis"  ItemType="Vaccination" ResultType="Yes/No" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" >
+        <item ParentID="2" ItemID="112" Name="Hepatitis B 1st Shot"  ItemType="Vaccination" ResultType="Positive/Negative" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" />
+        <item ParentID="2" ItemID="113" Name="Hepatitis B 2nd Shot"  ItemType="Vaccination" ResultType="Yes/No" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="1" />
+        <item ParentID="2" ItemID="114" Name="Hepatitis B 3rd Shot"  ItemType="Vaccination" ResultType="Yes/No" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" />
+        <item ParentID="2" ItemID="115" Name="Titier Hepatitis B"  ItemType="Vaccination" ResultType="Positive/Negative" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" />
+      </item>
+      <item ParentID="" ItemID="3" Name="Varicella"  ItemType="Vaccination" ResultType="Yes/No" ComplianceStatus="Compliant" ReviewStatus="Reviewed" HasDocument="0" >
+        <item ParentID="3" ItemID="116" Name="Varicella Dose 1"  ItemType="Dose" ResultType="Yes/No" ComplianceStatus="Compliant" ReviewStatus="Reviewed" HasDocument="0" />
+        <item ParentID="3" ItemID="117" Name="Varicella Dose 2"  ItemType="Dose" ResultType="Yes/No" ComplianceStatus="Compliant" ReviewStatus="Reviewed" HasDocument="0" />
+        <item ParentID="3" ItemID="118" Name="Titier Varicella"  ItemType="Vaccination" ResultType="Positive/Negative" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" />
+      </item>
+      <item ParentID="" ItemID="4" Name="Tetanus / Td"  ItemType="Vaccination" ResultType="Yes/No" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0">
+        <item ParentID="4" ItemID="119" Name="Tetanus / Td"  ItemType="Vaccination" ResultType="Yes/No" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" />
+      </item>
+      <item ParentID="" ItemID="5" Name="Flu Shot"  ItemType="Vaccination" ResultType="Yes/No" ComplianceStatus="Compliant" ReviewStatus="Reviewed" HasDocument="0" >
+        <item ParentID="5" ItemID="120" Name="Flu Shot"  ItemType="Vaccination" ResultType="Yes/No" ComplianceStatus="Compliant" ReviewStatus="Reviewed" HasDocument="0" />
+      </item>
+      <item ParentID="" ItemID="6" Name="Meningitis"  ItemType="Vaccination" ResultType="Yes/No" ComplianceStatus="Compliant" ReviewStatus="Reviewed" HasDocument="0" >
+        <item ParentID="6" ItemID="121" Name="Meningitis"  ItemType="Vaccination" ResultType="Positive/Negative" ComplianceStatus="Compliant" ReviewStatus="Reviewed" HasDocument="0" />
+
+      </item>
+      <item ParentID="" ItemID="7" Name="PPD"  ItemType="Vaccination" ResultType="Yes/No" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" >
+        <item ParentID="7" ItemID="122" Name="PPD"  ItemType="Vaccination" ResultType="Positive/Negative" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" />
+        <item ParentID="7" ItemID="123" Name="PPD Positive"  ItemType="Vaccination" ResultType="Yes/No" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" />
+        <item ParentID="7" ItemID="124" Name="Chest X-Ray"  ItemType="Other" ResultType="Yes/No" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" />
+      </item>
+      <item ParentID="" ItemID="8" Name="CPR AHA BLS"  ItemType="Vaccination" ResultType="Yes/No" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" >
+        <item ParentID="8" ItemID="125" Name="CPR AHA BLS"  ItemType="Other" ResultType="Yes/No" ComplianceStatus="Not Compliant" ReviewStatus="Not Reviewed" HasDocument="0" />
+      </item>
+    </CategoryTree>
+  </ComplianceMaster>
+  <Organizations>
+    <Programs>
+      <Program ID="" Name="Program A" MgmtFee="$500" RenewalTerm="0"/>
+      <Program ID="" Name="Program B" MgmtFee="$400" RenewalTerm="12"/>
+      <Program ID="" Name="Program C" MgmtFee="$0" RenewalTerm="12"/>
+    </Programs>
+    <ProgramsTree>
+      <Item Name="ADB's Programs" id="1" parent_id="0"></Item>
+      <Item Name="Program 1" id="2" parent_id="1"></Item>
+      <Item Name="Program 2" id="3" parent_id="1"></Item>
+      <Item Name="Program 3" id="4" parent_id="1"></Item>
+    </ProgramsTree>
+    <CompliancePackages>
+      <item PackageName="Sophomore Compliance Requirements" State="Active" Description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."/>
+      <item PackageName="Junior &amp; Senior Compliance Requirements" State="Active" Description="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
+    </CompliancePackages>
+
+  </Organizations>
+
+  <!--<DocumentManager>
+    <Documents></Documents>
+  </DocumentManager>-->
+
+  <DocumentManager>
+    <Documents>
+      <Document ID="1" Name="File 1.doc" Size="200KB" LastModifiedBy="Applicant" LastModifiedOn="5/5/2013 1400">
+        <Metadata FileSize="200KB" FileType="JPG" Path="" PreviewPath="" />
+        <Mapping>
+          <Map ID="1" Package="Package Name" Category="Category Name" Item="ItemName" Status="Confirmed" />
+        </Mapping>
+      </Document>
+      <Document ID="2" Name="File 2.jpg" Size="203KB" LastModifiedBy="Applicant" LastModifiedOn="5/5/2013 1400">
+        <Metadata FileSize="1.9MB" FileType="WORD" Path="" PreviewPath="" />
+        <Mapping>
+          <Map ID="1" Package="Package Name" Category="Category Name" Item="ItemName" Status="Confirmed" />
+        </Mapping>
+      </Document>
+      <Document ID="3" Name="File 3.pdf" Size="203KB" LastModifiedBy="Applicant" LastModifiedOn="5/5/2013 1400">
+        <Metadata FileSize="1.9MB" FileType="WORD" Path="" PreviewPath="" />
+        <Mapping>
+          <Map ID="1" Package="Package Name" Category="Category Name" Item="ItemName" Status="Confirmed" />
+        </Mapping>
+      </Document>
+      <Document ID="4" Name="File 4.png" Size="203KB" LastModifiedBy="Applicant" LastModifiedOn="5/5/2013 1400">
+        <Metadata FileSize="1.9MB" FileType="WORD" Path="" PreviewPath="" />
+        <Mapping>
+          <Map ID="1" Package="Package Name" Category="Category Name" Item="ItemName" Status="Confirmed" />
+        </Mapping>
+      </Document>
+    </Documents>
+
+  </DocumentManager>
+
+
+  <MasterCompliance>
+    <MasterPackage>
+      <Package PackageName="PACK1" Description="Lorem ipsum dolor sit amet." ExplanatoryNotes="Lorem ipsum dolor sit amet." ExceptionDescription="Lorem ipsum dolor sit amet." PackageLabel="Sophomore Compliance Requirements" ScreenLabel="" IsActive="true" />
+      <Package PackageName="PACK2" Description="Lorem ipsum dolor sit amet." ExplanatoryNotes="Lorem ipsum dolor sit amet." ExceptionDescription="Lorem ipsum dolor sit amet." PackageLabel="Jr. Compliance Requirements" ScreenLabel="" IsActive="true" />
+      <Package PackageName="PACK3" Description="Lorem ipsum dolor sit amet." ExplanatoryNotes="Lorem ipsum dolor sit amet." ExceptionDescription="Lorem ipsum dolor sit amet." PackageLabel="Sr. Compliance Requirements" ScreenLabel="" IsActive="true" />
+    </MasterPackage>
+    <MasterCategory>
+      <Category CategoryName="CAT1" CategoryLabel="MMR" ScreenLabel="" Description="Lorem ipsum dolor sit amet." DisplayOrder="1"   ExplanatoryNotes="Lorem ipsum dolor sit amet." IsActive="True" />
+      <Category CategoryName="CAT2" CategoryLabel="Hepatitis" ScreenLabel="" Description="Lorem ipsum dolor sit amet." DisplayOrder="1"   ExplanatoryNotes="Lorem ipsum dolor sit amet." IsActive="True" />
+      <Category CategoryName="CAT3" CategoryLabel="Varicella" ScreenLabel="" Description="Lorem ipsum dolor sit amet." DisplayOrder="1"   ExplanatoryNotes="Lorem ipsum dolor sit amet." IsActive="True" />
+      <Category CategoryName="CAT4" CategoryLabel="Tetanus / Td" ScreenLabel="" Description="Lorem ipsum dolor sit amet." DisplayOrder="1"   ExplanatoryNotes="Lorem ipsum dolor sit amet." IsActive="True" />
+    </MasterCategory>
+    <MasterItems>
+      <Item ItemName="ITM1" ItemLabel="MMR1" ScreenLabel="" Description="Lorem ipsum dolor sit amet." EffectiveDate="7/7/2013" ExplanatoryNotes="Lorem ipsum dolor sit amet." IsActive="True" />
+      <Item ItemName="ITM2" ItemLabel="MMR2" ScreenLabel="" Description="Lorem ipsum dolor sit amet." EffectiveDate="7/7/2013" ExplanatoryNotes="Lorem ipsum dolor sit amet." IsActive="True" />
+      <Item ItemName="ITM3" ItemLabel="Rubella 1" ScreenLabel="" Description="Lorem ipsum dolor sit amet." EffectiveDate="7/7/2013" ExplanatoryNotes="Lorem ipsum dolor sit amet." IsActive="True" />
+      <Item ItemName="ITM4" ItemLabel="Rubella 2" ScreenLabel="" Description="Lorem ipsum dolor sit amet." EffectiveDate="7/7/2013" ExplanatoryNotes="Lorem ipsum dolor sit amet." IsActive="True" />
+    </MasterItems>
+    <MasterAttributes>
+      <Attribute AttributeName="ATR1" AttributeLabel="Start Date" ScreenLabel="" AttributeType="Manual" DataType="Date" ExplanatoryNotes="Lorem ipsum dolor sit amet." Description="Lorem ipsum dolor sit amet." IsActive="True" />
+      <Attribute AttributeName="ATR2" AttributeLabel="Provider's Name" ScreenLabel="" AttributeType="Manual" DataType="Text" ExplanatoryNotes="Lorem ipsum dolor sit amet." Description="Lorem ipsum dolor sit amet." IsActive="True" />
+      <Attribute AttributeName="ATR3" AttributeLabel="Expiry" ScreenLabel="" AttributeType="Calculated" DataType="Date" ExplanatoryNotes="Lorem ipsum dolor sit amet." Description="Lorem ipsum dolor sit amet." IsActive="True" />
+    </MasterAttributes>
+    <MasterRuleset>
+      <Ruleset RulesetName="" Description="" StartDate="" RuleSetType="" IsActive="" />
+    </MasterRuleset>
+    <MasterRules>
+      <Rule RulesName="" Description="" ResultType="" Message="" IsActive="" />
+    </MasterRules>
+    <MasterExpressions>
+      <Expression ExpressionName="" Description="" Expression="" ResultType="" IsActive="" />
+    </MasterExpressions>
+  </MasterCompliance>
+</Data>

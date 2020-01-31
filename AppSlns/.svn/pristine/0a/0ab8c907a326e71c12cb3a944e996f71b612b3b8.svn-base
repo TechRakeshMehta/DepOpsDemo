@@ -1,0 +1,11 @@
+﻿
+<div class="loader-block" *ngIf="enableSpinner">
+    <div class="col-md-12 loader-wrpr">
+        <div class="loader">
+            <img alt="Loading..." style="    width: 100px;
+            height: 100px;
+            border-radius: 50%;" class="img-responsive" src="images/loader.gif">
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,56 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace INTSOF.COMPLIO.TALKDESK.Models
+{
+    public class TalkDeskCreateJobResponse
+    {
+        //        {
+        //  "id": "57add63204c799583700028e",
+        //  "status": "created",
+        //  "timespan": {
+        //    "from": "2016-07-29 00:00:00 UTC",
+        //    "to": "2016-07-29 23:59:59 UTC"
+        //  },
+        //  "_links": {
+        //    "self": {
+        //      "href": "https://api.talkdeskdev.com/reports/calls/jobs/57add63204c799583700028e"
+        //    },
+        //    "files": {
+        //      "href": "https://api.talkdeskdev.com/reports/calls/files/57add63204c799583700028e"
+        //    }
+        //  }
+        //}
+
+        public string id { get; set; }
+        public string status { get; set; }
+
+        public JobTimespan timespan { get; set; }
+
+        public JobLinks _links { get; set; }
+    }
+
+    public class JobTimespan
+    {
+        public DateTime from { get; set; }
+        public DateTime to { get; set; }
+    }
+
+    public class JobLinks
+    {
+        public LinksSelf self { get; set; }
+        public LinksFiles files { get; set; }
+    }
+
+    public class LinksSelf
+    {
+        public string href { get; set; }
+    }
+
+    public class LinksFiles
+    {
+        public string href { get; set; }
+    }
+}

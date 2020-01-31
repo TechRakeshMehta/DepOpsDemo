@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<GetOrderFields xmlns="">
+  <ErrorStatus>
+    <Code></Code>
+    <Type></Type>
+    <Message></Message>
+  </ErrorStatus>
+  <OrderField>
+    <iOrderID></iOrderID>
+    <iFieldID></iFieldID>
+    <sValue></sValue>
+    <sLabel></sLabel>
+    <sColumnName></sColumnName>
+    <sVisible></sVisible>
+    <iDisplayOrder></iDisplayOrder>
+    <sRequired></sRequired>
+  </OrderField>
+  <Order>
+    <sInstruction></sInstruction>
+  </Order>
+</GetOrderFields>

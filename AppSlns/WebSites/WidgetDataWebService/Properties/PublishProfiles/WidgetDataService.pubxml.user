@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <LastUsedBuildConfiguration>Release</LastUsedBuildConfiguration>
+    <LastUsedPlatform>Any CPU</LastUsedPlatform>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/AWSSDK.dll">
+      <publishTime>02/23/2015 13:13:05</publishTime>
+    </File>
+    <File Include="bin/Business.dll">
+      <publishTime>02/25/2015 10:50:17</publishTime>
+    </File>
+    <File Include="bin/Business.XmlSerializers.dll">
+      <publishTime>02/25/2015 10:50:19</publishTime>
+    </File>
+    <File Include="bin/CoreWeb.IntsofSecurityModel.dll">
+      <publishTime>02/25/2015 10:50:24</publishTime>
+    </File>
+    <File Include="bin/CoreWeb.IntsofSecurityModel.Interface.dll">
+      <publishTime>02/25/2015 10:50:12</publishTime>
+    </File>
+    <File Include="bin/DAL.dll">
+      <publishTime>02/25/2015 10:50:15</publishTime>
+    </File>
+    <File Include="bin/Entity.dll">
+      <publishTime>02/25/2015 10:50:11</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>02/23/2015 13:12:38</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>02/23/2015 13:12:38</publishTime>
+    </File>
+    <File Include="bin/ExpressionEvaluator.dll">
+      <publishTime>02/23/2015 13:13:01</publishTime>
+    </File>
+    <File Include="bin/INTSOF.Contracts.dll">
+      <publishTime>02/25/2015 10:50:13</publishTime>
+    </File>
+    <File Include="bin/INTSOF.Logger.dll">
+      <publishTime>02/24/2015 16:25:21</publishTime>
+    </File>
+    <File Include="bin/INTSOF.ServiceModel.dll">
+      <publishTime>02/25/2015 10:50:24</publishTime>
+    </File>
+    <File Include="bin/INTSOF.ServiceModelInterface.dll">
+      <publishTime>02/24/2015 16:25:22</publishTime>
+    </File>
+    <File Include="bin/INTSOF.ServiceUtil.dll">
+      <publishTime>02/24/2015 16:25:23</publishTime>
+    </File>
+    <File Include="bin/INTSOF.UI.Contract.dll">
+      <publishTime>02/25/2015 10:50:12</publishTime>
+    </File>
+    <File Include="bin/INTSOF.UnityHelper.dll">
+      <publishTime>02/25/2015 10:50:11</publishTime>
+    </File>
+    <File Include="bin/INTSOF.Utils.dll">
+      <publishTime>02/25/2015 10:49:40</publishTime>
+    </File>
+    <File Include="bin/itextsharp.dll">
+      <publishTime>02/23/2015 13:13:05</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ApplicationServer.Caching.Client.dll">
+      <publishTime>02/23/2015 13:12:59</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ApplicationServer.Caching.Core.dll">
+      <publishTime>02/23/2015 13:12:59</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.CompositeWeb.dll">
+      <publishTime>02/23/2015 13:13:01</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.EnterpriseLibrary.Caching.dll">
+      <publishTime>02/23/2015 13:13:01</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.EnterpriseLibrary.Common.dll">
+      <publishTime>02/23/2015 13:12:59</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll">
+      <publishTime>02/23/2015 13:13:05</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.EnterpriseLibrary.Security.dll">
+      <publishTime>02/23/2015 13:13:05</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.ObjectBuilder.dll">
+      <publishTime>02/23/2015 13:13:05</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.Unity.Configuration.dll">
+      <publishTime>02/23/2015 13:13:05</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.Unity.dll">
+      <publishTime>02/23/2015 13:13:05</publishTime>
+    </File>
+    <File Include="bin/NLog.dll">
+      <publishTime>02/23/2015 13:13:01</publishTime>
+    </File>
+    <File Include="bin/WidgetDataWebService.dll">
+      <publishTime>02/25/2015 10:52:28</publishTime>
+    </File>
+    <File Include="DataFeed.svc">
+      <publishTime>02/23/2015 13:12:27</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>02/23/2015 13:12:27</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>02/23/2015 13:12:27</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>02/25/2015 10:52:28</publishTime>
+    </File>
+    <File Include="WidgetData.asmx">
+      <publishTime>02/23/2015 13:12:27</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

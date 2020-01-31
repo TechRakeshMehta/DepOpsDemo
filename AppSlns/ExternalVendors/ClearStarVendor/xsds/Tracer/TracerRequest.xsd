@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="xmlgw" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="xmlgw">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="session">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="user_id" type="xs:string" minOccurs="0" />
+              <xs:element name="password" type="xs:string" minOccurs="0" />
+              <xs:element name="customer_reference" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="search_request">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="search" type="xs:string" minOccurs="0" />
+              <xs:element name="search_identifier" type="xs:string" minOccurs="0" />
+              <xs:element name="search_criteria" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ssn" type="xs:string" minOccurs="0" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

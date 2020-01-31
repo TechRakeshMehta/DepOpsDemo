@@ -1,0 +1,23 @@
+﻿using INTSOF.COMPLIO.TALKDESK.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace INTSOF.COMPLIO.TALKDESK.Handlers
+{
+    public static class JsonHandler
+    {
+        public static TModel ConvertJSONToAPIResponseModel<TModel>(string _jsonData) where TModel : class
+        {
+            TModel _authorizationTokenResponse = Newtonsoft.Json.JsonConvert.DeserializeObject<TModel>(_jsonData);
+            return _authorizationTokenResponse;
+        }
+
+        public static string ConvertAPIRequestModelToJSON<TModel>(TModel modelData) where TModel : class
+        {
+            var _jsonToString = Newtonsoft.Json.JsonConvert.SerializeObject(modelData);
+            return _jsonToString;
+        }
+    }
+}

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0"?>
+<InsuranceLossComment xmlns="http://tempuri.org/ADBEmails.xsd">
+  <Contents>
+    <toName></toName>
+    <preNote></preNote>
+    <postNote></postNote>
+    <navigationURL></navigationURL>
+    <serviceRequestId></serviceRequestId>  
+  </Contents>
+</InsuranceLossComment>

@@ -1,0 +1,43 @@
+﻿using INTSOF.COMPLIO.TALKDESK.DAL.Interfaces;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Web;
+
+namespace INTSOF.COMPLIO.TALKDESK.DAL.Repository
+{
+    public class BaseRepository: IBaseRepository
+    {
+        protected SqlDataReader ExecuteSQLDataReader(SqlConnection con, String storedProcedureName, SqlParameter[] sqlParameterCollection = null)
+        {
+            SqlCommand sqlCommand = new SqlCommand(storedProcedureName, con);
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+
+            if (sqlParameterCollection != null)
+            {
+                sqlCommand.Parameters.AddRange(sqlParameterCollection);
+            }
+
+            SqlDataReader dr = sqlCommand.ExecuteReader();
+            return dr;
+        }
+
+        protected void OpenSQLDataReaderConnection(SqlConnection con)
+        {
+            if (con.State == System.Data.ConnectionState.Closed)
+            {
+                con.Open();
+            }
+        }
+
+        protected void CloseSQLDataReaderConnection(SqlConnection con)
+        {
+            if (con.State == System.Data.ConnectionState.Open)
+            {
+                con.Close();
+            }
+        }
+    }
+}

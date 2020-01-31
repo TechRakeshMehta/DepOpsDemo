@@ -1,0 +1,13 @@
+﻿<GetCCF
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-­‐instance"
+xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+xmlns="">
+  <ErrorStatus>
+    <Code></Code>
+    <Type></Type>
+    <Message></Message>
+  </ErrorStatus>
+  <Result></Result>
+  <PdfFile></PdfFile>
+</GetCCF>
+

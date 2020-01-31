@@ -1,0 +1,1229 @@
+﻿body
+{
+    background-image: url(images/bkg.png);
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-color: #efefef;
+}
+
+a
+{
+    outline: none;
+}
+
+.dashboard_commands
+{
+    padding: 25px 0 20px 0;
+    text-align: right;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: 90%;
+    overflow: visible;
+}
+
+    .dashboard_commands a
+    {
+        text-decoration: none;
+        color: #777;
+        margin-right: 10px;
+        background-image: url(images/icons.png);
+        background-repeat: no-repeat;
+        padding-left: 26px;
+        height: 22px;
+        display: inline-block;
+        padding-top: 1px;
+        font-weight: bold;
+    }
+
+
+        .dashboard_commands a:hover
+        {
+            color: #4a90fa;
+        }
+
+        .dashboard_commands a.SaveButton
+        {
+            background-position: 0 0px;
+        }
+
+
+        .dashboard_commands a:hover.SaveButton
+        {
+            background-position: 0 -23px;
+        }
+
+        .dashboard_commands a.ResetButton
+        {
+            background-position: 0 -46px;
+        }
+
+        .dashboard_commands a:hover.ResetButton
+        {
+            background-position: 0 -71px;
+        }
+
+        .dashboard_commands a.VideoImage
+        {
+            background-image: url(images/VideoTutorialIcon.png) !Important;
+            background-position: 0px -2px !Important;
+            height: 40px;
+            width: 133px;
+            padding-left: 25px;
+            background-size: 40px 40px;
+            padding-top: 10px !important;
+        }
+
+        .dashboard_commands a:hover.VideoImage
+        {
+            background-image: url(images/VideoTutorialIconDarkBlue.png) !Important;
+            background-position: 0px -2px !Important;
+            height: 40px;
+            width: 133px;
+            padding-left: 25px;
+            background-size: 40px 40px;
+            padding-top: 10px !important;
+        }
+
+
+
+
+.zones_left
+{
+    min-height: 10px!important;
+    margin-right: .4%!important;
+    width: 38.9%!important;
+}
+
+.RadDock
+{
+    margin-bottom: 17px!important;
+}
+
+
+.visibleZone
+{
+    background-color: white!important;
+}
+
+
+
+
+.dock div.rdTitleBar em
+{
+    color: #fff !important;
+}
+
+ 
+/*.wdg_Orders{background-color:#82b0f5!important;}
+.dock .rdTop td {background:none!important; background-image:url(images/tbar_overlay.png)!important;background-repeat:repeat-x!important;}
+.wdg_veriSumary {background-color:#ef9b63!important;}
+.wdg_schList {background-color:#ff6600!important;}
+.wdg_salesCnt {background-color:#ffdd57!important;}
+.wdg_ordersCnt {background-color:#aad400!important;}
+
+
+.wdg_pendingOrders {background-color:#ffdd57!important;}
+.wdg_orderHistory{background-color:#aad400!important;}
+.wdg_subsc {background-color:#87cdde!important;}
+.wdg_profile {background-color:#cdde87!important;}
+.wdg_rcnMsg {background-color:#ddafe9!important;}
+.wdg_MyTasks {background-color:#ff8080!important;}
+*/
+
+.wdg_cmd_wrap
+{
+    padding-top: 5px;
+    text-align: right;
+}
+/*a.wdg_cmd{display:inline-block;background-color: #EFEFEF;color: #544264;margin:0 auto;padding:5px;border-radius:5px;text-align: center;text-decoration: none;}
+a.wdg_cmd:hover {background-color:#555;color:#fff;}*/
+
+.dock td.rdCenter
+{
+    padding-top: 5px!important;
+}
+
+
+#mascot_d
+{
+    background: url(images/mascot.png) no-repeat;
+    height: 147px;
+    position: fixed;
+    bottom: 7px;
+    width: 117px;
+    z-index: -1000;
+}
+
+
+.dock .rdTop td
+{
+    background: url(images/wdgtb_olay.png) 0 -9px repeat-x #2E3347!important;
+}
+
+#pageoutwr
+{
+    overflow: hidden;
+}
+
+span.ln_nav
+{
+    color: #828282;
+    display: block;
+    font-size: 9px;
+    padding-left: 34px;
+}
+
+.nav_Tabs_Selected
+{
+    background-color: #8C1921;
+    border: medium solid #FFFFFF;
+    border-top-left-radius: 10px 12px;
+    color: #7E7E7E;
+    padding: 0px;
+    text-align: center;
+    font-weight: bold;
+    width: 100%;
+    height: 48px;
+}
+
+.nav_Tabs_Unselected
+{
+    background-color: #D2D2D2;
+    border: medium solid #FFFFFF;
+    border-top-left-radius: 10px 0px;
+    color: #7E7E7E;
+    padding: 0px;
+    text-align: center;
+    font-weight: bold;
+    width: 100%;
+    height: 48px;
+    border-radius: 3px 3px 3px 3px;
+    position: relative;
+}
+
+    .nav_Tabs_Unselected:hover
+    {
+        background-color: #8C1921;
+        position: relative;
+    }
+
+html, body, #frmmod, #UpdatePanel1, #box_content
+{
+    height: 100% !important;
+}
+
+a.cat_lslnk
+{
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    color: #000;
+}
+
+    a.cat_lslnk:visited
+    {
+        color: #000;
+    }
+
+    a.cat_lslnk:hover
+    {
+        color: blue;
+    }
+
+.list_Order .rlbItem
+{
+    border-bottom: 1px solid #D3D3D3;
+    padding: 3px;
+}
+
+#summaryInner
+{
+    min-width: 1150px;
+}
+
+#summaryBar
+{
+    font-size: 11.5px;
+}
+
+.summaryBlock
+{
+    margin: 4px;
+}
+
+.side_NavTabs
+{
+    background-color: #D2D3D5;
+    border: thin solid #FFFFFF;
+    border-radius: 3px;
+    color: #D0E4FE;
+    float: left;
+    font-weight: bold;
+    padding: 0 12px;
+    width: 90%;
+    height: 40px;
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+}
+ 
+div.side_NavTabs a, div:hover.side_NavTabs a,
+div.side_NavTabs_GetStarted a, div:hover.side_NavTabs_GetStarted a,
+div.navTabs_Selected a, div:hover.navTabs_Selected a,
+div.navTabsGetStarted_Selected a, div:hover.navTabsGetStarted_Selected a
+{
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    z-index: 10; /* raises anchor tag above everything else in div */
+}
+
+div:hover.side_NavTabs
+{
+    background-color: #8C1921;
+    border: thin solid #FFFFFF;
+    border-radius: 3px;
+    color: #D0E4FE;
+    float: left;
+    font-weight: bold;
+    padding: 0 12px;
+    width: 90%;
+    height: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.side_NavTabs_GetStarted
+{
+    background-color: #d2d3d5;
+    border: thin solid #FFFFFF;
+    border-radius: 3px;
+    color: #D0E4FE;
+    float: left;
+    font-weight: bold;
+    padding: 0 12px;
+    width: 90%;
+    height: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+div:hover.side_NavTabs_GetStarted
+{
+    overflow: hidden;
+}
+/*Change*/
+div:hover.side_NavTabs a
+{
+    color: #fff;
+}
+/*Change261114*/
+div:hover.side_NavTabs_GetStarted a, div.side_NavTabs_GetStarted:hover span.ln_nav
+{
+    color: #fff;
+}
+div:hover.side_NavTabs_GetStarted span.getStartedTooltip::before {
+    border: 2px solid #EF9C65;
+}
+
+span.ln_nav
+{
+    color: #828282;
+    display: block;
+    font-size: 9px;
+    padding-left: 34px;
+}
+
+
+div:hover.side_NavTabs_GetStarted
+{
+    background-color: #8C1921;
+    border: thin solid #FFFFFF;
+    border-radius: 3px;
+    color: #D0E4FE;
+    float: left;
+    font-weight: bold;
+    padding: 0 12px;
+    width: 90%;
+    height: 40px;
+    position: relative;
+}
+
+.navTabs_Selected
+{
+    background-color: #8C1921;
+    border: thin solid #FFFFFF;
+    border-radius: 3px;
+    color: #D0E4FE;
+    float: left;
+    font-weight: bold;
+    padding: 0 12px;
+    width: 90%;
+    height: 40px;
+    position: relative;
+}
+
+    .navTabs_Selected a
+    {
+        color: #fff !important;
+    }
+
+.navTabsGetStarted_Selected
+{
+    background-color: #DA772E;
+    border: medium solid #FFFFFF;
+    border-radius: 4px;
+    color: #D0E4FE;
+    float: left;
+    font-weight: bold;
+    padding: 0 12px;
+    width: 90%;
+    height: 40px;
+    color: #fff;
+}
+
+    .navTabsGetStarted_Selected a
+    {
+        color: #fff !important;
+    }
+
+    .navTabsGetStarted_Selected span.ln_nav
+    {
+        color: #fff !important;
+    }
+
+a:link
+{
+    color: #5D5D5D;
+    text-decoration: underline;
+    border-bottom: none;
+    /*float:left;*/
+}
+
+#dvPackages .Background a:link, #dvPackages .Compliance a:link
+,#dvPackages .Adminstrative a:link
+,#dvPackages .ClinicalRotation a:link
+{
+    color: #5D5D5D;
+    text-decoration: underline;
+    border-bottom: none;
+    float: left;
+    width: 100%;
+    float: left;
+    height: 46px;
+    line-height: 46px;
+    padding-top: 0px !Important;
+}
+
+/*Change*/
+a:hover
+{
+    color: #fff;
+}
+
+a.Editprofile
+{
+    background-image: url(images/ProfileIconBlack.png) !Important;
+    background-position: 15px 10px !important;
+    background-repeat: no-repeat;
+    background-size: 21px 21px;
+    height: 25px;
+    padding-left: 21%;
+    padding-top: 16px !important;
+    width: 125px;
+    margin-left: -13px;
+    text-decoration: none;
+    color: #5d5d5d;
+    position: absolute;
+    /*top: 6px;*/
+    display: block;
+}
+
+
+a:hover.Editprofile
+{
+    background-image: url(images/ProfileIconBlack.png) !Important;
+    background-position: 15px 10px !important;
+    background-repeat: no-repeat;
+    background-size: 21px 21px;
+    height: 25px;
+    padding-left: 48px;
+    padding-top: 16px !important;
+    width: 125px;
+    text-decoration: none;
+    position: absolute;
+    display: block;
+    margin-left: -13px;
+}
+
+a.GetStarted
+{
+    background-image: url(images/GettingStartedblack.png) !Important;
+    background-position: 15px 10px !important;
+    background-repeat: no-repeat;
+    background-size: 21px 21px;
+    height: 25px;
+    padding-left: 48px;
+    padding-top: 7px !important;
+    width: 125px;
+    text-decoration: none;
+    color: #5d5d5d;
+    position: absolute;
+    margin-left: -13px;
+    /*top: 5px;*/
+}
+
+
+a:hover.GetStarted
+{
+    background-image: url(images/GettingStartedblack.png) !Important;
+    background-position: 15px 10px !important;
+    background-repeat: no-repeat;
+    background-size: 21px 21px;
+    height: 25px;
+    padding-left: 48px;
+    padding-top: 7px !important;
+    width: 125px;
+    text-decoration: none;
+    color: #5d5d5d;
+    position: absolute;
+    margin-left: -13px;
+    /*top: 5px;*/
+}
+
+a.OrderHistory
+{
+    background-image: url(images/OrderHistoryIconBlack.png) !Important;
+    background-position: 15px 10px !important;
+    background-repeat: no-repeat;
+    background-size: 21px 21px;
+    height: 25px;
+    padding-left: 48px;
+    padding-top: 16px !important;
+    width: 125px;
+    text-decoration: none;
+    color: #5d5d5d;
+    position: absolute;
+    margin-left: -13px;
+    /*top: 6px;*/
+}
+
+
+a:hover.OrderHistory
+{
+    background-image: url(images/OrderHistoryIconBlack.png) !Important;
+    background-position: 15px 10px !important;
+    background-repeat: no-repeat;
+    background-size: 21px 21px;
+    height: 25px;
+    padding-left: 48px;
+    padding-top: 16px !important;
+    width: 125px;
+    text-decoration: none;
+    color: #5d5d5d;
+    position: absolute;
+    margin-left: -13px;
+    /*top: 6px;*/
+}
+
+a.ComunicatnSumary
+{
+    background-image: url(images/MailIconBlack.png) !Important;
+    background-position: 15px 10px !important;
+    background-repeat: no-repeat;
+    background-size: 21px 21px;
+    height: 25px;
+    padding-left: 48px;
+    padding-top: 16px !important;
+    width: 125px;
+    text-decoration: none;
+    color: #5d5d5d;
+    position: absolute;
+    margin-left: -13px;
+    /*top: 6px;*/
+}
+
+
+a:hover.ComunicatnSumary
+{
+    background-image: url(images/MailIconBlack.png) !Important;
+    background-position: 15px 10px !important;
+    background-repeat: no-repeat;
+    background-size: 21px 21px;
+    height: 25px;
+    padding-left: 48px;
+    padding-top: 16px !important;
+    width: 125px;
+    text-decoration: none;
+    color: #5d5d5d;
+    position: absolute;
+    margin-left: -13px;
+    /*top: 6px;*/
+}
+
+a.Report
+{
+    background-image: url(images/ReportIconBlack.png) !Important;
+    background-position: 15px 10px !important;
+    background-repeat: no-repeat;
+    background-size: 21px 21px;
+    height: 25px;
+    padding-left: 48px;
+    padding-top: 16px !important;
+    width: 125px;
+    text-decoration: none;
+    color: #5d5d5d;
+    position: absolute;
+    margin-left: -13px;
+    /*top: 6px;*/
+}
+
+
+a:hover.Report
+{
+    background-image: url(images/ReportIconBlack.png) !Important;
+    background-position: 15px 10px !important;
+    background-repeat: no-repeat;
+    background-size: 21px 21px;
+    height: 25px;
+    padding-left: 48px;
+    padding-top: 16px !important;
+    width: 125px;
+    text-decoration: none;
+    color: #5d5d5d;
+    position: absolute;
+    margin-left: -13px;
+    /*top: 6px;*/
+}
+
+a.SideVideoTutorial
+{
+    background-image: url(images/VideoTutorialIcon.png) !Important;
+    background-position: 8px 3px !important;
+    background-repeat: no-repeat;
+    background-size: 28px 28px;
+    height: 25px;
+    padding-left: 48px;
+    padding-top: 16px !important;
+    width: 125px;
+    text-decoration: none;
+    color: #5d5d5d;
+    position: absolute;
+    margin-left: -13px;
+    /*top: 6px;*/
+}
+
+a.RequiredDocuments
+{
+    background-image: url(images/Required-Document.png) !Important;
+    background-position: 13px 5px !important;
+    background-repeat: no-repeat;
+    background-size: 28px 28px;
+    height: 25px;
+    padding-left: 48px;
+    padding-top: 16px !important;
+    width: 125px;
+    text-decoration: none;
+    color: #5d5d5d;
+    position: absolute;
+    margin-left: -13px;
+    /*top: 6px;*/
+}
+
+a:hover.RequiredDocuments
+{
+    background-image: url(images/Required-Document-Red.png) !Important;
+    background-position: 13px 5px !important;
+    background-repeat: no-repeat;
+    background-size: 28px 28px;
+    height: 25px;
+    padding-left: 48px;
+    padding-top: 16px !important;
+    width: 125px;
+    text-decoration: none;
+    color: #5d5d5d;
+    position: absolute;
+    margin-left: -13px;
+}
+
+a.GetStarted
+{
+    background-image: url(images/GettingStartedblack.png) !Important;
+    background-position: 15px 10px !important;
+    background-repeat: no-repeat;
+    background-size: 21px 21px;
+    height: 25px;
+    padding-left: 48px;
+    padding-top: 7px !important;
+    width: 125px;
+    text-decoration: none;
+    color: #5d5d5d;
+    position: absolute;
+    margin-left: -13px;
+    /*top: 5px;*/
+}
+
+a.ProfileSharing
+{
+    background-image: url("images/ProfileShareBlack.png") !important;
+    background-position: 12px 5px !important;
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    height: 25px;
+    padding-left: 48px;
+    padding-top: 16px !important;
+    width: 125px;
+    margin-left: -13px;
+    text-decoration: none;
+    color: #5d5d5d;
+    position: absolute;
+    /*top: 6px;*/
+    display: block;
+}
+
+
+a:hover.ProfileSharing
+{
+    background-image: url(images/ProfileShareDarkBlue.png) !Important;
+    background-position: 12px 5px !important;
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    height: 25px;
+    padding-left: 48px;
+    padding-top: 16px !important;
+    width: 125px;
+    text-decoration: none;
+    position: absolute;
+    display: block;
+    margin-left: -13px;
+}
+
+div.Compliance
+{
+    background-image: url("images/ComplianceIcon.png") !important;
+    background-position: 20px 13px !important;
+    background-repeat: no-repeat;
+    background-size: 22px 22px;
+    width: 100%;
+    float: left;
+}
+
+
+div:hover.Compliance
+{
+    background-image: url("images/ComplianceIcon.png") !important;
+    background-position: 20px 13px !important;
+    background-repeat: no-repeat;
+    background-size: 22px 22px;
+    width: 100%;
+}
+
+.textStyle
+{
+    color: white !important;
+    font-size: 15px !important;
+    text-decoration: none !important;
+}
+
+div.Background
+{
+    background-image: url("images/BackgroundCheckIcon.png") !important;
+    background-position: 38px 14px !important;
+    background-repeat: no-repeat;
+    background-size: 22px 22px;
+    width: 100%;
+    float: left;
+    text-align: center;
+}
+
+
+div:hover.Background
+{
+    background-image: url("images/BackgroundCheckIcon.png") !important;
+    background-position: 38px 14px !important;
+    background-repeat: no-repeat;
+    background-size: 22px 22px;
+    width: 100%;
+}
+
+
+.nav_ComplDiv
+{
+    float: left;
+    width: 34%;
+    position: relative;
+    /*z-index: 1;*/
+    width: 280px;
+}
+
+    .nav_ComplDiv:hover .nav_ComplDiv_Inner
+    {
+        display: block;
+        /*width:90%;*/
+        float: left;
+        /*margin-left:13px;*/
+    }
+
+
+.nav_BkgDiv:hover .nav_BkgDiv_Inner
+{
+    display: block;
+}
+
+#navBarCompliance ~ #testid
+{
+    margin-top: -90px;
+}
+
+.nav_ComplDiv_Innertext
+{
+    color: #FFFFFF;
+    font-size: 9px;
+    text-align: center;
+    display: block;
+    padding-top: 0px;
+    top: 36px;
+    position: absolute;
+    width: 57%;
+    left: 18%;
+    z-index: 0;
+}
+
+.nav_ComplDiv_Inner
+{
+    display: none;
+    background-color: #D2D2D2;
+    border-top: thin dotted #FFFFFF;
+    border-top-left-radius: 10px 0px;
+    color: #D0E4FE;
+    padding: 0px;
+    text-align: center;
+    font-weight: bold;
+    float: left;
+    width: 100%;
+    margin-left: 4px;
+    border-radius: 3px 3px 3px 3px;
+    height: 40px;
+    line-height: 40px;
+    /*position:absolute;
+    top:0px;*/
+}
+
+    .nav_ComplDiv_Inner:hover
+    {
+        background-color: #8C1921;
+    }
+
+
+.nav_BkgDiv_Inner
+{
+    display: none;
+    background-color: #D2D2D2;
+    border-top: thin dotted #FFFFFF;
+    border-top-left-radius: 10px 0px;
+    color: #D0E4FE;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    float: left;
+    width: 93%;
+    margin-left: 8px;
+    border-radius: 3px 3px 3px 3px;
+    /*position:absolute;
+    top:0px;*/
+}
+
+    .nav_BkgDiv_Inner:hover
+    {
+        background-color: #EF9C65;
+    }
+
+
+
+.nav_BkgDiv
+{
+    float: left;
+    width: 34%;
+    position: relative;
+    z-index: 1;
+    width: 280px;
+}
+
+/*over write class to hide package name*/
+.pack_info
+{
+    display: none !important;
+}
+
+#dvPackages
+{
+    margin: 0 0 -20px;
+    position: absolute;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.status_box
+{
+    border-radius: 5px 5px 5px 5px;
+    height: 20px;
+    padding: 5px;
+    padding-bottom: 7px;
+    margin-top: 5px;
+}
+
+
+.dvComplReport
+{
+    margin-top: 10px;
+    margin-left: 3px;
+}
+
+.leftPanelMargin
+{
+    margin-left: 5px;
+}
+
+a.nav_ComplDiv_Inner_Pkgs
+{
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+}
+
+a:hover.nav_ComplDiv_Inner_Pkgs
+{
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+}
+
+.comlpkgdrop
+{
+    position: relative;
+    overflow-x: hidden;
+    z-index: 1;
+    height: 0px;
+    overflow-y: hidden;
+}
+
+.comlpkgdrophvr
+{
+    /*position: absolute;*/
+    z-index: 9;
+    height: 400px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    /*left:-10px;*/
+}
+
+
+@media screen and (-webkit-min-device-pixel-ratio:0)
+{
+    .comlpkgdrophvr
+    {
+        float: left;
+        width: 280px;
+    }
+}
+
+.comlpkgdrop_less
+{
+    position: relative;
+    overflow-x: hidden;
+    z-index: 1;
+    overflow-y: hidden;
+}
+
+a.VwSubscription
+{
+    color: #000;
+    text-decoration: none;
+}
+
+a:hover.VwSubscription
+{
+    text-decoration: none;
+    color: #4a90fa;
+    font-weight: bold;
+}
+
+.not-active
+{
+    pointer-events: none !important;
+    cursor: default !important;
+    color: white !important;
+    font-size: 15px !important;
+    text-decoration: none !important;
+}
+
+.dvRdirectionButtons
+{
+    margin: 0px;
+    overflow: visible;
+    padding: 0px;
+    text-align: right;
+    width: 98%;
+}
+
+.dvRdirection
+{
+    margin: 0px;
+    /*overflow: visible;*/
+    /*padding: 10px;*/
+    text-align: right;
+    width: 98%;
+}
+
+    .dvRdirection > a
+    {
+        color: black;
+        padding-left: 5px;
+    }
+
+.dvOuterRdirectionButtons
+{
+    float: right;
+    position: relative;
+    margin-top: 0px;
+}
+
+    .dvOuterRdirectionButtons a.DocUpload
+    {
+        background-image: url(/Resources/Mod/Dashboard/images/DocumentUploadBlack.png) !Important;
+        background-position: 15px 10px !Important;
+        background-repeat: no-repeat;
+        height: 40px;
+        width: 147px;
+        padding-left: 35px;
+        background-size: 30px 20px;
+        padding-top: 10px !important;
+        color: #828282;
+        font-weight: bold;
+        font-size: 15px;
+        margin: 0px;
+        float: right;
+    }
+
+    .dvOuterRdirectionButtons a:hover.DocUpload
+    {
+        background-image: url(/Resources/Mod/Dashboard/images/DocumentUploadBlue.png) !Important;
+        background-position: 15px 10px !Important;
+        background-repeat: no-repeat;
+        height: 40px;
+        width: 147px;
+        padding-left: 35px;
+        background-size: 30px 20px;
+        padding-top: 10px !important;
+        color: #4a90fa;
+        font-weight: bold;
+        font-size: 15px;
+        float: right;
+        margin: 0px;
+    }
+
+.dvUploadDocText
+{
+    color: #828282;
+    display: block;
+    font-size: 9px;
+    padding-left: 49px;
+    position: absolute;
+    top: 30px;
+    width: 100%;
+    text-align: left;
+}
+
+/*Disable Hover from Side Menu for Admin Dashboard View*/
+.side_NavTabs:hover a.aspNetDisabled
+{
+    background-color: #8C1921 !important;
+    color: #5d5d5d;
+}
+
+.nav_Tabs_Unselected.aspNetDisabled:hover
+{
+    background-color: #D2D3D5 !important;
+    color: #5d5d5d !important;
+    position: relative !important;
+}
+
+    .nav_Tabs_Unselected.aspNetDisabled a, .nav_Tabs_Unselected.aspNetDisabled:hover a
+    {
+        cursor: default !important;
+        pointer-events: none !important;
+    }
+
+
+.nav_AdmnDiv
+{
+    float: left;
+    width: 34%;
+    position: relative;
+    width: 280px;
+}
+
+    .nav_AdmnDiv:hover .nav_AdmnDiv_Inner
+    {
+        display: block;
+        float: left;
+    }
+
+a.nav_AdmnDiv_Inner_Pkgs
+{
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+}
+
+a:hover.nav_AdmnDiv_Inner_Pkgs
+{
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+}
+
+.nav_AdmnDiv_Innertext
+{
+    color: #FFFFFF;
+    font-size: 9px;
+    text-align: center;
+    display: block;
+    padding-top: 0px;
+    top: 36px;
+    position: absolute;
+    width: 57%;
+    left: 18%;
+    z-index: 0;
+}
+
+.nav_AdmnDiv_Innertext1
+{
+    color: #FFFFFF;
+    font-size: 9px;
+    text-align: center;
+    display: block;
+    padding-top: 0px;
+    top: 33px;
+    position: absolute;
+    width: 57%;
+    left: 18%;
+    z-index: 0;
+}
+
+.nav_AdmnDiv_Inner
+{
+    display: none;
+    background-color: #D2D2D2;
+    border-top: thin dotted #FFFFFF;
+    border-top-left-radius: 10px 0px;
+    color: #D0E4FE;
+    padding: 0px;
+    text-align: center;
+    font-weight: bold;
+    float: left;
+    width: 100%;
+    margin-left: 4px;
+    border-radius: 3px 3px 3px 3px;
+    height: 40px;
+    line-height: 40px;
+}
+
+    .nav_AdmnDiv_Inner:hover
+    {
+        background-color: #EF9C65;
+    }
+
+div.Adminstrative
+{
+    background-image: url("images/ComplianceIcon.png") !important;
+    background-position: 30px 13px !important;
+    background-repeat: no-repeat;
+    background-size: 22px 22px;
+    width: 100%;
+    float: left;
+}
+
+
+div:hover.Adminstrative
+{
+    background-image: url("images/ComplianceIcon.png") !important;
+    background-position: 30px 13px !important;
+    background-repeat: no-repeat;
+    background-size: 22px 22px;
+    width: 100%;
+}
+
+.nav_RotationDiv
+{
+    float: left;
+    position: relative;
+    width: 266px;
+}
+
+ .nav_RotationDiv:hover 
+    {
+        display: block;
+    }
+
+
+ div.ClinicalRotation
+{
+    background-image: url(images/ClinicalRotation.png) !Important;
+    background-position: 48px 14px !important;
+    background-repeat: no-repeat;
+    background-size: 22px 22px;
+    width: 100%;
+    float: left;
+    text-align: center;
+}
+
+
+div:hover.ClinicalRotation
+{
+     background-image: url(images/ClinicalRotation.png) !Important;
+    background-position: 48px 14px !important;
+    background-repeat: no-repeat;
+    background-size: 22px 22px;
+    width: 100%;
+}
+
+a.JobBoard
+{
+    background-image: url(images/JobBoard.png) !Important;
+    background-position: 15px 10px !important;
+    background-repeat: no-repeat;
+    background-size: 21px 21px;
+    height: 25px;
+    padding-left: 48px;
+    padding-top: 16px !important;
+    width: 125px;
+    text-decoration: none;
+    color: #5d5d5d;
+    position: absolute;
+    margin-left: -13px;
+    /*top: 6px;*/
+}
+
+
+a:hover.JobBoard
+{
+    background-image: url(images/JobBoard.png) !Important;
+    background-position: 15px 10px !important;
+    background-repeat: no-repeat;
+    background-size: 21px 21px;
+    height: 25px;
+    padding-left: 48px;
+    padding-top: 16px !important;
+    width: 125px;
+    text-decoration: none;
+    color: #5d5d5d;
+    position: absolute;
+    margin-left: -13px;
+    /*top: 6px;*/
+}

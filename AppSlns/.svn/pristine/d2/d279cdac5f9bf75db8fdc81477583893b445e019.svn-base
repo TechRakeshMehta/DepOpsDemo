@@ -1,0 +1,160 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true"
+    MasterPageFile="~/Messaging/Masters/ModuleMaster.master" Inherits="CoreWeb.Messaging.MasterPages.MessagingMaster" CodeBehind="MessagingMaster.master.cs" %>
+
+<%@ Register TagPrefix="infs" Namespace="INTERSOFT.WEB.UI.WebControls" Assembly="INTERSOFT.WEB.UI" %>
+<%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="ToolBarContent" runat="server">
+    <infs:WclResourceManagerProxy ID="WclResourceManagerProxy1" runat="server">
+        <infs:LinkedResource ResourceType="JavaScript" Path="~/Resources/Mod/Messaging/messaging.js" />
+        <infs:LinkedResource ResourceType="StyleSheet" Path="~/Resources/Mod/Messaging/messaging.css" />
+    </infs:WclResourceManagerProxy>
+    <input type="hidden" id="hdnSubscriptionStatus" />
+    <asp:HiddenField id="hdntimeout" runat="server">
+    </asp:HiddenField>
+        <asp:HiddenField id="hdnIsApplicantAllowToSendMessages" runat="server" Value="true" >
+    </asp:HiddenField>
+    <infs:WclToolBar runat="server" ID="tlbMessageMain" EnableViewState="false" Width="100%"
+        OnClientButtonClicked="btntoolbar_clicked">
+        <Items>
+            <telerik:RadToolBarButton CommandName="NewMessage" Text="New" Value="Compose"
+                ImageUrl="~/Resources/Mod/Messaging/Icons/new.png" ToolTip="Create a new message">
+            </telerik:RadToolBarButton>
+            <telerik:RadToolBarButton IsSeparator="true">
+            </telerik:RadToolBarButton>
+            <telerik:RadToolBarButton Text="Print" CommandName="Print" ImageUrl="~/Resources/Mod/Messaging/icons/print.png"
+                ImagePosition="Left" ToolTip="Print the selected items" />
+            <telerik:RadToolBarButton IsSeparator="true">
+            </telerik:RadToolBarButton>
+            <telerik:RadToolBarButton Text="Delete" CommandName="Delete" ImageUrl="~/Resources/Mod/Messaging/icons/delete.png"
+                ImagePosition="Left" ToolTip="Delete selected items" />
+            <telerik:RadToolBarButton IsSeparator="true">
+            </telerik:RadToolBarButton>
+            <telerik:RadToolBarSplitButton CommandName="MoreFolders" Value="MoveToFolders" Text="Move To"
+                ImageUrl="~/Resources/Mod/Messaging/icons/move.png" ImagePosition="Left" EnableDefaultButton="false" ToolTip="Move selected items to another folder">
+                <Buttons>
+                    <%-- <telerik:RadToolBarButton Text="Liberty Admins">
+                    </telerik:RadToolBarButton>
+                    <telerik:RadToolBarButton Text="FSU Mails">
+                    </telerik:RadToolBarButton>
+                    <telerik:RadToolBarButton IsSeparator="true">
+                    </telerik:RadToolBarButton>
+                    <telerik:RadToolBarButton CommandName="MoreFolders" Text="More Folders...">
+                    </telerik:RadToolBarButton>--%>
+                </Buttons>
+            </telerik:RadToolBarSplitButton>
+            <telerik:RadToolBarButton IsSeparator="true">
+            </telerik:RadToolBarButton>
+            <telerik:RadToolBarButton Text="Manage Template" CommandName="ManageTemplate">
+            </telerik:RadToolBarButton>
+            <telerik:RadToolBarButton IsSeparator="true">
+            </telerik:RadToolBarButton>
+            <%--<telerik:RadToolBarButton CommandName="SuscibeExternalEmail" Value="Suscribe" ImagePosition="Left">
+            </telerik:RadToolBarButton>--%>
+            <telerik:RadToolBarButton Text="Search Mail" CommandName="SearchMail" ImageUrl="~/Resources/Mod/Messaging/Icons/searchdir.png" ToolTip="Search the current folder for text within the From:, To:, Subject, or Body of all emails">
+            </telerik:RadToolBarButton>
+            <telerik:RadToolBarButton IsSeparator="true">
+            </telerik:RadToolBarButton>
+            <telerik:RadToolBarButton Text="Reply" CommandName="Reply" ImageUrl="~/Resources/Mod/Messaging/icons/reply.png"
+                ImagePosition="Left" ToolTip="Reply to the sender of this message " />
+            <telerik:RadToolBarButton IsSeparator="true">
+            </telerik:RadToolBarButton>
+            <telerik:RadToolBarButton Text="Reply All" CommandName="ReplyAll" ImageUrl="~/Resources/Mod/Messaging/icons/replyall.png"
+                ImagePosition="Left" ToolTip="Reply to the sender and all recipients of this message" />
+            <telerik:RadToolBarButton IsSeparator="true">
+            </telerik:RadToolBarButton>
+            <telerik:RadToolBarButton Text="Forward" CommandName="Forward" ImageUrl="~/Resources/Mod/Messaging/icons/forward.png"
+                ImagePosition="Left" ToolTip="Forward this message" />
+            <telerik:RadToolBarButton IsSeparator="true">
+            </telerik:RadToolBarButton>
+            <telerik:RadToolBarSplitButton Text="More" ImagePosition="Left" EnableDefaultButton="false"
+                ImageUrl="~/Resources/Mod/Messaging/icons/more.png" ToolTip="Additional actions for this message">
+                <Buttons>
+                    <telerik:RadToolBarButton Text="Mark as read" CommandName="" AccessKey="0">
+                    </telerik:RadToolBarButton>
+                    <telerik:RadToolBarButton Text="Mark as flagged" CommandName="chngFlag" AccessKey="1">
+                    </telerik:RadToolBarButton>
+                </Buttons>
+            </telerik:RadToolBarSplitButton>
+            <telerik:RadToolBarButton IsSeparator="true">
+            </telerik:RadToolBarButton>
+            <telerik:RadToolBarButton CommandName="Rules" Text="Message Receiving Rules" Value="Rules"
+                ImageUrl="~/Resources/Mod/Messaging/Icons/new.png">
+            </telerik:RadToolBarButton>
+        </Items>
+    </infs:WclToolBar>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="OptionsContent" runat="server">
+    <infs:WclTreeView ID="treePersonalFolders" runat="server" OnClientNodeClicked="onSingleClick"
+        OnClientNodeEdited="ClientNodeEdited" OnClientNodeEditing="OnClientNodeEditing"
+        OnClientNodeEditStart="OnNodeEditStart" EnableViewState="false" ClientKey="fldTree"
+        OnNodeDataBound="treeFolders_NodeDataBound" AllowNodeEditing="True" OnClientContextMenuShowing="onClientContextMenuShowing"
+        OnClientContextMenuItemClicking="onClientContextMenuItemClicking">
+        <ContextMenus>
+            <telerik:RadTreeViewContextMenu ID="MainContextMenu" runat="server">
+                <Items>
+                    <telerik:RadMenuItem Value="Add" Text="Add New Folder">
+                    </telerik:RadMenuItem>
+                    <telerik:RadMenuItem Value="Delete" Text="Delete Folder">
+                    </telerik:RadMenuItem>
+                </Items>
+            </telerik:RadTreeViewContextMenu>
+        </ContextMenus>
+        <%-- <Nodes>
+            <telerik:RadTreeNode ImageUrl="~/Resources/Mod/Messaging/Icons/personaldir.png" Text="Personal Folders"
+                Expanded="true" Value="RootNode">
+                <Nodes>
+                    <telerik:RadTreeNode Selected="true" Expanded="true" ImageUrl="~/Resources/Mod/Messaging/Icons/inbox.png"
+                        Text="Inbox" NavigateUrl="~/Messaging/Pages/Messaging.aspx" Value="Inbox">
+                        <Nodes>
+                            <telerik:RadTreeNode ImageUrl="~/Resources/Mod/Messaging/Icons/internalmsg.png" Text="Internal Messages">
+                            </telerik:RadTreeNode>
+                            <telerik:RadTreeNode ImageUrl="~/Resources/Mod/Messaging/Icons/email.png" Text="Emails">
+                            </telerik:RadTreeNode>
+                        </Nodes>
+                    </telerik:RadTreeNode>
+                    <telerik:RadTreeNode ImageUrl="~/Resources/Mod/Messaging/Icons/sms.png" Text="SMS">
+                    </telerik:RadTreeNode>
+                    <telerik:RadTreeNode ImageUrl="~/Resources/Mod/Messaging/Icons/alerts.png" Text="Notifications">
+                    </telerik:RadTreeNode>
+                    <telerik:RadTreeNode ImageUrl="~/Resources/Mod/Messaging/Icons/outbox.png" Text="Outbox">
+                    </telerik:RadTreeNode>
+                    <telerik:RadTreeNode ImageUrl="~/Resources/Mod/Messaging/Icons/sent.png" Text="Sent Items">
+                    </telerik:RadTreeNode>
+                    <telerik:RadTreeNode ImageUrl="~/Resources/Mod/Messaging/Icons/deleted.png" Text="Deleted Items">
+                    </telerik:RadTreeNode>
+                    <telerik:RadTreeNode ImageUrl="~/Resources/Mod/Messaging/Icons/notes.png" Text="Notes">
+                    </telerik:RadTreeNode>
+                    <telerik:RadTreeNode ImageUrl="~/Resources/Mod/Messaging/Icons/searchdir.png" Text="Search Folders">
+                        <Nodes>
+                            <telerik:RadTreeNode ImageUrl="~/Resources/Mod/Messaging/Icons/searchdir.png" Text="Liberty University">
+                            </telerik:RadTreeNode>
+                            <telerik:RadTreeNode ImageUrl="~/Resources/Mod/Messaging/Icons/searchdir.png" Text="Applicants Messages">
+                            </telerik:RadTreeNode>
+                        </Nodes>
+                    </telerik:RadTreeNode>
+                    <telerik:RadTreeNode ImageUrl="~/Resources/Mod/Messaging/Icons/folder.png" Text="Liberty Admins (3)">
+                    </telerik:RadTreeNode>
+                    <telerik:RadTreeNode ImageUrl="~/Resources/Mod/Messaging/Icons/folder.png" Text="FSU Mails">
+                    </telerik:RadTreeNode>
+                </Nodes>
+            </telerik:RadTreeNode>
+        </Nodes>--%>
+    </infs:WclTreeView>
+    <infs:WclTreeView ID="treeGroupFolders" runat="server" OnClientNodeClicked="onSingleClickGroupFolder"
+        OnNodeDataBound="treeGroupFolders_NodeDataBound">
+        <%--  <Nodes>
+            <telerik:RadTreeNode ImageUrl="~/Resources/Mod/Messaging/Icons/personaldir.png" Text="Personal Folders"
+                Expanded="true" Value="RootNode">
+                </telerik:RadTreeNode>
+        </Nodes>
+        <Nodes>
+            <telerik:RadTreeNode Selected="true" Expanded="true" ImageUrl="~/Resources/Mod/Messaging/Icons/inbox.png"
+                Text="Inbox" NavigateUrl="~/Messaging/Pages/Messaging.aspx" Value="Inbox">
+                </telerik:RadTreeNode>
+        </Nodes>--%>
+    </infs:WclTreeView>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
+    <asp:ContentPlaceHolder runat="server" ID="PageContent">
+    </asp:ContentPlaceHolder>
+</asp:Content>

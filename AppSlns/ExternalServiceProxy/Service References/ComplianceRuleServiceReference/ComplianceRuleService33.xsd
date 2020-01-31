@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ExternalServices.DataContracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ExternalServices.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:50109/ComplianceRuleService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Entity" />
+  <xs:complexType name="ArrayOfComplianceItemDataContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ComplianceItemDataContract" nillable="true" type="tns:ComplianceItemDataContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfComplianceItemDataContract" nillable="true" type="tns:ArrayOfComplianceItemDataContract" />
+  <xs:complexType name="ComplianceItemDataContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ComplianceItemAttributes" nillable="true" type="tns:ArrayOfComplianceIteAttributesmDataContract" />
+      <xs:element minOccurs="0" name="ComplianceItemId" type="xs:int" />
+      <xs:element minOccurs="0" name="ItemLabel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ComplianceItemDataContract" nillable="true" type="tns:ComplianceItemDataContract" />
+  <xs:complexType name="ArrayOfComplianceIteAttributesmDataContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ComplianceIteAttributesmDataContract" nillable="true" type="tns:ComplianceIteAttributesmDataContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfComplianceIteAttributesmDataContract" nillable="true" type="tns:ArrayOfComplianceIteAttributesmDataContract" />
+  <xs:complexType name="ComplianceIteAttributesmDataContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AttributeLabel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ComplianceItemAttributeId" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ComplianceIteAttributesmDataContract" nillable="true" type="tns:ComplianceIteAttributesmDataContract" />
+  <xs:complexType name="ArrayOfRuleElementNodeContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RuleElementNodeContract" nillable="true" type="tns:RuleElementNodeContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRuleElementNodeContract" nillable="true" type="tns:ArrayOfRuleElementNodeContract" />
+  <xs:complexType name="RuleElementNodeContract">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Entity" minOccurs="0" name="NodeDataType" type="q1:RuleElementNodeDataType" />
+      <xs:element minOccurs="0" name="NodeDisplayValue" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Entity" minOccurs="0" name="NodeType" type="q2:RuleElementNodeType" />
+      <xs:element minOccurs="0" name="NodeValue" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RuleElementNodeContract" nillable="true" type="tns:RuleElementNodeContract" />
+  <xs:complexType name="ArrayOfComplianceTimeSpanTypeDataContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ComplianceTimeSpanTypeDataContract" nillable="true" type="tns:ComplianceTimeSpanTypeDataContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfComplianceTimeSpanTypeDataContract" nillable="true" type="tns:ArrayOfComplianceTimeSpanTypeDataContract" />
+  <xs:complexType name="ComplianceTimeSpanTypeDataContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ComplianceTimeSpanTypeID" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ComplianceTimeSpanTypeDataContract" nillable="true" type="tns:ComplianceTimeSpanTypeDataContract" />
+</xs:schema>

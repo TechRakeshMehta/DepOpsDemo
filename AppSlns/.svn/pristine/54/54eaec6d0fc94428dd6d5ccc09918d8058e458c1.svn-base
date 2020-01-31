@@ -1,0 +1,59 @@
+﻿<style>
+  .border-bottom {
+    border: none;
+    border: 1px solid #CCCCCC;
+    border-radius: 0;
+    width: 80%;
+    margin-left: 5%;
+    margin-right: -1.5rem;
+    text-align: center;
+    transition: 0.5s;
+    box-shadow: none !important;
+    transition: .2s;
+  }
+
+  .btn-primary {
+    background-color: rgb(139,24,32);
+    border: none;
+  }
+
+    .btn-primary:hover {
+      background-color: rgb(45,51,70);
+      border: none;
+    }
+
+  body > * {
+    font-family: "Titillium Web script=all rev=2","Adobe Blank"
+  }
+
+  body, html {
+    background-color: #f2f2f2;
+    height: 100%;
+  }
+
+  .tenantName {
+    color: #666666;
+  }
+
+  .container {
+    height: 100% !important;
+    vertical-align: middle;
+  }
+</style>
+
+<div class="col-12 text text-center mb-3">
+  <span>
+    <label class="w-75 text-left" for="name">
+      {{fieldName}}
+    </label> 
+    <ng-container *ngIf="fieldType == 'text'">
+      <input type="text" class="form-control border-bottom d-inline" placeholder="" />
+    </ng-container>
+    <ng-container *ngIf="fieldType == 'password'">
+      <input type="password" class="form-control border-bottom d-inline" placeholder="" />
+    </ng-container>
+    
+  </span>
+  <span class="input-group-addon d-inline"><i class="fa fa-user-circle"></i></span>
+  <span id="errorName" class="error-msg alert alert-danger" style="margin: 1rem 1rem 1rem 2.1rem;display: none" role="alert"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> User Name is required.</span>
+</div>

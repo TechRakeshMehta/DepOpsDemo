@@ -1,0 +1,123 @@
+<div id="bodyBlock" class="container-fluid">
+
+    <section class="p-2">
+        <div class="row">
+            <div class="col-md-12 font-weight-bold">
+                <label id="CREATODR"></label> (
+                <label id="STEP"></label> {{orderInfo.CurrentStep}})
+            </div>
+            <div class="col-md-12 redColor mr-auto font-weight-bold">
+                <h5 id="CONTACTEMPLOYEE"> </h5>
+            </div>
+            <br/>
+            <div class="col-md-12 redColor mr-auto font-weight-bold">
+                <h5 id="ORDERSELECTION"></h5>
+            </div>
+            <div class="col-md-12 bg-white shadow-sm rounded py-3">
+
+                <form [formGroup]="orderFlowPackageForm">
+                    <div class="w-100 d-flex justify-content-left">
+                        <div class="row">
+
+                            <div class="col-md-12">
+
+                                <!-- <div class="custom-control custom-radio" *ngFor="let item of lstPackages">
+                                                            <input type="radio" name="customRadio" value="item.BPAId" class="custom-control-input">
+                                                            <label class="custom-control-label" for="customRadio">{{item.BPAName}}</label>
+                                                        </div>                      -->
+                                <div class="custom-control custom-radio" *ngFor="let item of lstPackages;let i = index">
+                                    <input class="custom-control-input" id="id_{{i+1}}" type="radio" formControlName="packageId" [(ngModel)]="SelectedPackageID"
+                                        name="packageId" [value]="item.BPAId">
+                                    <label for="id_{{i+1}}" class="custom-control-label">{{item.BPAName}} ({{ServiceDescription}})</label>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-3"></div>
+                    <div class="row mb-3" >
+                        <div class="col-md-6">
+                            <label class="font-weight-bold" id="ACCTNAMEORACCTNUMBER"></label>
+                            <input type="text" [ngClass]="displayFieldCss('AcctNameOrNumber')" (ngModelChange)="onValChange($event)" class="form-control mb-1"
+                                formControlName="AcctNameOrNumber">
+                            <app-field-error-display [displayError]="isError('AcctNameOrNumber')" errorMsg="{{errorMessage('AcctNameOrNumber')}}">
+                            </app-field-error-display>
+                            <app-field-error-display [displayError]="!isValidAcctNameOrNum" errorMsg="{{AcctNameOrNumCusMsg}}">
+                            </app-field-error-display>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="mb-0"></label>
+                            <button type="button" (click)="LookUp()" style="min-width: 12%;margin-top: 1%" class="align-self-end d-block btn btn-sm btn-primary px-2">
+                                <label class="label-on-button" id="LOOKUP"></label>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <select  class="custom-select" (change)="onCBIUniqueIdChange($event.target.value)">
+                                <option>
+                                    <label value="0" name="PLEASESELECT"></label>
+                                </option>
+                                <!-- <option *ngFor="let item of lstCBIUniqueIds" value={{item}} [selected]="item == selectedCBIUniqueId">    -->
+                                <option *ngFor="let item of lstCBIUniqueIds" [value]="item.Code"  [selected]="item.Code == selectedCBIUniqueId">
+                                    {{item.Name}}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mb-3"></div>
+                    <div class="row mb-3">
+                        <div class="col-md-12">
+                            <label class="required font-weight-bold" id="CBIUNIQUEID"></label>
+                            <input type="text" [ngClass]="displayFieldCss('cbiUniqueId')" (ngModelChange)="hideBillingCode($event)" [(ngModel)]="CbiUniqueID"
+                                class="form-control mb-1" formControlName="cbiUniqueId">
+
+                            <app-field-error-display [displayError]="isError('cbiUniqueId')" errorMsg="{{errorMessage('cbiUniqueId')}}">
+                            </app-field-error-display>
+                            <app-field-error-display [displayError]="isValidCbiUniqueId == 'false'" errorMsg="{{CBIUniqueIDCusMsg}}">
+                            </app-field-error-display>
+                            <!-- <app-field-error-display [displayError]="isFieldValid('cbiUniqueId')" errorMsg="{{errorMessage('cbiUniqueId')}}">
+                            </app-field-error-display> -->
+                            <!-- <app-field-error-display [displayError]="isValidCbiUniqueId != 'True'" errorMsg="{{errorMessage('cbiUniqueId')}}">
+                            </app-field-error-display> -->
+                            <span>
+                                <P id="UNIQUEIDINFOMSG"></P>
+                            </span>
+
+                        </div>
+                    </div>
+
+                    <div class="row" [hidden]="hdnBillingCode">
+                        <div class="col-md-12 ">
+                            <label class="font-weight-bold" id="BILLINGCODE"></label>
+                            <input type="text" [ngClass]="displayFieldCss('CbiBillingCode')" class="form-control mb-1" formControlName="CbiBillingCode">
+                            <app-field-error-display [displayError]="!isValidBillingCode" errorMsg="{{CBIBillingCodeCusMsg}}">
+                            </app-field-error-display>
+
+                            <!-- <app-field-error-display [displayError]="isValidBillingCode != 'True'" errorMsg="{{errorMessage('CbiBillingCode')}}">
+                            </app-field-error-display> -->
+                            <span>
+                                <P id="ENTRBILINGCODEIFHAVE"></P>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-md-12 d-flex justify-content-center">
+                            <button type="button" autofocus="false" class="btn btn-primary fixedWidthBtn" (click)="goBack()">
+                                <i class="fas fa-arrow-left pr-1"></i>
+                                <label id="PREVIOUS"></label>
+                            </button>
+                            <button type="button" autofocus="false" (click)="onSubmit()" class="btn btn-primary fixedWidthBtn mx-1">
+                                <label id="NEXT"></label>
+                                <i class="fas fa-arrow-right pl-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </section>

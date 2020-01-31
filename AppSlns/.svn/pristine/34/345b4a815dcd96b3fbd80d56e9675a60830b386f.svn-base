@@ -1,0 +1,23 @@
+﻿using INTSOF.COMPLIO.TALKDESK.DAL.DataModels;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace INTSOF.COMPLIO.TALKDESK.DAL.Interfaces
+{
+    public interface IReportJobRepository
+    {
+        ReportJob  GetReportJobData();
+
+        bool SaveReportJob(string jsonResponse);
+
+        List<ReportJob> GetPendingReportJobs(Int32 updateReportJobTimeLag);
+
+        bool UpdateReportJobData(string jsonResponse);
+
+        List<ReportJob> GetPendingJobsPullCallData();
+
+        bool SaveCallData(string jsonResponse, int jobID);
+    }
+}

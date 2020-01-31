@@ -1,0 +1,73 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="CoreWeb.Shell.MasterPages.ChildPage" CodeBehind="ChildPage.master.cs" %>
+
+<%@ Register TagPrefix="infs" Namespace="INTERSOFT.WEB.UI.WebControls" Assembly="INTERSOFT.WEB.UI" %>
+<%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <telerik:RadCodeBlock runat="server">
+        <link href='<%= Page.ClientScript.GetWebResourceUrl(typeof(RadEditor), "Telerik.Web.UI.Skins.Editor.css") %>'
+            rel="stylesheet" type="text/css" />
+        <link href='<%= Page.ClientScript.GetWebResourceUrl(typeof(RadEditor), "Telerik.Web.UI.Skins.Default.Editor.Default.css") %>'
+            rel="stylesheet" type="text/css" />
+        <link href='<%= Page.ClientScript.GetWebResourceUrl(typeof(RadWindow), "Telerik.Web.UI.Skins.Window.css") %>'
+            rel="stylesheet" type="text/css" />
+        <link href='<%= Page.ClientScript.GetWebResourceUrl(typeof(RadWindow), "Telerik.Web.UI.Skins.Default.Window.Default.css") %>'
+            rel="stylesheet" type="text/css" />
+    </telerik:RadCodeBlock>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        html {
+            height: auto !important;
+            overflow: auto !important;
+        }
+    </style>
+</head>
+<body>
+    <form id="frmChildPage" runat="server">
+        <%-- Managers --%>
+        <div>
+            <asp:ScriptManager ID="scmPage" runat="server" EnablePageMethods="true" EnablePartialRendering="true"
+                AsyncPostBackTimeout="360000" ScriptMode="Release">
+            </asp:ScriptManager>
+            <infs:WclStyleSheetManager runat="server" ID="cssMgrPage">
+            </infs:WclStyleSheetManager>
+            <infs:WclResourceManager runat="server" ID="rsrMgrPage" EnableBrowserSupport="true"
+                SupportCssPath="~/Resources/Generic/Client" SupportScriptPath="~/Resources/Generic/Client"
+                OnInit="rsrMgr_Init" AllowTheming="true" ThemeName="Red" ThemesFolder="~/Resources/Themes"
+                ThemeFiles="colors.css" WindowCheckFailUrl="Default.aspx" EnableWindowCheck="true"
+                IFrameMode="true" SupportedBrowsers="ie7,ie8,ie9" SupportedEngines="trident"
+                EnableEngineSupport="true">
+            </infs:WclResourceManager>
+        </div>
+        <%-- Error / Information Box --%>
+        <div id="pageoutwr">
+            <asp:UpdatePanel ID="pnlError" runat="server" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <div class="msgbox" id="MsgBox">
+                        <asp:Label CssClass="info" EnableViewState="false" runat="server" ID="lblError"></asp:Label>
+                    </div>
+                    <div class="msgbox" id="pageMsgBox">
+                        <asp:Label EnableViewState="false" runat="server" ID="Label1">
+                            <asp:ContentPlaceHolder ID="MessageContent" runat="server" />
+                        </asp:Label>
+                    </div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+            <asp:UpdatePanel ID="updpMainContent" runat="server" UpdateMode="Always">
+                <ContentTemplate>
+                    <div id="box_content">
+                        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </div>
+        <infs:WclResourceManagerProxy runat="server" ID="prxMP">
+            <infs:LinkedResource Path="~/Resources/generic/page.min.js" ResourceType="JavaScript" />
+        </infs:WclResourceManagerProxy>
+    </form>
+</body>
+</html>

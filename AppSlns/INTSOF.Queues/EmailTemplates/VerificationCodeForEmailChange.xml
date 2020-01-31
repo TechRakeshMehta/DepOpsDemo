@@ -1,0 +1,9 @@
+﻿<?xml version="1.0"?>
+<VerificationCodeForEmailChange xmlns="http://tempuri.org/ADBEmails.xsd">
+  <Contents>
+    <FirstName></FirstName>
+    <LastName></LastName>
+    <TenantName></TenantName>
+    <VerificationCode></VerificationCode>
+  </Contents>
+</VerificationCodeForEmailChange>

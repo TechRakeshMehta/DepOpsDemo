@@ -1,0 +1,37 @@
+<div id="bodyBlock" class="container-fluid">
+  <section class="p-2">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h3 *ngIf="isSendForOnline != true" id="RSCHDLAPPNMNT"></h3> 
+        <h3 *ngIf="isSendForOnline == true" id="CMPLTORDER"></h3> 
+      </div>
+      <div class="col-md-12 bg-white shadow-sm rounded py-3">
+        <div class="w-100 d-flex justify-content-center">
+          <form [formGroup]="CreatOrderForm">  
+            <div class="custom-control custom-radio">
+              <input type="radio" id="customRadio1" formControlName="selectedOrderType" value="1" name="selectedOrderType" class="custom-control-input">
+              <label class="custom-control-label" for="customRadio1" id="CLRDFNGRPRNTNGST"></label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input type="radio" id="customRadio2" formControlName="selectedOrderType" value="2" name="selectedOrderType" class="custom-control-input">
+              <label class="custom-control-label" for="customRadio2" id="HVEVENTCODE"></label>
+            </div> 
+            <div *ngIf="isSendForOnline == true" class="custom-control custom-radio">
+                <input type="radio" id="customRadio3" formControlName="selectedOrderType" value="3" name="selectedOrderType" class="custom-control-input">
+                <label class="custom-control-label" for="customRadio3" id="OUTOFSTATE"></label>
+              </div>
+            <div class="row py-5">
+              <div class="col-md-12 d-flex justify-content-center">
+                <button type="button" autofocus="false" (click)="onSubmit()" class="btn btn-primary mx-1">
+                  <label id="NEXT"></label>
+                  <i class="fas fa-arrow-right pl-1"></i>
+                </button>
+                <cancel-rescheduling-button></cancel-rescheduling-button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

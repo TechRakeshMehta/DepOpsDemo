@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CC7FAE92-E014-4334-85EC-D6D057DA1E43}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>INTSOF.AuthNet.Business</RootNamespace>
+    <AssemblyName>INTSOF.AuthNet.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <CodeAnalysisRuleSet>..\WebSites\CoreWeb\ComplioEmptyRuleSet.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <CodeAnalysisRuleSet>..\WebSites\CoreWeb\ComplioEmptyRuleSet.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AIM\Gateway.cs" />
+    <Compile Include="AIM\IGateway.cs" />
+    <Compile Include="AIM\Requests\AuthorizationRequest.cs" />
+    <Compile Include="AIM\Requests\CaptureRequest.cs" />
+    <Compile Include="AIM\Requests\CreditRequest.cs" />
+    <Compile Include="AIM\Requests\GatewayRequest.cs" />
+    <Compile Include="AIM\Requests\IGatewayRequest.cs" />
+    <Compile Include="AIM\Requests\VoidRequest.cs" />
+    <Compile Include="AIM\Responses\GatewayResponse.cs" />
+    <Compile Include="AIM\Responses\IGatewayResponse.cs" />
+    <Compile Include="AIM\Responses\ResponseBase.cs" />
+    <Compile Include="AIM\Responses\SIMResponse.cs" />
+    <Compile Include="AuthNetUtils.cs" />
+    <Compile Include="AuthorizeNetCreditCard.cs" />
+    <Compile Include="BaseAuthNetManager.cs" />
+    <Compile Include="CheckoutFormReaders.cs" />
+    <Compile Include="CIM\Address.cs" />
+    <Compile Include="CIM\Customer.cs" />
+    <Compile Include="CIM\CustomerGateway.cs" />
+    <Compile Include="CIM\ICustomerGateway.cs" />
+    <Compile Include="CIM\Order.cs" />
+    <Compile Include="CIM\PaymentProfile.cs" />
+    <Compile Include="PaymentFormBuilder.cs" />
+    <Compile Include="PaymentManager.cs" />
+    <Compile Include="PaymentProfileDetail.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\Batch.cs" />
+    <Compile Include="Reporting\IReportingGateway.cs" />
+    <Compile Include="Reporting\ReportingGateway.cs" />
+    <Compile Include="Reporting\Transaction.cs" />
+    <Compile Include="Reporting\TransactionDetailsApi.cs" />
+    <Compile Include="ReportManager.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="SoapAPIUtilities.cs" />
+    <Compile Include="Utility\AnetApiSchema.cs" />
+    <Compile Include="Utility\ApiFields.cs" />
+    <Compile Include="Utility\Crypto.cs" />
+    <Compile Include="Utility\HttpXmlUtility.cs" />
+    <Compile Include="Web References\CustomerProfileWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Business\Business.csproj">
+      <Project>{A28FA692-5D4B-44EC-BEA0-B994516798EB}</Project>
+      <Name>Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{08DB341B-B6CE-41E2-8CBE-FE3243EEBB30}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entity\Entity.csproj">
+      <Project>{CE8D45E6-4B39-4D12-82F9-11F691D64E21}</Project>
+      <Name>Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\INTSOF.Contracts\INTSOF.Contracts.csproj">
+      <Project>{b31b85ab-9b51-42c3-8101-70c1966a1d5a}</Project>
+      <Name>INTSOF.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\Foundational\IntsofSecurityModel.Interface\IntsofSecurityModel.Interface.csproj">
+      <Project>{d800ce86-2851-4081-ade4-32ba9b978d1f}</Project>
+      <Name>IntsofSecurityModel.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\Foundational\IntsofSecurityModel\IntsofSecurityModel.csproj">
+      <Project>{6d9cb729-e437-4545-8f4d-bd0c712147f5}</Project>
+      <Name>IntsofSecurityModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\CustomerProfileWS\ANetApiResponseType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CustomerProfileWS\ARBCancelSubscriptionResponseType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CustomerProfileWS\ARBCreateSubscriptionResponseType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CustomerProfileWS\ARBGetSubscriptionListResponseType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CustomerProfileWS\ARBGetSubscriptionStatusResponseType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CustomerProfileWS\ARBUpdateSubscriptionResponseType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CustomerProfileWS\CreateCustomerPaymentProfileResponseType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CustomerProfileWS\CreateCustomerProfileResponseType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CustomerProfileWS\CreateCustomerProfileTransactionResponseType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CustomerProfileWS\CreateCustomerShippingAddressResponseType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CustomerProfileWS\DeleteCustomerPaymentProfileResponseType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CustomerProfileWS\DeleteCustomerProfileResponseType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CustomerProfileWS\DeleteCustomerShippingAddressResponseType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CustomerProfileWS\GetBatchStatisticsResponseType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CustomerProfileWS\GetCustomerPaymentProfileResponseType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CustomerProfileWS\GetCustomerProfileIdsResponseType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CustomerProfileWS\GetCustomerProfileResponseType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CustomerProfileWS\GetCustomerShippingAddressResponseType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CustomerProfileWS\GetHostedProfilePageResponseType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CustomerProfileWS\GetSettledBatchListResponseType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CustomerProfileWS\GetTransactionDetailsResponseType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CustomerProfileWS\GetTransactionListResponseType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CustomerProfileWS\GetUnsettledTransactionListResponseType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CustomerProfileWS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\CustomerProfileWS\Service.wsdl" />
+    <None Include="Web References\CustomerProfileWS\UpdateCustomerPaymentProfileResponseType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CustomerProfileWS\UpdateCustomerProfileResponseType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CustomerProfileWS\UpdateCustomerShippingAddressResponseType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CustomerProfileWS\UpdateSplitTenderGroupResponseType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CustomerProfileWS\ValidateCustomerPaymentProfileResponseType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="https://api.authorize.net/soap/v1/Service.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\CustomerProfileWS\</RelPath>
+      <UpdateFromURL>https://api.authorize.net/soap/v1/Service.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>INTSOF_AuthNet_Business_CustomerProfileWS_Service</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\CustomerProfileWS\Service.disco" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,105 @@
+﻿using INTSOF.COMPLIO.TALKDESK.DAL.DataModels;
+using INTSOF.COMPLIO.TALKDESK.Handlers;
+using INTSOF.COMPLIO.TALKDESK.Models;
+using NLog;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace INTSOF.COMPLIO.TALKDESK.Business
+{
+    public static class ReportJobManager
+    {
+        private static Logger logger = LogManager.GetCurrentClassLogger();
+        public static ReportJob GetReportJobData()
+        {
+            try
+            {
+                return BALUtils.GetReportJobRepoInstance().GetReportJobData();
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex, "An exception occurred in GetReportJobData.");
+                throw ex;
+            }
+        }
+
+        public static bool SaveReportJob(string jsonResponse)
+        {
+            try
+            {
+                if (APPSettingHandler.IsTestModeOn)
+                {
+                    return false;
+                }
+                return BALUtils.GetReportJobRepoInstance().SaveReportJob(jsonResponse);
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex, "An exception occurred in SaveReportJob.");
+                return false;
+            }
+        }
+
+        public static List<ReportJob> GetPendingReportJobs(string updateReportJobTimeLag)
+        {
+            try
+            {
+                return BALUtils.GetReportJobRepoInstance().GetPendingReportJobs(Convert.ToInt32(updateReportJobTimeLag));
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex, "An exception occurred in GetPendingReportJobs.");
+                return null;
+            }
+        }
+
+        public static bool UpdateReportJobData(string jsonResponse)
+        {
+            try
+            {
+                if (APPSettingHandler.IsTestModeOn)
+                {
+                    return false;
+                }
+                return BALUtils.GetReportJobRepoInstance().UpdateReportJobData(jsonResponse);
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex, "An exception occurred in UpdateReportJobData.");
+                return false;
+            }
+        }
+
+        public static List<ReportJob> GetPendingJobsPullCallData()
+        {
+            try
+            {
+                return BALUtils.GetReportJobRepoInstance().GetPendingJobsPullCallData();                    
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex, "An exception occurred in GetPendingJobsPullCallData.");
+                return null;
+            }
+        }
+
+        public static bool SaveCallData(string jsonResponse, int jobID)
+        {
+            try
+            {
+                if (APPSettingHandler.IsTestModeOn)
+                {
+                    return false;
+                }
+                return BALUtils.GetReportJobRepoInstance().SaveCallData(jsonResponse, jobID);
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex, "An exception occurred in SaveCallData.");
+                return false;
+            }
+        }
+    }
+}

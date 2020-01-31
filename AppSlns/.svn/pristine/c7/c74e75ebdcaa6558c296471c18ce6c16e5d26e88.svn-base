@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<!--[if IE 7]>                  <html class="ie7 no-js" lang="en">     <![endif]-->
+<!--[if lte IE 8]>              <html class="ie8 no-js" lang="en">     <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="not-ie no-js" lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <title>Complio Student Help Videos</title>
+
+    <meta name="description" content="Complio Student Help Videos">
+    <meta name="author" content="Complio Student Help Videos">
+    <meta name="keywords" content="" />
+    <meta name="robots" content="noindex">
+
+    <!--[if !lte IE 6]><!-->
+    <link rel="stylesheet" href="http://www.complio.com/VideoDirectory/css/style.css" media="screen" />
+
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,600,300,800,700,400italic|PT+Serif:400,400italic" />
+
+    <link rel="stylesheet" href="http://www.complio.com/VideoDirectory/css/fancybox.min.css" media="screen" />
+
+    <link rel="stylesheet" href="http://www.complio.com/VideoDirectory/css/video-js.min.css" media="screen" />
+
+    <link rel="stylesheet" href="http://www.complio.com/VideoDirectory/css/audioplayerv1.min.css" media="screen" />
+    <!--<![endif]-->
+
+    <!--[if lte IE 6]>
+		<link rel="stylesheet" href="//universal-ie6-css.googlecode.com/files/ie6.1.1.css" media="screen, projection">
+	<![endif]-->
+
+    <!-- HTML5 Shiv + detect touch events -->
+    <script src="http://www.complio.com/VideoDirectory/js/modernizr.custom.js"></script>
+
+    <!-- HTML5 video player -->
+
+
+    <script src="http://www.complio.com/VideoDirectory/js/video.min.js"></script>
+    <!--<embed src="http://www.complio.com/VideoDirectory/js/video-js.swf" />-->
+    <!--<script>_V_.options.flash.swf = 'https://www.complio.com/VideoDirectory/js/video-js.swf';</script>-->
+</head>
+<body>
+
+    <header id="header" class="container clearfix">
+
+        <a href="#" id="logo">
+            <img src="http://www.complio.com/VideoDirectory/img/logo.png" alt="Complio">
+        </a>
+
+    </header>
+    <!-- end #header -->
+
+    <section id="content" class="container clearfix">
+
+        <header class="page-header">
+
+            <h1 class="page-title">Complio Student Help Videos</h1>
+
+
+        </header>
+        <!-- end .page-header -->
+
+        <section id="portfolio-items" class="clearfix">
+
+            <article class="one-half" data-categories="Complio Student">
+
+                <a href="http://player.vimeo.com/video/106014744" class="iframe video" title="Complio Overview">
+                    <img src="https://i.vimeocdn.com/video/488983245.jpg" width="460" alt="">
+                </a>
+
+                <a href="http://www.complio.com/VideoDirectory/complio_overview.html" class="project-meta">
+                    <h5 class="title">Complio Overview</h5>
+                    <span class="categories"></span>
+                </a>
+
+            </article>
+            <!-- end .one-half (Altered) -->
+
+            <article class="one-half" data-categories="Complio Student">
+
+                <a href="http://player.vimeo.com/video/106016415" class="iframe video" title="Complio Creating an Account">
+                    <img src="https://i.vimeocdn.com/video/488986113.jpg" width="460" alt="">
+                </a>
+
+                <a href="http://www.complio.com/VideoDirectory/account.html" class="project-meta">
+                    <h5 class="title">Complio Creating an Account</h5>
+                    <span class="categories"></span>
+                </a>
+
+            </article>
+            <!-- end .one-half (Altered) -->
+
+            <article class="one-half" data-categories="Complio Student">
+
+                <a href="http://player.vimeo.com/video/106016719" class="iframe video" title="Subscribe to Complio">
+                    <img src="https://i.vimeocdn.com/video/488986278.jpg" width="460" alt="">
+                </a>
+
+                <a href="http://www.complio.com/VideoDirectory/subscribe.html" class="project-meta">
+                    <h5 class="title">Subscribe to Complio</h5>
+                    <span class="categories"></span>
+                </a>
+
+            </article>
+            <!-- end .one-half (Altered) -->
+
+            <article class="one-half" data-categories="Complio Student">
+
+                <a href="http://player.vimeo.com/video/106016720" class="iframe video" title="Document Upload">
+                    <img src="https://i.vimeocdn.com/video/488986169.jpg" width="460" alt="Document Upload">
+                </a>
+
+                <a href="http://www.complio.com/VideoDirectory/upload.html" class="project-meta">
+                    <h5 class="title">Document Upload</h5>
+                    <span class="categories"></span>
+                </a>
+
+            </article>
+            <!-- end .one-half (Altered) -->
+
+            <article class="one-half" data-categories="Complio Student">
+
+                <a href="http://player.vimeo.com/video/106017637" class="iframe video" title="Data Entry">
+                    <img src="https://i.vimeocdn.com/video/489196772.jpg" width="460" alt="Data Entry">
+                </a>
+
+                <a href="http://www.complio.com/VideoDirectory/data.html" class="project-meta">
+                    <h5 class="title">Data Entry</h5>
+                    <span class="categories"></span>
+                </a>
+
+            </article>
+            <!-- end .one-half (Altered) -->
+
+            <article class="one-half" data-categories="Complio Student">
+
+                <a href="http://player.vimeo.com/video/106018063" class="iframe video" title="Exceptions">
+                    <img src="https://i.vimeocdn.com/video/489196980.jpg" width="460" alt="Exceptions"></a>
+
+                <a href="http://www.complio.com/VideoDirectory/exceptions.html" class="project-meta">
+                    <h5 class="title">Exceptions</h5>
+                    <span class="categories"></span>
+                </a>
+
+            </article>
+            <!-- end .one-half (Altered) -->
+
+
+
+            <!--		<article class="one-half" data-categories="Complio Student">
+
+			<a href="http://player.vimeo.com/video/106014744" class="iframe video" title="Complio Overview">
+				<img src="https://i.vimeocdn.com/video/488983245.jpg" width="460" alt="Complio Overview"></a>
+			
+		</article><!-- end .one-half (Altered) --*>
+		
+		<article class="one-half" data-categories="Complio Student">
+		
+			<a href="http://player.vimeo.com/video/106016415" class="iframe video" title="Complio Creating an Account">
+				<img src="https://i.vimeocdn.com/video/488986113.jpg" width="460" alt="Complio Creating an Account"></a>
+					
+		</article><!-- end .one-half (Altered) --*>
+
+		<article class="one-half" data-categories="Complio Student">
+		
+			<a href="http://player.vimeo.com/video/106016719" class="iframe video" title="Subscribe to Complio">
+				<img src="https://i.vimeocdn.com/video/488986278.jpg" width="460" alt="Subscribe to Complio"></a>
+				
+		</article><!-- end .one-half (Altered) --*>
+		
+		<article class="one-half" data-categories="Complio Student">
+		
+			<a href="http://player.vimeo.com/video/106016720" class="iframe video" title="Document Upload">
+				<img src="https://i.vimeocdn.com/video/488986169.jpg" width="460" alt="Document Upload"></a>
+					
+		</article><!-- end .one-half (Altered) --*>
+		
+		<article class="one-half" data-categories="Complio Student">
+		
+			<a href="http://player.vimeo.com/video/106017637" class="iframe video" title="Data Entry">
+				<img src="https://i.vimeocdn.com/video/489196772.jpg" width="460" alt="Data Entry"></a>
+					
+		</article><!-- end .one-half (Altered) --*>
+		
+		<article class="one-half" data-categories="Complio Student">
+		
+			<a href="http://player.vimeo.com/video/106018063" class="iframe video" title="Exceptions">
+				<img src="https://i.vimeocdn.com/video/489196980.jpg" width="460" alt="Exceptions"></a>
+					
+		</article><!-- end .one-half (Altered) --*>-->
+
+
+        </section>
+        <!-- end #portfolio-items -->
+
+    </section>
+    <!-- end #content -->
+
+
+    <footer id="footer-bottom" class="clearfix">
+
+        <div class="container">
+
+            <ul>
+                <li>&copy; 2015 American DataBank. All Right Reserved.</li>
+                <!--<li><a href="#">Legal Notice</a></li>
+			<li><a href="#">Terms</a></li>-->
+            </ul>
+
+        </div>
+        <!-- end .container -->
+
+    </footer>
+    <!-- end #footer-bottom -->
+
+    <!--[if !lte IE 6]><!-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.7.1.min.js"><\/script>')</script>
+    <!--[if lt IE 9]> <script src="js/selectivizr-and-extra-selectors.min.js"></script> <![endif]-->
+    <script src="http://www.complio.com/VideoDirectory/js/respond.min.js"></script>
+    <script src="http://www.complio.com/VideoDirectory/js/jquery.easing-1.3.min.js"></script>
+    <script src="http://www.complio.com/VideoDirectory/js/jquery.fancybox.pack.js"></script>
+    <script src="http://www.complio.com/VideoDirectory/js/jquery.smartStartSlider.min.js"></script>
+    <script src="http://www.complio.com/VideoDirectory/js/jquery.jcarousel.min.js"></script>
+    <script src="http://www.complio.com/VideoDirectory/js/jquery.cycle.all.min.js"></script>
+    <script src="http://www.complio.com/VideoDirectory/js/jquery.isotope.min.js"></script>
+    <script src="http://www.complio.com/VideoDirectory/js/audioplayerv1.min.js"></script>
+    <script src="//maps.google.com/maps/api/js?sensor=false"></script>
+    <script src="http://www.complio.com/VideoDirectory/js/jquery.gmap.min.js"></script>
+    <script src="http://www.complio.com/VideoDirectory/js/jquery.touchSwipe.min.js"></script>
+    <script src="http://www.complio.com/VideoDirectory/js/custom.js"></script>
+    <!--<![endif]-->
+
+    <script type="text/javascript">
+        $(this).load(function (win) {
+            OverrideVideoURLs(win);
+        });
+
+        function OverrideVideoURLs(win) {
+            var window = win.target.location.href;
+            var queryString = window.substring((window.indexOf("?args=") + 6), window.index);
+            if (queryString != undefined && queryString != "") {
+                var decryptedQueryString = atob(queryString);
+                var data = $.parseJSON(decryptedQueryString);
+                var SubToCompOvrVideoURL = data.STCV;
+                var DocUploadOvrVideoURL = data.DUV;
+                var DataEntryOvrVideoURL = data.DEV;
+
+                if (SubToCompOvrVideoURL != undefined && SubToCompOvrVideoURL != "") {
+                    $("a[title = 'Subscribe to Complio']")[0].href = SubToCompOvrVideoURL;
+                    $($("h5:contains('Subscribe to Complio')").parent())[0].href = SubToCompOvrVideoURL;
+                }
+                if (DocUploadOvrVideoURL != undefined && DocUploadOvrVideoURL != "") {
+                    $("a[title = 'Document Upload']")[0].href = DocUploadOvrVideoURL;
+                    $($("h5:contains('Document Upload')").parent())[0].href = DocUploadOvrVideoURL;
+                }
+
+                if (DataEntryOvrVideoURL != undefined && DataEntryOvrVideoURL != "") {
+                    $("a[title = 'Data Entry']")[0].href = DataEntryOvrVideoURL;
+                    $($("h5:contains('Data Entry')").parent())[0].href = DataEntryOvrVideoURL;
+                }
+            }
+        }
+
+    </script>
+
+</body>
+</html>

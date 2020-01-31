@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:56548/PDFConversion.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/INTSOF.Queues" />
+  <xs:import schemaLocation="http://localhost:56548/PDFConversion.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:element name="DoWork">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoWorkResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DoWorkResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GeneratePDF">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="urlToConvert" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GeneratePDFResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GeneratePDFResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConvertApplicantDocumentToPDF">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/INTSOF.Queues" minOccurs="0" name="applicantDocuments" nillable="true" type="q1:ArrayOfApplicantDoc" />
+        <xs:element minOccurs="0" name="tenantID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConvertApplicantDocumentToPDFResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/INTSOF.Queues" minOccurs="0" name="ConvertApplicantDocumentToPDFResult" nillable="true" type="q2:ArrayOfApplicantDoc" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AppendConvertedDocumentToPDF">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="unifiedDocumentID" type="xs:int" />
+        <xs:element minOccurs="0" name="tenantID" type="xs:int" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/INTSOF.Queues" minOccurs="0" name="applicantDocuments" nillable="true" type="q3:ArrayOfApplicantDocToBeMerged" />
+        <xs:element minOccurs="0" name="previousUnifiedPdfPath" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sequenceOrder" type="xs:int" />
+        <xs:element minOccurs="0" name="previousPages" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AppendConvertedDocumentToPDFResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/INTSOF.Queues" minOccurs="0" name="AppendConvertedDocumentToPDFResult" nillable="true" type="q4:ArrayOfApplicantDocMerging" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConvertDocumentToPDFForPrint">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="tenantID" type="xs:int" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/INTSOF.Queues" minOccurs="0" name="applicantDocumentsToPrint" nillable="true" type="q5:ArrayOfApplicantDocToBeMerged" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConvertDocumentToPDFForPrintResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ConvertDocumentToPDFForPrintResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteAppDocumentFromUnifiedPDF">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="tenantID" type="xs:int" />
+        <xs:element minOccurs="0" name="pagesToAdd" type="xs:int" />
+        <xs:element minOccurs="0" name="newStartPageNumber" type="xs:int" />
+        <xs:element minOccurs="0" name="previousUnifiedPdfPath" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="unifiedDocumentID" type="xs:int" />
+        <xs:element minOccurs="0" name="isNeedToDeleteUnifiedDocument" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteAppDocumentFromUnifiedPDFResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteAppDocumentFromUnifiedPDFResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MergeAttestationDocuments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="tenantID" type="xs:int" />
+        <xs:element minOccurs="0" name="attestationDocPathToMerge" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="previousAttestationPdfPath" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="currentUserId" type="xs:int" />
+        <xs:element minOccurs="0" name="fileNameToAppend" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fileName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="deletePreviousAttestation" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MergeAttestationDocumentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MergeAttestationDocumentsResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPdfPageDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/INTSOF.Queues" minOccurs="0" name="applicantDocToBeMergedList" nillable="true" type="q6:ArrayOfApplicantDocToBeMerged" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPdfPageDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/INTSOF.Queues" minOccurs="0" name="GetPdfPageDetailsResult" nillable="true" type="q7:ArrayOfApplicantDocToBeMerged" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AppendConvertedUnifiedDocumentToPDF">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/INTSOF.Queues" minOccurs="0" name="applicantDocuments" nillable="true" type="q8:ArrayOfApplicantDocToBeMerged" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AppendConvertedUnifiedDocumentToPDFResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="AppendConvertedUnifiedDocumentToPDFResult" nillable="true" type="q9:TupleOfstringArrayOfApplicantDocToBeMergedodubidBA" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

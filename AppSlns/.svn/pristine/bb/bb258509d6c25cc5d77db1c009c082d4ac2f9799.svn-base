@@ -1,0 +1,92 @@
+﻿using INTSOF.COMPLIO.TALKDESK.Business;
+using INTSOF.COMPLIO.TALKDESK.Handlers;
+using NLog;
+using System;
+using System.Net;
+using System.Net.Http;
+using System.Threading.Tasks;
+using System.Web.Http;
+
+namespace INTSOF.COMPLIO.TALKDESK.Controllers
+{
+    [RoutePrefix("ComplioTalkDeskCall")]
+    public class ComplioTalkDeskCallController : BaseAPIController
+    {
+        private static Logger logger = LogManager.GetCurrentClassLogger();
+
+        [Route("GetCallData")]
+        [HttpGet]
+        public async Task<HttpResponseMessage> GetTalkDeskJobCallDataAsync()
+        {
+            //Get the list of "TalkDesk pending jobs" from database and process the jobs one by one. 
+
+            logger.Info("Start Complio TalkDesk Pull Call Data API call.");
+            HttpResponseMessage responseMessage = new HttpResponseMessage();
+            bool isSuccess = true;
+            try
+            {
+                //get the pnding jobs from the database for which Call Data still needs to be pull from TalkDesk. Pending jobs will be those having status as 'Done'.
+                var pendingJobsPullCallData = ReportJobManager.GetPendingJobsPullCallData();
+
+                foreach (var item in pendingJobsPullCallData)
+                {
+                    try
+                    {
+                        RestHttpClientHandler restHttpClient = new RestHttpClientHandler();
+                        string _jobID = item.JobNumber;
+                        string _createJobURL = item.FilesHref;
+
+                        TalkDeskTokenHandler talkDeskTokenHandler = new TalkDeskTokenHandler();
+                        var _bearerTokenResponse = await talkDeskTokenHandler.GetTalkDeskToken();
+                        if (_bearerTokenResponse == "Failed get Token")
+                        {
+                            logger.Error("Failed get token");
+                            isSuccess = false;
+                            break;
+                        }
+                        var getresponse = await restHttpClient.GetRequestAsyncWithToken(_createJobURL, _bearerTokenResponse, true);
+
+                        if (getresponse.IsSuccessStatusCode || APPSettingHandler.HTTPSuccessRequestCode.Contains(Convert.ToString(Convert.ToInt32((getresponse.StatusCode)))))
+                        {
+                            //update job data into Database and return Success code
+                            var _responseContent = await getresponse.Content.ReadAsStringAsync();
+                            if (!ReportJobManager.SaveCallData(_responseContent, item.JobID))
+                            {
+                                isSuccess = false;
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        isSuccess = false;
+                        //log message.
+                        logger.Error(ex, "An error occurred while calling TalkDesk API for Pull Call Data.");
+                    }
+                }
+
+                if (isSuccess)
+                {
+                    responseMessage.StatusCode = HttpStatusCode.Accepted;
+                    responseMessage.ReasonPhrase = "Successfully Processed call job data.";
+                }
+                else
+                {
+                    responseMessage.StatusCode = HttpStatusCode.ExpectationFailed;
+                    responseMessage.ReasonPhrase = "Partially Processed call Job data. See logs for failed records.";
+                }               
+            }
+            catch (Exception ex)
+            {
+                if (responseMessage == null)
+                {
+                    responseMessage = new HttpResponseMessage();
+                }
+                responseMessage.StatusCode = HttpStatusCode.InternalServerError;
+                responseMessage.ReasonPhrase = string.Format("GetTalkDeskJobCallDataAsync.Request failed: {0}", ex);
+                logger.Error(ex, "An error occurred in Complio TalkDesk Pull Call Data API.");
+            }
+            logger.Info("End Complio TalkDesk Pull Call Data API call.");
+            return responseMessage;
+        }
+    }
+}

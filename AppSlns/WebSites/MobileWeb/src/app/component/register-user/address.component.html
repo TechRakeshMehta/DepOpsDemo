@@ -1,0 +1,92 @@
+<div id="bodyBlock" class="container-fluid">
+
+        <section class="p-2">
+                <div class="row">
+                        <div class="col-md-12 text-center">
+                                <h3 id="CRTACCOUNT"></h3>
+                        </div>
+                        <div class="col-md-12 bg-white shadow-sm rounded py-3">
+                                <form [formGroup]="addressForm">
+                                        <div class="row">
+                                                <div class="col-md-6 mb-2">
+                                                        <label class="required" id="ADDRESS"></label>
+                                                        <input type="text" class="form-control" maxlength="100"
+                                                        [ngClass]="displayFieldCss('address')"  formControlName="address">
+                                                        <app-field-error-display id="ADDRESSREQ" [displayError]="isError('address')" errorMsg="{{errorMessage('address')}}">
+                                                                </app-field-error-display>
+
+                                                </div>
+                                                <div class="col-md-6 mb-2 ">
+                                                        <label class="required" id="COUNTRY"></label>
+                                                        <select (change)="onCountrySelected($event.target.value,this)"
+                                                                [(ngModel)]="selectedCountryId" class="custom-select"
+                                                                [ngClass]="displayFieldCss('Country')"
+                                                                formControlName="Country">
+                                                                <option disabled hidden [value]="selectUndefinedOptionValue" id="SELECTWITHHYPENS"> 
+                                                                        <label name="PLEASESELECT"></label></option>
+                                                                <option *ngFor="let country of lstCountry" value={{country.ID}}>
+                                                                        {{country.Name}}
+                                                                </option>
+                                                        </select>
+                                                        <app-field-error-display [displayError]="isError('Country')" id="PLSSELCOUNTRY" errorMsg="{{errorMessage('Country')}}">
+                                                                </app-field-error-display>
+                                                </div>
+                                                <div class="col-md-6 mb-2" [hidden]="HideState == true">
+                                                                <label class="required" id="STATE"></label>
+                                                                <select id="State" (change)="onStateSelected($event.target.value)"
+                                                                        [(ngModel)]="selectedStateID" class="custom-select"
+                                                                        [ngClass]="displayFieldCss('State')"
+                                                                        formControlName="State">
+                                                                        <option disabled hidden [value]="selectUndefinedOptionValue" id="SELECTWITHHYPENS"> 
+                                                                                <label name="PLEASESELECT"></label></option>
+                                                                        <option *ngFor="let State of lstStates" value={{State.ID}}>
+                                                                                {{State.Name}}
+                                                                        </option>
+                                                                </select>
+                                                                <app-field-error-display [displayError]="isError('State')" id="PLSSELSTATE" errorMsg="{{errorMessage('State')}}">
+                                                                        </app-field-error-display>
+        
+                                                        </div>
+                                                        <div class="col-md-6 mb-2">
+                                                                <label class="required" id="CITY"></label>
+                                                                <input type="text" class="form-control" maxlength="30" 
+                                                                formControlName="city" [ngClass]="displayFieldCss('city')">
+                                                                <app-field-error-display [displayError]="isError('city')" id="CITYREQ" errorMsg="{{errorMessage('city')}}">
+                                                                        </app-field-error-display>
+        
+        
+                                                        </div>
+                                                        <div class="col-md-6 mb-2">
+                                                                        <label class="required" [hidden]="!IsZipCodeLabel" id="ZIPCODE"></label>
+                                                                        <label class="required" [hidden]="IsZipCodeLabel" id="POSTALCODE"></label>                                                           
+                                                                        <!-- <label class="required" id="ZIP">{{IsZipCodeLabel?'Zip Code':'Postal Code'}}</label> -->
+                                                                        <input id="Zipcode" type="text" maxlength="15" class="form-control"
+                                                                                formControlName="Zipcode"
+                                                                                [ngClass]="displayFieldCss('Zipcode')">
+                                                                                <app-field-error-display [displayError]="isError('Zipcode')" id="ENTERVALIDZIPCODEVALDTN" errorMsg="{{errorMessage('Zipcode')}}">
+                                                                                        </app-field-error-display>
+                                                                </div>
+                                        </div>
+                                      
+
+                                        <br>
+                                        <div class="row">
+                                                <div class="col-md-12 d-flex justify-content-center">
+                                                                <button type="button" class="btn btn-primary fixedWidthBtn" (click)="goBack()">
+                                                                                <i class="fas fa-arrow-left pr-1"></i>
+                                                                                <label id="PREVIOUS"></label>
+                                                                              </button>                                                              
+                                                            
+                                                                         <button type="button"  (click)="onSubmit()" class="btn btn-primary fixedWidthBtn mx-1">
+                                                            
+                                                                            <label id="NEXT"></label>
+                                                                            <i class="fas fa-arrow-right pl-1"></i>
+                                                                         </button>
+                                                        <cancel-registration-button></cancel-registration-button>
+                                                </div>
+                                        </div>
+                                </form>
+                        </div>
+                </div>
+        </section>
+</div>

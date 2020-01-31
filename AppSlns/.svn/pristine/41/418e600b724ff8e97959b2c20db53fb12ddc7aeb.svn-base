@@ -1,0 +1,214 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Text;
+using System.Threading.Tasks;
+using System.Web;
+
+namespace INTSOF.COMPLIO.TALKDESK.Handlers
+{
+    internal class RestHttpClientHandler
+    {
+        public HttpResponseMessage _httpResponseMessage = new HttpResponseMessage();
+
+        public async Task<HttpResponseMessage> PostRequestAsyncGetToken(string adaptiveUri, string postContent)
+        {
+            try
+            {
+                using (HttpClient httpClient = new HttpClient())
+                {
+                    System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
+                    var encodedConsumerKey = HttpUtility.UrlEncode(APPSettingHandler.TalkDeskOAuthClientID);
+                    var encodedConsumerKeySecret = HttpUtility.UrlEncode(APPSettingHandler.TalkDeskOAuthClientSecret);
+                    var encodedPair = Base64Encode(String.Format("{0}:{1}", encodedConsumerKey, encodedConsumerKeySecret));
+
+                    var requestToken = new HttpRequestMessage
+                    {
+                        Method = HttpMethod.Post,
+                        RequestUri = new Uri(adaptiveUri),
+                        Content = new StringContent(postContent),
+                    };
+
+                    requestToken.Content.Headers.ContentType = new MediaTypeWithQualityHeaderValue("application/x-www-form-urlencoded") { CharSet = "UTF-8" };
+                    requestToken.Headers.TryAddWithoutValidation("Authorization", String.Format("Basic {0}", encodedPair));
+
+                    //var bearerResult = await httpClient.SendAsync(requestToken);                
+                    //var bearerToken = JObject.Parse(bearerData)["access_token"].ToString();
+                    //var requestData = new HttpRequestMessage
+                    //{
+                    //    Method = HttpMethod.Get,
+                    //    RequestUri = new Uri(baseUri, apiPath),
+                    //};
+                    //requestData.Headers.TryAddWithoutValidation("Authorization", String.Format("Bearer {0}", bearerToken));
+
+                    //var results = await HttpClient.SendAsync(requestData);
+                    //return await results.Content.ReadAsStringAsync();
+
+                    try
+                    {
+                        _httpResponseMessage = await httpClient.SendAsync(requestToken);
+                        //var  = await bearerResult.Content.ReadAsStringAsync();                        
+                    }
+                    catch (Exception ex)
+                    {
+                        if (_httpResponseMessage == null)
+                        {
+                            _httpResponseMessage = new HttpResponseMessage();
+                        }
+                        _httpResponseMessage.StatusCode = HttpStatusCode.InternalServerError;
+                        _httpResponseMessage.ReasonPhrase = string.Format("SendRequestAsyncGetToken.SendRequest failed: {0}", ex);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                if (_httpResponseMessage == null)
+                {
+                    _httpResponseMessage = new HttpResponseMessage();
+                }
+                _httpResponseMessage.StatusCode = HttpStatusCode.InternalServerError;
+                _httpResponseMessage.ReasonPhrase = string.Format("SendRequestAsyncGetToken.Error while fetching the Auth Token: {0}", ex);
+            }
+
+            return _httpResponseMessage;
+        }
+
+        public async Task<HttpResponseMessage> PostRequestAsyncWithToken(string adaptiveUri, string jsonPostData, string bearerToken)
+        {
+            using (HttpClient httpClient = new HttpClient())
+            {
+                System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
+                var requestData = new HttpRequestMessage
+                {
+                    Method = HttpMethod.Post,
+                    RequestUri = new Uri(adaptiveUri),
+                    Content =  new StringContent(jsonPostData),
+                };
+                requestData.Headers.TryAddWithoutValidation("Authorization", String.Format("Bearer {0}", bearerToken));
+
+                //var results = await httpClient.SendAsync(requestData);
+
+                //return await results.Content.ReadAsStringAsync();
+
+                requestData.Content.Headers.ContentType = new MediaTypeWithQualityHeaderValue("application/json") { CharSet = "UTF-8" };
+                //httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", bearerToken);
+                //StringContent httpContent = new StringContent(jsonPostData, Encoding.UTF8);
+
+                HttpResponseMessage responseMessage = null;
+                try
+                {
+                    responseMessage = await httpClient.SendAsync(requestData);
+                }
+                catch (Exception ex)
+                {
+                    if (responseMessage == null)
+                    {
+                        responseMessage = new HttpResponseMessage();
+                    }
+                    responseMessage.StatusCode = HttpStatusCode.InternalServerError;
+                    responseMessage.ReasonPhrase = string.Format("RestHttpClient.SendRequest failed: {0}", ex);
+                }
+                return responseMessage;
+            }
+        }
+
+        public async Task<HttpResponseMessage> GetRequestAsyncWithToken(string adaptiveUri, string bearerToken, bool allowAutoRedirect)
+        {
+            HttpClientHandler _httpClientHandler = new HttpClientHandler();
+            _httpClientHandler.AllowAutoRedirect = allowAutoRedirect;
+            System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
+
+            using (HttpClient httpClient = new HttpClient(_httpClientHandler))
+            {
+                //var requestData = new HttpRequestMessage
+                //{
+                //    Method = HttpMethod.Get,
+                //    RequestUri = new Uri(adaptiveUri)                    
+                //};
+
+                //requestData.Headers.TryAddWithoutValidation("Authorization", String.Format("Bearer {0}", bearerToken));
+
+                //httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", bearerToken);
+                //requestData.Content.Headers.ContentType = new MediaTypeWithQualityHeaderValue("application/json") { CharSet = "UTF-8" };
+
+                //httpClient.BaseAddress = new Uri("https://api.talkdeskapp.com");
+
+                httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", bearerToken);
+
+                HttpResponseMessage responseMessage = null;
+                try
+                {
+
+                    responseMessage = await httpClient.GetAsync(adaptiveUri);
+                    //responseMessage = await httpClient.GetAsync();
+                    //responseMessage = await httpClient.SendAsync(requestData);
+                }
+                catch (Exception ex)
+                {
+                    if (responseMessage == null)
+                    {
+                        responseMessage = new HttpResponseMessage();
+                    }
+                    responseMessage.StatusCode = HttpStatusCode.InternalServerError;
+                    responseMessage.ReasonPhrase = string.Format("GetRequestAsyncWithToken.GetRequest failed: {0}", ex);
+                }
+                return responseMessage;
+            }
+        }
+
+        private string GetBase64AuthorizationKey()
+        {
+            string _clientID = APPSettingHandler.TalkDeskOAuthClientID;
+            string _clientSecret = APPSettingHandler.TalkDeskOAuthClientSecret;
+
+            string _signingKey = _clientID + ":" + _clientSecret;
+            byte[] toEncodeAsBytes = System.Text.ASCIIEncoding.ASCII.GetBytes(_signingKey);
+            string returnValue = System.Convert.ToBase64String(toEncodeAsBytes);
+            return returnValue;
+        }
+
+        private static string Base64Encode(string plainText)
+        {
+            var plainTextBytes = System.Text.Encoding.UTF8.GetBytes(plainText);
+            return System.Convert.ToBase64String(plainTextBytes);
+        }
+
+        public async Task<string> GetAPI(string apiPath)
+        {
+            var baseUri = new Uri("https://api.twitter.com/");
+            var encodedConsumerKey = HttpUtility.UrlEncode("111111111111");
+            var encodedConsumerKeySecret = HttpUtility.UrlEncode("222222222222");
+            var encodedPair = Base64Encode(String.Format("{0}:{1}", encodedConsumerKey, encodedConsumerKeySecret));
+            System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
+
+            var requestToken = new HttpRequestMessage
+            {
+                Method = HttpMethod.Post,
+                RequestUri = new Uri(baseUri, "oauth2/token"),
+                Content = new StringContent("grant_type=client_credentials")
+            };
+
+            requestToken.Content.Headers.ContentType = new MediaTypeWithQualityHeaderValue("application/x-www-form-urlencoded") { CharSet = "UTF-8" };
+            requestToken.Headers.TryAddWithoutValidation("Authorization", String.Format("Basic {0}", encodedPair));
+
+            HttpClient httpClient = new HttpClient();
+            var bearerResult = await httpClient.SendAsync(requestToken);
+            var bearerData = await bearerResult.Content.ReadAsStringAsync();
+            var bearerToken = Newtonsoft.Json.Linq.JObject.Parse(bearerData)["access_token"].ToString();
+
+            var requestData = new HttpRequestMessage
+            {
+                Method = HttpMethod.Get,
+                RequestUri = new Uri(baseUri, apiPath),
+            };
+            requestData.Headers.TryAddWithoutValidation("Authorization", String.Format("Bearer {0}", bearerToken));
+
+            var results = await httpClient.SendAsync(requestData);
+            return await results.Content.ReadAsStringAsync();
+
+        }
+    }
+}

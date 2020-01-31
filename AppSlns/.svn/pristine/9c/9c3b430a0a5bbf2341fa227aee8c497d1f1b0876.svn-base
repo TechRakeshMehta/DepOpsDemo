@@ -1,0 +1,30 @@
+﻿
+  <div id="bodyBlock"  class="container-fluid">
+  
+
+      <section class="p-2">
+    
+      
+        <div class="row">
+  
+  <div class="align-items-center h-100" style="width: 100vw;
+">
+    <logout-app></logout-app>
+    <div class="row justify-content-center mt-3" >
+      <div class="col-12 text-center mb-1"  *ngFor="let value of lstPackages" (click)='ShowCategory(value.PackageId)'>
+        <div class="alert alert-info label-header" role="alert">
+          <strong>
+            <i class="fa  fa-arrow-circle-left"  aria-hidden="true"></i>&nbsp;{{value.PackageName}}
+          </strong> 
+        </div>
+      </div>  
+    </div>
+    <div class="col-12 text-center p-2" id="confirmation-div" (click)='ReturntodashBoard()'>
+      <button type="button" id="backBtn" class="btn btn-primary backBtn">
+        <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>&nbsp;Return to Dashboard
+      </button>
+    </div>
+  </div>
+  </div>
+  </section>
+  </div>

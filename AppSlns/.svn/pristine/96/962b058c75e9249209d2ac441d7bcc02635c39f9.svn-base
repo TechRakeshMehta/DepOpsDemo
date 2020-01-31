@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<nlog xmlns="http://www.nlog-project.org/schemas/NLog.xsd"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.nlog-project.org/schemas/NLog.xsd NLog.xsd"
+      autoReload="true"
+      throwExceptions="false"
+      internalLogLevel="Off" internalLogFile="c:\temp\nlog-internal.log">
+
+  <!-- optional, add some variables
+  https://github.com/nlog/NLog/wiki/Configuration-file#variables
+  -->
+  <variable name="myvar" value="myvalue"/>
+
+  <!--
+  See https://github.com/nlog/nlog/wiki/Configuration-file
+  for information on customizing logging rules and outputs.
+   -->
+
+  <targets>
+    <!-- Log in a separate thread, possibly queueing up to
+        5000 messages. When the queue overflows, discard any
+        extra messages-->
+
+    <!--<target name="file" xsi:type="AsyncWrapper" queueLimit="5000" overflowAction="Discard">
+		  <target xsi:type="File" fileName="${basedir}/EmailDispatcherServiceLogs/${shortdate}/EmailDispatcherServiceLogs.txt" />
+	  </target>-->
+    <!--archiveAboveSize (in bytes) 
+      2MB->2097152 bytes
+      3MB->3145728 bytes
+      5MB->5242880 bytes
+      10MB->10485760
+    -->
+    <target name="ComplioTalkDeskWebAPIServiceFileLog" xsi:type="File" 
+            fileName="${basedir}/ComplioTalkDeskWebAPIServiceLogs/${shortdate}/WebAPIServiceLogs.txt"
+            archiveFileName="${basedir}/ComplioTalkDeskWebAPIServiceLogs/${shortdate}/archives/WebAPIServiceLogs.{#######}.txt" 
+            archiveAboveSize="2097152"
+            archiveNumbering="Sequence"/>
+    
+    <target name="ComplioTalkDeskWebAPIServiceDBLog" xsi:type="Database"
+			   connectionString="data source=LAPTOP-QHAMEOER\SQL2016DEVELOPER;initial catalog=ApplicationLog;persist security info=True;user id=bsingh;password=bsingh;multipleactiveresultsets=True;"
+			   commandText="EXEC usp_InsertComplioTalkDeskWebAPIServiceLog
+					@CallSite,
+					@Level,
+					@Logger,
+					@Date,
+					@Exception,
+					@Message,
+					@StackTrace,
+					@Thread,
+					@ServiceContextKey">
+      <parameter name="@CallSite" layout="${callsite:filename=true}" />
+      <parameter name="@Level" layout="${level}" />
+      <parameter name="@Logger" layout="${logger}" />
+      <parameter name="@Date" layout="${longdate}" />
+      <parameter name="@Exception" layout="${exception}" />
+      <parameter name="@Message" layout="${message}" />
+      <parameter name="@StackTrace" layout="${exception:format=ToString,StackTrace}${newline}" />
+      <parameter name="@Thread" layout="${threadid}" />
+      <parameter name="@ServiceContextKey" layout="${gdc:ServiceContextKey}" />
+    </target>
+  </targets>
+  <rules>
+    <logger name="*" minlevel="Info" writeTo="ComplioTalkDeskWebAPIServiceFileLog,ComplioTalkDeskWebAPIServiceDBLog"/>
+  </rules>
+</nlog>

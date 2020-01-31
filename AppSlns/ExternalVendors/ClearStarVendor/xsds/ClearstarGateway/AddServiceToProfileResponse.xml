@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<AddServiceToProfile xmlns="">
+  <ErrorStatus>
+    <Code></Code>
+    <Type></Type>
+    <Message></Message>
+  </ErrorStatus>
+  <Profile>
+    <sProf_No></sProf_No>
+    <iApp_ID></iApp_ID>
+    <iAddr_ID></iAddr_ID>
+    <sAddServiceResult></sAddServiceResult>
+  </Profile>
+</AddServiceToProfile>

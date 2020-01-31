@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CreateProfileForCountry>
+  <ErrorStatus>
+    <Code></Code>
+    <Type></Type>
+    <Message></Message>
+  </ErrorStatus>
+  <Profile>
+    <Prof_No></Prof_No>
+    <App_ID></App_ID>
+    <Addr_ID></Addr_ID>
+  </Profile>
+</CreateProfileForCountry>

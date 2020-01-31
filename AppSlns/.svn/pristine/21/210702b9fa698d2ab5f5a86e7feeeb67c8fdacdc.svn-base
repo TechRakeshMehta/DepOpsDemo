@@ -1,0 +1,158 @@
+<div id="bodyBlock" class="container-fluid">
+
+    <section class="p-2">
+        <div class="row">
+            <div class="col-12 font-weight-bold">
+                <label id="CREATODR"></label>(
+                <label id="STEP"></label> {{orderInfo.CurrentStep}}
+                <label id="OF"></label> {{orderInfo.TotalSteps}})
+            </div>
+            <div class="col-md-12 bg-white shadow-sm rounded py-3">
+                <h6 class="redColor font-weight-bold" id="INFOFINGERPRINT"></h6>
+                <span [hidden]="customHtml == '' || customHtml == undefined" id="customHtml" ></span>
+                <br/>
+                <form [formGroup]="customForm">
+                    <div class="row">
+                        <div class="col-md-6 mb-1">
+                            <label class="required" id="POBCOUNTRY"></label>
+                            <select (change)="onCountrySelected($event.target.value)" [(ngModel)]="SelectedPlaceofCountry" [ngClass]="displayFieldCss('Country')"
+                                class="custom-select" formControlName="Country">
+                                <option disabled hidden [value]="selectUndefinedOptionValue">
+                                    <label name="PLEASESELECT"></label>
+                                </option>
+                                <option *ngFor="let country of lstPlaceofBirthCountry" value={{country}}>
+                                    {{country}}
+                                </option>
+                            </select>
+                            <app-field-error-display [displayError]="isFieldValid('Country')" errorMsg="{{errorMessage('Country')}}">
+                            </app-field-error-display>
+                        </div>
+                        <div class="col-md-6 mb-1">
+                            <label class="required" id="POBSTATE"></label>
+                            <select (change)="onStateSelected($event.target.value)" [(ngModel)]="SelectedState" [ngClass]="displayFieldCss('State')"
+                                class="custom-select" formControlName="State">
+                                <option disabled hidden [value]="selectUndefinedOptionValue">
+                                    <label name="PLEASESELECT"></label>
+                                </option>
+                                <option *ngFor="let state of lstPlaceofBirthState" value={{state}}>
+                                    {{state}}
+                                </option>
+                            </select>
+                            <app-field-error-display [displayError]="isFieldValid('State')" errorMsg="{{errorMessage('State')}}">
+                            </app-field-error-display>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-1">
+                            <label class="required" id="CITIZENSHIP"></label>
+                            <select [(ngModel)]="SelectedCitizenShip" (change)="onCitizenshipSelected($event.target.value)" [ngClass]="displayFieldCss('CitizenShip')"
+                                class="custom-select" formControlName="CitizenShip">
+                                <option disabled hidden [value]="selectUndefinedOptionValue">
+                                    <label name="PLEASESELECT"></label>
+                                </option>
+                                <option *ngFor="let country of lstCitizenShip" value={{country}}>
+                                    {{country}}
+                                </option>
+                            </select>
+                            <app-field-error-display [displayError]="isFieldValid('CitizenShip')" errorMsg="{{errorMessage('CitizenShip')}}">
+                            </app-field-error-display>
+                        </div>
+                        <div class="col-md-6 mb-1">
+                            <label class="required" id="RACE"></label>
+                            <select [(ngModel)]="SelectedRaceName" [ngClass]="displayFieldCss('race')" class="custom-select" formControlName="race">
+                                <option disabled hidden [value]="selectUndefinedOptionValue">
+                                    <label name="PLEASESELECT"></label>
+                                </option>
+                                <option *ngFor="let race of lstRaceAttribute" value={{race.Name}}>
+                                    {{race.Name}}
+                                </option>
+                            </select>
+                            <app-field-error-display [displayError]="isFieldValid('race')" errorMsg="{{errorMessage('race')}}">
+                            </app-field-error-display>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-1">
+                            <label class="required" id="EYECOLOR"></label>
+                            <select [(ngModel)]="SelectedEyeColorName" [ngClass]="displayFieldCss('eyeColor')" class="custom-select" formControlName="eyeColor">
+                                <option disabled hidden [value]="selectUndefinedOptionValue">
+                                    <label name="PLEASESELECT"></label>
+                                </option>
+                                <option *ngFor="let eyeColor of lstEyeColorAttribute" value={{eyeColor.Name}}>
+                                    {{eyeColor.Name}}
+                                </option>
+                            </select>
+                            <app-field-error-display [displayError]="isFieldValid('eyeColor')" errorMsg=" {{errorMessage('eyeColor')}}">
+                            </app-field-error-display>
+                        </div>
+                        <div class="col-md-6 mb-1">
+                            <label class="required" id="HAIRCOLOR"></label>
+                            <select [(ngModel)]="SelectedHairColorName" [ngClass]="displayFieldCss('hairColor')" class="custom-select" formControlName="hairColor">
+                                <option disabled hidden [value]="selectUndefinedOptionValue">
+                                    <label name="PLEASESELECT"></label>
+                                </option>
+                                <option *ngFor="let hairColor of lstHairColorAttribute" value={{hairColor.Name}}>
+                                    {{hairColor.Name}}
+                                </option>
+                            </select>
+                            <app-field-error-display [displayError]="isFieldValid('hairColor')" errorMsg="{{errorMessage('hairColor')}}">
+                            </app-field-error-display>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-1">
+                            <label class="required" id="HEIGHTFEET"></label>
+                            <select [(ngModel)]="SelectedHeightFeetName" [ngClass]="displayFieldCss('heightFeet')" class="custom-select" formControlName="heightFeet">
+                                <option disabled hidden [value]="selectUndefinedOptionValue">
+                                    <label name="PLEASESELECT"></label>
+                                </option>
+                                <option *ngFor="let heightFeet of lstHeightFeetAttribute" value={{heightFeet.Name}}>
+                                    {{heightFeet.Name}}
+                                </option>
+                            </select>
+                            <app-field-error-display [displayError]="isFieldValid('heightFeet')" errorMsg="{{errorMessage('heightFeet')}}">
+                            </app-field-error-display>
+                        </div>
+                        <div class="col-md-6 mb-1">
+                            <label class="required" id="HEIGHTINCH"> </label>
+
+                            <select [(ngModel)]="SelectedHeightInchesName" [ngClass]="displayFieldCss('heightInches')" class="custom-select" formControlName="heightInches">
+                                <option disabled hidden [value]="selectUndefinedOptionValue">
+                                    <label name="PLEASESELECT"></label>
+                                </option>
+                                <option *ngFor="let heightInches of lstHeightInchesAttribute" value={{heightInches.Name}}>
+                                    {{heightInches.Name}}
+                                </option>
+                            </select>
+                            <app-field-error-display [displayError]="isFieldValid('heightInches')" errorMsg="{{errorMessage('heightInches')}}">
+                            </app-field-error-display>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <label class="required" id="WEIGHT"></label>
+                            <input type="text" [(ngModel)]="weight" maxlength="3" [ngClass]="displayFieldCss('weight')" class="form-control mb-1" formControlName="weight"
+                                value={{weight}}>
+                            <app-field-error-display [displayError]="isError('weight')" errorMsg="{{errorMessage('weight')}}">
+                            </app-field-error-display>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-12 d-flex justify-content-center">
+                            <button type="button" autofocus="false" class="btn btn-primary fixedWidthBtn" (click)="goBack()">
+                                <i class="fas fa-arrow-left pr-1"></i>
+                                <label id="PREVIOUS"></label>
+                            </button>
+                            <button type="button" autofocus="false" (click)="onSubmit()" class="btn btn-primary mx-1 fixedWidthBtn">
+                                <label id="NEXT"></label>
+                                <i class="fas fa-arrow-right pl-1"></i>
+                            </button>
+                            <cancel-order-button></cancel-order-button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,171 @@
+﻿using INTSOF.COMPLIO.TALKDESK.DAL.DataModels;
+using INTSOF.COMPLIO.TALKDESK.DAL.Interfaces;
+using INTSOF.COMPLIO.TALKDESK.DAL.Repository;
+using INTSOF.COMPLIO.TALKDESK.Handlers;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Web;
+
+namespace INTSOF.COMPLIO.TALKDESK.DAL
+{
+    public class ReportJobRepository : BaseRepository ,IReportJobRepository
+    {
+        List<ReportJob> IReportJobRepository.GetPendingReportJobs(Int32 updateReportJobTimeLag)
+        {
+            List<ReportJob> reportJobList = new List<ReportJob>();
+            using (SqlConnection con = new SqlConnection(APPSettingHandler.COFingerprintingConnString))
+            {
+                base.OpenSQLDataReaderConnection(con);
+                SqlParameter[] sqlParameterCollection = new SqlParameter[]
+                        {
+                             new SqlParameter("@updateReportJobTimeLag", updateReportJobTimeLag),                             
+                        };
+
+                using (SqlDataReader dr = base.ExecuteSQLDataReader(con, "[talkdesk].[GetPendingReportJobs]", sqlParameterCollection))
+                {
+                    if (dr.HasRows)
+                    {                        
+                        while (dr.Read())
+                        {
+                            ReportJob _reportJob = new ReportJob();
+                            _reportJob.JobID = dr["JobID"].GetType().Name == "DBNull" ? 0 : Convert.ToInt32(dr["JobID"]);
+                            _reportJob.JobNumber = Convert.ToString(dr["JobNumber"]);
+                            _reportJob.JobStatusID = dr["JobStatusID"].GetType().Name == "DBNull" ? 0 : Convert.ToInt32(dr["JobStatusID"]);
+                            _reportJob.JobStatusCode = Convert.ToString(dr["JobStatusCode"]);
+                            _reportJob.JobStatusName = Convert.ToString(dr["JobStatusName"]);
+                            _reportJob.SelfHref = Convert.ToString(dr["SelfURL"]);
+                            _reportJob.FilesHref = Convert.ToString(dr["FileURL"]);
+                            reportJobList.Add(_reportJob);
+                        }
+                    }
+                }
+                base.CloseSQLDataReaderConnection(con);
+            }
+            return reportJobList;
+        }
+
+        ReportJob IReportJobRepository.GetReportJobData()
+        {
+            ReportJob _reportJob = null;
+            using (SqlConnection con = new SqlConnection(APPSettingHandler.COFingerprintingConnString))
+            {                
+                base.OpenSQLDataReaderConnection(con);
+                using (SqlDataReader dr = base.ExecuteSQLDataReader(con, "talkdesk.GetReportJobData", null))
+                {
+                    if (dr.HasRows)
+                    {
+                        while (dr.Read())
+                        {
+                            _reportJob = new ReportJob();
+                            _reportJob.JobID = dr["JobID"].GetType().Name == "DBNull" ? 0 : Convert.ToInt32(dr["JobID"]);
+                            _reportJob.JobNumber = Convert.ToString(dr["JobNumber"]);
+                            _reportJob.JobStatusID = dr["JobStatusID"].GetType().Name == "DBNull" ? 0 : Convert.ToInt32(dr["JobStatusID"]);
+                            _reportJob.JobStatusCode = Convert.ToString(dr["JobStatusCode"]);
+                            _reportJob.JobStatusName = Convert.ToString(dr["JobStatusName"]);                            
+                            _reportJob.JobFrom = dr["JobFrom"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dr["JobFrom"]);
+                            _reportJob.JobTo = dr["JobTo"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dr["JobTo"]);
+                            _reportJob.SelfHref = Convert.ToString(dr["SelfHref"]);
+                            _reportJob.FilesHref = Convert.ToString(dr["FilesHref"]);
+                        }
+                    }
+                }
+
+                base.CloseSQLDataReaderConnection(con);
+            }
+
+            return _reportJob;
+        }
+
+        bool IReportJobRepository.SaveReportJob(string jsonResponse)
+        {   
+            using (SqlConnection con = new SqlConnection(APPSettingHandler.COFingerprintingConnString))
+            {
+                base.OpenSQLDataReaderConnection(con);
+                SqlCommand command = new SqlCommand("[talkdesk].[SaveReportJobData]", con);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@json", jsonResponse);
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+
+                command.ExecuteNonQuery();
+                base.CloseSQLDataReaderConnection(con);
+            }
+            return true;
+        }
+
+        bool IReportJobRepository.UpdateReportJobData(string jsonResponse)
+        {
+            using (SqlConnection con = new SqlConnection(APPSettingHandler.COFingerprintingConnString))
+            {
+                base.OpenSQLDataReaderConnection(con);
+                SqlCommand command = new SqlCommand("[talkdesk].[UpdateReportJobData]", con);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@json", jsonResponse);
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+
+                command.ExecuteNonQuery();
+                base.CloseSQLDataReaderConnection(con);
+            }
+            return true;
+        }
+
+
+        List<ReportJob> IReportJobRepository.GetPendingJobsPullCallData()
+        {
+            List<ReportJob> reportJobList = new List<ReportJob>();
+            using (SqlConnection con = new SqlConnection(APPSettingHandler.COFingerprintingConnString))
+            {
+                base.OpenSQLDataReaderConnection(con);
+                using (SqlDataReader dr = base.ExecuteSQLDataReader(con, "[talkdesk].[usp_GetPendingJobs_PullCallData]", null))
+                {
+                    if (dr.HasRows)
+                    {
+                        while (dr.Read())
+                        {
+                            ReportJob _reportJob = new ReportJob();
+                            _reportJob.JobID = dr["JobID"].GetType().Name == "DBNull" ? 0 : Convert.ToInt32(dr["JobID"]);
+                            _reportJob.JobNumber = Convert.ToString(dr["JobNumber"]);
+                            _reportJob.JobStatusID = dr["JobStatusID"].GetType().Name == "DBNull" ? 0 : Convert.ToInt32(dr["JobStatusID"]);
+                            _reportJob.JobStatusCode = Convert.ToString(dr["JobStatusCode"]);
+                            _reportJob.JobStatusName = Convert.ToString(dr["JobStatusName"]);
+                            _reportJob.SelfHref = Convert.ToString(dr["SelfURL"]);
+                            _reportJob.FilesHref = Convert.ToString(dr["FileURL"]);
+                            reportJobList.Add(_reportJob);
+                        }
+                    }
+                }
+                base.CloseSQLDataReaderConnection(con);
+            }
+            return reportJobList;
+        }
+
+
+        bool IReportJobRepository.SaveCallData(string jsonResponse, int jobID)
+        {
+            using (SqlConnection con = new SqlConnection(APPSettingHandler.COFingerprintingConnString))
+            {
+                base.OpenSQLDataReaderConnection(con);
+                SqlCommand command = new SqlCommand("[talkdesk].[SaveCallData]", con);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@json", jsonResponse);
+                command.Parameters.AddWithValue("@JobID", jobID);
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+
+                command.ExecuteNonQuery();
+                base.CloseSQLDataReaderConnection(con);
+            }
+            return true;
+        }
+    }
+}

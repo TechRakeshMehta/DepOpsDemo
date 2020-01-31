@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<GetInvoices xmlns="">
+  <ErrorStatus>
+    <Code></Code>
+    <Type></Type>
+    <Message></Message>
+  </ErrorStatus>
+  <Invoice>
+    <iInvoiceNo></iInvoiceNo>
+    <sInvoiceDate></sInvoiceDate>
+    <iProfiles></iProfiles>
+    <iOrders></iOrders>
+    <sInvPeriodBegin></sInvPeriodBegin>
+    <sInvPeriodEnd></sInvPeriodEnd>
+    <sFees></sFees>
+    <sAdjustments></sAdjustments>
+    <sSubTotal></sSubTotal>
+    <sTax></sTax>
+    <sTotal></sTotal>
+    <sBalance></sBalance>
+  </Invoice>
+</GetInvoices>

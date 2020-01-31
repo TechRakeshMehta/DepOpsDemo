@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<RoleUpdate xmlns="http://tempuri.org/ADBEmails.xsd">
+  <Contents>
+    <FirstName></FirstName>
+    <LastName></LastName>
+    <allAssignedRoleName></allAssignedRoleName>
+    </Contents>
+</RoleUpdate>

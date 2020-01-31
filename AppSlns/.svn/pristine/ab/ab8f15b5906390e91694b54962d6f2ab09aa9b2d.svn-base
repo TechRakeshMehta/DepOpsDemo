@@ -1,0 +1,90 @@
+<div id="bodyBlock" class="container-fluid">
+
+
+    <section class="p-2">
+        <div class="row">
+            <div *ngIf="isSendForOnline != true" class="col-md-12 font-weight-bold">
+                <label id="CREATODR"></label>(
+                <label id="STEP"></label> {{orderInfo.CurrentStep}})
+            </div>
+            <div *ngIf="isSendForOnline == true" class="col-md-12 font-weight-bold">
+                <label id="CMPLTORDER"></label>
+            </div>
+            <div class="col-12 font-weight-bold">
+                <label id="OUTOFSTATE"></label>
+            </div>
+
+
+            <div class="col-md-12 bg-white shadow-sm rounded py-3">
+
+                <form>
+                    <div>
+                        <p id="OFSTOPLABEL">
+
+                        </p>
+                        <ol>
+                            <li>
+                                <b>
+                                    <p id="OFSFNGRPRNTCRD"></p>
+                                </b>
+                                <p id="OFSFNGRPRNTCRDDATA"></p>
+
+                            </li>
+                            <li>
+                                <b>
+                                    <p id="CNFRMTN"></p>
+                                </b>
+                                <p id="OFSCNFRMTNDATA"></p>
+                            </li>
+                            <li>
+                                <b>
+                                    <p id="OFSMNYORDR"></p>
+                                </b>
+                                <p id="OFSMNYORDRDATA"></p>
+                            </li>
+                            <li>
+                                <b>
+                                    <p id="MAIL"></p>
+                                </b>
+                                <p id="OFSMAILDATA"></p>
+                            </li>
+                        </ol>
+
+                        <blockquote>
+                            <div style="padding-left: 6%;">
+                                <strong>Colorado Fingerprinting </strong>
+                            </div>
+                            <div style="padding-left: 6%;">
+                                <strong>Attn: CABS Fingerprint Processing
+                                    <br />
+                                </strong>
+                            </div>
+                            <div style="padding-left: 6%;">
+                                <strong>110 16th St 8th Floor</strong>
+                            </div>
+                            <div style="padding-left: 6%;">
+                                <strong>Denver CO 80202 </strong>
+                                <br />
+                                <br />
+                            </div>
+                        </blockquote>
+                        <p id="OFSBOTTOMLABEL"></p>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-12 d-flex justify-content-center">
+                            <button type="button" autofocus="false" (click)="goBack()" class="btn btn-primary fixedWidthBtn">
+                                <i class="fas fa-arrow-left pr-1"></i>
+                                <label id="PREVIOUS"></label>
+                            </button>
+                            <button type="button" autofocus="false" (click)="onSubmit()" class="btn btn-primary fixedWidthBtn mx-1">
+                                <label id="NEXT"></label>
+                                <i class="fas fa-arrow-right pl-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>

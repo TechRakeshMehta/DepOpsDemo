@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UpdateTestResults>
+  <ReferenceTestID>XXXXXXX</ReferenceTestID>
+  <RequestStatus>x:Rejected</RequestStatus>
+  <ErrorSummary>
+    <ErrorDetail>Missing required field - Primary Donor ID</ErrorDetail>
+  </ErrorSummary>
+</UpdateTestResults>

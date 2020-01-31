@@ -1,0 +1,54 @@
+﻿
+.m_modtitle
+{
+    opacity: 1 !important;
+}
+
+.m_modtitle .rtbText
+{
+    font-weight: bold;
+}
+
+html, body, #frmmod, #UpdatePanel1, #box_content
+{
+    height: 100% !important;
+}
+
+
+
+
+
+
+.adjust-height
+{
+    height: 100%;
+    position: relative;
+}
+
+.adjust
+{
+    overflow: auto;
+}
+.no-adjust
+{
+}
+
+
+#m_viewbuttons
+{
+    height: 100px;
+}
+
+#m_msgsearch
+{
+    
+    width: 100%;
+    display: none;
+}
+
+#m_msgsearch .section
+{
+    margin:0;
+}
+
+.swrap .rgMasterTable {table-layout:auto!important;}

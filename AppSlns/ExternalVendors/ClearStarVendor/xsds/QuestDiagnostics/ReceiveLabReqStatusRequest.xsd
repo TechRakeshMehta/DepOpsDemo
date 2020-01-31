@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="Donor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="DonorLab" type="xs:string" minOccurs="0" />
+        <xs:element name="OrderClient" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ClientNumber" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Specimen" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SpecimenID" type="xs:string" minOccurs="0" />
+              <xs:element name="LabAccessionNumber" type="xs:string" minOccurs="0" />
+              <xs:element name="DonorPrimaryID" type="xs:string" minOccurs="0" />
+              <xs:element name="ReasonForTest" type="xs:string" minOccurs="0" />
+              <xs:element name="SpecimenCollectionDate" type="xs:string" minOccurs="0" />
+              <xs:element name="SpecimenCollectionTime" type="xs:string" minOccurs="0" />
+              <xs:element name="SpecimenReceivedDate" type="xs:string" minOccurs="0" />
+              <xs:element name="SpecimenReceivedTime" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ClientSiteLocation" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ClientSiteLocationID" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="QuestLab" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="QuestLabID" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="Donor" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

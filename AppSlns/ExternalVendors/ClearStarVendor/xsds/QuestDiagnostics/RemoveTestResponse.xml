@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RemoveOrderResult xmlns="https://www.formfox.com/ffordersvc">
+  <RemoveTestResult xmlns="">
+    <ReferenceTestID>111322</ReferenceTestID>
+    <RequestStatus>x:Accepted</RequestStatus>
+    <ErrorSummary>
+      <ErrorDetail>TestID Not Found</ErrorDetail>
+    </ErrorSummary>
+  </RemoveTestResult>
+</RemoveOrderResult>

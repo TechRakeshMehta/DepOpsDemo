@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<GetOrderResults xmlns="">
+  <ErrorStatus>
+    <Code></Code>
+    <Type></Type>
+    <Message></Message>
+  </ErrorStatus>
+  <OrderNote>
+    <OrderID></OrderID>
+    <sServiceName></sServiceName>
+    <sOrderNote></sOrderNote>
+    <sOrderXML></sOrderXML>
+  </OrderNote>
+</GetOrderResults>

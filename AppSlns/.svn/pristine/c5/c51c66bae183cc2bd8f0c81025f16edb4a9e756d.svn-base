@@ -1,0 +1,160 @@
+﻿html, body {background-color:#d5d6da; padding:0;margin:0;background-image:url(images/login/top0.png);background-repeat:repeat-x;font-family:arial;}
+
+#frmLogin, html, body, .base_wrap, .tbl_main {height:100%;min-height:700px;min-width:700px;}
+
+.tbl_main div:before {}
+.tbl_main div {}
+.tbl_main {padding:0;margin:0;border-spacing:0;border-collapse:collapse;text-align:center;width:100%;background-image:url(images/login/top1.png);background-repeat:no-repeat;background-position:center;}
+.tbl_main td {vertical-align:middle;padding-bottom:70px;background-image:url(images/login/top2-red.png);background-repeat:no-repeat;position:relative;overflow:hidden;background-position:top right;}
+
+
+.content {overflow:visible;width:597px;margin:0 auto; background-image:url(images/login/login_bkg.png);padding:20px 17px;border-radius:20px;position:relative;}
+
+.base_wrap {position:relative;}
+
+
+/*Page blocks*/
+.logo_bl {background-image:url(images/login/complio-blue.png);background-repeat:no-repeat;height:77px;width:220px;margin:0 auto;}
+.orgname_bl {font-size:17px;font-weight:bold;text-align:center;color:#EA6309} /*#ff781e;*/
+
+.form_bl {margin:0 auto;margin-top:20px; width:600px;position:relative;}
+.form_bl .errors {font-size:11px; color:Red;text-align:center;background-color:#fff;display:inline-block;}
+.login_wrap {position:relative;height:177px;margin-top:27px;}
+.login-form {margin:0 auto;width:187px;border:1px solid #adadad;background-color:#fbfbfb;border-radius: 7px; text-align:left;padding:10px 10px 15px;margin-bottom:10px;position:absolute;left:194px;-webkit-box-shadow:0 0 10px #adadad;-moz-box-shadow:0 0 10px #adadad;box-shadow:0 0 10px #adadad;}
+
+.login-form ul {list-style:none;margin:0;padding:0;}
+.login-form .lbl {font-size:12px;}
+.login-form .loginput{margin-bottom:10px;}
+.login-form .riTextBox {height:27px!important;font-size:13px!important;font-weight:bold!important;}
+.login-form .commands{text-align:right;}
+.u-button {background:none!important;border:none!important;}
+.u-button .rbText {text-decoration:underline!important;color:#0000CD!important;}
+.u-button-resendActivationLink {background:none!important;border:none!important;  font-size: 11px!important;}
+.u-button-resendActivationLink .rbText {text-decoration:underline!important;color:#0000CD!important;padding-top: 2px!important;}
+.mascot {position:absolute;top:12px;left:97px;background-image:url(images/login/mascot.png);background-repeat:no-repeat;height:147px;width:127px;}
+.register {margin-top:27px;}
+.register h2 {font-size:14px;margin:0;margin-bottom:5px;padding:0;}
+.register .button {padding:5px 10px;background-color:#8C1921!important;border-radius:5px;}
+.register .button .rbText {font-size:14px!important;font-weight:bold!important;color:#fff!important;}
+.register .button:hover {background-color:#fbfbfb!important;}
+.register .button:hover .rbText {color:#333!important;}
+.hipaacompliant{ background-image: url("images/login/hipaa_compliant_logo.png");
+  background-repeat: no-repeat;
+  bottom: 10px;
+  height: 55px;
+  position: absolute;
+  left: 0;
+  width: 102px;}
+.pcilogo{ background-image: url("images/login/pci_logo.png");
+  background-repeat: no-repeat;
+  bottom: 10px;
+  height: 55px;
+  position: absolute;
+  right: 0;
+  width: 67px;}
+
+
+.address{text-align:center;font-size:11px;margin-top:75px;}
+
+.links a {font-size:12px;text-decoration:underline;}
+
+
+/*msgbox*/
+.msgbox {width:100%;height:100%;background-image:url(images/login/lightbox.png);position:absolute;z-index:9999;display:none;min-width:1024px;}
+.msgbox .m_content{color:black;width:395px;height:73px;border:4px solid #000000;padding:34px 10px 0px 50px;background-color:White;margin:0 auto;margin-top:200px;position:relative;font-weight:bold;background-image:url(images/sucs.png);background-repeat:no-repeat;background-position:0 26px;}
+.msgbox .msg_cmd{padding:5px;color:#E8EDE0;background-color:#102E37;border:1px solid white;width:80px;text-align:center;position:absolute;bottom:10px;right:10px;}
+.msg_cmd:hover{background-color:#F78D3F;}
+
+
+.greet {font-size: 18px;margin-top: 25px;display: block;margin-bottom: 35px;}
+
+
+/*UAT 1267 WB: Add preferred browser icons (Chrome, Firefox, IE) and version numbers (for IE)*/
+.supportedBrowserPostion
+{
+    float: left;
+    height: 24px;
+    width: 24px;
+    padding: 2px;
+}
+#dvCreateAccount + supportedBrowser
+{
+   margin-left: 195px;
+     margin-top: 24px;
+    clear: both;
+    height: 0px;
+   
+}
+.supportedBrowser
+{
+    margin-left: 195px;
+     margin-top: 17px;
+    clear: both;
+    height: 0px;
+   
+}
+
+.browserText
+{
+    float: left;
+    padding-top: 11px; 
+    padding-right: 5px;
+    font-family: arial;
+    font-size: 11px;
+}
+
+    .supportedBrowserPostion img
+    {
+        height: 15px;
+        width: 15px;
+    }
+
+    .supportedBrowserPostion span
+    {
+    
+        font-family: arial; 
+        font-size: 10px;
+    }
+
+
+    /*Below CSS is added for configurable Login Screen*/
+  .lblInstitute {
+    word-wrap: normal;
+}
+
+    .logo_b2 {
+    background-image: url(images/login/complio-blue.png);
+    background-repeat: no-repeat;
+    height: 45px;
+    width: 90px;
+    margin: 0 auto;
+    background-size: 90px;
+    margin-top:22px;
+}
+
+    .orgname_b2 {
+    font-size: 27px;
+    font-weight: bold;
+    text-align: center;
+    color: #EA6309;
+}
+    .abilogo {
+    background-image: url("images/login/ABI-Logo.png");
+    background-repeat: no-repeat;
+    height: 100px;
+    position: absolute;
+    width: 100px;
+    top: 20px;
+    background-size: 100px;
+}
+
+.coloradologo {
+    background-image: url("images/login/cofingerprint_logo.png");
+    background-repeat: no-repeat;
+    height: 100px;
+    position: absolute;
+    right: 10px;
+    width: 105px;
+    top: 20px;
+    background-size: 105px;
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<ExtensionRequest xmlns="http://tempuri.org/ADBEmails.xsd">
+  <Contents>
+    <DecisionText></DecisionText>
+    <ExtensionCategory></ExtensionCategory >
+    <SvcReqId></SvcReqId>
+    <ExtraText></ExtraText>
+  </Contents>
+</ExtensionRequest>

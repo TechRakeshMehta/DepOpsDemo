@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8a18ed80-5b4b-4213-b872-88d8699be21e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:50109/ComplianceRuleService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ComplianceRuleServiceService.wsdl" MetadataType="Wsdl" ID="dd6ec004-3e8e-4500-a8f7-16c89b67edb4" SourceId="1" SourceUrl="http://localhost:50109/ComplianceRuleService.svc?wsdl" />
+    <MetadataFile FileName="ComplianceRuleService.xsd" MetadataType="Schema" ID="a403c437-f2c2-463c-aef4-1ba24a27d832" SourceId="1" SourceUrl="http://localhost:50109/ComplianceRuleService.svc?xsd=xsd5" />
+    <MetadataFile FileName="ComplianceRuleService1.xsd" MetadataType="Schema" ID="6a9aadd9-6736-4782-a40b-7ec84f21dec7" SourceId="1" SourceUrl="http://localhost:50109/ComplianceRuleService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ComplianceRuleService2.xsd" MetadataType="Schema" ID="cbefa59b-d28a-474f-b51b-124a972ddec2" SourceId="1" SourceUrl="http://localhost:50109/ComplianceRuleService.svc?xsd=xsd3" />
+    <MetadataFile FileName="ComplianceRuleService3.xsd" MetadataType="Schema" ID="4b9485c6-418d-4266-8bf8-0a80ddbb0b52" SourceId="1" SourceUrl="http://localhost:50109/ComplianceRuleService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ComplianceRuleService.disco" MetadataType="Disco" ID="06692197-7cff-4483-ac1f-cd97cac762df" SourceId="1" SourceUrl="http://localhost:50109/ComplianceRuleService.svc?disco" />
+    <MetadataFile FileName="ComplianceRuleService4.xsd" MetadataType="Schema" ID="1ed7cc14-a359-4791-9a2c-212a8a85f6ba" SourceId="1" SourceUrl="http://localhost:50109/ComplianceRuleService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ComplianceRuleService5.xsd" MetadataType="Schema" ID="f9b163ef-52b8-4013-916c-28a205481042" SourceId="1" SourceUrl="http://localhost:50109/ComplianceRuleService.svc?xsd=xsd4" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

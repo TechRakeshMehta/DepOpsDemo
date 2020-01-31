@@ -1,0 +1,31 @@
+<GetServices xmlns="">
+  <ErrorStatus>
+    <Code>0</Code>
+    <Type></Type>
+    <Message></Message>
+  </ErrorStatus>
+  <Service>
+    <sServiceNo>AMER_00198</sServiceNo>
+    <sServiceName>Advanced Rehab Package</sServiceName>
+    <sCustomServiceName>Advanced Rehab Package</sCustomServiceName>
+    <sCharge>30.00</sCharge>
+    <bIsPackage>true</bIsPackage>
+    <bIsSelected>false</bIsSelected>
+    <sType>S</sType>
+    <bIsSuspended>false</bIsSuspended>
+    <bVisible>false</bVisible>
+    <sHelpNote />
+    <bIsMultiLoc>false</bIsMultiLoc>
+    <sPageName />
+    <PkgSvc>
+      <sPkgSvcNo>AMER_00198</sPkgSvcNo>
+      <sServiceNo>AMER_00001</sServiceNo>
+      <sDescrip>Social Security Trace</sDescrip>
+      <sCharge>0.00</sCharge>
+      <sComponentLimit>0</sComponentLimit>
+      <sComponentCharge>0.00</sComponentCharge>
+      <sComponentExceedCharge>0.00</sComponentExceedCharge>
+    </PkgSvc>   
+  </Service>
+</GetServices>
+

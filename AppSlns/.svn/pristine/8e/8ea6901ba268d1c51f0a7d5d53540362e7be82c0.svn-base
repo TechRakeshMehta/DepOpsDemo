@@ -1,0 +1,74 @@
+﻿
+body
+{
+    background-color: #EEEEEE;
+}
+div.m_wmform
+{
+    padding: 10px;
+    background-color: #efefef;
+}
+
+table.m_wmform
+{
+    width: 100%;
+}
+
+td.m_wmlb
+{
+    width: 70px;
+    padding-bottom: 5px;
+    height: 20px;
+}
+
+.m_wmlm .RadInput, .m_wmlm .RadComboBox
+{
+    width: 100% !important;
+    max-width: 1000px !important;
+}
+
+
+.m_wmlb .rbLinkButton, .sxlb .rbLinkButton
+{
+    border: none !important;
+    color: Blue !important;
+}
+
+.m_wmlb .rbLinkButton .rbText, .sxlb .rbLinkButton .rbText
+{
+    text-decoration: underline !important;
+}
+
+
+.m_wmedtwrap
+{
+    width: 100%;
+    overflow: hidden;
+}
+
+
+.m_wmlm .RadUpload .ruInputs li
+{
+    margin: 0 !important;
+}
+
+/*Chrome Scroll-bar issue*/
+@media screen and (-webkit-min-device-pixel-ratio:0)
+{
+    #updpPopupContent
+    {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+}
+blockquote
+{
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+
+.reqd
+{
+    color:Red !important;
+    }

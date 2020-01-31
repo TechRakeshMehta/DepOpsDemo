@@ -1,0 +1,2767 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ACCOUNTINFO" xml:space="preserve">
+    <value>Account Information</value>
+  </data>
+  <data name="ACCOUNTNAME" xml:space="preserve">
+    <value>Account Name:</value>
+  </data>
+  <data name="ACCRADR" xml:space="preserve">
+    <value>AcctAdr</value>
+  </data>
+  <data name="ACCTCTY" xml:space="preserve">
+    <value>AcctCty</value>
+  </data>
+  <data name="ACCTNAM" xml:space="preserve">
+    <value>AcctNam (Literal)</value>
+  </data>
+  <data name="ACCTSTA" xml:space="preserve">
+    <value>ACCTSTA</value>
+  </data>
+  <data name="ACCTZIP" xml:space="preserve">
+    <value>AcctZip</value>
+  </data>
+  <data name="ACCWITHUSERNAME" xml:space="preserve">
+    <value>Account with username</value>
+  </data>
+  <data name="ACTIVATIONLINKSENT" xml:space="preserve">
+    <value>An activation link has been sent to your email address.</value>
+  </data>
+  <data name="ADD" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="ADDNEWCARD" xml:space="preserve">
+    <value>Add New Card</value>
+  </data>
+  <data name="ADDPAYDTLS" xml:space="preserve">
+    <value>Additional Payment Detail</value>
+  </data>
+  <data name="ADDRESS" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="ADDRESS1" xml:space="preserve">
+    <value>Address 1</value>
+  </data>
+  <data name="ADDRESS1REQ" xml:space="preserve">
+    <value>Address 1 is required.</value>
+  </data>
+  <data name="ADDRESS2" xml:space="preserve">
+    <value>Address 2</value>
+  </data>
+  <data name="ALIASFIRSTNAME" xml:space="preserve">
+    <value>Alias or Maiden First Name</value>
+  </data>
+  <data name="ALIASFIRSTNAMEREQ" xml:space="preserve">
+    <value>Alias or Maiden First Name is required.</value>
+  </data>
+  <data name="ALIASFRSTNMEREQIFLSTNME" xml:space="preserve">
+    <value>Alias/Maiden First Name is required if Alias/Maiden Last Name is entered.</value>
+  </data>
+  <data name="ALIASLASTNAME" xml:space="preserve">
+    <value>Alias or Maiden Last Name</value>
+  </data>
+  <data name="ALIASLASTNAMEREQ" xml:space="preserve">
+    <value>Alias or Maiden Last Name is required.</value>
+  </data>
+  <data name="ALIASLSTNMEREQIFFRSTNME" xml:space="preserve">
+    <value>Alias/Maiden Last Name is required if Alias/Maiden First Name is entered.</value>
+  </data>
+  <data name="ALIASMIDDLENAME" xml:space="preserve">
+    <value>Alias or Maiden Middle Name</value>
+  </data>
+  <data name="ALIASMIDDLENAMEREQ" xml:space="preserve">
+    <value>Alias or Maiden Middle Name is required.</value>
+  </data>
+  <data name="ALREADYEXISTS" xml:space="preserve">
+    <value>already exists.</value>
+  </data>
+  <data name="ALREADYEXISTSUNDERINST" xml:space="preserve">
+    <value>already exist under this institution.</value>
+  </data>
+  <data name="AMOUNT" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="APNMNTRSCHDLSCS" xml:space="preserve">
+    <value>Your appointment was rescheduled successfully.</value>
+  </data>
+  <data name="APPLCNTPRSNLINFO" xml:space="preserve">
+    <value>Applicant Personal Information</value>
+  </data>
+  <data name="APPLICANTSPROFILE" xml:space="preserve">
+    <value>Applicant’s Profile</value>
+  </data>
+  <data name="APPMNTDETAILS" xml:space="preserve">
+    <value>Appointment Details</value>
+  </data>
+  <data name="APPMNTSTATUS" xml:space="preserve">
+    <value>Appointment Status</value>
+  </data>
+  <data name="APPMNTTIME" xml:space="preserve">
+    <value>Appointment Time</value>
+  </data>
+  <data name="APPNMNTINFO" xml:space="preserve">
+    <value>Appointment Information</value>
+  </data>
+  <data name="APRVCNCLN" xml:space="preserve">
+    <value>Approve Cancellation</value>
+  </data>
+  <data name="APRVPAY" xml:space="preserve">
+    <value>Approve Payment</value>
+  </data>
+  <data name="ATLEASTONECAPLETTER" xml:space="preserve">
+    <value>Should have at least one capital letter [A-Z]</value>
+  </data>
+  <data name="ATLEASTONEDIGIT" xml:space="preserve">
+    <value>Should have at least one digit [0-9]</value>
+  </data>
+  <data name="ATLEASTONESPECIALCHAR" xml:space="preserve">
+    <value>Should have at least one special character [@#$%^_+~!?\':/,(){}[]-]</value>
+  </data>
+  <data name="AUTORNWL" xml:space="preserve">
+    <value>Auto Renewal:</value>
+  </data>
+  <data name="AVAILABLE" xml:space="preserve">
+    <value>Available</value>
+  </data>
+  <data name="AVLBLCRD" xml:space="preserve">
+    <value>Available Cards</value>
+  </data>
+  <data name="AVLBLSLOTS" xml:space="preserve">
+    <value>Available Slots</value>
+  </data>
+  <data name="BCKSPRTPRTLDTL" xml:space="preserve">
+    <value>Back to Support Portal Detail</value>
+  </data>
+  <data name="BKGORDRDTLS" xml:space="preserve">
+    <value>Background Order Details</value>
+  </data>
+  <data name="BKGPKG" xml:space="preserve">
+    <value>Background Package</value>
+  </data>
+  <data name="BKGPKGCNCL" xml:space="preserve">
+    <value>Background Package Cancelled</value>
+  </data>
+  <data name="BKGSCREENING" xml:space="preserve">
+    <value>Background Screening</value>
+  </data>
+  <data name="BKGSRVCNAME" xml:space="preserve">
+    <value>Background Service Name</value>
+  </data>
+  <data name="BKTODASHBRD" xml:space="preserve">
+    <value>Back to Dashboard</value>
+  </data>
+  <data name="BKTOORDRRVW" xml:space="preserve">
+    <value>Back To Order Review</value>
+  </data>
+  <data name="BLNGADDRESS" xml:space="preserve">
+    <value>Billing Address</value>
+  </data>
+  <data name="BNKACCOUNT" xml:space="preserve">
+    <value>Bank Account (USA Only)</value>
+  </data>
+  <data name="CANTACCESSACCOUNT" xml:space="preserve">
+    <value>Forgot User ID or Password?</value>
+  </data>
+  <data name="CANTCNCLALLPKG" xml:space="preserve">
+    <value>You cannot Select All Package(s) for Cancellation. If you want to cancel All package(s) from this Order, you should Cancel this Order.</value>
+  </data>
+  <data name="CBIUNIQUEID" xml:space="preserve">
+    <value>CBI Unique ID</value>
+  </data>
+  <data name="CBIUNIQUEIDREQ" xml:space="preserve">
+    <value>CBI Unique ID is required.</value>
+  </data>
+  <data name="CELLULARPHNNUM" xml:space="preserve">
+    <value>Cellular Phone Number</value>
+  </data>
+  <data name="CELLULARPHNREQ" xml:space="preserve">
+    <value>Cellular Phone Number is required.</value>
+  </data>
+  <data name="CHANGE" xml:space="preserve">
+    <value>Change</value>
+  </data>
+  <data name="CHANGEAPPMNT" xml:space="preserve">
+    <value>Change Appointment</value>
+  </data>
+  <data name="CHECK" xml:space="preserve">
+    <value>Check</value>
+  </data>
+  <data name="CHGEPASSWRD" xml:space="preserve">
+    <value>Change Password</value>
+  </data>
+  <data name="CHNGORDERSELECTION" xml:space="preserve">
+    <value>Change Order Selection</value>
+  </data>
+  <data name="CHNGPAYMENTTYPE" xml:space="preserve">
+    <value>Change Payment Type</value>
+  </data>
+  <data name="CHSLOC" xml:space="preserve">
+    <value>Choose Location</value>
+  </data>
+  <data name="CITIZENSHIP" xml:space="preserve">
+    <value>Citizenship</value>
+  </data>
+  <data name="CITY" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="CITYREQ" xml:space="preserve">
+    <value>City is required.</value>
+  </data>
+  <data name="CITYINVALIDASCIICODE" xml:space="preserve">
+    <value>Please enter valid characters in City.</value>
+  </data>
+  <data name="CLICKLOGOUT" xml:space="preserve">
+    <value>Click to logout</value>
+  </data>
+  <data name="CLICKTOCHANGEPASSWORD" xml:space="preserve">
+    <value>Click here to change password</value>
+  </data>
+  <data name="CLICKTODISABLE" xml:space="preserve">
+    <value>Click here to disable</value>
+  </data>
+  <data name="CLICKTOVERIFY" xml:space="preserve">
+    <value>(Click here to verify)</value>
+  </data>
+  <data name="CLKATRNWLOFF" xml:space="preserve">
+    <value>Click to Turn Off Auto Renewal</value>
+  </data>
+  <data name="CLKATRNWLON" xml:space="preserve">
+    <value>Click to Turn On Auto Renewal</value>
+  </data>
+  <data name="CLKRTNORDRHSTRY" xml:space="preserve">
+    <value>Click to return to the Order History</value>
+  </data>
+  <data name="CLKTOCNCL" xml:space="preserve">
+    <value>Click to cancel. Any updates made to your profile will not be saved</value>
+  </data>
+  <data name="CLKTOGOCOMCNTR" xml:space="preserve">
+    <value>Click here to go to the Communication Center</value>
+  </data>
+  <data name="CLKTORTNDSHBRD" xml:space="preserve">
+    <value>Click to return to the Dashboard</value>
+  </data>
+  <data name="CLKTOSAVECHANGESTOPROFILE" xml:space="preserve">
+    <value>Click to save any updates made to your profile</value>
+  </data>
+  <data name="CLKTOVWLOCIMGS" xml:space="preserve">
+    <value>Click here to view location images.</value>
+  </data>
+  <data name="CLRDFNGRPRNTNGST" xml:space="preserve">
+    <value>Colorado Fingerprinting Site</value>
+  </data>
+  <data name="CMPLNCPKGCNCL" xml:space="preserve">
+    <value>Compliance Package cancelled</value>
+  </data>
+  <data name="CMPLNCPKGCNCLSBCRPTN" xml:space="preserve">
+    <value>Compliance Package cancelled due to change subscription</value>
+  </data>
+  <data name="CMPLTORDER" xml:space="preserve">
+    <value>Complete Your Order</value>
+  </data>
+  <data name="CMPNY" xml:space="preserve">
+    <value>Company</value>
+  </data>
+  <data name="CNCL" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="CNCLBKGPKG" xml:space="preserve">
+    <value>Cancel Background Package</value>
+  </data>
+  <data name="CNCLCMPLNPKG" xml:space="preserve">
+    <value>Cancel Compliance Package</value>
+  </data>
+  <data name="CNCLCONFIRMATION" xml:space="preserve">
+    <value>Are you sure you want to cancel this order? Cancellations cannot be undone.</value>
+  </data>
+  <data name="CNCLORDR" xml:space="preserve">
+    <value>Cancel Order</value>
+  </data>
+  <data name="CNCLSLTDPKG" xml:space="preserve">
+    <value>Cancel Selected Package(s)</value>
+  </data>
+  <data name="CNFMCNLORDER" xml:space="preserve">
+    <value>Are you sure you wish to cancel this order?</value>
+  </data>
+  <data name="CNFMEMAILADDRESSREQ" xml:space="preserve">
+    <value>Confirm Email Address is required.</value>
+  </data>
+  <data name="CNFMPASSWORD" xml:space="preserve">
+    <value>Confirm Password</value>
+  </data>
+  <data name="CNFMPASSWORDREQ" xml:space="preserve">
+    <value>Confirm Password is required.</value>
+  </data>
+  <data name="CNFMTORMVCRD" xml:space="preserve">
+    <value>Are you sure you want to remove this card?</value>
+  </data>
+  <data name="CNFRMTN" xml:space="preserve">
+    <value>Confirmation -</value>
+  </data>
+  <data name="CNTRESNTEMAIL" xml:space="preserve">
+    <value>This email cannot be resent as attachment is no longer available.</value>
+  </data>
+  <data name="COMCNTR" xml:space="preserve">
+    <value>Communication Center</value>
+  </data>
+  <data name="COMMON" xml:space="preserve">
+    <value>Common</value>
+  </data>
+  <data name="COMPILANCE" xml:space="preserve">
+    <value>Compliance</value>
+  </data>
+  <data name="CONFIRMMSG" xml:space="preserve">
+    <value>You will not be able to edit any information for this order after proceeding – MAKE SURE YOUR INFORMATION IS CORRECT.Have you reviewed all your information?
+
+Refund Policy:
+You have agreed to a non-tangible service, and as a customer you agree to the terms and conditions of service. In addition, you have acknowledged that there are no refunds that can be issued.</value>
+  </data>
+  <data name="CONFRMFORBKGCHK" xml:space="preserve">
+    <value>Are you sure you want to cancel this order? Cancellations cannot be undone. Please note, this order includes a tracking package and a background check. The background check is unable to be cancelled and will be conducted in its entirety.</value>
+  </data>
+  <data name="CONTACTEMPLOYEE" xml:space="preserve">
+    <value>If you are not sure which service to order, please contact your employer or requesting agency for assistance.</value>
+  </data>
+  <data name="CONTACTINFO" xml:space="preserve">
+    <value>Contact Information</value>
+  </data>
+  <data name="CONTINUENXTSTP" xml:space="preserve">
+    <value>Continue to next step</value>
+  </data>
+  <data name="COSTFORSBCRPTN" xml:space="preserve">
+    <value>The cost for this subscription</value>
+  </data>
+  <data name="COUNTRY" xml:space="preserve">
+    <value>Country</value>
+  </data>
+  <data name="COUNTY" xml:space="preserve">
+    <value>County</value>
+  </data>
+  <data name="CPREMAIL" xml:space="preserve">
+    <value>Confirm Primary Email</value>
+  </data>
+  <data name="CRDCODE" xml:space="preserve">
+    <value>Card Code</value>
+  </data>
+  <data name="CRDNUMBER" xml:space="preserve">
+    <value>Card Number</value>
+  </data>
+  <data name="CRDTCRD" xml:space="preserve">
+    <value>Credit Card</value>
+  </data>
+  <data name="CRDTCRDDLTERRMSG" xml:space="preserve">
+    <value>Error in deleting selected credit card.</value>
+  </data>
+  <data name="CRDTCRDDLTSUCMSG" xml:space="preserve">
+    <value>Selected Credit Card deleted sucessfully.</value>
+  </data>
+  <data name="CRDTCRDPYMNT" xml:space="preserve">
+    <value>Credit Card Payment</value>
+  </data>
+  <data name="CRDTRDAMNTRFNDERR" xml:space="preserve">
+    <value>Credit card amount has been refunded, but Some error occured during package cancelled. Please try again.</value>
+  </data>
+  <data name="CRDTYPE" xml:space="preserve">
+    <value>Card Type</value>
+  </data>
+  <data name="CREATODR" xml:space="preserve">
+    <value>Create Order</value>
+  </data>
+  <data name="CRTACCANDPROCEED" xml:space="preserve">
+    <value>Create Account &amp; Proceed</value>
+  </data>
+  <data name="CRTACCOUNT" xml:space="preserve">
+    <value>Create an account</value>
+  </data>
+  <data name="CRTNEWMSG" xml:space="preserve">
+    <value>Create a new message</value>
+  </data>
+  <data name="CSECEMAIL" xml:space="preserve">
+    <value>Confirm Secondary Email</value>
+  </data>
+  <data name="DATANOTSAVED" xml:space="preserve">
+    <value>Data is not saved.</value>
+  </data>
+  <data name="DATAUPDATEDSUCCESSFULLY" xml:space="preserve">
+    <value>Data updated successfully.</value>
+  </data>
+  <data name="DATE" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="DAYCARELIC" xml:space="preserve">
+    <value>Daycare License #</value>
+  </data>
+  <data name="DELITMS" xml:space="preserve">
+    <value>Deleted Items</value>
+  </data>
+  <data name="DESCRIPTION" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="DETAILS" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="DISABLE" xml:space="preserve">
+    <value>Disable</value>
+  </data>
+  <data name="DISABLETWOFACTORAUTH" xml:space="preserve">
+    <value>Are you sure you want to disable two factor authentication?</value>
+  </data>
+  <data name="DLT" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="DLTSELITMS" xml:space="preserve">
+    <value>Delete selected items</value>
+  </data>
+  <data name="DNTHVMNAMEBLNK" xml:space="preserve">
+    <value>If you do not have a middle name, this is blank</value>
+  </data>
+  <data name="DNTHVSSNDSPLY" xml:space="preserve">
+    <value>If you do not have a SSN, this should display 111-11-1111</value>
+  </data>
+  <data name="DOB" xml:space="preserve">
+    <value>Date of Birth</value>
+  </data>
+  <data name="DOBNOTLESSTHANYEAR" xml:space="preserve">
+    <value>Date of birth should not be less than a year.</value>
+  </data>
+  <data name="DOBNOTLESSTHAT10YEAR" xml:space="preserve">
+    <value>Date of birth should not be less than 10 year.</value>
+  </data>
+  <data name="DOBREQ" xml:space="preserve">
+    <value>Date of Birth is required.</value>
+  </data>
+  <data name="DOWNLOADGOOGLEAUTH" xml:space="preserve">
+    <value>Please download and install Google Authenticator on your IPhone/IPad/Android device, if already not installed.</value>
+  </data>
+  <data name="DRFT" xml:space="preserve">
+    <value>Drafts</value>
+  </data>
+  <data name="DSCRPTNPRGSCHL" xml:space="preserve">
+    <value>A description of your program within your school</value>
+  </data>
+  <data name="DSPLYRCVDTMSG" xml:space="preserve">
+    <value>This column displays the Receive Date of the message</value>
+  </data>
+  <data name="DSPLYSBJCTMSG" xml:space="preserve">
+    <value>This column displays the subject of the message</value>
+  </data>
+  <data name="DSPLYSNDRNAME" xml:space="preserve">
+    <value>This column displays the sender name</value>
+  </data>
+  <data name="DTINPTEMPMSG" xml:space="preserve">
+    <value>mm/dd/yyyy</value>
+  </data>
+  <data name="DTOUTOFRANGE" xml:space="preserve">
+    <value>Date is out of range.</value>
+  </data>
+  <data name="DUEPAYMENT" xml:space="preserve">
+    <value>Due Payment</value>
+  </data>
+  <data name="DWNLDEDRUGFORM" xml:space="preserve">
+    <value>Click here to download the E Drug authorization form</value>
+  </data>
+  <data name="EDITEMPLOYERDETAILS" xml:space="preserve">
+    <value>Edit Employer Details (If Required)</value>
+  </data>
+  <data name="EDITINFOFINGERPRINT" xml:space="preserve">
+    <value>Edit Information for Finger Printing</value>
+  </data>
+  <data name="EDITPROFILE" xml:space="preserve">
+    <value>Edit Profile</value>
+  </data>
+  <data name="EDITSERVICEDETAILS" xml:space="preserve">
+    <value>Edit Service Details</value>
+  </data>
+  <data name="EDRUGFORM" xml:space="preserve">
+    <value>E-Drug Form</value>
+  </data>
+  <data name="EMAIL" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="EMAILADD" xml:space="preserve">
+    <value>Email Address</value>
+  </data>
+  <data name="EMAILADDRESSNOTMATCH" xml:space="preserve">
+    <value>Email Address did not match.</value>
+  </data>
+  <data name="EMAILADDRESSREQ" xml:space="preserve">
+    <value>Email Address is required.</value>
+  </data>
+  <data name="EMAILALREADYINUSE" xml:space="preserve">
+    <value>This email address is already in use. Try another?</value>
+  </data>
+  <data name="EMAILNOTVALID" xml:space="preserve">
+    <value>Email Address is not valid.</value>
+  </data>
+  <data name="EMAILREQ" xml:space="preserve">
+    <value>Email is required.</value>
+  </data>
+  <data name="EMAILRSNTSUC" xml:space="preserve">
+    <value>Email has been resent successfully.</value>
+  </data>
+  <data name="EMAILSTNG" xml:space="preserve">
+    <value>Email Settings</value>
+  </data>
+  <data name="EMPADD" xml:space="preserve">
+    <value>Employer Address</value>
+  </data>
+  <data name="EMPADDMAN" xml:space="preserve">
+    <value>Employer Address Mandatory</value>
+  </data>
+  <data name="EMPCITY" xml:space="preserve">
+    <value>Employer City</value>
+  </data>
+  <data name="EMPLOYERDTLS" xml:space="preserve">
+    <value>Employer Details (If Required)</value>
+  </data>
+  <data name="EMPNAME" xml:space="preserve">
+    <value>Employer Name</value>
+  </data>
+  <data name="EMPNAMEMAN" xml:space="preserve">
+    <value>Employer Name Mandatory</value>
+  </data>
+  <data name="EMPSTATE" xml:space="preserve">
+    <value>Employer State</value>
+  </data>
+  <data name="EMPZIP" xml:space="preserve">
+    <value>Employer Zip Code</value>
+  </data>
+  <data name="ENTERPASSWORD" xml:space="preserve">
+    <value>Enter your Password.</value>
+  </data>
+  <data name="ENTERUSERNAME" xml:space="preserve">
+    <value>Enter your Username.</value>
+  </data>
+  <data name="ENABLED" xml:space="preserve">
+    <value>[Enabled]</value>
+  </data>
+  <data name="ENABLENOTVERIFY" xml:space="preserve">
+    <value>[Enabled - Not Verified]</value>
+  </data>
+  <data name="ENTERACCNAME" xml:space="preserve">
+    <value>Enter account name</value>
+  </data>
+  <data name="ENTERACCNAMEOFYOURACC" xml:space="preserve">
+    <value>, then enter account name of your account in the</value>
+  </data>
+  <data name="ENTERPROVIDEDKEY" xml:space="preserve">
+    <value>Enter provided key</value>
+  </data>
+  <data name="ENTERSECKEYDESC" xml:space="preserve">
+    <value>box. Next, enter the secret key appear on your computer screen in the</value>
+  </data>
+  <data name="ENTERVERIFICATIONCODEONDEVICE" xml:space="preserve">
+    <value>Enter the verification code appearing on your device into the box next to Verification Code.</value>
+  </data>
+  <data name="ENTERYOURKEY" xml:space="preserve">
+    <value>Enter your key</value>
+  </data>
+  <data name="ENTRCRCTVERIFICATIONCODE" xml:space="preserve">
+    <value>Please enter correct Verification Code.</value>
+  </data>
+  <data name="ENTREVENTCODE" xml:space="preserve">
+    <value>Enter Event Code</value>
+  </data>
+  <data name="ENTREVENTDETAILS" xml:space="preserve">
+    <value>Enter Event Details</value>
+  </data>
+  <data name="ENTRZIPCODE" xml:space="preserve">
+    <value>Enter Zip Code</value>
+  </data>
+  <data name="ERRSENDINGLINK" xml:space="preserve">
+    <value>Some error occured while sending the activation link.</value>
+  </data>
+  <data name="EVENTCODEREQ" xml:space="preserve">
+    <value>Event Code is required.</value>
+  </data>
+  <data name="EVNTNAMENDES" xml:space="preserve">
+    <value>Event Name &amp; Description</value>
+  </data>
+  <data name="EXPDATE" xml:space="preserve">
+    <value>Exp. Date</value>
+  </data>
+  <data name="EYECOLOR" xml:space="preserve">
+    <value>Eye Color</value>
+  </data>
+  <data name="FAILEDDUETORSN" xml:space="preserve">
+    <value>failed due to reason</value>
+  </data>
+  <data name="FEMALE" xml:space="preserve">
+    <value>Female</value>
+  </data>
+  <data name="FIELDSREQ" xml:space="preserve">
+    <value>The following fields are required to complete account creation</value>
+  </data>
+  <data name="FILENAME" xml:space="preserve">
+    <value>File Name</value>
+  </data>
+  <data name="FILETYPE" xml:space="preserve">
+    <value>File Type</value>
+  </data>
+  <data name="FINGERPRINTEDCRS" xml:space="preserve">
+    <value>Reason Fingerprinted Colorado Revised Statute (C.R.S.)</value>
+  </data>
+  <data name="FIRSTNAME" xml:space="preserve">
+    <value>First Name</value>
+  </data>
+  <data name="FIRSTNAMECHARRANGE" xml:space="preserve">
+    <value>First Name must be between 1 to 30 characters and can contains letters.</value>
+  </data>
+  <data name="FIRSTNAMEREQ" xml:space="preserve">
+    <value>First Name is required.</value>
+  </data>
+  <data name="FIRSTPAGE" xml:space="preserve">
+    <value>First Page</value>
+  </data>
+  <data name="FLWUP" xml:space="preserve">
+    <value>Follow Up</value>
+  </data>
+  <data name="FNDLOC" xml:space="preserve">
+    <value>Find Location</value>
+  </data>
+  <data name="FOR" xml:space="preserve">
+    <value>for</value>
+  </data>
+  <data name="FROM" xml:space="preserve">
+    <value>From</value>
+  </data>
+  <data name="FRWD" xml:space="preserve">
+    <value>Forward</value>
+  </data>
+  <data name="FRWDMSG" xml:space="preserve">
+    <value>Forward this message</value>
+  </data>
+  <data name="FULLSSNREQ" xml:space="preserve">
+    <value>Full Social Security Number is required.</value>
+  </data>
+  <data name="GENDER" xml:space="preserve">
+    <value>Gender</value>
+  </data>
+  <data name="GENDERREQ" xml:space="preserve">
+    <value>Gender is required.</value>
+  </data>
+  <data name="GENRTCODE" xml:space="preserve">
+    <value>Generate code</value>
+  </data>
+  <data name="GETSTRTD" xml:space="preserve">
+    <value>Get Started</value>
+  </data>
+  <data name="GOBCKORDHSTRY" xml:space="preserve">
+    <value>Go Back To Order History</value>
+  </data>
+  <data name="GOBCKTODSHBRD" xml:space="preserve">
+    <value>Go back to Dashboard</value>
+  </data>
+  <data name="GOTOCOMMCNTR" xml:space="preserve">
+    <value>Go To Communication Center</value>
+  </data>
+  <data name="GRDTDSTTS" xml:space="preserve">
+    <value>Graduated Status</value>
+  </data>
+  <data name="HAIRCOLOR" xml:space="preserve">
+    <value>Hair Color</value>
+  </data>
+  <data name="HAVEREADUSERAGRMNT" xml:space="preserve">
+    <value>I have read the User Agreement and accept it</value>
+  </data>
+  <data name="SPLITPAYMENTTYPE" xml:space="preserve">
+    <value>Split payment type by package</value>
+  </data>
+  <data name="HEIGHTFEET" xml:space="preserve">
+    <value>Height Feet</value>
+  </data>
+  <data name="HEIGHTINCH" xml:space="preserve">
+    <value>Height Inches</value>
+  </data>
+  <data name="HOME" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="HVEVENTCODE" xml:space="preserve">
+    <value>I have an event code</value>
+  </data>
+  <data name="IDENTIFYINFO" xml:space="preserve">
+    <value>Identifying Information</value>
+  </data>
+  <data name="IDNTFYNOFRMNYORDR" xml:space="preserve">
+    <value>Identification Number for Money Orders and Invoices</value>
+  </data>
+  <data name="IHVGRAD" xml:space="preserve">
+    <value>I have graduated</value>
+  </data>
+  <data name="IHVNOTYTGRAD" xml:space="preserve">
+    <value>I have not yet graduated</value>
+  </data>
+  <data name="IMAGES" xml:space="preserve">
+    <value>Images</value>
+  </data>
+  <data name="IMGSNOTAVAIL" xml:space="preserve">
+    <value>Images are not available for this location.</value>
+  </data>
+  <data name="IN" xml:space="preserve">
+    <value>in</value>
+  </data>
+  <data name="INBOX" xml:space="preserve">
+    <value>Inbox</value>
+  </data>
+  <data name="INFOFINGERPRINT" xml:space="preserve">
+    <value>Information for Finger Printing</value>
+  </data>
+  <data name="INSTHIERARCHY" xml:space="preserve">
+    <value>Institution Hierarchy</value>
+  </data>
+  <data name="INSTITUTE" xml:space="preserve">
+    <value>Institute</value>
+  </data>
+  <data name="INSTNAME" xml:space="preserve">
+    <value>Institution Name</value>
+  </data>
+  <data name="INSTPURCHASESUBCRPTN" xml:space="preserve">
+    <value>The institution to which you are purchasing a subscription</value>
+  </data>
+  <data name="INTRNLCHNGS" xml:space="preserve">
+    <value>Internal messages</value>
+  </data>
+  <data name="INVALIDCBIID" xml:space="preserve">
+    <value>Invalid CBI Unique ID. Please contact your administrator.</value>
+  </data>
+  <data name="INVALIDCHARS" xml:space="preserve">
+    <value>Invalid character(s).</value>
+  </data>
+  <data name="INVALIDPASSWORD" xml:space="preserve">
+    <value>Password invalid</value>
+  </data>
+  <data name="INVALIDPHONE" xml:space="preserve">
+    <value>Invalid phone number. This field only contains +, - and numbers.</value>
+  </data>
+  <data name="INVALIDSSN" xml:space="preserve">
+    <value>Invalid SSN.</value>
+  </data>
+  <data name="INVALIDUSERNAME" xml:space="preserve">
+    <value>Invalid username. Must have at least 4 chars (A-Z a-z 0-9 . _ - @).</value>
+  </data>
+  <data name="INVALIDZIP" xml:space="preserve">
+    <value>Invalid Zip Code.</value>
+  </data>
+  <data name="ISALIASNAME" xml:space="preserve">
+    <value>I have an Alias or Maiden name</value>
+  </data>
+  <data name="ISMIDDLENAME" xml:space="preserve">
+    <value>I don't have a Middle Name.</value>
+  </data>
+  <data name="ISSSN" xml:space="preserve">
+    <value>Do you have an SSN?</value>
+  </data>
+  <data name="ITEMS" xml:space="preserve">
+    <value>Item(s)</value>
+  </data>
+  <data name="ITMPAYMENT" xml:space="preserve">
+    <value>Item Payment</value>
+  </data>
+  <data name="JNKMAIL" xml:space="preserve">
+    <value>Junk Mails</value>
+  </data>
+  <data name="LASTNAME" xml:space="preserve">
+    <value>Last Name</value>
+  </data>
+  <data name="LASTNAMECHARRANGE" xml:space="preserve">
+    <value>Last Name must be between 1 to 30 characters and can contains letters, hyphens(-).</value>
+  </data>
+  <data name="LASTNAMEREQ" xml:space="preserve">
+    <value>Last Name is required.</value>
+  </data>
+  <data name="LINKYOURDEVICE" xml:space="preserve">
+    <value>You have two options to link your device to your account:</value>
+  </data>
+  <data name="LOCATIONERROR" xml:space="preserve">
+    <value>System could not search locations for this Zip Code. Please try another nearby Zip Code.</value>
+  </data>
+  <data name="LOCHRCHYNOTUPDATED" xml:space="preserve">
+    <value>Location hierarchy not updated</value>
+  </data>
+  <data name="LOGINEXCEPTION" xml:space="preserve">
+    <value>An unknown exception occurred while connecting to the server. The possible reasons could be- 1) Expiration of Session or 2) Internet Connection failure. Please Re-login or check internet connection. If problem persists contact System Admin.</value>
+  </data>
+  <data name="LOGINEXCEPTIONCSSANDHTML" xml:space="preserve">
+    <value>An exception occurred while connecting to the server. Injection of Special character(s), where not allowed (for example using &lt;&gt; in filters or forms), Please  remove special characters. If problem persists contact System Admin.</value>
+  </data>
+  <data name="LOGOUT" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="LOGOUTMINUTES" xml:space="preserve">
+    <value>minutes until auto Logout</value>
+  </data>
+  <data name="LSTITMN" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="LSTITMY" xml:space="preserve">
+    <value>Yes </value>
+  </data>
+  <data name="LSTPAGE" xml:space="preserve">
+    <value>Last Page</value>
+  </data>
+  <data name="MAIL" xml:space="preserve">
+    <value>Mail -</value>
+  </data>
+  <data name="MAILINPROCESS" xml:space="preserve">
+    <value>Mail in Processing</value>
+  </data>
+  <data name="MALE" xml:space="preserve">
+    <value>Male</value>
+  </data>
+  <data name="MANGEDOCS" xml:space="preserve">
+    <value>Manage Documents</value>
+  </data>
+  <data name="MAPDOCUMENTS" xml:space="preserve">
+    <value>Map Documents</value>
+  </data>
+  <data name="MESSAGING" xml:space="preserve">
+    <value>Messaging</value>
+  </data>
+  <data name="MIDDLENAME" xml:space="preserve">
+    <value>Middle Name</value>
+  </data>
+  <data name="MIDDLENAMECHARRANGE" xml:space="preserve">
+    <value>Middle Name must be between 1 to 30 characters and can contains letters.</value>
+  </data>
+  <data name="MIDDLENAMENA" xml:space="preserve">
+    <value>Middle Name not applicable to this Alias</value>
+  </data>
+  <data name="MIDDLENAMEREQ" xml:space="preserve">
+    <value>Middle Name is required.</value>
+  </data>
+  <data name="MIN" xml:space="preserve">
+    <value>minutes</value>
+  </data>
+  <data name="MORE" xml:space="preserve">
+    <value>More</value>
+  </data>
+  <data name="MOREFLDR" xml:space="preserve">
+    <value>More Folders</value>
+  </data>
+  <data name="MOVETO" xml:space="preserve">
+    <value>Move To</value>
+  </data>
+  <data name="MRKASFLGD" xml:space="preserve">
+    <value>Mark As Flagged</value>
+  </data>
+  <data name="MRKASREAD" xml:space="preserve">
+    <value>Mark As Read</value>
+  </data>
+  <data name="MSGCENTER" xml:space="preserve">
+    <value>Message Center</value>
+  </data>
+  <data name="MTHDUSDTOPAYFRORDR" xml:space="preserve">
+    <value>The method used to pay for this order</value>
+  </data>
+  <data name="MVSELTDITMSTONTHRFLDR" xml:space="preserve">
+    <value>Move selected items to another folder</value>
+  </data>
+  <data name="MYPROFILE" xml:space="preserve">
+    <value>My Profile</value>
+  </data>
+  <data name="NAME" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="NAMEONCARD" xml:space="preserve">
+    <value>Name on Card</value>
+  </data>
+  <data name="NETPRICE" xml:space="preserve">
+    <value>Net Price</value>
+  </data>
+  <data name="NEW" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="NEWPAYTYPE" xml:space="preserve">
+    <value>New Payment Type</value>
+  </data>
+  <data name="NEWTOCOMPLIO" xml:space="preserve">
+    <value>New to Complio?</value>
+  </data>
+  <data name="NEXT" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="NOBLANKSPACE" xml:space="preserve">
+    <value>Should not have blank spaces</value>
+  </data>
+  <data name="NORCRDTODSPLY" xml:space="preserve">
+    <value>No records to display.</value>
+  </data>
+  <data name="NOTAVAILABLE" xml:space="preserve">
+    <value>Not Available</value>
+  </data>
+  <data name="NOTENABLED" xml:space="preserve">
+    <value>[Not Enabled]</value>
+  </data>
+  <data name="NOTFCTNS" xml:space="preserve">
+    <value>Notifications</value>
+  </data>
+  <data name="NOTSPECIFIED" xml:space="preserve">
+    <value>Not Specified</value>
+  </data>
+  <data name="NOUSNUMBER" xml:space="preserve">
+    <value>Check this box if you do not have a US number.</value>
+  </data>
+  <data name="NSFCNTDATATORFND" xml:space="preserve">
+    <value>Insufficient data to process the refund for the order.</value>
+  </data>
+  <data name="NTCMPNYFLDNOTREQ" xml:space="preserve">
+    <value>Note: Company field is not required.</value>
+  </data>
+  <data name="NTCORRECTFORMATEMAIL" xml:space="preserve">
+    <value>Email is not in correct format.</value>
+  </data>
+  <data name="NXTPAGE" xml:space="preserve">
+    <value>Next Page</value>
+  </data>
+  <data name="ODRDATE" xml:space="preserve">
+    <value>Order Date</value>
+  </data>
+  <data name="ODRHISTORY" xml:space="preserve">
+    <value>Order History</value>
+  </data>
+  <data name="ODRNUMBER" xml:space="preserve">
+    <value>Order Number</value>
+  </data>
+  <data name="ODRSTATUS" xml:space="preserve">
+    <value>Order Status</value>
+  </data>
+  <data name="OF" xml:space="preserve">
+    <value>of</value>
+  </data>
+  <data name="OFSBOTTOMLABEL" xml:space="preserve">
+    <value>Once your request has been received it will be processed within 3-5 business days. Please contact us if you have any questions or need additional information.</value>
+  </data>
+  <data name="OFSCNFRMTNDATA" xml:space="preserve">
+    <value>At the end of the enrollment process please print your confirmation receipt with your order number.</value>
+  </data>
+  <data name="OFSFNGRPRNTCRD" xml:space="preserve">
+    <value>FD-258 Fingerprint Card -</value>
+  </data>
+  <data name="OFSFNGRPRNTCRDDATA" xml:space="preserve">
+    <value>You must have your fingerprints taken on FD-258 fingerprint cards. You can do this at local law enforcement or any private agency qualified to take fingerprints. We recommend obtaining two (2) fingerprint cards. The cards need to be signed by both you and the official taking fingerprints and all personally identifiable information must be completed.</value>
+  </data>
+  <data name="OFSMAILDATA" xml:space="preserve">
+    <value>Mail all items listed above to</value>
+  </data>
+  <data name="OFSMNYORDR" xml:space="preserve">
+    <value>Money Order or Business Check (If used for payment) -</value>
+  </data>
+  <data name="OFSMNYORDRDATA" xml:space="preserve">
+    <value>If you used a money order or business check for payment please include the money order (with the appropriate payment amount) payable to American Bioidentity.</value>
+  </data>
+  <data name="OFSTOPLABEL" xml:space="preserve">
+    <value>You are selecting the non-resident fingerprint processing which is available for those applicants residing outside of Colorado or if you are unable to physically visit one of Colorado Fingerprinting locations. The following are the next steps in the process.</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="ORDER" xml:space="preserve">
+    <value>Order</value>
+  </data>
+  <data name="ORDERREVIEWTITLE" xml:space="preserve">
+    <value>Order Review: Please review your order details below. Make changes as necessary.</value>
+  </data>
+  <data name="ORDERSELECTION" xml:space="preserve">
+    <value>Order Selection</value>
+  </data>
+  <data name="ORDERSUMMARY" xml:space="preserve">
+    <value>Order Summary</value>
+  </data>
+  <data name="ORDINQUEUEFORPAYMNT" xml:space="preserve">
+    <value>Order already queued for payment approval.</value>
+  </data>
+  <data name="ORDRDTLS" xml:space="preserve">
+    <value>Order Details</value>
+  </data>
+  <data name="ORDRRFND" xml:space="preserve">
+    <value>Order Refund</value>
+  </data>
+  <data name="ORDSELDTLS" xml:space="preserve">
+    <value>Order Selection Details</value>
+  </data>
+  <data name="ORGNLPRICE" xml:space="preserve">
+    <value>Original Price</value>
+  </data>
+  <data name="OUTOFSTATE" xml:space="preserve">
+    <value>Out of State</value>
+  </data>
+  <data name="PAGE" xml:space="preserve">
+    <value>page(s)</value>
+  </data>
+  <data name="PAGESIZE" xml:space="preserve">
+    <value>Page Size</value>
+  </data>
+  <data name="PAID" xml:space="preserve">
+    <value>Paid</value>
+  </data>
+  <data name="PASSWORD" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="PASSWORDCRITERIA" xml:space="preserve">
+    <value>Password should meet the following criteria-</value>
+  </data>
+  <data name="PASSWORDREQ" xml:space="preserve">
+    <value>Password is required.</value>
+  </data>
+  <data name="PAYMENTDETAILS" xml:space="preserve">
+    <value>Payment Details</value>
+  </data>
+  <data name="PAYMENTSTATUS" xml:space="preserve">
+    <value>Payment Status</value>
+  </data>
+  <data name="PAYMENTTYPE" xml:space="preserve">
+    <value>Payment Type</value>
+  </data>
+  <data name="PERSONALINFO" xml:space="preserve">
+    <value>Personal Information</value>
+  </data>
+  <data name="PHNFORMAT" xml:space="preserve">
+    <value>Format is (###)-###-####</value>
+  </data>
+  <data name="PHONE" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="PHONEFORMAT" xml:space="preserve">
+    <value>Format is (###)-###-####</value>
+  </data>
+  <data name="PHONENUM" xml:space="preserve">
+    <value>Phone Number</value>
+  </data>
+  <data name="PHONEREQ" xml:space="preserve">
+    <value>Phone is required.</value>
+  </data>
+  <data name="PKGCNCLSCS" xml:space="preserve">
+    <value>Package cancelled successfully.</value>
+  </data>
+  <data name="PKGCNCLSCSNRFND" xml:space="preserve">
+    <value>Package cancelled successfully and a refund is being issued.</value>
+  </data>
+  <data name="PKGDETAILS" xml:space="preserve">
+    <value>Package Details</value>
+  </data>
+  <data name="PKGNAME" xml:space="preserve">
+    <value>Package Name</value>
+  </data>
+  <data name="PLACEORDER" xml:space="preserve">
+    <value>Place Order</value>
+  </data>
+  <data name="PLEASE" xml:space="preserve">
+    <value>Please</value>
+  </data>
+  <data name="PLEASEENTERVERICODE" xml:space="preserve">
+    <value>Please enter valid verification code.</value>
+  </data>
+  <data name="PLSENTEREMAIL" xml:space="preserve">
+    <value>Please enter your registered email address and a verification code will be sent to you. The items with</value>
+  </data>
+  <data name="PLSSELCITY" xml:space="preserve">
+    <value>Please select City.</value>
+  </data>
+  <data name="PLSSELCOUNTRY" xml:space="preserve">
+    <value>Please select Country.</value>
+  </data>
+  <data name="PLSSELCOUNTY" xml:space="preserve">
+    <value>Please select County.</value>
+  </data>
+  <data name="PLSSELSTATE" xml:space="preserve">
+    <value>Please select State.</value>
+  </data>
+  <data name="PLSSELVALIDZIP" xml:space="preserve">
+    <value>Please select a valid ZipCode.</value>
+  </data>
+  <data name="PLSSELZIPCODE" xml:space="preserve">
+    <value>Please select Zip Code.</value>
+  </data>
+  <data name="PLSSLCTONLYONEUSERGRP" xml:space="preserve">
+    <value>Please select one user group only.</value>
+  </data>
+  <data name="PLZENTRVLDEVNTCODE" xml:space="preserve">
+    <value>Please enter the valid Event Code</value>
+  </data>
+  <data name="PLZREADUSERAGRMNT" xml:space="preserve">
+    <value>Please read and accept the User Agreement</value>
+  </data>
+  <data name="PLZSELCRDTCRD" xml:space="preserve">
+    <value>Please select Credit Card to submit order.</value>
+  </data>
+  <data name="PLZSELLOC" xml:space="preserve">
+    <value>Please select a location</value>
+  </data>
+  <data name="PLZSELPKGCNCLN" xml:space="preserve">
+    <value>Please Select Package(s) for Cancellation.</value>
+  </data>
+  <data name="POBCOUNTRY" xml:space="preserve">
+    <value>Place Of Birth (Country)</value>
+  </data>
+  <data name="POBSTATE" xml:space="preserve">
+    <value>Place Of Birth (State)</value>
+  </data>
+  <data name="PRCHSDTL" xml:space="preserve">
+    <value>Purchase Detail</value>
+  </data>
+  <data name="PREFERREDBROWSER" xml:space="preserve">
+    <value>Preferred Browsers</value>
+  </data>
+  <data name="PREMAIL" xml:space="preserve">
+    <value>Primary Email</value>
+  </data>
+  <data name="PRESBCRPTNID" xml:space="preserve">
+    <value>Previous Subscription Id:</value>
+  </data>
+  <data name="PREVIOUS" xml:space="preserve">
+    <value>Previous</value>
+  </data>
+  <data name="PREVORDSTATUS" xml:space="preserve">
+    <value>Previous Order Status</value>
+  </data>
+  <data name="PREVPAGE" xml:space="preserve">
+    <value>Previous Page</value>
+  </data>
+  <data name="PRINT" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="PRINTRECPT" xml:space="preserve">
+    <value>Print Receipt</value>
+  </data>
+  <data name="PRNTDOCS" xml:space="preserve">
+    <value>Print Document(s)</value>
+  </data>
+  <data name="PRNTSELTDITMS" xml:space="preserve">
+    <value>Print the selected items</value>
+  </data>
+  <data name="PROCEED" xml:space="preserve">
+    <value>Proceed</value>
+  </data>
+  <data name="PROCHNGS" xml:space="preserve">
+    <value>Profile changes</value>
+  </data>
+  <data name="PROFILEDETAILS" xml:space="preserve">
+    <value>Profile Details</value>
+  </data>
+  <data name="PROFILEPICNOTAVIALBLE" xml:space="preserve">
+    <value>Profile picture not available</value>
+  </data>
+  <data name="PROFILEPICNTUPLOADED" xml:space="preserve">
+    <value>Your profile picture is not uploaded.Please try again.</value>
+  </data>
+  <data name="PRPHONE" xml:space="preserve">
+    <value>Primary Phone</value>
+  </data>
+  <data name="PRSNLFLDR" xml:space="preserve">
+    <value>Personal Folders</value>
+  </data>
+  <data name="PRTLORDPKGCNCLSUC" xml:space="preserve">
+    <value>Partial Order Package(s) cancelled successfully.</value>
+  </data>
+  <data name="PSWDCHARRANGE" xml:space="preserve">
+    <value>Should have 8 to 15 characters.</value>
+  </data>
+  <data name="PYMNTFORORDNUM" xml:space="preserve">
+    <value>Payment for Order number</value>
+  </data>
+  <data name="QRCODE" xml:space="preserve">
+    <value>QR Code:</value>
+  </data>
+  <data name="QRCODESESCRIPTION" xml:space="preserve">
+    <value>If the Authenticator app cannot locate a barcode scanner app on your mobile device, you might be
+ Prompted to download and install one. If you want to install a barcode scanner app so you can 
+Complete the setup process, select Install, then go through the installation process. Once the 
+App is installed, reopen Google Authenticator, then point your camera at the QR code on your</value>
+  </data>
+  <data name="RACE" xml:space="preserve">
+    <value>Race</value>
+  </data>
+  <data name="RCVDATE" xml:space="preserve">
+    <value>Receive Date</value>
+  </data>
+  <data name="REASONFINGERPRINT" xml:space="preserve">
+    <value>Reason Fingerprinted</value>
+  </data>
+  <data name="RECOVER" xml:space="preserve">
+    <value>Recover</value>
+  </data>
+  <data name="RECOVERACCOUNT" xml:space="preserve">
+    <value>Recover Account</value>
+  </data>
+  <data name="RECOVERUSERPSWD" xml:space="preserve">
+    <value>You can recover your username or password here.</value>
+  </data>
+  <data name="RECVTXTNOTIFICATION" xml:space="preserve">
+    <value>Receive Text Notification</value>
+  </data>
+  <data name="REFNO" xml:space="preserve">
+    <value>Reference Number</value>
+  </data>
+  <data name="REFNOREQ" xml:space="preserve">
+    <value>Reference Number is required.</value>
+  </data>
+  <data name="REFRESH" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="REFUND" xml:space="preserve">
+    <value>Refund</value>
+  </data>
+  <data name="REFUNDAMT" xml:space="preserve">
+    <value>Refund Amount</value>
+  </data>
+  <data name="REFUNDAMTREQ" xml:space="preserve">
+    <value>Refund Amount is required.</value>
+  </data>
+  <data name="REJCTNRSNREQ" xml:space="preserve">
+    <value>Rejection Reason is required.</value>
+  </data>
+  <data name="REMOVE" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="RENEWALORDR" xml:space="preserve">
+    <value>Renewal Order</value>
+  </data>
+  <data name="REPORTDETAIL" xml:space="preserve">
+    <value>Report Detail</value>
+  </data>
+  <data name="REQCNCLAPRVLREJSUC" xml:space="preserve">
+    <value>Request for Cancellation Approval has been rejected successfully.</value>
+  </data>
+  <data name="REQCNCLAPRVLSUC" xml:space="preserve">
+    <value>Request for Cancellation Approval processed successfully.</value>
+  </data>
+  <data name="REQCNCLTNSUC" xml:space="preserve">
+    <value>Request for Cancellation processed successfully.</value>
+  </data>
+  <data name="REQONLNPAYAPRVLSUC" xml:space="preserve">
+    <value>Request for Sent For Online Payment approval processed successfully.</value>
+  </data>
+  <data name="REQONLNPAYNOTCMPLTSCS" xml:space="preserve">
+    <value>Request for Online Payment not completed processed successfully.</value>
+  </data>
+  <data name="REQPAYDUEAPRVLSUC" xml:space="preserve">
+    <value>Request for Payment Due approval processed successfully.</value>
+  </data>
+  <data name="REQPAYRJCTAPRVLSUC" xml:space="preserve">
+    <value>Payment approval processed successfully.</value>
+  </data>
+  <data name="REQPAYRJCTNSUC" xml:space="preserve">
+    <value>Request for Payment Rejection processed successfully.</value>
+  </data>
+  <data name="REQPNDNGPAYAPRVLSUC" xml:space="preserve">
+    <value>Request for Pending Payment approval processed successfully.</value>
+  </data>
+  <data name="REQPNDNGSCLAPRVLSCS" xml:space="preserve">
+    <value>Request for Pending School Approval processed successfully.</value>
+  </data>
+  <data name="REQUIREDMARK" xml:space="preserve">
+    <value>mark are required fields.</value>
+  </data>
+  <data name="RESIDENTIALHISTORY" xml:space="preserve">
+    <value>Residential History</value>
+  </data>
+  <data name="RFNDAMTCNTGRTRTOTPRC" xml:space="preserve">
+    <value>Refund amount cannot be greater than Cancelled Package(s) total price.</value>
+  </data>
+  <data name="RFNDAMTGRTRZERO" xml:space="preserve">
+    <value>Refund amount should be greater than 0</value>
+  </data>
+  <data name="RFNDNOTALWD" xml:space="preserve">
+    <value>Refund is not allowed because document(s) are mapped to this subscription</value>
+  </data>
+  <data name="RJCTCNCLN" xml:space="preserve">
+    <value>Reject Cancellation</value>
+  </data>
+  <data name="RJCTNRSN" xml:space="preserve">
+    <value>Rejection Reason</value>
+  </data>
+  <data name="RJCTPAY" xml:space="preserve">
+    <value>Reject Payment</value>
+  </data>
+  <data name="RMNDRS" xml:space="preserve">
+    <value>Reminders</value>
+  </data>
+  <data name="ROTATION" xml:space="preserve">
+    <value>Rotation</value>
+  </data>
+  <data name="RSCHDLAPPNMNT" xml:space="preserve">
+    <value>Reschedule Appointment</value>
+  </data>
+  <data name="RSHORDRPRC" xml:space="preserve">
+    <value>Rush Order Price</value>
+  </data>
+  <data name="RSHORDSTATUS" xml:space="preserve">
+    <value>Rush Order Status</value>
+  </data>
+  <data name="RSTRTORDR" xml:space="preserve">
+    <value>Restart Order</value>
+  </data>
+  <data name="RUSHODRPLCD" xml:space="preserve">
+    <value>Rush Order Placed</value>
+  </data>
+  <data name="RUSHORDRSRVC" xml:space="preserve">
+    <value>Rush Order Service</value>
+  </data>
+  <data name="SAVE" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="SBCRPTNS" xml:space="preserve">
+    <value>Subscriptions</value>
+  </data>
+  <data name="SBMTNPAYYRORD" xml:space="preserve">
+    <value>Submit and pay for your order</value>
+  </data>
+  <data name="SBSCRPTNCHNGDBYADMN" xml:space="preserve">
+    <value>Subscription changed by Admin- </value>
+  </data>
+  <data name="SBSCRPTNEXPDT" xml:space="preserve">
+    <value>Subscription Expiration Date</value>
+  </data>
+  <data name="SBSCRPTNFEE" xml:space="preserve">
+    <value>Subscription Fee</value>
+  </data>
+  <data name="SBSCRPTNPRDMNTH" xml:space="preserve">
+    <value>Subscription Period (Months)</value>
+  </data>
+  <data name="SBSCRPTNSTRTDT" xml:space="preserve">
+    <value>Subscription Start Date</value>
+  </data>
+  <data name="SCANBARCODE" xml:space="preserve">
+    <value>Scan a barcode</value>
+  </data>
+  <data name="SCHEDULEAPPOINTMENT" xml:space="preserve">
+    <value>Schedule Appointment</value>
+  </data>
+  <data name="SCNDRYCNFRMEMAILADDRSREQ" xml:space="preserve">
+    <value>Secondary Confirm Email Address is required.</value>
+  </data>
+  <data name="SCRNPKGGRDTSCS" xml:space="preserve">
+    <value>Screening package graduated successfully</value>
+  </data>
+  <data name="SCRNPKGUNGRDTSCS" xml:space="preserve">
+    <value>Screening package un-graduated successfully</value>
+  </data>
+  <data name="SEARCH" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="SECEMAIL" xml:space="preserve">
+    <value>Secondary Email</value>
+  </data>
+  <data name="SECEMAILADD" xml:space="preserve">
+    <value>Secondary Email Address</value>
+  </data>
+  <data name="SECPHONE" xml:space="preserve">
+    <value>Secondary Phone</value>
+  </data>
+  <data name="SECPHONENUM" xml:space="preserve">
+    <value>Secondary Phone Number</value>
+  </data>
+  <data name="SECRETKEY" xml:space="preserve">
+    <value>Secret Key:</value>
+  </data>
+  <data name="SECRETKEYDESC" xml:space="preserve">
+    <value>box. Make sure you've chosen to make the key Time based, then select Add.</value>
+  </data>
+  <data name="SELECT" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="SELECTDATE" xml:space="preserve">
+    <value>Select a date</value>
+  </data>
+  <data name="SELECTED" xml:space="preserve">
+    <value>Selected</value>
+  </data>
+  <data name="SELPAYMTHD" xml:space="preserve">
+    <value>Select a payment method</value>
+  </data>
+  <data name="SELSLOTNOLNGRSELSANTHR" xml:space="preserve">
+    <value>Selected slot is no longer available. Please select another available slot.</value>
+  </data>
+  <data name="SELSUFFIX" xml:space="preserve">
+    <value>Select Suffix</value>
+  </data>
+  <data name="SENDUNACHVREQ" xml:space="preserve">
+    <value>Send Un-archive Request</value>
+  </data>
+  <data name="SERVICEDETAIL" xml:space="preserve">
+    <value>Service Details</value>
+  </data>
+  <data name="SERVICEFORM" xml:space="preserve">
+    <value>Service Form</value>
+  </data>
+  <data name="SERVICEFORMS" xml:space="preserve">
+    <value>Service Form(s)</value>
+  </data>
+  <data name="SETTINGS" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="SIGNIN" xml:space="preserve">
+    <value>Sign in</value>
+  </data>
+  <data name="SIZE" xml:space="preserve">
+    <value>Size (KB)</value>
+  </data>
+  <data name="SLCTAPPOINTMENT" xml:space="preserve">
+    <value>Please select an appointment slot.</value>
+  </data>
+  <data name="SLCTEDDATETIME" xml:space="preserve">
+    <value>You selected date and time:</value>
+  </data>
+  <data name="SNTITMS" xml:space="preserve">
+    <value>Sent Items</value>
+  </data>
+  <data name="SOMEERROCCUR" xml:space="preserve">
+    <value>Some error occured. Please try again.</value>
+  </data>
+  <data name="SOMEERROCCURD" xml:space="preserve">
+    <value>Some error has occurred. Please try again.</value>
+  </data>
+  <data name="SRCHCRNTFLDRMAIL" xml:space="preserve">
+    <value>Search the current folder for text within the From:, To:, Subject, or Body of all emails</value>
+  </data>
+  <data name="SRCHMAIL" xml:space="preserve">
+    <value>Search Mail</value>
+  </data>
+  <data name="SRVCFORMDTLS" xml:space="preserve">
+    <value>Service Form Details</value>
+  </data>
+  <data name="SRVCFORMNAME" xml:space="preserve">
+    <value>Service Form Name</value>
+  </data>
+  <data name="SRVCFORMS" xml:space="preserve">
+    <value>Service Forms</value>
+  </data>
+  <data name="SSN" xml:space="preserve">
+    <value>Social Security Number</value>
+  </data>
+  <data name="SSNID" xml:space="preserve">
+    <value>Social Security Number/ID number</value>
+  </data>
+  <data name="SSNREQ" xml:space="preserve">
+    <value>Social Security Number is required.</value>
+  </data>
+  <data name="STARTDATENTIME" xml:space="preserve">
+    <value>Start Date &amp; Time</value>
+  </data>
+  <data name="STATE" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="STATEREQ" xml:space="preserve">
+    <value>State is required.</value>
+  </data>
+  <data name="STEP" xml:space="preserve">
+    <value>Step</value>
+  </data>
+  <data name="STEP1" xml:space="preserve">
+    <value>Step 1: Install Google Authenticator</value>
+  </data>
+  <data name="STEP2" xml:space="preserve">
+    <value>Step 2: Link your device to your account:</value>
+  </data>
+  <data name="STEP3VERIFICATIONCODE" xml:space="preserve">
+    <value>Step 3: Verify your verification code</value>
+  </data>
+  <data name="STREETADRESS" xml:space="preserve">
+    <value>Street Address</value>
+  </data>
+  <data name="SUBJECT" xml:space="preserve">
+    <value>Subject</value>
+  </data>
+  <data name="SUBMIT" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="SUBMITORD" xml:space="preserve">
+    <value>Submit Order</value>
+  </data>
+  <data name="THANKSORDERCONFIRMD" xml:space="preserve">
+    <value>Thank You! Order is confirmed.</value>
+  </data>
+  <data name="TODAY" xml:space="preserve">
+    <value>Today</value>
+  </data>
+  <data name="TOTALFEE" xml:space="preserve">
+    <value>Total Fee($)</value>
+  </data>
+  <data name="TOTALPRICE" xml:space="preserve">
+    <value>Total Price</value>
+  </data>
+  <data name="TRKNGPKGGRDTSCS" xml:space="preserve">
+    <value>Tracking package graduated successfully</value>
+  </data>
+  <data name="TRKNGPKGUNGRDTSCS" xml:space="preserve">
+    <value>Tracking package un-graduated successfully</value>
+  </data>
+  <data name="TRNSCTNAPRV" xml:space="preserve">
+    <value>This transaction has been approved.</value>
+  </data>
+  <data name="TRRNSCTNCNCLHOURS" xml:space="preserve">
+    <value>The transaction can only be cancelled 24 hours after it was placed. Please try again later.</value>
+  </data>
+  <data name="TRYAGAIN" xml:space="preserve">
+    <value>Try Again</value>
+  </data>
+  <data name="TTLPRICEFRORDR" xml:space="preserve">
+    <value>The total price for this order</value>
+  </data>
+  <data name="TWOFACTORAUTHEN" xml:space="preserve">
+    <value>Two Factor Authentication</value>
+  </data>
+  <data name="TWOFACTORAUTHENSTNG" xml:space="preserve">
+    <value>Two Factor Authentication Setting</value>
+  </data>
+  <data name="TWOFACTORSUCCESSMSG" xml:space="preserve">
+    <value>Two factor authentication has been configured successfully.</value>
+  </data>
+  <data name="TXTMSGNOTIFICATION" xml:space="preserve">
+    <value>Text Message Notifications</value>
+  </data>
+  <data name="UNACHVREQALRDYSENT" xml:space="preserve">
+    <value>Un-archive request for this Background Order is already sent.</value>
+  </data>
+  <data name="UNACHVREQSENT" xml:space="preserve">
+    <value>Un-archive request sent</value>
+  </data>
+  <data name="UNACHVREQSENTSUCCESSFULLY" xml:space="preserve">
+    <value>Un-archive request is successfully sent to admin.</value>
+  </data>
+  <data name="UNACHVSENDREQ" xml:space="preserve">
+    <value>Click here to send request for Un-Archive</value>
+  </data>
+  <data name="UNIQUEIDINFOMSG" xml:space="preserve">
+    <value>An applicant is transfer eligible if: The applicant currently maintains
+ an active status within the CBI database, with an active child care provider license, and is now submitting under another agency which also requires a child care provider license.</value>
+  </data>
+  <data name="UNTILLAUTO" xml:space="preserve">
+    <value>until auto</value>
+  </data>
+  <data name="UPDATE" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="UPDATEPROFILE" xml:space="preserve">
+    <value>Update Profile</value>
+  </data>
+  <data name="UPLOADEDBY" xml:space="preserve">
+    <value>Uploaded By</value>
+  </data>
+  <data name="UPLOADEDON" xml:space="preserve">
+    <value>Uploaded On</value>
+  </data>
+  <data name="USERAGRMNT" xml:space="preserve">
+    <value>User Agreement</value>
+  </data>
+  <data name="USERAGRMNTMSG" xml:space="preserve">
+    <value>I understand that as part of the application process for admission to CBI that they and/or its agents may conduct an investigation of my personal information. The investigation might include, but is not limited to names and dates of previous/current employment, work experience, criminal history records (from state, federal and other agencies), motor vehicle records, military records, and names and dates of education. I understand that background check information obtained may be used to determine my eligibility for admission. By submitting this background check application I am certifying that the information I have provided is accurate and true to the best of my knowledge. Any false statement can result in the disqualification/denial of acceptance into the school program. You have agreed to a non-tangible service and as a customer you have agreed to the terms and conditions of service and you have acknowledged that there are no refunds that can be issued.</value>
+  </data>
+  <data name="USERNAME" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="USERNAMEALREADYINUSE" xml:space="preserve">
+    <value>This username is already in use. Try another?</value>
+  </data>
+  <data name="USERNAMEAVLBLE" xml:space="preserve">
+    <value>This Username is available.</value>
+  </data>
+  <data name="USERNAMEREQ" xml:space="preserve">
+    <value>Username is required.</value>
+  </data>
+  <data name="USERREGTOPINFO" xml:space="preserve">
+    <value>Please fill the form below to create an account. The items with * are required.</value>
+  </data>
+  <data name="USINGQRCODE" xml:space="preserve">
+    <value>Using QR Code:</value>
+  </data>
+  <data name="USINGSECRETKEY" xml:space="preserve">
+    <value>Using Secret Key:</value>
+  </data>
+  <data name="USRCOMMGRD" xml:space="preserve">
+    <value>User Communication Grid</value>
+  </data>
+  <data name="VALIDNMSGTRCKPKG" xml:space="preserve">
+    <value>Validation Message for Tracking Package:</value>
+  </data>
+  <data name="VERIFICATIONCODE" xml:space="preserve">
+    <value>Verification code</value>
+  </data>
+  <data name="VERIFICATIONCODEEMAILSNTINFOMSG" xml:space="preserve">
+    <value>An email has been sent to your email address. The email contains a verification code, please enter the verification code in the field below to prove that you are the owner of this account.</value>
+  </data>
+  <data name="VERIFICATIONCODEREQ" xml:space="preserve">
+    <value>Verification Code is required.</value>
+  </data>
+  <data name="VERIFY" xml:space="preserve">
+    <value>Verify</value>
+  </data>
+  <data name="VIEWDETAILS" xml:space="preserve">
+    <value>View Details</value>
+  </data>
+  <data name="VIEWDOCS" xml:space="preserve">
+    <value>View Document</value>
+  </data>
+  <data name="VIEWDOCUMENTS" xml:space="preserve">
+    <value>View Documents</value>
+  </data>
+  <data name="VIEWRESULT" xml:space="preserve">
+    <value>View Result</value>
+  </data>
+  <data name="VWLOCIMAGES" xml:space="preserve">
+    <value>View Location Images</value>
+  </data>
+  <data name="VWORDRDTLS" xml:space="preserve">
+    <value>Click here to view background order details</value>
+  </data>
+  <data name="WEIGHT" xml:space="preserve">
+    <value>Weight</value>
+  </data>
+  <data name="WELCOME" xml:space="preserve">
+    <value>Welcome</value>
+  </data>
+  <data name="WLCM" xml:space="preserve">
+    <value>Welcome!</value>
+  </data>
+  <data name="WLCMWARN" xml:space="preserve">
+    <value>Before you place your fingerprinting order you need to know the purpose for the fingerprinting and if applicable your department/organization’s unique ID. Please note an incorrect unique ID may impact the results being received correctly by the authorized entity. If you are not sure of the unique ID please contact the employer/agency requiring the check.</value>
+  </data>
+  <data name="YOURINFOSAVEDMSG" xml:space="preserve">
+    <value>Your information has been saved.</value>
+  </data>
+  <data name="YOURORDERS" xml:space="preserve">
+    <value>Your Orders</value>
+  </data>
+  <data name="ZIP" xml:space="preserve">
+    <value>Zip</value>
+  </data>
+  <data name="ZIPCODE" xml:space="preserve">
+    <value>Zip Code</value>
+  </data>
+  <data name="ZIPCODEREQ" xml:space="preserve">
+    <value>Zip Code is required.</value>
+  </data>
+  <data name="DRIVERLICENCENUMBER" xml:space="preserve">
+    <value>Driver License Number</value>
+  </data>
+  <data name="EDITPROFILEHEADER" xml:space="preserve">
+    <value>You can edit your email address by clicking Edit Profile on your dashboard.</value>
+  </data>
+  <data name="HELP" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="IDENTIFICATIONNUMBER" xml:space="preserve">
+    <value>Identification Number</value>
+  </data>
+  <data name="IDENTIFICATIONREQ" xml:space="preserve">
+    <value>Identification is required.</value>
+  </data>
+  <data name="LICENSENUMREQ" xml:space="preserve">
+    <value>License Number is required.</value>
+  </data>
+  <data name="MOTHERMAIDENNAME" xml:space="preserve">
+    <value>Mother's Maiden Name</value>
+  </data>
+  <data name="MOTHERMAIDENNAMEREQ" xml:space="preserve">
+    <value>Mother's Maiden Name is required.</value>
+  </data>
+  <data name="RECIEVETEXTNOTIFICATION" xml:space="preserve">
+    <value>Receive Text Notification</value>
+  </data>
+  <data name="TEXTMSGNOTIFICATION" xml:space="preserve">
+    <value>Text Message Notifications</value>
+  </data>
+  <data name="ENTERSECONDPHONE" xml:space="preserve">
+    <value>Enter a second phone number here if you'd like to include one</value>
+  </data>
+  <data name="IFDONTHAVEMIDDLENAME" xml:space="preserve">
+    <value>If you do not have a middle name, leave this field blank</value>
+  </data>
+  <data name="SECONDARYEMAILNOTMATCHED" xml:space="preserve">
+    <value>Secondary Email Address did not match</value>
+  </data>
+  <data name="ADDRESSREQ" xml:space="preserve">
+    <value>Address is required.</value>
+  </data>
+  <data name="ALIASFIRSTMIDNAMEREGEX" xml:space="preserve">
+    <value>Only alphabets and one space between the middle names are allowed up to maximum of 30 characters.</value>
+  </data>
+  <data name="ALIASLASTNAMEREGEX" xml:space="preserve">
+    <value>Only alphabets or single hyphen(-) is allowed in the last name up to maximum of 30 characters.</value>
+  </data>
+  <data name="ALSMDNNAMEFORORD" xml:space="preserve">
+    <value>Alias/Maiden Name(s) for this Order.</value>
+  </data>
+  <data name="CNFMPASSWORD1" xml:space="preserve">
+    <value>Confirm Password</value>
+  </data>
+  <data name="CNFMPASSWORDREQ1" xml:space="preserve">
+    <value>Confirm Password is required.</value>
+  </data>
+  <data name="DPLNAMECNTADD" xml:space="preserve">
+    <value>Duplicate names cannot be added.</value>
+  </data>
+  <data name="EDIT" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="EMAILSNTWITHVRFCTNCODE" xml:space="preserve">
+    <value>An email has been sent with a verification code to your email,</value>
+  </data>
+  <data name="ERROCCNTCTADMNSTR" xml:space="preserve">
+    <value>Some error has occured.Please contact administrator.</value>
+  </data>
+  <data name="INCRTFORMAT" xml:space="preserve">
+    <value>Incorrect Format</value>
+  </data>
+  <data name="INVALIDOLDPASWRDENTEREMAILRECIEVEDPASWRD" xml:space="preserve">
+    <value>Invalid old password, please enter the password received in your registered email address.</value>
+  </data>
+  <data name="INVALIDTEMPPASWRDENT" xml:space="preserve">
+    <value>Invalid temporary password, please enter the password received in your registered email address.</value>
+  </data>
+  <data name="ITEMSWITH" xml:space="preserve">
+    <value>The items with</value>
+  </data>
+  <data name="NEWPASWRD" xml:space="preserve">
+    <value>New Password</value>
+  </data>
+  <data name="NEWPASWRDREQ" xml:space="preserve">
+    <value>New Password is required.</value>
+  </data>
+  <data name="NEWPASWRDSHOULDSAME" xml:space="preserve">
+    <value>New password and confirm password both should be same.</value>
+  </data>
+  <data name="NOTE" xml:space="preserve">
+    <value>Note: </value>
+  </data>
+  <data name="NVLDVRFCTNCODEMSG" xml:space="preserve">
+    <value>Invalid Verification Code. Please try again. </value>
+  </data>
+  <data name="OLDPASWRD" xml:space="preserve">
+    <value>Old Password</value>
+  </data>
+  <data name="OLDPASWRDCNTSAMETONEWPASWRD" xml:space="preserve">
+    <value>Old password and new password can not be same.</value>
+  </data>
+  <data name="OLDPASWRDNOTMATCH" xml:space="preserve">
+    <value>Old password entered does not match with existing password. Please provide correct old password!</value>
+  </data>
+  <data name="OLDPASWRDREQ" xml:space="preserve">
+    <value>Old Password is required.</value>
+  </data>
+  <data name="OTHRDTLS" xml:space="preserve">
+    <value>Other Details</value>
+  </data>
+  <data name="PASWRDCONDITIONS" xml:space="preserve">
+    <value>Password length should be of 8 to 15 characters.Password should contain at least one digit [0-9], one letter [A-Z] [a-z] and one special character such as [@#$%^_+~!?\':/,(){}[]-]. Blank space is not allowed.</value>
+  </data>
+  <data name="PASWRDSHOULDNTSAMETOOLDFIVEPASWRD" xml:space="preserve">
+    <value>Your new password cannot be the same as any of your previous 5 password(s).</value>
+  </data>
+  <data name="PLSNOTEURPASWRDSHOULD" xml:space="preserve">
+    <value>Please note that your new password should-</value>
+  </data>
+  <data name="PLSSLCTPCKGS" xml:space="preserve">
+    <value>Please select any Package to continue. </value>
+  </data>
+  <data name="PLZENTERLEAST" xml:space="preserve">
+    <value>Please enter at least</value>
+  </data>
+  <data name="PLZENTRALSLASTNAME" xml:space="preserve">
+    <value>Please enter Alias/Maiden Last Name for</value>
+  </data>
+  <data name="PLZENTRSCRTYCODEMSG" xml:space="preserve">
+    <value>Please enter security code you get on your authenticator application</value>
+  </data>
+  <data name="PLZENTRVLDDOB" xml:space="preserve">
+    <value>Please enter valid Date of Birth</value>
+  </data>
+  <data name="PLZENTRVRFCTNCODEMSG" xml:space="preserve">
+    <value>Please enter verification code mentioned in your phone Google authenticator application.</value>
+  </data>
+  <data name="PLZENTRVRFCTNCOE" xml:space="preserve">
+    <value>Please enter the verification code.</value>
+  </data>
+  <data name="PRMRYMAILENTRISDFRNT" xml:space="preserve">
+    <value>Primary email entered is different from verified email.</value>
+  </data>
+  <data name="PSWDCONDITION" xml:space="preserve">
+    <value>Your password should be of 8 to 15 characters and contain at least one numeric digit [0-9], one letter [A-Z] [a-z] and one special character [@#$%^_+~!?\':/,(){}[]-]. </value>
+  </data>
+  <data name="PSWRDCHNGESUCSESFLY" xml:space="preserve">
+    <value>Password changed successfully!</value>
+  </data>
+  <data name="RESENDOTP" xml:space="preserve">
+    <value>Resend OTP</value>
+  </data>
+  <data name="RSDNCFORORD" xml:space="preserve">
+    <value>Residence(s) for this Order.</value>
+  </data>
+  <data name="SCREENING" xml:space="preserve">
+    <value>Screening </value>
+  </data>
+  <data name="SECURITY" xml:space="preserve">
+    <value>Security</value>
+  </data>
+  <data name="SECURITYCHNGPASWRD" xml:space="preserve">
+    <value>SECURITY_CHANGE_PASSWORD</value>
+  </data>
+  <data name="SNDTMPRYVRFCTNCODEMSG" xml:space="preserve">
+    <value>We have sent a temporary verification code. Please enter the code to verify this account. </value>
+  </data>
+  <data name="TEMPPSWRD" xml:space="preserve">
+    <value>Temporary Password</value>
+  </data>
+  <data name="TEMPPSWRDANDNEWPASWRDCANTSAME" xml:space="preserve">
+    <value>Temporary password and new password can not be same.</value>
+  </data>
+  <data name="TEMPPSWRDREQ" xml:space="preserve">
+    <value>Temporary Password is required.</value>
+  </data>
+  <data name="TXTREQ" xml:space="preserve">
+    <value>text are required.</value>
+  </data>
+  <data name="STATEPROVINCE" xml:space="preserve">
+    <value>State/Province</value>
+  </data>
+  <data name="BACKTOSEARCH" xml:space="preserve">
+    <value>Back to Search</value>
+  </data>
+  <data name="CLKBTNTOCHANGEPROFILEPIC" xml:space="preserve">
+    <value>Click this button to change your profile picture</value>
+  </data>
+  <data name="CODEREQ" xml:space="preserve">
+    <value>Code is required.</value>
+  </data>
+  <data name="SECURITYENTERPWDRECEIVEDINEMAIL" xml:space="preserve">
+    <value>Invalid password, please enter the password received in your registered email address.</value>
+  </data>
+  <data name="TWOFCTRAUTHTMSG" xml:space="preserve">
+    <value>Text Message - To use this setting please make sure that "Cellular Phone Number" under "Receive Text Notification" section must be filled.</value>
+  </data>
+  <data name="UPLOADFILEDESCRIPTIONTOOLTIP" xml:space="preserve">
+    <value>This column displays the description of each uploaded document.</value>
+  </data>
+  <data name="UPLOADFILENAMETOOLTIP" xml:space="preserve">
+    <value>This column contains the name of each uploaded document.</value>
+  </data>
+  <data name="UPLOADFILESIZETOOLTIP" xml:space="preserve">
+    <value>This column contains the file size of each uploaded document.</value>
+  </data>
+  <data name="UPLOADFILESLCTDOCTOPRNT" xml:space="preserve">
+    <value>Please select document(s) to print.</value>
+  </data>
+  <data name="UPLOADFILETYPETOOLTIP" xml:space="preserve">
+    <value>This column contains the type of each uploaded document.</value>
+  </data>
+  <data name="UPLOADFILEUPLOADEDBYTOOLTIP" xml:space="preserve">
+    <value>This column contains the uploader of uploaded document.</value>
+  </data>
+  <data name="UPLOADFILEUPLOADEDONTOOLTIP" xml:space="preserve">
+    <value>This column contains the upload date of uploaded document.</value>
+  </data>
+  <data name="UPLOADFILEVIEWDOCSTOOLTIP" xml:space="preserve">
+    <value>Click here to view the document.</value>
+  </data>
+  <data name="CLCKTOENBLE" xml:space="preserve">
+    <value>Please Click here to enable</value>
+  </data>
+  <data name="ENGLISH" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="INVALIDCAPTCHA" xml:space="preserve">
+    <value>Captcha is invalid, please retry.</value>
+  </data>
+  <data name="PWDRECVRYEMAIL" xml:space="preserve">
+    <value>Password Recovery Email</value>
+  </data>
+  <data name="SNDPWDRECVYEMAILALSOPRMRYADDRS" xml:space="preserve">
+    <value>Send password recovery emails to Primary Email address also</value>
+  </data>
+  <data name="SPANISH" xml:space="preserve">
+    <value>Spanish</value>
+  </data>
+  <data name="CLCKCHNGPRFLPICTOOLTIP" xml:space="preserve">
+    <value>Click this button to change your profile picture</value>
+  </data>
+  <data name="CLCKVIEWPRFILETOOLTIP" xml:space="preserve">
+    <value>Click to view your profile</value>
+  </data>
+  <data name="CONFMALIASDEL" xml:space="preserve">
+    <value>Are you sure you want to delete the Alias/Maiden?</value>
+  </data>
+  <data name="ENTERSUFFIX" xml:space="preserve">
+    <value>Enter Suffix</value>
+  </data>
+  <data name="FIRSTNAMEVALDT" xml:space="preserve">
+    <value>Only alphabets and one space between the first names are allowed up to maximum of 30 characters.</value>
+  </data>
+  <data name="LASTNAMEVALDT" xml:space="preserve">
+    <value>Only alphabets or single hyphen(-) is allowed in the last name up to maximum of 30 characters.</value>
+  </data>
+  <data name="MIDDLENAMEVALDT" xml:space="preserve">
+    <value>Only alphabets and one space between the middle names are allowed up to maximum of 30 characters.</value>
+  </data>
+  <data name="ORDREVBTNEDITPRFLTOOLTIP" xml:space="preserve">
+    <value>Click here to edit your profile</value>
+  </data>
+  <data name="PRFRDCOMCTNLANG" xml:space="preserve">
+    <value>Preferred Communication Language</value>
+  </data>
+  <data name="PRMRYEMAILCHCKPWDRECVRY" xml:space="preserve">
+    <value>Select this checkbox if you would like to use your primary email address for password recovery</value>
+  </data>
+  <data name="PRVCYACTSTMNT" xml:space="preserve">
+    <value>Privacy Act Statement</value>
+  </data>
+  <data name="READANDACCPTPRVCYACTSTMNT" xml:space="preserve">
+    <value>I have read the Privacy Act Statement and accept it.</value>
+  </data>
+  <data name="RTYPEADDTNLEMAILADDRESS" xml:space="preserve">
+    <value>Retype additional email address (if including a second email address)</value>
+  </data>
+  <data name="RTYPEMAILADDRS" xml:space="preserve">
+    <value>Retype email address</value>
+  </data>
+  <data name="SCNDEMAILTOINCLUDE" xml:space="preserve">
+    <value>Enter a second email address if you'd like to include one</value>
+  </data>
+  <data name="SNDPWDRECEMAILSTOEMAILADDR" xml:space="preserve">
+    <value>Send password recovery emails to this email address</value>
+  </data>
+  <data name="SUFFIXNAMEVALDT" xml:space="preserve">
+    <value>Only alphabets or single hyphen(-) is allowed in the suffix up to maximum of 10 characters.</value>
+  </data>
+  <data name="VIEWDOCSTOOLTIP" xml:space="preserve">
+    <value>View your Documents</value>
+  </data>
+  <data name="WRNGIGNRCNTNUADDALIAS" xml:space="preserve">
+    <value>You were in middle of adding an Alias. Please click cancel and save the Alias. Click "Ignore and Continue" if you want to discard.</value>
+  </data>
+  <data name="WRNGORDERREVIEWORDRFLOW" xml:space="preserve">
+    <value>Whoops. It looks like you may have entered personal information that does not apply to the package you selected. Please review your information again and select the appropriate package that applies to you.</value>
+  </data>
+  <data name="CHNGPKGSLECTON" xml:space="preserve">
+    <value>Change Package Selection</value>
+  </data>
+  <data name="GOTODASHBOARD" xml:space="preserve">
+    <value>Go To Dashboard</value>
+  </data>
+  <data name="LANGUAGE" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="ORDREVPRVCYSTMNT_PFOUR" xml:space="preserve">
+    <value>A valid State ID Card (or outlying possession of the US with seal or logo from State Agency, Federal ID Card with seal or logo from Federal Agency, Commercial Driver’s license permit issued by State or outlying possession of the U.S., Commercial Driver’s license issued by a State or outlying possession of the U.S., paper/temporary Driver’s License issued by State or outlying possession of the U.S., valid U.S. passport, foreign passport, passport book/card, valid U.S. military identification card, permanent resident card/green card (I-551), enhanced tribal card (ETC).</value>
+  </data>
+  <data name="ORDREVPRVCYSTMNT_PONE" xml:space="preserve">
+    <value>Authority: The FBI’s acquisition, preservation, and exchange of fingerprints and associated information is generally authorized under 28 U.S.C. 534. Depending on the nature of your application, supplemental authorities include Federal statutes, State statutes pursuant to Pub. L. 92-544, Presidential Executive Orders, and federal regulations. Providing your fingerprints and associated information is voluntary; however, failure to do so may affect completion or approval of your application.</value>
+  </data>
+  <data name="ORDREVPRVCYSTMNT_PTHREE" xml:space="preserve">
+    <value>Routine Uses: During the processing of this application and for as long thereafter as your fingerprints and associated information/biometrics are retained in NGI, your information may be disclosed pursuant to your consent, and may be disclosed without your consent as permitted by the Privacy Act of 1974 and all applicable Routine Uses as may be published at any time in the Federal Register, including the Routine Uses for the NGI system and the FBI’s Blanket Routine Uses. Routine uses include, but are not limited to, disclosures to: employing, governmental or authorized non-governmental agencies responsible for employment, contracting, licensing, security clearances, and other suitability determinations; local, state, tribal, or federal law enforcement agencies; criminal justice agencies; and agencies responsible for national security or public safety.</value>
+  </data>
+  <data name="ORDREVPRVCYSTMNT_PTWO" xml:space="preserve">
+    <value>Principal Purpose: Certain determinations, such as employment, licensing, and security clearances, may be predicated on fingerprint-based background checks. Your fingerprints and associated information/biometrics may be provided to the employing, investigating, or otherwise responsible agency, and/or the FBI for the purpose of comparing your fingerprints to other fingerprints in the FBI’s Next Generation Identification (NGI) system or its successor systems (including civil, criminal, and latent fingerprint repositories) or other available records of the employing, investigating, or otherwise responsible agency. The FBI may retain your fingerprints and associated information/biometrics in NGI after the completion of this application and, while retained, your fingerprints may continue to be compared against other fingerprints submitted to or retained by NGI.</value>
+  </data>
+  <data name="PAYMENTTYPES" xml:space="preserve">
+    <value>Payment Type(s)</value>
+  </data>
+  <data name="ALIASNAMETOTALLENGHTVALDTNMSG" xml:space="preserve">
+    <value>Total length for Alias Name should be atleast 3 characters</value>
+  </data>
+  <data name="APPLICANT" xml:space="preserve">
+    <value>Applicant</value>
+  </data>
+  <data name="PROFILE" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+  <data name="ENTERVALIDDOB" xml:space="preserve">
+    <value>Please enter valid date in MM/DD/YYYY format.</value>
+  </data>
+  <data name="ENTERVALIDPOSTALCODEVALDTN" xml:space="preserve">
+    <value>Postal code is required. If you do not have a postal code, please enter 00000.</value>
+  </data>
+  <data name="ENTERVALIDZIPCODEVALDTN" xml:space="preserve">
+    <value>Zip Code is required. If you do not have a zip code, please enter 00000.</value>
+  </data>
+  <data name="ENTERVALIDZIPASCIICODE" xml:space="preserve">
+    <value>Please enter valid characters in Zip Code.</value>
+  </data>
+  <data name="ENTERVALIDPOSTALASCIICODE" xml:space="preserve">
+    <value>Please enter valid characters in Postal Code.</value>
+  </data>
+  <data name="FORWHICHYOUNEEDPKG" xml:space="preserve">
+    <value>for which you need a package</value>
+  </data>
+  <data name="LANGUAGEBUTTONTOOLTIPENG_P1" xml:space="preserve">
+    <value>Click for English</value>
+  </data>
+  <data name="LANGUAGEBUTTONTOOLTIPENG_P2" xml:space="preserve">
+    <value>Haga clic para inglés</value>
+  </data>
+  <data name="LANGUAGEBUTTONTOOLTIPSPANISH_P1" xml:space="preserve">
+    <value>Click for Spanish</value>
+  </data>
+  <data name="LANGUAGEBUTTONTOOLTIPSPANISH_P2" xml:space="preserve">
+    <value>Haga clic para español</value>
+  </data>
+  <data name="PLEASEENTERTEXT" xml:space="preserve">
+    <value>Please enter</value>
+  </data>
+  <data name="PLEASESELECT" xml:space="preserve">
+    <value>Please Select</value>
+  </data>
+  <data name="POSTALCODE" xml:space="preserve">
+    <value>Postal Code</value>
+  </data>
+  <data name="PWDDIDNOTMATCH" xml:space="preserve">
+    <value>Password did not match.</value>
+  </data>
+  <data name="SELECTTHE" xml:space="preserve">
+    <value>Select the</value>
+  </data>
+  <data name="SELECTWITHHYPENS" xml:space="preserve">
+    <value>--Select--</value>
+  </data>
+  <data name="UNIQUIECBIIDCONFRM" xml:space="preserve">
+    <value>Please make sure to confirm with your institution or department about your Unique ID</value>
+  </data>
+  <data name="TTLLENFULLNAMEATLEASTTHREECHARS" xml:space="preserve">
+    <value>Total length for Full Name should be atleast 3 characters.</value>
+  </data>
+  <data name="ADNEWFLDR" xml:space="preserve">
+    <value>Add New Folder</value>
+  </data>
+  <data name="ADTNLACTFORMSG" xml:space="preserve">
+    <value>Additional actions for this message</value>
+  </data>
+  <data name="ATTACHFILE" xml:space="preserve">
+    <value>Attach File</value>
+  </data>
+  <data name="ATTACHMENTS" xml:space="preserve">
+    <value>Attachment(s)</value>
+  </data>
+  <data name="BODY" xml:space="preserve">
+    <value>Body</value>
+  </data>
+  <data name="CLEAR" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="CLOSE" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="CNFRMDLT" xml:space="preserve">
+    <value>Confirm Delete</value>
+  </data>
+  <data name="CNFRMDLTSELFLDRMSG" xml:space="preserve">
+    <value>Are you sure you want to delete the selected folder and all its content</value>
+  </data>
+  <data name="CNFRMDLTSELMSGS" xml:space="preserve">
+    <value>Are you sure you want to delete the selected messages(s).</value>
+  </data>
+  <data name="CNTATCHFILEGRTMB" xml:space="preserve">
+    <value>Cannot attach file more than 20MB</value>
+  </data>
+  <data name="CNTDWNLDATCHMNT" xml:space="preserve">
+    <value>System could not download attachment as it is not available</value>
+  </data>
+  <data name="CREATNEWFLDR" xml:space="preserve">
+    <value>Create a new folder in</value>
+  </data>
+  <data name="DLTFLDR" xml:space="preserve">
+    <value>Delete Folder</value>
+  </data>
+  <data name="FLDPRVSLYCRTDMSG" xml:space="preserve">
+    <value>A folder with this name previously created, please use another name.</value>
+  </data>
+  <data name="FLDRALRDYEXISTMSG" xml:space="preserve">
+    <value>A folder with this name already exists. Use another name.</value>
+  </data>
+  <data name="FLDRCNTDPLCT" xml:space="preserve">
+    <value>Folder can not be duplicate.</value>
+  </data>
+  <data name="HIGHIMP" xml:space="preserve">
+    <value>High Importance</value>
+  </data>
+  <data name="MNGTEMP" xml:space="preserve">
+    <value>Manage Template</value>
+  </data>
+  <data name="MODE" xml:space="preserve">
+    <value>Mode</value>
+  </data>
+  <data name="MOVE" xml:space="preserve">
+    <value>Move</value>
+  </data>
+  <data name="MOVETOFLDR" xml:space="preserve">
+    <value>Move To Folder</value>
+  </data>
+  <data name="MRKASUNFLGD" xml:space="preserve">
+    <value>Mark As Unflagged</value>
+  </data>
+  <data name="MRKASUNREAD" xml:space="preserve">
+    <value>Mark As Unread</value>
+  </data>
+  <data name="MSGBODYREQ" xml:space="preserve">
+    <value>Message Body is required.</value>
+  </data>
+  <data name="MSGRCVNGRULE" xml:space="preserve">
+    <value>Message Receiving Rules</value>
+  </data>
+  <data name="MSGSVDINDRFT" xml:space="preserve">
+    <value>Your Message is saved in draft.</value>
+  </data>
+  <data name="MVSELITEMSTOFLDR" xml:space="preserve">
+    <value>Move the selected items to the folder</value>
+  </data>
+  <data name="PLZSELRCPNTMAIL" xml:space="preserve">
+    <value>Please select the Recipient's email address.</value>
+  </data>
+  <data name="PLZSPCFYNAMEFLDR" xml:space="preserve">
+    <value>Please Specify the name for folder.</value>
+  </data>
+  <data name="PLZSPCFYTXT" xml:space="preserve">
+    <value>Please specify the text for new folder.</value>
+  </data>
+  <data name="PRNTSEPARATOR" xml:space="preserve">
+    <value>PrintSeparator</value>
+  </data>
+  <data name="REPLY" xml:space="preserve">
+    <value>Reply</value>
+  </data>
+  <data name="REPLYALL" xml:space="preserve">
+    <value>Reply All</value>
+  </data>
+  <data name="REPLYTOSNDR" xml:space="preserve">
+    <value>Reply to the sender of this message</value>
+  </data>
+  <data name="REPLYTOSNDRNRCPNTS" xml:space="preserve">
+    <value>Reply to the sender and all recipients of this message</value>
+  </data>
+  <data name="RESTORINGMSG" xml:space="preserve">
+    <value>Restoring this message will lead to restoring of container folder and its parent folders. Do you want to continue?</value>
+  </data>
+  <data name="SEARCHFORMAIL" xml:space="preserve">
+    <value>Search for mails</value>
+  </data>
+  <data name="SEND" xml:space="preserve">
+    <value>Send</value>
+  </data>
+  <data name="SENTON" xml:space="preserve">
+    <value>Sent On</value>
+  </data>
+  <data name="SEPARATOR" xml:space="preserve">
+    <value>Separator</value>
+  </data>
+  <data name="STNGSAVESUCCESS" xml:space="preserve">
+    <value>Settings saved successfully.</value>
+  </data>
+  <data name="SUBJECTREQ" xml:space="preserve">
+    <value>Subject is required.</value>
+  </data>
+  <data name="TEMPLATE" xml:space="preserve">
+    <value>Template</value>
+  </data>
+  <data name="TO" xml:space="preserve">
+    <value>To</value>
+  </data>
+  <data name="WNTTOCNTNUEMSG" xml:space="preserve">
+    <value>Do you want to continue?</value>
+  </data>
+  <data name="CLKRETTODASHBOARD" xml:space="preserve">
+    <value>Click to return to the dashboard</value>
+  </data>
+  <data name="CLKTOSHWHIDEALIASNAME" xml:space="preserve">
+    <value>Click here to show/hide an Alias or Maiden name.</value>
+  </data>
+  <data name="OPNCALENDERPOPUP" xml:space="preserve">
+    <value>Open the calender popup</value>
+  </data>
+  <data name="ADDRESSBOOK" xml:space="preserve">
+    <value>Address Book</value>
+  </data>
+  <data name="CLEARFILTERS" xml:space="preserve">
+    <value>Clear Filters</value>
+  </data>
+  <data name="CLICKINGHERE" xml:space="preserve">
+    <value>clicking here</value>
+  </data>
+  <data name="CLKHERETOSORT" xml:space="preserve">
+    <value>Click here to sort</value>
+  </data>
+  <data name="CLKTOGOHOME" xml:space="preserve">
+    <value>Click to go to Home Screen</value>
+  </data>
+  <data name="CLOSESPLSHSCRN" xml:space="preserve">
+    <value>You can close this splash screen by</value>
+  </data>
+  <data name="DRFTMSG" xml:space="preserve">
+    <value>Drafted Message</value>
+  </data>
+  <data name="FORWARDMSG" xml:space="preserve">
+    <value>Forward Message</value>
+  </data>
+  <data name="ID" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="NEWMESSAGE" xml:space="preserve">
+    <value>New Message</value>
+  </data>
+  <data name="NOFILECHOSEN" xml:space="preserve">
+    <value>No file chosen</value>
+  </data>
+  <data name="PLZWAIT" xml:space="preserve">
+    <value>Please wait</value>
+  </data>
+  <data name="PLZWAITAPPLOAD" xml:space="preserve">
+    <value>Please wait while the application is being loaded...</value>
+  </data>
+  <data name="RETURNTODSHBRD" xml:space="preserve">
+    <value>Return to your dashboard</value>
+  </data>
+  <data name="TYPE" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="WATCHVIDEOTOOLTIP" xml:space="preserve">
+    <value>Click here to watch create account help video.</value>
+  </data>
+  <data name="WHILEPAGELOAD" xml:space="preserve">
+    <value>while rest of the page loads.</value>
+  </data>
+  <data name="ALREADYEXISTINPROFILEMSG" xml:space="preserve">
+    <value>It appears that you already have an account with one of the existing profiles. Please choose appropriate account from the following:</value>
+  </data>
+  <data name="LINKACCOUNT" xml:space="preserve">
+    <value>Link Account</value>
+  </data>
+  <data name="PLSREADVLDNMSG" xml:space="preserve">
+    <value>Please read and accept the Privacy Act Statement</value>
+  </data>
+  <data name="PLSSELONEOFABOVE" xml:space="preserve">
+    <value>Please select one of the above.</value>
+  </data>
+  <data name="PSWDCHNGSUCCESSMSG" xml:space="preserve">
+    <value>Your password has been changed successfully. Please re-login!</value>
+  </data>
+  <data name="PSWDVERIFICATION" xml:space="preserve">
+    <value>Password Verification</value>
+  </data>
+  <data name="ORDERSUCCESSPLACED" xml:space="preserve">
+    <value>Your order has been successfully placed.</value>
+  </data>
+  <data name="SUCCESSTEXT" xml:space="preserve">
+    <value>Success</value>
+  </data>
+  <data name="EVNTSTRTDTNTM" xml:space="preserve">
+    <value>Event Start Date and Time</value>
+  </data>
+  <data name="FILTER" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="VLDTCODE" xml:space="preserve">
+    <value>Validate Code</value>
+  </data>
+  <data name="INVALIDBILLINGCODE" xml:space="preserve">
+    <value>Invalid Billing Code. Please contact your administrator.</value>
+  </data>
+  <data name="BILLINGCODE" xml:space="preserve">
+    <value>Billing Code</value>
+  </data>
+  <data name="CAPSLOCKON" xml:space="preserve">
+    <value>Alert: Caps Lock is on</value>
+  </data>
+  <data name="ENTRBILINGCODEIFHAVE" xml:space="preserve">
+    <value>If you have a Billing Code please enter here.</value>
+  </data>
+  <data name="ONLYONEALIASCANBEUPDATED" xml:space="preserve">
+    <value>Only one alias/maiden can be updated at a time.</value>
+  </data>
+  <data name="REGISTEREDEMAILREQUIRED" xml:space="preserve">
+    <value>Please enter registered email address.</value>
+  </data>
+  <data name="YOURACCTLOCKEDMSG" xml:space="preserve">
+    <value>Your account has been locked. Please contact Administrator to unlock your account.</value>
+  </data>
+  <data name="IAM" xml:space="preserve">
+    <value>I am</value>
+  </data>
+  <data name="INCRTUSERNAMEPSWD" xml:space="preserve">
+    <value>You have entered an incorrect Username or Password. Please click the "Cant access your account?" link below if you need to retrieve your username or reset your password.</value>
+  </data>
+  <data name="NONEOFABOVE" xml:space="preserve">
+    <value>None of the above, Create new account.</value>
+  </data>
+  <data name="ORDCON_ORDSELDTLS" xml:space="preserve">
+    <value>Order Selection Details</value>
+  </data>
+  <data name="ACCOUNTLOCKED" xml:space="preserve">
+    <value>Your account has been locked. Please contact Administrator to unlock your account.</value>
+  </data>
+  <data name="BALANCEAMT" xml:space="preserve">
+    <value>Balance Amount</value>
+  </data>
+  <data name="PAIDBYINST" xml:space="preserve">
+    <value>Paid by Institution</value>
+  </data>
+  <data name="PAYMENTBYINST" xml:space="preserve">
+    <value>Payment by Institution</value>
+  </data>
+  <data name="ADDMORE" xml:space="preserve">
+    <value>Add More</value>
+  </data>
+  <data name="CNCLREGISTRATION" xml:space="preserve">
+    <value>Cancel Registration</value>
+  </data>
+  <data name="CNFMCNLREGISTRATION" xml:space="preserve">
+    <value>Are you sure you want to cancel registration?</value>
+  </data>
+  <data name="CNFRMMAIL" xml:space="preserve">
+    <value>Confirm Mail</value>
+  </data>
+  <data name="CRTACCNT" xml:space="preserve">
+    <value>Create Account</value>
+  </data>
+  <data name="LOGIN" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="REGISTER" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="SUFFIX" xml:space="preserve">
+    <value>Suffix</value>
+  </data>
+  <data name="BUSINESSADDRESS" xml:space="preserve">
+    <value>Business Address</value>
+  </data>
+  <data name="COMBINATNMAXCHARVALIDATN" xml:space="preserve">
+    <value>Combination of Name, Address and City cannot have more than 109 characters.</value>
+  </data>
+  <data name="DAYCARELICENSEMAXDIGVAL" xml:space="preserve">
+    <value>Daycare License # can have up to 18 digits.</value>
+  </data>
+  <data name="ONLYONEALIASADDITNVALDATN" xml:space="preserve">
+    <value>Only one alias/maiden can be added/updated at a time.</value>
+  </data>
+  <data name="PLSENTRCITIZENSHIP" xml:space="preserve">
+    <value>Please enter Citizenship</value>
+  </data>
+  <data name="PLSENTRCITY" xml:space="preserve">
+    <value>Please enter City</value>
+  </data>
+  <data name="PLSENTRDAYCARELICENSE" xml:space="preserve">
+    <value>Please enter Daycare License #</value>
+  </data>
+  <data name="PLSENTREYECOLOR" xml:space="preserve">
+    <value>Please enter Eye Color</value>
+  </data>
+  <data name="PLSENTRHAIRCOLOR" xml:space="preserve">
+    <value>Please enter Hair Color</value>
+  </data>
+  <data name="PLSENTRHEIGHTFT" xml:space="preserve">
+    <value>Please enter Height Feet</value>
+  </data>
+  <data name="PLSENTRHEIGHTINCH" xml:space="preserve">
+    <value>Please enter Height Inches</value>
+  </data>
+  <data name="PLSENTRNAME" xml:space="preserve">
+    <value>Please enter Name</value>
+  </data>
+  <data name="PLSENTRPLCBIRTHCOUNTRTY" xml:space="preserve">
+    <value>Please enter Place Of Birth (Country)</value>
+  </data>
+  <data name="PLSENTRPLCBIRTHSTATE" xml:space="preserve">
+    <value>Please enter Place Of Birth (State)</value>
+  </data>
+  <data name="PLSENTRRACE" xml:space="preserve">
+    <value>Please enter Race</value>
+  </data>
+  <data name="PLSENTRSTATE" xml:space="preserve">
+    <value>Please enter State</value>
+  </data>
+  <data name="PLSENTRWEIGHT" xml:space="preserve">
+    <value>Please enter Weight</value>
+  </data>
+  <data name="PLSENTRZIPCODE" xml:space="preserve">
+    <value>Please enter Zip Code</value>
+  </data>
+  <data name="WGHTBTWNVALDTN" xml:space="preserve">
+    <value>Weight should be between 50 to 499</value>
+  </data>
+  <data name="ZIPCODEDIGVALDATN" xml:space="preserve">
+    <value>Employer Zip Code must have 5 digits.</value>
+  </data>
+  <data name="PLSENTRADDRESS" xml:space="preserve">
+    <value>Please enter Address</value>
+  </data>
+  <data name="ADDALIAS" xml:space="preserve">
+    <value>Add Alias</value>
+  </data>
+  <data name="ADDRESSASCIIINVALIDCODE" xml:space="preserve">
+    <value>Please enter valid characters in Address.</value>
+  </data>
+  <data name="LOCATIONNAME" xml:space="preserve">
+    <value>Location Name</value>
+  </data>
+  <data name="ALIASSUFFIX" xml:space="preserve">
+    <value>Alias Suffix</value>
+  </data>
+  <data name="PAYMENTINST" xml:space="preserve">
+    <value>Payment Instructions</value>
+  </data>
+  <data name="ONEALIASREQUD" xml:space="preserve">
+    <value>Please enter at least 1 Alias/Maiden Name(s) for this Order.</value>
+  </data>
+  <data name="RETURNTODESKTOP" xml:space="preserve">
+    <value>Return to desktop site</value>
+  </data>
+  <data name="INCORRECTUSRPWD" xml:space="preserve">
+    <value>The user name or password is incorrect.</value>
+  </data>
+  <data name="USEREXIST" xml:space="preserve">
+    <value>User already exists.</value>
+  </data>
+  <data name="USERNAMEEXIST" xml:space="preserve">
+    <value>User Name already exists.</value>
+  </data>
+  <data name="YES" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="USERINACTIVE" xml:space="preserve">
+    <value>Your account is not active. Please contact System Administrator.</value>
+  </data>
+  <data name="LOCATIONTENANTGENERICEXCEPTIONMSG" xml:space="preserve">
+    <value>Your session timed out or you have multiple tabs open in the same browser. Log out, login and try again.</value>
+  </data>
+  <data name="CNCLRESCHEDULING" xml:space="preserve">
+    <value>Cancel Rescheduling</value>
+  </data>
+  <data name="CNFMCNLRESCHEDULING" xml:space="preserve">
+    <value>Are you sure you wish to cancel this rescheduling?</value>
+  </data>
+  <data name="EVNTSTRTDATE" xml:space="preserve">
+    <value>Event Start Date</value>
+  </data>
+  <data name="TRACKCANCLBY" xml:space="preserve">
+    <value>Tracking Package Cancelled By</value>
+  </data>
+  <data name="ACCTHASBNLNKD" xml:space="preserve">
+    <value>Account has been Linked!</value>
+  </data>
+  <data name="CLICKHERETOLOGIN" xml:space="preserve">
+    <value>Click here to login.</value>
+  </data>
+  <data name="CRTNEW" xml:space="preserve">
+    <value>Create New</value>
+  </data>
+  <data name="THANKUFORREGISTERING" xml:space="preserve">
+    <value>Thank you for registering! An email has been sent to your email,</value>
+  </data>
+  <data name="PASWRDSHOULDNTSAMETOOLDTENPASWRD" xml:space="preserve">
+    <value>Your new password cannot be the same as any of your previous 10 password(s).</value>
+  </data>
+  <data name="MAXCHARACTERS" xml:space="preserve">
+    <value>Maximum Characters allowed are</value>
+  </data>
+  <data name="PWDEXPIRED" xml:space="preserve">
+    <value>Your password has expired. Please reset your password below to continue.</value>
+  </data>
+  <data name="ENTERSUFFIXIFAPPLICABLE" xml:space="preserve">
+    <value>Enter Suffix if Applicable</value>
+  </data>
+  <data name="ACCTLINKINGFAILED" xml:space="preserve">
+    <value>Account Linking Failed.</value>
+  </data>
+  <data name="FOUND" xml:space="preserve">
+    <value>found</value>
+  </data>
+  <data name="MATCHEDUSER" xml:space="preserve">
+    <value>Matched User(s)</value>
+  </data>
+  <data name="NOACCTWITHEMLADD" xml:space="preserve">
+    <value>No accounts with email address</value>
+  </data>
+  <data name="PERSONALDETAILNOTMATCHED" xml:space="preserve">
+    <value>Personal details do not match: Name must match in each account being linked.</value>
+  </data>
+  <data name="PLSSELECTUSER" xml:space="preserve">
+    <value>Please select an user.</value>
+  </data>
+  <data name="SELECTUSERTORETAIN" xml:space="preserve">
+    <value>Select the User for which you wish to retain username and email address.</value>
+  </data>
+  <data name="VALIDATE" xml:space="preserve">
+    <value>Validate</value>
+  </data>
+  <data name="ACCTLINKEDSUCMSG" xml:space="preserve">
+    <value>Account linked successfully. Please login again.</value>
+  </data>
+  <data name="IFYOUDONTHAVEMIDDLENAME" xml:space="preserve">
+    <value>If you don't have a middle name,check the box below.</value>
+  </data>
+  <data name="ACCTCNTNINACTIVEPROFILES" xml:space="preserve">
+    <value>Account linking could not be completed. Error: Account contains inactive profile.</value>
+  </data>
+  <data name="PLEASEENTERPASSWORD" xml:space="preserve">
+    <value>Please enter password for</value>
+  </data>
+  <data name="ATLEASTONESPECIALCHARCBI" xml:space="preserve">
+    <value>Choose at least one of the listed special characters [@#$%^_+~!?\':/,(){}[]-]</value>
+  </data>
+  <data name="ACCTNAMEORACCTNUMBER" xml:space="preserve">
+    <value>Enter name of Employer/Institution or Account# (CONCJ#)</value>
+  </data>
+  <data name="LOOKUP" xml:space="preserve">
+    <value>Look Up</value>
+  </data>
+  <data name="MINFOURCHAR" xml:space="preserve">
+    <value>Minimum 4 characters of Account Name or correct Account Number is required.</value>
+  </data>
+  <data name="SELECTSUFFIX" xml:space="preserve">
+    <value>Suffix, if Any</value>
+  </data>
+  <data name="SLOTEXPINSTRUCTION" xml:space="preserve">
+    <value>Generally it takes 5 minutes to complete an order. If it takes you more than 30 minutes, then you may not be able to submit the order.</value>
+  </data>
+  <data name="SLOTEXPALRTMSG" xml:space="preserve">
+    <value>Your reserved appointment slot has expired. Please select a slot again to proceed with the order.</value>
+  </data>
+  <data name="SLOTEXPBEFOREPAYMENTALRTMSG" xml:space="preserve">
+    <value>Your reserved slot expired before you could complete your order. Please go to Order History and click “Complete your Order” to select a fresh slot.</value>
+  </data>
+  <data name="CONFIRMMSGCABS" xml:space="preserve">
+    <value>You will not be able to edit any information for this order after proceeding – MAKE SURE YOUR INFORMATION IS CORRECT.Have you reviewed all your information?
+
+Refund Policy:
+You have agreed to a service, and as a customer you agree to the terms and conditions of service. In addition, you have acknowledged that there are no refunds that can be issued.</value>
+  </data>
+  <data name="MAILINGCHECK" xml:space="preserve">
+    <value>Shipping Address same as profile</value>
+  </data>
+  <data name="MAILINGADDRESS" xml:space="preserve">
+    <value>Shipping Address for Fingerprinting Card</value>
+  </data>
+  <data name="MAILINGOPTION" xml:space="preserve">
+    <value>Mailing Options</value>
+  </data>
+  <data name="SELECTMAILINGOPTION" xml:space="preserve">
+    <value>Select Mailing Option</value>
+  </data>
+  <data name="MAILINGPRICE" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="COPIES" xml:space="preserve">
+    <value>Copies</value>
+  </data>
+  <data name="ISCONSENT" xml:space="preserve">
+    <value>By checking this box I authorize and direct Colorado Fingerprinting to retain a copy of my fingerprints outside of the CABS program.  I understand that this copy will be retained separately and apart from the CABS system and cannot be used for any purpose within the CABS program. However, I can use this copy of my fingerprints to request reproductions for non-CABS purposes.</value>
+  </data>
+  <data name="LFPTKNON" xml:space="preserve">
+    <value>Last finger prints taken on DDYYYMMMM for Order #11111. Would you like to use the same fingerprints?</value>
+  </data>
+  <data name="LPPTKNON" xml:space="preserve">
+    <value>Last passport photo taken on DDYYYMMMM for Order #11111. Would you like to use the same passport photo?</value>
+  </data>
+  <data name="PRCPY" xml:space="preserve">
+    <value>per copy</value>
+  </data>
+  <data name="PREVIEW" xml:space="preserve">
+    <value>Preview</value>
+  </data>
+  <data name="PRICE" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="CHANGEMILADD" xml:space="preserve">
+    <value>Change Shipping Address</value>
+  </data>
+  <data name="MODIFYSHIPPINGADDRESS" xml:space="preserve">
+    <value>Modify Shipping Address</value>
+  </data>
+  <data name="THANKSMODIFYSHIPPING" xml:space="preserve">
+    <value>Thank You! Shipping details updated successfully.</value>
+  </data>
+  <data name="ACTION" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="SERVICENAME" xml:space="preserve">
+    <value>Service Name</value>
+  </data>
+  <data name="SERVICESTATUS" xml:space="preserve">
+    <value>Service Status</value>
+  </data>
+  <data name="TRACKINGNUMBER" xml:space="preserve">
+    <value>Tracking Number</value>
+  </data>
+  <data name="ARCHVDORDR" xml:space="preserve">
+    <value>Archived Orders</value>
+  </data>
+  <data name="PLORDARCHVD" xml:space="preserve">
+    <value>Place Order from Archived</value>
+  </data>
+  <data name="REJECTCNFRMACTIVEAPPNTMNT" xml:space="preserve">
+    <value>There is an active appointment for order, service status will be changed to New.</value>
+  </data>
+  <data name="REJECTCNFRMINACTIVEAPPNTMNT" xml:space="preserve">
+    <value>New Fingerprints have been processed since the last shipment, service status will be changed to Pending Shipment. Please use the latest information to print the Card / Photo.</value>
+  </data>
+  <data name="REJECTCONFIRMADDSERVICES" xml:space="preserve">
+    <value>Are you sure you want to reject this service?</value>
+  </data>
+  <data name="CABSDESC" xml:space="preserve">
+    <value>Colorado Bureau of Investigation (CBI) fingerprint processing.  Order if instructed by your employer or licensing agency and you have the CBI unique ID. If you are not sure of the CBI unique ID, please contact your employer or licensing agency for assistance.</value>
+  </data>
+  <data name="FCANDPPDESC" xml:space="preserve">
+    <value>Fingerprint Card – Out of State and Federal Purposes.  Order for employment or licensure in other states, for Federal purposes, ATF, DOD, for other countries or for any other non-Colorado purpose.  This package includes one fingerprint card and one set of four passport photos you can order additional fingerprint cards and set of four passport photos as needed.</value>
+  </data>
+  <data name="FCDESC" xml:space="preserve">
+    <value>Fingerprint Card – Out of State and Federal Purposes.  Order for employment or licensure in other states, for Federal purposes, ATF, DOD, for other countries or for any other non-Colorado purpose.  This package includes one fingerprint card and you can order additional fingerprint cards as needed.  If your fingerprints need to be processed with the Colorado Bureau of Investigation (CBI), please order the Colorado Bureau of Investigation (CBI) fingerprint processing package.</value>
+  </data>
+  <data name="CMPLTPYMNT" xml:space="preserve">
+    <value>Complete Your Payment</value>
+  </data>
+  <data name="SKIP" xml:space="preserve">
+    <value>Skip</value>
+  </data>
+  <data name="MODIFYSHIPPING" xml:space="preserve">
+    <value>Modify Shipping</value>
+  </data>
+  <data name="NOOFCOPIESREQD" xml:space="preserve">
+    <value>Please enter number of copies.</value>
+  </data>
+  <data name="EDITMILADD" xml:space="preserve">
+    <value>Edit Shipping Address</value>
+  </data>
+  <data name="FINGPRNTCRDCOPIES" xml:space="preserve">
+    <value>Fingerprint Card Copies</value>
+  </data>
+  <data name="PASSPORTPHOTOSET" xml:space="preserve">
+    <value>Passport photo sets (4 photos)</value>
+  </data>
+  <data name="PRICEPERADDCOPY" xml:space="preserve">
+    <value>Price per additional copy</value>
+  </data>
+  <data name="PRICEPERADDSET" xml:space="preserve">
+    <value>Price per additional set (4 photos)</value>
+  </data>
+  <data name="ENTERTRACKINGNUM" xml:space="preserve">
+    <value>Please enter Tracking Number</value>
+  </data>
+  <data name="BASEPRICENEW" xml:space="preserve">
+    <value>Base Price</value>
+  </data>
+  <data name="NETPRICENEW" xml:space="preserve">
+    <value>Net Price</value>
+  </data>
+  <data name="ORDERSRVCITEMS" xml:space="preserve">
+    <value>Order Service Items</value>
+  </data>
+  <data name="PASSPORTPHOTOSETCOPIES" xml:space="preserve">
+    <value>Passport Photo Set Copies</value>
+  </data>
+  <data name="PRICEPERADDSETNEW" xml:space="preserve">
+    <value>Price per additional set</value>
+  </data>
+</root>

@@ -1,0 +1,239 @@
+﻿.topbar
+{
+    background-image: url(images/bkg-top.png);
+    background-repeat: repeat-x;
+    height: 50px;
+    background-position: -1px -10px;
+    position: relative;
+}
+
+.topbar .title
+{
+    font-size: 13px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.topbar .commands
+{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.filterbar
+{
+    text-align: right;
+    padding-right: 10px;
+}
+
+.sectionblock
+{
+    position: relative;
+    padding: 10px;
+}
+.sectionblock .title
+{
+    font-weight: bold;
+}
+
+.sectionblock .commands
+{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.helpblock 
+{
+     position:relative;
+     display:none;
+}
+
+.helpblock .commands
+{
+    position:relative;
+        top:auto;
+    right:auto;
+}
+.sectionblock .formblock table.form
+{
+    width:100%;
+    margin-top:10px;
+}
+
+ .formblock .lbl
+ {
+    width:150px; 
+       
+ }
+ 
+ .formblock .aligntop
+ {
+     vertical-align:top;
+ }
+ 
+ table.form tr.separator td
+ {
+     border-bottom:2px solid #adadad;
+ }
+ table.form tr.separator + tr td.lbl, table.form tr.separator + tr td.elm
+ {
+     padding-top:10px;
+ }
+ .formblock .elm
+ {
+    width:200px;  
+    padding-bottom:5px;  
+ }
+ 
+ .sectionblock .cmdbar
+ {
+     text-align:right;
+     padding:5px;
+ }
+.help
+{
+    margin-top:10px;
+    padding: 5px;
+    border: 1px solid #adadad;
+    display: none;
+    background-color:white;
+}
+
+.help h1
+{
+    font-size: 13px !important;
+}
+
+.profile_data td
+{
+    padding:5px;
+}
+ .profile_img
+{
+    float: left;
+    width: 81px;
+    height: 91px;
+    background-image: url(../images/noimg.png);
+}
+
+.profile_block .compliance_info
+{
+    float: left;
+    min-width: 100px;
+    padding: 0 10px;
+}
+
+
+#imglist_block
+{
+    background-color: Red;
+    height: 90px;
+    margin-top: -3px;
+    position: relative;
+    padding:0 12px;
+    overflow:hidden;
+}
+
+#imglist_block #btnleft
+{
+    position:absolute;
+    background-color:Yellow;
+    top:35px;
+    height:20px;
+    width:20px;
+    left:0;
+}
+
+#imglist_block #btnright
+{
+    position:absolute;
+    background-color:Yellow;
+    top:35px;
+    height:20px;
+    width:20px;
+    right:0;
+}
+
+#imglist_block #list
+{
+    background-color:Green;
+    overflow:visible;
+}
+
+#imglist_block #list .img
+{
+    background-color:#555;
+    display:inline-block;
+}
+
+#imglist_block #list .img .thumb
+{
+    background-color:blue;
+    height:80px;
+    width:60px;
+}
+
+#imglist_block #list .img .title
+{
+     background-color: #ADADAD;
+    height: 80px;
+    opacity: 0.5;
+    overflow: hidden;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 60px;    
+    word-wrap: break-word;
+}
+.profile_block .compliance_info .status
+{
+}
+
+
+.profile_block .compliance_info .true
+{
+    color: Green;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.profile_block .compliance_info .false
+{
+    color: Red;
+    font-weight: bold;
+    font-size: 13px;
+    vertical-align: middle;
+}
+
+.profile_block div.profile_data
+{
+    margin: 10px 0;
+}
+
+.profile_block table.profile_data td
+{
+    vertical-align: top;
+}
+
+.profile_block table.profile_data tr td:first-child
+{
+    padding-right: 10px;
+}
+
+.profile_block .username
+{
+    font-weight: bold;
+    color: Black;
+    font-size: inherit;
+}
+
+
+.profile_block .packinfo
+{
+    display: block;
+    padding-top: 10px;
+    color: Green;
+    font-weight: bold;
+}

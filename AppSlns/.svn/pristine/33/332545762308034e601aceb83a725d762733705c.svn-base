@@ -1,0 +1,42 @@
+﻿body {
+}
+
+
+/*Styles for default theme's module bar*/
+.useDefaultModule #modwrapo {    
+    border-bottom: medium none;
+    font-family: Arial;
+    font-size: 11px;    
+    background-image: url("../Default/images/modoverlay.png");
+    background-repeat: repeat-x;
+    color: #000000;
+    height: 51px;
+    margin-bottom: 10px;
+}
+
+.useDefaultModule #modwrapi {
+    padding: 5px 10px 0;
+    border-style: none;
+}
+
+.useDefaultModule #breadcmb {
+    position: absolute;
+    font-size: 110%;
+}
+
+.useDefaultModule #modhdr {
+    font-size: 225%;
+    margin-top: 13px;
+    white-space: nowrap;
+}
+
+    .useDefaultModule #modhdr h1 {
+        font-size: 18px;
+        font-weight: bolder;
+        letter-spacing: 0 !important;
+        color: #333333;
+    }
+
+    .useDefaultModule #modhdr .phdr {
+        font-size: 15px;
+    }

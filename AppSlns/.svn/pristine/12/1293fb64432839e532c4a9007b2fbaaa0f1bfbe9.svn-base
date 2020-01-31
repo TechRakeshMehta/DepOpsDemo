@@ -1,0 +1,88 @@
+<div id="bodyBlock" class="container-fluid">
+
+    <section class="p-2">
+        <div class="row">
+            <div class="col-12 font-weight-bold">
+                <label id="CREATODR"></label> (
+                <label id="STEP"></label> {{orderInfo.CurrentStep}} <label id="OF"></label> {{orderInfo.TotalSteps}})
+            </div>
+            <div class="col-md-12 bg-white shadow-sm rounded py-3">
+                <h6 class="redColor font-weight-bold" id="SERVICEDETAIL"></h6>
+                <span [hidden]="customHtml == '' || customHtml == undefined" id="customHtml" ></span>
+                <br/>
+                <br/>
+                <form [formGroup]="ServiceDetailForm">
+                    <div class="row">
+                        <div class="col-md-6 mb-1">
+                            <label class="is-required" id="REASONFINGERPRINT"></label>
+                            <input type="text" id="name" class="form-control" placeholder="Reason Fingerprinted" formControlName="ReasonFingerprinted">
+                        </div>
+                        <div class="col-md-6 mb-1">
+                            <label class="is-required" id="CBIUNIQUEID"></label>
+                            <input type="text"  class="form-control" ng-readonly="true" formControlName="CBIUniqueID">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-1">
+                            <label [ngClass]="{'required': isDCLRequired}" id="DAYCARELIC"> </label>
+                            <input type="text" id="DaycareLicense" [ngClass]="displayFieldCss('DaycareLicense')" class="form-control" maxlength="18"
+                                formControlName="DaycareLicense">
+                            <app-field-error-display [displayError]="isFieldValid('DaycareLicense')" errorMsg="{{errorMessage('DaycareLicense')}}">
+                            </app-field-error-display>
+                        </div>
+                        <div class="col-md-6 mb-1">
+                            <label class="is-required" id="ACCTNAM"></label>
+                            <input type="text"  class="form-control" formControlName="AcctNam">
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-1">
+                            <label class="is-required" id="ACCRADR"></label>
+
+                            <input type="text" class="form-control" formControlName="AcctAdr">
+                        </div>
+                        <div class="col-md-6 mb-1">
+                            <label class="is-required" id="ACCTCTY"></label>
+                            <input type="text"  class="form-control" formControlName="AcctCty">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-1">
+                            <label class="is-required" id="ACCTSTA"></label>
+                            <input type="text"  class="form-control" formControlName="ACCTSTA">
+                        </div>
+                        <div class="col-md-6 mb-1">
+                            <label class="is-required" id="ACCTZIP"></label>
+                            <input type="text"  class="form-control" formControlName="AcctZip">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-1">
+                            <label class="is-required" id="FINGERPRINTEDCRS"></label>
+                            <input type="text"  class="form-control" formControlName="CRS">
+                        </div>
+                        <div class="col-md-6 mb-1">
+                                <label class="is-required" id="TOTALFEE"></label>
+                                <input type="text" class="form-control" formControlName="TOTALFEE">
+                            </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-12 d-flex justify-content-center">
+                            <button type="button" [autofocus]="false" class="btn btn-primary fixedWidthBtn" (click)="goBack()">
+                                <i class="fas fa-arrow-left pr-1"></i>
+                                <label id="PREVIOUS"></label>
+                            </button>
+                            <button type="button" [autofocus]="false" (click)="onSubmit()" class="btn btn-primary mx-1 fixedWidthBtn">
+                                <label id="NEXT"></label>
+                                <i class="fas fa-arrow-right pl-1"></i>
+                            </button>
+                            <cancel-order-button></cancel-order-button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>

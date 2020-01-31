@@ -1,0 +1,26 @@
+﻿.NoNodeSelect
+{
+    /*not used*/
+}
+.mappackagerow fieldset
+{
+    padding: 0;
+    padding-left: 10px;
+    background-color: White;
+    margin: 0 5px;
+    margin-bottom: 3px;
+}
+.mappackagerow fieldset .sx1co
+{
+    background-color: White;
+    height: 200px;
+    overflow: auto;
+}
+.fsetright
+{
+    margin-left: 2.5px !important;
+}
+.fsetleft
+{
+    margin-right: 2.5px !important;
+}

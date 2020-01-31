@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<GetAliasToEdit xmlns="">
+  <ErrorStatus>
+    <Code>0</Code>
+    <Type></Type>
+    <Message></Message>
+  </ErrorStatus>
+  <Alias>
+    <sLastName></sLastName>
+    <sFirstName></sFirstName>
+    <sMiddleName></sMiddleName>
+    <sSuffix></sSuffix>
+    <sAliasType></sAliasType>
+  </Alias>
+</GetAliasToEdit>

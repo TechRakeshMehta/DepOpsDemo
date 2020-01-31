@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<Exception xmlns="http://tempuri.org/ADBEmails.xsd">
+  <Contents>
+    <TimeStamp></TimeStamp>
+    <QueryString></QueryString>
+    <CurrentExecutionFilePath></CurrentExecutionFilePath>
+    <FilePath></FilePath>
+    <ApplicationPath></ApplicationPath>
+    <Request.FilePath></Request.FilePath>
+    <Path></Path>
+    <TYPE></TYPE>
+    <TARGETSITE></TARGETSITE>
+    <MESSAGE></MESSAGE>
+    <INNEREXCEPTION></INNEREXCEPTION>
+    <SOURCE></SOURCE>
+    <STACKTRACE></STACKTRACE>
+    <DATA></DATA>
+    <Context.Items></Context.Items>
+    <Request.Form></Request.Form>
+    <Request.ServerVariables></Request.ServerVariables>
+    <Request.PathInfo></Request.PathInfo>
+    <Request.PhysicalApplicationPath></Request.PhysicalApplicationPath>
+    <Request.PhysicalPath></Request.PhysicalPath>
+    <Request.RawUrl></Request.RawUrl>
+   
+  </Contents>
+</Exception>

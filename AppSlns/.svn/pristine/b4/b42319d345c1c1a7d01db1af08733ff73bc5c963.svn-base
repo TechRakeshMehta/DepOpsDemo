@@ -1,0 +1,61 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="CoreWeb.Shell.MasterPages.NewChildPage" CodeBehind="NewChildPage.master.cs" %>
+
+<%@ Register TagPrefix="infs" Namespace="INTERSOFT.WEB.UI.WebControls" Assembly="INTERSOFT.WEB.UI" %>
+<%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        html
+        {
+            height: auto !important;
+            overflow: auto !important;
+        }
+    </style>
+    <link rel="stylesheet" href="../Resources/Mod/Dashboard/Styles/bootstrap.min.css" type="text/css" />
+    <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="../Resources/Mod/Dashboard/Styles/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="../Resources/Mod/Dashboard/Styles/SharedUserDashboard.css" type='text/css' />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" type="text/javascript"></script> 
+</head>
+<body>
+    <form id="frmChildPage" runat="server">
+        <%-- Managers --%>
+        <div>
+            <asp:ScriptManager ID="scmPage" runat="server" EnablePageMethods="true" EnablePartialRendering="true"
+                AsyncPostBackTimeout="360000" ScriptMode="Release">
+            </asp:ScriptManager>
+            <infs:WclStyleSheetManager runat="server" ID="cssMgrPage">
+            </infs:WclStyleSheetManager>
+            <infs:WclResourceManager runat="server" ID="rsrMgrPage" EnableBrowserSupport="true"
+                SupportCssPath="~/Resources/Generic/Client" SupportScriptPath="~/Resources/Generic/Client"
+                OnInit="rsrMgr_Init" AllowTheming="true" ThemeName="Red" ThemesFolder="~/Resources/Themes"
+                ThemeFiles="colors.css" WindowCheckFailUrl="Default.aspx" EnableWindowCheck="true"
+                IFrameMode="true" SupportedBrowsers="ie7,ie8,ie9" SupportedEngines="trident"
+                EnableEngineSupport="true">
+                <infs:LinkedResource Path="~//Resources/Generic/childpage.css" ResourceType="StyleSheet" />
+            </infs:WclResourceManager>
+        </div>
+        <%-- Error / Information Box --%>
+        <div id="pageoutwr">
+            <asp:UpdatePanel ID="pnlError" runat="server" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <div class="msgbox" id="MsgBox">
+                        <asp:Label CssClass="info" EnableViewState="false" runat="server" ID="lblError"></asp:Label>
+                    </div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+            <div id="box_content">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+        <infs:WclResourceManagerProxy runat="server" ID="prxMP">
+            <infs:LinkedResource Path="~/Resources/generic/page.min.js" ResourceType="JavaScript" />
+        </infs:WclResourceManagerProxy>
+    </form>
+</body>
+</html>

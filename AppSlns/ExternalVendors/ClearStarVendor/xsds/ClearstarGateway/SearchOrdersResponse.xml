@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<SearchOrders xmlns="">
+  <ErrorStatus>
+    <Code></Code>
+    <Type></Type>
+    <Message></Message>
+  </ErrorStatus>
+  <Order>
+    <sOrderID></sOrderID>
+    <sFirstName></sFirstName>
+    <sLastName></sLastName>
+    <sSSN></sSSN>
+    <sProfNo></sProfNo>
+    <sCustID></sCustID>
+    <sServiceNo></sServiceNo>
+    <sOrderStatus></sOrderStatus>
+  </Order>
+</SearchOrders>

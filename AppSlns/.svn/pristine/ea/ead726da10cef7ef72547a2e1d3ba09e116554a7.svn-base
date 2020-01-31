@@ -1,0 +1,58 @@
+﻿.tblMain
+{
+    width: 100%;
+}
+
+.tdLeft
+{
+    width: 155px;
+    vertical-align: top;
+    text-align: center;
+}
+
+.bx_image
+{
+    max-height: 150px;
+    max-width: 150px;
+    text-align: center;
+}
+
+.thumb
+{
+    max-width: 150px;
+    max-height: 150px;
+    border: 1px solid;
+    padding: 2px;
+}
+
+.initName
+{
+    background-color: #ADADAD;
+    color: #EFEFEF;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    line-height:113px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 150px;
+    height: 113px;
+    border: 2px solid #848484;
+}
+
+.bx_uploader
+{
+    margin-left: 43px;
+    margin-top: 10px;
+}
+
+.img_msg
+{
+    font-size: 10px;
+}
+
+.tdRight
+{
+    vertical-align: top;
+    padding-left: 10px;
+}

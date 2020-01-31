@@ -1,0 +1,13 @@
+﻿.pad
+{
+    position: relative;
+    cursor: url("../../Resources/Mod/Signature/pen.cur"), crosshair;
+    /*cursor: url("pen.cur") 16 16, crosshair;*/
+    -ms-touch-action: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    border: 1px solid #000000;
+}

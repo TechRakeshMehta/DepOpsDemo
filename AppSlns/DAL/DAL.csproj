@@ -1,0 +1,396 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{08DB341B-B6CE-41E2-8CBE-FE3243EEBB30}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DAL</RootNamespace>
+    <AssemblyName>DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\WebSites\CoreWeb\ComplioEmptyRuleSet.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\WebSites\CoreWeb\ComplioEmptyRuleSet.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugConnectedToDatabase|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\DebugConnectedToDatabase\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\LPSFS.DAL.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>..\WebSites\CoreWeb\ComplioEmptyRuleSet.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Intsof.SMTPService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d2e1941283e579c5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Intsof.SMTPService.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NLog">
+      <HintPath>..\Library\ThirdParty\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Entity">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DALUtils.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="Interfaces\IAdminEntryPortalRepository.cs" />
+    <Compile Include="Interfaces\IAlumniRepository.cs" />
+    <Compile Include="Interfaces\IAgencyHierarchyRepository.cs" />
+    <Compile Include="Interfaces\IAgencyJobBoardRepository.cs" />
+    <Compile Include="Interfaces\IFingerPrintClientRepository.cs" />
+    <Compile Include="Interfaces\IFingerPrintSetupRepository.cs" />
+    <Compile Include="Interfaces\IPlacementMatchingSetupRepository.cs" />
+    <Compile Include="Interfaces\ISharedRequirementRuleRepository.cs" />
+    <Compile Include="Interfaces\IAgencyReviewRepository.cs" />
+    <Compile Include="Interfaces\IContractRepository.cs" />
+    <Compile Include="Interfaces\IPackageBundleRepository.cs" />
+    <Compile Include="Interfaces\IRequirementRuleRepository.cs" />
+    <Compile Include="Interfaces\IRequirementVerificationRepository.cs" />
+    <Compile Include="Interfaces\ISharedRequirementPackageRepository.cs" />
+    <Compile Include="Interfaces\ISharedUserClinicalRotationRepository.cs" />
+    <Compile Include="Interfaces\IApplicantClinicalRotationRepository.cs" />
+    <Compile Include="Interfaces\IApplicantRequirementRepository.cs" />
+    <Compile Include="Interfaces\IClientContactRepository.cs" />
+    <Compile Include="Interfaces\IApplicationDataRepository.cs" />
+    <Compile Include="Interfaces\IBackgroundCaptureOrderRepository.cs" />
+    <Compile Include="Interfaces\IBackgroundPricingRepository.cs" />
+    <Compile Include="Interfaces\IBackgroundServiceIntegrityRepository.cs" />
+    <Compile Include="Interfaces\IBackgroundSetupRepository.cs" />
+    <Compile Include="Interfaces\IBackgroundRuleRepository.cs" />
+    <Compile Include="Interfaces\IClientMobilityRepository.cs" />
+    <Compile Include="Interfaces\IClientSecurityRepository.cs" />
+    <Compile Include="Interfaces\IClinicalRotationRepository.cs" />
+    <Compile Include="Interfaces\IComplianceDataRepository.cs" />
+    <Compile Include="Interfaces\IComplianceSetupRepository.cs" />
+    <Compile Include="Interfaces\ICommunicationRepository.cs" />
+    <Compile Include="Interfaces\IDataFeedRepository.cs" />
+    <Compile Include="Interfaces\IDocumentRepository.cs" />
+    <Compile Include="Interfaces\IEVOrderSecurityRepository.cs" />
+    <Compile Include="Interfaces\IEVOrderClientRepository.cs" />
+    <Compile Include="Interfaces\IIntegrityRepository.cs" />
+    <Compile Include="Interfaces\ILookupRepository.cs" />
+    <Compile Include="Interfaces\IMessageRepository.cs" />
+    <Compile Include="Interfaces\IMessageRulesRepository.cs" />
+    <Compile Include="Interfaces\IMobilityRepository.cs" />
+    <Compile Include="Interfaces\INavigationRepository.cs" />
+    <Compile Include="Interfaces\IBaseRepository.cs" />
+    <Compile Include="Interfaces\IProfileSharingClientRepository.cs" />
+    <Compile Include="Interfaces\IProfileSharingRepository.cs" />
+    <Compile Include="Interfaces\IQueueImagingRepository.cs" />
+    <Compile Include="Interfaces\IQueueManagementRepository.cs" />
+    <Compile Include="Interfaces\IReportRepository.cs" />
+    <Compile Include="Interfaces\IRequirementPackageRepository.cs" />
+    <Compile Include="Interfaces\IRuleRepository.cs" />
+    <Compile Include="Interfaces\ISearchRepository.cs" />
+    <Compile Include="Interfaces\ISecurityRepository.cs" />
+    <Compile Include="Interfaces\ISMSNotificationRepository.cs" />
+    <Compile Include="Interfaces\IStoredProcedures.cs" />
+    <Compile Include="Interfaces\ITemplates.cs" />
+    <Compile Include="Interfaces\ITicketsCentreRepository.cs" />
+    <Compile Include="Interfaces\IUniversalMappingDataRepository.cs" />
+    <Compile Include="Interfaces\IWebSiteRepository.cs" />
+    <Compile Include="Interfaces\IZipCodeMasterRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\AdminEntryPortalRepository.cs" />
+    <Compile Include="Repository\AgencyHierarchyRepository.cs" />
+    <Compile Include="Repository\AgencyJobBoardRepository.cs" />
+    <Compile Include="Repository\AgencyReviewRepository.cs" />
+    <Compile Include="Repository\ApplicantClinicalRotationRepository.cs" />
+    <Compile Include="Repository\ApplicantRequirementRepository.cs" />
+    <Compile Include="Repository\ApplicationDataRepository.cs" />
+    <Compile Include="Repository\BackgroundCaptureOrderRepository.cs" />
+    <Compile Include="Repository\BackgroundPricingRepository.cs" />
+    <Compile Include="Repository\BackgroundServiceIntegrityRepository.cs" />
+    <Compile Include="Repository\BaseQueueRepository.cs" />
+    <Compile Include="Repository\BaseRepository.cs" />
+    <Compile Include="Repository\BaseSearchRepository.cs" />
+    <Compile Include="Repository\BackgoundSetupRepository.cs" />
+    <Compile Include="Repository\BackgroundProcessOrderRepository.cs" />
+    <Compile Include="Repository\BackgroundRuleRepository.cs" />
+    <Compile Include="Repository\ClientBaseRepository.cs" />
+    <Compile Include="Repository\ClientMobilityRepository.cs" />
+    <Compile Include="Repository\ClientSecurityRepository.cs" />
+    <Compile Include="Repository\ClinicalRotationRepository.cs" />
+    <Compile Include="Repository\CommunicationRepository.cs" />
+    <Compile Include="Repository\ComplianceDataRepository.cs" />
+    <Compile Include="Repository\ComplianceSetupRepository.cs" />
+    <Compile Include="Repository\ClientContactRepository.cs" />
+    <Compile Include="Repository\ContractRepository.cs" />
+    <Compile Include="Repository\AlumniRepository.cs" />
+    <Compile Include="Repository\FingerPrintClientRepository.cs" />
+    <Compile Include="Repository\FingerPrintSetupRepository.cs" />
+    <Compile Include="Repository\PackageBundleRepository.cs" />
+    <Compile Include="Repository\PlacementMatchingSetupRepository.cs" />
+    <Compile Include="Repository\RequirementRuleRepository.cs" />
+    <Compile Include="Repository\RequirementVerificationRepository.cs" />
+    <Compile Include="Repository\SharedRequirementPackageRepository.cs" />
+    <Compile Include="Repository\SharedRequirementRuleRepository.cs" />
+    <Compile Include="Repository\SharedUserClinicalRotationRepository.cs" />
+    <Compile Include="Repository\DataFeedRepository.cs" />
+    <Compile Include="Repository\DocumentRepository.cs" />
+    <Compile Include="Repository\EVOrderSecurityRepository.cs" />
+    <Compile Include="Repository\EVOrderClientRepository.cs" />
+    <Compile Include="Interfaces\IBackgroundProcessOrderRepository.cs" />
+    <Compile Include="Repository\IntegrityRepository.cs" />
+    <Compile Include="Repository\LookupRepository.cs" />
+    <Compile Include="Repository\MessageRepository.cs" />
+    <Compile Include="Repository\MessageRulesRepository.cs" />
+    <Compile Include="Repository\MobilityRepository.cs" />
+    <Compile Include="Repository\ProfileSharingClientRepository.cs" />
+    <Compile Include="Repository\ProfileSharingRepository.cs" />
+    <Compile Include="Repository\QueueImagingRepository.cs" />
+    <Compile Include="Repository\QueueManagementRepository.cs" />
+    <Compile Include="Repository\ReportRepository.cs" />
+    <Compile Include="Repository\RequirementPackageRepository.cs" />
+    <Compile Include="Repository\RuleRepository.cs" />
+    <Compile Include="Repository\SearchRepository.cs" />
+    <Compile Include="Repository\SecurityRepository.cs" />
+    <Compile Include="Repository\QueryManager.cs" />
+    <Compile Include="Repository\QueryManagerBase.cs" />
+    <Compile Include="Repository\SMSNotificationRepository.cs" />
+    <Compile Include="Repository\StoredProceduresRepository.cs" />
+    <Compile Include="Repository\TemplatesRepository.cs" />
+    <Compile Include="Repository\TicketsCentreRepository.cs" />
+    <Compile Include="Repository\UniversalMappingDataRepository.cs" />
+    <Compile Include="Repository\WebSiteRepository.cs" />
+    <Compile Include="Service References\BatchImportService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\PDFConversion\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="SysXEntityConstants.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PDFConversion\DAL.PDFConversion.ApplicantDoc.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PDFConversion\DAL.PDFConversion.ApplicantDocMerging.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PDFConversion\DAL.PDFConversion.ApplicantDocToBeMerged.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PDFConversion\DAL.PDFConversion.TupleOfstringArrayOfApplicantDocToBeMergedodubidBA.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PDFConversion\PDFConversion3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PDFConversion\PDFConversion31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PDFConversion\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\PDFConversion\configuration.svcinfo" />
+    <None Include="Service References\PDFConversion\configuration91.svcinfo" />
+    <None Include="Service References\PDFConversion\PDFConversion.disco" />
+    <None Include="Properties\DataSources\INTSOF.Utils.PDFConversion.ApplicantDoc1.datasource" />
+    <None Include="Properties\DataSources\INTSOF.Utils.PDFConversion.ApplicantDoc.datasource" />
+    <None Include="Properties\DataSources\INTSOF.Utils.PDFConversion.ApplicantDocMerging.datasource" />
+    <None Include="packages.config" />
+    <None Include="Service References\BatchImportService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\BatchImportService\configuration.svcinfo" />
+    <None Include="Service References\BatchImportService\configuration91.svcinfo" />
+    <None Include="Service References\BatchImportService\BatchImport.disco" />
+    <None Include="Service References\BatchImportService\BatchImport.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BatchImportService\BatchImport1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PDFConversion\PDFConversion.wsdl" />
+    <None Include="Service References\PDFConversion\PDFConversion.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PDFConversion\PDFConversion1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PDFConversion\PDFConversion2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AppService\INTSOF.ServiceDataContracts\INTSOF.ServiceDataContracts.csproj">
+      <Project>{55ee654e-2092-4d8f-baf6-502d728daf73}</Project>
+      <Name>INTSOF.ServiceDataContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\INTSOF.Contracts\INTSOF.Contracts.csproj">
+      <Project>{b31b85ab-9b51-42c3-8101-70c1966a1d5a}</Project>
+      <Name>INTSOF.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\INTSOF.ServiceModelInterface\INTSOF.ServiceModelInterface.csproj">
+      <Project>{9e135855-8bb5-4386-8e73-0d57ff842b4d}</Project>
+      <Name>INTSOF.ServiceModelInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\INTSOF.ServiceUtil\INTSOF.ServiceUtil.csproj">
+      <Project>{FF7C94F4-C269-4A04-9C0A-2DA33F095D30}</Project>
+      <Name>INTSOF.ServiceUtil</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\INTSOF.UnityHelper\INTSOF.UnityHelper.csproj">
+      <Project>{e58f438b-a81c-4cc8-8330-ba497d9fa1f5}</Project>
+      <Name>INTSOF.UnityHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entity\Entity.csproj">
+      <Project>{CE8D45E6-4B39-4D12-82F9-11F691D64E21}</Project>
+      <Name>Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\INTSOF.Logger\INTSOF.Logger.csproj">
+      <Project>{20595140-2FD9-4DF4-83E3-0D0ED819D4D1}</Project>
+      <Name>INTSOF.Logger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\INTSOF.UI.Contract\INTSOF.UI.Contract.csproj">
+      <Project>{E882F896-9BF5-425A-91ED-90F87B3174F6}</Project>
+      <Name>INTSOF.UI.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\INTSOF.Utils\INTSOF.Utils.csproj">
+      <Project>{79f18a05-e628-4c59-ad95-40640f0260da}</Project>
+      <Name>INTSOF.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\Foundational\IntsofSecurityModel.Interface\IntsofSecurityModel.Interface.csproj">
+      <Project>{d800ce86-2851-4081-ade4-32ba9b978d1f}</Project>
+      <Name>IntsofSecurityModel.Interface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BatchImportService\BatchImport.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\BatchImportService\" />
+    <WCFMetadataStorage Include="Service References\PDFConversion\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:50109/ComplianceRuleService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ExternalServices" />
+  <xs:import schemaLocation="http://localhost:50109/ComplianceRuleService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:50109/ComplianceRuleService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/ExternalServices.DataContracts" />
+  <xs:element name="GetData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="value" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDataResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataUsingDataContract">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ExternalServices" minOccurs="0" name="composite" nillable="true" type="q1:CompositeType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataUsingDataContractResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ExternalServices" minOccurs="0" name="GetDataUsingDataContractResult" nillable="true" type="q2:CompositeType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetComplianceRuleConstantTypes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetComplianceRuleConstantTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetComplianceRuleConstantTypesResult" nillable="true" type="q3:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetComplianceItems">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="complianceCategoryId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetComplianceItemsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/ExternalServices.DataContracts" minOccurs="0" name="GetComplianceItemsResult" nillable="true" type="q4:ArrayOfComplianceItemDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveComplianceItemRule">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="complianceCategoryComplianceItemId" type="xs:int" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/ExternalServices.DataContracts" minOccurs="0" name="lstRuleElementNodeContract" nillable="true" type="q5:ArrayOfRuleElementNodeContract" />
+        <xs:element minOccurs="0" name="currentUserId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveComplianceItemRuleResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRule">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="complianceCategoryComplianceItemId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRuleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/ExternalServices.DataContracts" minOccurs="0" name="GetRuleResult" nillable="true" type="q6:ArrayOfRuleElementNodeContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetComplianceItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="complianceItemId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetComplianceItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/ExternalServices.DataContracts" minOccurs="0" name="GetComplianceItemResult" nillable="true" type="q7:ComplianceItemDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetComplianceTimeSpanTypes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetComplianceTimeSpanTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/ExternalServices.DataContracts" minOccurs="0" name="GetComplianceTimeSpanTypesResult" nillable="true" type="q8:ArrayOfComplianceTimeSpanTypeDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateRule">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/ExternalServices.DataContracts" minOccurs="0" name="lstRuleElementNodeContract" nillable="true" type="q9:ArrayOfRuleElementNodeContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateRuleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ValidateRuleResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddComplianceItemAttributeExpression">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="complianceItemAttributeID" type="xs:int" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/ExternalServices.DataContracts" minOccurs="0" name="lstRuleElementNodeContract" nillable="true" type="q10:ArrayOfRuleElementNodeContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddComplianceItemAttributeExpressionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddComplianceItemAttributeExpressionResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,381 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ADB_AdbUniversity_DevModelStoreContainer" CdmEntityContainer="ADB_AdbUniversity_DevEntities">
+    <EntitySetMapping Name="ApplicantComplianceAttributeDatas">
+      <EntityTypeMapping TypeName="ADB_AdbUniversity_DevModel.ApplicantComplianceAttributeData">
+        <MappingFragment StoreEntitySet="ApplicantComplianceAttributeData">
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="AttributeValue" ColumnName="AttributeValue" />
+          <ScalarProperty Name="ComplianceItemAttributeID" ColumnName="ComplianceItemAttributeID" />
+          <ScalarProperty Name="ApplicantComplianceItemDataID" ColumnName="ApplicantComplianceItemDataID" />
+          <ScalarProperty Name="ApplicantComplianceAttributeDataID" ColumnName="ApplicantComplianceAttributeDataID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ApplicantComplianceCategoryDatas">
+      <EntityTypeMapping TypeName="ADB_AdbUniversity_DevModel.ApplicantComplianceCategoryData">
+        <MappingFragment StoreEntitySet="ApplicantComplianceCategoryData">
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="ReviewStatusTypeID" ColumnName="ReviewStatusTypeID" />
+          <ScalarProperty Name="ComplianceCategoryID" ColumnName="ComplianceCategoryID" />
+          <ScalarProperty Name="PackageSubscriptionID" ColumnName="PackageSubscriptionID" />
+          <ScalarProperty Name="ApplicantComplianceCategoryDataID" ColumnName="ApplicantComplianceCategoryDataID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ApplicantComplianceDocumentMaps">
+      <EntityTypeMapping TypeName="ADB_AdbUniversity_DevModel.ApplicantComplianceDocumentMap">
+        <MappingFragment StoreEntitySet="ApplicantComplianceDocumentMap">
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ApplicantUploadedDocumentID" ColumnName="ApplicantUploadedDocumentID" />
+          <ScalarProperty Name="ApplicantComplianceAttributeDataID" ColumnName="ApplicantComplianceAttributeDataID" />
+          <ScalarProperty Name="ApplicantComplianceDocumentMapID" ColumnName="ApplicantComplianceDocumentMapID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ApplicantComplianceItemDatas">
+      <EntityTypeMapping TypeName="ADB_AdbUniversity_DevModel.ApplicantComplianceItemData">
+        <MappingFragment StoreEntitySet="ApplicantComplianceItemData">
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="ReviewStatusTypeID" ColumnName="ReviewStatusTypeID" />
+          <ScalarProperty Name="ComplianceItemID" ColumnName="ComplianceItemID" />
+          <ScalarProperty Name="ApplicantComplianceCategoryDataID" ColumnName="ApplicantComplianceCategoryDataID" />
+          <ScalarProperty Name="ApplicantComplianceItemDataID" ColumnName="ApplicantComplianceItemDataID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ApplicantExceptions">
+      <EntityTypeMapping TypeName="ADB_AdbUniversity_DevModel.ApplicantException">
+        <MappingFragment StoreEntitySet="ApplicantException">
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ApplicantComplianceCategoryDataID" ColumnName="ApplicantComplianceCategoryDataID" />
+          <ScalarProperty Name="ApplicantExceptionID" ColumnName="ApplicantExceptionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ApplicantUploadedDocuments">
+      <EntityTypeMapping TypeName="ADB_AdbUniversity_DevModel.ApplicantUploadedDocument">
+        <MappingFragment StoreEntitySet="ApplicantUploadedDocument">
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="DocumentPath" ColumnName="DocumentPath" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="OrganizationUserID" ColumnName="OrganizationUserID" />
+          <ScalarProperty Name="ApplicantUploadedDocumentID" ColumnName="ApplicantUploadedDocumentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClientComplianceAttributeOptions">
+      <EntityTypeMapping TypeName="ADB_AdbUniversity_DevModel.ClientComplianceAttributeOption">
+        <MappingFragment StoreEntitySet="ClientComplianceAttributeOption">
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="OptionValue" ColumnName="OptionValue" />
+          <ScalarProperty Name="OptionText" ColumnName="OptionText" />
+          <ScalarProperty Name="ClientComplianceItemAttributeID" ColumnName="ClientComplianceItemAttributeID" />
+          <ScalarProperty Name="ClientComplianceAttributeOptionID" ColumnName="ClientComplianceAttributeOptionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClientComplianceCategories">
+      <EntityTypeMapping TypeName="ADB_AdbUniversity_DevModel.ClientComplianceCategory">
+        <MappingFragment StoreEntitySet="ClientComplianceCategory">
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="RuleSetElements" ColumnName="RuleSetElements" />
+          <ScalarProperty Name="ExplanatoryNotes" ColumnName="ExplanatoryNotes" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="CategoryLabel" ColumnName="CategoryLabel" />
+          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+          <ScalarProperty Name="EffectiveFrom" ColumnName="EffectiveFrom" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="CopiedClientCategoryID" ColumnName="CopiedClientCategoryID" />
+          <ScalarProperty Name="MasterComplianceCategoryID" ColumnName="MasterComplianceCategoryID" />
+          <ScalarProperty Name="ClientCompliancePackageID" ColumnName="ClientCompliancePackageID" />
+          <ScalarProperty Name="ClientComplianceCategoryID" ColumnName="ClientComplianceCategoryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClientComplianceCategoryItemValidations">
+      <EntityTypeMapping TypeName="ADB_AdbUniversity_DevModel.ClientComplianceCategoryItemValidation">
+        <MappingFragment StoreEntitySet="ClientComplianceCategoryItemValidations">
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ValidationElements" ColumnName="ValidationElements" />
+          <ScalarProperty Name="ValidationMessage" ColumnName="ValidationMessage" />
+          <ScalarProperty Name="CopiedClientComplianceItemValidationID" ColumnName="CopiedClientComplianceItemValidationID" />
+          <ScalarProperty Name="MasterComplianceItemValidationID" ColumnName="MasterComplianceItemValidationID" />
+          <ScalarProperty Name="ClientComplianceCategoryID" ColumnName="ClientComplianceCategoryID" />
+          <ScalarProperty Name="ClientComplianceItemID" ColumnName="ClientComplianceItemID" />
+          <ScalarProperty Name="ClientComplianceCategoryItemValidationID" ColumnName="ClientComplianceCategoryItemValidationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClientComplianceItemAttributes">
+      <EntityTypeMapping TypeName="ADB_AdbUniversity_DevModel.ClientComplianceItemAttribute">
+        <MappingFragment StoreEntitySet="ClientComplianceItemAttribute">
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CalculationExpression" ColumnName="CalculationExpression" />
+          <ScalarProperty Name="DefaultSelectedValue" ColumnName="DefaultSelectedValue" />
+          <ScalarProperty Name="MaximumCharacters" ColumnName="MaximumCharacters" />
+          <ScalarProperty Name="MaximumValue" ColumnName="MaximumValue" />
+          <ScalarProperty Name="MinimumValue" ColumnName="MinimumValue" />
+          <ScalarProperty Name="MaximumDate" ColumnName="MaximumDate" />
+          <ScalarProperty Name="MinimumDate" ColumnName="MinimumDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Required" ColumnName="Required" />
+          <ScalarProperty Name="Visible" ColumnName="Visible" />
+          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+          <ScalarProperty Name="AttributeLabel" ColumnName="AttributeLabel" />
+          <ScalarProperty Name="ExplanatoryNotes" ColumnName="ExplanatoryNotes" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CopiedClientItemAttributeID" ColumnName="CopiedClientItemAttributeID" />
+          <ScalarProperty Name="MasterComplianceItemAttributeID" ColumnName="MasterComplianceItemAttributeID" />
+          <ScalarProperty Name="ComplianceAttributeDatatypeID" ColumnName="ComplianceAttributeDatatypeID" />
+          <ScalarProperty Name="ComplianceAttributeTypeID" ColumnName="ComplianceAttributeTypeID" />
+          <ScalarProperty Name="ClientComplianceItemID" ColumnName="ClientComplianceItemID" />
+          <ScalarProperty Name="ClientComplianceItemAttributeID" ColumnName="ClientComplianceItemAttributeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClientComplianceItemEditableBies">
+      <EntityTypeMapping TypeName="ADB_AdbUniversity_DevModel.ClientComplianceItemEditableBy">
+        <MappingFragment StoreEntitySet="ClientComplianceItemEditableBy">
+          <ScalarProperty Name="ComplianceItemEditableByID" ColumnName="ComplianceItemEditableByID" />
+          <ScalarProperty Name="ClientComplianceItemID" ColumnName="ClientComplianceItemID" />
+          <ScalarProperty Name="ClientComplianceItemEditableByID" ColumnName="ClientComplianceItemEditableByID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClientComplianceItems">
+      <EntityTypeMapping TypeName="ADB_AdbUniversity_DevModel.ClientComplianceItem">
+        <MappingFragment StoreEntitySet="ClientComplianceItems">
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="RuleElements" ColumnName="RuleElements" />
+          <ScalarProperty Name="ExplanatoryNotes" ColumnName="ExplanatoryNotes" />
+          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+          <ScalarProperty Name="ItemLabel" ColumnName="ItemLabel" />
+          <ScalarProperty Name="EffectiveDate" ColumnName="EffectiveDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CopiedClientItemID" ColumnName="CopiedClientItemID" />
+          <ScalarProperty Name="ComplianceItemTypeID" ColumnName="ComplianceItemTypeID" />
+          <ScalarProperty Name="MasterComplianceItemID" ColumnName="MasterComplianceItemID" />
+          <ScalarProperty Name="ClientComplianceCategoryID" ColumnName="ClientComplianceCategoryID" />
+          <ScalarProperty Name="ClientComplianceItemID" ColumnName="ClientComplianceItemID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClientCompliancePackages">
+      <EntityTypeMapping TypeName="ADB_AdbUniversity_DevModel.ClientCompliancePackage">
+        <MappingFragment StoreEntitySet="ClientCompliancePackage">
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ExceptionDescription" ColumnName="ExceptionDescription" />
+          <ScalarProperty Name="ExplanatoryNotes" ColumnName="ExplanatoryNotes" />
+          <ScalarProperty Name="EffectiveFrom" ColumnName="EffectiveFrom" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="PackageName" ColumnName="PackageName" />
+          <ScalarProperty Name="CopiedClientPackageID" ColumnName="CopiedClientPackageID" />
+          <ScalarProperty Name="MasterCompliancePackageID" ColumnName="MasterCompliancePackageID" />
+          <ScalarProperty Name="TenantID" ColumnName="TenantID" />
+          <ScalarProperty Name="ClientCompliancePackageID" ColumnName="ClientCompliancePackageID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="lkpCategoryComplianceStatus">
+      <EntityTypeMapping TypeName="ADB_AdbUniversity_DevModel.lkpCategoryComplianceStatu">
+        <MappingFragment StoreEntitySet="lkpCategoryComplianceStatus">
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CategoryComplianceStatusID" ColumnName="CategoryComplianceStatusID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="lkpComplianceAttributeDatatypes">
+      <EntityTypeMapping TypeName="ADB_AdbUniversity_DevModel.lkpComplianceAttributeDatatype">
+        <MappingFragment StoreEntitySet="lkpComplianceAttributeDatatype">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ComplianceAttributeDatatypeID" ColumnName="ComplianceAttributeDatatypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="lkpComplianceAttributeTypes">
+      <EntityTypeMapping TypeName="ADB_AdbUniversity_DevModel.lkpComplianceAttributeType">
+        <MappingFragment StoreEntitySet="lkpComplianceAttributeType">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ComplianceAttributeTypeID" ColumnName="ComplianceAttributeTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="lkpItemComplianceStatus">
+      <EntityTypeMapping TypeName="ADB_AdbUniversity_DevModel.lkpItemComplianceStatu">
+        <MappingFragment StoreEntitySet="lkpItemComplianceStatus">
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ItemComplianceStatusID" ColumnName="ItemComplianceStatusID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="lkpPackageActivityTypes">
+      <EntityTypeMapping TypeName="ADB_AdbUniversity_DevModel.lkpPackageActivityType">
+        <MappingFragment StoreEntitySet="lkpPackageActivityType">
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="Isdeleted" ColumnName="Isdeleted" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PackageActivityTypeID" ColumnName="PackageActivityTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="lkpPackageComplianceStatus">
+      <EntityTypeMapping TypeName="ADB_AdbUniversity_DevModel.lkpPackageComplianceStatu">
+        <MappingFragment StoreEntitySet="lkpPackageComplianceStatus">
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PackageComplianceStatusID" ColumnName="PackageComplianceStatusID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PackageSubscriptions">
+      <EntityTypeMapping TypeName="ADB_AdbUniversity_DevModel.PackageSubscription">
+        <MappingFragment StoreEntitySet="PackageSubscription">
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ComplianceStatusID" ColumnName="ComplianceStatusID" />
+          <ScalarProperty Name="LastActivityType" ColumnName="LastActivityType" />
+          <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
+          <ScalarProperty Name="OrganizationUserID" ColumnName="OrganizationUserID" />
+          <ScalarProperty Name="CompliancePackageID" ColumnName="CompliancePackageID" />
+          <ScalarProperty Name="PackageSubscriptionID" ColumnName="PackageSubscriptionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExceptionDocuments">
+      <EntityTypeMapping TypeName="ADB_AdbUniversity_DevModel.ExceptionDocument">
+        <MappingFragment StoreEntitySet="ExceptionDocument">
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ApplicantUploadedDocumentID" ColumnName="ApplicantUploadedDocumentID" />
+          <ScalarProperty Name="ApplicantExceptionID" ColumnName="ApplicantExceptionID" />
+          <ScalarProperty Name="ExceptionDocumentID" ColumnName="ExceptionDocumentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="lkpComplianceItemEditableBies">
+      <EntityTypeMapping TypeName="ADB_AdbUniversity_DevModel.lkpComplianceItemEditableBy">
+        <MappingFragment StoreEntitySet="lkpComplianceItemEditableBy">
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ComplianceItemEditableByID" ColumnName="ComplianceItemEditableByID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="lkpComplianceItemTypes">
+      <EntityTypeMapping TypeName="ADB_AdbUniversity_DevModel.lkpComplianceItemType">
+        <MappingFragment StoreEntitySet="lkpComplianceItemType">
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ComplianceItemTypeID" ColumnName="ComplianceItemTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

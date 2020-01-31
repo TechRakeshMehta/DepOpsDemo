@@ -1,0 +1,1865 @@
+body {
+    font-family: 'Titillium Web', sans-serif !important;
+    font-weight: 400;
+    /*overflow: hidden;*/
+    background-color: #fff !important;
+}
+
+/*------------Boostrap CUstomization-*/
+.form-control {
+    height: 28px !important;
+    line-height: 28px !important;
+    padding: 0px;
+    border: none;
+    box-shadow: none;
+    background: none;
+}
+
+
+.RadComboBox_Silk .rcbArrowCell {
+    border: none !important;
+}
+
+.sxform {
+    padding: 0px;
+}
+
+.container-fluid h1 {
+    font-size: 18px !important;
+    color: #8C1921;
+    margin: 0px;
+    padding-top: 10px;
+    font-weight: 600;
+}
+
+
+#gridBorder .RadTreeList .rtlTable {
+    border: 1px solid #ccc;
+}
+
+#gridBorder .RadComboBox_Silk .rcbInputCell {
+    background: none !important;
+}
+
+.container-fluid h1 span {
+    font-size: 15px !important;
+    color: #333;
+}
+
+.riTextBox {
+    height: auto !important;
+}
+
+.container-fluid h2, .container-fluid .h2text {
+    font-size: 20px !important;
+    line-height: 20px;
+    height: 20px;
+    font-weight: 600;
+}
+
+.container-fluid .h2text {
+    color: #eb986a !important;
+}
+/*.container-fluid h2 span {
+       font-size: 15px !important;
+       color: #E6E6E6;
+            }*/
+.container-fluid h3 {
+    margin: 0px;
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.container-fluid h5 {
+    font-size: 15px !important;
+    margin: 0px;
+    line-height: 20px;
+    height: 20px;
+    font-weight: 600;
+}
+
+.breadcrumb.bottom {
+    font-size: 16px !important;
+    font-weight: 600;
+}
+
+    .breadcrumb.bottom i {
+        margin-right: 3px;
+    }
+
+    .breadcrumb.bottom > li + li::before {
+        content: " "; /* Hex code for > */
+        color: #000 !important;
+    }
+
+    .breadcrumb.bottom a:link {
+        color: #333333 !important;
+    }
+
+.breadcrumb {
+    background: none !important;
+    font-size: 11px !important;
+    color: #CCCCCC !important;
+    margin: 0px;
+    padding: 0px;
+}
+
+    .breadcrumb a:link {
+        color: #CCCCCC !important;
+        text-decoration: none !important;
+    }
+
+    .breadcrumb > li + li::before {
+        content: ">>"; /* Hex code for > */
+        color: #CCCCCC !important;
+    }
+
+    .breadcrumb.orangeBreadCrum > li + li::before {
+        content: ">"; /* Hex code for > */
+        color: #ef9c65 !important;
+    }
+
+    .breadcrumb.orangeBreadCrum > li {
+        color: #ef9c65 !important;
+        line-height: 50px;
+        height: 50px;
+    }
+
+    .breadcrumb.orangeBreadCrum {
+        background: none !important;
+        font-size: 17px !important;
+        color: #c9c9c9 !important;
+        margin: 0px;
+        font-weight: 600;
+        padding: 0px 0px 0px 0px;
+    }
+
+address {
+    margin: 0px;
+}
+
+.breadcrumb.orangeBreadCrum a:link {
+    color: #ef9c65 !important;
+    text-decoration: none !important;
+    font-size: 17px !important;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+    color: #8C1921;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.nav-tabs > li > a:hover {
+    background-color: transparent;
+}
+
+.nav-tabs > li > a {
+    border-radius: 0px;
+    color: #ccc;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.btn-primary {
+    min-width: 128px;
+}
+
+    .btn-primary.minWidth190 {
+        min-width: 190px;
+    }
+
+    .btn-primary:hover {
+        background-color: #6ca7da !important;
+        color: #ef9c65 !important;
+        border: 1px solid #6ca7da !important;
+    }
+
+.btn {
+    border-radius: 7px;
+}
+/*------------Boostrap CUstomization- End--*/
+.riTextBox[type="text"] {
+    border: 1px solid #ccc !important;
+}
+/*.riTextBox.riEmpty[type="text"],.riFocused[type="text"] {
+    border: 0px solid #ccc !important;
+}*/
+/*.riTextBox.riEmpty[type="text"],.riTextBox.riHover[type="text"] {
+    border: 1px solid #ccc !important;
+}*/
+/*.riTextBox[type="text"],.riEmpty[type="text"],.riHover.form-control[type="text"] {
+    border: 1px solid #ccc !important;
+}
+
+.RadPicker .riTextBox.riFocused[type="text"], .RadPicker .riHover[type="text"], .RadPicker .riEmpty[type="text"] {
+    border: 0px solid #ccc !important;
+}*/
+#rightLinks {
+    float: right;
+    display: block;
+}
+
+h1.accordian {
+    cursor: pointer;
+    margin: 0px 0px -25px -30px;
+    padding: 0px;
+}
+
+.modal-footer, .modal-header {
+    border: none;
+}
+
+.borderRadius_TR_TB {
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+    box-shadow: none;
+    border-right: 1px solid #CCCCCC;
+    border-left: 0px solid #CCCCCC;
+    border-top: 1px solid #CCCCCC;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+#rightLinks ul {
+    list-style: none;
+}
+
+#rightLinks .inside {
+    display: block;
+}
+
+    #rightLinks .inside li {
+        display: inline;
+        color: #666;
+        display: block;
+        float: left;
+        font-size: 12px;
+        text-decoration: none;
+    }
+
+        #rightLinks .inside li a, #rightLinks .inside li a:link, #rightLinks .inside li a:visited {
+            color: #666;
+            display: block;
+            float: left;
+            font-weight: bold;
+            font-size: 15px;
+            padding: 0px 1px 0px 9px;
+            text-decoration: none;
+        }
+
+            #rightLinks .inside li a:hover {
+                color: #333;
+                cursor: pointer;
+            }
+
+            #rightLinks .inside li a:active {
+                color: #333;
+            }
+
+.startTimeIcon {
+    border: none;
+    background-color: transparent;
+}
+
+.startTimeRadius {
+    border-radius: 4px !important;
+}
+
+.imageMiddle {
+    vertical-align: text-top;
+}
+/*----Custom ---Style-----Start----*/
+#leftLink .list-group-item.active, #leftLink .list-group-item.active:focus {
+    background-color: #8C1921;
+    border-color: #8C1921;
+    color: #fff;
+    z-index: 2;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#leftLink .list-group-item:hover, #leftLink .list-group-item.active {
+    background-color: #8C1921;
+    color: #fff;
+    border: 1px solid #8C1921;
+    cursor: pointer;
+}
+
+
+#leftLink .list-group-item {
+    background-color: #2E3347;
+    border: 1px solid #ddd;
+    display: block;
+    margin-bottom: 2px;
+    padding: 10px 15px;
+    position: relative;
+    color: #fff;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+    #leftLink .list-group-item i {
+        font-style: normal;
+    }
+
+h4 {
+    font-weight: 600;
+    padding: 0px;
+    margin: 0px;
+}
+
+#dvAddress address {
+    font-size: 14px !important;
+    color: #333333 !important;
+    font-family: 'Titillium Web', sans-serif !important;
+}
+
+#addNewCat .RadButton_Silk.rbSkinnedButton {
+    background-color: #4382c2 !important;
+    background-image: none !important;
+    border: medium none !important;
+    border-radius: 7px !important;
+    color: #fff !important;
+    height: 42px !important;
+    line-height: 42px !important;
+    padding: 7px 17px !important;
+}
+
+    #addNewCat .RadButton_Silk.rbSkinnedButton:hover {
+        background-color: #6ca7da !important;
+        background-image: none !important;
+        border: medium none !important;
+        border-radius: 7px !important;
+        color: #ef9c65 !important;
+        height: 42px !important;
+        line-height: 42px !important;
+        padding: 7px 17px !important;
+    }
+
+h4 {
+    font-size: 18px !important;
+}
+
+.semiBold {
+    font-weight: 600;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.orange
+{
+    color: #EB986A !important;
+}
+
+.green
+{
+    color: #BED979;
+}
+
+.blue
+{
+    color: #6DA6D9 !important;
+}
+
+.greenDark {
+    color: #1e8746;
+}
+
+.blackNormal {
+    color: #CCCCCC;
+}
+
+.iconBlack {
+    color: #5d5d5d;
+}
+
+.black {
+    color: #333333;
+}
+
+.blackLight {
+    color: #CCCCCC;
+}
+
+.red {
+    color: #ca3a3e;
+}
+
+.aqua {
+    color: aqua;
+}
+
+.font22 {
+    font-size: 22px !important;
+}
+
+.font20 {
+    font-size: 20px !important;
+}
+
+.font18 {
+    font-size: 18px !important;
+}
+
+.brown {
+}
+
+.lightBlack {
+    color: #666666;
+}
+
+.bgLightGreen {
+    background-color: #f7f8f8;
+}
+
+.bgCalander {
+    background-color: #e2e9ec;
+}
+
+.gridBorder {
+    border: 1px solid #CCCCCC !important;
+    border-radius: 4px !important;
+}
+
+.radius4 {
+    border-radius: 4px !important;
+}
+
+.floatleft {
+    float: left;
+}
+
+.bgLightBrown {
+    background-color: #CCCCCC;
+}
+
+.bgLightAqua {
+    background-color: #e3ecf0;
+}
+
+.bgLightAqua2 {
+    background-color: #f9fafb;
+}
+
+/*label {
+    color: #666;
+    font-weight: 600;
+    font-size: 15px;
+}*/
+label {
+    font-weight: 600;
+}
+
+.RadComboBoxDropDown .rcbCheckBox, .RadComboBoxDropDown .rcbCheckAllItemsCheckBox {
+    vertical-align: sub !important;
+    margin-right: 5px !important;
+}
+
+.padbott10 {
+    padding-bottom: 10px;
+}
+
+.padbott20 {
+    padding-bottom: 20px;
+}
+
+.paddTopBottom10 {
+    padding: 10px 0px !important;
+}
+
+.padbott30 {
+    padding-bottom: 30px;
+}
+
+.padtop10 {
+    padding-top: 10px;
+}
+
+.marginTop10 {
+    margin-top: 10px;
+}
+
+.marginTopBottom0 {
+    margin: 0px !important;
+}
+
+.marginTop2, .form-control.marginTop2 {
+    margin-top: 2px !important;
+}
+
+.marginBottom2 {
+    margin-bottom: 2px !important;
+}
+
+a.removeUnderLine:hover {
+    text-decoration: none !important;
+}
+
+.padLeftRigt50 {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.padLeftRigt20 {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.padTopBottom5 {
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.padTop5 {
+    padding-top: 5px;
+}
+
+.pencilPosition2 {
+    position: absolute;
+    top: 10px;
+    right: -15px;
+}
+
+.pencilPosition {
+    position: absolute;
+    top: 10px;
+    right: -13px;
+}
+
+.padTopBottom1 {
+    padding-bottom: 1px;
+    padding-top: 1px;
+}
+
+.padTopBottom10 {
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.padTopBottom7 {
+    padding-bottom: 7px;
+    padding-top: 7px;
+}
+
+.padTopBottom0 {
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+.paddingLeft70 {
+    padding-left: 70px;
+}
+
+.paddingLeft120 {
+    padding-left: 120px;
+}
+
+table.gridhover, table.gridhover th, table.gridhover td {
+    border: 1px solid #efefef;
+}
+
+.paddingLeft20 {
+    padding-left: 20px;
+}
+
+.paddingLeft10 {
+    padding-left: 10px;
+}
+
+.paddingLeftRight30 {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+}
+/*----Custom ---Style-----End----*/
+#nav {
+    border: 1px solid #ccc;
+    border-width: 1px 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #adadad;
+}
+
+    #nav li {
+        display: inline;
+        height: 30px;
+    }
+
+    #nav a {
+        display: inline-block;
+        padding: 10px;
+        border-right: 1px solid #fff;
+    }
+
+    #nav a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        text-decoration: none !important;
+    }
+
+        #nav a:hover {
+            text-decoration: underline;
+        }
+
+table.gridhover th {
+    color: #666666;
+    font-weight: normal;
+    line-height: 30px;
+}
+
+.gridTextBox {
+    width: 70px;
+}
+
+table.gridhover td {
+    color: #CCCCCC;
+}
+
+    table.gridhover td input {
+        margin: 0px;
+        padding: 0px;
+        color: #CCCCCC;
+    }
+
+table.gridhover tbody tr:hover td {
+    background-color: #e3ecf0;
+    color: #333333;
+}
+
+    table.gridhover tbody tr:hover td .glyphicon-remove-sign, table.gridhover tbody tr:hover td .fa.fa-pencil {
+        color: #333333;
+    }
+
+.RadGrid_Default .rgHoveredRow, .RadButton_Default.RadButton.rbLinkButton {
+    color: #666666 !important;
+}
+
+.rgHoveredRow span.rbLinkButton:hover {
+    background: none !important;
+    background-image: none !important;
+}
+
+    .rgHoveredRow span.rbLinkButton:hover .rbText, .rgRow:hover .rbText, .rgHoveredRow:hover .rbText {
+        color: #000 !important;
+    }
+
+.rgRow span.rbLinkButton, .rgAltRow span.rbLinkButton {
+    background-color: transparent !important;
+    border: none !important;
+}
+
+.list-group-item {
+    border: 0px;
+    font-size: 14px;
+}
+
+
+.rgCommandRow {
+    background: none !important;
+    /*height: 40px;*/
+}
+
+.rgCommandCell, .rgPagerCell, .RadGrid_Default {
+    border: 0px !important;
+}
+
+td.NextPrevAndNumeric {
+    height: 40px !important;
+}
+
+.rgPagerCell, tr.rgFilterRow {
+    background-color: #f7f8f8 !important;
+}
+
+th.rgHeader {
+    border-right: 1px solid #efefef !important;
+    background-image: none !important;
+    background-color: #2E3347 !important;
+    padding: 8px 0px 8px 7px !important;
+    font-weight: 600 !important;
+    font-size: 13px !important;
+    color: #666666 !important;
+}
+
+.RadGrid_Default .rgHeader a {
+    color: #F7ECD5;
+}
+
+.rgHoveredRow {
+    background-color: #e3ecf0 !important;
+    background-image: none !important;
+    color: #cccccc !important;
+}
+
+.RadGrid .rgFilterBox {
+    height: 23px;
+    border: 1px solid #cccccc;
+    border-top-left-radius: 7px !important;
+    border-bottom-left-radius: 7px !important;
+}
+
+.RadGrid .rgFilter {
+    margin: 0px;
+}
+
+.rgAltRow td {
+    border: 0px !important;
+    height: 30px !important;
+    border-right: 0px solid #f2f2f2 !important;
+}
+
+#removeTreeBorder .rgRow td {
+    border-right: 0px !important;
+}
+
+.rgRow td {
+    border: 0px !important;
+    height: 30px !important;
+    border-right: 1px solid #fff !important;
+}
+
+tr.rgRow.tr.rgAltRow {
+    color: #cccccc !important;
+}
+
+tr.rgRow, tr.rgAltRow {
+    color: #666;
+}
+
+tr:hover .rgRow.rgHoveredRow, tr:hover .rgAltRow.rgHoveredRow {
+    color: #333 !important;
+}
+
+/*----CSS3--------Gradient----supoort---for---table----Start----*/
+table {
+    border-collapse: separate !important;
+}
+/*----CSS3--------Gradient----supoort---for----Table----End----*/
+
+
+
+/*----Combobox----Customization----Start----*/
+.RadComboBox_Silk .rcbReadOnly .rcbInputCell {
+    background: none;
+}
+
+
+.RadComboBox_Silk .rcbInputCell {
+    background-color: none !important;
+    border: none !important;
+}
+
+.rcbInputCell {
+    background-color: transparent !important;
+}
+
+.cptn {
+    color: #333333;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Titillium Web', sans-serif !important;
+}
+
+.w_cptn {
+    color: #666;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: 'Titillium Web', sans-serif !important;
+}
+
+#summaryBar .highlightedcptn {
+    color: #333;
+    font-weight: bolder;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Titillium Web', sans-serif !important;
+}
+
+.RadComboBox table {
+    width: 100% !important;
+}
+
+.RadComboBox_Silk {
+    background: #e6e6e6; /* Old browsers */
+    background: -moz-linear-gradient(top, #e6e6e6 0%, #ffffff 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e6e6e6), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #e6e6e6 0%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #e6e6e6 0%,#ffffff 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #e6e6e6 0%,#ffffff 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #e6e6e6 0%,#ffffff 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6e6e6', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+    border: 1px solid #ccc !important;
+    border-radius: 4px;
+    /*height: 28px;
+    line-height: 28px;*/
+}
+
+.form-group {
+    margin-bottom: 6px;
+}
+
+.RadComboBox_Silk .rcbArrowCell, .RadComboBox_Silk .rcbFocused .rcbReadOnly .rcbInputCell {
+    background: none !important;
+}
+
+/*.RadComboBox_Silk .rcbInputCell, .RadComboBox_Silk .rcbArrowCell {
+    height: 28px !important;
+    line-height: 28px !important;
+    border: none !important;
+}*/
+
+.RadComboBox_Silk .rcbHovered .rcbReadOnly .rcbInputCell, .RadComboBox_Silk .rcbDisabled .rcbReadOnly .rcbInputCellLeft {
+    background-position: 0% 0%;
+    background-color: none !important;
+    background-image: none !important;
+    background-repeat: repeat !important;
+    background-attachment: scroll !important;
+}
+
+.RadComboBox_Silk input.rcbInput {
+    color: #000 !important;
+    font-family: 'Titillium Web ', sans-serif !important;
+    font-weight: 400 !important;
+}
+
+.RadComboBox_Silk .rcbEmptyMessage {
+    font-style: normal !important;
+}
+
+input[type='radio'] {
+    margin: -4px 1px 0px 0px !important;
+    vertical-align: middle !important;
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+}
+
+    input[type='radio'] + label {
+        margin: 3px 7px 0 0px !important;
+        font-size: 14px;
+    }
+
+@-moz-document url-prefix() {
+    input [type='radio'];
+
+{
+    margin: -6px 0 0 !important;
+}
+
+input[type='radio'] + label {
+    margin: 0 10px 0 1px !important;
+}
+
+}
+
+.RadComboBox_Silk .rcbReadOnly .rcbInput {
+    font-family: 'Titillium Web ', sans-serif !important;
+    font-weight: 400 !important;
+}
+
+
+.RadComboBox_Silk .rcbArrowCell a {
+    background-position: -20px -61px !important;
+    width: 24px !important;
+    height: 26px !important;
+}
+
+@-moz-document url-prefix() {
+    .RadComboBox_Silk .rcbArrowCell a;
+
+{
+    background-position: -16px -61px !important;
+    width: 24px !important;
+    height: 26px !important;
+}
+
+}
+
+.msgbox span.error {
+    font-family: 'Titillium Web ', sans-serif !important;
+    background-color: #f2dede !important;
+    color: #000 !important;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.msgbox .info {
+    background-color: #fcf8e3;
+    color: #000 !important;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.msgbox .sucs {
+    background-color: #dff0d8;
+    border-color: green;
+    color: #000 !important;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+span.errmsg {
+    font-size: 13px;
+}
+
+.RadComboBox_Silk .rcbFocused .rcbArrowCell a, RadComboBox_Silk a.rcbArrowCell {
+    background-position: -20px -61px !important;
+    width: 24px !important;
+    height: 26px !important;
+}
+
+@-moz-document url-prefix() {
+    .RadComboBox_Silk .rcbFocused .rcbArrowCell a, RadComboBox_Silk a.rcbArrowCell;
+
+{
+    background-position: -16px -61px !important;
+    width: 24px !important;
+    height: 26px !important;
+}
+
+}
+/*.gridhover .rbText
+{
+    font-size: 12px !important;
+    color: #ccc !important;
+}*/
+
+/*
+.RadComboBox_Silk .rcbFocused .rcbArrowCell:hover.rcbHovered {
+    background-position: -13px -62px !important;
+    width:24px !important;
+    height:26px !important;
+}
+.RadComboBox_Silk .rcbArrowCell a{
+   background-position: -18px -62px !important;
+      width:24px !important;
+    height:26px !important;
+}
+.RadComboBox_Silk .rcbArrowCell a {
+    background-position: -18px -62px !important;
+    width:24px !important;
+    height:26px !important;
+}*/
+/*.RadComboBox_Silk .rcbFocused .rcbArrowCell:hover.rcbHovered {
+    background-position: -18px -62px !important;
+    width:24px !important;
+    height:26px !important;
+}*/
+/*----Combobox----Customization----End----*/
+
+
+/*----Telerick---Button--Customization--Start----*/
+.grdCmdBar {
+    height: 32px !important;
+}
+
+.rgWrap.rgInfoPart {
+    padding: 0 57px 0px 0px !important;
+}
+
+html .RadButton_Silk .rbDecorated.rbPrimary {
+    padding: 5px 0px !important;
+    font-family: 'Titillium Web', sans-serif !important;
+    display: inline !important;
+}
+
+#trailingText .RadButton_Silk .rbDecorated.rbPrimary {
+    padding: 4px 0px !important;
+    font-family: 'Titillium Web', sans-serif !important;
+    display: inline !important;
+}
+
+
+.lineHeight {
+    line-height: 20px;
+}
+
+.lineHeight18 {
+    line-height: 18px !important;
+}
+
+.container-fluid .heighAuto {
+    height: auto;
+}
+
+.fa-plus, .fa-refresh, .fa-filter, .fa-download, .fa-cog {
+    font-size: 18px !important;
+}
+
+    .fa-plus.smFornt {
+        font-size: 16px !important;
+    }
+
+.RadButton input.rbDecorated:focus, .RadButton input.rbDecorated::-moz-focus-inner, .RadButton.rbToggleButton, .RadButton.rbLinkButton, .RadButton.rbImageButton, .RadButton:active, .RadButton:focus, .RadButton.rbSkinnedButton.rbDisabled {
+    box-shadow: none !important;
+}
+
+.rbPrimary.rbText {
+    font-family: 'Titillium Web', sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 600;
+}
+
+span.smFornt + input {
+    font-size: 15px !important;
+    height: 30px !important;
+}
+
+.RadButton .rbPrimary {
+    padding-left: 6px !important;
+    margin-top: -4px;
+}
+
+rbLinkButton:hover {
+    background-color: none !important;
+}
+
+.RadButton_Silk.rbLinkButton {
+    background: none !important;
+}
+
+.RadButton_Default.RadButton.rbLinkButton {
+    color: #666;
+}
+
+
+.RadGrid_Default .rgMasterTable, .RadGrid_Default .rgDetailTable, .RadGrid_Default .rgGroupPanel table, .RadGrid_Default .rgCommandRow table, .RadGrid_Default .rgEditForm table, .RadGrid_Default .rgPager table, .RadSplitter_Default {
+    font-family: 'Titillium Web', sans-serif !important;
+}
+
+.gridsharedtext .rbText {
+    color: #ccc !important;
+    text-decoration: none;
+}
+
+.fontset {
+    color: #666 !important;
+    text-decoration: none !important;
+}
+
+    .fontset:hover {
+        background: none !important;
+        color: #ccc !important;
+        text-decoration: underline !important;
+    }
+
+.RadButton_Silk.rbSkinnedButton {
+    background-image: none !important;
+    background-color: #8C1921 !important;
+    height: 30px !important;
+    line-height: 30px !important;
+    color: #fff !important;
+    border-radius: 7px !important;
+    border: none !important;
+    padding: 0px 32px !important;
+}
+
+.sxcbar .RadButton .rbPrimary {
+    padding-left: 0px !important;
+}
+
+.sxcbar {
+    padding: 0px;
+    overflow: auto;
+}
+
+.RadButton_Silk.rbSkinnedButton:hover {
+    background-image: none !important;
+    background-color: #2E3347 !important;
+    color: white !important;
+    border: none !important;
+}
+
+span.RadButton_Silk.RadButton.rbToggleButton:hover {
+    background-image: none !important;
+    background-color: #4382C2 !important;
+    height: 30px !important;
+    line-height: 30px !important;
+    color: #fff !important;
+    border-radius: 7px !important;
+    border: none !important;
+    padding: 0px 32px !important;
+}
+/*.RadButton_Silk:hover {
+     background-image: none !important;
+    background-color: #6ca7da !important;
+      color: #EB986A !important;
+    border: none !important;
+}*/
+.RadButton_Default.rbSkinnedButton:hover {
+    background-image: none !important;
+    background-color: #000 !important;
+    color: #EB986A !important;
+    border: none !important;
+}
+/*---Button------End----*/
+
+/*---Removing---Telerick---ButtonImages------Start----*/
+.rcCalPopup {
+    /*background: none !important;*/
+}
+
+/*---Removing---Telerick---ButtonImages------End----*/
+.RadGrid_Default.rgPageNext {
+    background-image: url('/Resources/Mod/Dashboard/images/addRed.png') !important;
+}
+/*----Telerick---Button--Customization--End----*/
+
+table.rcbDisabled {
+    background-color: #CCCCCC;
+}
+/*----ADB---Default--Customization--Start----*/
+.riTextBox[type="text"] {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset !important;
+    border-radius: 4px !important;
+    height: 28px !important;
+}
+/*.RadGrid .riTextBox[type="text"]{
+  
+      border-radius: 7px 0px 0px 7px !important;
+      height:21px !important;
+      box-shadow:none !important;
+      border-color:#8e8e8e #c9c9c9 #c9c9c9 #8e8e8e !important;
+}*/
+/*-Same-Line-gridHeader--textbox-Filter--Calander---inALL--IE--*/
+.RadGrid td div.RadPicker {
+    display: inline-block;
+}
+
+.RadGrid_Default .rgFooter a, .RadGrid_Default .rgEditForm a {
+    color: #5d5d5d;
+}
+
+.RadButton_Outlook.RadButton.rbLinkButton:hover {
+    background: none !important;
+}
+
+.helpVideo, .RadButton_Outlook.helpVideo.RadButton.rbLinkButton:hover {
+    background-image: url('/Resources/Mod/Dashboard/images/helpVideoRed.png') !important;
+    background-repeat: no-repeat !important;
+    background-position: 64px 2px !important;
+    border: medium none !important;
+}
+
+    .helpVideo span.rbText {
+        font-family: 'Titillium Web', sans-serif !important;
+        color: #666666 !important;
+        font-size: 12px !important;
+        padding-right: 22px !important;
+    }
+
+.rgPageNext, .rgPageNext:hover, .RadDataPager_Default .rdpPageNext {
+    background-image: url('/Resources/Mod/Dashboard/images/next.png') !important;
+    background-repeat: no-repeat !important;
+    background-position: 0px 0px !important;
+}
+
+.rgPageLast, .rgPageLast:hover, .RadDataPager_Default .rdpPageLast {
+    background-image: url('/Resources/Mod/Dashboard/images/ff.png') !important;
+    background-repeat: no-repeat !important;
+    background-position: 0px 0px !important;
+}
+
+.rgPagePrev, .rgPagePrev:hover, .RadDataPager_Default .rdpPagePrev {
+    background-image: url('/Resources/Mod/Dashboard/images/next2.png') !important;
+    background-repeat: no-repeat !important;
+    background-position: 0px 0px !important;
+}
+
+.rgPageFirst, .rgPageFirst:hover, .RadDataPager_Default .rdpPageFirst {
+    background-image: url('/Resources/Mod/Dashboard/images/ff2.png') !important;
+    background-repeat: no-repeat !important;
+    background-position: 0px 0px !important;
+}
+
+.RadGrid_Default .rgNumPart a:hover span, .RadGrid_Default .rgNumPart a.rgCurrentPage span, .RadGrid_Default .rgNumPart a:hover, .RadGrid_Default .rgNumPart a.rgCurrentPage, .RadGrid .rgNumPart span {
+    background-image: none !important;
+    font-size: 18px;
+    font-family: 'Titillium Web', sans-serif !important;
+}
+
+input.riRead {
+    background-color: #f7f8f8 !important;
+}
+
+table.rcbDisabled {
+    background-color: #ccc;
+}
+
+.NextPrevAndNumeric span {
+    font-size: 13px !important;
+    padding: 0px !important;
+}
+
+.rgCurrentPage > span {
+    font-weight: bold !important;
+}
+
+.blockdiv {
+    display: none;
+}
+/*---------Calander---Customization---Start----*/
+#divupper h1 {
+    color: #333333 !important;
+    font-size: 18px !important;
+    line-height: none !important;
+    margin: 0px !important;
+}
+
+#divupper h2 {
+    color: #333333 !important;
+    font-size: 13px !important;
+    line-height: none !important;
+    margin: 0px !important;
+    line-height: normal !important;
+    height: auto !important;
+}
+
+#divupper address {
+    background-image: none !important;
+    font-size: 11px;
+    color: #333333 !important;
+    font-family: 'Titillium Web', sans-serif !important;
+}
+
+#divRadScheduler .rcTitle {
+    font-size: 15px;
+    color: #8C1921 !important;
+    font-family: 'Titillium Web', sans-serif !important;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 35px;
+    text-transform: uppercase;
+}
+
+#divRadScheduler .RadCalendar_Web20 .rcTitlebar {
+    background-image: none !important;
+    background: none !important;
+}
+
+#divRadScheduler table.RadCalendar_Web20 {
+    font-size: 15px;
+    background: none !important;
+    font-family: 'Titillium Web', sans-serif !important;
+}
+
+#divRadScheduler .rcPrev, #divRadScheduler .rcNext, #divRadScheduler .rcFastPrev, #divRadScheduler .rcFastNext {
+    background-image: none !important;
+}
+
+#divRadScheduler .RadCalendar .rcMain {
+    border: none !important;
+}
+
+#divRadScheduler .RadCalendar_Web20 .rcWeek th {
+    background: none !important;
+    border-right: 1px solid #CCCCCC !important;
+}
+
+#divRadScheduler .RadCalendar .rcRow td {
+    border-right: 1px solid #CCCCCC !important;
+}
+
+#divRadScheduler .RadCalendar .rcRow td {
+    border-width: 0px !important;
+    border-right: 1px solid #CCCCCC !important;
+    border-bottom: 1px solid #CCCCCC !important;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.rcRow {
+    border-bottom: 1px solid #CCCCCC !important;
+    border-width: thick;
+}
+
+#divRadScheduler .RadCalendar_Web20 .rcWeek th {
+    border-bottom: 1px solid #CCCCCC !important;
+    vertical-align: top !important;
+    font-size: 17px;
+    text-transform: uppercase;
+    color: #8C1921 !important;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 10px;
+}
+
+#divRadScheduler .RadCalendar_Web20 .rcMain .rcWeekend a {
+    font-size: 14px;
+    color: #000 !important;
+}
+
+#divRadScheduler .RadCalendar_Web20 .rcTitlebar {
+    border-bottom: 1px solid #CCCCCC !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: 1px solid #CCCCCC !important;
+}
+
+#divRadScheduler .RadCalendar_Web20 .rcMainTable {
+    font-family: 'Titillium Web', sans-serif !important;
+}
+
+#divRadScheduler .RadCalendar_Web20 .rcRow .rcSelected, #divRadScheduler .rcHover {
+    background-color: #BED979;
+}
+/*---------Calander---Customization-End------*/
+#divLstView h1 {
+    color: #8C1921 !important;
+    font-size: 18px !important;
+    line-height: none !important;
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+#divLstView p.date {
+    color: #8C1921 !important;
+    font-size: 13px !important;
+    line-height: none !important;
+    margin: 0px !important;
+}
+
+#divLstView h2 {
+    font-size: 14px !important;
+    line-height: none !important;
+    margin: 0px !important;
+}
+
+#divLstView h3 {
+    font-size: 14px !important;
+    line-height: none !important;
+    margin: 0px !important;
+    color: #666666 !important;
+}
+
+    #divLstView h3 span {
+        color: #333333 !important;
+        padding-left: 3px !important;
+    }
+
+.removItalic {
+    font-style: normal !important;
+}
+/*---------Calander---Customization---Start----*/
+dl {
+    width: 50%;
+    overflow: hidden;
+    float: left;
+    padding: 0;
+    margin: 0;
+}
+
+dt {
+    float: left;
+    font-weight: normal;
+    /* adjust the width; make sure the total of both is 100% */
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+}
+
+dd {
+    float: left;
+    font-weight: bold;
+    color: #666666;
+    padding-left: 4px;
+    /* adjust the width; make sure the total of both is 100% */
+    margin: 0px;
+    font-size: 12px;
+}
+
+#addressCustom .riTextBox[type="text"] {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.splitterCustom {
+    padding-left: 0px !important;
+}
+
+.RadTreeList {
+    border: none !important;
+    width: 100% !important;
+}
+
+textarea.borderTextArea {
+    border: 1px solid #CCCCCC !important;
+    border-radius: 6px !important;
+    padding: 5px !important;
+}
+
+.RadDataPager .rdpWrap, .RadDataPager .rdpWrapRight, .RadDataPager .rdpWrapNone {
+    padding-left: 0px;
+}
+
+.RadDataPager_Default .rdpNumPart a:hover, .RadDataPager_Default .rdpNumPart a.rdpCurrentPage, .RadDataPager_Default .rdpNumPart a:hover span, .RadDataPager_Default .rdpNumPart a.rdpCurrentPage span {
+    background: none !important;
+}
+
+.dataPager {
+    float: none !important;
+}
+
+.removebg {
+    background: none !important;
+}
+
+.hookClass.RadButton_Default.RadButton.rbLinkButton {
+    background: none !important;
+    border: none !important;
+    font-size: 12px !important;
+}
+
+.hookClass span.rbText {
+    font-size: 13px !important;
+    color: #000;
+}
+
+.RadGrid_Default .rgRow a, .RadGrid_Default .rgAltRow a, .RadGrid_Default .rgEditRow a {
+    color: #666;
+}
+
+.RadGrid .rgNumPart a {
+    padding: 0 0 0 2px !important;
+}
+
+.rbText:hover {
+    background-color: transparent !important;
+    text-decoration: underline !important;
+}
+
+.noUnderline .rbText:hover {
+    text-decoration: none !important;
+}
+
+.rbPrimary.rbText:hover {
+    background-color: transparent !important;
+    text-decoration: none !important;
+}
+
+.RadEditor {
+    min-width: 0px !important;
+}
+
+span.blacktext {
+    font-weight: bold !important;
+    color: #666666 !important;
+    padding: 4px !important;
+    margin: 0px !important;
+    font-size: 17px !important;
+}
+
+span.redalret {
+    font-weight: bold !important;
+    padding: 4px !important;
+    margin: 0px !important;
+    font-size: 17px !important;
+    color: red;
+}
+
+
+.rtlCF, .rtlCL {
+    vertical-align: middle !important;
+}
+
+p.orange span {
+    font-weight: bold !important;
+    padding: 4px !important;
+    margin: 0px !important;
+    font-size: 20px !important;
+    color: #EB986A !important;
+    line-height: normal !important;
+}
+
+p.black {
+    font-weight: bold !important;
+    padding: 4px !important;
+    margin: 0px !important;
+    font-size: 20px !important;
+    color: #333333 !important;
+    line-height: normal !important;
+}
+
+.rgRowGrey {
+    background-color: #ccc !important;
+    color: #666666;
+}
+
+.rgRowBlue {
+    background-color: #e3ecf0 !important;
+}
+
+#catchId input.rgCollapse {
+    background-image: url('/Resources/Mod/Dashboard/images/downArrow.png') !important;
+    background-position: 0px 2px !important;
+    background-repeat: no-repeat !important;
+    background-size: 16px 11px !important;
+}
+
+#catchId input.rgExpand {
+    background-image: url('/Resources/Mod/Dashboard/images/straightArrow.png') !important;
+    background-position: -1px -3px !important;
+    background-repeat: no-repeat !important;
+    background-size: 14px 23px !important;
+}
+
+#catchId table > table tr.rgAltRow {
+    background-color: #000 !important;
+}
+
+#catchId table > table tr.rgRow {
+    background-color: #e3ecf0 !important;
+}
+
+#catchId .RadGrid_Default .rgMasterTable td.rgGroupCol, #catchId .RadGrid_Default .rgMasterTable td.rgExpandCol {
+    background-color: transparent !important;
+}
+
+#catchId .rgRow td, #catchId .rgAltRow td {
+    border: none !important;
+}
+
+#catchId table:nth-of-type(2) tr:nth-child(1) {
+    background-color: #000 !important;
+}
+
+#catchId tr.rgRow, #catchId tr.rgAltRow {
+    color: #666666 !important;
+    font-family: 'Titillium Web', sans-serif !important;
+    font-size: 18px !important;
+    line-height: 25px !important;
+    height: 25px !important;
+}
+/*td.rgExpandCol + td.breakword {
+    background-color: #d9d9d9;
+    font-weight: bold !important;
+    font-family: 'Titillium Web', sans-serif !important;
+    font-size: 20px !important;
+}*/
+/*.RadDataPager_Default .rdpNumPart a:hover, .RadDataPager_Default .rdpNumPart a.rdpCurrentPage, .RadDataPager_Default .rdpNumPart a:hover span, .RadDataPager_Default .rdpNumPart a.rdpCurrentPage span {
+    font-weight:bold;
+}*/
+
+.fa {
+    margin-right: 3px;
+}
+
+.checkboxAlign input[type="checkbox"] {
+    vertical-align: top !important;
+    margin-top: -4px !important;
+}
+
+input[type="checkbox"] {
+    margin: 0px 5px 0px 0px;
+}
+
+.editPackage {
+    line-height: 26px !important;
+    font-size: 15px !important;
+}
+
+
+#firstPagination .rgPagePrev, #firstPagination .rgPagePrev:hover, #firstPagination .RadDataPager_Default .rdpPagePrev {
+    background-image: url("/Resources/Mod/Dashboard/images/arrow_L_Red.png") !important;
+    background-position: 0 3px !important;
+    background-repeat: no-repeat !important;
+    width: 13px !important;
+}
+
+#firstPagination .rgPageNext, #firstPagination .rgPageNext:hover, #firstPagination .RadDataPager_Default .rdpPageNext {
+    background-image: url("/Resources/Mod/Dashboard/images/arrow_R_Red.png") !important;
+    background-position: 0 3px !important;
+    background-repeat: no-repeat !important;
+    width: 13px !important;
+}
+
+#firstPagination .RadDataPager .rdpPageFirst, .RadDataPager .rdpPagePrev, #firstPagination .RadDataPager .rdpPageNext, #firstPagination .RadDataPager .rdpPageLast {
+    width: 13px !important;
+}
+
+.attr_grp1 table td {
+    font-size: 13px;
+}
+
+.dataPager a.rdpCurrentPage {
+    font-weight: bold !important;
+}
+
+@-moz-document url-prefix() {
+    .checkboxAlign input[type="checkbox"];
+
+{
+    vertical-align: top !important;
+    margin-top: 1px !important;
+}
+
+}
+
+#linkHover .RadGrid_Default .rgHoveredRow, .rgHoveredRow span.rbText {
+    color: #666666 !important;
+}
+
+.RadButton_Default {
+    font-family: 'Titillium Web', sans-serif !important;
+}
+
+span#btnDelFullName.closePopup, span#btnDelFullName.closePopup:hover, span#btnDelCurrentDate.closePopup, span#btnDelCurrentDate.closePopup:hover, span#btnDelSignature.closePopup, span#btnDelSignature.closePopup:hover {
+    background-color: #8C1921 !important;
+    background-image: none !important;
+    border: medium none !important;
+    border-radius: 7px !important;
+    color: #fff !important;
+    height: 30px !important;
+    line-height: 30px !important;
+    padding: 0 15px !important;
+    text-align: center !important;
+}
+
+span#btnDelFullName span.fa, span#btnDelCurrentDate span.fa, span#btnDelSignature span.fa {
+    display: inline-block;
+    font-family: FontAwesome;
+    font-feature-settings: normal;
+    font-kerning: auto;
+    font-language-override: normal;
+    font-size: inherit;
+    font-size-adjust: none;
+    font-stretch: normal;
+    font-style: normal;
+    font-synthesis: weight style;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1;
+    margin-left: -7px;
+    text-rendering: auto;
+}
+
+.RadGrid_Default .rgHeader {
+    color: #F7ECD5 !important;
+}
+/*.RadComboBox_Silk .rcbInput {
+    font-size:12px !important;
+}*/
+
+/* Checkbox setting for all browser*/
+input[type="checkbox"] + label {
+    vertical-align: middle;
+    margin-bottom: 0px;
+    padding-right: 10px;
+}
+/* Setting--GridBottom--Btn--OneLine*/
+.sameLine {
+    display: inline-block !important;
+}
+/* Toggle--checkbox--forGrid*/
+.gridStyleChange {
+}
+
+    .gridStyleChange .RadButton_Outlook .rbToggleCheckbox, .gridStyleChange .RadButton_Outlook .rbToggleCheckboxChecked, .gridStyleChange .RadButton_Outlook .rbToggleCheckboxFilled, .gridStyleChange .RadButton_Outlook .rbToggleRadio, .gridStyleChange .RadButton_Outlook .rbToggleRadioChecked .RadButton_Outlook .rbToggleCheckbox, .gridStyleChange .RadButton_Outlook .rbToggleCheckboxChecked, .gridStyleChange .RadButton_Outlook .rbToggleCheckboxFilled, .gridStyleChange .RadButton_Outlook .rbToggleRadio, .gridStyleChange .RadButton_Outlook .rbToggleRadioChecked {
+        position: relative !important;
+        line-height: normal !important;
+        font-family: 'Titillium Web', sans-serif !important;
+    }
+
+    .gridStyleChange .RadUpload_Silk .ruButton, .gridStyleChange .RadUpload .ruBrowse {
+        margin: 0px !important;
+        padding: 0px !important;
+    }
+
+.rgEditForm {
+    padding: 0px !important;
+}
+
+.RadComboBox_Silk .rcbReadOnly .rcbInputCell {
+    background-color: transparent !important;
+    background-image: none !important;
+}
+
+[class*="span"], .uneditable-input[class*="span"],
+.row-fluid [class*="span"] {
+    display: table;
+}
+
+#box_content {
+    padding: 0px !important;
+}
+
+.redBtn.RadButton_Outlook.rbSkinnedButton, .redBtn.RadButton_Outlook .rbDecorated {
+    background-image: none !important;
+}
+
+.redBtn {
+    background-color: #8C1921 !important;
+    background-image: none !important;
+    border: medium none !important;
+    border-radius: 7px !important;
+    color: #fff !important;
+    height: 30px !important;
+    line-height: 30px !important;
+    padding: 0px !important;
+}
+
+    .redBtn:hover {
+        background-color: #2E3347 !important;
+    }
+
+    .redBtn .rbDecorated:hover {
+        color: #F7ECD5 !important;
+    }
+
+    .redBtn input[type='button'] {
+        color: #fff;
+        padding: 0px !important;
+    }
+
+    .redBtn.RadButton_Outlook .rbDecorated {
+        color: #fff;
+        font-family: "Titillium Web",sans-serif !important;
+        font-weight: 400;
+        font-size: 14px;
+        height: 23px;
+    }
+
+#modcmd_bar {
+    position: relative !important;
+}
+
+.form-control:focus {
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+
+span.font14 {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    color: #555 !important;
+    line-height: 28px !important;
+}
+
+/*a
+{
+    color: !important;
+}*/
+
+span.marBottom3 > input[type="checkbox"] {
+    margin-bottom: 4px !important;
+}
+
+div.allowscroll {
+    overflow: auto;
+}
+
+a.blueText {
+    color: #337ab7 !important;
+    text-decoration: none !important;
+}
+
+    a.blueText:hover {
+        cursor: pointer;
+        color: #23527c !important;
+        text-decoration: underline !important;
+    }
+
+.RadGrid_Default tr.rgEditRow {
+    background-image: none;
+    background-color: #fff !important;
+}
+
+.removeExtraSpace .rgRow td {
+    border-width: 0px !important;
+}
+
+tr.rgEditRow + tr > td {
+    border-bottom: 1px solid #000 !important;
+}
+
+tr.rgEditRow {
+    background-color: #fff !important;
+}
+
+    tr.rgEditRow > td {
+        border-top: 1px solid #000 !important;
+    }
+
+.RadGrid_Default .rgEditForm {
+    border-bottom: 0px !important;
+}
+
+.payment, .user {
+    height: 22px !important;
+}
+
+span.rbltext > label {
+    font-size: 15px;
+    color: #666;
+}
+
+.rgWrap {
+    white-space: normal !important;
+}
+
+/*Grid Icon Color*/
+.refresh-color {
+    color: #8C1921 !important;
+}
+
+.filter-color {
+    color: #8C1921 !important;
+}
+
+.download-color {
+     color: #8C1921 !important;
+} 
+ 
+.plus-color {
+     color:#FFFFFF;
+}
+
+.grdCmdGrp .plus-color {
+    color: #8C1921;
+}
+
+.Configuration-Color {
+      color: #8C1921 !important;
+}
+
+right-arrow-color { 
+/*Green*/
+ color: #8C1921 !important;
+}
+
+/*Header Color*/
+
+.header-color {
+ color: #8C1921 !important;
+}
+
+.remove-color {
+    /*orange*/
+color: #8C1921 !important;
+}
+.calender-icon
+{
+    color: #5d5d5d;
+}
+
+.collapsed h2 {
+    color:#F7ECD5 !important
+}
+
+.arrow-color {
+    color: #8C1921 !important;
+}
+
+.pencil-color {
+    color: #8C1921 !important;
+}

@@ -1,0 +1,470 @@
+<div id="bodyBlock" class="container-fluid">
+  <section>
+    <form [formGroup]="orderReviewForm">
+      <div class="row">
+        <div class="col-12 font-weight-bold">
+          <label id="CREATODR"></label> (
+          <label id="STEP"></label> {{orderInfo.CurrentStep}}
+          <label id="OF"></label> {{orderInfo.TotalSteps}})
+        </div>
+        <div class="col-md-12 mb-2">
+          <div class="align-self-center redColor mr-auto font-weight-bold">
+            <!-- <label>Order Review: Please review your order details below. Make changes as necessary.</label> -->
+            <label id="ORDERREVIEWTITLE"></label>
+          </div>
+        </div>
+        <div class="col-md-12 mb-2">
+          <div class="d-flex">
+            <div class="align-self-center redColor mr-auto font-weight-bold">
+              <label id="ORDCON_ORDSELDTLS"></label>
+            </div>
+            <div>
+              <button type="button" class="btn  btn-sm btn-primary mx-1" (click)="goToPackageSelectionScreen()">
+                <i class="fas fa-sync-alt pl-1">
+                  <label id="CHNGORDERSELECTION"></label>
+                </i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 mb-2">
+          <!-- <div class="row">
+      <div class="col-md-3">
+        Institution Hierachry:
+      </div>
+      <div class="col-md-9">
+      CBI > Department > Program > Grade
+      </div>
+    </div> -->
+          <div class="row">
+            <div class="col-md-3 font-weight-bold">
+              <label id="ORDERSELECTION"></label>
+            </div>
+            <div class="col-md-9">
+              {{PackageName}}
+            </div>
+          </div>
+          <div class="row" id="dvPaymentByInst" [hidden]="HidePaymentByInst">
+            <div class="col-md-3 font-weight-bold">
+              <label id="PAYMENTBYINST"></label>
+            </div>
+            <div class="col-md-9">
+              ${{PaymentByInstitutionPrice | number:'1.2-2'}}
+            </div>
+          </div>
+          <div class="row" id="dvBalanceAmount" [hidden]="HideBalAmount">
+            <div class="col-md-3 font-weight-bold">
+              <label id="BALANCEAMT"></label>
+            </div>
+            <div class="col-md-9">
+              ${{BalanceAmountPrice | number:'1.2-2'}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3 font-weight-bold">
+              <label id="TOTALPRICE"></label>
+            </div>
+            <div class="col-md-9">
+              <!-- ${{PackagePrice |number:'1.2-2'}} -->
+              ${{PackagePrice | number:'1.2-2'}}
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="card mb-2">
+            <div class="card-header blackHeader d-flex">
+              <div class="mr-auto text-white align-self-center w-100  d-block">
+                <a data-toggle="collapse" href="#collapseExample" class="w-100 mr-auto text-white d-block testClick">
+                  <i class="fas fa-minus pl-1">
+                    <label id="PROFILEDETAILS"></label>
+                  </i>
+                </a>
+              </div>
+              <div class="text-white">
+                <button type="button" class="btn btn-sm btn-light" (click)="switchScreen('EditProfile')">
+                  <i class="fas fa-edit -alt pl-1">
+                    <label name="EDIT" id="EDIT"></label>
+                  </i>
+                </button>
+                <!-- <i class="fas fa-edit -alt pl-1"></i> Edit Profile</button> -->
+              </div>
+            </div>
+            <div class="collapse show" id="collapseExample">
+              <div class="card-body">
+                <form>
+                  <div class="row">
+                    <div class="col-md-6 mb-1">
+                      <label id="FIRSTNAME"></label>
+                      <div class="form-control customDiabled customOpacity">
+                        <span class="text-white">{{FirstName}}</span>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-1">
+                      <label id="MIDDLENAME"></label>
+                      <div class="form-control customDiabled customOpacity">
+                        <span class="text-white">{{MiddleName}}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6 mb-1">
+                      <label id="LASTNAME"></label>
+                      <div class="form-control customDiabled customOpacity">
+                        <span class="text-white">{{LastName}}</span>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-1">
+                      <label Name="SUFFIX"></label>
+                      <div class="form-control customDiabled customOpacity">
+                        <span class="text-white">{{userInfo.Suffix}}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div *ngFor="let item of lstAlias;let i=index">
+                    <div class="row">
+                      <div class="col-md-6 mb-1">
+                        <label name="ALIASFIRSTNAME" id="ALIASFIRSTNAME"></label>
+                        <div class="form-control customDiabled customOpacity">
+                          <span class="text-white">{{item.FirstName}}</span>
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-1">
+                        <label name="ALIASMIDDLENAME" id="ALIASMIDDLENAME"></label>
+                        <div class="form-control customDiabled customOpacity">
+                          <span class="text-white">{{item.MiddleName}}</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 mb-1">
+                        <label name="ALIASLASTNAME" id="ALIASLASTNAME"></label>
+                        <div class="form-control customDiabled customOpacity">
+                          <span class="text-white">{{item.LastName}}</span>
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-1">
+                        <label NAME="ALIASSUFFIX"></label>
+                        <div class="form-control customDiabled customOpacity">
+                          <span class="text-white">{{item.Suffix}}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6 mb-1">
+                      <label id="GENDER"></label>
+                      <div class="form-control customDiabled customOpacity">
+                        <span class="text-white">{{Gender}}</span>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-1">
+                      <label id="DOB"></label>
+                      <div class="form-control customDiabled customOpacity">
+                        <span class="text-white">{{DOB | date : "MMM d, y"}}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 mb-1">
+                      <label id="EMAILADD"></label>
+                      <div class="form-control customDiabled customOpacity">
+                        <span class="text-white">{{PrimaryEmail}}</span>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-1">
+                      <label id="SECEMAIL"></label>
+                      <div class="form-control customDiabled customOpacity">
+                        <span class="text-white">{{SecondaryEmail}}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 mb-1">
+                      <label id="PHONENUM"></label>
+                      <div class="form-control customDiabled customOpacity">
+                        <span class="text-white">{{PrimaryPhone}}</span>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-1">
+                      <label id="SECPHONE"></label>
+                      <div class="form-control customDiabled customOpacity">
+                        <span class="text-white">{{SecondaryPhone}}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6 mb-1">
+                      <label name="ADDRESS"></label>
+                      <div class="form-control customDiabled customOpacity">
+                        <span class="text-white">{{Address}}</span>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-1">
+                      <label id="COUNTRY"></label>
+                      <div class="form-control customDiabled customOpacity">
+                        <span class="text-white">{{Country}}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row" [hidden]="HideState">
+                    <div class="col-md-6 mb-1">
+                      <label name="CITY"></label>
+                      <div class="form-control customDiabled customOpacity">
+                        <span class="text-white">{{City}}</span>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-1">
+                      <label id="STATE"></label>
+                      <div class="form-control customDiabled customOpacity">
+                        <span class="text-white">{{State}}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row" [hidden]="HideState">
+                    <div class="col-md-6 mb-1">
+
+                      <LABEL [hidden]="!IsZipCodeLabel" name="ZIPCODE"></LABEL>
+                      <label [hidden]="IsZipCodeLabel" name="POSTALCODE"></label>
+                      <!-- <label>{{IsZipCodeLabel?'Zip Code':'Postal Code'}}</label> -->
+                      <div class="form-control customDiabled customOpacity">
+                        <span class="text-white">{{ZipCode}}</span>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-1" [hidden]="HideSSN">
+                      <label name="SSN"></label>
+                      <div class="form-control customDiabled customOpacity">
+                        <span class="text-white">{{SSN}}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row" [hidden]="!HideState">
+                    <div class="col-md-6 mb-1">
+                      <label name="CITY"></label>
+                      <div class="form-control customDiabled customOpacity">
+                        <span class="text-white">{{City}}</span>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-1">
+                      <LABEL [hidden]="!IsZipCodeLabel" name="ZIPCODE"></LABEL>
+                      <label [hidden]="IsZipCodeLabel" name="POSTALCODE"></label>
+                      <!-- <label>{{IsZipCodeLabel?'Zip Code':'Postal Code'}}</label> -->
+                      <div class="form-control customDiabled customOpacity">
+                        <span class="text-white">{{ZipCode}}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row" [hidden]="!HideState">
+                    <div class="col-md-6 mb-1" [hidden]="HideSSN">
+                      <label name="SSN"></label>
+                      <div class="form-control customDiabled customOpacity">
+                        <span class="text-white">{{SSN}}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12" *ngFor="let attributegroup of lstCustomAttributeGroup ;let i = index">
+          <div class="card mb-2" href="attributegroup.GroupName">
+            <div class="card-header blackHeader d-flex">
+              <div class="mr-auto text-white align-self-center w-100 d-block">
+                <a class="mr-auto text-white w-100 d-block testClick" data-toggle="collapse" href="#collapseExamples{{i+1}}">
+                  <i class="fas fa-minus pl-1"></i> {{attributegroup.GroupName}}</a>
+              </div>
+              <div class="text-white">
+                <button type="button" class="btn btn-sm btn-light" (click)="switchScreen(attributegroup.EditLabel)">
+
+                  <i class="fas fa-edit -alt pl-1"></i>
+                  <label name="EDIT" id="EDIT"></label>
+                </button>
+                <!-- <i class="fas fa-edit -alt pl-1"></i> Edit {{attributegroup.GroupName}}</button> -->
+              </div>
+            </div>
+            <div class="collapse show" id="collapseExamples{{i+1}}">
+              <div id={{attributegroup.GroupName}} class="card-body">
+                <form>
+                  <div class="row">
+                    <div class="col-md-6 mb-1" *ngFor="let value of attributegroup.Attributes">
+                      <label>{{value.AttributeName}}</label>
+                      <div class="form-control customDiabled customOpacity" style="display: inline-table !important;">
+                        <span class="text-white">{{value.AttributeDataValue}}</span>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12">
+          <div class="card mb-2">
+            <div class="card-header blackHeader d-flex">
+              <div class="mr-auto text-white align-self-center w-100 d-block">
+                <a data-toggle="collapse" href="#collapseExample2" class="text-white w-100 d-block mr-auto testClick">
+                  <i class="fas fa-minus pr-1"></i>
+                  <label id="APPMNTDETAILS"></label>
+                </a>
+              </div>
+              <div class="text-white" [hidden]="HideShowAppointmentEdit == true">
+                <button type="button" class="btn btn-sm btn-light" (click)="switchScreen('EditAppointment')">
+                  <i class="fas fa-edit -alt pl-1"></i>
+                  <label name="EDIT" id="EDIT"></label>
+                </button>
+                <!-- <i class="fas fa-edit -alt pl-1"></i> Edit Appointment</button> -->
+              </div>
+            </div>
+            <div class="collapse show" id="collapseExample2">
+
+              <div class="card-body">
+                <form>
+                  <div [hidden]="HideShowOutOfState == true" class="row">
+                    <div class="col-md-6 mb-1">
+                      <label id="APPMNTSTATUS"></label>
+                      <div class="form-control customDiabled customOpacity">
+                        <span class="text-white" id="MAILINPROCESS"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div [hidden]="HideShowNonOutOfState == true">
+                    <div class="row">
+                      <div class="col-md-6 mb-1">
+                        <label id="NAME"></label>
+                        <div class="form-control customDiabled customOpacity">
+                          <span class="text-white">{{AppointmentName}}</span>
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-1">
+                        <label id="APPMNTTIME"></label>
+                        <div class="form-control customDiabled customOpacity">
+                          <span class="text-white">{{AppointmentTime}}</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 mb-1" [hidden]="IsEventType">
+                        <label name="ADDRESS"></label>
+                        <div class="form-control customDiabled customOpacity">
+                          <span class="text-white">{{AppointmentAddress}}</span>
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-1">
+                        <label id="DESCRIPTION"></label>
+                        <div class="form-control customDiabled customOpacity">
+                          <span class="text-white">{{Description}}</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row" [hidden]="IsEventType">
+                      <div class="col-md-6 mb-1">
+                        <label id="VWLOCIMAGES" style="cursor: pointer;color: blue; text-decoration: underline" (click)="openModal(template,AppointmentName)"></label>
+                      </div>
+
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12">
+          <div class="card mb-2">
+            <div class="card-header blackHeader d-flex">
+              <div class="mr-auto text-white align-self-center w-100 d-block">
+                <a data-toggle="collapse" href="#collapseExample3" class="text-white w-100 d-block mr-auto testClick">
+                  <i class="fas fa-minus pl-1"></i>
+                  <label id="PRVCYACTSTMNT"></label>
+                </a>
+              </div>
+              <div class="text-white"></div>
+            </div>
+            <div class="collapse show" id="collapseExample3">
+
+
+              <div class="card-body">
+                <p id="ORDREVPRVCYSTMNT_PONE"></p>
+                <p id="ORDREVPRVCYSTMNT_PTWO"></p>
+                <p id="ORDREVPRVCYSTMNT_PTHREE"></p>
+                <p id="ORDREVPRVCYSTMNT_PFOUR"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <!-- <h5 class="font-weight-bold"> Find Location</h5> -->
+
+
+          <div class="row">
+            <div class="col-md-12 d-flex justify-content-center">
+              <div class="custom-control custom-checkbox">
+                <input (click)="SetEnableDisable($event)" class="custom-control-input" type="checkbox" value="" id="defaultCheck1" formControlName="confirmCheckbox">
+                <label class="custom-control-label" for="defaultCheck1" id="READANDACCPTPRVCYACTSTMNT">
+                </label>
+                <app-field-error-display [displayError]="isFieldValid('confirmCheckbox')" errorMsg="{{confirmCheckbox}}">
+                </app-field-error-display>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-md-12 my-2 d-flex justify-content-center">
+          <label id="CONFIRMMSGCABS"></label>
+          <label id="YES"></label>
+          <label id="LSTITMN"></label>
+          <button type="button" class="btn btn-primary mx-1 fixedWidthBtn" (click)="goBack()">
+            <i class="fas fa-arrow-left pl-1"></i>
+            <label id="PREVIOUS"></label>
+          </button>
+          <button type="button" [disabled]="IsNextButtonDisable" class="btn btn-primary mx-1 fixedWidthBtn" (click)="onSubmit()">
+            <label id="NEXT"></label>
+            <i class="fas fa-arrow-right pl-1"></i>
+          </button>
+          <cancel-order-button></cancel-order-button>
+        </div>
+
+
+      </div>
+
+    </form>
+  </section>
+</div>
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">{{locationName}}</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body text-center">
+    <carousel [showIndicators]="False" [interval]="-1">
+      <slide *ngFor="let a of Locations">
+        <img src="data:image/jpg;base64,{{a.LocationImages}}" alt="first slide" style="display: block; width: 100%;height:400px">
+      </slide>
+    </carousel>
+    <div *ngIf="Locations!=null && Locations.length==0">
+      <label class="noImgMsg" id="IMGSNOTAVAIL">{{NoImgMsg}}</label>
+    </div>
+    <div *ngIf="IsImageError==true">
+      <label class="noImgMsg m-0" id="RFRESHMSG">{{refreshMsg}}</label>
+      <button type="button" (click)="refreshModel()" class="btn btn-primary fixedWidthBtn  ">
+        <i class="fas fa-sync-alt"></i> 
+           <label id="REFRESH">{{refresh}}</label>  
+      </button>
+
+    </div>
+  </div>
+</ng-template>

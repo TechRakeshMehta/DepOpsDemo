@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<FeaturesDetails>
+  <FeatureDetail Name="Dashboard.js" ComponentPath="/Home" >
+    <Description>dashboard</Description>
+    <BusinessChannelType>Background Check</BusinessChannelType>
+  </FeatureDetail>
+ <FeatureDetail Name="ScreeningOrderSearch.js" ComponentPath="/Order/ScreeningOrderSearch" >
+    <Description>ScreeningOrderSearch Detail</Description>
+    <BusinessChannelType>Background Check</BusinessChannelType>
+  </FeatureDetail>
+  <FeatureDetail Name="AuthorizationAudit.js" ComponentPath="/Order/AuthorizationAudit" >
+    <Description>Authorization Audit</Description>
+    <BusinessChannelType>Background Check</BusinessChannelType>
+  </FeatureDetail>
+</FeaturesDetails>

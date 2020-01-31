@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ADBApplicantMessageDB_DevModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ADBApplicantMessageDB_DevEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+    <EntitySet Name="ApplicantMessages" EntityType="ADBApplicantMessageDB_DevModel.ApplicantMessage" />
+    <AssociationSet Name="FK_ApplicantMessage_ApplicantMessage" Association="ADBApplicantMessageDB_DevModel.FK_ApplicantMessage_ApplicantMessage">
+      <End Role="ApplicantMessage" EntitySet="ApplicantMessages" />
+      <End Role="ApplicantMessage1" EntitySet="ApplicantMessages" />
+    </AssociationSet>
+    <EntitySet Name="ApplicantMessageToLists" EntityType="ADBApplicantMessageDB_DevModel.ApplicantMessageToList" />
+    <EntitySet Name="ApplicantMessageToUserGroups" EntityType="ADBApplicantMessageDB_DevModel.ApplicantMessageToUserGroup" />
+    <AssociationSet Name="FK_ApplicantMessage_ApplicantMessageToUserGroup" Association="ADBApplicantMessageDB_DevModel.FK_ApplicantMessage_ApplicantMessageToUserGroup">
+      <End Role="ApplicantMessage" EntitySet="ApplicantMessages" />
+      <End Role="ApplicantMessageToUserGroup" EntitySet="ApplicantMessageToUserGroups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ApplicantMessageToList_ApplicantMessage" Association="ADBApplicantMessageDB_DevModel.FK_ApplicantMessageToList_ApplicantMessage">
+      <End Role="ApplicantMessage" EntitySet="ApplicantMessages" />
+      <End Role="ApplicantMessageToList" EntitySet="ApplicantMessageToLists" />
+    </AssociationSet>
+    <FunctionImport Name="SendGenMsgToApplicantQueue">
+      <Parameter Name="ExecMessage" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="ApplicantMessage">
+    <Key>
+      <PropertyRef Name="ApplicantMessageId" />
+    </Key>
+    <Property Name="Message" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="From" Type="Int32" />
+    <Property Name="Subject" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="ReceiveDate" Type="DateTime" />
+    <Property Name="ConversationHandleId" Type="Guid" />
+    <Property Name="ApplicantMessageId" Type="Guid" Nullable="false" />
+    <Property Name="ParentMessageId" Type="Guid" />
+    <Property Name="MessageMode" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="IsHighImportant" Type="Boolean" Nullable="false" />
+    <Property Name="IsFollowUp" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="ApplicantMessage1" Relationship="ADBApplicantMessageDB_DevModel.FK_ApplicantMessage_ApplicantMessage" FromRole="ApplicantMessage" ToRole="ApplicantMessage1" />
+    <NavigationProperty Name="ApplicantMessage2" Relationship="ADBApplicantMessageDB_DevModel.FK_ApplicantMessage_ApplicantMessage" FromRole="ApplicantMessage1" ToRole="ApplicantMessage" />
+    <NavigationProperty Name="ApplicantMessageToUserGroups" Relationship="ADBApplicantMessageDB_DevModel.FK_ApplicantMessage_ApplicantMessageToUserGroup" FromRole="ApplicantMessage" ToRole="ApplicantMessageToUserGroup" />
+    <NavigationProperty Name="ApplicantMessageToLists" Relationship="ADBApplicantMessageDB_DevModel.FK_ApplicantMessageToList_ApplicantMessage" FromRole="ApplicantMessage" ToRole="ApplicantMessageToList" />
+  </EntityType>
+  <Association Name="FK_ApplicantMessage_ApplicantMessage">
+    <End Role="ApplicantMessage" Type="ADBApplicantMessageDB_DevModel.ApplicantMessage" Multiplicity="0..1" />
+    <End Role="ApplicantMessage1" Type="ADBApplicantMessageDB_DevModel.ApplicantMessage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ApplicantMessage">
+        <PropertyRef Name="ApplicantMessageId" />
+      </Principal>
+      <Dependent Role="ApplicantMessage1">
+        <PropertyRef Name="ParentMessageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="ApplicantMessageToList">
+    <Key>
+      <PropertyRef Name="ConversationHistoryId" />
+    </Key>
+    <Property Type="Int32" Name="ConversationHistoryId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Guid" Name="ConversationId" Nullable="false" />
+    <Property Type="Guid" Name="ConversationHandleId" Nullable="false" />
+    <Property Type="Guid" Name="ConversationGroupId" Nullable="false" />
+    <Property Type="Int32" Name="EntityId" Nullable="false" />
+    <Property Type="Guid" Name="ApplicantMessageId" />
+    <Property Type="Boolean" Name="IsCC" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Int32" Name="FolderId" Nullable="false" />
+    <Property Type="Boolean" Name="IsUnread" Nullable="false" />
+    <Property Type="Boolean" Name="IsFollowup" Nullable="false" />
+    <NavigationProperty Name="ApplicantMessage" Relationship="ADBApplicantMessageDB_DevModel.FK_ApplicantMessageToList_ApplicantMessage" FromRole="ApplicantMessageToList" ToRole="ApplicantMessage" />
+  </EntityType>
+  <EntityType Name="ApplicantMessageToUserGroup">
+    <Key>
+      <PropertyRef Name="ApplicantMessageToUserGroupID" />
+    </Key>
+    <Property Type="Int32" Name="ApplicantMessageToUserGroupID" Nullable="false" />
+    <Property Type="Guid" Name="ApplicantMessageID" Nullable="false" />
+    <Property Type="Int32" Name="UserGroupID" Nullable="false" />
+    <Property Type="Int32" Name="UserID" />
+    <Property Type="Boolean" Name="IsCC" Nullable="false" />
+    <NavigationProperty Name="ApplicantMessage" Relationship="ADBApplicantMessageDB_DevModel.FK_ApplicantMessage_ApplicantMessageToUserGroup" FromRole="ApplicantMessageToUserGroup" ToRole="ApplicantMessage" />
+  </EntityType>
+  <Association Name="FK_ApplicantMessage_ApplicantMessageToUserGroup">
+    <End Type="ADBApplicantMessageDB_DevModel.ApplicantMessage" Role="ApplicantMessage" Multiplicity="1" />
+    <End Type="ADBApplicantMessageDB_DevModel.ApplicantMessageToUserGroup" Role="ApplicantMessageToUserGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ApplicantMessage">
+        <PropertyRef Name="ApplicantMessageId" />
+      </Principal>
+      <Dependent Role="ApplicantMessageToUserGroup">
+        <PropertyRef Name="ApplicantMessageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ApplicantMessageToList_ApplicantMessage">
+    <End Type="ADBApplicantMessageDB_DevModel.ApplicantMessage" Role="ApplicantMessage" Multiplicity="0..1" />
+    <End Type="ADBApplicantMessageDB_DevModel.ApplicantMessageToList" Role="ApplicantMessageToList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ApplicantMessage">
+        <PropertyRef Name="ApplicantMessageId" />
+      </Principal>
+      <Dependent Role="ApplicantMessageToList">
+        <PropertyRef Name="ApplicantMessageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

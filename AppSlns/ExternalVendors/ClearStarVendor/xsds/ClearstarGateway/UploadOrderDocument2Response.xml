@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UploadOrderDocument2 xmlns="">
+  <ErrorStatus>
+    <Code></Code>
+    <Type></Type>
+    <Message></Message>
+  </ErrorStatus>
+  <Document>
+    <bUploaded></bUploaded>
+  </Document>
+</UploadOrderDocument2>

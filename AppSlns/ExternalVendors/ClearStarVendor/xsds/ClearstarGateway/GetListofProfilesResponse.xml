@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<GetListOfProfiles xmlns="">
+  <ErrorStatus>
+    <Code></Code>
+    <Type></Type>
+    <Message></Message>
+  </ErrorStatus>
+  <Profile>
+    <RowNum></RowNum>
+    <Prof_No></Prof_No>
+    <SubjectType></SubjectType>
+    <SSN></SSN>
+    <Last_Name>
+    </Last_Name>
+    <First_Name></First_Name>
+    <Middle_Name></Middle_Name>
+    <Suffix/>
+    <Status></Status>
+    <Stage></Stage>
+    <Entered></Entered>
+    <Entered_By></Entered_By>
+    <Completed></Completed>
+    <Completed_By></Completed_By>
+    <Highlighted></Highlighted>
+    <ActionFlags></ActionFlags>
+    <CustID></CustID>
+    <CustName></CustName>
+    <FolderName/>
+    <OrderCount></OrderCount>
+    <CompletedCount></CompletedCount>
+  </Profile>
+  <TotalResults></TotalResults>
+</GetListOfProfiles>

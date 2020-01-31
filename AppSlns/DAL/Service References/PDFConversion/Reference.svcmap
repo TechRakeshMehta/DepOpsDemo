@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b409e1d1-a1e8-4aaf-8e77-b29c9eb4fb94" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:56548/PDFConversion.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PDFConversion.disco" MetadataType="Disco" ID="810b3904-689b-4c8e-a4a5-dc3c84bce213" SourceId="1" SourceUrl="http://localhost:56548/PDFConversion.svc?disco" />
+    <MetadataFile FileName="PDFConversion2.xsd" MetadataType="Schema" ID="88c26d05-dbc4-4046-90e7-2b02ce613548" SourceId="1" SourceUrl="http://localhost:56548/PDFConversion.svc?xsd=xsd0" />
+    <MetadataFile FileName="PDFConversion.xsd" MetadataType="Schema" ID="08d87285-7eeb-4fb5-b084-aeb48d302703" SourceId="1" SourceUrl="http://localhost:56548/PDFConversion.svc?xsd=xsd1" />
+    <MetadataFile FileName="PDFConversion1.xsd" MetadataType="Schema" ID="8b752959-ebac-427a-b821-eb577bf862a8" SourceId="1" SourceUrl="http://localhost:56548/PDFConversion.svc?xsd=xsd2" />
+    <MetadataFile FileName="PDFConversion31.xsd" MetadataType="Schema" ID="d2b403bb-a3cc-4162-a155-cc298756d8f5" SourceId="1" SourceUrl="http://localhost:56548/PDFConversion.svc?xsd=xsd3" />
+    <MetadataFile FileName="PDFConversion.wsdl" MetadataType="Wsdl" ID="84e67bf8-8602-48e6-b357-f4beafe975df" SourceId="1" SourceUrl="http://localhost:56548/PDFConversion.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

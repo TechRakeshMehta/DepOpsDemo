@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<project name="AMS.ExternalVendors" default="build">
+
+  <property name="project.name" value="${project::get-name()}" />
+  <include buildfile="../ams_dev.properties" />
+  <property name="nant.settings.currentframework" value="net-3.5" />
+  <property name="ThisProject" value="ExternalVendors" />
+
+  <target name="build" depends="compile">
+    <echo message="Compiling and Building ${project.name}..." />
+  </target>
+
+
+ <target name="compile">
+    <echo message="Compiling ${project.name} Source..." />
+    <csc target="library" output="${build.dir}\${ThisProject}.dll" debug="false">
+      <sources>
+        <include name="**/*.cs" />
+      </sources>
+      <references>
+        <include name="${build.dir}\ADB.Utilities.dll" />
+        <include name="${build.dir}\Microsoft.Practices.EnterpriseLibrary.Caching.dll" />
+        <include name="${build.dir}\Microsoft.Practices.EnterpriseLibrary.Caching.Cryptography.dll" />
+        <include name="${build.dir}\Microsoft.Practices.EnterpriseLibrary.Caching.Database.dll" />
+        <include name="${build.dir}\Microsoft.Practices.EnterpriseLibrary.Common.dll" />
+        <include name="${build.dir}\Microsoft.Practices.EnterpriseLibrary.Data.dll" />
+        <include name="${build.dir}\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll" />
+        <include name="${build.dir}\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.dll" />
+        <include name="${build.dir}\Microsoft.Practices.EnterpriseLibrary.Logging.dll" />
+        <include name="${build.dir}\Microsoft.Practices.EnterpriseLibrary.Logging.Database.dll" />
+        <include name="${build.dir}\Microsoft.Practices.EnterpriseLibrary.Security.dll" />
+        <include name="${build.dir}\Microsoft.Practices.EnterpriseLibrary.Security.Cache.CachingStore.dll" />
+        <include name="${build.dir}\Microsoft.Practices.EnterpriseLibrary.Security.Cryptography.dll" />
+	      <include name="${build.dir}\Microsoft.Practices.ObjectBuilder.dll" />
+        <include name="System.dll" />
+        <include name="System.configuration.dll" />
+        <include name="System.Core.dll" />
+        <include name="System.Data.dll" />
+        <include name="System.Data.DataSetExtensions.dll" />
+        <include name="System.EnterpriseServices.dll" />
+        <include name="System.Web.dll" />
+        <include name="System.Web.Services.dll" />
+        <include name="System.Xml.dll" />
+      </references>
+    </csc>
+  </target>
+
+    <target  name="deploystage" depends="compile">
+	   <echo message="Deploying ${project.name} ${ThisProject} ..." />
+	   <delete dir="${deploystage.dir}/Services/${ThisProject}" />
+      <copy todir="${deploystage.dir}/Services/${ThisProject}">
+        <fileset basedir="${base.dir}/${ThisProject}">
+          <include name="${build.dir}\${ThisProject}.dll"></include>
+        </fileset>
+      </copy>
+  </target>
+
+</project>

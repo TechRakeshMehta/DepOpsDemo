@@ -1,0 +1,1150 @@
+﻿<%-- 
+Copyright 2011 Intersoft Data Labs.
+All rights are reserved.  Reproduction or transmission in whole or in part, in
+any form or by any means, electronic, mechanical or otherwise, is prohibited
+without the prior written consent of the copyright owner.
+
+Filename:  AppMaster.Master
+Purpose:  Creates a master layout for the top page of the application
+
+Revisions:
+Author           Date               Comment
+------           ----------         -------------------------------------------------
+Ashish Daniel    12-Dec-2012 0900   - Updated AppMaster
+Ashish Daniel    03-Jan-2013 1400   - New Menu Layout
+--%>
+
+<%@ Master Language="C#" AutoEventWireup="true" Inherits="CoreWeb.Shell.MasterPages.AppMaster"
+    CodeBehind="AppMaster.master.cs" %>
+
+<%@ Register TagPrefix="infs" Namespace="INTERSOFT.WEB.UI.WebControls" Assembly="INTERSOFT.WEB.UI" %>
+<%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
+<%@ Register TagPrefix="infsu" TagName="Toolbar" Src="~/Shared/Controls/ToolBar.ascx" %>
+<%--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">--%>
+<%--Change DOCTYPE as per the requirement for UAT-1926: 508 22 (o): A method shall be provided that permits users to skip repetitive navigation links.--%>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="AppHead" runat="server">
+    <%-- Bug#7391 - Removing title  --%>
+    <asp:ContentPlaceHolder ID="AppHeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <!--[if gte IE 6]>
+        <style>
+            #ost-user-info, #ost-user-session {padding-top:2px;}
+        </style>
+    <![endif]-->
+    <%--<style type="text/css">
+        .lnkChangePassword
+        {
+            background-color: #4880BF;
+            border-radius: 3px;
+            display: none;
+            left: 50px;
+            padding: 5px 6px;
+            position: absolute;
+            width: 125px;
+            z-index: 1;
+        }
+    </style>--%>
+    <link type="text/css" href="../Resources/Mod/Dashboard/Styles/font-awesome.min.css" rel="stylesheet" />
+
+    <script type="text/javascript" src="../Resources/Mod/ProfileSharing/ProfileSharingConfirmation.js"></script>
+    <style type="text/css">
+        /*New CSS for dropdown to combobox start*/
+        .rcbSlide {
+            z-index: 99999 !important;
+        }
+
+        .RadComboBox .rcbInput {
+            padding: 0px 0 1px;
+        }
+
+        .rcbInput.radPreventDecorate {
+            vertical-align: baseline !important;
+        }
+
+        .RadComboBoxDropDown_Outlook .rcbHovered {
+            color: #fff !important;
+            background: #2E3347 !important;
+        }
+
+        /*New CSS for dropdown to combobox end*/
+
+        .dvUploadOuter a:hover {
+            color: #4a90fa;
+        }
+
+
+
+        .dvUploadOuter a.SaveButton {
+            background-position: 0 0px;
+        }
+
+
+        .dvUploadOuter a:hover.SaveButton {
+            background-position: 0 -23px;
+        }
+
+        .dvUploadOuter a.ResetButton {
+            background-position: 0 -46px;
+        }
+
+        .dvUploadOuter a:hover.ResetButton {
+            background-position: 0 -71px;
+        }
+
+        .updMenu.dvUploadOuter a {
+            text-decoration: none;
+            color: #777;
+            margin-right: 10px;
+            background-image: url(/Resources/Mod/Dashboard/images/iconsDarkBlue.png);
+            background-repeat: no-repeat;
+            padding-left: 26px;
+            height: 22px;
+            display: inline-block;
+            padding-top: 1px;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        .dvUploadOuter a.DocumentUpload {
+            background-image: url(/Resources/Mod/Dashboard/images/DocumentUploadBlack.png) !Important;
+            background-position: 0px 10px !Important;
+            background-repeat: no-repeat;
+            height: 40px;
+            width: 147px;
+            padding-left: 35px;
+            background-size: 30px 20px;
+            padding-top: 10px !important;
+            color: #828282;
+            font-weight: bold;
+            font-size: 15px;
+            margin: 0px;
+            float: right;
+        }
+
+        .dvUploadOuter a:hover.DocumentUpload {
+            background-image: url(/Resources/Mod/Dashboard/images/DocumentUploadDarkBlue.png) !Important;
+            background-position: 0px 10px !Important;
+            background-repeat: no-repeat;
+            height: 40px;
+            width: 147px;
+            padding-left: 35px;
+            background-size: 30px 20px;
+            padding-top: 10px !important;
+            color: #2E3347;
+            font-weight: bold;
+            font-size: 15px;
+            float: right;
+            margin: 0px;
+        }
+
+        .dvUploadOuter a.VideoImage {
+            background-image: url(/Resources/Mod/Dashboard/images/VideoTutorialIcon.png) !Important;
+            background-position: 0px -2px !Important;
+            background-repeat: no-repeat;
+            height: 40px;
+            width: 125px;
+            padding-left: 40px;
+            background-size: 35px 35px;
+            padding-top: 10px !important;
+            color: #828282;
+            font-weight: bold;
+            font-size: 15px;
+            float: right;
+        }
+
+        .dvUploadOuter a:hover.VideoImage {
+            background-image: url(/Resources/Mod/Dashboard/images/VideoTutorialIconDarkBlue.png) !Important;
+            background-position: 0px -2px !Important;
+            background-repeat: no-repeat;
+            height: 40px;
+            width: 125px;
+            padding-left: 40px;
+            background-size: 35px 35px;
+            padding-top: 10px !important;
+            color: #2E3347;
+            font-weight: bold;
+            font-size: 15px;
+            float: right;
+        }
+
+        .dvUploadOuter a.PlaceOrder {
+            background-image: url(/Resources/Mod/Dashboard/images/ShopIconBlack.png) !Important;
+            background-position: 0px 5px !Important;
+            background-repeat: no-repeat;
+            height: 40px;
+            width: 120px;
+            padding-left: 35px;
+            background-size: 30px 25px;
+            padding-top: 10px !important;
+            color: #828282;
+            font-weight: bold;
+            font-size: 15px;
+            float: right;
+        }
+
+        .dvUploadOuter a:hover.PlaceOrder {
+            background-image: url(/Resources/Mod/Dashboard/images/ShopIconDarkBlue.png) !Important;
+            background-position: 0px 5px !Important;
+            background-repeat: no-repeat;
+            height: 40px;
+            width: 120px;
+            padding-left: 35px;
+            background-size: 30px 25px;
+            padding-top: 10px !important;
+            color: #2E3347;
+            font-weight: bold;
+            font-size: 15px;
+            float: right;
+        }
+
+        .dvUploadDocs {
+            color: #828282;
+            display: block;
+            font-size: 9px;
+            /*left: 22%;*/
+            padding-left: 38px;
+            position: absolute;
+            top: 49px;
+            width: 100%;
+        }
+
+        a {
+            outline: none;
+        }
+
+        .dvUploadOuter {
+            /*margin-left:40%;
+            position: relative;
+            padding-bottom:5px;*/
+            float: right;
+        }
+
+        #home_Link {
+            padding-top: 6px;
+            color: white;
+            float: left;
+            font-size: 12px;
+        }
+
+            #home_Link:hover {
+                cursor: pointer;
+            }
+
+                #home_Link:hover .iconColor {
+                    color: #F7ECD5;
+                    font-size: 16px;
+                }
+
+            #home_Link .iconColor {
+                font-size: 16px;
+                margin-right: 2px;
+            }
+
+        #divMessageBox {
+            width: 100%;
+            height: 100%;
+            background-image: url(../Resources/Mod/Shared/images/login/lightbox.png);
+            position: absolute;
+            z-index: 9999;
+            display: none;
+            min-width: 1024px;
+        }
+
+        .msgbox .m_content {
+            color: black;
+            width: 490px;
+            height: 113px;
+            border: 4px solid #000000;
+            padding: 34px 10px 0px 50px;
+            background-color: White;
+            margin: 0 auto;
+            margin-top: 200px;
+            position: relative;
+            font-weight: bold;
+            background-image: url(../Resources/Mod/Shared/images/sucs.png);
+            background-repeat: no-repeat;
+            background-position: 0 26px;
+            font-size: 16px;
+        }
+
+        .msgbox .msg_cmd {
+            padding: 5px;
+            color: #E8EDE0;
+            background-color: #102E37;
+            border: 1px solid white;
+            width: 80px;
+            text-align: center;
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+        }
+
+        .msg_cmd:hover {
+            background-color: #F78D3F;
+        }
+
+        .dvUploadOuter a:hover.place {
+            display: block !important;
+            float: right;
+        }
+
+        /*UAT-2003: Add ability to extend/renew when clicking "place order".*/
+        #PlaceNewOrder {
+            display: none;
+            position: absolute;
+            right: 7px;
+            margin-top: 28px;
+            margin-left: 4px;
+            z-index: 100;
+            color: #828282 !important;
+            /*background-color: #D2D2D2;*/
+            /*background-color: #DA772E;*/
+            /*background-color: #D0E4FE;*/
+            background-color: rgb(235, 235, 235);
+            border-top: thin dotted #FFFFFF;
+            border-top-left-radius: 10px 0px;
+            border-radius: 3px 3px 3px 3px;
+            font-size: 15px;
+            font-weight: bold;
+            width: 275px;
+            text-align: center;
+            float: right;
+        }
+
+        .PlaceNewOrderInner {
+            border-top: thin dotted #FFFFFF;
+            border-top-left-radius: 10px 0px;
+            border-radius: 3px 3px 3px 3px;
+            background-position: 15px 10px !important;
+            background-repeat: no-repeat;
+            background-size: 21px 21px;
+            color: #828282;
+            padding: 0px;
+            text-align: center;
+            float: left;
+            width: 100%;
+            height: 35px;
+            line-height: 35px;
+            display: block;
+        }
+
+            .PlaceNewOrderInner:hover {
+                color: white !important;
+                /*cursor: pointer;*/
+                background-position: 15px 10px !important;
+                background-repeat: no-repeat;
+                background-size: 22px 22px;
+                width: 100%;
+            }
+
+        .lnkPlaceNewOrder {
+            color: #828282;
+            text-decoration: none;
+            display: inline-block;
+            width: 100%;
+            line-height: 35px;
+        }
+
+            .lnkPlaceNewOrder:hover {
+                /*color: white !important;*/
+                width: 100%;
+                line-height: 35px;
+            }
+
+        div.rmScrollWrap.rmGroup.rmLevel2 {
+            width: 204px !important;
+        }
+
+            div.rmScrollWrap.rmGroup.rmLevel2 ul {
+                width: 204px !important;
+            }
+
+        /*UAT-2358*/
+        .positionset {
+            z-index: 20;
+        }
+
+        /*UAT-3032*/
+        /*#cmbPreferredTenant_DropDown ul {
+            width: 100% !important;
+        }
+
+        .lblstyle {
+            color: #676767 !important;
+            font: normal 12px/23px "Segoe UI", Arial, sans-serif !important;
+            font-weight: bold !important;
+        }*/
+        /*END UAT-3032*/
+    </style>
+    <script type="text/javascript">
+
+        var rotationCustomAttributeWindow = null;
+
+        function HandleDashboardCommandNavigation(navUrl, referer) {
+            //set dashboard cmd navigation
+            if (referer == "VideoLink") {
+                //UAT-1027 : Update video tutorial link to open external page in a new browser tab. 
+                var win = window.open(navUrl, '_blank');
+                if (win) {
+                    //Browser has allowed it to be opened
+                    win.focus();
+                }
+            }
+            else {
+                // $jQuery("#ifrPage").attr('src', navUrl);
+                var outeranchor = $jQuery('#outeranchor', $jQuery(window.parent.document));
+                outeranchor.attr('href', navUrl);
+                outeranchor[0].click();
+            }
+        }
+
+        function pageLoad() {
+
+            //Handle Shared User Navigation width.
+            var width = "";
+            var numOfDiv = $jQuery("#navUl").children("li").length;
+            switch (numOfDiv) {
+                case 1:
+                    width = "0%";
+                    break;
+                case 1:
+                    width = "100%";
+                    break;
+                case 2:
+                    width = "50%";
+                    break;
+                case 3:
+                    width = "33.33%";
+                    break;
+                case 4:
+                    width = "25%";
+                    break;
+                case 5:
+                    width = "20%";
+                    break;
+                case 6:
+                    width = "16.66%";
+                    break;
+                case 7:
+                    width = "14.28%";
+                    break;
+                case 8:
+                    width = "12.5%";
+                    break;
+                case 9:
+                    width = "11.11%";
+                    break;
+                default:
+                    width = "1%";
+
+            }
+            $jQuery("#navUl").children("li").css("width", width);
+        }
+
+        function Side_VideoTutorialNavigation() {
+            var screenname = "Get Started Video";
+            var composeScreenWindowName = "Get Started Video";
+            var url = $page.url.create("~/ProfileSharing/Pages/GetStartedVideo.aspx?ScreenName=" + screenname);
+            //UAT-2364
+            var popupHeight = $jQuery(window).height() * (80 / 100);
+
+            var win = $window.createPopup(url, { size: "800," + popupHeight, behaviors: Telerik.Web.UI.WindowBehaviors.Close | Telerik.Web.UI.WindowBehaviors.Move, name: composeScreenWindowName });
+        }
+
+        function CallDummyPostBack(sender) {
+            // $jQuery("[id$=btnDummyPostBack]").click();
+            $jQuery.ajax({
+                type: "POST",
+                url: "/Default.aspx/ClearBreadCrumb",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                }
+            });
+
+        }
+        //UAT-2003: Add ability to extend/renew when clicking "place order".
+        function OpenRenewOrderPopup() {
+
+            var url = $page.url.create("~/ComplianceOperations/Pages/RenewOrderPopup.aspx?IsFromRenewOrderPopup=true");
+            var title = "Renew Existing Tracking Subscription";
+            //UAT-2364
+            var popupHeight = $jQuery(window).height() * (80 / 100);
+
+            var win = $window.createPopup(url,
+                {
+                    size: "800," + popupHeight,
+                    behaviors: Telerik.Web.UI.WindowBehaviors.Close | Telerik.Web.UI.WindowBehaviors.Maximize | Telerik.Web.UI.WindowBehaviors.Move | Telerik.Web.UI.WindowBehaviors.Modal, onclose: onCloseRenewOrderPopup
+                },
+                function () {
+                    this.set_title("American Databank | " + title);
+                    this.set_destroyOnClose(true);
+                    this.set_status("");
+                });
+
+        }
+
+        function onCloseRenewOrderPopup(oWnd, args) {
+            oWnd.remove_close(onCloseRenewOrderPopup);
+            if (args != undefined && args != null && args._argument != undefined && args._argument != null) {
+                var outeranchor = $jQuery('#outeranchor', $jQuery(window.parent.document));
+                outeranchor.attr('href', args._argument.Url);
+                outeranchor[0].click();
+                // $jQuery("#ifrPage").attr('src', args._argument.Url);
+            }
+        }
+
+        function DisplayPlaceOrder(mode) {
+            $jQuery("#PlaceNewOrder").css("display", mode);
+        }
+
+        //UAT-2251: Ability to turn on/off the initial student videos individually and to replace the video link by institution
+        function OverrideVideoUrl(NavURlForVideoTut, OverrideVideoURL) {
+            //   debugger;
+            var hdnOverrideVideoURL = OverrideVideoURL;
+            var EncrptedURLs = btoa(hdnOverrideVideoURL);
+            var win = window.open(NavURlForVideoTut + "?args=" + EncrptedURLs, '_blank');
+            if (win) {
+                //Browser has allowed it to be opened
+                win.focus();
+            } else {
+                //Broswer has blocked it
+                //alert('Please allow popups for this site');
+            }
+        }
+
+        function closeCustomAttributePopUp(isCustomFilterApplied) {
+            var oArg = {};
+            $jQuery("#hdnIsCustomFieldValue").val(isCustomFilterApplied);
+            rotationCustomAttributeWindow.Close(oArg);
+        }
+
+        function setIsCustomAttributeApplied(isCustomFilterApplied) {
+            $jQuery("#hdnIsCustomFieldValue").val(isCustomFilterApplied);
+        }
+
+        //function ManageButton(sender, args) {
+        //    var languageCode;
+        //    var language = sender._text;
+
+        //    if (language != null && language.toLowerCase() == "spanish") {
+        //        languageCode = 'AAAB';
+        //        sender.set_text("English");
+        //        sender.set_toolTip("Click for English");
+        //    }
+        //    if (language != null && language.toLowerCase() == "english") {
+        //        languageCode = 'AAAA';
+        //        sender.set_text("Spanish");
+        //        sender.set_toolTip("Click for Spanish");
+        //    }
+        //    var hdnLanguageTransCode = $jQuery('[id$=hdnLanguageTransCode]');
+
+        //    if (hdnLanguageTransCode != null && languageCode != null) {
+        //        hdnLanguageTransCode.val(languageCode);
+        //    }
+        //}
+        function iOSversion() {
+            if (/iP(hone|od|ad)/.test(navigator.platform)) {
+                // supports iOS 2.0 and later: <https://bit.ly/TJjs1V>
+                var v = (navigator.appVersion).match(/OS (\d+)_(\d+)_?(\d+)?/);
+                return [parseInt(v[1], 10), parseInt(v[2], 10), parseInt(v[3] || 0, 10)];
+            }
+            else return [0, 0, 0];
+        }
+        function EnableMobileBrowsing() {
+            $jQuery('#mainBodyDiv').css({ 'overflow': 'visible' });
+            if (iOSversion()[0] < 12) {
+                $jQuery('body').css({ 'overflow': 'auto' });
+            } else {
+                var data = sessionStorage.getItem('relaodedMaster');
+                if (data != 'true') {
+                    window.sessionStorage.setItem('relaodedMaster', 'true');
+                    window.location.reload()
+                }
+                else {
+                    window.sessionStorage.removeItem('relaodedMaster');
+                }
+
+            }
+            document.getElementById('ifrPage').onload = function () {
+                //window.scrollTo(0, 0);				
+                window.setTimeout(function () { $jQuery(window).scrollTop(0); }, 0);
+
+            };
+        }
+    </script>
+    <%-- Google Translater CSS --%>
+    <style type="text/css">
+        body {
+            top: 0px !important;
+            position: static !important;
+        }
+
+        @media {
+            body {
+                -webkit-overflow-scrolling: touch;
+            }
+        }
+
+
+
+
+        .goog-te-banner-frame {
+            display: none !important;
+        }
+        /*Accessibility css for UAT-1926: 508 22 (o): A method shall be provided that permits users to skip repetitive navigation links.*/
+        div.skip-main {
+            left: -999px;
+            position: absolute;
+            top: auto;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            z-index: -999;
+        }
+
+            div.skip-main:focus, div.skip-main:active {
+                color: #fff;
+                background-color: #4880BF;
+                left: auto;
+                top: auto;
+                width: 20%;
+                height: auto;
+                overflow: auto;
+                margin: 10px 35%;
+                padding: 5px;
+                border-radius: 15px;
+                border: 4px solid #4880BF;
+                text-align: center;
+                /*font-size: 1.2em;*/
+                z-index: 999;
+                font-size: 12px;
+                font-weight: bold;
+                text-transform: capitalize;
+                font-family: "Segoe UI",Arial,Helvetica,sans-serif;
+            }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            padding: 0;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
+        #mainBodyDiv {
+            width: 100%;
+            float: left;
+            height: 100%;
+        }
+
+        .clear {
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div role="application" id="mainBodyDiv">
+        <label for="mainBodyDiv" class="sr-only">American Databank </label>
+        <form id="frmApp" runat="server">
+            <asp:HiddenField ID="hdn_Agencyuser_ApplicantStatus" runat="server" />
+            <asp:HiddenField runat="server" ID="hdnGenericExceptionMsg"/>
+            <asp:HiddenField runat="server" ID="hdnGenericExceptionMsgXSSANDHTML"/>
+            
+            <%-- Managers --%>
+            <div>
+                <asp:ScriptManager ID="scmApp" runat="server" EnablePartialRendering="true" AsyncPostBackTimeout="360000"
+                    ScriptMode="Release">
+                </asp:ScriptManager>
+                <infs:WclStyleSheetManager runat="server" ID="cssMgr">
+                </infs:WclStyleSheetManager>
+                <infs:WclResourceManager runat="server"  ID="rsrMgr" EnableBrowserSupport="true" SupportCssPath="~/Resources/Generic/Client"
+                    SupportScriptPath="~/Resources/Generic/Client" OnInit="rsrMgr_Init" AllowTheming="true"
+                    ThemesFolder="~/Resources/Themes" ThemeFiles="colors.css" WindowCheckFailUrl="/Default.aspx"
+                    EnableWindowCheck="true" SupportedBrowsers="ie7,ie8,ie9" SupportedEngines="trident"
+                    EnableEngineSupport="true" />
+
+                <%--Shared User Dashboard : Start --%>
+                <asp:Literal ID="ltrlBootStrap" runat="Server" />
+                <asp:Literal ID="ltrlTitilliumFont" runat="Server" />
+                <asp:Literal ID="ltrlSUDashboard" runat="Server" />
+                <asp:Literal ID="ltrlFontAwesome" runat="Server" />
+                <%--Shared User Dashboard : End --%>
+            </div>
+
+            <div id="divMessageBox" class="msgbox">
+                <div class="m_content">
+                    <asp:Label ID="lblVerificationMessage" runat="server" CssClass="reg-complete"></asp:Label>
+                    <a href="#" class="msg_cmd">Continue</a>
+                </div>
+            </div>
+
+            <div id="applodrwr">
+                <div id="applodr">
+                    <h1 style="color: #8C1921">American DataBank</h1>
+                    <%--<span id="applodrmsg">Please wait while the application is being loaded...</span>--%>
+                    <span id="applodrmsg"><%=Resources.Language.PLZWAITAPPLOAD%></span>
+                </div>
+            </div>
+            <div id='progswr'>
+                <div id="modlodrwr">
+                    <%--<span class="msg">Please wait</span>--%>
+                    <span class="msg"><%=Resources.Language.PLZWAIT%></span>
+                </div>
+            </div>
+            <div id="base_wrapper">
+                <%-- Split Panel / dividing page into 2 horizontals--%>
+                <infs:WclSplitter ID="rdspTwoRows" runat="server" Orientation="Horizontal" FullScreenMode="true"
+                    BorderSize="0" BorderWidth="0" ResizeWithBrowserWindow="true">
+                    <%-- Top Row --%>
+                    <infs:WclPane ID="rdpnTopRow" runat="server" Scrolling="None" MinHeight="98" Height="98"
+                        CssClass="tplTopPanel">
+                        <div id="topbar-wrap">
+                            <div id="complio_box">
+                            </div>
+                            <div id="home_Link" style="display: none" runat="server">
+                                &nbsp;
+                            <asp:HyperLink ID="lnkhome_link" runat="server" Font-Underline="true"
+                                ForeColor="White" Visible="false" Target="pageFrame" ToolTip="">
+                               <i class="fa fa-home iconColor"></i><%=Resources.Language.HOME%></asp:HyperLink>
+                            </div>
+                            <div id="userbar-wrap">
+                                <div id="dvPreferredTenant" runat="server" visible="false" class="mid">
+                                    &nbsp;&nbsp;Default Institution&nbsp;
+                                   
+                                   <%-- <label id="lblPreferredTenant" for="<%= cmbPreferredTenant.ClientID %>_Input" class="sr-only">Default Institution</label>--%>
+                                    <%--<span class="cptn lblstyle">Institution</span>--%>
+                                    <infs:WclComboBox DropDownWidth="400" ID="cmbPreferredTenant" runat="server" EnableAriaSupport="true" OnSelectedIndexChanged="cmbPreferredTenant_SelectedIndexChanged"
+                                        DataValueField="TenantId" DataTextField="TenantName" EmptyMessage="--SELECT--" AutoPostBack="true" Filter="Contains" Width="190px">
+                                    </infs:WclComboBox>
+                                    &nbsp;|&nbsp;
+                                </div>
+                                <div id="dvChangePassword" class="mid" style="z-index: 1; position: relative;">
+                                    <%= Resources.Language.WELCOME %>&nbsp;<asp:HyperLink ID="lnkUserName" runat="server" CssClass="user" Text="Guest"> </asp:HyperLink>
+
+                                    <%--UAT 712--%>
+                                    <%--<div id="divChangePassword" class="lnkChangePassword" runat="server">
+                                    <asp:HyperLink ID="lnkChangePassword" runat="server" CssClass="user" Text="Change Password"> </asp:HyperLink>
+                                </div>--%>
+                                </div>
+
+                                <%--UAT 1218 Switch View--%>
+                                <div id="dvSwitchView" class="mid" runat="server" visible="false">
+                                    &nbsp;|&nbsp;Switch to&nbsp;
+                                </div>
+                                <div id="dvSwitchViewDropdown" class="mid" runat="server" visible="false">
+                                    <%--<infs:WclDropDownList ID="ddlUserTypeSwitchingView" runat="server" AutoPostBack="true" DataValueField="UTSV_Code"
+                                    DataTextField="UTSV_Name" OnSelectedIndexChanged="ddlUserTypeSwitchingView_SelectedIndexChanged" 
+                                    OnDataBound="ddlUserTypeSwitchingView_DataBound" Width="130px">
+                                </infs:WclDropDownList>--%>
+                                    <infs:WclDropDownList ID="ddlUserTypeSwitchingView" runat="server" AutoPostBack="true"
+                                        DataValueField="UTSV_Code"
+                                        DataTextField="UTSV_Name" OnSelectedIndexChanged="ddlUserTypeSwitchingView_SelectedIndexChanged"
+                                        Width="160px">
+                                    </infs:WclDropDownList>
+                                </div>
+
+                                <div id="divInstitute" class="mid" runat="server">
+                                    &nbsp;|&nbsp;<%# Resources.Language.INSTITUTE %>&nbsp;
+                                </div>
+                                <div id="divTenantName" class="mid" runat="server">
+                                    <label id="lblLineOfBusiness" for="<%= ddlTenantName.ClientID %>_Input" class="sr-only">Line Of Business</label>
+                                    <%--<infs:WclDropDownList ID="ddlTenantName" role="combobox" runat="server" AutoPostBack="true" DataValueField="Key"
+                                        DataTextField="Value" OnSelectedIndexChanged="ddlTenantName_SelectedIndexChanged"
+                                        Width="160px">
+                                    </infs:WclDropDownList>--%>
+                                    <infs:WclComboBox DropDownWidth="377" ID="ddlTenantName" runat="server" AutoPostBack="true" DataValueField="Key"
+                                        EnableAriaSupport="true" DataTextField="Value" OnSelectedIndexChanged="ddlTenantName_SelectedIndexChanged"
+                                        Width="160px">
+                                    </infs:WclComboBox>
+                                </div>
+                                <div runat="server" id="divClientAdminTenant" class="mid">
+                                    <div id="divInstituteForClientAdmin" class="mid" runat="server">
+                                        &nbsp;|&nbsp;Institute&nbsp;
+                                    </div>
+                                    <div id="divTenantNameForClientAdmin" class="mid" runat="server">
+                                        <%--  <infs:WclDropDownList ID="clientAdminddlTenantName" runat="server" AutoPostBack="true"
+                                            DataValueField="Key"
+                                            DataTextField="Value" OnSelectedIndexChanged="clientAdminddlTenantName_SelectedIndexChanged"
+                                            Width="160px">
+                                        </infs:WclDropDownList>--%>
+                                        <label for='<%= clientAdminddlTenantName.ClientID %>_Input' class="sr-only">Institute</label>
+                                        <infs:WclComboBox DropDownWidth="350" runat="server" ID="clientAdminddlTenantName" EnableAriaSupport="true"
+                                            AutoPostBack="true" DataValueField="key" DataTextField="value" role="combobox"
+                                            OnSelectedIndexChanged="clientAdminddlTenantName_SelectedIndexChanged" Width="160px">
+                                        </infs:WclComboBox>
+                                    </div>
+                                </div>
+                                <div runat="server" id="dvLanguage" class="mid">
+                                    <div id="div2" class="mid" runat="server">
+                                        &nbsp;|&nbsp;<%= Resources.Language.LANGUAGE %>&nbsp;
+                                    </div>
+                                    <div id="div3" class="mid" runat="server">
+                                        <infs:WclButton ID="btnLanguage" ControlName="btnLanguage" runat="server" AutoPostBack="true" Visible="true" CausesValidation="false" ButtonType="SkinnedButton"
+                                            CssClass="BtnLanguage" OnClick="btnLanguage_Click">
+                                        </infs:WclButton>
+                                    </div>
+                                    <asp:HiddenField ID="hdnLanguageTransCode" runat="server" />
+                                </div>
+                                <div id="dvAutoLogOut" runat="server" class="mid">
+                                    <div class="mid">&nbsp;|&nbsp;&nbsp; <span id="lblTimeLeft"></span></div>
+                                    <div class="mid">
+                                        &nbsp;<%= Resources.Language.MIN %><span id="totalSeconds"><%--&nbsp;--%>
+                                            <%= Resources.Language.UNTILLAUTO %> <%--&nbsp;--%>
+                                            <asp:LinkButton ID="btnLogoff" runat="server" Text="" OnClick="btnLogoff_Click"
+                                                CssClass="logoutbtn" ToolTip=""></asp:LinkButton><input type="hidden"
+                                                    id="txtIsSessionExpired" runat="server" /></span>
+                                        <span id="dvShowMinDetails" runat="server" visible="false"><%--&nbsp;--%>
+                                            logout <%--&nbsp;--%></span>
+                                    </div>
+                                </div>
+                                <%-- google Translate ComboBox 
+                            <div id="google_translate_element" class="mid" style="padding-left: 18px;">
+                            </div>--%>
+                            </div>
+
+                            <div class="clr-float">
+                            </div>
+                        </div>
+                        <%--Accessibility : UAT-1926: 508 22 (o): A method shall be provided that permits users to skip repetitive navigation links.--%>
+                        <div tabindex="0" id="dvSkipContent" title="Skip to main content" class="skip-main">Skip to main content</div>
+                        <%-- Wrapper around header --%>
+                        <div id="apphdrwr" runat="server">
+                            <%-- Main navigation --%>
+                            <div id="appmenuwr">
+                                <asp:UpdatePanel runat="server" ID="updMenu" UpdateMode="Conditional">
+                                    <ContentTemplate>
+                                        <div class="mnu-float">
+                                            <%-- <div style="float: left; width: 30%;">
+                                                <div style="float: left; width: 1px;">&nbsp;</div>
+                                                <div id="dvPreferredTenant" runat="server" visible="false" style="float: left;">
+                                                    <span class="cptn lblstyle">Institution</span>
+                                                    <infs:WclComboBox runat="server" ID="cmbPreferredTenant" ClientIDMode="Static" OnSelectedIndexChanged="cmbPreferredTenant_SelectedIndexChanged"
+                                                        DataValueField="TenantId" DataTextField="TenantName" EmptyMessage="--SELECT--" AutoPostBack="true" Filter="Contains">
+                                                    </infs:WclComboBox>
+                                                </div>
+                                            </div>--%>
+
+                                            <%-- [1/16/2013 1300] Bug#323 Fix - Attached onClientItemClicked event --%>
+                                            <infs:WclMenu runat="server" ID="rdmnMainMenu" EnableAutoScroll="true" CssClass="positionset" EnableRootItemScroll="true"
+                                                EnableRoundedCorners="true" EnableShadows="true" EnableOverlay="true"
+                                                OnItemCreated="rdmnMainMenu_ItemCreated" Skin="Default" AutoSkinMode="false"
+                                                OnClientItemClicked="mnuMain_clicked"
+                                                OnClientItemClosed="mnuMain_closed" Width="100%" OnClientMouseOut="mnuMain_MouseOut"
+                                                OnClientMouseOver="mnuMain_MouseOver" ClientKey="mnuMain_app">
+                                            </infs:WclMenu>
+                                        </div>
+                                        <div class="clr-float">
+                                        </div>
+                                        <asp:HiddenField ID="qreFldMenu" runat="server" EnableViewState="false" />
+                                    </ContentTemplate>
+                                </asp:UpdatePanel>
+                                <div class="clr-float">
+                                </div>
+
+                            </div>
+                            <div class="clr-float">
+                            </div>
+                            <div id="logo_wrap">
+                                <%-- App Logo --%>
+                                <asp:HyperLink ID="linkHeader" runat="server" Target="pageFrame" ToolTip="">
+                                    <asp:Literal ID="btnHeader" runat="server"></asp:Literal>
+                                </asp:HyperLink>
+                            </div>
+
+                        </div>
+                        <asp:HiddenField ID="hdnCloseSplashScreen" Value="" runat="server" />
+                        <asp:HiddenField ID="hdnClickingHere" Value="" runat="server" />
+                        <asp:HiddenField ID="hdnWhilePageLoad" Value="" runat="server" />
+                        <%-- Shared user Navigation --%>
+                        <div id="dvSharedUserMenu" runat="server" visible="false" class="container-fluid">
+                            <div class="row">
+                                <nav>
+                                    <ul id="navUl">
+                                        <div style="display: none;">
+                                            <asp:Button ID="btnDummyPostBack" runat="server" Text="Post" OnClick="btnDummyPostBack_Click" />
+                                        </div>
+                                        <li><a runat="server" id="lnkHomeMenu" href="" target="pageFrame" onclick="CallDummyPostBack(this);"><i class="fa fa-home iconColor" aria-hidden="true"></i>Home</a> <%--UAT-3206--%>
+                                            <ul>
+                                                <%-- <li id="liHome" runat="server"><a runat="server" id="lnkHome" href="" onclick="CallDummyPostBack(this);">Home</a></li>--%>
+                                                <li id="liRotation" runat="server"><a runat="server" id="lnkRotation" target="pageFrame" visible="false" href="" onclick="CallDummyPostBack(this);">Rotations</a></li>
+                                                <li id="liOther" runat="server"><a runat="server" id="lnkOther" target="pageFrame" visible="false" href="" onclick="CallDummyPostBack(this);">Other</a></li>
+
+                                                <%--UAT-3206--%>
+                                            </ul>
+                                        </li>
+                                        <%--UAT-3208--%>
+                                        <li id="liSearch" runat="server"><a runat="server" id="lnkSearch" target="pageFrame"><i class="fa fa-search iconColor" aria-hidden="true"></i>Search</a>
+                                            <ul>
+                                                <li id="liRequirementShares" runat="server"><a runat="server" target="pageFrame" id="lnkRequirement" href="" onclick="CallDummyPostBack(this);">Requirement Shares</a></li>
+                                                <li id="liRotationStudent" runat="server"><a runat="server" target="pageFrame" id="lnkRotationStudent" href="" onclick="CallDummyPostBack(this);">Rotation Students</a></li>
+                                                <li id="liAgencyApplicantStatus" runat="server"><a runat="server" target="pageFrame" id="lnkAgencyApplicantStatus" href="" onclick="CallDummyPostBack(this);">Agency Applicant Status</a></li>
+                                                <li id="liRequirementPackageView" runat="server"><a runat="server" target="pageFrame" href="#" id="lnkRequirementPackageView" onclick="CallDummyPostBack(this);">Package Detail</a></li>
+                                                <%--<i class="fa fa-archive iconColor"></i>--%>
+                                                <li id="liSchoolRepresentativeDetails" runat="server"><a runat="server" target="pageFrame" href="#" id="lnkSchoolRepresentativeDetails" onclick="CallDummyPostBack(this);">School Representative Details</a></li>
+                                                <%--UAT-3319--%>
+                                                <li id="liAgencyNonComplaintSearch" runat="server"><a runat="server" target="pageFrame" href="" id="lnkAgencyNonComplaintSearch" onclick="CallDummyPostBack(this);">Agency Non Compliant Search</a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li id="liEditProfileForInstrPrec" runat="server"><a runat="server" id="lnkEditProfileForInstrPrec" target="pageFrame" href="" onclick="CallDummyPostBack(this);"><i class="fa fa-pencil-square-o iconColor"></i>Edit Profile</a></li>
+                                        <li id="liTools" runat="server"><a runat="server" id="lnkTools" target="pageFrame"><i class="fa fa-wrench iconColor" aria-hidden="true"></i>Tools</a>
+                                            <ul>
+                                                <li><a runat="server" id="lnkEditProfile" target="pageFrame" href="" onclick="CallDummyPostBack(this);">Edit Profile</a></li>
+                                                <%--<i class="fa fa-pencil-square-o iconColor"></i>--%>
+                                                <li id="liManageUser" runat="server"><a id="lnkManageUser" runat="server" target="pageFrame" href="" onclick="CallDummyPostBack(this);">Manage Agency User</a></li>
+                                                <li id="liManagePackage" runat="server"><a runat="server" target="pageFrame" href="#" id="lnkManagePackage" onclick="CallDummyPostBack(this);">Manage Package</a></li>
+                                                <%--<i class="fa fa-archive iconColor"></i>--%>
+                                                <li id="liRptAttTxtPrmsn" runat="server"><a runat="server" target="pageFrame" href="#" id="lnkRptAttTxtPrmsn" onclick="CallDummyPostBack(this);">Attestation Statement</a></li>
+                                                <%--<i class="fa fa-list-alt iconColor"></i>--%>
+                                            </ul>
+                                        </li>
+                                        <%--<li><a runat="server" id="lnkEditProfile" target="pageFrame" href="" onclick="CallDummyPostBack(this);"><i class="fa fa-pencil-square-o iconColor"></i>Edit Profile</a></li>--%>
+                                        <%--<li id="liManageUser" runat="server" visible="false"><a target="pageFrame"><i class="fa fa-user iconColor"></i>Manage User</a></li>--%>
+                                        <%--<ul>
+                                                <li><a runat="server" target="pageFrame" id="lnkManageUser" href="" onclick="CallDummyPostBack(this);">Manage Agency User</a></li>
+                                            </ul>
+                                        </li>
+                                        <li id="liManagePackage" runat="server"><a runat="server" target="pageFrame" href="#" id="lnkManagePackage" onclick="CallDummyPostBack(this);"><i class="fa fa-archive iconColor"></i>Manage Package</a></li>--%>
+                                        <%--<li id="liRequirementPackageView" runat="server"><a runat="server" target="pageFrame" href="#" id="lnkRequirementPackageView" onclick="CallDummyPostBack(this);"><i class="fa fa-archive iconColor"></i>Package Detail</a></li>--%>
+                                        <li id="liRotationStudentSearch" runat="server" visible="false"><a runat="server" id="lnkRotationStudentSearch" onclick="CallDummyPostBack(this);"><i class="fa fa-archive iconColor"></i>Rotation Student Search</a></li>
+                                        <li id="liJobBoard" runat="server"><a runat="server" target="pageFrame" href="#" id="lnkJobBoard" onclick="CallDummyPostBack(this);"><i class="fa fa-suitcase iconColor"></i>Job Board</a></li>
+                                        <li id="liPlacementMatching" runat="server"><a runat="server" target="pageFrame" id="lnkPlacementMatching"><i class="fa fa-handshake-o iconColor" aria-hidden="true"></i>Manage Placement</a>
+                                            <ul>
+                                                <li id="liAgencyLocationSetup" runat="server"><a runat="server" target="pageFrame" href="#" id="lnkAgencyLocationSetup" onclick="CallDummyPostBack(this);">Agency Location Setup</a></li>
+                                                <li id="liManageCustomAttributes" runat="server"><a runat="server" target="pageFrame" href="#" id="lnkManageCustomAttributes" onclick="CallDummyPostBack(this);">Manage Custom Attributes</a></li>
+                                                <li id="liManageOpportunities" runat="server"><a runat="server" target="pageFrame" href="#" id="lnkManageOppotunities" onclick="CallDummyPostBack(this);">Manage Opportunities</a></li>
+                                                <li id="liManageRequest" runat="server"><a runat="server" target="pageFrame" href="#" id="lnkManageRequest" onclick="CallDummyPostBack(this);">Manage Request</a></li>
+                                                <li id="liPlacementDashboard" runat="server"><a runat="server" target="pageFrame" href="#" id="lnkPlacementDashboard" onclick="CallDummyPostBack(this);">Placement Dashboard</a></li>
+                                            </ul>
+                                        </li>
+                                        <%--<li id="liRptAttTxtPrmsn" runat="server"><a runat="server" target="pageFrame" href="#" id="lnkRptAttTxtPrmsn" onclick="CallDummyPostBack(this);"><i class="fa fa-list-alt iconColor"></i>Attestation Statement</a></li>--%>
+                                        <li id="liReports" runat="server"><a target="pageFrame" href="#" ><i class="fa fa-user iconColor"></i>Reports</a>
+                                            <%--<ul style="min-width: 180px; width: 18%">
+                                                <li><a runat="server" id="lnkAgencyUserReport" target="pageFrame" href="" onclick="CallDummyPostBack(this);">Institution Count</a></li>
+                                                <li><a runat="server" id="lnkItemDateReport" target="pageFrame" href="" onclick="CallDummyPostBack(this);">Item Data Report</a></li>
+                                                <li><a runat="server" id="lnkAttestationDocumentReport" target="pageFrame" href="" onclick="CallDummyPostBack(this);">Attestation Document Reports</a></li>
+                                                <li><a runat="server" id="lnkRotationStudentDetails" target="pageFrame" href="" onclick="CallDummyPostBack(this);">Rotation Student Details Report</a></li>--%>
+                                                <%--<li><a runat="server" id="lnkStudentCountReport" href="" onclick="CallDummyPostBack(this);">Student Count Report</a></li>--%>
+                                               <%-- <li><a runat="server" id="lnkAgencyAdminsByDepartment" target="pageFrame" href="" onclick="CallDummyPostBack(this);">Agency Admins By Department</a></li>
+                                                <li><a runat="server" id="lnkItemDataCountReport" target="pageFrame" href="" onclick="CallDummyPostBack(this);">Item Data Count Report</a></li>
+                                                <li><a runat="server" id="lnkCategoryDataReport" target="pageFrame" href="" onclick="CallDummyPostBack(this);">Category Data Report</a></li>
+                                                <li><a runat="server" id="lnkRotationStudentsComplianceStatus" target="pageFrame" href="" onclick="CallDummyPostBack(this);">Rotation Students Compliance Status</a></li>
+                                                <li><a runat="server" id="lnkRotationStudentsOverallNonComplianceStatus" target="pageFrame" href="" onclick="CallDummyPostBack(this);">Rotation Students Non Compliance Status</a></li>
+                                                <li><a runat="server" id="lnkRotationStudentByDayoftheWeek" target="pageFrame" href="" onclick="CallDummyPostBack(this);">Rotation Students By Day of the Week</a></li>
+                                                <li><a runat="server" id="lnkSaveReports" target="pageFrame" href="" onclick="CallDummyPostBack(this);">Saved Report Searches</a></li>
+                                                <li><a runat="server" id="lnkCategoryDataReportByComplioId" target="pageFrame" href="" onclick="CallDummyPostBack(this);">Category Data Report With Complio Id</a></li>
+                                            </ul>--%>
+                                        </li>
+                                        <li id="liHelp" runat="server"><a target="pageFrame"><i class="fa fa-question-circle iconColor" aria-hidden="true"></i>Help</a> <%--UAT-3207--%>
+                                            <ul>
+                                                <li id="liSideVideoTutorialNavigation" runat="server" visible="true"><a target="pageFrame" href="#" onclick="Side_VideoTutorialNavigation();return false;">Video Tutorial</a></li>
+                                                <%--<i class="fa fa-play-circle iconColor"></i>--%>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+
+                        <%-- Wrapper around Quick Search Bar --%>
+                        <div id="apptbarwr">
+                            <div id="apptbar">
+                                <%-- Wrapper around Quick Search Bar --%>
+                                <div id="searchbar_wrapper">
+                                    <infsu:Toolbar runat="server" ID="ucToolbar" Visible="false" />
+                                </div>
+                            </div>
+                        </div>
+                    </infs:WclPane>
+                    <%--
+                <infs:WclPane ID="rdpnButtomRow" runat="server" Scrolling="X" CssClass="relpos">
+                    
+                    <div id="modoutwr">
+                        <asp:ContentPlaceHolder ID="AppPageContent" runat="server" />
+                    </div>
+                </infs:WclPane>--%>
+                    <infs:WclPane ID="rdpnButtomRow" runat="server" Scrolling="X" CssClass="relpos">
+                        <%-- Lower Portion of page --%>
+                        <div title="Content" id="modoutwr" tabindex="0">
+                            <asp:ContentPlaceHolder ID="AppPageContent" runat="server" />
+                        </div>
+                    </infs:WclPane>
+                    <infs:WclPane ID="WclPane1" runat="server" MinHeight="30" Height="30" Scrolling="None"
+                        CssClass="tplTopPanel">
+                        <div id="footer-wrapper">
+                            <div id="sys-menu-wrap">
+                                <asp:UpdatePanel runat="server" ID="updPanelLeft" UpdateMode="Conditional" Visible="true">
+                                    <ContentTemplate>
+                                        <%-- [1/17/2013 1300] Bug#323 Fix - Attached onClientItemClicked event --%>
+                                        <infs:WclMenu ID="mnSystemSetup" runat="server" CssClass="setup-menu" Skin="Default"
+                                            AutoSkinMode="false" EnableRoundedCorners="true" OnClientItemClicked="mnuMain_clicked"
+                                            OnClientItemClosed="mnuMain_closed">
+                                            <DefaultGroupSettings OffsetX="5" />
+                                            <Items>
+                                                <telerik:RadMenuItem Text="Setup" ImageUrl="~/Resources/Mod/Shared/images/setup.png">
+                                                </telerik:RadMenuItem>
+                                            </Items>
+                                        </infs:WclMenu>
+                                        <asp:HiddenField ID="qreFldPanel" runat="server" EnableViewState="false" />
+                                    </ContentTemplate>
+                                </asp:UpdatePanel>
+                            </div>
+                            <div id="footer-content">
+                                <asp:Label ID="liveChatScript" runat="server" Visible="false" />
+                                <asp:Label Text="Live Chat" runat="server" ID="lnkLiveChat" CssClass="liveChatButton"
+                                    Visible="false" />
+                                <asp:Label ID="lblDT" runat="server" Text=""></asp:Label>&nbsp;
+                        <asp:Label ID="lblPipe" runat="server" Text="|"></asp:Label>
+                                &nbsp;
+                        <asp:Label ID="lblVersionNumber" runat="server"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <asp:Literal ID="litFooter" runat="server"></asp:Literal>
+                            </div>
+                        </div>
+                    </infs:WclPane>
+                </infs:WclSplitter>
+            </div>
+            <infs:WclToolTipManager ID="ttpmApp" runat="server" EnableTheming="false" AutoTooltipify="false" />
+            <!-- Rendered Block End!-->
+            <infs:WclResourceManagerProxy runat="server" ID="prxMP">
+                <infs:LinkedResource Path="~/Resources/Generic/app.min.js" ResourceType="JavaScript" />
+                <infs:LinkedResource Path="~/Resources/Mod/Shared/AppMaster.js" ResourceType="JavaScript" />
+            </infs:WclResourceManagerProxy>
+            <asp:SiteMapDataSource ID="ApplicationSiteMap" runat="server" SiteMapProvider="DefaultSiteMapProvider"
+                ShowStartingNode="False" />
+            <asp:SiteMapDataSource ID="SecuritySiteMap" runat="server" SiteMapProvider="SecuritySiteMapProvider"
+                ShowStartingNode="False" />
+            <%-- AD: Adding window again and style tag due to height and z-index--%>
+            <infs:WclWindowManager ID="wndManager" ShowContentDuringLoad="false" VisibleStatusbar="false"
+                ReloadOnShow="true" runat="server" EnableShadow="true" Behaviors="Move,None"
+                KeepInScreenBounds="true" AutoSize="false" AutoSkinMode="false" Skin="Windows7"
+                MinHeight="200px" MinWidth="200px"
+                Modal="true" Style="z-index: 7001">
+                <Windows>
+                    <infs:WclWindow ID="wndCommon" runat="server" Modal="true" CssClass="appPopup noicon">
+                    </infs:WclWindow>
+                </Windows>
+                <AlertTemplate>
+                    <div class="rwDialogPopup radalert">
+                        <div class="rwDialogText">
+                            {1}
+                        </div>
+                        <div class="swDialogCmds">
+                            <a onclick="$find('{0}').close();" class="rwPopupButton" href="javascript:void(0);">
+                                <span class="rwOuterSpan"><span class="rwInnerSpan">##LOC[OK]##</span> </span>
+                            </a>
+                        </div>
+                    </div>
+                </AlertTemplate>
+                <ConfirmTemplate>
+                    <div class="rwDialogPopup radconfirm">
+                        <div class="rwDialogText">
+                            {1}
+                        </div>
+                        <div class="swDialogCmds">
+                            <a onclick="$find('{0}').close(true);" class="rwPopupButton" href="javascript:void(0);">
+                                <span class="rwOuterSpan"><span class="rwInnerSpan">##LOC[OK]##</span></span></a>
+                            <a onclick="$find('{0}').close(false);" class="rwPopupButton" href="javascript:void(0);">
+                                <span class="rwOuterSpan"><span class="rwInnerSpan">##LOC[Cancel]##</span></span></a>
+                        </div>
+                    </div>
+                </ConfirmTemplate>
+            </infs:WclWindowManager>
+            <%-- Notification Control Placeholder--%>
+            <asp:PlaceHolder runat="server" ID="plcDynamicNotification"></asp:PlaceHolder>
+            <input type="hidden" id="inpWndMgr" />
+            <asp:HiddenField runat="server" ID="hdnIframeUrl" />
+            <asp:HiddenField runat="server" ID="hdnIsCustomFieldValue" ClientIDMode="Static" />
+            <input type="hidden" value="false" name="hdnStartPolling" id="hdnStartPolling"/>
+        </form>
+
+
+        <div id="dialog-message" style="display: none;" title="Profile Share Completes">
+            <div class="msgbox" style="display: block; opacity: 1;">
+                <span class="sucs">Invitation(s) corresponding to Invitation group ID-&nbsp;<span
+                    id="spnGroupId"></span>&nbsp;has been sent successfully to all Shared User(s) for
+                selected Applicant(s).</span>
+            </div>
+        </div>
+
+        <div id="dialog-message-error" style="display: none;" title="Unable to share profile">
+            <div class="msgbox" style="display: block; opacity: 1;">
+                <span class="error"><span id="spnErrorText"></span></span>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+<script type="text/javascript">
+        $jQuery(document).ready(function () {
+
+        var profileSharingTimer = parseInt("<%= ProfileSharingInvitationConfirmationTimerInterval%>");
+        var minusOne = parseInt("<%= INTSOF.Utils.AppConsts.MINUS_ONE%>");
+        var isCurrentUserIsAdminOrClientAdmin = "<%=IsCurrentUserIsAdminOrClientAdmin %>";
+
+        $jQuery(".msgbox .msg_cmd").first().click(function () {
+
+            $jQuery(this).parents(".msgbox:last").fadeOut();
+        });
+        $jQuery(".reg-complete").each(function () {
+            if ($jQuery(this).text().replace(/\s/g, "") != "") {
+                $jQuery(this).parents(".msgbox:last").fadeIn();
+            }
+            });
+
+        $jQuery(document).ready(function () {
+            if (isCurrentUserIsAdminOrClientAdmin.toLowerCase() == "true") {
+                if (profileSharingTimer != minusOne) {
+                    //Set Time Interval
+                    setInterval(function () {
+                        var isNeedToStartPolling = $jQuery('[id$=hdnStartPolling]').val(); 
+                        if (isNeedToStartPolling.toLowerCase() == "true") {
+                            ProfileSharingConfirmation.GetProfileSharingInvitationConfirmation();
+                        }
+                    }, profileSharingTimer);
+                }
+            }
+            });
+
+            $jQuery(document).ready(function () {
+            if (isCurrentUserIsAdminOrClientAdmin.toLowerCase() == "true") {
+                if (profileSharingTimer != minusOne) {
+
+                    ProfileSharingConfirmation.IsNeedToStartPolling();
+
+                    //Set Time Interval
+                    setInterval(function () {
+                        var isNeedToStartPolling = $jQuery('[id$=hdnStartPolling]').val(); 
+                        if (isNeedToStartPolling.toLowerCase() == "true") {
+                            ProfileSharingConfirmation.IsNeedToStartPolling();
+                        }
+                    }, profileSharingTimer*2);
+                }
+            }
+        });
+
+        $jQuery("[id$=ddlTenantName_Input]").attr('role', 'combobox');
+        $jQuery("[id$=clientAdminddlTenantName_Input]").attr('role', 'combobox');
+
+        });
+    //$jQuery(document).ready(function () {
+    //    $jQuery("[id$=dvChangePassword]").hover(function () {
+    //        $jQuery("[id$=divChangePassword]").fadeToggle();
+    //    });
+    //});
+
+</script>
+<%-- Google Translater JavaScript function
+    <script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({ pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false }, 'google_translate_element');
+    }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> --%>
+</html>

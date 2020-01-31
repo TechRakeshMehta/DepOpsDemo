@@ -1,0 +1,767 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ADB_LocationDataModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ADB_LocationDataEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="ScheduleMasters" EntityType="ADB_LocationDataModel.ScheduleMaster" />
+    <EntitySet Name="EnrollerLocationPermissions" EntityType="ADB_LocationDataModel.EnrollerLocationPermission" />
+    <EntitySet Name="lkpPermissions" EntityType="ADB_LocationDataModel.lkpPermission" />
+    <AssociationSet Name="FK_EnrollerLocationPermission_lkpPermission" Association="ADB_LocationDataModel.FK_EnrollerLocationPermission_lkpPermission">
+      <End Role="lkpPermission" EntitySet="lkpPermissions" />
+      <End Role="EnrollerLocationPermission" EntitySet="EnrollerLocationPermissions" />
+    </AssociationSet>
+    <EntitySet Name="lkpPaymentOptions" EntityType="ADB_LocationDataModel.lkpPaymentOption" />
+    <EntitySet Name="LocationPaymentOptions" EntityType="ADB_LocationDataModel.LocationPaymentOption" />
+    <AssociationSet Name="FK_LocationPaymentOptions_lkpPaymentOptions" Association="ADB_LocationDataModel.FK_LocationPaymentOptions_lkpPaymentOptions">
+      <End Role="lkpPaymentOption" EntitySet="lkpPaymentOptions" />
+      <End Role="LocationPaymentOption" EntitySet="LocationPaymentOptions" />
+    </AssociationSet>
+    <EntitySet Name="LocationTenantMappings" EntityType="ADB_LocationDataModel.LocationTenantMapping" />
+    <EntitySet Name="FingerprintLocationGroups" EntityType="ADB_LocationDataModel.FingerprintLocationGroup" />
+    <EntitySet Name="FingerPrintLocationImages" EntityType="ADB_LocationDataModel.FingerPrintLocationImage" />
+    <EntitySet Name="lkpAppointmentStatus" EntityType="ADB_LocationDataModel.lkpAppointmentStatu" />
+    <EntitySet Name="FingerPrintLocationEvents" EntityType="ADB_LocationDataModel.FingerPrintLocationEvent" />
+    <EntitySet Name="lkpAppointmentRevokeTypes" EntityType="ADB_LocationDataModel.lkpAppointmentRevokeType" />
+    <EntitySet Name="ReservedSlots" EntityType="ADB_LocationDataModel.ReservedSlot" />
+    <EntitySet Name="FingerPrintScheduleSlots" EntityType="ADB_LocationDataModel.FingerPrintScheduleSlot" />
+    <EntitySet Name="FingerPrintLocationTimeoffs" EntityType="ADB_LocationDataModel.FingerPrintLocationTimeoff" />
+    <EntitySet Name="FingerPrintEventsSlots" EntityType="ADB_LocationDataModel.FingerPrintEventsSlot" />
+    <AssociationSet Name="FK_FingerPrintEventsSlot_FingerPrintLocationEvents" Association="ADB_LocationDataModel.FK_FingerPrintEventsSlot_FingerPrintLocationEvents">
+      <End Role="FingerPrintLocationEvent" EntitySet="FingerPrintLocationEvents" />
+      <End Role="FingerPrintEventsSlot" EntitySet="FingerPrintEventsSlots" />
+    </AssociationSet>
+    <EntitySet Name="FingerPrintApplicantAppointments" EntityType="ADB_LocationDataModel.FingerPrintApplicantAppointment" />
+    <AssociationSet Name="FK_FingerPrintApplicantAppointment_FingerPrintScheduleSlot" Association="ADB_LocationDataModel.FK_FingerPrintApplicantAppointment_FingerPrintScheduleSlot">
+      <End Role="FingerPrintScheduleSlot" EntitySet="FingerPrintScheduleSlots" />
+      <End Role="FingerPrintApplicantAppointment" EntitySet="FingerPrintApplicantAppointments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FingerPrintApplicantAppointment_lkpAppointmentRevokeType" Association="ADB_LocationDataModel.FK_FingerPrintApplicantAppointment_lkpAppointmentRevokeType">
+      <End Role="lkpAppointmentRevokeType" EntitySet="lkpAppointmentRevokeTypes" />
+      <End Role="FingerPrintApplicantAppointment" EntitySet="FingerPrintApplicantAppointments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FingerPrintApplicantAppointment_lkpAppointmentStatus" Association="ADB_LocationDataModel.FK_FingerPrintApplicantAppointment_lkpAppointmentStatus">
+      <End Role="lkpAppointmentStatu" EntitySet="lkpAppointmentStatus" />
+      <End Role="FingerPrintApplicantAppointment" EntitySet="FingerPrintApplicantAppointments" />
+    </AssociationSet>
+    <EntitySet Name="CDRExportDatas" EntityType="ADB_LocationDataModel.CDRExportData" />
+    <EntitySet Name="CDRFileDetails" EntityType="ADB_LocationDataModel.CDRFileDetail" />
+    <AssociationSet Name="FK_CDRExportData_CDRFileDetails" Association="ADB_LocationDataModel.FK_CDRExportData_CDRFileDetails">
+      <End Role="CDRFileDetail" EntitySet="CDRFileDetails" />
+      <End Role="CDRExportData" EntitySet="CDRExportDatas" />
+    </AssociationSet>
+    <EntitySet Name="CBIResultFiles" EntityType="ADB_LocationDataModel.CBIResultFile" />
+    <EntitySet Name="Schedules" EntityType="ADB_LocationDataModel.Schedule" />
+    <AssociationSet Name="FK_FingerPrintScheduleSlot_Schedule" Association="ADB_LocationDataModel.FK_FingerPrintScheduleSlot_Schedule">
+      <End Role="Schedule" EntitySet="Schedules" />
+      <End Role="FingerPrintScheduleSlot" EntitySet="FingerPrintScheduleSlots" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Schedule_ScheduleMaster" Association="ADB_LocationDataModel.FK_Schedule_ScheduleMaster">
+      <End Role="ScheduleMaster" EntitySet="ScheduleMasters" />
+      <End Role="Schedule" EntitySet="Schedules" />
+    </AssociationSet>
+    <EntitySet Name="lkpCABSPermissionTypes" EntityType="ADB_LocationDataModel.lkpCABSPermissionType" />
+    <EntitySet Name="UserCABSPermissionMappings" EntityType="ADB_LocationDataModel.UserCABSPermissionMapping" />
+    <AssociationSet Name="FK_UserCABSPermissionMapping_lkpCABSPermissionType" Association="ADB_LocationDataModel.FK_UserCABSPermissionMapping_lkpCABSPermissionType">
+      <End Role="lkpCABSPermissionType" EntitySet="lkpCABSPermissionTypes" />
+      <End Role="UserCABSPermissionMapping" EntitySet="UserCABSPermissionMappings" />
+    </AssociationSet>
+    <EntitySet Name="FingerPrintOrderKeyDatas" EntityType="ADB_LocationDataModel.FingerPrintOrderKeyData" />
+    <EntitySet Name="FingerPrintLocations" EntityType="ADB_LocationDataModel.FingerPrintLocation" />
+    <AssociationSet Name="FK_EnrollerLocationPermission_FingerPrintLocation" Association="ADB_LocationDataModel.FK_EnrollerLocationPermission_FingerPrintLocation">
+      <End Role="FingerPrintLocation" EntitySet="FingerPrintLocations" />
+      <End Role="EnrollerLocationPermission" EntitySet="EnrollerLocationPermissions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FingerPrintApplicantAppointment_FingerPrintLocation" Association="ADB_LocationDataModel.FK_FingerPrintApplicantAppointment_FingerPrintLocation">
+      <End Role="FingerPrintLocation" EntitySet="FingerPrintLocations" />
+      <End Role="FingerPrintApplicantAppointment" EntitySet="FingerPrintApplicantAppointments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FingerPrintLocation_FingerprintLocationGroup" Association="ADB_LocationDataModel.FK_FingerPrintLocation_FingerprintLocationGroup">
+      <End Role="FingerprintLocationGroup" EntitySet="FingerprintLocationGroups" />
+      <End Role="FingerPrintLocation" EntitySet="FingerPrintLocations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FingerPrintLocation_ScheduleMaster" Association="ADB_LocationDataModel.FK_FingerPrintLocation_ScheduleMaster">
+      <End Role="ScheduleMaster" EntitySet="ScheduleMasters" />
+      <End Role="FingerPrintLocation" EntitySet="FingerPrintLocations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FingerPrintLocationEvents_FingerPrintLocation" Association="ADB_LocationDataModel.FK_FingerPrintLocationEvents_FingerPrintLocation">
+      <End Role="FingerPrintLocation" EntitySet="FingerPrintLocations" />
+      <End Role="FingerPrintLocationEvent" EntitySet="FingerPrintLocationEvents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FingerPrintLocationImages_FingerPrintLocation" Association="ADB_LocationDataModel.FK_FingerPrintLocationImages_FingerPrintLocation">
+      <End Role="FingerPrintLocation" EntitySet="FingerPrintLocations" />
+      <End Role="FingerPrintLocationImage" EntitySet="FingerPrintLocationImages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FingerPrintLocationTimeoff_FingerPrintLocation" Association="ADB_LocationDataModel.FK_FingerPrintLocationTimeoff_FingerPrintLocation">
+      <End Role="FingerPrintLocation" EntitySet="FingerPrintLocations" />
+      <End Role="FingerPrintLocationTimeoff" EntitySet="FingerPrintLocationTimeoffs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LocationPaymentOptions_FingerPrintLocation" Association="ADB_LocationDataModel.FK_LocationPaymentOptions_FingerPrintLocation">
+      <End Role="FingerPrintLocation" EntitySet="FingerPrintLocations" />
+      <End Role="LocationPaymentOption" EntitySet="LocationPaymentOptions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LocationTenantMapping_FingerPrintLocation" Association="ADB_LocationDataModel.FK_LocationTenantMapping_FingerPrintLocation">
+      <End Role="FingerPrintLocation" EntitySet="FingerPrintLocations" />
+      <End Role="LocationTenantMapping" EntitySet="LocationTenantMappings" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="ScheduleMaster">
+    <Key>
+      <PropertyRef Name="SM_ID" />
+    </Key>
+    <Property Type="Int32" Name="SM_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SM_Name" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="SM_IsDeleted" Nullable="false" />
+    <Property Type="Int32" Name="SM_CreatedBy" Nullable="false" />
+    <Property Type="DateTime" Name="SM_CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="SM_ModifiedBy" />
+    <Property Type="DateTime" Name="SM_ModifiedOn" Precision="3" />
+    <NavigationProperty Name="Schedules" Relationship="ADB_LocationDataModel.FK_Schedule_ScheduleMaster" FromRole="ScheduleMaster" ToRole="Schedule" />
+    <Property Type="String" Name="SM_OtherDetails" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="FingerPrintLocations" Relationship="ADB_LocationDataModel.FK_FingerPrintLocation_ScheduleMaster" FromRole="ScheduleMaster" ToRole="FingerPrintLocation" />
+  </EntityType>
+  <EntityType Name="EnrollerLocationPermission">
+    <Key>
+      <PropertyRef Name="ELP_ID" />
+    </Key>
+    <Property Type="Int32" Name="ELP_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="ELP_LocationID" Nullable="false" />
+    <Property Type="Int16" Name="ELP_PermissionID" Nullable="false" />
+    <Property Type="Int32" Name="ELP_OrganizationUserID" Nullable="false" />
+    <Property Type="Boolean" Name="ELP_IsDeleted" Nullable="false" />
+    <Property Type="Int32" Name="ELP_CreatedByID" Nullable="false" />
+    <Property Type="DateTime" Name="ELP_CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="ELP_ModifiedByID" />
+    <Property Type="DateTime" Name="ELP_ModifiedOn" Precision="3" />
+    <NavigationProperty Name="lkpPermission" Relationship="ADB_LocationDataModel.FK_EnrollerLocationPermission_lkpPermission" FromRole="EnrollerLocationPermission" ToRole="lkpPermission" />
+    <NavigationProperty Name="FingerPrintLocation" Relationship="ADB_LocationDataModel.FK_EnrollerLocationPermission_FingerPrintLocation" FromRole="EnrollerLocationPermission" ToRole="FingerPrintLocation" />
+  </EntityType>
+  <EntityType Name="lkpPermission">
+    <Key>
+      <PropertyRef Name="PER_ID" />
+    </Key>
+    <Property Type="Int16" Name="PER_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="PER_Code" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="PER_Name" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PER_Description" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="PER_IsDeleted" />
+    <NavigationProperty Name="EnrollerLocationPermissions" Relationship="ADB_LocationDataModel.FK_EnrollerLocationPermission_lkpPermission" FromRole="lkpPermission" ToRole="EnrollerLocationPermission" />
+  </EntityType>
+  <Association Name="FK_EnrollerLocationPermission_lkpPermission">
+    <End Type="ADB_LocationDataModel.lkpPermission" Role="lkpPermission" Multiplicity="1" />
+    <End Type="ADB_LocationDataModel.EnrollerLocationPermission" Role="EnrollerLocationPermission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lkpPermission">
+        <PropertyRef Name="PER_ID" />
+      </Principal>
+      <Dependent Role="EnrollerLocationPermission">
+        <PropertyRef Name="ELP_PermissionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="lkpPaymentOption">
+    <Key>
+      <PropertyRef Name="PO_ID" />
+    </Key>
+    <Property Type="Int32" Name="PO_ID" Nullable="false" />
+    <Property Type="String" Name="PO_Name" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PO_Code" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="PO_IsDeleted" Nullable="false" />
+    <Property Type="Int32" Name="PO_CreatedByID" Nullable="false" />
+    <Property Type="DateTime" Name="PO_CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="PO_ModifiedByID" />
+    <Property Type="DateTime" Name="PO_ModifiedOn" Precision="3" />
+    <NavigationProperty Name="LocationPaymentOptions" Relationship="ADB_LocationDataModel.FK_LocationPaymentOptions_lkpPaymentOptions" FromRole="lkpPaymentOption" ToRole="LocationPaymentOption" />
+  </EntityType>
+  <EntityType Name="LocationPaymentOption">
+    <Key>
+      <PropertyRef Name="LPO_ID" />
+    </Key>
+    <Property Type="Int32" Name="LPO_ID" Nullable="false" />
+    <Property Type="Int32" Name="LPO_LocationID" Nullable="false" />
+    <Property Type="Int32" Name="LPO_PaymentOptionID" Nullable="false" />
+    <Property Type="Boolean" Name="LPO_IsDeleted" Nullable="false" />
+    <Property Type="Int32" Name="LPO_CreatedBy" Nullable="false" />
+    <Property Type="DateTime" Name="LPO_CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="LPO_ModifiedBy" />
+    <Property Type="DateTime" Name="LPO_ModifiedOn" Precision="3" />
+    <NavigationProperty Name="lkpPaymentOption" Relationship="ADB_LocationDataModel.FK_LocationPaymentOptions_lkpPaymentOptions" FromRole="LocationPaymentOption" ToRole="lkpPaymentOption" />
+    <NavigationProperty Name="FingerPrintLocation" Relationship="ADB_LocationDataModel.FK_LocationPaymentOptions_FingerPrintLocation" FromRole="LocationPaymentOption" ToRole="FingerPrintLocation" />
+  </EntityType>
+  <Association Name="FK_LocationPaymentOptions_lkpPaymentOptions">
+    <End Type="ADB_LocationDataModel.lkpPaymentOption" Role="lkpPaymentOption" Multiplicity="1" />
+    <End Type="ADB_LocationDataModel.LocationPaymentOption" Role="LocationPaymentOption" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lkpPaymentOption">
+        <PropertyRef Name="PO_ID" />
+      </Principal>
+      <Dependent Role="LocationPaymentOption">
+        <PropertyRef Name="LPO_PaymentOptionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="LocationTenantMapping">
+    <Key>
+      <PropertyRef Name="LTM_ID" />
+    </Key>
+    <Property Type="Int32" Name="LTM_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="LTM_LocationID" Nullable="false" />
+    <Property Type="Int32" Name="LTM_TenantID" Nullable="false" />
+    <Property Type="Boolean" Name="LTM_IsDeleted" Nullable="false" />
+    <Property Type="Int32" Name="LTM_CreatedBy" Nullable="false" />
+    <Property Type="DateTime" Name="LTM_CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="LTM_ModifiedBy" />
+    <Property Type="DateTime" Name="LTM_ModifiedOn" Precision="3" />
+    <NavigationProperty Name="FingerPrintLocation" Relationship="ADB_LocationDataModel.FK_LocationTenantMapping_FingerPrintLocation" FromRole="LocationTenantMapping" ToRole="FingerPrintLocation" />
+  </EntityType>
+  <EntityType Name="FingerprintLocationGroup">
+    <Key>
+      <PropertyRef Name="FLG_ID" />
+    </Key>
+    <Property Type="Int32" Name="FLG_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="FLG_Name" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="FLG_Description" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="FLG_IsDeleted" Nullable="false" />
+    <Property Type="Int32" Name="FLG_CreatedBy" Nullable="false" />
+    <Property Type="DateTime" Name="FLG_CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="FLG_ModifiedBy" />
+    <Property Type="DateTime" Name="FLG_ModifiedOn" Precision="3" />
+    <NavigationProperty Name="FingerPrintLocations" Relationship="ADB_LocationDataModel.FK_FingerPrintLocation_FingerprintLocationGroup" FromRole="FingerprintLocationGroup" ToRole="FingerPrintLocation" />
+  </EntityType>
+  <EntityType Name="FingerPrintLocationImage">
+    <Key>
+      <PropertyRef Name="FPLI_ID" />
+    </Key>
+    <Property Type="Int32" Name="FPLI_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="FPLI_LocationId" Nullable="false" />
+    <Property Type="String" Name="FPLI_FileName" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="FPLI_FilePath" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="FPLI_CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="FPLI_CreatedBy" Nullable="false" />
+    <Property Type="DateTime" Name="FPLI_ModifiedOn" Precision="3" />
+    <Property Type="Int32" Name="FPLI_ModifiedBy" />
+    <Property Type="Boolean" Name="FPLI_IsDeleted" Nullable="false" />
+    <NavigationProperty Name="FingerPrintLocation" Relationship="ADB_LocationDataModel.FK_FingerPrintLocationImages_FingerPrintLocation" FromRole="FingerPrintLocationImage" ToRole="FingerPrintLocation" />
+  </EntityType>
+  <EntityType Name="lkpAppointmentStatu">
+    <Key>
+      <PropertyRef Name="AS_ID" />
+    </Key>
+    <Property Type="Int32" Name="AS_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="AS_Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="AS_Code" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="AS_Description" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="AS_IsDeleted" Nullable="false" />
+    <Property Type="Int32" Name="AS_CreatedBy" Nullable="false" />
+    <Property Type="DateTime" Name="AS_CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="AS_ModifiedBy" />
+    <Property Type="DateTime" Name="AS_ModifiedOn" Precision="3" />
+    <NavigationProperty Name="FingerPrintApplicantAppointments" Relationship="ADB_LocationDataModel.FK_FingerPrintApplicantAppointment_lkpAppointmentStatus" FromRole="lkpAppointmentStatu" ToRole="FingerPrintApplicantAppointment" />
+  </EntityType>
+  <EntityType Name="FingerPrintLocationEvent">
+    <Key>
+      <PropertyRef Name="FPLE_ID" />
+    </Key>
+    <Property Type="Int32" Name="FPLE_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="FPLE_LocationID" />
+    <Property Type="String" Name="FPLE_Name" Nullable="false" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="FPLE_Description" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="FPLE_FromDate" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="FPLE_ToDate" Nullable="false" Precision="3" />
+    <Property Type="Boolean" Name="FPLE_IsPublished" />
+    <Property Type="DateTime" Name="FPLE_PublishedDate" Precision="3" />
+    <Property Type="Boolean" Name="FPLE_IsDeleted" Nullable="false" />
+    <Property Type="Int32" Name="FPLE_CreatedBy" Nullable="false" />
+    <Property Type="DateTime" Name="FPLE_CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="FPLE_ModifiedBy" />
+    <Property Type="DateTime" Name="FPLE_ModifiedOn" Precision="3" />
+    <NavigationProperty Name="FingerPrintEventsSlots" Relationship="ADB_LocationDataModel.FK_FingerPrintEventsSlot_FingerPrintLocationEvents" FromRole="FingerPrintLocationEvent" ToRole="FingerPrintEventsSlot" />
+    <NavigationProperty Name="FingerPrintLocation" Relationship="ADB_LocationDataModel.FK_FingerPrintLocationEvents_FingerPrintLocation" FromRole="FingerPrintLocationEvent" ToRole="FingerPrintLocation" />
+  </EntityType>
+  <EntityType Name="lkpAppointmentRevokeType">
+    <Key>
+      <PropertyRef Name="RT_ID" />
+    </Key>
+    <Property Type="Int32" Name="RT_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="RT_Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RT_Code" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RT_Description" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="RT_IsDeleted" Nullable="false" />
+    <Property Type="Int32" Name="RT_CreatedBy" Nullable="false" />
+    <Property Type="DateTime" Name="RT_CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="RT_ModifiedBy" />
+    <Property Type="DateTime" Name="RT_ModifiedOn" Precision="3" />
+    <NavigationProperty Name="FingerPrintApplicantAppointments" Relationship="ADB_LocationDataModel.FK_FingerPrintApplicantAppointment_lkpAppointmentRevokeType" FromRole="lkpAppointmentRevokeType" ToRole="FingerPrintApplicantAppointment" />
+  </EntityType>
+  <EntityType Name="ReservedSlot">
+    <Key>
+      <PropertyRef Name="RS_ID" />
+    </Key>
+    <Property Type="Int32" Name="RS_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="RS_SlotID" Nullable="false" />
+    <Property Type="DateTime" Name="RS_ReservedOn" Nullable="false" Precision="3" />
+    <Property Type="Boolean" Name="RS_IsDeleted" Nullable="false" />
+    <Property Type="Int32" Name="RS_CreatedBy" Nullable="false" />
+    <Property Type="DateTime" Name="RS_CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="RS_ModifiedBy" />
+    <Property Type="DateTime" Name="RS_ModifiedOn" Precision="3" />
+  </EntityType>
+  <EntityType Name="FingerPrintScheduleSlot">
+    <Key>
+      <PropertyRef Name="FPSS_SlotID" />
+    </Key>
+    <Property Type="Int32" Name="FPSS_SlotID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="FPSS_SlotDate" Nullable="false" Precision="0" />
+    <Property Type="Time" Name="FPSS_SlotStartTime" Nullable="false" Precision="0" />
+    <Property Type="Time" Name="FPSS_SlotEndTime" Nullable="false" Precision="0" />
+    <Property Type="Int32" Name="FPSS_SlotAppointment" Nullable="false" />
+    <Property Type="Int32" Name="FPSS_ScheduleID" />
+    <Property Type="Boolean" Name="FPSS_IsDeleted" Nullable="false" />
+    <Property Type="Int32" Name="FPSS_CreatedBy" Nullable="false" />
+    <Property Type="DateTime" Name="FPSS_CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="FPSS_ModifiedBy" />
+    <Property Type="DateTime" Name="FPSS_ModifiedOn" Precision="3" />
+    <Property Type="Int32" Name="FPSS_EventSlotID" />
+    <NavigationProperty Name="FingerPrintApplicantAppointments" Relationship="ADB_LocationDataModel.FK_FingerPrintApplicantAppointment_FingerPrintScheduleSlot" FromRole="FingerPrintScheduleSlot" ToRole="FingerPrintApplicantAppointment" />
+    <NavigationProperty Name="Schedule" Relationship="ADB_LocationDataModel.FK_FingerPrintScheduleSlot_Schedule" FromRole="FingerPrintScheduleSlot" ToRole="Schedule" />
+  </EntityType>
+  <EntityType Name="FingerPrintLocationTimeoff">
+    <Key>
+      <PropertyRef Name="FLT_ID" />
+    </Key>
+    <Property Type="Int32" Name="FLT_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="FLT_LocationID" Nullable="false" />
+    <Property Type="DateTime" Name="FLT_FromTime" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="FLT_ToTime" Nullable="false" Precision="3" />
+    <Property Type="String" Name="FLT_Reason" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="FLT_IsPublished" Nullable="false" />
+    <Property Type="DateTime" Name="FLT_PublishedDate" Precision="3" />
+    <Property Type="Boolean" Name="FLT_IsDeleted" Nullable="false" />
+    <Property Type="Int32" Name="FLT_CreatedBy" Nullable="false" />
+    <Property Type="DateTime" Name="FLT_CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="FLT_ModifiedBy" />
+    <Property Type="DateTime" Name="FLT_ModifiedOn" Precision="3" />
+    <NavigationProperty Name="FingerPrintLocation" Relationship="ADB_LocationDataModel.FK_FingerPrintLocationTimeoff_FingerPrintLocation" FromRole="FingerPrintLocationTimeoff" ToRole="FingerPrintLocation" />
+  </EntityType>
+  <EntityType Name="FingerPrintEventsSlot">
+    <Key>
+      <PropertyRef Name="FPES_ID" />
+    </Key>
+    <Property Type="Int32" Name="FPES_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="FPES_FromTime" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="FPES_ToTime" Nullable="false" Precision="3" />
+    <Property Type="String" Name="FPES_Description" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="FPES_EventsCode" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="FPES_IsDeleted" Nullable="false" />
+    <Property Type="Int32" Name="FPES_CreatedBy" Nullable="false" />
+    <Property Type="DateTime" Name="FPES_CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="FPES_ModifiedBy" />
+    <Property Type="DateTime" Name="FPES_ModifiedOn" Precision="3" />
+    <Property Type="Int32" Name="FPES_EventID" Nullable="false" />
+    <NavigationProperty Name="FingerPrintLocationEvent" Relationship="ADB_LocationDataModel.FK_FingerPrintEventsSlot_FingerPrintLocationEvents" FromRole="FingerPrintEventsSlot" ToRole="FingerPrintLocationEvent" />
+    <Property Type="Int32" Name="FPES_Increment" />
+    <Property Type="Int32" Name="FPES_TotalAppointment" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_FingerPrintEventsSlot_FingerPrintLocationEvents">
+    <End Type="ADB_LocationDataModel.FingerPrintLocationEvent" Role="FingerPrintLocationEvent" Multiplicity="1" />
+    <End Type="ADB_LocationDataModel.FingerPrintEventsSlot" Role="FingerPrintEventsSlot" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FingerPrintLocationEvent">
+        <PropertyRef Name="FPLE_ID" />
+      </Principal>
+      <Dependent Role="FingerPrintEventsSlot">
+        <PropertyRef Name="FPES_EventID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="FingerPrintApplicantAppointment">
+    <Key>
+      <PropertyRef Name="FPAA_ID" />
+    </Key>
+    <Property Type="Int32" Name="FPAA_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="FPAA_TenantID" Nullable="false" />
+    <Property Type="Int32" Name="FPAA_OrganizationUserID" Nullable="false" />
+    <Property Type="Int32" Name="FPAA_OrderID" Nullable="false" />
+    <Property Type="Int32" Name="FPAA_LocationID" Nullable="false" />
+    <Property Type="Int32" Name="FPAA_ScheduleSlotID" />
+    <Property Type="Int32" Name="FPAA_SVCLineItemID" />
+    <Property Type="Boolean" Name="FPAA_IsDeleted" Nullable="false" />
+    <Property Type="Int32" Name="FPAA_CreatedBy" Nullable="false" />
+    <Property Type="DateTime" Name="FPAA_CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="FPAA_ModifiedBy" />
+    <Property Type="DateTime" Name="FPAA_ModifiedOn" Precision="3" />
+    <Property Type="Int32" Name="FPAA_Status" />
+    <Property Type="Int32" Name="FPAA_RevokeType" />
+    <Property Type="Double" Name="FPAA_RefundAmount" />
+    <Property Type="Boolean" Name="FPAA_IsOnsiteAppointment" Nullable="false" />
+    <Property Type="DateTime" Name="FPAA_RefundDate" Precision="3" />
+    <Property Type="Boolean" Name="FPAA_IsOutOfState" Nullable="false" />
+    <NavigationProperty Name="FingerPrintScheduleSlot" Relationship="ADB_LocationDataModel.FK_FingerPrintApplicantAppointment_FingerPrintScheduleSlot" FromRole="FingerPrintApplicantAppointment" ToRole="FingerPrintScheduleSlot" />
+    <NavigationProperty Name="lkpAppointmentRevokeType" Relationship="ADB_LocationDataModel.FK_FingerPrintApplicantAppointment_lkpAppointmentRevokeType" FromRole="FingerPrintApplicantAppointment" ToRole="lkpAppointmentRevokeType" />
+    <NavigationProperty Name="lkpAppointmentStatu" Relationship="ADB_LocationDataModel.FK_FingerPrintApplicantAppointment_lkpAppointmentStatus" FromRole="FingerPrintApplicantAppointment" ToRole="lkpAppointmentStatu" />
+    <Property Type="Int32" Name="FPAA_FBIRejStatus" />
+    <Property Type="Int32" Name="FPAA_CBIRejStatus" />
+    <Property Type="Boolean" Name="FPAA_ConsentToSaveInfo" Nullable="false" />
+    <NavigationProperty Name="FingerPrintLocation" Relationship="ADB_LocationDataModel.FK_FingerPrintApplicantAppointment_FingerPrintLocation" FromRole="FingerPrintApplicantAppointment" ToRole="FingerPrintLocation" />
+  </EntityType>
+  <Association Name="FK_FingerPrintApplicantAppointment_FingerPrintScheduleSlot">
+    <End Type="ADB_LocationDataModel.FingerPrintScheduleSlot" Role="FingerPrintScheduleSlot" Multiplicity="0..1" />
+    <End Type="ADB_LocationDataModel.FingerPrintApplicantAppointment" Role="FingerPrintApplicantAppointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FingerPrintScheduleSlot">
+        <PropertyRef Name="FPSS_SlotID" />
+      </Principal>
+      <Dependent Role="FingerPrintApplicantAppointment">
+        <PropertyRef Name="FPAA_ScheduleSlotID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FingerPrintApplicantAppointment_lkpAppointmentRevokeType">
+    <End Type="ADB_LocationDataModel.lkpAppointmentRevokeType" Role="lkpAppointmentRevokeType" Multiplicity="0..1" />
+    <End Type="ADB_LocationDataModel.FingerPrintApplicantAppointment" Role="FingerPrintApplicantAppointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lkpAppointmentRevokeType">
+        <PropertyRef Name="RT_ID" />
+      </Principal>
+      <Dependent Role="FingerPrintApplicantAppointment">
+        <PropertyRef Name="FPAA_RevokeType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FingerPrintApplicantAppointment_lkpAppointmentStatus">
+    <End Type="ADB_LocationDataModel.lkpAppointmentStatu" Role="lkpAppointmentStatu" Multiplicity="0..1" />
+    <End Type="ADB_LocationDataModel.FingerPrintApplicantAppointment" Role="FingerPrintApplicantAppointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lkpAppointmentStatu">
+        <PropertyRef Name="AS_ID" />
+      </Principal>
+      <Dependent Role="FingerPrintApplicantAppointment">
+        <PropertyRef Name="FPAA_Status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="CDRExportData">
+    <Key>
+      <PropertyRef Name="CED_ID" />
+    </Key>
+    <Property Type="Int32" Name="CED_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="CED_Location" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="CED_Date" Precision="3" />
+    <Property Type="String" Name="CED_Time" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CED_TnOriginating" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CED_Direction" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CED_OriginatingCity" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CED_OriginatingState" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CED_TnDialed" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CED_DestinationCity" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CED_DestinationState" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CED_Internal" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CED_CallType" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="CED_DurationMinutes" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="CED_Charge" Precision="19" Scale="4" />
+    <Property Type="String" Name="CED_AccountCode" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CED_AnsweredByTarget" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="CED_CDRID" />
+    <Property Type="Int32" Name="CED_FileID" />
+    <NavigationProperty Name="CDRFileDetail" Relationship="ADB_LocationDataModel.FK_CDRExportData_CDRFileDetails" FromRole="CDRExportData" ToRole="CDRFileDetail" />
+    <Property Type="DateTime" Name="CED_CreatedOn" Precision="3" />
+    <Property Type="Int32" Name="CED_CreatedBy" />
+    <Property Type="Boolean" Name="CED_IsDeleted" />
+  </EntityType>
+  <EntityType Name="CDRFileDetail">
+    <Key>
+      <PropertyRef Name="FileID" />
+    </Key>
+    <Property Type="Int32" Name="FileID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="FileName" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="FilePath" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="FileCreatedDate" Precision="3" />
+    <Property Type="Int64" Name="FileFromID" />
+    <Property Type="Int64" Name="FileToID" />
+    <NavigationProperty Name="CDRExportDatas" Relationship="ADB_LocationDataModel.FK_CDRExportData_CDRFileDetails" FromRole="CDRFileDetail" ToRole="CDRExportData" />
+  </EntityType>
+  <Association Name="FK_CDRExportData_CDRFileDetails">
+    <End Type="ADB_LocationDataModel.CDRFileDetail" Role="CDRFileDetail" Multiplicity="0..1" />
+    <End Type="ADB_LocationDataModel.CDRExportData" Role="CDRExportData" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CDRFileDetail">
+        <PropertyRef Name="FileID" />
+      </Principal>
+      <Dependent Role="CDRExportData">
+        <PropertyRef Name="CED_FileID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="CBIResultFile">
+    <Key>
+      <PropertyRef Name="CRF_ID" />
+    </Key>
+    <Property Type="Int32" Name="CRF_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="CRF_PCNNumber" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CRF_Name" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CRF_EXT" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CRF_Result" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CRF_ResultStatus" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CRF_FileContent" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CRF_RejectionReason" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="CRF_CreatedByID" Nullable="false" />
+    <Property Type="DateTime" Name="CRF_CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="CRF_ModifiedByID" />
+    <Property Type="DateTime" Name="CRF_ModifiedOn" Precision="3" />
+    <Property Type="Boolean" Name="CRF_IsDeleted" />
+    <Property Type="Int32" Name="CRF_AADID" />
+    <Property Type="Int32" Name="CRF_CBITenantId" Nullable="false" />
+    <Property Type="String" Name="CRF_ResultKeyText" MaxLength="Max" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Type="Boolean" Name="CRF_IsDataError" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Schedule">
+    <Key>
+      <PropertyRef Name="S_ID" />
+    </Key>
+    <Property Type="Int32" Name="S_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="S_ScheduleMasterID" Nullable="false" />
+    <Property Type="Int32" Name="S_Increment" Nullable="false" />
+    <Property Type="Int32" Name="S_TotalAppointment" Nullable="false" />
+    <Property Type="DateTime" Name="S_StartTime" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="S_EndTime" Nullable="false" Precision="3" />
+    <Property Type="Boolean" Name="S_IsRecurrenceRuleApplied" Nullable="false" />
+    <Property Type="String" Name="S_RecurrenceState" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="S_RecurrenceRule" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="S_RecurrenceParentID" />
+    <Property Type="Boolean" Name="S_IsDeleted" Nullable="false" />
+    <Property Type="Int32" Name="S_CreatedBy" Nullable="false" />
+    <Property Type="DateTime" Name="S_CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="S_ModifiedBy" />
+    <Property Type="DateTime" Name="S_ModifiedOn" Precision="3" />
+    <Property Type="Int32" Name="S_ScheduleParentID" />
+    <NavigationProperty Name="FingerPrintScheduleSlots" Relationship="ADB_LocationDataModel.FK_FingerPrintScheduleSlot_Schedule" FromRole="Schedule" ToRole="FingerPrintScheduleSlot" />
+    <NavigationProperty Name="ScheduleMaster" Relationship="ADB_LocationDataModel.FK_Schedule_ScheduleMaster" FromRole="Schedule" ToRole="ScheduleMaster" />
+  </EntityType>
+  <Association Name="FK_FingerPrintScheduleSlot_Schedule">
+    <End Type="ADB_LocationDataModel.Schedule" Role="Schedule" Multiplicity="0..1" />
+    <End Type="ADB_LocationDataModel.FingerPrintScheduleSlot" Role="FingerPrintScheduleSlot" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Schedule">
+        <PropertyRef Name="S_ID" />
+      </Principal>
+      <Dependent Role="FingerPrintScheduleSlot">
+        <PropertyRef Name="FPSS_ScheduleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Schedule_ScheduleMaster">
+    <End Type="ADB_LocationDataModel.ScheduleMaster" Role="ScheduleMaster" Multiplicity="1" />
+    <End Type="ADB_LocationDataModel.Schedule" Role="Schedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ScheduleMaster">
+        <PropertyRef Name="SM_ID" />
+      </Principal>
+      <Dependent Role="Schedule">
+        <PropertyRef Name="S_ScheduleMasterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="lkpCABSPermissionType">
+    <Key>
+      <PropertyRef Name="LCPT_ID" />
+    </Key>
+    <Property Type="Int32" Name="LCPT_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="LCPT_Code" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="LCPT_Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="LCPT_Description" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="LCPT_IsDeleted" Nullable="false" />
+    <Property Type="Int32" Name="LCPT_CreatedBy" Nullable="false" />
+    <Property Type="DateTime" Name="LCPT_CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="LCPT_ModifiedBy" />
+    <Property Type="DateTime" Name="LCPT_ModifiedOn" Precision="3" />
+    <NavigationProperty Name="UserCABSPermissionMappings" Relationship="ADB_LocationDataModel.FK_UserCABSPermissionMapping_lkpCABSPermissionType" FromRole="lkpCABSPermissionType" ToRole="UserCABSPermissionMapping" />
+  </EntityType>
+  <EntityType Name="UserCABSPermissionMapping">
+    <Key>
+      <PropertyRef Name="UCPM_ID" />
+    </Key>
+    <Property Type="Int32" Name="UCPM_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="UCPM_OrganizationUserID" Nullable="false" />
+    <Property Type="Int32" Name="UCPM_PermissionTypeID" Nullable="false" />
+    <Property Type="String" Name="UCPM_Value" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="UCPM_IsDeleted" Nullable="false" />
+    <Property Type="Int32" Name="UCPM_CreatedBy" Nullable="false" />
+    <Property Type="DateTime" Name="UCPM_CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="UCPM_ModifiedBy" />
+    <Property Type="DateTime" Name="UCPM_ModifiedOn" Precision="3" />
+    <NavigationProperty Name="lkpCABSPermissionType" Relationship="ADB_LocationDataModel.FK_UserCABSPermissionMapping_lkpCABSPermissionType" FromRole="UserCABSPermissionMapping" ToRole="lkpCABSPermissionType" />
+  </EntityType>
+  <Association Name="FK_UserCABSPermissionMapping_lkpCABSPermissionType">
+    <End Type="ADB_LocationDataModel.lkpCABSPermissionType" Role="lkpCABSPermissionType" Multiplicity="1" />
+    <End Type="ADB_LocationDataModel.UserCABSPermissionMapping" Role="UserCABSPermissionMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lkpCABSPermissionType">
+        <PropertyRef Name="LCPT_ID" />
+      </Principal>
+      <Dependent Role="UserCABSPermissionMapping">
+        <PropertyRef Name="UCPM_PermissionTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="FingerPrintOrderKeyData">
+    <Key>
+      <PropertyRef Name="FPOKD_ID" />
+    </Key>
+    <Property Type="Int32" Name="FPOKD_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="FPOKD_OrderID" Nullable="false" />
+    <Property Type="String" Name="FPOKD_ReasonFingerprinted" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="FPOKD_CBIUniqueID" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="FPOKD_AccountName" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="FPOKD_BillingAccount" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="FPOKD_IsDeleted" Nullable="false" />
+    <Property Type="Int32" Name="FPOKD_CreatedBy" Nullable="false" />
+    <Property Type="DateTime" Name="FPOKD_CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="FPOKD_ModifiedBy" />
+    <Property Type="DateTime" Name="FPOKD_ModifiedOn" Precision="3" />
+    <Property Type="Int32" Name="FPOKD_TenantID" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FingerPrintLocation">
+    <Key>
+      <PropertyRef Name="FPL_ID" />
+    </Key>
+    <Property Type="Int32" Name="FPL_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="FPL_ScheduleMasterID" />
+    <Property Type="String" Name="FPL_PlaceID" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="FPL_Name" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="FPL_Country" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="FPL_State" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="FPL_City" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="FPL_ZipCode" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="FPL_Address" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="FPL_County" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="FPL_Longitude" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="FPL_Latitude" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="FPL_FullAddress" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="FPL_Description" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="FPL_IsDeleted" Nullable="false" />
+    <Property Type="Int32" Name="FPL_CreatedBy" Nullable="false" />
+    <Property Type="DateTime" Name="FPL_CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="FPL_ModifiedBy" />
+    <Property Type="DateTime" Name="FPL_ModifiedOn" Precision="3" />
+    <Property Type="Int32" Name="FPL_LocationGroupID" />
+    <Property Type="Boolean" Name="FPL_IsContractLocation" />
+    <Property Type="Int32" Name="FPL_TimeFrameHours" />
+    <Property Type="Boolean" Name="FPL_SkipABIReview" Nullable="false" />
+    <Property Type="Boolean" Name="FPL_IsPassPhotoService" Nullable="false" />
+    <Property Type="Boolean" Name="FPL_IsPrinterAvailable" Nullable="false" />
+    <NavigationProperty Name="EnrollerLocationPermissions" Relationship="ADB_LocationDataModel.FK_EnrollerLocationPermission_FingerPrintLocation" FromRole="FingerPrintLocation" ToRole="EnrollerLocationPermission" />
+    <NavigationProperty Name="FingerPrintApplicantAppointments" Relationship="ADB_LocationDataModel.FK_FingerPrintApplicantAppointment_FingerPrintLocation" FromRole="FingerPrintLocation" ToRole="FingerPrintApplicantAppointment" />
+    <NavigationProperty Name="FingerprintLocationGroup" Relationship="ADB_LocationDataModel.FK_FingerPrintLocation_FingerprintLocationGroup" FromRole="FingerPrintLocation" ToRole="FingerprintLocationGroup" />
+    <NavigationProperty Name="ScheduleMaster" Relationship="ADB_LocationDataModel.FK_FingerPrintLocation_ScheduleMaster" FromRole="FingerPrintLocation" ToRole="ScheduleMaster" />
+    <NavigationProperty Name="FingerPrintLocationEvents" Relationship="ADB_LocationDataModel.FK_FingerPrintLocationEvents_FingerPrintLocation" FromRole="FingerPrintLocation" ToRole="FingerPrintLocationEvent" />
+    <NavigationProperty Name="FingerPrintLocationImages" Relationship="ADB_LocationDataModel.FK_FingerPrintLocationImages_FingerPrintLocation" FromRole="FingerPrintLocation" ToRole="FingerPrintLocationImage" />
+    <NavigationProperty Name="FingerPrintLocationTimeoffs" Relationship="ADB_LocationDataModel.FK_FingerPrintLocationTimeoff_FingerPrintLocation" FromRole="FingerPrintLocation" ToRole="FingerPrintLocationTimeoff" />
+    <NavigationProperty Name="LocationPaymentOptions" Relationship="ADB_LocationDataModel.FK_LocationPaymentOptions_FingerPrintLocation" FromRole="FingerPrintLocation" ToRole="LocationPaymentOption" />
+    <NavigationProperty Name="LocationTenantMappings" Relationship="ADB_LocationDataModel.FK_LocationTenantMapping_FingerPrintLocation" FromRole="FingerPrintLocation" ToRole="LocationTenantMapping" />
+  </EntityType>
+  <Association Name="FK_EnrollerLocationPermission_FingerPrintLocation">
+    <End Type="ADB_LocationDataModel.FingerPrintLocation" Role="FingerPrintLocation" Multiplicity="1" />
+    <End Type="ADB_LocationDataModel.EnrollerLocationPermission" Role="EnrollerLocationPermission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FingerPrintLocation">
+        <PropertyRef Name="FPL_ID" />
+      </Principal>
+      <Dependent Role="EnrollerLocationPermission">
+        <PropertyRef Name="ELP_LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FingerPrintApplicantAppointment_FingerPrintLocation">
+    <End Type="ADB_LocationDataModel.FingerPrintLocation" Role="FingerPrintLocation" Multiplicity="1" />
+    <End Type="ADB_LocationDataModel.FingerPrintApplicantAppointment" Role="FingerPrintApplicantAppointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FingerPrintLocation">
+        <PropertyRef Name="FPL_ID" />
+      </Principal>
+      <Dependent Role="FingerPrintApplicantAppointment">
+        <PropertyRef Name="FPAA_LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FingerPrintLocation_FingerprintLocationGroup">
+    <End Type="ADB_LocationDataModel.FingerprintLocationGroup" Role="FingerprintLocationGroup" Multiplicity="0..1" />
+    <End Type="ADB_LocationDataModel.FingerPrintLocation" Role="FingerPrintLocation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FingerprintLocationGroup">
+        <PropertyRef Name="FLG_ID" />
+      </Principal>
+      <Dependent Role="FingerPrintLocation">
+        <PropertyRef Name="FPL_LocationGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FingerPrintLocation_ScheduleMaster">
+    <End Type="ADB_LocationDataModel.ScheduleMaster" Role="ScheduleMaster" Multiplicity="0..1" />
+    <End Type="ADB_LocationDataModel.FingerPrintLocation" Role="FingerPrintLocation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ScheduleMaster">
+        <PropertyRef Name="SM_ID" />
+      </Principal>
+      <Dependent Role="FingerPrintLocation">
+        <PropertyRef Name="FPL_ScheduleMasterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FingerPrintLocationEvents_FingerPrintLocation">
+    <End Type="ADB_LocationDataModel.FingerPrintLocation" Role="FingerPrintLocation" Multiplicity="0..1" />
+    <End Type="ADB_LocationDataModel.FingerPrintLocationEvent" Role="FingerPrintLocationEvent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FingerPrintLocation">
+        <PropertyRef Name="FPL_ID" />
+      </Principal>
+      <Dependent Role="FingerPrintLocationEvent">
+        <PropertyRef Name="FPLE_LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FingerPrintLocationImages_FingerPrintLocation">
+    <End Type="ADB_LocationDataModel.FingerPrintLocation" Role="FingerPrintLocation" Multiplicity="1" />
+    <End Type="ADB_LocationDataModel.FingerPrintLocationImage" Role="FingerPrintLocationImage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FingerPrintLocation">
+        <PropertyRef Name="FPL_ID" />
+      </Principal>
+      <Dependent Role="FingerPrintLocationImage">
+        <PropertyRef Name="FPLI_LocationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FingerPrintLocationTimeoff_FingerPrintLocation">
+    <End Type="ADB_LocationDataModel.FingerPrintLocation" Role="FingerPrintLocation" Multiplicity="1" />
+    <End Type="ADB_LocationDataModel.FingerPrintLocationTimeoff" Role="FingerPrintLocationTimeoff" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FingerPrintLocation">
+        <PropertyRef Name="FPL_ID" />
+      </Principal>
+      <Dependent Role="FingerPrintLocationTimeoff">
+        <PropertyRef Name="FLT_LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LocationPaymentOptions_FingerPrintLocation">
+    <End Type="ADB_LocationDataModel.FingerPrintLocation" Role="FingerPrintLocation" Multiplicity="1" />
+    <End Type="ADB_LocationDataModel.LocationPaymentOption" Role="LocationPaymentOption" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FingerPrintLocation">
+        <PropertyRef Name="FPL_ID" />
+      </Principal>
+      <Dependent Role="LocationPaymentOption">
+        <PropertyRef Name="LPO_LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LocationTenantMapping_FingerPrintLocation">
+    <End Type="ADB_LocationDataModel.FingerPrintLocation" Role="FingerPrintLocation" Multiplicity="1" />
+    <End Type="ADB_LocationDataModel.LocationTenantMapping" Role="LocationTenantMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FingerPrintLocation">
+        <PropertyRef Name="FPL_ID" />
+      </Principal>
+      <Dependent Role="LocationTenantMapping">
+        <PropertyRef Name="LTM_LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

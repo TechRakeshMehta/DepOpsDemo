@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ADBApplicantMessageDB_DevModelStoreContainer" CdmEntityContainer="ADBApplicantMessageDB_DevEntities">
+    <EntitySetMapping Name="ApplicantMessages">
+      <EntityTypeMapping TypeName="ADBApplicantMessageDB_DevModel.ApplicantMessage">
+        <MappingFragment StoreEntitySet="ApplicantMessage">
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="From" ColumnName="From" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="ReceiveDate" ColumnName="ReceiveDate" />
+          <ScalarProperty Name="ConversationHandleId" ColumnName="ConversationHandleId" />
+          <ScalarProperty Name="ApplicantMessageId" ColumnName="ApplicantMessageId" />
+          <ScalarProperty Name="ParentMessageId" ColumnName="ParentMessageId" />
+          <ScalarProperty Name="MessageMode" ColumnName="MessageMode" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsHighImportant" ColumnName="IsHighImportant" />
+          <ScalarProperty Name="IsFollowUp" ColumnName="IsFollowUp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ApplicantMessageToLists">
+      <EntityTypeMapping TypeName="ADBApplicantMessageDB_DevModel.ApplicantMessageToList">
+        <MappingFragment StoreEntitySet="ApplicantMessageToList">
+          <ScalarProperty Name="IsFollowup" ColumnName="IsFollowup" />
+          <ScalarProperty Name="IsUnread" ColumnName="IsUnread" />
+          <ScalarProperty Name="FolderId" ColumnName="FolderId" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsCC" ColumnName="IsCC" />
+          <ScalarProperty Name="ApplicantMessageId" ColumnName="ApplicantMessageId" />
+          <ScalarProperty Name="EntityId" ColumnName="EntityId" />
+          <ScalarProperty Name="ConversationGroupId" ColumnName="ConversationGroupId" />
+          <ScalarProperty Name="ConversationHandleId" ColumnName="ConversationHandleId" />
+          <ScalarProperty Name="ConversationId" ColumnName="ConversationId" />
+          <ScalarProperty Name="ConversationHistoryId" ColumnName="ConversationHistoryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ApplicantMessageToUserGroups">
+      <EntityTypeMapping TypeName="ADBApplicantMessageDB_DevModel.ApplicantMessageToUserGroup">
+        <MappingFragment StoreEntitySet="ApplicantMessageToUserGroup">
+          <ScalarProperty Name="IsCC" ColumnName="IsCC" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserGroupID" ColumnName="UserGroupID" />
+          <ScalarProperty Name="ApplicantMessageID" ColumnName="ApplicantMessageID" />
+          <ScalarProperty Name="ApplicantMessageToUserGroupID" ColumnName="ApplicantMessageToUserGroupID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SendGenMsgToApplicantQueue" FunctionName="ADBApplicantMessageDB_DevModel.Store.SendGenMsgToApplicantQueue" />
+  </EntityContainerMapping>
+</Mapping>

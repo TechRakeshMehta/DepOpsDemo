@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="GetDonorCCF">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Id" type="xs:string" minOccurs="0" />
+        <xs:element name="BOID" type="xs:string" minOccurs="0" />
+        <xs:element name="CustomerID" type="xs:string" minOccurs="0" />
+        <xs:element name="RegistrationID" type="xs:string" minOccurs="0" />
+        <xs:element name="ExpirationDate" type="xs:string" minOccurs="0" />
+        <xs:element name="TestReason" type="xs:string" minOccurs="0" />
+        <xs:element name="ServiceName" type="xs:string" minOccurs="0" />
+        <xs:element name="PanelID" type="xs:string" minOccurs="0" />
+        <xs:element name="DonorFirstName" type="xs:string" minOccurs="0" />
+        <xs:element name="DonorLastName" type="xs:string" minOccurs="0" />
+        <xs:element name="DonorSSN" type="xs:string" minOccurs="0" />
+        <xs:element name="DonorHomePhone" type="xs:string" minOccurs="0" />
+        <xs:element name="DonorWorkPhone" type="xs:string" minOccurs="0" />
+        <xs:element name="DonorAddress" type="xs:string" minOccurs="0" />
+        <xs:element name="DonorAptSte" type="xs:string" minOccurs="0" />
+        <xs:element name="DonorCity" type="xs:string" minOccurs="0" />
+        <xs:element name="DonorState" type="xs:string" minOccurs="0" />
+        <xs:element name="DonorZipCode" type="xs:string" minOccurs="0" />
+        <xs:element name="LabName" type="xs:string" minOccurs="0" />
+        <xs:element name="LabAccountNumber" type="xs:string" minOccurs="0" />
+        <xs:element name="LabUsername" type="xs:string" minOccurs="0" />
+        <xs:element name="LabPassword" type="xs:string" minOccurs="0" />
+        <xs:element name="SiteName" type="xs:string" minOccurs="0" />
+        <xs:element name="SiteAddress" type="xs:string" minOccurs="0" />
+        <xs:element name="SiteCity" type="xs:string" minOccurs="0" />
+        <xs:element name="SiteState" type="xs:string" minOccurs="0" />
+        <xs:element name="SiteZipCode" type="xs:string" minOccurs="0" />
+        <xs:element name="SitePhone" type="xs:string" minOccurs="0" />
+        <xs:element name="SiteType" type="xs:string" minOccurs="0" />
+        <xs:element name="sMROName" type="xs:string" minOccurs="0" />
+        <xs:element name="sMROAddr1" type="xs:string" minOccurs="0" />
+        <xs:element name="sMROAddr2" type="xs:string" minOccurs="0" />
+        <xs:element name="sMROCityStateZip" type="xs:string" minOccurs="0" />
+        <xs:element name="sMROPhone" type="xs:string" minOccurs="0" />
+        <xs:element name="sAcctName" type="xs:string" minOccurs="0" />
+        <xs:element name="sAcctAddr" type="xs:string" minOccurs="0" />
+        <xs:element name="sAcctCityStateZip" type="xs:string" minOccurs="0" />
+        <xs:element name="sAcctPhone" type="xs:string" minOccurs="0" />
+        <xs:element name="sAcctFax" type="xs:string" minOccurs="0" />
+        <xs:element name="FromAddress" type="xs:string" minOccurs="0" />
+        <xs:element name="ToAddress" type="xs:string" minOccurs="0" />
+        <xs:element name="CcAddress" type="xs:string" minOccurs="0" />
+        <xs:element name="Subject" type="xs:string" minOccurs="0" />
+        <xs:element name="HtmlBody" type="xs:string" minOccurs="0" />
+        <xs:element name="SendDate" type="xs:string" minOccurs="0" />
+        <xs:element name="BarcodeFilename" type="xs:string" minOccurs="0" />
+        <xs:element name="MapFilename" type="xs:string" minOccurs="0" />
+        <xs:element name="BarCodeImage" type="xs:string" minOccurs="0" />
+        <xs:element name="MapImage" type="xs:string" minOccurs="0" />
+        <xs:element name="Status" type="xs:string" minOccurs="0" />
+        <xs:element name="Site3rdPartyFee" type="xs:string" minOccurs="0" />
+        <xs:element name="ResultDeliveryCost" type="xs:string" minOccurs="0" />
+        <xs:element name="CCFDeliveryCost" type="xs:string" minOccurs="0" />
+        <xs:element name="PanelCost" type="xs:string" minOccurs="0" />
+        <xs:element name="TotalCost" type="xs:string" minOccurs="0" />
+        <xs:element name="ErrorStatus" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Code" type="xs:string" minOccurs="0" />
+              <xs:element name="Type" type="xs:string" minOccurs="0" />
+              <xs:element name="Message" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="GetDonorCCF" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

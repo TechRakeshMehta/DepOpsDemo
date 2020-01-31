@@ -1,0 +1,425 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ADB_LocationDataModelStoreContainer" CdmEntityContainer="ADB_LocationDataEntities">
+    <EntitySetMapping Name="ScheduleMasters">
+      <EntityTypeMapping TypeName="ADB_LocationDataModel.ScheduleMaster">
+        <MappingFragment StoreEntitySet="ScheduleMaster">
+          <ScalarProperty Name="SM_OtherDetails" ColumnName="SM_OtherDetails" />
+          <ScalarProperty Name="SM_ModifiedOn" ColumnName="SM_ModifiedOn" />
+          <ScalarProperty Name="SM_ModifiedBy" ColumnName="SM_ModifiedBy" />
+          <ScalarProperty Name="SM_CreatedOn" ColumnName="SM_CreatedOn" />
+          <ScalarProperty Name="SM_CreatedBy" ColumnName="SM_CreatedBy" />
+          <ScalarProperty Name="SM_IsDeleted" ColumnName="SM_IsDeleted" />
+          <ScalarProperty Name="SM_Name" ColumnName="SM_Name" />
+          <ScalarProperty Name="SM_ID" ColumnName="SM_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EnrollerLocationPermissions">
+      <EntityTypeMapping TypeName="ADB_LocationDataModel.EnrollerLocationPermission">
+        <MappingFragment StoreEntitySet="EnrollerLocationPermission">
+          <ScalarProperty Name="ELP_ModifiedOn" ColumnName="ELP_ModifiedOn" />
+          <ScalarProperty Name="ELP_ModifiedByID" ColumnName="ELP_ModifiedByID" />
+          <ScalarProperty Name="ELP_CreatedOn" ColumnName="ELP_CreatedOn" />
+          <ScalarProperty Name="ELP_CreatedByID" ColumnName="ELP_CreatedByID" />
+          <ScalarProperty Name="ELP_IsDeleted" ColumnName="ELP_IsDeleted" />
+          <ScalarProperty Name="ELP_OrganizationUserID" ColumnName="ELP_OrganizationUserID" />
+          <ScalarProperty Name="ELP_PermissionID" ColumnName="ELP_PermissionID" />
+          <ScalarProperty Name="ELP_LocationID" ColumnName="ELP_LocationID" />
+          <ScalarProperty Name="ELP_ID" ColumnName="ELP_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="lkpPermissions">
+      <EntityTypeMapping TypeName="ADB_LocationDataModel.lkpPermission">
+        <MappingFragment StoreEntitySet="lkpPermission">
+          <ScalarProperty Name="PER_IsDeleted" ColumnName="PER_IsDeleted" />
+          <ScalarProperty Name="PER_Description" ColumnName="PER_Description" />
+          <ScalarProperty Name="PER_Name" ColumnName="PER_Name" />
+          <ScalarProperty Name="PER_Code" ColumnName="PER_Code" />
+          <ScalarProperty Name="PER_ID" ColumnName="PER_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="lkpPaymentOptions">
+      <EntityTypeMapping TypeName="ADB_LocationDataModel.lkpPaymentOption">
+        <MappingFragment StoreEntitySet="lkpPaymentOptions">
+          <ScalarProperty Name="PO_ModifiedOn" ColumnName="PO_ModifiedOn" />
+          <ScalarProperty Name="PO_ModifiedByID" ColumnName="PO_ModifiedByID" />
+          <ScalarProperty Name="PO_CreatedOn" ColumnName="PO_CreatedOn" />
+          <ScalarProperty Name="PO_CreatedByID" ColumnName="PO_CreatedByID" />
+          <ScalarProperty Name="PO_IsDeleted" ColumnName="PO_IsDeleted" />
+          <ScalarProperty Name="PO_Code" ColumnName="PO_Code" />
+          <ScalarProperty Name="PO_Name" ColumnName="PO_Name" />
+          <ScalarProperty Name="PO_ID" ColumnName="PO_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LocationPaymentOptions">
+      <EntityTypeMapping TypeName="ADB_LocationDataModel.LocationPaymentOption">
+        <MappingFragment StoreEntitySet="LocationPaymentOptions">
+          <ScalarProperty Name="LPO_ModifiedOn" ColumnName="LPO_ModifiedOn" />
+          <ScalarProperty Name="LPO_ModifiedBy" ColumnName="LPO_ModifiedBy" />
+          <ScalarProperty Name="LPO_CreatedOn" ColumnName="LPO_CreatedOn" />
+          <ScalarProperty Name="LPO_CreatedBy" ColumnName="LPO_CreatedBy" />
+          <ScalarProperty Name="LPO_IsDeleted" ColumnName="LPO_IsDeleted" />
+          <ScalarProperty Name="LPO_PaymentOptionID" ColumnName="LPO_PaymentOptionID" />
+          <ScalarProperty Name="LPO_LocationID" ColumnName="LPO_LocationID" />
+          <ScalarProperty Name="LPO_ID" ColumnName="LPO_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LocationTenantMappings">
+      <EntityTypeMapping TypeName="ADB_LocationDataModel.LocationTenantMapping">
+        <MappingFragment StoreEntitySet="LocationTenantMapping">
+          <ScalarProperty Name="LTM_ModifiedOn" ColumnName="LTM_ModifiedOn" />
+          <ScalarProperty Name="LTM_ModifiedBy" ColumnName="LTM_ModifiedBy" />
+          <ScalarProperty Name="LTM_CreatedOn" ColumnName="LTM_CreatedOn" />
+          <ScalarProperty Name="LTM_CreatedBy" ColumnName="LTM_CreatedBy" />
+          <ScalarProperty Name="LTM_IsDeleted" ColumnName="LTM_IsDeleted" />
+          <ScalarProperty Name="LTM_TenantID" ColumnName="LTM_TenantID" />
+          <ScalarProperty Name="LTM_LocationID" ColumnName="LTM_LocationID" />
+          <ScalarProperty Name="LTM_ID" ColumnName="LTM_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FingerprintLocationGroups">
+      <EntityTypeMapping TypeName="ADB_LocationDataModel.FingerprintLocationGroup">
+        <MappingFragment StoreEntitySet="FingerprintLocationGroup">
+          <ScalarProperty Name="FLG_ModifiedOn" ColumnName="FLG_ModifiedOn" />
+          <ScalarProperty Name="FLG_ModifiedBy" ColumnName="FLG_ModifiedBy" />
+          <ScalarProperty Name="FLG_CreatedOn" ColumnName="FLG_CreatedOn" />
+          <ScalarProperty Name="FLG_CreatedBy" ColumnName="FLG_CreatedBy" />
+          <ScalarProperty Name="FLG_IsDeleted" ColumnName="FLG_IsDeleted" />
+          <ScalarProperty Name="FLG_Description" ColumnName="FLG_Description" />
+          <ScalarProperty Name="FLG_Name" ColumnName="FLG_Name" />
+          <ScalarProperty Name="FLG_ID" ColumnName="FLG_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FingerPrintLocationImages">
+      <EntityTypeMapping TypeName="ADB_LocationDataModel.FingerPrintLocationImage">
+        <MappingFragment StoreEntitySet="FingerPrintLocationImages">
+          <ScalarProperty Name="FPLI_IsDeleted" ColumnName="FPLI_IsDeleted" />
+          <ScalarProperty Name="FPLI_ModifiedBy" ColumnName="FPLI_ModifiedBy" />
+          <ScalarProperty Name="FPLI_ModifiedOn" ColumnName="FPLI_ModifiedOn" />
+          <ScalarProperty Name="FPLI_CreatedBy" ColumnName="FPLI_CreatedBy" />
+          <ScalarProperty Name="FPLI_CreatedOn" ColumnName="FPLI_CreatedOn" />
+          <ScalarProperty Name="FPLI_FilePath" ColumnName="FPLI_FilePath" />
+          <ScalarProperty Name="FPLI_FileName" ColumnName="FPLI_FileName" />
+          <ScalarProperty Name="FPLI_LocationId" ColumnName="FPLI_LocationId" />
+          <ScalarProperty Name="FPLI_ID" ColumnName="FPLI_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="lkpAppointmentStatus">
+      <EntityTypeMapping TypeName="ADB_LocationDataModel.lkpAppointmentStatu">
+        <MappingFragment StoreEntitySet="lkpAppointmentStatus">
+          <ScalarProperty Name="AS_ModifiedOn" ColumnName="AS_ModifiedOn" />
+          <ScalarProperty Name="AS_ModifiedBy" ColumnName="AS_ModifiedBy" />
+          <ScalarProperty Name="AS_CreatedOn" ColumnName="AS_CreatedOn" />
+          <ScalarProperty Name="AS_CreatedBy" ColumnName="AS_CreatedBy" />
+          <ScalarProperty Name="AS_IsDeleted" ColumnName="AS_IsDeleted" />
+          <ScalarProperty Name="AS_Description" ColumnName="AS_Description" />
+          <ScalarProperty Name="AS_Code" ColumnName="AS_Code" />
+          <ScalarProperty Name="AS_Name" ColumnName="AS_Name" />
+          <ScalarProperty Name="AS_ID" ColumnName="AS_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FingerPrintLocationEvents">
+      <EntityTypeMapping TypeName="ADB_LocationDataModel.FingerPrintLocationEvent">
+        <MappingFragment StoreEntitySet="FingerPrintLocationEvents">
+          <ScalarProperty Name="FPLE_ModifiedOn" ColumnName="FPLE_ModifiedOn" />
+          <ScalarProperty Name="FPLE_ModifiedBy" ColumnName="FPLE_ModifiedBy" />
+          <ScalarProperty Name="FPLE_CreatedOn" ColumnName="FPLE_CreatedOn" />
+          <ScalarProperty Name="FPLE_CreatedBy" ColumnName="FPLE_CreatedBy" />
+          <ScalarProperty Name="FPLE_IsDeleted" ColumnName="FPLE_IsDeleted" />
+          <ScalarProperty Name="FPLE_PublishedDate" ColumnName="FPLE_PublishedDate" />
+          <ScalarProperty Name="FPLE_IsPublished" ColumnName="FPLE_IsPublished" />
+          <ScalarProperty Name="FPLE_ToDate" ColumnName="FPLE_ToDate" />
+          <ScalarProperty Name="FPLE_FromDate" ColumnName="FPLE_FromDate" />
+          <ScalarProperty Name="FPLE_Description" ColumnName="FPLE_Description" />
+          <ScalarProperty Name="FPLE_Name" ColumnName="FPLE_Name" />
+          <ScalarProperty Name="FPLE_LocationID" ColumnName="FPLE_LocationID" />
+          <ScalarProperty Name="FPLE_ID" ColumnName="FPLE_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="lkpAppointmentRevokeTypes">
+      <EntityTypeMapping TypeName="ADB_LocationDataModel.lkpAppointmentRevokeType">
+        <MappingFragment StoreEntitySet="lkpAppointmentRevokeType">
+          <ScalarProperty Name="RT_ModifiedOn" ColumnName="RT_ModifiedOn" />
+          <ScalarProperty Name="RT_ModifiedBy" ColumnName="RT_ModifiedBy" />
+          <ScalarProperty Name="RT_CreatedOn" ColumnName="RT_CreatedOn" />
+          <ScalarProperty Name="RT_CreatedBy" ColumnName="RT_CreatedBy" />
+          <ScalarProperty Name="RT_IsDeleted" ColumnName="RT_IsDeleted" />
+          <ScalarProperty Name="RT_Description" ColumnName="RT_Description" />
+          <ScalarProperty Name="RT_Code" ColumnName="RT_Code" />
+          <ScalarProperty Name="RT_Name" ColumnName="RT_Name" />
+          <ScalarProperty Name="RT_ID" ColumnName="RT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReservedSlots">
+      <EntityTypeMapping TypeName="ADB_LocationDataModel.ReservedSlot">
+        <MappingFragment StoreEntitySet="ReservedSlot">
+          <ScalarProperty Name="RS_ModifiedOn" ColumnName="RS_ModifiedOn" />
+          <ScalarProperty Name="RS_ModifiedBy" ColumnName="RS_ModifiedBy" />
+          <ScalarProperty Name="RS_CreatedOn" ColumnName="RS_CreatedOn" />
+          <ScalarProperty Name="RS_CreatedBy" ColumnName="RS_CreatedBy" />
+          <ScalarProperty Name="RS_IsDeleted" ColumnName="RS_IsDeleted" />
+          <ScalarProperty Name="RS_ReservedOn" ColumnName="RS_ReservedOn" />
+          <ScalarProperty Name="RS_SlotID" ColumnName="RS_SlotID" />
+          <ScalarProperty Name="RS_ID" ColumnName="RS_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FingerPrintScheduleSlots">
+      <EntityTypeMapping TypeName="ADB_LocationDataModel.FingerPrintScheduleSlot">
+        <MappingFragment StoreEntitySet="FingerPrintScheduleSlot">
+          <ScalarProperty Name="FPSS_EventSlotID" ColumnName="FPSS_EventSlotID" />
+          <ScalarProperty Name="FPSS_ModifiedOn" ColumnName="FPSS_ModifiedOn" />
+          <ScalarProperty Name="FPSS_ModifiedBy" ColumnName="FPSS_ModifiedBy" />
+          <ScalarProperty Name="FPSS_CreatedOn" ColumnName="FPSS_CreatedOn" />
+          <ScalarProperty Name="FPSS_CreatedBy" ColumnName="FPSS_CreatedBy" />
+          <ScalarProperty Name="FPSS_IsDeleted" ColumnName="FPSS_IsDeleted" />
+          <ScalarProperty Name="FPSS_ScheduleID" ColumnName="FPSS_ScheduleID" />
+          <ScalarProperty Name="FPSS_SlotAppointment" ColumnName="FPSS_SlotAppointment" />
+          <ScalarProperty Name="FPSS_SlotEndTime" ColumnName="FPSS_SlotEndTime" />
+          <ScalarProperty Name="FPSS_SlotStartTime" ColumnName="FPSS_SlotStartTime" />
+          <ScalarProperty Name="FPSS_SlotDate" ColumnName="FPSS_SlotDate" />
+          <ScalarProperty Name="FPSS_SlotID" ColumnName="FPSS_SlotID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FingerPrintLocationTimeoffs">
+      <EntityTypeMapping TypeName="ADB_LocationDataModel.FingerPrintLocationTimeoff">
+        <MappingFragment StoreEntitySet="FingerPrintLocationTimeoff">
+          <ScalarProperty Name="FLT_ModifiedOn" ColumnName="FLT_ModifiedOn" />
+          <ScalarProperty Name="FLT_ModifiedBy" ColumnName="FLT_ModifiedBy" />
+          <ScalarProperty Name="FLT_CreatedOn" ColumnName="FLT_CreatedOn" />
+          <ScalarProperty Name="FLT_CreatedBy" ColumnName="FLT_CreatedBy" />
+          <ScalarProperty Name="FLT_IsDeleted" ColumnName="FLT_IsDeleted" />
+          <ScalarProperty Name="FLT_PublishedDate" ColumnName="FLT_PublishedDate" />
+          <ScalarProperty Name="FLT_IsPublished" ColumnName="FLT_IsPublished" />
+          <ScalarProperty Name="FLT_Reason" ColumnName="FLT_Reason" />
+          <ScalarProperty Name="FLT_ToTime" ColumnName="FLT_ToTime" />
+          <ScalarProperty Name="FLT_FromTime" ColumnName="FLT_FromTime" />
+          <ScalarProperty Name="FLT_LocationID" ColumnName="FLT_LocationID" />
+          <ScalarProperty Name="FLT_ID" ColumnName="FLT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FingerPrintEventsSlots">
+      <EntityTypeMapping TypeName="ADB_LocationDataModel.FingerPrintEventsSlot">
+        <MappingFragment StoreEntitySet="FingerPrintEventsSlot">
+          <ScalarProperty Name="FPES_TotalAppointment" ColumnName="FPES_TotalAppointment" />
+          <ScalarProperty Name="FPES_Increment" ColumnName="FPES_Increment" />
+          <ScalarProperty Name="FPES_EventID" ColumnName="FPES_EventID" />
+          <ScalarProperty Name="FPES_ModifiedOn" ColumnName="FPES_ModifiedOn" />
+          <ScalarProperty Name="FPES_ModifiedBy" ColumnName="FPES_ModifiedBy" />
+          <ScalarProperty Name="FPES_CreatedOn" ColumnName="FPES_CreatedOn" />
+          <ScalarProperty Name="FPES_CreatedBy" ColumnName="FPES_CreatedBy" />
+          <ScalarProperty Name="FPES_IsDeleted" ColumnName="FPES_IsDeleted" />
+          <ScalarProperty Name="FPES_EventsCode" ColumnName="FPES_EventsCode" />
+          <ScalarProperty Name="FPES_Description" ColumnName="FPES_Description" />
+          <ScalarProperty Name="FPES_ToTime" ColumnName="FPES_ToTime" />
+          <ScalarProperty Name="FPES_FromTime" ColumnName="FPES_FromTime" />
+          <ScalarProperty Name="FPES_ID" ColumnName="FPES_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FingerPrintApplicantAppointments">
+      <EntityTypeMapping TypeName="ADB_LocationDataModel.FingerPrintApplicantAppointment">
+        <MappingFragment StoreEntitySet="FingerPrintApplicantAppointment">
+          <ScalarProperty Name="FPAA_ConsentToSaveInfo" ColumnName="FPAA_ConsentToSaveInfo" />
+          <ScalarProperty Name="FPAA_CBIRejStatus" ColumnName="FPAA_CBIRejStatus" />
+          <ScalarProperty Name="FPAA_FBIRejStatus" ColumnName="FPAA_FBIRejStatus" />
+          <ScalarProperty Name="FPAA_IsOutOfState" ColumnName="FPAA_IsOutOfState" />
+          <ScalarProperty Name="FPAA_RefundDate" ColumnName="FPAA_RefundDate" />
+          <ScalarProperty Name="FPAA_IsOnsiteAppointment" ColumnName="FPAA_IsOnsiteAppointment" />
+          <ScalarProperty Name="FPAA_RefundAmount" ColumnName="FPAA_RefundAmount" />
+          <ScalarProperty Name="FPAA_RevokeType" ColumnName="FPAA_RevokeType" />
+          <ScalarProperty Name="FPAA_Status" ColumnName="FPAA_Status" />
+          <ScalarProperty Name="FPAA_ModifiedOn" ColumnName="FPAA_ModifiedOn" />
+          <ScalarProperty Name="FPAA_ModifiedBy" ColumnName="FPAA_ModifiedBy" />
+          <ScalarProperty Name="FPAA_CreatedOn" ColumnName="FPAA_CreatedOn" />
+          <ScalarProperty Name="FPAA_CreatedBy" ColumnName="FPAA_CreatedBy" />
+          <ScalarProperty Name="FPAA_IsDeleted" ColumnName="FPAA_IsDeleted" />
+          <ScalarProperty Name="FPAA_SVCLineItemID" ColumnName="FPAA_SVCLineItemID" />
+          <ScalarProperty Name="FPAA_ScheduleSlotID" ColumnName="FPAA_ScheduleSlotID" />
+          <ScalarProperty Name="FPAA_LocationID" ColumnName="FPAA_LocationID" />
+          <ScalarProperty Name="FPAA_OrderID" ColumnName="FPAA_OrderID" />
+          <ScalarProperty Name="FPAA_OrganizationUserID" ColumnName="FPAA_OrganizationUserID" />
+          <ScalarProperty Name="FPAA_TenantID" ColumnName="FPAA_TenantID" />
+          <ScalarProperty Name="FPAA_ID" ColumnName="FPAA_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CDRExportDatas">
+      <EntityTypeMapping TypeName="ADB_LocationDataModel.CDRExportData">
+        <MappingFragment StoreEntitySet="CDRExportData">
+          <ScalarProperty Name="CED_IsDeleted" ColumnName="CED_IsDeleted" />
+          <ScalarProperty Name="CED_CreatedBy" ColumnName="CED_CreatedBy" />
+          <ScalarProperty Name="CED_CreatedOn" ColumnName="CED_CreatedOn" />
+          <ScalarProperty Name="CED_FileID" ColumnName="CED_FileID" />
+          <ScalarProperty Name="CED_CDRID" ColumnName="CED_CDRID" />
+          <ScalarProperty Name="CED_AnsweredByTarget" ColumnName="CED_AnsweredByTarget" />
+          <ScalarProperty Name="CED_AccountCode" ColumnName="CED_AccountCode" />
+          <ScalarProperty Name="CED_Charge" ColumnName="CED_Charge" />
+          <ScalarProperty Name="CED_DurationMinutes" ColumnName="CED_DurationMinutes" />
+          <ScalarProperty Name="CED_CallType" ColumnName="CED_CallType" />
+          <ScalarProperty Name="CED_Internal" ColumnName="CED_Internal" />
+          <ScalarProperty Name="CED_DestinationState" ColumnName="CED_DestinationState" />
+          <ScalarProperty Name="CED_DestinationCity" ColumnName="CED_DestinationCity" />
+          <ScalarProperty Name="CED_TnDialed" ColumnName="CED_TnDialed" />
+          <ScalarProperty Name="CED_OriginatingState" ColumnName="CED_OriginatingState" />
+          <ScalarProperty Name="CED_OriginatingCity" ColumnName="CED_OriginatingCity" />
+          <ScalarProperty Name="CED_Direction" ColumnName="CED_Direction" />
+          <ScalarProperty Name="CED_TnOriginating" ColumnName="CED_TnOriginating" />
+          <ScalarProperty Name="CED_Time" ColumnName="CED_Time" />
+          <ScalarProperty Name="CED_Date" ColumnName="CED_Date" />
+          <ScalarProperty Name="CED_Location" ColumnName="CED_Location" />
+          <ScalarProperty Name="CED_ID" ColumnName="CED_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CDRFileDetails">
+      <EntityTypeMapping TypeName="ADB_LocationDataModel.CDRFileDetail">
+        <MappingFragment StoreEntitySet="CDRFileDetails">
+          <ScalarProperty Name="FileToID" ColumnName="FileToID" />
+          <ScalarProperty Name="FileFromID" ColumnName="FileFromID" />
+          <ScalarProperty Name="FileCreatedDate" ColumnName="FileCreatedDate" />
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="FileID" ColumnName="FileID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CBIResultFiles">
+      <EntityTypeMapping TypeName="ADB_LocationDataModel.CBIResultFile">
+        <MappingFragment StoreEntitySet="CBIResultFiles">
+          <ScalarProperty Name="CRF_IsDataError" ColumnName="CRF_IsDataError" />
+          <ScalarProperty Name="CRF_ResultKeyText" ColumnName="CRF_ResultKeyText" />
+          <ScalarProperty Name="CRF_CBITenantId" ColumnName="CRF_CBITenantId" />
+          <ScalarProperty Name="CRF_AADID" ColumnName="CRF_AADID" />
+          <ScalarProperty Name="CRF_IsDeleted" ColumnName="CRF_IsDeleted" />
+          <ScalarProperty Name="CRF_ModifiedOn" ColumnName="CRF_ModifiedOn" />
+          <ScalarProperty Name="CRF_ModifiedByID" ColumnName="CRF_ModifiedByID" />
+          <ScalarProperty Name="CRF_CreatedOn" ColumnName="CRF_CreatedOn" />
+          <ScalarProperty Name="CRF_CreatedByID" ColumnName="CRF_CreatedByID" />
+          <ScalarProperty Name="CRF_RejectionReason" ColumnName="CRF_RejectionReason" />
+          <ScalarProperty Name="CRF_FileContent" ColumnName="CRF_FileContent" />
+          <ScalarProperty Name="CRF_ResultStatus" ColumnName="CRF_ResultStatus" />
+          <ScalarProperty Name="CRF_Result" ColumnName="CRF_Result" />
+          <ScalarProperty Name="CRF_EXT" ColumnName="CRF_EXT" />
+          <ScalarProperty Name="CRF_Name" ColumnName="CRF_Name" />
+          <ScalarProperty Name="CRF_PCNNumber" ColumnName="CRF_PCNNumber" />
+          <ScalarProperty Name="CRF_ID" ColumnName="CRF_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Schedules">
+      <EntityTypeMapping TypeName="ADB_LocationDataModel.Schedule">
+        <MappingFragment StoreEntitySet="Schedule">
+          <ScalarProperty Name="S_ScheduleParentID" ColumnName="S_ScheduleParentID" />
+          <ScalarProperty Name="S_ModifiedOn" ColumnName="S_ModifiedOn" />
+          <ScalarProperty Name="S_ModifiedBy" ColumnName="S_ModifiedBy" />
+          <ScalarProperty Name="S_CreatedOn" ColumnName="S_CreatedOn" />
+          <ScalarProperty Name="S_CreatedBy" ColumnName="S_CreatedBy" />
+          <ScalarProperty Name="S_IsDeleted" ColumnName="S_IsDeleted" />
+          <ScalarProperty Name="S_RecurrenceParentID" ColumnName="S_RecurrenceParentID" />
+          <ScalarProperty Name="S_RecurrenceRule" ColumnName="S_RecurrenceRule" />
+          <ScalarProperty Name="S_RecurrenceState" ColumnName="S_RecurrenceState" />
+          <ScalarProperty Name="S_IsRecurrenceRuleApplied" ColumnName="S_IsRecurrenceRuleApplied" />
+          <ScalarProperty Name="S_EndTime" ColumnName="S_EndTime" />
+          <ScalarProperty Name="S_StartTime" ColumnName="S_StartTime" />
+          <ScalarProperty Name="S_TotalAppointment" ColumnName="S_TotalAppointment" />
+          <ScalarProperty Name="S_Increment" ColumnName="S_Increment" />
+          <ScalarProperty Name="S_ScheduleMasterID" ColumnName="S_ScheduleMasterID" />
+          <ScalarProperty Name="S_ID" ColumnName="S_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="lkpCABSPermissionTypes">
+      <EntityTypeMapping TypeName="ADB_LocationDataModel.lkpCABSPermissionType">
+        <MappingFragment StoreEntitySet="lkpCABSPermissionType">
+          <ScalarProperty Name="LCPT_ModifiedOn" ColumnName="LCPT_ModifiedOn" />
+          <ScalarProperty Name="LCPT_ModifiedBy" ColumnName="LCPT_ModifiedBy" />
+          <ScalarProperty Name="LCPT_CreatedOn" ColumnName="LCPT_CreatedOn" />
+          <ScalarProperty Name="LCPT_CreatedBy" ColumnName="LCPT_CreatedBy" />
+          <ScalarProperty Name="LCPT_IsDeleted" ColumnName="LCPT_IsDeleted" />
+          <ScalarProperty Name="LCPT_Description" ColumnName="LCPT_Description" />
+          <ScalarProperty Name="LCPT_Name" ColumnName="LCPT_Name" />
+          <ScalarProperty Name="LCPT_Code" ColumnName="LCPT_Code" />
+          <ScalarProperty Name="LCPT_ID" ColumnName="LCPT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserCABSPermissionMappings">
+      <EntityTypeMapping TypeName="ADB_LocationDataModel.UserCABSPermissionMapping">
+        <MappingFragment StoreEntitySet="UserCABSPermissionMapping">
+          <ScalarProperty Name="UCPM_ModifiedOn" ColumnName="UCPM_ModifiedOn" />
+          <ScalarProperty Name="UCPM_ModifiedBy" ColumnName="UCPM_ModifiedBy" />
+          <ScalarProperty Name="UCPM_CreatedOn" ColumnName="UCPM_CreatedOn" />
+          <ScalarProperty Name="UCPM_CreatedBy" ColumnName="UCPM_CreatedBy" />
+          <ScalarProperty Name="UCPM_IsDeleted" ColumnName="UCPM_IsDeleted" />
+          <ScalarProperty Name="UCPM_Value" ColumnName="UCPM_Value" />
+          <ScalarProperty Name="UCPM_PermissionTypeID" ColumnName="UCPM_PermissionTypeID" />
+          <ScalarProperty Name="UCPM_OrganizationUserID" ColumnName="UCPM_OrganizationUserID" />
+          <ScalarProperty Name="UCPM_ID" ColumnName="UCPM_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FingerPrintOrderKeyDatas">
+      <EntityTypeMapping TypeName="ADB_LocationDataModel.FingerPrintOrderKeyData">
+        <MappingFragment StoreEntitySet="FingerPrintOrderKeyData">
+          <ScalarProperty Name="FPOKD_TenantID" ColumnName="FPOKD_TenantID" />
+          <ScalarProperty Name="FPOKD_ModifiedOn" ColumnName="FPOKD_ModifiedOn" />
+          <ScalarProperty Name="FPOKD_ModifiedBy" ColumnName="FPOKD_ModifiedBy" />
+          <ScalarProperty Name="FPOKD_CreatedOn" ColumnName="FPOKD_CreatedOn" />
+          <ScalarProperty Name="FPOKD_CreatedBy" ColumnName="FPOKD_CreatedBy" />
+          <ScalarProperty Name="FPOKD_IsDeleted" ColumnName="FPOKD_IsDeleted" />
+          <ScalarProperty Name="FPOKD_BillingAccount" ColumnName="FPOKD_BillingAccount" />
+          <ScalarProperty Name="FPOKD_AccountName" ColumnName="FPOKD_AccountName" />
+          <ScalarProperty Name="FPOKD_CBIUniqueID" ColumnName="FPOKD_CBIUniqueID" />
+          <ScalarProperty Name="FPOKD_ReasonFingerprinted" ColumnName="FPOKD_ReasonFingerprinted" />
+          <ScalarProperty Name="FPOKD_OrderID" ColumnName="FPOKD_OrderID" />
+          <ScalarProperty Name="FPOKD_ID" ColumnName="FPOKD_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FingerPrintLocations">
+      <EntityTypeMapping TypeName="ADB_LocationDataModel.FingerPrintLocation">
+        <MappingFragment StoreEntitySet="FingerPrintLocation">
+          <ScalarProperty Name="FPL_IsPrinterAvailable" ColumnName="FPL_IsPrinterAvailable" />
+          <ScalarProperty Name="FPL_IsPassPhotoService" ColumnName="FPL_IsPassPhotoService" />
+          <ScalarProperty Name="FPL_SkipABIReview" ColumnName="FPL_SkipABIReview" />
+          <ScalarProperty Name="FPL_TimeFrameHours" ColumnName="FPL_TimeFrameHours" />
+          <ScalarProperty Name="FPL_IsContractLocation" ColumnName="FPL_IsContractLocation" />
+          <ScalarProperty Name="FPL_LocationGroupID" ColumnName="FPL_LocationGroupID" />
+          <ScalarProperty Name="FPL_ModifiedOn" ColumnName="FPL_ModifiedOn" />
+          <ScalarProperty Name="FPL_ModifiedBy" ColumnName="FPL_ModifiedBy" />
+          <ScalarProperty Name="FPL_CreatedOn" ColumnName="FPL_CreatedOn" />
+          <ScalarProperty Name="FPL_CreatedBy" ColumnName="FPL_CreatedBy" />
+          <ScalarProperty Name="FPL_IsDeleted" ColumnName="FPL_IsDeleted" />
+          <ScalarProperty Name="FPL_Description" ColumnName="FPL_Description" />
+          <ScalarProperty Name="FPL_FullAddress" ColumnName="FPL_FullAddress" />
+          <ScalarProperty Name="FPL_Latitude" ColumnName="FPL_Latitude" />
+          <ScalarProperty Name="FPL_Longitude" ColumnName="FPL_Longitude" />
+          <ScalarProperty Name="FPL_County" ColumnName="FPL_County" />
+          <ScalarProperty Name="FPL_Address" ColumnName="FPL_Address" />
+          <ScalarProperty Name="FPL_ZipCode" ColumnName="FPL_ZipCode" />
+          <ScalarProperty Name="FPL_City" ColumnName="FPL_City" />
+          <ScalarProperty Name="FPL_State" ColumnName="FPL_State" />
+          <ScalarProperty Name="FPL_Country" ColumnName="FPL_Country" />
+          <ScalarProperty Name="FPL_Name" ColumnName="FPL_Name" />
+          <ScalarProperty Name="FPL_PlaceID" ColumnName="FPL_PlaceID" />
+          <ScalarProperty Name="FPL_ScheduleMasterID" ColumnName="FPL_ScheduleMasterID" />
+          <ScalarProperty Name="FPL_ID" ColumnName="FPL_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

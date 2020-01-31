@@ -1,0 +1,28 @@
+﻿.RadGrid .rgGroupHeader{font-size:1.11em;line-height:20px;}
+.RadTabStrip .rtsLI,.RadTabStrip .rtsLink{font:11px/26px Verdana, Geneva, Tahoma, sans-serif!important;}
+.RadSplitter .rspSlideTitle,/* RadSlidingPane tab text */ .RadSplitter .rspPaneTabText{font:normal 10px Verdana, Geneva, Tahoma, sans-serif!important;}
+.RadSiteMap .rsmLink,.RadSiteMap .rsmTemplate{font-family:Verdana, Geneva, Tahoma, sans-serif!important;}
+.RadPanelBar a.rpLink,.RadPanelBar div.rpHeaderTemplate,.RadPanelBar .rpTemplate{font:normal 11px/24px Verdana, Geneva, Tahoma, sans-serif!important;}
+.RadMenu,.RadMenu a.rmLink{font:normal 11px/23px Verdana, Geneva, Tahoma, sans-serif!important;}
+.RadListBox .rlbText,.RadListBox .rlbItem,.RadListBox .rlbButtonText,.RadListBox .rlbEmptyMessage{font-size:11px;font-family:Verdana, Geneva, Tahoma, sans-serif!important;}
+.RadComboBox,.RadComboBox .rcbInput,.RadComboBoxDropDown{font:11px Verdana, Geneva, Tahoma, sans-serif!important;}
+.RadCalendar .rcTitlebar table{font:11px/22px "segoe ui" ,arial,sans-serif;}
+.RadCalendar .rcMainTable{font:11px/20px "segoe ui" ,arial,sans-serif;}
+.RadUpload,.RadUpload a,.RadUpload input,.RadUploadProgressArea,.RadUploadProgressArea input{font:normal 11px/10px Verdana, Geneva, Tahoma, sans-serif;}
+.RadTreeView,.RadTreeView a.rtIn,.RadTreeView .rtEdit .rtIn input{font:11px/18px Verdana, Geneva, Tahoma, sans-serif!important;}
+.RadToolBar .rtbWrap,.RadToolBar .rtbTemplate{font:normal 11px/20px Verdana, Geneva, Tahoma, sans-serif!important;}
+.RadButton{position:relative!important;}
+.RadDock{z-index:6001;}
+.RadGrid,.RadGrid .rgMasterTable,.RadGrid .rgDetailTable,.RadGrid .rgGroupPanel table,.RadGrid .rgCommandRow table,.RadGrid .rgEditForm table,.RadGrid .rgPager table,.GridToolTip,.RadGrid .rgPager .rgPagerButton,.RadGrid .rgFilterBox,.RadForm .rfdGrids .rfdTable,.RadFilter,.RadFilter .rfText,.RadFilter .rfApply input,.RadDataPager .rdpPagerButton{font:11px/1.45em Verdana, Geneva, Tahoma, sans-serif!important;}
+.RadListView,.RadTreeList .rtlTable{font:11px/16px Verdana, Geneva, Tahoma, sans-serif!important;}
+.RadTreeList .rtlEditForm table{font:11px/1.45em Verdana, Geneva, Tahoma, sans-serif!important;}
+.RadInput,.RadInputMgr,table.RadCalendar,table.RadCalendarMonthView,.RadCalendarMonthView input,table.RadCalendarTimeView{font:11px "segoe ui" ,arial,sans-serif;}
+.RadMenu .rgHCMClear,.RadMenu .rgHCMFilter,.RadTreeList .rtlPager .rtlPagerButton{font-family:"segoe ui" ,arial,sans-serif;}
+.riTextBox,.ReminderDialog,.ReminderDialog a,.RecurrenceEditor,.RadScheduler,.RadScheduler a,.RadScheduler input,.RadScheduler select,.RadScheduler textarea{font:normal 11px/14px Verdana, Geneva, Tahoma, sans-serif!important;}
+.RadTreeView .rtLI {
+
+list-style: none outside none !important;
+
+}
+
+.RadGrid .rgDetailTable {border-style: solid; border-width: 1px !important; width: 98% !important;}

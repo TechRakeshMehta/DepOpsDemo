@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CE8D45E6-4B39-4D12-82F9-11F691D64E21}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Entity</RootNamespace>
+    <AssemblyName>Entity</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <CodeAnalysisRuleSet>..\WebSites\CoreWeb\ComplioEmptyRuleSet.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <CodeAnalysisRuleSet>..\WebSites\CoreWeb\ComplioEmptyRuleSet.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugConnectedToDatabase|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\DebugConnectedToDatabase\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\LPSFS.Entity.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>..\WebSites\CoreWeb\ComplioEmptyRuleSet.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\Library\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\Library\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ADBDatabaseDetail.cs" />
+    <Compile Include="ADBMessageDB_DevEntities.cs" />
+    <Compile Include="ADBMessageQueue.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ADBMessageQueue.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicantMessageQueue.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ApplicantMessageQueue.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="BlockFeaturePermissionMapper.cs" />
+    <Compile Include="CategoryRuleSetElements.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClientEntities\ADB_AdbUniversity_DevEntities.cs" />
+    <Compile Include="ClientEntities\ClientEntity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClientEntity.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientEntity\ADBClientEntity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ADBClientEntity.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientEntity\ADB_LibertyUniversity_ReviewEntities.cs" />
+    <Compile Include="ClientEntity\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClientExtendedEntities.cs" />
+    <Compile Include="ComplianceRuleTemplate.cs" />
+    <Compile Include="ContextFactory.cs" />
+    <Compile Include="CustomPagingArgs.cs" />
+    <Compile Include="Dynamic.cs" />
+    <Compile Include="EmailDetails.cs" />
+    <Compile Include="ExternalVendorContracts\EvCreateOrderContract.cs" />
+    <Compile Include="ExternalVendorContracts\EvUpdateOrderContract.cs" />
+    <Compile Include="ItemRuleElements.cs" />
+    <Compile Include="LocationEntity\ADBLocationDataEntities.cs" />
+    <Compile Include="LocationEntity\ADBLocationEntity1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ADBLocationEntity.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="LocationEntity\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MessageDetail.cs" />
+    <Compile Include="MessagingContract.cs" />
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Navigation\Menu.cs" />
+    <Compile Include="Navigation\MenuDAL.cs" />
+    <Compile Include="ServiceFootprint.cs" />
+    <Compile Include="ExtendedEntities.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SharedDataEntity\ADBSharedDataEntity.cs" />
+    <Compile Include="SharedDataEntity\ADBSharedDataEntity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ADBSharedDataEntity.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="SharedDataEntity\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SysXAppEntities.cs" />
+    <Compile Include="SysXEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SysXEntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="SysXQueue.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="ADBMessageQueue.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ADBMessageQueue.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="ApplicantMessageQueue.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ApplicantMessageQueue.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="ClientEntities\ClientEntity.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ClientEntity.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="ClientEntity\ADBClientEntity.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ADBClientEntity.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ClientEntity\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+      <DependentUpon>ADBClientEntity.edmx</DependentUpon>
+    </None>
+    <None Include="key.snk" />
+    <EntityDeploy Include="SysXEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SysXEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="LocationEntity\ADBLocationEntity.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ADBLocationEntity1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="LocationEntity\ADBLocationEntity.edmx.diagram">
+      <DependentUpon>ADBLocationEntity.edmx</DependentUpon>
+    </None>
+    <None Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+      <DependentUpon>SysXEntities.edmx</DependentUpon>
+    </None>
+    <None Include="Model2.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model2.cs</LastGenOutput>
+      <DependentUpon>ADBMessageQueue.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <EntityDeploy Include="SharedDataEntity\ADBSharedDataEntity.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ADBSharedDataEntity.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="SharedDataEntity\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+      <DependentUpon>ADBSharedDataEntity.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\INTSOF.ServiceUtil\INTSOF.ServiceUtil.csproj">
+      <Project>{FF7C94F4-C269-4A04-9C0A-2DA33F095D30}</Project>
+      <Name>INTSOF.ServiceUtil</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\INTSOF.Utils\INTSOF.Utils.csproj">
+      <Project>{79F18A05-E628-4C59-AD95-40640F0260DA}</Project>
+      <Name>INTSOF.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LocationEntity\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+      <DependentUpon>ADBLocationEntity.edmx</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

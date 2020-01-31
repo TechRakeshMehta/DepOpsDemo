@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" ?>
+<GetLocationsForZipCode xmlns="">
+  <ErrorStatus>
+    <Code>0</Code>
+    <Type></Type>
+    <Message></Message>
+  </ErrorStatus>
+  <State></State>
+  <County></County>
+  <City></City>
+  <ZipCode></ZipCode>
+</GetLocationsForZipCode>

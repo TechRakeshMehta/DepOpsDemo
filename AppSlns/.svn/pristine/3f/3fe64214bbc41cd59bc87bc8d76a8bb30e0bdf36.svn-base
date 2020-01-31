@@ -1,0 +1,23 @@
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="w-100 d-flex">
+      <div class="mr-auto">
+        <img height="31" src="../../../images/sponser2.png" />
+      </div>
+      <div class="d-flex" *ngIf="IsLocationSpecificTenant == 'True'">
+        
+        <div class="navbar-text text-white align-self-center p-0"><language-translation></language-translation></div>
+       <div class="navbar-text text-white align-self-center p-0"><timer></timer></div>
+        <!--
+          <span class="navbar-text text-white align-self-center">Language</span>
+
+          <a class="nav-link btn  px-1 py-0 mx-2  align-self-center bg-white text-dark" href="#">Spanish</a>
+        -->
+
+        <a class="nav-link p-0 text-white  align-self-center" href="#"
+          (click)="onSubmit()">
+          <u>{{LogOutText}}</u></a>
+      </div>
+    </div>
+  </nav>
+</header>

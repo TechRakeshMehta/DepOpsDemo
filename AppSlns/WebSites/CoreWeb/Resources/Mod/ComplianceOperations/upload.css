@@ -1,0 +1,19 @@
+﻿.docGrid .rgEditRow { background-color: #CFCFCF; }
+.docGrid .rgEditRow td { padding: 10px 7px; }
+
+.upload-box-header{background:url(uploaddoc.png) no-repeat 10px;padding:10px 0px 10px 70px;}
+.upload-box .sxform {background:none!important;}
+.upload-box .sxlb {display:none;}
+.upload-box {padding-left:70px;margin-bottom:20px;}
+.upload-box .section .content{margin:0;padding:0;}
+.upload-box .ruInputs li {padding:10px;background-color:#efefef;margin-bottom:10px;border-bottom:5px solid #F8F8F8;}
+.upload-box .ruInputs li:last-child {background:none;border:none;margin:0;padding:0;}
+
+.upload-box .ruInputs li label {display:inline-block;padding:0 10px 0 18px}
+.upload-box .ruInputs li input[type=text] {padding:3px;border:1px solid #adadad;}
+.upload-box .ruInputs li input[type=text]:hover {border:1px solid #555;}
+.upload-box .ruInputs li .ruCancel {color:#000}
+
+#vermod_cmds{padding-top:15px;padding-right:10px;position:absolute;right:10px;}
+#vermod_cmds a,#vermod_cmds a:visited{color:#333}
+

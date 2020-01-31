@@ -1,0 +1,1163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B008EE34-BB70-4303-AEA9-0A11ABA2FD60}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ExternalVendors</RootNamespace>
+    <AssemblyName>ExternalVendors</AssemblyName>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <CodeAnalysisRuleSet>..\WebSites\CoreWeb\ComplioEmptyRuleSet.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <CodeAnalysisRuleSet>..\WebSites\CoreWeb\ComplioEmptyRuleSet.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\Library\ThirdParty\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ADBVendor\ADBAdapter.cs" />
+    <Compile Include="ClearStarVendor\ClearStar.cs" />
+    <Compile Include="ClearStarVendor\ClearStarAdapter.cs" />
+    <Compile Include="ClearStarVendor\ClearStarCCF.cs" />
+    <Compile Include="ClearStarVendor\ClearStarInvokeDetails.cs" />
+    <Compile Include="ClearStarVendor\xsds\AIM\AIMResp.cs">
+      <DependentUpon>AIMResp.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\AIM\AIMResponse.cs">
+      <DependentUpon>AIMResponse.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\ClearstarGateway\AddAliasNameResponse.cs">
+      <DependentUpon>AddAliasNameResponse.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\ClearstarGateway\AddAliasNameResponse.Designer.cs">
+      <DependentUpon>AddAliasNameResponse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\ClearstarGateway\AddOrderToProfileResponse.cs">
+      <DependentUpon>AddOrderToProfileResponse.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\ClearstarGateway\AddOrderToProfileResponse.Designer.cs">
+      <DependentUpon>AddOrderToProfileResponse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\ClearstarGateway\AddServiceToProfileResponse.cs">
+      <DependentUpon>AddServiceToProfileResponse.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\ClearstarGateway\AddServiceToProfileResponse.Designer.cs">
+      <DependentUpon>AddServiceToProfileResponse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\ClearstarGateway\CancelProfileResponse.cs">
+      <DependentUpon>CancelProfileResponse.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\ClearstarGateway\CancelProfileResponse.Designer.cs">
+      <DependentUpon>CancelProfileResponse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\ClearstarGateway\CreateProfileForCountryResponse.cs">
+      <DependentUpon>CreateProfileForCountryResponse.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\ClearstarGateway\CreateProfileForCountryResponse.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreateProfileForCountryResponse.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\ClearstarGateway\CreateProfileResponse.cs">
+      <DependentUpon>CreateProfileResponse.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\ClearstarGateway\CreateProfileResponse.Designer.cs">
+      <DependentUpon>CreateProfileResponse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\ClearstarGateway\DeleteProfileDraftResponse.cs">
+      <DependentUpon>DeleteProfileDraftResponse.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\ClearstarGateway\DeleteProfileDraftResponse.Designer.cs">
+      <DependentUpon>DeleteProfileDraftResponse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\ClearstarGateway\EditProfileCommentsResponse.cs">
+      <DependentUpon>EditProfileCommentsResponse.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\ClearstarGateway\EditProfileCommentsResponse.Designer.cs">
+      <DependentUpon>EditProfileCommentsResponse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\ClearstarGateway\GetAliastoEditReponse.cs">
+      <DependentUpon>GetAliastoEditReponse.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\ClearstarGateway\GetInvoicesResponse.cs">
+      <DependentUpon>GetInvoicesResponse.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\ClearstarGateway\GetListofProfilesResponse.cs">
+      <DependentUpon>GetListofProfilesResponse.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\ClearstarGateway\GetLocationsForcountry.cs">
+      <DependentUpon>GetLocationsForcountry.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\ClearstarGateway\GetLocationsForZipCodeResponse.cs">
+      <DependentUpon>GetLocationsForZipCodeResponse.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\ClearstarGateway\GetOrderFieldsResponse.cs">
+      <DependentUpon>GetOrderFieldsResponse.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\ClearstarGateway\GetOrderResultsResponse.cs">
+      <DependentUpon>GetOrderResultsResponse.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\ClearstarGateway\GetOrderStatusDetailResponse.cs">
+      <DependentUpon>GetOrderStatusDetailResponse.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\ClearstarGateway\GetProfileDetail.cs">
+      <DependentUpon>GetProfileDetail.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\ClearstarGateway\GetServiceFields.cs">
+      <DependentUpon>GetServiceFields.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\ClearstarGateway\GetServiceFields.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GetServiceFields.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\ClearstarGateway\GetServices.cs">
+      <DependentUpon>GetServices.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\ClearstarGateway\GetServices.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GetServices.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\ClearstarGateway\OrderFields.cs">
+      <DependentUpon>OrderFields.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\ClearstarGateway\ProfileStatusResponse.cs">
+      <DependentUpon>ProfileStatusResponse.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\ClearstarGateway\SearchOrdersResponse.cs">
+      <DependentUpon>SearchOrdersResponse.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\ClearstarGateway\TransmitProfileResponse.cs">
+      <DependentUpon>TransmitProfileResponse.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\ClearstarGateway\UnlockProfileResponse.cs">
+      <DependentUpon>UnlockProfileResponse.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\ClearstarGateway\UploadOrderDocument2Response.cs">
+      <DependentUpon>UploadOrderDocument2Response.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\Postmaster\ClearstarPostmasterResponse.cs">
+      <DependentUpon>ClearstarPostmasterResponse.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\Postmaster\ClearstarPostmasterResponse.Designer.cs">
+      <DependentUpon>ClearstarPostmasterResponse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\QuestDiagnostics\CreateOrderRequest.cs">
+      <DependentUpon>CreateOrderRequest.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\QuestDiagnostics\CreateOrderResponse.cs">
+      <DependentUpon>CreateOrderResponse.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\QuestDiagnostics\ReceiveCollectionResultRequest.cs">
+      <DependentUpon>ReceiveCollectionResultRequest.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\QuestDiagnostics\ReceiveCollectionResultResponse.cs">
+      <DependentUpon>ReceiveCollectionResultResponse.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\QuestDiagnostics\ReceiveCollectionStatusRequest.cs">
+      <DependentUpon>ReceiveCollectionStatusRequest.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\QuestDiagnostics\ReceiveCollectionStatusResponse.cs">
+      <DependentUpon>ReceiveCollectionStatusResponse.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\QuestDiagnostics\ReceiveLabReqStatusRequest.cs">
+      <DependentUpon>ReceiveLabReqStatusRequest.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\QuestDiagnostics\ReceiveLabReqStatusResponse.cs">
+      <DependentUpon>ReceiveLabReqStatusResponse.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\QuestDiagnostics\ReceiveLabTestResultResponse.cs">
+      <DependentUpon>ReceiveLabTestResultResponse.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\QuestDiagnostics\RemoveTestResponse.cs">
+      <DependentUpon>RemoveTestResponse.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\QuestDiagnostics\UpdateOrderRequest.cs">
+      <DependentUpon>UpdateOrderRequest.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\QuestDiagnostics\UpdateOrderResponse.cs">
+      <DependentUpon>UpdateOrderResponse.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\TCN\TestResult-1_1.cs" />
+    <Compile Include="ClearStarVendor\xsds\Tracer\TracerRequest.cs">
+      <DependentUpon>TracerRequest.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\Tracer\TracerResponse.cs">
+      <DependentUpon>TracerResponse.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\WebCCF\GetDonorCCFPDFResponse.cs">
+      <DependentUpon>GetDonorCCFPDFResponse.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\WebCCF\GetDonorCCFResponse.cs">
+      <DependentUpon>GetDonorCCFResponse.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClearStarVendor\xsds\WebCCF\UpdateClearstarOrderInfoResponse.cs">
+      <DependentUpon>UpdateClearstarOrderInfoResponse.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ExternalClasses\AMSAlias.cs" />
+    <Compile Include="Interface\IExternalServiceAdapter.cs" />
+    <Compile Include="PrintScanVendor\PrintScan.cs" />
+    <Compile Include="PrintScanVendor\PrintScanAdapter.cs" />
+    <Compile Include="PrintScanVendor\PrintScanAuthenticationResponseContract.cs" />
+    <Compile Include="PrintScanVendor\PrintScanResponseContract.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Logging\ServiceLogger.cs" />
+    <Compile Include="Utility\CommonHelper.cs" />
+    <Compile Include="Utility\ConversionHelper.cs" />
+    <Compile Include="Utility\EncyptionHelper.cs" />
+    <Compile Include="Utility\FormatHelper.cs" />
+    <Compile Include="Web References\ADBMROTCNTestResult\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\ClearstarClearMD\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\ClearstarGatewayDocument\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\ClearstarGatewayInvoice\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\ClearstarGatewayLookup\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\ClearstarGatewayOrder\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\ClearstarGatewayProfile\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\ClearstarPostmaster\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\QuestDiagnostics\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\QuestESResultService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\ServiceGateWay\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\UpdateWebCCFClearStarOrder\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="ClearStarVendor\xsds\AIM\AIMResp.xsc">
+      <DependentUpon>AIMResp.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\AIM\AIMResp.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AIMResp.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClearStarVendor\xsds\AIM\AIMResp.xss">
+      <DependentUpon>AIMResp.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\AIM\AIMResponse.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\AddAliasNameResponse.xsc">
+      <DependentUpon>AddAliasNameResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\AddAliasNameResponse.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AddAliasNameResponse1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\AddAliasNameResponse.xss">
+      <DependentUpon>AddAliasNameResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\AddOrderToProfileResponse.xsc">
+      <DependentUpon>AddOrderToProfileResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\AddOrderToProfileResponse.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AddOrderToProfileResponse1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\AddOrderToProfileResponse.xss">
+      <DependentUpon>AddOrderToProfileResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\AddServiceToProfileResponse.xsc">
+      <DependentUpon>AddServiceToProfileResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\AddServiceToProfileResponse.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AddServiceToProfileResponse1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\AddServiceToProfileResponse.xss">
+      <DependentUpon>AddServiceToProfileResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\CancelProfileResponse.xsc">
+      <DependentUpon>CancelProfileResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\CancelProfileResponse.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CancelProfileResponse1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\CancelProfileResponse.xss">
+      <DependentUpon>CancelProfileResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\CreateProfileForCountryResponse.xsc">
+      <DependentUpon>CreateProfileForCountryResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\CreateProfileForCountryResponse.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CreateProfileForCountryResponse.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\CreateProfileForCountryResponse.xss">
+      <DependentUpon>CreateProfileForCountryResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\CreateProfileResponse.xsc">
+      <DependentUpon>CreateProfileResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\CreateProfileResponse.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CreateProfileResponse1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\CreateProfileResponse.xss">
+      <DependentUpon>CreateProfileResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\DeleteProfileDraftResponse.xsc">
+      <DependentUpon>DeleteProfileDraftResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\DeleteProfileDraftResponse.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DeleteProfileDraftResponse1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\DeleteProfileDraftResponse.xss">
+      <DependentUpon>DeleteProfileDraftResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\EditProfileCommentsResponse.xsc">
+      <DependentUpon>EditProfileCommentsResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\EditProfileCommentsResponse.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EditProfileCommentsResponse1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\EditProfileCommentsResponse.xss">
+      <DependentUpon>EditProfileCommentsResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\GetAliastoEditReponse.xsc">
+      <DependentUpon>GetAliastoEditReponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\GetAliastoEditReponse.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GetAliastoEditReponse.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\GetAliastoEditReponse.xss">
+      <DependentUpon>GetAliastoEditReponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\GetInvoicesResponse.xsc">
+      <DependentUpon>GetInvoicesResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\GetInvoicesResponse.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GetInvoicesResponse.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\GetInvoicesResponse.xss">
+      <DependentUpon>GetInvoicesResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\GetListofProfilesResponse.xsc">
+      <DependentUpon>GetListofProfilesResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\GetListofProfilesResponse.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GetListofProfilesResponse.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\GetListofProfilesResponse.xss">
+      <DependentUpon>GetListofProfilesResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\GetLocationsForcountry.xsc">
+      <DependentUpon>GetLocationsForcountry.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\GetLocationsForcountry.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GetLocationsForcountry.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\GetLocationsForcountry.xss">
+      <DependentUpon>GetLocationsForcountry.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\GetLocationsForZipCodeResponse.xsc">
+      <DependentUpon>GetLocationsForZipCodeResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\GetLocationsForZipCodeResponse.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GetLocationsForZipCodeResponse.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\GetLocationsForZipCodeResponse.xss">
+      <DependentUpon>GetLocationsForZipCodeResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\GetOrderFieldsResponse.xsc">
+      <DependentUpon>GetOrderFieldsResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\GetOrderFieldsResponse.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GetOrderFieldsResponse.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\GetOrderFieldsResponse.xss">
+      <DependentUpon>GetOrderFieldsResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\GetOrderResultsResponse.xsc">
+      <DependentUpon>GetOrderResultsResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\GetOrderResultsResponse.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GetOrderResultsResponse.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\GetOrderResultsResponse.xss">
+      <DependentUpon>GetOrderResultsResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\GetOrderStatusDetailResponse.xsc">
+      <DependentUpon>GetOrderStatusDetailResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\GetOrderStatusDetailResponse.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GetOrderStatusDetailResponse.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\GetOrderStatusDetailResponse.xss">
+      <DependentUpon>GetOrderStatusDetailResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\GetProfileDetail.xsc">
+      <DependentUpon>GetProfileDetail.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\GetProfileDetail.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GetProfileDetail.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\GetProfileDetail.xss">
+      <DependentUpon>GetProfileDetail.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\GetServiceFields.xsc">
+      <DependentUpon>GetServiceFields.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\GetServiceFields.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GetServiceFields.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\GetServiceFields.xss">
+      <DependentUpon>GetServiceFields.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\GetServices.xsc">
+      <DependentUpon>GetServices.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\GetServices.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GetServices.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\GetServices.xss">
+      <DependentUpon>GetServices.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\OrderFields.xsc">
+      <DependentUpon>OrderFields.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\OrderFields.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OrderFields.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\OrderFields.xss">
+      <DependentUpon>OrderFields.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\ProfileStatusResponse.xsc">
+      <DependentUpon>ProfileStatusResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\ProfileStatusResponse.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProfileStatusResponse.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\ProfileStatusResponse.xss">
+      <DependentUpon>ProfileStatusResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\SearchOrdersResponse.xsc">
+      <DependentUpon>SearchOrdersResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\SearchOrdersResponse.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SearchOrdersResponse.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\SearchOrdersResponse.xss">
+      <DependentUpon>SearchOrdersResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\TransmitProfileResponse.xsc">
+      <DependentUpon>TransmitProfileResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\TransmitProfileResponse.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TransmitProfileResponse.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\TransmitProfileResponse.xss">
+      <DependentUpon>TransmitProfileResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\UnlockProfileResponse.xsc">
+      <DependentUpon>UnlockProfileResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\UnlockProfileResponse.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UnlockProfileResponse.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\UnlockProfileResponse.xss">
+      <DependentUpon>UnlockProfileResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\UploadOrderDocument2Response.xsc">
+      <DependentUpon>UploadOrderDocument2Response.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\UploadOrderDocument2Response.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UploadOrderDocument2Response.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClearStarVendor\xsds\ClearstarGateway\UploadOrderDocument2Response.xss">
+      <DependentUpon>UploadOrderDocument2Response.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\Postmaster\ClearstarPostmasterResponse.xsc">
+      <DependentUpon>ClearstarPostmasterResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\Postmaster\ClearstarPostmasterResponse.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ClearstarPostmasterResponse1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClearStarVendor\xsds\Postmaster\ClearstarPostmasterResponse.xss">
+      <DependentUpon>ClearstarPostmasterResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\QuestDiagnostics\CreateOrderRequest.xsc">
+      <DependentUpon>CreateOrderRequest.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\QuestDiagnostics\CreateOrderRequest.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CreateOrderRequest.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClearStarVendor\xsds\QuestDiagnostics\CreateOrderRequest.xss">
+      <DependentUpon>CreateOrderRequest.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\QuestDiagnostics\CreateOrderResponse.xsc">
+      <DependentUpon>CreateOrderResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\QuestDiagnostics\CreateOrderResponse.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CreateOrderResponse.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClearStarVendor\xsds\QuestDiagnostics\CreateOrderResponse.xss">
+      <DependentUpon>CreateOrderResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\QuestDiagnostics\ReceiveCollectionResultRequest.xsc">
+      <DependentUpon>ReceiveCollectionResultRequest.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\QuestDiagnostics\ReceiveCollectionResultRequest.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReceiveCollectionResultRequest.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClearStarVendor\xsds\QuestDiagnostics\ReceiveCollectionResultRequest.xss">
+      <DependentUpon>ReceiveCollectionResultRequest.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\QuestDiagnostics\ReceiveCollectionResultResponse.xsc">
+      <DependentUpon>ReceiveCollectionResultResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\QuestDiagnostics\ReceiveCollectionResultResponse.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReceiveCollectionResultResponse.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClearStarVendor\xsds\QuestDiagnostics\ReceiveCollectionResultResponse.xss">
+      <DependentUpon>ReceiveCollectionResultResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\QuestDiagnostics\ReceiveCollectionStatusRequest.xsc">
+      <DependentUpon>ReceiveCollectionStatusRequest.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\QuestDiagnostics\ReceiveCollectionStatusRequest.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReceiveCollectionStatusRequest.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClearStarVendor\xsds\QuestDiagnostics\ReceiveCollectionStatusRequest.xss">
+      <DependentUpon>ReceiveCollectionStatusRequest.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\QuestDiagnostics\ReceiveCollectionStatusResponse.xsc">
+      <DependentUpon>ReceiveCollectionStatusResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\QuestDiagnostics\ReceiveCollectionStatusResponse.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReceiveCollectionStatusResponse.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClearStarVendor\xsds\QuestDiagnostics\ReceiveCollectionStatusResponse.xss">
+      <DependentUpon>ReceiveCollectionStatusResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\QuestDiagnostics\ReceiveLabReqStatusRequest.xsc">
+      <DependentUpon>ReceiveLabReqStatusRequest.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\QuestDiagnostics\ReceiveLabReqStatusRequest.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReceiveLabReqStatusRequest.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClearStarVendor\xsds\QuestDiagnostics\ReceiveLabReqStatusRequest.xss">
+      <DependentUpon>ReceiveLabReqStatusRequest.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\QuestDiagnostics\ReceiveLabReqStatusResponse.xsc">
+      <DependentUpon>ReceiveLabReqStatusResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\QuestDiagnostics\ReceiveLabReqStatusResponse.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReceiveLabReqStatusResponse.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClearStarVendor\xsds\QuestDiagnostics\ReceiveLabReqStatusResponse.xss">
+      <DependentUpon>ReceiveLabReqStatusResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\QuestDiagnostics\ReceiveLabTestResultResponse.xsc">
+      <DependentUpon>ReceiveLabTestResultResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\QuestDiagnostics\ReceiveLabTestResultResponse.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReceiveLabTestResultResponse.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClearStarVendor\xsds\QuestDiagnostics\ReceiveLabTestResultResponse.xss">
+      <DependentUpon>ReceiveLabTestResultResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\QuestDiagnostics\RemoveTestResponse.xsc">
+      <DependentUpon>RemoveTestResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\QuestDiagnostics\RemoveTestResponse.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RemoveTestResponse.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClearStarVendor\xsds\QuestDiagnostics\RemoveTestResponse.xss">
+      <DependentUpon>RemoveTestResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\QuestDiagnostics\UpdateOrderRequest.xsc">
+      <DependentUpon>UpdateOrderRequest.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\QuestDiagnostics\UpdateOrderRequest.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UpdateOrderRequest.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClearStarVendor\xsds\QuestDiagnostics\UpdateOrderRequest.xss">
+      <DependentUpon>UpdateOrderRequest.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\QuestDiagnostics\UpdateOrderResponse.xsc">
+      <DependentUpon>UpdateOrderResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\QuestDiagnostics\UpdateOrderResponse.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UpdateOrderResponse.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClearStarVendor\xsds\QuestDiagnostics\UpdateOrderResponse.xss">
+      <DependentUpon>UpdateOrderResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\TCN\TestResult-1.1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClearStarVendor\xsds\Tracer\TracerRequest.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClearStarVendor\xsds\Tracer\TracerResponse.xsc">
+      <DependentUpon>TracerResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\Tracer\TracerResponse.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TracerResponse.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClearStarVendor\xsds\Tracer\TracerResponse.xss">
+      <DependentUpon>TracerResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\WebCCF\GetDonorCCFPDFResponse.xsc">
+      <DependentUpon>GetDonorCCFPDFResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\WebCCF\GetDonorCCFPDFResponse.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GetDonorCCFPDFResponse.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClearStarVendor\xsds\WebCCF\GetDonorCCFPDFResponse.xss">
+      <DependentUpon>GetDonorCCFPDFResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\WebCCF\GetDonorCCFResponse.xsc">
+      <DependentUpon>GetDonorCCFResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\WebCCF\GetDonorCCFResponse.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GetDonorCCFResponse.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClearStarVendor\xsds\WebCCF\GetDonorCCFResponse.xss">
+      <DependentUpon>GetDonorCCFResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\WebCCF\UpdateClearstarOrderInfoResponse.xsc">
+      <DependentUpon>UpdateClearstarOrderInfoResponse.xsd</DependentUpon>
+    </None>
+    <None Include="ClearStarVendor\xsds\WebCCF\UpdateClearstarOrderInfoResponse.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UpdateClearstarOrderInfoResponse.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClearStarVendor\xsds\WebCCF\UpdateClearstarOrderInfoResponse.xss">
+      <DependentUpon>UpdateClearstarOrderInfoResponse.xsd</DependentUpon>
+    </None>
+    <None Include="NLog.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ClearstarClearMD\DonorCCF.wsdl" />
+    <None Include="Web References\ClearstarClearMD\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ClearstarClearMD\TestingAuthority.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ClearstarGatewayDocument\Document.wsdl" />
+    <None Include="Web References\ClearstarGatewayDocument\DownloadFile.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ClearstarGatewayDocument\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ServiceGateWay\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ServiceGateWay\Service.wsdl" />
+    <None Include="Web References\UpdateWebCCFClearStarOrder\ClearStarOrderInfo.wsdl" />
+    <None Include="Web References\UpdateWebCCFClearStarOrder\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://localhost/ADBQESOutboundWS/ESResultService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\QuestESResultService\</RelPath>
+      <UpdateFromURL>http://localhost/ADBQESOutboundWS/ESResultService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ExternalVendors_QuestESResultService_ESResultService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://gateway.clearstar.net/CSGWDocument/Document.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ClearstarGatewayDocument\</RelPath>
+      <UpdateFromURL>https://gateway.clearstar.net/CSGWDocument/Document.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ExternalVendors_ClearstarGatewayDocument_Document</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://gateway.clearstar.net/CSGWInvoice/Invoice.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ClearstarGatewayInvoice\</RelPath>
+      <UpdateFromURL>https://gateway.clearstar.net/CSGWInvoice/Invoice.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ExternalVendors_ClearstarGatewayInvoice_Invoice</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://gateway.clearstar.net/CSGWLookup/Lookup.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ClearstarGatewayLookup\</RelPath>
+      <UpdateFromURL>https://gateway.clearstar.net/CSGWLookup/Lookup.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ExternalVendors_ClearstarGatewayLookup_LookUp</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://gateway.clearstar.net/CSGWOrder/Order.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ClearstarGatewayOrder\</RelPath>
+      <UpdateFromURL>https://gateway.clearstar.net/CSGWOrder/Order.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ExternalVendors_ClearstarGatewayOrder_Order</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://gateway.clearstar.net/csgwpostmaster/postmaster.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ClearstarPostmaster\</RelPath>
+      <UpdateFromURL>https://gateway.clearstar.net/csgwpostmaster/postmaster.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ExternalVendors_ClearstarPostmaster_PostMaster</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://gateway.clearstar.net/CSGWProfile/Profile.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ClearstarGatewayProfile\</RelPath>
+      <UpdateFromURL>https://gateway.clearstar.net/CSGWProfile/Profile.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ExternalVendors_ClearstarGateway_Profile</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://gateway.clearstar.net/CSGWService/Service.asmx%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ServiceGateWay\</RelPath>
+      <UpdateFromURL>https://gateway.clearstar.net/CSGWService/Service.asmx%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ExternalVendors_ServiceGateWay_Service</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://qcs-uat.questdiagnostics.com/services/esservice.asmx%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\QuestDiagnostics\</RelPath>
+      <UpdateFromURL>https://qcs-uat.questdiagnostics.com/services/esservice.asmx%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ExternalVendors_QuestDiagnostics_ESService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://secure.totalcompnet.com/TCNTestResultWS/testresult.asmx%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ADBMROTCNTestResult\</RelPath>
+      <UpdateFromURL>https://secure.totalcompnet.com/TCNTestResultWS/testresult.asmx%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ExternalVendors_ADBMROTCNTestResult_TCNTestResultWS</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://staging.webccf.com/Service/DonorCCF.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ClearstarClearMD\</RelPath>
+      <UpdateFromURL>https://staging.webccf.com/Service/DonorCCF.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ExternalVendors_ClearstarClearMD_DonorCCF</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://widget.webccf.com/service/ClearStarOrderInfo.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\UpdateWebCCFClearStarOrder\</RelPath>
+      <UpdateFromURL>https://widget.webccf.com/service/ClearStarOrderInfo.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ExternalVendors_UpdateWebCCFClearStarOrder_ClearStarOrderInfo</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\ClearstarGatewayProfile\Profile.wsdl">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\ClearstarPostmaster\postmaster.wsdl" />
+    <None Include="Web References\ClearstarPostmaster\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ClearStarVendor\xsds\AIM\AIMResp.xml" />
+    <Content Include="ClearStarVendor\xsds\AIM\AIMResponse.xml" />
+    <Content Include="ClearStarVendor\xsds\ClearstarGateway\AddAliasNameResponse.xml" />
+    <Content Include="ClearStarVendor\xsds\ClearstarGateway\AddOrderToProfileResponse.xml" />
+    <Content Include="ClearStarVendor\xsds\ClearstarGateway\AddServiceToProfileResponse.xml" />
+    <Content Include="ClearStarVendor\xsds\ClearstarGateway\CancelProfileResponse.xml" />
+    <Content Include="ClearStarVendor\xsds\ClearstarGateway\CreateProfileForCountryResponse.xml" />
+    <Content Include="ClearStarVendor\xsds\ClearstarGateway\CreateProfileResponse.xml" />
+    <Content Include="ClearStarVendor\xsds\ClearstarGateway\DeleteProfileDraftResponse.xml" />
+    <Content Include="ClearStarVendor\xsds\ClearstarGateway\EditProfileCommentsResponse.xml" />
+    <Content Include="ClearStarVendor\xsds\ClearstarGateway\GetAliastoEditReponse.xml" />
+    <Content Include="ClearStarVendor\xsds\ClearstarGateway\GetInvoicesResponse.xml" />
+    <Content Include="ClearStarVendor\xsds\ClearstarGateway\GetListofProfilesResponse.xml" />
+    <Content Include="ClearStarVendor\xsds\ClearstarGateway\GetLocationsForCountry.xml" />
+    <Content Include="ClearStarVendor\xsds\ClearstarGateway\GetLocationsForZipCodeResponse.xml" />
+    <Content Include="ClearStarVendor\xsds\ClearstarGateway\GetOrderFieldsResponse.xml" />
+    <Content Include="ClearStarVendor\xsds\ClearstarGateway\GetOrderResultsResponse.xml" />
+    <Content Include="ClearStarVendor\xsds\ClearstarGateway\GetOrderStatusDetailResponse.xml" />
+    <Content Include="ClearStarVendor\xsds\ClearstarGateway\GetProfileDetail.xml" />
+    <Content Include="ClearStarVendor\xsds\ClearstarGateway\GetServiceFields.xml" />
+    <Content Include="ClearStarVendor\xsds\ClearstarGateway\GetServices.xml" />
+    <Content Include="ClearStarVendor\xsds\ClearstarGateway\OrderFields.xml" />
+    <Content Include="ClearStarVendor\xsds\ClearstarGateway\ProfileStatusResponse.xml" />
+    <Content Include="ClearStarVendor\xsds\ClearstarGateway\SearchOrdersResponse.xml" />
+    <Content Include="ClearStarVendor\xsds\ClearstarGateway\TransmitProfileResponse.xml" />
+    <Content Include="ClearStarVendor\xsds\ClearstarGateway\UnlockProfileResponse.xml" />
+    <Content Include="ClearStarVendor\xsds\ClearstarGateway\UploadOrderDocument2Response.xml" />
+    <Content Include="ClearStarVendor\xsds\Postmaster\ClearstarPostmasterResponse.xml" />
+    <Content Include="ClearStarVendor\xsds\QuestDiagnostics\CreateOrderRequest.xml" />
+    <Content Include="ClearStarVendor\xsds\QuestDiagnostics\CreateOrderResponse.xml" />
+    <Content Include="ClearStarVendor\xsds\QuestDiagnostics\ReceiveCollectionResultRequest.xml" />
+    <Content Include="ClearStarVendor\xsds\QuestDiagnostics\ReceiveCollectionResultResponse.xml" />
+    <Content Include="ClearStarVendor\xsds\QuestDiagnostics\ReceiveCollectionStatusRequest.xml" />
+    <Content Include="ClearStarVendor\xsds\QuestDiagnostics\ReceiveCollectionStatusResponse.xml" />
+    <Content Include="ClearStarVendor\xsds\QuestDiagnostics\ReceiveLabReqStatusRequest.xml" />
+    <Content Include="ClearStarVendor\xsds\QuestDiagnostics\ReceiveLabReqStatusResponse.xml" />
+    <Content Include="ClearStarVendor\xsds\QuestDiagnostics\ReceiveLabTestResultRequest.xml" />
+    <Content Include="ClearStarVendor\xsds\QuestDiagnostics\ReceiveLabTestResultResponse.xml" />
+    <Content Include="ClearStarVendor\xsds\QuestDiagnostics\RemoveTestResponse.xml" />
+    <Content Include="ClearStarVendor\xsds\QuestDiagnostics\UpdateOrderRequest.xml" />
+    <Content Include="ClearStarVendor\xsds\QuestDiagnostics\UpdateOrderResponse.xml" />
+    <Content Include="ClearStarVendor\xsds\Tracer\TracerRequest.xml" />
+    <Content Include="ClearStarVendor\xsds\Tracer\TracerResponse.xml" />
+    <Content Include="ClearStarVendor\xsds\WebCCF\GetDonorCCFPDFResponse.xml" />
+    <Content Include="ClearStarVendor\xsds\WebCCF\GetDonorCCFResponse.xml" />
+    <Content Include="ClearStarVendor\xsds\WebCCF\UpdateClearstarOrderInfoResponse.xml" />
+    <Content Include="Examples\StarGate\orders.xml" />
+    <None Include="Web References\ClearstarClearMD\DonorCCF.disco" />
+    <None Include="Web References\ClearstarGatewayDocument\Document.disco" />
+    <None Include="Web References\UpdateWebCCFClearStarOrder\ClearStarOrderInfo.disco" />
+    <None Include="Web References\ADBMROTCNTestResult\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ADBMROTCNTestResult\testresult.wsdl" />
+    <None Include="Web References\ClearstarGatewayInvoice\Invoice.wsdl" />
+    <None Include="Web References\ClearstarGatewayInvoice\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ClearstarGatewayLookup\Lookup.wsdl" />
+    <None Include="Web References\ClearstarGatewayLookup\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ClearstarGatewayOrder\Order.wsdl" />
+    <None Include="Web References\ClearstarGatewayOrder\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ClearstarGatewayProfile\Profile.disco" />
+    <None Include="Web References\ClearstarGatewayProfile\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\QuestDiagnostics\esservice.wsdl" />
+    <None Include="Web References\QuestDiagnostics\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\QuestESResultService\ESResultService.wsdl" />
+    <None Include="Web References\QuestESResultService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ClearstarGatewayOrder\Order.disco" />
+    <None Include="Web References\ClearstarGatewayInvoice\Invoice.disco" />
+    <None Include="Web References\ClearstarGatewayLookup\Lookup.disco" />
+    <None Include="Web References\QuestESResultService\ESResultService.disco" />
+    <None Include="Web References\ClearstarPostmaster\postmaster.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Business\Business.csproj">
+      <Project>{a28fa692-5d4b-44ec-bea0-b994516798eb}</Project>
+      <Name>Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entity\Entity.csproj">
+      <Project>{ce8d45e6-4b39-4d12-82f9-11f691d64e21}</Project>
+      <Name>Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\INTSOF.ServiceUtil\INTSOF.ServiceUtil.csproj">
+      <Project>{ff7c94f4-c269-4a04-9c0a-2da33f095d30}</Project>
+      <Name>INTSOF.ServiceUtil</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\INTSOF.UI.Contract\INTSOF.UI.Contract.csproj">
+      <Project>{e882f896-9bf5-425a-91ed-90f87b3174f6}</Project>
+      <Name>INTSOF.UI.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\INTSOF.Utils\INTSOF.Utils.csproj">
+      <Project>{79f18a05-e628-4c59-ad95-40640f0260da}</Project>
+      <Name>INTSOF.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

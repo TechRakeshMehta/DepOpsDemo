@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Entity" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Entity" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="RuleElementNodeDataType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Text" />
+      <xs:enumeration value="Number" />
+      <xs:enumeration value="Date" />
+      <xs:enumeration value="TimespanDays" />
+      <xs:enumeration value="TimespanHours" />
+      <xs:enumeration value="TimespanMinutes" />
+      <xs:enumeration value="TimespanSeconds" />
+      <xs:enumeration value="NA" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RuleElementNodeDataType" nillable="true" type="tns:RuleElementNodeDataType" />
+  <xs:simpleType name="RuleElementNodeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ItemAttribute" />
+      <xs:enumeration value="Constant" />
+      <xs:enumeration value="Variable" />
+      <xs:enumeration value="Operator" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RuleElementNodeType" nillable="true" type="tns:RuleElementNodeType" />
+</xs:schema>

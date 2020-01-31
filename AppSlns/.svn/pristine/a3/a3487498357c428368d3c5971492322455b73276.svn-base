@@ -1,0 +1,70 @@
+<div id="bodyBlock" class="container-fluid">
+    <section class="p-2">
+        <div class="row">
+            <div class="col-12 font-weight-bold">
+                    <label id="CREATODR"></label> (<label id="STEP"></label> {{orderInfo.CurrentStep}} <label id="OF"></label> {{orderInfo.TotalSteps}})
+            </div>
+            <div class="col-md-12 bg-white shadow-sm rounded py-3">
+                <h6 class="redColor font-weight-bold">{{groupName}}</h6>
+                <span [hidden]="customHtml == '' || customHtml == undefined" id="customHtml" ></span>
+                <br/>
+                <form [formGroup]="mailInfoForm">
+                        <div *ngIf="!IsValidName" class="d-block validationColor">{{ InvalidNameMsg }}</div>
+                    <div class="row">
+                        <div class="col-md-6 mb-1">
+                            <label class="required" id="NAME"></label>
+                            <input type="text" id="Name" class="form-control" [ngClass]="displayFieldCss('Name')" formControlName="Name">
+                            <app-field-error-display [displayError]="isFieldValid('Name')" errorMsg="{{errorMessage('Name')}}">
+                            </app-field-error-display>
+                        </div>
+                        <div class="col-md-6 mb-1">
+                            <label class="required" id="ADDRESS"></label>
+                            <input type="text" id="Address" class="form-control" ng-readonly="true" [ngClass]="displayFieldCss('Address')" formControlName="Address">
+                            <app-field-error-display [displayError]="isFieldValid('Address')" errorMsg="{{errorMessage('Address')}}">
+                            </app-field-error-display>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-1">
+                            <label class="required" id="STATE"></label>
+                            <select [(ngModel)]="SelectedState" class="custom-select" (change)="onStateSelected($event.target.value)" formControlName="State" [ngClass]="displayFieldCss('State')">
+                                <option disabled hidden [value]="selectUndefinedOptionValue"><label name="PLEASESELECT"></label></option>
+                                <option *ngFor="let state of lstOfStateAttr" value={{state}}>
+                                    {{state}}
+                                </option>
+                            </select>
+                            <app-field-error-display [displayError]="isFieldValid('State')" errorMsg="{{errorMessage('State')}}">
+                            </app-field-error-display>
+                        </div>
+                        <div class="col-md-6 mb-1">
+                            <label class="required" id="CITY"></label>
+                            <input type="text" id="City" class="form-control" ng-readonly="true" [ngClass]="displayFieldCss('City')" formControlName="City">
+                            <app-field-error-display [displayError]="isFieldValid('City')" errorMsg="{{errorMessage('City')}}">
+                            </app-field-error-display>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-1">
+                            <label class="required" id="ZIPCODE"></label>
+                            <input type="text" id="ZipCode" class="form-control" formControlName="ZipCode" [ngClass]="displayFieldCss('ZipCode')">
+                            <app-field-error-display [displayError]="isFieldValid('ZipCode')" errorMsg="{{errorMessage('ZipCode')}}">
+                            </app-field-error-display>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-12 d-flex justify-content-center">
+                                <button type="button" [autofocus]="false" class="btn btn-primary fixedWidthBtn" (click)="goBack()">
+                                        <i class="fas fa-arrow-left pr-1"></i>
+                                        <label id="PREVIOUS"></label>
+                                </button>                                                              
+                                <button type="button" [autofocus]="false"  (click)="onSubmit()" class="btn btn-primary mx-1 fixedWidthBtn">
+                                    <label id="NEXT"></label>
+                                    <i class="fas fa-arrow-right pl-1"></i>
+                                </button>
+                            <cancel-order-button></cancel-order-button>  
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>

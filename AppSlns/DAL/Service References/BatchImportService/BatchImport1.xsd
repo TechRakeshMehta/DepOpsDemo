@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ImportExcelToStaging">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="client" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="state" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="batchID" type="xs:int" />
+        <xs:element minOccurs="0" name="batchFileID" type="xs:int" />
+        <xs:element minOccurs="0" name="globalGUID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
+        <xs:element minOccurs="0" name="source" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ImportExcelToStagingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ImportExcelToStagingResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessStagingData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="client" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="state" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="batchID" type="xs:int" />
+        <xs:element minOccurs="0" name="batchFileID" type="xs:int" />
+        <xs:element minOccurs="0" name="globalGUID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessStagingDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ProcessStagingDataResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBatchFileXML">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="client" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="state" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="source" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBatchFileXMLResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetBatchFileXMLResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

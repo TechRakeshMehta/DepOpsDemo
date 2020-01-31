@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="GetProfileDetail" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="GetProfileDetail" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ErrorStatus">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Code" type="xs:string" minOccurs="0" />
+              <xs:element name="Type" type="xs:string" minOccurs="0" />
+              <xs:element name="Message" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Profile">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Prof_No" type="xs:string" minOccurs="0" />
+              <xs:element name="SubjectType" type="xs:string" minOccurs="0" />
+              <xs:element name="SSN" type="xs:string" minOccurs="0" />
+              <xs:element name="Last_Name" type="xs:string" minOccurs="0" />
+              <xs:element name="First_Name" type="xs:string" minOccurs="0" />
+              <xs:element name="Status" type="xs:string" minOccurs="0" />
+              <xs:element name="Stage" type="xs:string" minOccurs="0" />
+              <xs:element name="Entered" type="xs:string" minOccurs="0" />
+              <xs:element name="Entered_By" type="xs:string" minOccurs="0" />
+              <xs:element name="Completed" type="xs:string" minOccurs="0" />
+              <xs:element name="Completed_By" type="xs:string" minOccurs="0" />
+              <xs:element name="Highlighted" type="xs:string" minOccurs="0" />
+              <xs:element name="CustID" type="xs:string" minOccurs="0" />
+              <xs:element name="CustName" type="xs:string" minOccurs="0" />
+              <xs:element name="OrderCount" type="xs:string" minOccurs="0" />
+              <xs:element name="CompletedCount" type="xs:string" minOccurs="0" />
+              <xs:element name="HasHeldServices" type="xs:string" minOccurs="0" />
+              <xs:element name="HasFlaggedOrders" type="xs:string" minOccurs="0" />
+              <xs:element name="HasStatusDetail" type="xs:string" minOccurs="0" />
+              <xs:element name="Order" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="OrderID" type="xs:string" minOccurs="0" />
+                    <xs:element name="Prof_No" type="xs:string" minOccurs="0" />
+                    <xs:element name="ServiceNo" type="xs:string" minOccurs="0" />
+                    <xs:element name="Country" type="xs:string" minOccurs="0" />
+                    <xs:element name="State" type="xs:string" minOccurs="0" />
+                    <xs:element name="County" type="xs:string" minOccurs="0" />
+                    <xs:element name="City" type="xs:string" minOccurs="0" />
+                    <xs:element name="Zip" type="xs:string" minOccurs="0" />
+                    <xs:element name="Ordered" type="xs:string" minOccurs="0" />
+                    <xs:element name="Processed" type="xs:string" minOccurs="0" />
+                    <xs:element name="Received" type="xs:string" minOccurs="0" />
+                    <xs:element name="Instruction" type="xs:string" minOccurs="0" />
+                    <xs:element name="HitFlag" type="xs:string" minOccurs="0" />
+                    <xs:element name="AliasID" type="xs:string" minOccurs="0" />
+                    <xs:element name="SvcUsesCoreInfo" type="xs:string" minOccurs="0" />
+                    <xs:element name="SvcDescrip" type="xs:string" minOccurs="0" />
+                    <xs:element name="SvcType" type="xs:string" minOccurs="0" />
+                    <xs:element name="SvcPageName" type="xs:string" minOccurs="0" />
+                    <xs:element name="SvcIsMultiLoc" type="xs:string" minOccurs="0" />
+                    <xs:element name="ProfSvcStatus" type="xs:string" minOccurs="0" />
+                    <xs:element name="ProfSvcPending" type="xs:string" minOccurs="0" />
+                    <xs:element name="SrcStatusDetail" type="xs:string" minOccurs="0" />
+                    <xs:element name="BOStatusDetail" type="xs:string" minOccurs="0" />
+                    <xs:element name="PkgServiceNo" type="xs:string" minOccurs="0" />
+                    <xs:element name="CustCanRelHold" type="xs:string" minOccurs="0" />
+                    <xs:element name="IsPackageDef" type="xs:string" minOccurs="0" />
+                    <xs:element name="Qty" type="xs:string" minOccurs="0" />
+                    <xs:element name="UnitCost" type="xs:string" minOccurs="0" />
+                    <xs:element name="SubTotal" type="xs:string" minOccurs="0" />
+                    <xs:element name="Adjustment" type="xs:string" minOccurs="0" />
+                    <xs:element name="Fees" type="xs:string" minOccurs="0" />
+                    <xs:element name="Total" type="xs:string" minOccurs="0" />
+                    <xs:element name="PkgOrderID" type="xs:string" minOccurs="0" />
+                    <xs:element name="OrderNote" type="xs:string" minOccurs="0" />
+                    <xs:element name="OrderXML" type="xs:string" minOccurs="0" />
+                    <xs:element name="OrderStatus" type="xs:string" minOccurs="0" />
+                    <xs:element name="FName" type="xs:string" minOccurs="0" />
+                    <xs:element name="MName" type="xs:string" minOccurs="0" />
+                    <xs:element name="LName" type="xs:string" minOccurs="0" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="EmptyService" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Prof_No" type="xs:string" minOccurs="0" />
+                    <xs:element name="ServiceNo" type="xs:string" minOccurs="0" />
+                    <xs:element name="ServiceName" type="xs:string" minOccurs="0" />
+                    <xs:element name="CustomName" type="xs:string" minOccurs="0" />
+                    <xs:element name="PkgServiceNo" type="xs:string" minOccurs="0" />
+                    <xs:element name="IsPackageDef" type="xs:string" minOccurs="0" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Alias" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="AliasID" type="xs:string" minOccurs="0" />
+                    <xs:element name="LastName" type="xs:string" minOccurs="0" />
+                    <xs:element name="FirstName" type="xs:string" minOccurs="0" />
+                    <xs:element name="MiddleName" type="xs:string" minOccurs="0" />
+                    <xs:element name="Suffix" type="xs:string" minOccurs="0" />
+                    <xs:element name="AliasType" type="xs:string" minOccurs="0" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Address" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="AppID" type="xs:string" minOccurs="0" />
+                    <xs:element name="AddrID" type="xs:string" minOccurs="0" />
+                    <xs:element name="Addr1" type="xs:string" minOccurs="0" />
+                    <xs:element name="Addr2" type="xs:string" minOccurs="0" />
+                    <xs:element name="City" type="xs:string" minOccurs="0" />
+                    <xs:element name="State" type="xs:string" minOccurs="0" />
+                    <xs:element name="County" type="xs:string" minOccurs="0" />
+                    <xs:element name="ZipCode" type="xs:string" minOccurs="0" />
+                    <xs:element name="FromDate" type="xs:string" minOccurs="0" />
+                    <xs:element name="ToDate" type="xs:string" minOccurs="0" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Donor>
+  <DonorLab></DonorLab>
+  <OrderClient>
+    <ClientNumber></ClientNumber>
+  </OrderClient>
+  <Specimen>
+    <SpecimenID></SpecimenID>
+    <LabAccessionNumber></LabAccessionNumber>
+    <DonorPrimaryID></DonorPrimaryID>
+    <ReasonForTest></ReasonForTest>
+    <SpecimenCollectionDate></SpecimenCollectionDate>
+    <SpecimenCollectionTime></SpecimenCollectionTime>
+    <SpecimenReceivedDate></SpecimenReceivedDate>
+    <SpecimenReceivedTime></SpecimenReceivedTime>
+  </Specimen>
+  <ClientSiteLocation>
+    <ClientSiteLocationID></ClientSiteLocationID>
+  </ClientSiteLocation>
+  <QuestLab>
+    <QuestLabID></QuestLabID>
+  </QuestLab>
+</Donor>

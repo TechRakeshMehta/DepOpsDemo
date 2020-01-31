@@ -1,0 +1,2148 @@
+﻿/*
+----------------------------------------------------------
+Copyright (C) Copyright Intersoft Data Labs. All rights reserved.
+----------------------------------------------------------
+File: core.css
+Version: 2013.1.3.1630 */
+/*
+Purpose: Defines the base styles for the application and the Fluid forms
+
+File log:
+
+Version: 2013.1.3.1000
+-----------------------
+    1. Most updated styles
+
+Version: 2013.1.3.1630
+-----------------------
+    1. Comments update only
+*/
+
+/*===>===>===>===>===>===>===>===>===>===>===>
+Defining style for core html elements*/
+
+/*Reseting broswer elements*/
+html {
+    color: #000;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, select, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+fieldset, img {
+    border: 0;
+}
+
+address, button, caption, cite, code, dfn, em, input, optgroup, option, select, strong, textarea, th, var {
+    font: inherit;
+}
+
+del, ins {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+caption, th {
+    text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+q:before, q:after {
+    content: '';
+}
+
+abbr, acronym {
+    border: 0;
+    font-variant: normal;
+}
+
+sup {
+    vertical-align: super;
+}
+
+sub {
+    vertical-align: sub;
+}
+
+legend {
+    color: #000;
+}
+
+/*Setting base html element*/
+html {
+    height: 100%;
+    overflow: hidden!important;
+    font-size: 100%;
+}
+
+/*Setting base body element*/
+body {
+    width: 100%;
+    height: 100%;
+    font-family: Helvetia, Arial, sans-serif!important;
+    font-size: 100% !important;
+    margin: 0;
+    padding: 0;
+}
+
+/*Setting default border styles for all elements*/
+* {
+    border-style: solid;
+    border-width: 0;
+    border-color: #adadad;
+}
+
+
+/*===>===>===>===>===>===>===>===>===>===>===>
+Defining style for top page*/
+
+/*Link for home page*/
+#homelink {
+    display: block;
+    height: 73px;
+    position: absolute;
+    width: 136px;
+    text-decoration: none;
+}
+
+/*Setting height for the main form*/
+#frmApp {
+    height: 100%;
+}
+
+
+/*--->--->--->--->--->--->--->--->--->--->--->
+Setting styles for splash box*/
+
+/*Splash box container*/
+#applodrwr {
+    width: 100%;
+    height: 100%;
+    background: white url('images/loader.gif') no-repeat center;
+    text-align: center;
+    position: absolute;
+    z-index: 10000;
+}
+
+#applodr {
+    padding-top: 100px;
+    font-size: 120%;
+}
+
+#applodrmsg {
+    font-size: 80%;
+}
+
+/*--->--->--->--->--->--->--->--->--->--->--->
+Setting styles for progress box*/
+
+#progswr {
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    z-index: 9998;
+    position: absolute;
+}
+
+#modlodrwr {
+    bottom: 20px;
+    height: 37px;
+    padding-top: 16px;
+    position: absolute;
+    right: 30px;
+    text-align: left;
+    overflow: visible;
+    z-index: 9999;
+    background: url("images/loader.gif") no-repeat scroll right center transparent;
+    vertical-align: middle;
+    padding-right: 35px;
+}
+
+    #modlodrwr span {
+        display: inline-block;
+        font-size: 11px;
+    }
+
+/*--->--->--->--->--->--->--->--->--->--->--->
+Defining styles for the base elements of top page*/
+
+/*Container of bottom portion of top page*/
+#modoutwr {
+    border-top-width: 0px;
+    height: 100%;
+    font-size: 11px;
+}
+
+/*Base or Main or Top level container of the page*/
+#base_wrapper {
+    height: 100%;
+    width: 100%!important;
+    font-size: 11px;
+}
+
+/*Class representing the styles for Top Panel which contains header, main menu and tool bar*/
+.tplTopPanel {
+    overflow: visible !important;
+    border-bottom-width: 0px;
+    background-color: #eee;
+    border-bottom-color: #666;
+    position: relative;
+}
+
+
+/*--->--->--->--->--->--->--->--->--->--->--->
+Defining styles for header elements*/
+
+
+/*Outer container of header*/
+#apphdrwr {
+    height: 76px;
+    border-bottom-width: 1px;
+    position: relative;
+}
+
+/*Outer container of logo*/
+#applogo {
+    position: relative;
+}
+
+/*Inner container of logo*/
+#applogocnt {
+    margin-left: 471px;
+    top: 19px;
+    position: absolute;
+    border-left: 1px solid black;
+    padding-left: 13px;
+}
+
+/*Container for Application title*/
+#appttl {
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+/*Container for Application tag line*/
+#apptag {
+    font-size: 14px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/*Container for Application Name also known as Portal name or Line of buisines*/
+#appportl {
+    border-left-width: 2px;
+    border-left-style: solid;
+    font-size: 16px;
+    font-weight: 700;
+    margin-left: 276px;
+    padding-left: 9px;
+    position: absolute;
+    top: 20px;
+}
+
+/*Container for logged in user info*/
+#log_info {
+    position: absolute;
+    right: 28px;
+    top: 5px;
+    font-size: 10px;
+    padding: 2px 0 0 20px;
+    height: 20px;
+    display: none;
+}
+
+    /*Class representing the styles for user name displayed inside user info container*/
+    #log_info .user {
+    }
+
+
+/*--->--->--->--->--->--->--->--->--->--->--->
+Defining style for main menu*/
+
+/*Container for main menu bar*/
+/*2013.3.1: changed*/
+#appmenuwr {
+    height: 38px;
+    font-size: 17px;
+}
+
+
+/*Class representing the styles main menu control*/
+.appmenu {
+    z-index: 5999;
+    width: 100%;
+}
+
+
+/*--->--->--->--->--->--->--->--->--->--->--->
+Defining style for tool bar*/
+
+/*Outer Container for main tool bar*/
+#apptbarwr {
+    position: relative;
+    display: none;
+}
+
+/*Inner Container for main tool bar*/
+#apptbar {
+    overflow: hidden;
+}
+
+/*SHOULD NOT BE HERE, VERIFY AND DELETE*/
+.astlegnd {
+    line-height: 137%;
+    padding: 10px;
+    padding-left: 35px;
+}
+
+/*Overriding the styles for the tool bar control inside the tool bar container*/
+#apptbar .RadToolBar {
+    width: 100%;
+}
+
+/*--->--->--->--->--->--->--->--->--->--->--->
+Defining style for left panel*/
+
+/*Inner Container / AjaxRegion of left pane*/
+#updPanelLeft {
+    height: 100%;
+}
+
+
+/*===>===>===>===>===>===>===>===>===>===>===>
+Defining style for module page*/
+
+/*Default styles for headers*/
+h1, h2, h3, h4, h5, h6 {
+    position: relative;
+    font-weight: 700;
+    word-spacing: 2px;
+    /*color: #777;*/
+}
+
+/*Setting height for the main form*/
+#frmMod {
+    height: 100%;
+}
+
+/*Base or Main or Top level container of the page*/
+#pageoutwr {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    -webkit-box-sizing: content-box!important;
+    font-size: 11px;
+    position: relative;
+}
+
+/*--->--->--->--->--->--->--->--->--->--->--->
+Defining style for Module bar*/
+
+
+
+/*Outer Container of module bar*/
+#modwrapo {
+    height: 60px;
+    border-style: none;
+    margin-bottom: 10px;
+}
+
+
+/*Inner Container of module bar*/
+#modwrapi {
+    padding: 4px 10px 0;
+    border-style: none;
+}
+
+/*Container of bread crumb*/
+#breadcmb {
+    font-size: 110%;
+}
+
+    /*Anchor element inside bread crumb*/
+    #breadcmb a {
+        font-weight: bold;
+    }
+
+        #breadcmb a:hover {
+        }
+
+/*Container of module bar header*/
+#modhdr {
+    font-size: 225%;
+    margin-top: 3px;
+    white-space: nowrap;
+}
+
+    /*Header element of module bar*/
+    #modhdr h1 {
+        letter-spacing: 0px !important;
+        font-weight: normal;
+    }
+
+    /*Class representing styles for span element for page title inside module bar*/
+    #modhdr .phdr {
+        text-transform: capitalize;
+        font-size: 80%;
+        color: #333;
+    }
+
+/*Module bar commands*/
+#modcmds {
+    position: absolute;
+    right: 10px;
+    top: 15px;
+}
+
+#modcmd_bar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    text-align: right;
+}
+
+/*--->--->--->--->--->--->--->--->--->--->--->
+Defining style for Message box*/
+
+/*SHOULD NOT BE HERE, VERIFY AND DELETE*/
+.msgbx {
+    display: block;
+    padding: 15px 10px 20px 53px;
+    border-width: 1px;
+    margin: 10px;
+}
+
+#mbox {
+    display: none;
+}
+
+/*A class that represents a collapsed header*/
+/*SHOULD NOT BE HERE, VERIFY AND MOVE*/
+.colps {
+    padding-left: 16px !important;
+}
+
+/*--->--->--->--->--->--->--->--->--->--->--->
+Defining style for Content page*/
+
+/*Outer Container of the module content page*/
+#box_content {
+    padding: 0px;
+    margin: 0;
+}
+
+    /*Styles for common html elements in content page*/
+    #box_content h1 {
+        font-size: 150%;
+        margin: 10px 0;
+    }
+
+    #box_content h2 {
+        font-size: 140%;
+        margin: 8px 0;
+    }
+
+    #box_content h3 {
+        font-size: 130%;
+        margin: 6px 0;
+    }
+
+    #box_content h4 {
+        font-size: 120%;
+        margin: 4px 0;
+    }
+
+    #box_content h5 {
+        font-size: 110%;
+        margin: 2px 0;
+    }
+
+    #box_content h6 {
+        font-size: 100%;
+    }
+
+    #box_content p {
+        margin: 10px 0;
+    }
+
+    #box_content b, #box_content strong {
+        font-weight: bold;
+    }
+
+    #box_content i, #box_content em {
+        font-style: italic;
+    }
+
+    #box_content q {
+        font-style: italic;
+        font-weight: bold;
+    }
+
+    #box_content .textual li {
+        margin-left: 10px;
+        list-style-position: inside;
+        list-style-type: disc;
+    }
+
+    #box_content .textual ol li {
+        list-style-type: decimal;
+    }
+
+/*===>===>===>===>===>===>===>===>===>===>===>
+Defining style for System X UI Patters*/
+
+/*--->--->--->--->--->--->--->--->--->--->--->
+Defining style for Sections and Tabbed views*/
+
+/*Classes that represent the Outer Container for Section and tabbed views*/
+/*Defining base styles for both the views*/
+.section, .tabvw {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.section {
+}
+
+    /*A class representing the main header element of the section*/
+    .section .mhdr {
+        padding: 0 0 8px 0;
+        margin: 0 !important;
+        font-size: 133% !important;
+        cursor: pointer;
+    }
+
+    /*A class that represents the container for section contents*/
+    .section .content {
+        margin: 0 0 10px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        position: relative;
+    }
+
+        /*A class that represents the sub header element of the section that should be placed inside content*/
+        .section .content .shdr {
+            font-size: 100% !important;
+            margin: 8px 0 8px 0px!important;
+        }
+
+/*A class that defines the styles for tab strip controls*/
+.tabstrp {
+}
+
+/*Add more styles for tabbed views*/
+.tabvw {
+    border-bottom-width: 1px;
+    border-right-width: 1px;
+    border-left-width: 1px;
+    padding-top: 20px;
+}
+
+    /*A class that reprenting section inside a tabbed view*/
+    /*Overdding styles of section class as defined above*/
+    .tabvw .section {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+        /*Overdding styles of main header class as defined above*/
+        .tabvw .section .mhdr {
+            font-size: 113% !important;
+            padding: 0 0 0px;
+        }
+
+        /*Overdding styles of section content class as defined above*/
+        .tabvw .section .content {
+            margin: 8px 0 4px;
+        }
+
+    /*Overdding styles of the collapsed header class as defined above*/
+    .tabvw .colps {
+        background-position: -4px 0;
+    }
+
+/*Surender - style to fix font size in tab view*/
+.tabw .section .mhdr {
+    font-size: 120% !important;
+}
+
+/*--->--->--->--->--->--->--->--->--->--->--->
+Defining style for Sub-sections*/
+
+/*Outer container*/
+.sbsection {
+    margin: 5px 0;
+    padding:4px;
+}
+
+/*Sub Main header*/
+h1.sbhdr {
+    font-size: 120% !important;
+    margin: 0 0 5px !important;
+    padding: 0;
+    cursor: pointer;
+}
+
+/*Inner Subsection*/
+.sbcontent .sbsection {
+    padding: 0 10px;
+}
+
+.sbcontent {
+}
+
+.sbsection .colps {
+    padding-left: 16px;
+    color: #adadad;
+}
+
+/*--->--->--->--->--->--->--->--->--->--->--->
+Defining base style for SX Forms*/
+
+/*SHOULD NOT BE HERE, VERIFY AND DELETE*/
+.sxlm .msg {
+    font-size: 90%;
+}
+
+/*SHOULD NOT BE HERE, VERIFY AND DELETE*/
+.sxactfrm {
+    border-style: solid;
+    border-color: blue;
+    background-color: Orange;
+}
+
+/*SHOULD NOT BE HERE, VERIFY AND DELETE*/
+.sxhvrfrm {
+    border-style: solid;
+    border-color: blue;
+    background-color: #C3D8F1;
+}
+
+/*Outer container for sx form*/
+.sxform {
+}
+
+/*A class that makes a span or a div inside a sxro element looks like a readonly text box*/
+.sxro .ronly {
+    border-width: 1px;
+}
+
+/*Label, element and cell in sxform*/
+.sxpnl .sxro .sxlb {
+}
+
+.sxpnl .sxro .sxlb, .sxpnl .sxro .sxlm, .sxpnl .sxtable td {
+    border-style: solid;
+}
+
+/*Classes for Grid control IE9 fix, without these padding is created below section box*/
+.gwrap {
+    float: left;
+}
+
+.gclr {
+    clear: both;
+}
+
+
+/*--->--->--->--->--->--->--->--->--->--->--->
+Defining styles of command bar*/
+
+.content .sxcbar {
+    margin-top: 10px;
+}
+
+    .content .sxcbar .sxcmds {
+        padding: 0;
+        zoom: 1;
+    }
+
+.c .sxcmds {
+    padding: 3px;
+    text-align: center;
+    margin-top:-1px;
+}
+
+.l .sxcmds {
+    padding: 3px;
+    text-align: left;
+}
+
+.r .sxcmds {
+    padding: 3px;
+    text-align: right;
+}
+
+.content .tabstrp {
+    margin-bottom: -1px;
+}
+
+.content .tabvw {
+    padding: 5px;
+    margin: 0;
+}
+
+.sxtabs .tabpnl {
+    margin-right: 5px;
+}
+
+.tabpnl .sxform {
+    background: none;
+}
+
+.tabpnl .sxlb, .tabpnl .sxlm {
+    border-color: White !important;
+}
+
+/*--->--->--->--->--->--->--->--->--->--->--->
+Defining styles for control tweaks*/
+
+.sxlm li {
+    list-style: none outside none !important;
+    margin: 0 !important;
+}
+
+.RadDock {
+    z-index: 6001;
+}
+
+.dzone .RadDockZone {
+    padding: 0;
+    margin: 0;
+    overflow: visible !important;
+    min-width: 190px;
+}
+
+.dzone .RadDock .rdContent {
+    overflow: visible !important;
+}
+
+.dzone .RadDock {
+    min-width: 190px;
+}
+
+.rgEditForm {
+    padding: 10px;
+}
+
+    .rgEditForm .section {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+        .rgEditForm .section .mhdr {
+            font-size: 105% !important;
+            padding: 0 0 4px;
+        }
+
+        .rgEditForm .section .content {
+            margin: 0;
+            border-top-width: 1px;
+        }
+
+            .rgEditForm .section .content .sxform {
+                padding-top: 2px;
+            }
+
+.rlbList li {
+    list-style: none outside none !important;
+    margin: 0 !important;
+}
+
+tr.rgNoRecords td {
+    padding: 10px;
+}
+
+.sxlm .rcCalPopup, .sxlm .rcTimePopup {
+    height: 19px;
+    top: -1px;
+}
+
+.sxlm .RadListBox .rlbCheck, .sxlm .RadListBox .rlbImage, .sxlm .RadListBox .rlbText {
+    margin-right: 5px;
+}
+
+.RadTabStrip li {
+    margin: 0px !important;
+}
+
+.sxcbar {
+    padding-left: 10px;
+    overflow: hidden;
+}
+
+    .sxcbar .rbLinkButton {
+        border: none !important;
+    }
+
+    .sxcbar .RadButton .rbPrimary {
+        padding-left: 20.65px;
+        padding-right: 9.65px;
+    }
+
+.sxlm .RadUpload .ruCheck {
+    margin-top: 3px;
+    margin-right: 5px;
+}
+
+.rtlEditForm {
+    padding: 10px;
+}
+
+    .rtlEditForm .section {
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none;
+        background: none;
+    }
+
+        .rtlEditForm .section .mhdr {
+            font-size: 105% !important;
+            padding: 0 0 4px;
+        }
+
+        .rtlEditForm .section .content {
+            margin: 0;
+            border-top-width: 1px;
+        }
+
+            .rtlEditForm .section .content .sxform {
+                padding-top: 2px;
+            }
+
+.appPopup {
+    z-index: 7001;
+}
+
+/*Shakeel: input and radio box fix*/
+input[type="checkbox"] {
+    vertical-align: middle;
+    margin: 5px;
+}
+
+input[type="radio"] {
+    vertical-align: bottom;
+    margin-right: 3px;
+}
+
+/*Overriding styles for Rad Dialog windows*/
+.RadWindow .rwDialogText {
+    margin-top: 5px;
+    min-height: 35px;
+}
+
+.radalert, .radconfirm {
+    background-position: left top!important;
+}
+
+    .radalert .swDialogCmds {
+        text-align: center;
+        margin-left: 95px;
+    }
+
+    .radconfirm .swDialogCmds {
+        text-align: center;
+        margin-left: 63px;
+    }
+
+.sxDlgContent {
+    font-size: 12px;
+    padding: 16px;
+}
+
+/* Removing this because of the bug *
+.RadGrid .rgDetailTable{margin:10px;}
+*/
+
+/*Class for dynamically created wrapper around the Grid's detail table*/
+.rgDetWrapper {
+    padding: 10px;
+}
+
+.grdCmdBar {
+    padding: 5px;
+    text-align: right;
+}
+
+.RadWindow .noicon {
+}
+
+.rwWindowContent iframe {
+    overflow: auto!important;
+}
+
+.RadTreeList {
+    display: inline-table;
+    width: 99.5%;
+}
+
+    .RadTreeList .rtlTable {
+        table-layout: auto !important;
+    }
+
+    .RadTreeList .rtlEditForm {
+        margin: 0!important;
+    }
+/*fixing overlapping issue in firefox*/
+
+.RadPanelBar .rpRootGroup {
+    border-width: 0px !important;
+}
+/* bug #7675 - override for hiding left panelbar border */
+
+/*--->--->--->--->--->--->--->--->--->--->--->
+Defining generic classes*/
+
+.nobg {
+    background-color: transparent !important;
+}
+
+.nomarg {
+    margin: 0 !important;
+}
+
+.nopad {
+    padding: 0!important;
+}
+
+.nobdr {
+    border-style: none!important;
+    border-width: 0!important;
+}
+
+span.errmsg {
+    font-size: 90%;
+}
+
+.reqd {
+    font-size: 11px;
+    font-family: Helvetia, Arial, sans-serif!important;
+}
+
+.emph {
+    font-weight: bold;
+}
+
+.sxcenter {
+    margin: 0 auto !important;
+}
+
+iframe.ifrmain {
+    width: 100%;
+    height: 100%;
+    padding: 0!important;
+    margin: 0!important;
+}
+
+.sxtbox {
+    border: 1px solid blue;
+    overflow: hidden;
+}
+
+.RadWindow .noicon {
+    background-image: none !important;
+}
+
+.rwWindowContent iframe {
+    padding: 0!important;
+    margin: 0!important;
+    width: 100%!important;
+}
+
+.txtitlc {
+    font-style: italic;
+}
+
+.fulscr {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.relpos {
+    position: relative!important;
+}
+
+.inbloc {
+    display: inline-block!important;
+}
+
+.floatLeft {
+    float: left;
+}
+
+.floatRight {
+    float: right;
+}
+
+.nodisp {
+    display: none;
+}
+
+.alrt {
+    text-align: right!important;
+}
+
+.allt {
+    text-align: left!important;
+}
+
+.alcn {
+    text-align: center!important;
+}
+
+.border_box {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/*--->--->--->--->--->--->--->--->--->--->--->
+Defining styles of message box*/
+.msgbox {
+    display: none;
+}
+
+    .msgbox .error {
+        display: block;
+        padding: 20px;
+        padding: 15px 10px 20px 53px;
+        border-width: 1px;
+        margin: 10px;
+    }
+
+    .msgbox .info {
+        display: block;
+        padding: 20px;
+        padding: 15px 10px 20px 53px;
+        border-width: 1px;
+        margin: 10px;
+    }
+
+    .msgbox .sucs {
+        display: block;
+        padding: 20px;
+        padding: 15px 10px 20px 53px;
+        border-width: 1px;
+        margin: 10px;
+    }
+
+.box {
+    display: block!important;
+}
+
+.nocolps {
+    cursor: auto !important;
+}
+
+
+.hsep {
+    height: 7px;
+    margin: 10px 0;
+}
+
+.vsep {
+    width: 4px;
+    display: -moz-inline-box;
+    display: inline-block;
+}
+
+/*IE7 specific*/
+.ie7txb {
+    border-width: 1px;
+    border-color: #8E8E8E #B8B8B8 #B8B8B8 #8E8E8E;
+    overflow: hidden;
+}
+
+.ie7txbho {
+    border-color: #515151;
+}
+
+.ie7txber {
+    border-color: #D51923;
+}
+
+/*===>===>===>===>===>===>===>===>===>===>===>
+Defining style for Popup page*/
+.popupCnt {
+    background-color: white;
+    font-size: 12px;
+    /*height:600px! important;*/
+}
+
+    /*.popupCnt .section {
+        background: none;
+    }*/
+
+.popupCmd {
+    border-top: 1px solid #adadad;
+}
+
+#popupProgress {
+    text-align: center;
+    position: absolute;
+    z-index: 10001;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: white url('images/loader.gif') no-repeat center;
+}
+
+    #popupProgress .msg {
+        position: absolute;
+        top: 55%;
+        width: 100%;
+        font-size: 12px;
+    }
+
+
+/*===>===>===>===>===>===>===>===>===>===>===>
+//SX FORM / RESIZE STYLES*/
+
+/*--->--->--->--->--->--->--->--->--->--->--->
+Base style definitions*/
+.sxform {
+    padding: 1px 0;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.sxro .ronly {
+    display: block;
+    width: auto;
+    min-height: 16px;
+    padding: 2px;
+    word-wrap: break-word;
+}
+/*@29-06-2012 Added word-wrap element on suggestion of Steve baker to handle long word*/
+.sxpnl .sxgrp {
+}
+
+.sxpnl {
+    padding: 1px 0 1px 5px;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+    .sxpnl .sxro {
+        clear: both;
+        margin: 5px 0;
+        width: 100%;
+        min-height: 19px;
+    }
+
+        .sxpnl .sxro .sxlb, .sxpnl .sxro .sxlm {
+            float: left;
+            overflow: hidden;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            vertical-align: top;
+            text-align: left;
+        }
+
+.sxro .sxroend {
+    clear: both;
+    margin: 0;
+    padding: 0;
+    height: 0px !important;
+    overflow: hidden;
+}
+
+.sxco {
+    margin: 0;
+    padding: 0 5px 0 0;
+    float: left;
+    overflow: hidden;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.sxpnl .sxro .sxlb {
+    margin: 0;
+    border-right-width: 5px;
+    padding: 3px 5px 4px;
+    min-height: 15px;
+}
+
+.sxpnl .sxro .sxlm {
+    margin: 0;
+    border-right-width: 5px;
+    min-height: 17px;
+}
+
+    .sxpnl .sxro .sxlm .dpkr {
+        width: 100% !important;
+    }
+
+.sxform .shdr {
+    font-size: 115% !important;
+    border-bottom-width: 1px;
+    margin: 11px 0 7px !important;
+}
+
+.sxform .first {
+    margin-top: 4px !important;
+}
+
+.sxactfrm {
+    border-width: 1px;
+}
+
+.sxhvrfrm {
+    border-width: 1px;
+}
+
+
+/*--->--->--->--->--->--->--->--->--->--->--->
+Column size definitions for normal columns*/
+
+
+.sx1co .sxlb, .sxlb {
+    width: 40%;
+}
+
+.sx1co .sxlm, .sxlm {
+    width: 60%;
+}
+
+*.sx1co .sxco, .sxco {
+    width: 100%;
+}
+
+.sx2co .sxlb {
+    width: 20%;
+}
+
+.sx2co .sxlm {
+    width: 30%;
+}
+
+.sx2co .sxco {
+    width: 50%;
+}
+
+.sx3co .sxlb {
+    width: 15%;
+}
+
+.sx3co .sxlm {
+    width: 18.33%;
+}
+
+.sx3co .sxco {
+    width: 33.33%;
+}
+
+.sx4co .sxlb {
+    width: 12.25%;
+}
+
+.sx4co .sxlm {
+    width: 12.75%;
+}
+
+.sx4co .sxco {
+    width: 25%;
+}
+
+/*--->--->--->--->--->--->--->--->--->--->--->
+Column size definitions for column splitting*/
+
+.sx2sp .c1 {
+    width: 49.7%;
+    margin: 0 .3% 0 0;
+    float: left;
+    overflow: hidden;
+}
+
+.sx2sp .cx {
+    width: 49.7%;
+    margin: 0 0 0 .3%;
+    float: left;
+    overflow: hidden;
+}
+
+.sx3sp .c1 {
+    width: 33%;
+    margin: 0 .3% 0 0;
+    float: left;
+    overflow: hidden;
+}
+
+.sx3sp .c {
+    width: 32.7%;
+    margin: 0 .3%;
+    float: left;
+    overflow: hidden;
+}
+
+.sx3sp .cx {
+    width: 33%;
+    margin: 0 0 0 .3%;
+    float: left;
+    overflow: hidden;
+}
+
+.sx4sp .c1 {
+    width: 24.7%;
+    margin: 0 .3% 0 0;
+    float: left;
+    overflow: hidden;
+}
+
+.sx4sp .c {
+    width: 24.4%;
+    margin: 0 .3%;
+    float: left;
+    overflow: hidden;
+}
+
+.sx4sp .cx {
+    width: 24.7%;
+    margin: 0 0 0 .3%;
+    float: left;
+    overflow: hidden;
+}
+
+/*--->--->--->--->--->--->--->--->--->--->--->
+Column size definitions for column spannings*/
+
+.sx2co .m2spn {
+    width: 80%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.sx3co .m2spn {
+    width: 51.67%;
+}
+
+.sx4co .m2spn {
+    width: 37.67%;
+}
+
+.sx3co .m3spn {
+    width: 85%;
+}
+
+.sx4co .m3spn {
+    width: 62.67%;
+}
+
+.sx4co .m4spn {
+    width: 87.67%;
+}
+
+.sx2co .b2spn {
+    width: 70%;
+}
+
+.sx3co .b2spn {
+    width: 48.33%;
+}
+
+.sx4co .b2spn {
+    width: 37.25%;
+}
+
+.sx3co .b3spn {
+    width: 81.65%;
+}
+
+.sx4co .b3spn {
+    width: 62.25%;
+}
+
+.sx4co .b4spn {
+    width: 87.25%;
+}
+
+/*--->--->--->--->--->--->--->--->--->--->--->
+Column size definitions for Nesting*/
+
+.r1 {
+    margin: 0 !important;
+}
+
+.rx {
+    margin-bottom: 0 !important;
+}
+
+.l1 {
+    margin-left: 0 !important;
+}
+
+.lx {
+    margin-left: 1% !important;
+}
+
+
+/*--->--->--->--->--->--->--->--->--->--->--->
+Appearance of controls and boxes in columns*/
+
+.monly {
+    padding-right: 5px;
+    padding-top: 3px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+    .monly > .sxlb {
+        margin: 0!important;
+        margin-bottom: 2px!important;
+        padding: 3px!important;
+        clear: both!important;
+        width: 100%;
+        border: none!important;
+        background: transparent!important;
+        color: inherit!important;
+    }
+
+    .monly .vsep {
+        width: 10px;
+    }
+
+.riTextBox {
+    height: 22px;
+    padding-left: 3px !important;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.auto .riTextBox {
+    width: 100% !important;
+}
+
+.auto .RadComboBox {
+    width: 100% !important;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.auto .ronly {
+    width: 100% !important;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.auto .RadPicker {
+    width: 100% !important;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+    .auto .RadPicker .rcTable {
+        width: 100% !important;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+.auto .RadInput {
+    width: 100%!important;
+}
+
+.auto .riTable {
+    width: 100% !important;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.sxtable {
+    table-layout: auto;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.auto .sxtable {
+    width: 100%!important;
+}
+
+/* following td's margin and min-height should be in sync with sxro */
+.sxtable td {
+    border: 0 none;
+    padding-top: 5px;
+    min-height: 19px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    vertical-align: top;
+    border-right-width: 5px;
+    border-right-style: solid;
+}
+
+    .sxtable td.c1 {
+    }
+
+.sxtable .r1 td.c1, .sxtable .r1 td.c1 {
+    padding: 0;
+}
+
+.sxtable td.cx {
+    padding: 0;
+    margin: 0;
+}
+
+/* button icons */
+.icnsubmit {
+    background-image: url('images/submit.png');
+    width: 17px!important;
+    top: 4px!important;
+}
+
+.icnsearch {
+    background-image: url('images/search.png');
+    width: 17px!important;
+}
+
+.icnfind {
+    background-image: url('images/find.png');
+    width: 17px!important;
+    top: 4px!important;
+}
+
+.icncancel {
+    background-image: url('images/cancel.png');
+    width: 17px!important;
+}
+
+.icnupload {
+    background-image: url('images/upload.png');
+    width: 17px!important;
+}
+
+.icnreset {
+    background-image: url('images/reset.png');
+    width: 17px!important;
+    top: 4px!important;
+}
+
+.icnsucs {
+    background-image: url('images/btsucs.png');
+    width: 17px!important;
+    top: 3px!important;
+}
+
+.icnedit {
+    background-image: url('images/edit.png')!important;
+    width: 17px!important;
+    top: 2px !important;
+}
+
+.icnopen {
+    background-image: url('images/open.png');
+    width: 17px!important;
+    top: 4px !important;
+}
+
+.icnview {
+    background-image: url('images/view.png');
+    width: 17px!important;
+    top: 3px !important;
+}
+
+.icnconf {
+    background-image: url('images/icons/configure.png');
+    width: 17px!important;
+    top: 3px !important;
+}
+
+.icnminus {
+    background-image: url('images/icons/minus.png')!important;
+    width: 17px!important;
+    top: 2px !important;
+}
+
+.icnClearFilter {
+    background-image: url('images/icons/clear_filter.png')!important;
+    width: 17px!important;
+    top: 2px !important;
+}
+
+.xicExcel {
+    background-image: url('images/excel.png');
+    width: 17px!important;
+    top: 4px!important;
+}
+
+.xicCSV {
+    background-image: url('images/csv.png');
+    width: 17px!important;
+    top: 4px!important;
+}
+
+.xicPDF {
+    background-image: url('images/pdf.png');
+    width: 17px!important;
+    top: 4px!important;
+}
+
+.xicWord {
+    background-image: url('images/word.png');
+    width: 17px!important;
+    top: 4px!important;
+}
+
+/*embedded icons tweaks*/
+.rbMail, .rbPrevious, .rbNext {
+    top: 5px !important;
+}
+
+.swrap {
+    width: 99.99%;
+    display: inline-table;
+}
+
+.RadInput textarea {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 !important;
+}
+
+.txt2ro {
+    height: 36px;
+}
+
+.txt4ro {
+    height: 64px;
+}
+
+/*grid specific*/
+table.sxgrdcotbl {
+    width: 100%;
+}
+
+.sxgrdcotbl td {
+    padding: 0 0 0!important;
+    margin: 0!important;
+    padding-left: 10px!important;
+    border-width: 0 !important;
+    text-align: left;
+}
+
+    .sxgrdcotbl td.sxgphdr {
+        text-align: center;
+        padding: 5px;
+        font-weight: bold;
+        border-bottom-width: 1px !important;
+    }
+
+    .sxgrdcotbl td.c1 {
+        padding-left: 0px!important;
+    }
+
+tr.sx3co td {
+    width: 33%;
+}
+
+/*widths*/
+.min800 {
+    min-width: 800px;
+}
+
+.min1024 {
+    min-width: 1024px;
+}
+
+.min1280 {
+    min-width: 1280px;
+}
+
+.fix800 {
+    width: 800px;
+}
+
+.fix1024 {
+    width: 1024px;
+}
+
+.fix1280 {
+    width: 1280px;
+}
+
+.auto .rgPagerCell .RadComboBox {
+    width: 50px !important;
+}
+
+.lstauto .rlbGroup {
+    height: auto !important;
+}
+
+.RadPanelBar .rpGroup {
+    overflow-x: hidden;
+    overflow-y: auto !important;
+}
+
+.auto .RadListBox {
+    width: 100%;
+}
+
+.auto .rlbGroup {
+    min-height: 50px;
+    height: 110px;
+    word-wrap: break-word;
+    overflow: auto;
+}
+
+.auto .rlbList {
+}
+
+@-moz-document url-prefix() {
+    .auto .rlbGroup;
+
+{
+    min-height: 50px;
+    height: 118px;
+}
+
+.sxro input[type="radio"] {
+    vertical-align: text-bottom!important;
+}
+
+}
+
+.list2ro .rlbGroup {
+    height: 51px;
+}
+
+.sxco fieldset {
+    border: 1px solid Silver;
+    padding: 10px;
+}
+
+.sxco legend {
+    padding: 5px;
+    font-weight: bold;
+}
+
+input.uplbox {
+    height: 21px;
+    border: 1px solid #ABC1DE;
+    background-color: white;
+    font: 12px "segoe ui",arial,sans-serif;
+}
+/*.appmenu ul.rmRootScrollGroup,.appmenu ul.rmHorizontal,.appmenu ul.rmHorizontal{margin:0;padding:0;position:relative;left:0;float:left;width: 100% !important;}*/
+
+
+.w8_dash .rbLinkButton {
+    padding: 30px 0;
+    background-color: #DAE2E8;
+    border: none!important;
+}
+
+
+/*
+NEW UI STYLES
+==============
+*/
+
+/*CONTROL TWEAKS*/
+.sxlm .RadAutoCompleteBox {
+    width: 100%;
+}
+
+
+.sxlm > .RadCaptcha {
+    background-color: White;
+    padding: 10px;
+    width: 178px;
+}
+
+    .sxlm > .RadCaptcha p {
+        padding-top: 10px;
+    }
+
+    .sxlm > .RadCaptcha input {
+        border: 1px solid #adadad;
+        background-color: lightyellow;
+    }
+
+    .sxlm > .RadCaptcha label {
+        display: block;
+        padding-top: 10px;
+    }
+
+/*dropdown list*/
+.auto .RadDropDownList {
+    width: 100% !important;
+}
+
+
+/*#sys-menu-wrap .setup-menu .rmRootGroup {background-image:none!important;border:none!important;background-color:transparent!important;}
+#sys-menu-wrap .setup-menu .rmRootLink { font:12px/12px Helvetica,Arial,sans-serif !important;color:#dddddd!important;}
+#sys-menu-wrap .setup-menu {padding:0!important;}
+#sys-menu-wrap .setup-menu .rmRootLink .rmLeftImage {padding:0 5px!important;margin:0!important;}
+#sys-menu-wrap .setup-menu .rmExpanded:first-child {color:Black!important;border-radius:3px;}
+#sys-menu-wrap .setup-menu .rmRootLink .rmText{padding:2px 4px 0 0!important;}
+*/
+
+
+#sys-menu-wrap {
+    position: absolute;
+    top: 3px;
+    left: 2px;
+}
+
+    #sys-menu-wrap .setup-menu .rmRootGroup {
+        background-image: none!important;
+        border: none!important;
+        background-color: transparent!important;
+    }
+
+#footer-content {
+    padding-top: 5px;
+    margin-left: 100px;
+    text-align: right;
+}
+
+    #footer-content .liveChatButton {
+        padding: 0 10px 0 27px;
+        background-image: url(images/chat.png);
+        background-repeat: no-repeat;
+        color: #ff0000;
+        text-decoration: underline;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+        #footer-content .liveChatButton:hover {
+            text-decoration: none;
+        }
+
+pre {
+    white-space: pre-wrap; /* css-3 */
+    white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+    white-space: -pre-wrap; /* Opera 4-6 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+
+.sxlm .radio_list input, .sxlm .radio_list label {
+    padding: 0!important;
+    margin: 0!important;
+    vertical-align: top!important;
+}
+
+.sxlm .radio_list input {
+    margin-right: 3px!important;
+}
+
+.sxlm .radio_list label {
+    margin-right: 5px!important;
+}
+
+.sxlm .radio_list td {
+    padding-top: 5px!important;
+}
+
+
+/* Grid command item fix */
+.grdCmdGrp .rbText {
+    padding-left: 21px;
+}
+
+.grdCmdGrp .icnClearFilter {
+    top: 1px!important;
+    margin-left: 2px;
+}
+
+.WclGrid-ExportOptions {
+    text-align: right;
+    padding-right: 53px!important;
+}
+
+.grdCmdGrp .rbOpen {
+    background-image: url('images/icons/download.png')!important;
+    background-position: 0 center!important;
+    width: 17px!important;
+    top: 2px !important;
+    left: 8px;
+    height: 17px;
+}
+
+/* paddingRight5px */
+.paddingRight5px {
+    padding-right: 5px;
+}
+
+
+/*================
+   New Layout 
+================*/
+
+#userinfo_wrap {
+    display: none;
+}
+
+
+#topbar-wrap {
+    background-color: #676767;
+    color: #fff;
+    height: 30px;
+}
+
+#complio_box {
+    float: left;
+    padding-top: 6px;
+    background-color: #adadad;
+    color: #fff;
+    font-weight: bold;
+    width: 70px;
+    text-align: center;
+    height: 24px;
+}
+
+#userbar-wrap {
+    margin-left: 70px;
+    float: right;
+    height: 100%;
+    margin-right: 21px;
+}
+
+    #userbar-wrap:before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+    }
+
+    #userbar-wrap .mid {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    #userbar-wrap .user {
+        font-weight: bold;
+    }
+
+    #userbar-wrap a.user {
+        text-decoration: underline; 
+    }
+
+    #userbar-wrap a.aspNetDisabled {
+        text-decoration: none;
+    }
+
+    #userbar-wrap .logoutbtn {
+        color: White;
+    }
+
+    #userbar-wrap #divTenantName {
+    }
+
+#apphdrwr {
+    background-color: #f8f8f8;
+    height: 67px;
+}
+
+#logo_wrap {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    vertical-align: middle;
+    width: 325px;
+    padding-left: 8px;
+}
+
+    #logo_wrap a {
+        text-decoration: none;
+    }
+
+    #logo_wrap:before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+    }
+
+    #logo_wrap #applogo {
+        vertical-align: middle;
+        display: inline-block;
+    }
+
+        #logo_wrap #applogo img {
+            max-width: 315px;
+            max-height: 42px;
+        }
+
+#appmenuwr {
+    margin-left: 400px;
+    padding: 21px 17px 21px 0;
+}
+
+#updMenu {
+    width: 100%;
+}
+
+#appmenuwr .mnu-float {
+    float: right;
+    max-width: 100%;
+}
+
+/*
+.appmenu, .rmRootGroup{float:right!important;}
+*/
+
+.clr-float {
+    clear: both;
+}
+
+#modwrapo {
+    background-color: #F3F3F3;
+    height: 51px;
+    background-image: url(images/modoverlay.png);
+    background-repeat: repeat-x;
+    color: #000;
+}
+
+.rmRootGroup {
+    background-image: none!important;
+    border: none!important;
+    background-color: transparent!important;
+    color: #adadad;
+}
+
+.rmLeftArrow, .rmRightArrow {
+    background-color: #F8F8F8!important;
+    border: none!important;
+}
+
+.tplTopPanel {
+    border-bottom-color: #dadada;
+    border-bottom-width: 1px;
+}
+
+.collapsed {
+    height: 20px;
+}
+
+.no_error_panel #pnlError {
+    display: none;
+}
+
+.cptn:after {
+    content: ':';
+}
+
+.rddlPopup {
+    width: 377px!important;
+}
+
+.customli {
+    margin: 0px;
+    padding: 0px 0px 8px 0px;
+}
+
+    .customli ul {
+        margin: 0px;
+        padding: 3px 0px 3px 11px;
+    }
+
+        .customli ul li {
+            margin: 0px;
+            list-style: none;
+            display: block;
+            padding: 0px;
+            font-family: Helvetia, Arial, sans-serif!important;
+            color: #000;
+            line-height: 18px;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+.customHeader {
+    color: #8C1921;
+    font-family: Helvetia, Arial, sans-serif;
+    font-size: 100%;
+    font-weight: 700;
+    line-height: 150%;
+    word-spacing: 2px;
+}
+
+.customDivStyle {
+    display: inline-block;
+    width: 30%;
+    vertical-align: top;
+    float: left;
+}
+
+.boldFont {
+    font-weight: bold;
+}
+
+.lineStyle {
+    border-bottom: solid 1px #c0c0c0;
+}
+
+.newLine {
+    clear: both;
+}
+
+.gclrPad {
+    clear: both;
+    padding-top: 6px;
+}
+
+.rgFilterBox {
+    height: 21px !important;
+}
+
+.sxlm .radio_list input, .sxlm .radio_list label {
+    font-size: 12px;
+} 
+
+.RadGrid_Default .rgHeader, .RadGrid_Default th.rgResizeCol, .RadGrid_Default .rgHeaderWrapper {
+    background: none !important;
+    background-color: #2E3347 !important;
+}
+
+    .RadGrid_Default .rgHeader a {
+        color: #F7ECD5 !important;
+    }
+
+.RadGrid_Default .rgHeader {
+    color: #F7ECD5 !important;
+}
+
+/*UAT-4404 Chrome Tree Issue*/
+.common-splitter-font {
+    font-size: 12px !important;
+    font-family: "Segoe UI",Arial,Helvetica,sans-serif !important;
+    color: #000000!important;
+}
+.tree-design {
+    padding-top: 10px;
+    font-family: Arial !important;
+    color: #000000!important;
+}
+
+

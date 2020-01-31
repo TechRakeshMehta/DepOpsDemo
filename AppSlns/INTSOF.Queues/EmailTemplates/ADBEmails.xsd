@@ -1,0 +1,440 @@
+<?xml version="1.0"?>
+<xs:schema id="ADBEmails"
+    targetNamespace="http://tempuri.org/ADBEmails.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://tempuri.org/ADBEmails.xsd"
+    xmlns:mstns="http://tempuri.org/ADBEmails.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+
+  <xs:element name="InsuranceLossComment" id="InsuranceLossComment">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Contents">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="toName" type="xs:string" minOccurs="0" />
+              <xs:element name="preNote" type="xs:string" minOccurs="0" />
+              <xs:element name="postNote" type="xs:string" minOccurs="0" />
+              <xs:element name="navigationURL" type="xs:string" minOccurs="0" />
+              <xs:element name="serviceRequestId" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="NewAccount" id="NewAccount">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Contents">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FirstName" type="xs:string" minOccurs="0" />
+              <xs:element name="LastName" type="xs:string" minOccurs="0" />
+              <xs:element name="LoweredUserName" type="xs:string" minOccurs="0" />
+              <xs:element name="Role" type="xs:string" minOccurs="0" />
+              <xs:element name="DefaultPassword" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="NewApplicantAccount" id="NewApplicantAccount">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Contents">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FirstName" type="xs:string" minOccurs="0" />
+              <xs:element name="LastName" type="xs:string" minOccurs="0" />
+              <xs:element name="TenantName" type="xs:string" minOccurs="0" />
+              <xs:element name="LoginURL" type="xs:string" minOccurs="0" />
+              <xs:element name="UserName" type="xs:string" minOccurs="0" />
+              <xs:element name="UserPassword" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="ApplicantInstitutionChange" id="ApplicantInstitutionChange">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Contents">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FirstName" type="xs:string" minOccurs="0" />
+              <xs:element name="LastName" type="xs:string" minOccurs="0" />
+              <xs:element name="TenantName" type="xs:string" minOccurs="0" />
+              <xs:element name="LoginURL" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="ApplicantEmailAddressChange" id="ApplicantEmailAddressChange">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Contents">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FirstName" type="xs:string" minOccurs="0" />
+              <xs:element name="LastName" type="xs:string" minOccurs="0" />
+              <xs:element name="TenantName" type="xs:string" minOccurs="0" />
+              <xs:element name="LoginURL" type="xs:string" minOccurs="0" />
+              <xs:element name="NewEmailAddress" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="ApplicantAlertEmailAddressChange" id="ApplicantAlertEmailAddressChange">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Contents">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FirstName" type="xs:string" minOccurs="0" />
+              <xs:element name="LastName" type="xs:string" minOccurs="0" />
+              <xs:element name="TenantName" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="VerificationCodeForEmailChange" id="VerificationCodeForEmailChange">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Contents">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FirstName" type="xs:string" minOccurs="0" />
+              <xs:element name="LastName" type="xs:string" minOccurs="0" />
+              <xs:element name="TenantName" type="xs:string" minOccurs="0" />
+              <xs:element name="VerificationCode" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="PasswordReset" id="PasswordReset">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Contents">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FirstName" type="xs:string" minOccurs="0" />
+              <xs:element name="LastName" type="xs:string" minOccurs="0" />
+              <xs:element name="Password" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="ForgotPasswordReset" id="ForgotPasswordReset">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Contents">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="UserName" type="xs:string" minOccurs="0" />
+              <xs:element name="Password" type="xs:string" minOccurs="0" />
+              <xs:element name="TenantName" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ForgotUserNameReset" id="ForgotUserNameReset">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Contents">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="UserName" type="xs:string" minOccurs="0" />
+              <xs:element name="LoginUserName" type="xs:string" minOccurs="0" />
+              <xs:element name="TenantName" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerficationCode" id="VerficationCode">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Contents">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="UserName" type="xs:string" minOccurs="0" />
+              <xs:element name="Code" type="xs:string" minOccurs="0" />
+              <xs:element name="TenantName" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerficationCodeUserName" id="VerficationCodeUserName">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Contents">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="UserName" type="xs:string" minOccurs="0" />
+              <xs:element name="Code" type="xs:string" minOccurs="0" />
+              <xs:element name="TenantName" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DetermineReassignment" id="DetermineReassignment">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Contents">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DecisionText" type="xs:string" minOccurs="0" />
+              <xs:element name="DecisionDescription" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="DetermineReassignmentSupplier" id="DetermineReassignmentSupplier">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Contents">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DecisionText" type="xs:string" minOccurs="0" />
+              <xs:element name="DecisionDescription" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="UnableToLocate" id="UnableToLocate">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Contents">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ServiceRequestId" type="xs:string" minOccurs="0" />
+              <xs:element name="DecisionDescription" type="xs:string" minOccurs="0" />
+              <xs:element name="Address1" type="xs:string" minOccurs="0" />
+              <xs:element name="Address2" type="xs:string" minOccurs="0" />
+              <xs:element name="city" type="xs:string" minOccurs="0" />
+              <xs:element name="statename" type="xs:string" minOccurs="0" />
+              <xs:element name="zipCode" type="xs:string" minOccurs="0" />
+              <xs:element name="country" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="UnableToLocateClientInfo" id="UnableToLocateClientInfo">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Contents">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ServiceRequestId" type="xs:string" minOccurs="0" />
+              <xs:element name="DecisionDescription" type="xs:string" minOccurs="0" />
+              <xs:element name="Address1" type="xs:string" minOccurs="0" />
+              <xs:element name="Address2" type="xs:string" minOccurs="0" />
+              <xs:element name="city" type="xs:string" minOccurs="0" />
+              <xs:element name="statename" type="xs:string" minOccurs="0" />
+              <xs:element name="zipCode" type="xs:string" minOccurs="0" />
+              <xs:element name="country" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="UnableToLocateCancelRequest" id="UnableToLocateCancelRequest">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Contents">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ServiceRequestId" type="xs:string" minOccurs="0" />
+              <xs:element name="DecisionDescription" type="xs:string" minOccurs="0" />
+              <xs:element name="Address1" type="xs:string" minOccurs="0" />
+              <xs:element name="Address2" type="xs:string" minOccurs="0" />
+              <xs:element name="city" type="xs:string" minOccurs="0" />
+              <xs:element name="statename" type="xs:string" minOccurs="0" />
+              <xs:element name="zipCode" type="xs:string" minOccurs="0" />
+              <xs:element name="country" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="ExtensionRequest" id="ExtensionRequest">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Contents">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DecisionText" type="xs:string" minOccurs="0" />
+              <xs:element name="ExtensionCategory" type="xs:string" minOccurs="0" />
+              <xs:element name="SvcReqId" type="xs:string" minOccurs="0" />
+              <xs:element name="ExtraText" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="ExtensionRequestToSupplier" id="ExtensionRequestToSupplier">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Contents">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DecisionText" type="xs:string" minOccurs="0" />
+              <xs:element name="ExtensionCategory" type="xs:string" minOccurs="0" />
+              <xs:element name="SvcReqId" type="xs:string" minOccurs="0" />
+              <xs:element name="ExtraText" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Exception" id="Exception">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Contents">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TimeStamp" type="xs:string" minOccurs="0" />
+              <xs:element name="QueryString" type="xs:string" minOccurs="0" />
+              <xs:element name="CurrentExecutionFilePath" type="xs:string" minOccurs="0" />
+              <xs:element name="FilePath" type="xs:string" minOccurs="0" />
+              <xs:element name="ApplicationPath" type="xs:string" minOccurs="0" />
+              <xs:element name="Request.FilePath" type="xs:string" minOccurs="0" />
+              <xs:element name="Path" type="xs:string" minOccurs="0" />
+              <xs:element name="TYPE" type="xs:string" minOccurs="0" />
+              <xs:element name="TARGETSITE" type="xs:string" minOccurs="0" />
+              <xs:element name="MESSAGE" type="xs:string" minOccurs="0" />
+              <xs:element name="INNEREXCEPTION" type="xs:string" minOccurs="0" />
+              <xs:element name="SOURCE" type="xs:string" minOccurs="0" />
+              <xs:element name="STACKTRACE" type="xs:string" minOccurs="0" />
+              <xs:element name="DATA" type="xs:string" minOccurs="0" />
+              <xs:element name="Context.Items" type="xs:string" minOccurs="0" />
+              <xs:element name="Request.Form" type="xs:string" minOccurs="0" />
+              <xs:element name="Request.ServerVariables" type="xs:string" minOccurs="0" />
+              <xs:element name="Request.PathInfo" type="xs:string" minOccurs="0" />
+              <xs:element name="Request.PhysicalApplicationPath" type="xs:string" minOccurs="0" />
+              <xs:element name="Request.PhysicalPath" type="xs:string" minOccurs="0" />
+              <xs:element name="Request.RawUrl" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="BulkUploadResult" id="BulkUploadResult">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Contents">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ClientId" type="xs:string" minOccurs="0" />
+              <xs:element name="LoanNumber" type="xs:string" minOccurs="0" />
+              <xs:element name="BusinessSucess" type="xs:string" minOccurs="0" />
+              <xs:element name="ServiceRequestID" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="AccountStatus" id="AccountStatus">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Contents">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FirstName" type="xs:string" minOccurs="0" />
+              <xs:element name="LastName" type="xs:string" minOccurs="0" />
+              <xs:element name="Message" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="RoleUpdate" id="RoleUpdate">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Contents">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FirstName" type="xs:string" minOccurs="0" />
+              <xs:element name="LastName" type="xs:string" minOccurs="0" />
+              <xs:element name="allAssignedRoleName" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="NewAccountForAdmins" id="NewAccountForAdmins">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Contents">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FirstName" type="xs:string" minOccurs="0" />
+              <xs:element name="LastName" type="xs:string" minOccurs="0" />
+              <xs:element name="TenantName" type="xs:string" minOccurs="0" />
+              <xs:element name="LoginURL" type="xs:string" minOccurs="0" />
+              <xs:element name="LoweredUserName" type="xs:string" minOccurs="0" />
+              <xs:element name="DefaultPassword" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  
+</xs:schema>

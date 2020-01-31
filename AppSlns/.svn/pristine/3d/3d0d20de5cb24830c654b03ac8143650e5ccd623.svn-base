@@ -1,0 +1,176 @@
+<div id="bodyBlock" class="container-fluid">
+  <section class="p-2">
+    <div class="row">
+      <div class="col-md-12 mb-2 redColor font-weight-bold d-flex">
+        <div class="mr-auto align-self-center">
+          <label id="ODRHISTORY"></label>
+        </div>
+        <button type="button" (click)="BackToDashboard()" class="btn btn-primary">
+          <i class="fas fas fa-arrow-circle-left pr-1"></i>
+          <label id="GOTODASHBOARD"></label>
+        </button>
+      </div>
+      <div class="col-md-12 mb-2 d-flex redColor" *ngIf="ErrorMsg != ''">
+        <label>{{ErrorMsg}}</label>
+      </div>
+      <div class="col-md-12 mb-2 d-flex greenColor" *ngIf="SuccessMsg != ''">
+        <label>{{SuccessMsg}}</label>
+      </div>
+
+      <div class="col-md-12 mb-2 d-flex redColor" *ngIf="hdnCnclErrOrderMsg">
+        <label id="CNCLORDERMSG">{{cnclOrderMsg}}</label>
+      </div>
+      <div class="col-md-12 mb-2 d-flex greenColor" *ngIf="!hdnCnclErrOrderMsg">
+        <label id="CNCLORDERMSG">{{cnclOrderMsg}}</label>
+      </div>
+      <div class="col-md-12">
+        <table class="table table-bordered mb-0" *ngFor="let order of orderDetails;let i=index">
+          <tbody class="col-md-12">
+
+            <tr class="thead-dark">
+              <td>
+                <span class="font-weight-bold pr-1">
+                  <label class="label-on-button" name="ODRNUMBER"></label>
+                </span>
+                <span *ngIf="order.IsSendForOnline != true">{{order.OrderNumber}}</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span class="font-weight-bold pr-1">
+                  <label class="label-on-button" name="ODRDATE"></label>
+                </span>{{order.OrderDate| date : "MM/dd/yyyy, hh:mm a"}}</td>
+            </tr>
+
+            <tr>
+              <td>
+                <span class="font-weight-bold pr-1">
+                  <label class="label-on-button" name="INSTHIERARCHY"></label>
+                </span> {{order.InstituteHierarchy}}</td>
+            </tr>
+            <tr>
+              <td>
+                <span class="font-weight-bold pr-1">
+                  <label class="label-on-button" name="PAYMENTTYPE"></label>
+                </span>{{order.PaymentType}}</td>
+            </tr>
+            <tr>
+              <td>
+                <span class="font-weight-bold pr-1">
+                  <label class="label-on-button" name="AMOUNT"></label>
+                </span>${{order.Amount |number:'1.2-2'}}</td>
+            </tr>
+            <tr>
+              <td>
+                <span class="font-weight-bold pr-1">
+                  <label class="label-on-button" name="PAYMENTSTATUS"></label>
+                </span>{{order.OrderStatusName}}</td>
+            </tr>
+            <tr>
+              <td>
+                <span class="font-weight-bold pr-1">
+                  <label class="label-on-button" name="ODRSTATUS"></label>
+                </span>{{order.BkgOrderStatus}}</td>
+            </tr>
+            <tr *ngIf="order.IsSendForOnline != true">
+              <td>
+                <div class="col-md-12 mb-2">
+                  <div class="row">
+                    <button type="button" class="btn btn-primary mx-1 mb-1" style="height: 38px;" ng-print print-element-id="printThisElement"
+                      (click)="downloadOrderReceipt(order.OrderNumber)">
+                      <i class="fas fas fa-print"></i>
+                      <label name="PRINT"></label>
+                      <!-- <label class="label-on-button">Print</label>                                                         -->
+                    </button>
+                    <label id="CNLORDERMSG_{{i+1}}" name="CNFMCNLORDER" style="display: none"></label>
+                    <label id="CNLORDERMY_{{i+1}}" name="LSTITMY" style="display: none"></label>
+                    <label id="CNLORDERMN_{{i+1}}" name="LSTITMN" style="display: none"></label>
+                    <label id="CNCLORDRTTL_{{i+1}}" name="CNCLORDR" style="display: none"></label>
+                    <button class="btn btn-primary mx-1" type="button" style="height: 38px;" *ngIf="order.OrderNumber && (!order.IsFileSentToCBI && order.OrderStatusCode != 'OSCNL' && order.BkgOrderStatusCode !='AAAB')"
+                      (click)="cancelClick(order,i+1)">
+                      <i class="fas fa-times pr-1"></i>
+                      <label class="label-on-button" name="CNCLORDR"></label>
+                    </button>
+                    <button type="button" class="btn btn-primary mx-1 mb-1" style="height: 38px;" [hidden]="!order.IsRescheduleAvailable" (click)="onRescheduleOrderClick(order)">
+                      <i class="fas fa-calendar-alt"></i>
+                      <label class="label-on-button" name="RSCHDLAPPNMNT"></label>
+                    </button>
+                    <button type="button" class="btn btn-primary mx-1 mb-1" style="height: 38px;" [hidden]="!order.IsChangePaymentTypeVisible"
+                      (click)="onChangePaymentTypeClick(order,i+1)">
+                      <i class="far fa-credit-card"></i>
+                      <label class="label-on-button" name="CHNGPAYMENTTYPE"></label>
+                    </button>
+                    <button *ngIf="order.IsOutOfState==false && order.IsOnsiteAppointment==false" type="button" class="btn btn-primary mx-1 mb-1"
+                      style="height: 38px;" (click)="openModal(template,order.LocationID,order.LocationName)">
+                      <i class="far fa-images"></i>
+                      <label class="label-on-button" name="LOCIMAGE"></label>
+                    </button>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr *ngIf="order.IsSendForOnline == true">
+              <td>
+                <div class="col-md-12 mb-2">
+                  <div class="row">
+                    <button type="button" class="btn btn-primary mx-1 mb-1" style="height: 38px;" (click)="onCompleteYourOrderClick(order)">
+                      <i class="far fa-credit-card"></i>
+                      <label id="CMPLTORDER" class="label-on-button" name="CMPLTORDER"></label>
+                    </button>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div id="dvChangePayType_{{i+1}}" style="display:none">
+                  <label class="label-on-button" name="NEWPAYTYPE"></label>
+                  <select (change)="onChangePaymentOption($event.target.value)" class="custom-select w-25">
+                    <option *ngFor="let type of lstPaymentTypes" value="{{type.PaymentOptionId}}">{{type.PaymentOptionName}}</option>
+                  </select>
+                  <button type="button" class="btn btn-primary mx-1" style="height: 38px;" (click)="onChangePaymentTypeSubmit(order)">
+                    <i class="fas fas fas"></i>
+                    <label class="label-on-button" name="SUBMIT"></label>
+                  </button>
+                  <button *ngIf="order.OrderNumber" type="button" class="btn btn-primary mx-1" (click)="onCancelClick(order,i+1)" style="height: 38px;">
+                    <i class="fas fas fas"></i>
+                    <label class="label-on-button" name="CNCL"></label>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</div>
+
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">{{locationName}}</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body text-center">
+    <carousel [showIndicators]="False" [interval]="-1">
+      <slide *ngFor="let a of Locations">
+        <img src="data:image/jpg;base64,{{a.LocationImages}}" alt="first slide" style="display: block; width: 100%;height:400px">
+      </slide>
+
+    </carousel>
+
+    <div *ngIf="Locations!=null && Locations.length==0">
+      <label class="noImgMsg" id="IMGSNOTAVAIL">{{NoImgMsg}}</label>
+    </div>
+    <div *ngIf="IsImageError==true">
+      <label class="noImgMsg m-0" id="RFRESHMSG">{{refreshMsg}}</label>
+      <button type="button" (click)="refreshModel()" class="btn btn-primary fixedWidthBtn">
+        <i class="fas fa-sync-alt"></i>
+        <label id="REFRESH">{{refresh}}</label>
+      </button>
+
+    </div>
+  </div>
+</ng-template>

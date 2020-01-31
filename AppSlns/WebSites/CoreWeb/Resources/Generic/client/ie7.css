@@ -1,0 +1,30 @@
+﻿/*
+
+IE 7 SUPPORT FILE (MVP)
+Version: 2013.1.8.1515
+ 
+Log--
+2013.1.8.1515
+    1. Initially created 
+
+*/
+
+/*Layout fixes*/
+body{width:auto;}/*H-scrol issue*/
+.tplTopPanel {position:inherit;z-index:7000;}
+#ost-userbar{padding-top:3px; padding-bottom:2px;}
+#ost-sys-setup{float:left;}
+
+/*form fixes*/
+.section .content {overflow-x:visible}
+.auto .ronly {width:auto!important;}
+
+/*Control Tweaks*/
+.riTextBox {height:auto;}
+
+
+#appmenuwr  .mnu-float{float: none;max-width:100%}
+.mid{display:inline!important;padding-top:5px;}
+#applogo{padding-top:10px;}
+
+.RadInput .riTextBox {width:93%!important;}

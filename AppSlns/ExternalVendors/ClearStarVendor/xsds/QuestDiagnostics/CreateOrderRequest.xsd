@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="ContactMethod">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ContactName" type="xs:string" minOccurs="0" />
+        <xs:element name="Telephone" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FormattedNumber" type="xs:string" minOccurs="0" msdata:Ordinal="0" />
+            </xs:sequence>
+            <xs:attribute name="type" type="xs:string" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Fax" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FormattedNumber" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostalAddress">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="CountryCode" type="xs:string" minOccurs="0" />
+        <xs:element name="PostalCode" type="xs:string" minOccurs="0" />
+        <xs:element name="Region" type="xs:string" minOccurs="0" />
+        <xs:element name="Municipality" type="xs:string" minOccurs="0" />
+        <xs:element name="DeliveryAddress" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="AddressLine" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateOrderTest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="SendingFacility" type="xs:string" minOccurs="0" />
+        <xs:element name="SendingFacilityTimeZone" type="xs:string" minOccurs="0" />
+        <xs:element name="ProcessType" type="xs:string" minOccurs="0" />
+        <xs:element name="ClientReferenceID" type="xs:string" minOccurs="0" />
+        <xs:element name="PersonalData" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PrimaryID" type="xs:string" minOccurs="0" />
+              <xs:element name="PrimaryIDType" type="xs:string" minOccurs="0" />
+              <xs:element name="AlternateID" type="xs:string" minOccurs="0" />
+              <xs:element name="AltIDType" type="xs:string" minOccurs="0" />
+              <xs:element name="DateofBirth" type="xs:string" minOccurs="0" />
+              <xs:element name="PersonName" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="GivenName" type="xs:string" minOccurs="0" />
+                    <xs:element name="MiddleName" type="xs:string" minOccurs="0" />
+                    <xs:element name="FamilyName" type="xs:string" minOccurs="0" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Gender" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="IdValue" type="xs:string" minOccurs="0" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element ref="ContactMethod" minOccurs="0" maxOccurs="unbounded" />
+              <xs:element ref="PostalAddress" minOccurs="0" maxOccurs="unbounded" />
+              <xs:element name="DemographicDetail" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="User1" type="xs:string" minOccurs="0" />
+                    <xs:element name="User2" type="xs:string" minOccurs="0" />
+                    <xs:element name="User3" type="xs:string" minOccurs="0" />
+                    <xs:element name="User4" type="xs:string" minOccurs="0" />
+                    <xs:element name="Company" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="IdValue" type="xs:string" minOccurs="0" />
+                          <xs:element name="IdName" type="xs:string" minOccurs="0" />
+                          <xs:element ref="PostalAddress" minOccurs="0" maxOccurs="unbounded" />
+                          <xs:element ref="ContactMethod" minOccurs="0" maxOccurs="unbounded" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Location" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="IdValue" type="xs:string" minOccurs="0" />
+                          <xs:element name="IdName" type="xs:string" minOccurs="0" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Screenings" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="WhoOrderedTest" type="xs:string" minOccurs="0" />
+              <xs:element name="DateOrdered" type="xs:string" minOccurs="0" />
+              <xs:element name="ScheduledDate" type="xs:string" minOccurs="0" />
+              <xs:element name="ExpirationDate" type="xs:string" minOccurs="0" />
+              <xs:element name="HardExpire" type="xs:string" minOccurs="0" />
+              <xs:element name="CollectionSiteID" type="xs:string" minOccurs="0" />
+              <xs:element name="ProfileCode" type="xs:string" minOccurs="0" />
+              <xs:element name="ReasonForTest" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="IdValue" type="xs:string" minOccurs="0" />
+                    <xs:element name="IdName" type="xs:string" minOccurs="0" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="CSOs" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="CSO" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="CSOnumber" type="xs:string" minOccurs="0" />
+                          <xs:element name="CSOprompt" type="xs:string" minOccurs="0" />
+                          <xs:element name="CSOtext" type="xs:string" minOccurs="0" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Screening" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="DOTTest" type="xs:string" minOccurs="0" msdata:Ordinal="0" />
+                    <xs:element name="RequestObservation" type="xs:string" minOccurs="0" msdata:Ordinal="1" />
+                    <xs:element name="RequestSplitSample" type="xs:string" minOccurs="0" msdata:Ordinal="2" />
+                    <xs:element name="LaboratoryID" type="xs:string" minOccurs="0" msdata:Ordinal="4" />
+                    <xs:element name="LaboratoryAccount" type="xs:string" minOccurs="0" msdata:Ordinal="5" />
+                    <xs:element name="OrderCommentsToCollector" type="xs:string" minOccurs="0" msdata:Ordinal="6" />
+                    <xs:element name="TestProcedure" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="IdSampleType" type="xs:string" minOccurs="0" />
+                          <xs:element name="IdTestMethod" type="xs:string" minOccurs="0" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="UnitCodes" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="IdValue" type="xs:string" minOccurs="0" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="type" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ContactMethod" />
+        <xs:element ref="PostalAddress" />
+        <xs:element ref="CreateOrderTest" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,16 @@
+﻿<div id="accordion1" >
+  <div class="card" *ngFor="let value of itemForCategory;let i=index">
+    <div class="card-header" data-parent="#accordion1" data-toggle="collapse" (click)="ShowAttribute(value.ItemId,i)" href="#collapseOne1">
+      <span class="card-link">
+        {{value.ItemName}}
+      </span><i class="fa fa-sort-desc" [hidden]="current == i" style="float: right" aria-hidden="true"></i>
+<i class="fa fa fa-sort-asc" [hidden]="current != i" style="float: right" aria-hidden="true"></i>
+    </div>
+    <div id="collapseOne1"  [class.collapse]='current != i'>
+      <div class="card-body">
+        <span class="date-msg alert-dark  d-block text-right" style="font-weight: bold">Status: {{value.ItemStatus}}</span>
+        <compliance-attribute-aap *ngIf="SelectedItemID != '' && SelectedItemID == value.ItemId" [attrForItem]="attrForItem"></compliance-attribute-aap>
+      </div>
+    </div>
+  </div>
+</div>

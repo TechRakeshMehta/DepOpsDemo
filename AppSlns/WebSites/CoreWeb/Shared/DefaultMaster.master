@@ -1,0 +1,234 @@
+﻿<%-- 
+Copyright 2011 Intersoft Data Labs.
+All rights are reserved.  Reproduction or transmission in whole or in part, in
+any form or by any means, electronic, mechanical or otherwise, is prohibited
+without the prior written consent of the copyright owner.
+
+Filename:  DefaultMaster.Master
+Purpose:  Creates a master layout for the module page of the application
+
+Revisions:
+Author           Date               Comment
+------           ----------         -------------------------------------------------
+Ashish Daniel    12-Dec-2012 0920   - File updated / cleaned up
+Ashish Daniel    03-Jan-2013 1400   - Hided page commands
+--%>
+
+<%@ Master Language="C#" AutoEventWireup="true"
+    Inherits="CoreWeb.Shell.MasterPages.DefaultMaster" CodeBehind="DefaultMaster.master.cs" %>
+
+<%@ Register TagPrefix="infs" Namespace="INTERSOFT.WEB.UI.WebControls" Assembly="INTERSOFT.WEB.UI" %>
+<%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
+<%@ Register Src="~/CommonControls/UserControl/BreadCrumb.ascx" TagName="breadcrumb"
+    TagPrefix="infsu" %>
+<%@ Register Src="~/Shared/Controls/PageCommands.ascx" TagName="PageCommands" TagPrefix="infsu" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="PageHead" runat="server">
+    
+    <script src="../../Resources/Mod/Dashboard/Scripts/Kendo/jquery.min.js"></script>
+    <title></title>
+    <style type="text/css">
+        html {
+            height: auto !important;
+            overflow: auto !important;
+        }
+        /* Bug# 2025*/
+
+        #apphdrwr {
+            background-color: #EBEBEB !important;
+            border-bottom-color: #FFFFFF !important;
+            top: -50px !important;
+            z-index: -1 !important;
+        }
+
+        .cmdButtonMinSize .sxcbar .RadButton .rbPrimary {
+            min-width: 76px;
+        }
+
+        .cmdButtonMinSize .sxcbar .RadButton .rbNext {
+            left: 60px !important;
+        }
+
+            .cmdButtonMinSize .sxcbar .RadButton .rbNext + input {
+                padding-left: 0px !important;
+            }
+
+        .cancelposition {
+            float: right;
+            margin-right: 7vh;
+        }
+    </style>
+
+    <asp:ContentPlaceHolder ID="PageHeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body onload="SetPageCountDown()">
+    <asp:ContentPlaceHolder ID="BodyContentOutsideForm" runat="server">
+    </asp:ContentPlaceHolder>
+    <form id="frmMod" runat="server">
+        <%-- Managers --%>
+        <div>
+            <asp:ScriptManager ID="scmPage" runat="server" EnablePageMethods="true" EnablePartialRendering="true"
+                AsyncPostBackTimeout="360000" ScriptMode="Release">
+            </asp:ScriptManager>
+            <infs:WclStyleSheetManager runat="server" ID="cssMgrPage">
+            </infs:WclStyleSheetManager>
+            <infs:WclResourceManager runat="server" ID="rsrMgrPage" EnableBrowserSupport="true"
+                SupportCssPath="~/Resources/Generic/Client" SupportScriptPath="~/Resources/Generic/Client"
+                OnInit="rsrMgr_Init" AllowTheming="true" ThemesFolder="~/Resources/Themes" ThemeFiles="colors.css"
+                WindowCheckFailUrl="Default.aspx" EnableWindowCheck="true" IFrameMode="true"
+                SupportedBrowsers="ie7,ie8,ie9" SupportedEngines="trident" EnableEngineSupport="true" EnablejQueryByDefault="true" />
+
+            <%--Shared User Dashboard : Start --%>
+            <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700' rel='stylesheet' type='text/css' />
+            <%--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" /> 
+            <link rel="stylesheet" href="../Resources/Mod/Dashboard/SharedUserDashboard.css">--%>
+            <asp:Literal ID="ltrlBootStrap" runat="Server" />
+            <asp:Literal ID="ltrlTitilliumFont" runat="Server" />
+            <asp:Literal ID="ltrlSUDashboard" runat="Server" />
+            <asp:Literal ID="ltrlFontAwesome" runat="Server" />
+
+            <%--   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/css/bootstrap-select.min.css">--%>
+
+
+
+            <%--Shared  User Dashboard : End --%>
+        </div>
+        <div id="pageoutwr">
+            <%-- Module Header --%>
+            <asp:Panel runat="server" ID="pnlModBar">
+                <asp:UpdatePanel ID="pnlModHeader" runat="server">
+                    <ContentTemplate>
+                        <%--BreadCrumb For All Users except Shared Users --%>
+                        <div id="dvNormalBreadcrumb" runat="server">
+                            <div id="modwrapo">
+                                <div id="modwrapi">
+                                    <div id="breadcmb">
+                                        <infsu:breadcrumb ID="breadcrum" runat="server" />
+                                    </div>
+                                    <div id="modhdr">
+                                        <h1>
+                                            <asp:Label Text="" runat="server" ID="lblModHdr" />&nbsp;<asp:Label Text="" runat="server"
+                                                ID="lblPageHdr" CssClass="phdr" /></h1>
+                                    </div>
+                                </div>
+                                <div id="modcmd_bar">
+                                    <infsu:PageCommands ID="PageCommands1" runat="server" Visible="false" />
+                                </div>
+                            </div>
+                        </div>
+                        <%--BreadCrumb For Shared Users --%>
+                        <div id="dvSharedUserBreadcrumb" runat="server" visible="false" class="container-fluid">
+                            <div class="row ">
+                                <div class="col-md-12 ">
+                                    <h1 class="text-right">
+                                        <asp:Label Text="" runat="server" ID="lblModHdrSharedUser" />
+                                        <%= this.Title %>
+                                        <asp:Label Text="" runat="server"
+                                            ID="lblPageHdrSharedUser" CssClass="phdr" /></h1>
+                                    <div class="breadcrumb padbott10 text-right" id="dvBreadcrumbControl" runat="server">
+                                        <infsu:breadcrumb ID="ucSharedUserBreadcrumb" runat="server" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <%--   <div id="dvSharedUserBreadcrumb" runat="server" visible="false" class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-12">
+                                   <h1 class="text-right" style="overflow:hidden; height:32px;">
+                                        <asp:Label Text="" runat="server" ID="lblModHdrSharedUser" />
+                                        <%= this.Title %>
+                                        <asp:Label Text="" runat="server"
+                                            ID="lblPageHdrSharedUser" CssClass="phdr" /></h1>
+                                    <div class="breadcrumb padbott10 text-right" id="dvBreadcrumbControl" runat="server">
+                                        <infsu:breadcrumb ID="ucSharedUserBreadcrumb" runat="server" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>--%>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+            </asp:Panel>
+            <%-- Error / Information Box --%>
+            <asp:UpdatePanel ID="pnlError" runat="server" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <div class="msgbox" id="pageMsgBox">
+                        <asp:Label CssClass="info" EnableViewState="false" runat="server" ID="lblError"></asp:Label>
+                    </div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+            <%-- Main content / Body of the page --%>
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Always">
+                <ContentTemplate>
+
+                    <div id="box_content">
+                        <asp:ContentPlaceHolder ID="DefaultContent" runat="server" />
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" />
+                        <asp:PlaceHolder runat="server" ID="plcDynamic"></asp:PlaceHolder>
+                    </div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </div>
+        <infs:WclToolTipManager runat="server" EnableTheming="false" AutoTooltipify="false"
+            ID="tlpmPage" Visible="false" />
+        <!-- Rendered Block End!-->
+        <infs:WclResourceManagerProxy runat="server" ID="prxMP">
+            <infs:LinkedResource Path="~/Resources/Mod/Dashboard/Styles/kendo.default.min.css" ResourceType="StyleSheet" />
+            <infs:LinkedResource Path="~/Resources/Mod/Dashboard/Styles/kendo.common.min.css" ResourceType="StyleSheet" />
+            <infs:LinkedResource Path="~/Resources/generic/page.min.js" ResourceType="JavaScript" />
+            <infs:LinkedResource Path="~/Resources/Mod/Dashboard/Scripts/Kendo/kendo.all.min.js" ResourceType="JavaScript" />
+            <infs:LinkedResource Path="~/Resources/Mod/Shared/livehelp.css" ResourceType="StyleSheet" />
+        </infs:WclResourceManagerProxy>
+        <div runat="server" id="lhnScript" visible="false">
+            <script type="text/javascript">
+                var lhnAccountN = "19766";
+                var lhnWindowN = 0;
+                var lhnDepartmentN = 0;
+                var lhnHPMoreOptions = false;
+                var lhnHPCallbackButton = false;
+            </script>
+            <script src="//www.livehelpnow.net/lhn/widgets/helpouttab/lhnhelpouttab-current.min.js"
+                type="text/javascript" id="lhnscriptho"></script>
+        </div>
+        <asp:HiddenField ID="hdntimeout" runat="server"></asp:HiddenField>
+        <asp:HiddenField ID="hdnSuccessText_LangCulture" runat="server" Value="<%$Resources:Language,SUCCESSTEXT %>" ></asp:HiddenField>
+        <asp:HiddenField ID="hdnCloseButtonText_LangCulture" runat="server" Value="<%$Resources:Language,CLOSE %>" ></asp:HiddenField>
+    </form>
+</body>
+
+
+
+<script type="text/javascript">
+
+    function SetPageCountDown() {
+
+        if (parent.StartCountDown != undefined) {
+            parent.StartCountDown('<%= TimeoutMinutes %>')
+        }
+    }
+    function openURLInPageFrame(url) {
+        var outeranchor = $jQuery('#outeranchor', $jQuery(window.parent.document));
+        outeranchor.attr('href', url);
+        outeranchor[0].click();
+    }
+    function openInPageFrame(sender) {
+
+        var url = sender.href;
+        if (url == null || url == '') {
+            return true;
+        }
+        if ($jQuery(sender).is('[disabled=disabled]')) {
+            return true;
+        }
+            //sender.removeAttribute("href");
+        else {
+
+            openURLInPageFrame(url);
+            return false;
+        }
+    }
+</script>
+</html>

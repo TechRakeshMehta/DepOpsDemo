@@ -1,0 +1,2 @@
+﻿.swrap{width:99.99%; display:block; float:left;}
+.RadGrid {display:inline-table; width:99.8%;}

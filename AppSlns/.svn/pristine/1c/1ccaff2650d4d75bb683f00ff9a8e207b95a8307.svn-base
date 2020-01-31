@@ -1,0 +1,114 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AccountLinkingPage.aspx.cs"
+    Inherits="CoreWeb.CommonOperations.Pages.AccountLinkingPage" MasterPageFile="~/Shared/PopupMaster.master" %>
+
+<%@ Register TagPrefix="infs" Namespace="INTERSOFT.WEB.UI.WebControls" Assembly="INTERSOFT.WEB.UI" %>
+<%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
+<%@ Register TagPrefix="infsu" TagName="CommandBar" Src="~/Shared/Controls/CommandBar.ascx" %>
+
+
+
+<asp:Content ID="Content1" ContentPlaceHolderID="MessageContent" runat="server">
+    <style type="text/css">
+        .setfontbold strong, .setfontbold b {
+            font-weight: bold !important;
+        }
+
+        .setfontitalic em, .setfontitalic i {
+            font-style: italic !important;
+        }
+
+        .sxpnl {
+            padding-right: 5px;
+        }
+
+        h2.page_header {
+            border-bottom: 1px solid;
+            color: #8C1921;
+            font-family: Arial;
+            font-size: 20px;
+        }
+        .page_ins {
+        padding:10px;
+        font-size:13px;
+        }
+    </style>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="PoupContent" runat="server">
+    <infs:WclResourceManagerProxy runat="server" ID="rprxAccountLinkingPopup">
+        <infs:LinkedResource Path="../Resources/Mod/Dashboard/Styles/bootstrap.min.css" ResourceType="StyleSheet" />
+        <infs:LinkedResource Path="https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700" ResourceType="StyleSheet" />
+        <infs:LinkedResource Path="../Resources/Mod/Dashboard/Styles/font-awesome.min.css" ResourceType="StyleSheet" />
+        <infs:LinkedResource Path="../Resources/Mod/Dashboard/Styles/SharedUserDashboard.css" ResourceType="StyleSheet" />
+        <infs:LinkedResource Path="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" ResourceType="JavaScript" />
+        <infs:LinkedResource Path="~/Resources/Mod/Shared/ApplyNewIcons.js" ResourceType="JavaScript" />
+
+    </infs:WclResourceManagerProxy>
+    <div class="container-fluid">
+        <div class="row bgLightGreen">
+            <div class="col-md-12">
+                <h2 class="header-color">
+                    <asp:Label ID="lblHeader" runat="server" Text="Link an account"></asp:Label>
+                </h2>
+            </div>
+        </div>
+
+        <div class="row bgLightGreen">
+            <div class="col-md-12">
+                <div class="">
+                    <div class="">
+                        <div class="sxform auto">
+                            <p class="page_ins">
+                                Username OR Email Address matches with following users. In order to link an account please select appropriate user and click on “Link an Account”.
+                            </p>
+                            <p class="page_ins">Note: If you want to create new account then please click on “Cancel” button and provide unique Username and Email Address.</p>
+                        </div>
+
+                        <%--      <infsu:CommandBar ID="cbExistingProfiles" runat="server" ShowAsLinkButtons="false"
+                            ValidationGroup="grpExisUsers" DisplayButtons="Submit,Cancel" AutoPostbackButtons="Submit,Cancel"
+                            ButtonPosition="Right" DefaultPanel="pnlExistingProfiles" SubmitButtonText="Link Account" CancelButtonText="Cancel" />--%>
+                        <br />
+                    </div>
+                </div>
+                <asp:Panel ID="pnlExistingProfiles" CssClass="sxpnl" runat="server">
+                    <asp:RadioButtonList runat="server" ID="rblExistingProfiles" DataTextField="Name"
+                        DataValueField="Code">
+                    </asp:RadioButtonList>
+                    <div class="vldx">
+                        <asp:RequiredFieldValidator runat="server" ID="rfvExistingProfiles" ControlToValidate="rblExistingProfiles"
+                            Display="Dynamic" CssClass="errmsg" Text="Please select one of the above." ValidationGroup="grpExisUsers" />
+                    </div>
+                </asp:Panel>
+            </div>
+            <div class="col-md-12" style="margin-top:1%">
+                <div class="row text-center">
+                    <infsu:CommandBar ID="cbExistingProfiles" runat="server" DisplayButtons="Save,Cancel" AutoPostbackButtons="Save,Cancel" ValidationGroup="grpExisUsers"
+                        OnCancelClick="cbExistingProfiles_CancelClick" OnSaveClick="cbExistingProfiles_SaveClick" SaveButtonIconClass="linkuser"
+                        DefaultPanel="pnlExistingProfiles" ButtonPosition="Center" SaveButtonText="Link an account" CancelButtonText="Cancel" UseAutoSkinMode="false" ButtonSkin="Silk">
+                    </infsu:CommandBar>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="text/javascript">
+        $page.add_pageLoad(function () {
+            $jQuery(".rbPrimaryIcon.linkuser").removeClass().addClass("fa fa-venus-mars");
+        });
+        function closePopUp() {
+            var oWindow = null;
+            if (window.radWindow) oWindow = window.radWindow;
+            else if (window.frameElement.radWindow) oWindow = window.frameElement.radWindow;
+
+            var oArg = {};
+
+            oWindow.Close(oArg);
+        }
+
+        function AccountLinkingPostback() {
+            var btnDoPostback = $jQuery('[id$=btnDoPostBack]');
+            btnDoPostback.click();
+        }
+    </script>
+</asp:Content>
+

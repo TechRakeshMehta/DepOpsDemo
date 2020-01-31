@@ -1,0 +1,92 @@
+<div id="bodyBlock" class="container-fluid">
+
+
+  <section class="p-2">
+    <div class="row">
+
+      <!-- <div class="col-md-12 font-weight-bold"><label id="CREATODR"></label></div> -->
+
+
+      <div class="col-md-12 redColor font-weight-bold">
+        <label id="AVLBLCRD"></label>
+      </div>
+      <div class="col-md-12">
+
+        <span style="color: red" *ngIf="IsError==true">{{errorMsg}}</span>
+
+        <span [hidden]="!IsSlotExp" id="SLOTEXPBEFOREPAYMENTALRTMSG" style="color: red" ></span>
+      
+      </div>
+      <div class="col-md-12">
+
+        <table class="table table-bordered">
+          <thead class="thead-dark">
+            <tr>
+              <th></th>
+              <th scope="col">
+                <label id="CRDTYPE"></label>
+              </th>
+              <th scope="col">
+                <label id="NAMEONCARD"></label>
+              </th>
+              <th scope="col">
+                <label name=""></label>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let card of lstCards;let i = index">
+
+              <td>
+                <div class="form-check">
+                  <input class="form-check-input" (click)="selectCard(card.CustomerPaymentProfileId)" type="radio" [(ngModel)]="selectedCustomerPaymentProfileId"
+                    name="exampleRadios" id="id_{{i+1}}" [value]="card.CustomerPaymentProfileId">
+                  <label class="form-check-label" for="id_{{i+1}}">
+                  </label>
+                </div>
+              </td>
+              <td>{{card.CardTypeAndNumber}} </td>
+              <td> {{card.NameOnCard}}</td>
+              <td>
+                <button type="button" (click)="RemoveCard(card.CustomerPaymentProfileId)" class="btn btn-link text-underline">
+                  <u>
+                    <label name="REMOVE"></label>
+                  </u>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="col-md-12">
+          <button type="button" id="ADDNEWCARD" class="btn btn-primary mb-1" (click)="addNewCard()">
+            <i class="fas fa-credit-card pr-1">
+
+            </i>
+          </button>
+        </div>
+
+        <div class="col-md-12 d-flex justify-content-center">
+          <button type="button" [disabled]="!IsAvailableCard" class="btn btn-primary mx-1" (click)="IsReservedSlotExpired()">
+            <i class="fa fa-paper-plane"></i>
+            <label class="label-on-button" id="SUBMIT"></label>
+          </button>
+
+          <button type="button" [hidden]="!IsSlotExp" class="btn btn-primary mx-1" (click)="OrderHistory()">
+            <i class="fa fa-paper-plane"></i>
+            <label class="label-on-button" id="GOTODASHBOARD"></label>
+          </button>
+          <!-- <button type="button" class="btn btn-primary mx-1">Cancel<i class="fas fa-times pl-1"></i></button>  -->
+        </div>      
+      </div>
+
+
+    </div>
+    <!--AuthorizeNet form redirection to add new card-->
+    <form id="formAuthorizeNetForm" #formAuthorizeNetForm name="formAuthorizeNetForm" method="post" [action]="authNetAction">
+      <input type='hidden' name='token' #token id='token' [value]="authNetToken" />
+      <input type='hidden' runat="server" name='paymentProfileId' id='paymentProfileId' value="new" />
+      <input type='hidden' runat="server" name='shippingAddressId' id='shippingAddressId' value="" />
+    </form>
+  </section>
+
+</div>

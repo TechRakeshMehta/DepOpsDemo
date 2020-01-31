@@ -1,0 +1,140 @@
+﻿<style>
+  .border-bottom {
+    border: none;
+    border: 1px solid #CCCCCC;
+    border-radius: 0;
+    width: 80%;
+    margin-left: 5%;
+    margin-right: -1.5rem;
+    text-align: center;
+    transition: 0.5s;
+    box-shadow: none !important;
+    transition: .2s;
+  }
+
+  .btn-primary {
+    background-color: rgb(139, 24, 32);
+    border: none;
+  }
+
+  .btn-primary:hover {
+    background-color: rgb(45, 51, 70);
+    border: none;
+  }
+
+  body>* {
+    font-family: "Titillium Web script=all rev=2", "Adobe Blank"
+  }
+
+  body,
+  html {
+    background-color: #f2f2f2;
+    height: 100%;
+  }
+
+  .tenantName {
+    color: #666666;
+  }
+
+  .container {
+    height: 100% !important;
+    vertical-align: middle;
+  }
+
+  .btn-primary.disabled,
+  .btn-primary:disabled {
+    background-color: rgb(45, 51, 70);
+  }
+
+  .login-content {
+    position: absolute;
+  }
+
+  .container {
+    width: 100vw;
+  }
+</style>
+
+<div id="bodyBlock" class="container-fluid">
+  <section class="p-2">
+    <div class="col-md-12 bg-white shadow-sm rounded py-3">
+      <div class="w-100 d-flex justify-content-center">
+        <!-- <div class="login-content container d-flex align-items-center h-100"> -->
+        <div class="row justify-content-center text-center">
+
+          <div class="col-12 text-center mb-2 mt-3">
+            <img src="images/imgLogo.png" alt="Complio" />
+          </div>
+          <div class="col-12 text-center mb-5">
+            <span class="tenantName" style="color: #EA6309;">
+              <b>{{tenantName}}</b>
+            </span>
+          </div>
+          <div class="col-12 alert error-msg alert-danger" [hidden]="hideForgotUserErrorMsg" role="alert">
+              <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> {{ForgotUserErrorMsg}}</div>
+          <div class="col-12 alert error-msg alert-danger" [hidden]="hideErrorMsgLocked" role="alert">
+            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> {{errorMsgAccountLock}}</div>
+          <div class="col-12 alert error-msg alert-danger " [hidden]="hideErrorMsgIncorrectPassword" role="alert">
+            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> {{errorMsgIncorrectPassword}}</div>
+          <div class="col-12 alert error-msg alert-danger " [hidden]="hideErrorMsgInActive" role="alert">
+            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> {{errorMsgAccountInActive}}</div>
+          <form #userlogin="ngForm">
+            <div class="col-12 text text-center mb-3">
+              <span>
+                <label class="w-75 text-left" for="name" id="USERNAME">
+                </label>
+                <input id="name" name="userName" required minlength="4" type="text" class="form-control border-bottom d-inline" placeholder=""
+                  ngModel />
+              </span>
+              <span class="input-group-addon d-inline">
+                <i class="fa fa-user-circle"></i>
+              </span>
+              <span id="errorName" class="error-msg alert alert-danger" style="margin: 1rem 1rem 1rem 2.1rem;display: none" role="alert">
+                <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> User Name is required.</span>
+            </div>
+            <div class="col-12 text-center mb-3">
+              <span>
+                <label class="w-75 text-left" for="password" id="PASSWORD"></label>
+                <input id="password" required minlength="4" type="password" name="userPassword" class="form-control border-bottom d-inline"
+                  placeholder="" ngModel/>
+              </span>
+              <span class="input-group-addon d-inline">
+                <i class="fa fa-lock"></i>
+              </span>
+              <span id="errorPass" class="alert error-msg alert-danger " style="margin: 1rem 1rem 1rem 2.1rem;display: none" role="alert">
+                <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Password is required.</span>
+            </div>
+          </form>
+
+          <div class="col-12 text-center">
+            <button type="button" [disabled]="!userlogin.valid" (click)="submitLoginInfo(userlogin)" id="submitBtn" class="btn mb-1 btn-primary">
+              <label class="label-on-button" id="LOGIN"></label>
+              <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="col-12 text-center">
+            <button type="button" *ngIf="this.isCbiUrl=='True'" (click)="registerUser()" id="registerBtn" class="btn btn-primary">
+              <label class="label-on-button" id="REGISTER"></label>
+              <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="col-12 text-center" *ngIf="this.isCbiUrl=='True'" >
+           
+              <a href="#"  routerLink="/forgotPassword" >
+                 <label id="CANTACCESSACCOUNT" style="cursor: pointer; text-decoration: underline"></label> 
+            </a>
+        
+          </div>
+
+          <div class="col-12 text-center">
+            <a href="#" (click)='returnToDesktop()'>
+              <label id="RETURNTODESKTOP" style="cursor: pointer; text-decoration: underline"></label>
+            </a>
+          </div>
+
+        </div>
+        <!-- </div> -->
+      </div>
+    </div>
+  </section>
+</div>

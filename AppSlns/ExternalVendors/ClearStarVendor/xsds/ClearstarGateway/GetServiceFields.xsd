@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="GetServiceFields" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="GetServiceFields" msdata:IsDataSet="true" msdata:Locale="en-US">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ErrorStatus">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Code" type="xs:string" minOccurs="0" />
+              <xs:element name="Type" type="xs:string" minOccurs="0" />
+              <xs:element name="Message" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ServiceField">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="sServiceNo" type="xs:string" minOccurs="0" />
+              <xs:element name="iFieldID" type="xs:string" minOccurs="0" />
+              <xs:element name="sLabel" type="xs:string" minOccurs="0" />
+              <xs:element name="sColumnName" type="xs:string" minOccurs="0" />
+              <xs:element name="iDisplayOrder" type="xs:string" minOccurs="0" />
+              <xs:element name="bRequired" type="xs:string" minOccurs="0" />
+              <xs:element name="bVisible" type="xs:string" minOccurs="0" />
+              <xs:element name="sDefaultValue" type="xs:string" minOccurs="0" />
+              <xs:element name="sLocationField" type="xs:string" minOccurs="0" />
+              <xs:element name="bPurgeData" type="xs:string" minOccurs="0" />
+              <xs:element name="sPurgeReplaceValue" type="xs:string" minOccurs="0" />
+              <xs:element name="sCreatedBy" type="xs:string" minOccurs="0" />
+              <xs:element name="sCreatedAt" type="xs:string" minOccurs="0" />
+              <xs:element name="sModifiedBy" type="xs:string" minOccurs="0" />
+              <xs:element name="sModifiedAt" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,12 @@
+<!-- <button type="button" class="btn btn-primary mx-1" (click)="cancelClick()">Cancel
+    <i class="fas fa-times pr-1"></i>
+</button> -->
+
+<label  id="CNFMCNLREGISTRATION"></label>
+<label id="CNCLREGISTRATION"></label>
+<label  id="LSTITMY"></label>
+<label id="LSTITMN"></label>
+<button type="button" class="btn btn-primary fixedWidthBtn" (click)="cancelClick()">
+        <i class="fas fa-times pr-1"></i>
+        <label id="CNCL"></label>        
+      </button>     

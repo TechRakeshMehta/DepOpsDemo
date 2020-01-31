@@ -1,0 +1,6 @@
+namespace INTSOF.COMPLIO.TALKDESK.Areas.HelpPage.ModelDescriptions
+{
+    public class DictionaryModelDescription : KeyValuePairModelDescription
+    {
+    }
+}

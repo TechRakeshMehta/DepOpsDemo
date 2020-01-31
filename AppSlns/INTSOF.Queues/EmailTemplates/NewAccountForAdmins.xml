@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<NewAccountForAdmins xmlns="http://tempuri.org/ADBEmails.xsd">
+  <Contents>
+    <FirstName></FirstName>
+    <LastName></LastName>
+    <TenantName></TenantName>
+    <LoginURL></LoginURL>
+    <LoweredUserName></LoweredUserName>
+    <DefaultPassword></DefaultPassword>
+  </Contents>
+</NewAccountForAdmins>
