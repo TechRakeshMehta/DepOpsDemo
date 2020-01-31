@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F7033BB4-144A-4675-83FA-2DAB4925986E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CoreWeb.IntsofThemeModel</RootNamespace>
+    <AssemblyName>CoreWeb.IntsofThemeModel</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <CodeAnalysisRuleSet>..\..\..\WebSites\CoreWeb\ComplioEmptyRuleSet.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <CodeAnalysisRuleSet>..\..\..\WebSites\CoreWeb\ComplioEmptyRuleSet.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ThemeModule.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Business\Business.csproj">
+      <Project>{A28FA692-5D4B-44EC-BEA0-B994516798EB}</Project>
+      <Name>Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Entity\Entity.csproj">
+      <Project>{CE8D45E6-4B39-4D12-82F9-11F691D64E21}</Project>
+      <Name>Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\INTSOF.Contracts\INTSOF.Contracts.csproj">
+      <Project>{b31b85ab-9b51-42c3-8101-70c1966a1d5a}</Project>
+      <Name>INTSOF.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\INTSOF.Logger\INTSOF.Logger.csproj">
+      <Project>{20595140-2FD9-4DF4-83E3-0D0ED819D4D1}</Project>
+      <Name>INTSOF.Logger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\INTSOF.ServiceModelInterface\INTSOF.ServiceModelInterface.csproj">
+      <Project>{9e135855-8bb5-4386-8e73-0d57ff842b4d}</Project>
+      <Name>INTSOF.ServiceModelInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\INTSOF.Utils\INTSOF.Utils.csproj">
+      <Project>{79F18A05-E628-4C59-AD95-40640F0260DA}</Project>
+      <Name>INTSOF.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ModuleUtility\ModuleUtility.csproj">
+      <Project>{23822c2d-c3e4-4033-941f-dd5b11f40c11}</Project>
+      <Name>ModuleUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\INTSOF.Web.Modules\INTSOF.Web.Modules.csproj">
+      <Project>{7a5fd726-5d69-472e-8375-88aab2c754f8}</Project>
+      <Name>INTSOF.Web.Modules</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IntsofSecurityModel.Interface\IntsofSecurityModel.Interface.csproj">
+      <Project>{d800ce86-2851-4081-ade4-32ba9b978d1f}</Project>
+      <Name>IntsofSecurityModel.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IntsofSecurityModel\IntsofSecurityModel.csproj">
+      <Project>{6d9cb729-e437-4545-8f4d-bd0c712147f5}</Project>
+      <Name>IntsofSecurityModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

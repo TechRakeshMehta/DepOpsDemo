@@ -1,0 +1,9 @@
+2019-12-02 17:52:18.7273|INFO|BkgOrderStatusServiceLogger|************************** Calling SendNotificationForFingerprintingExceededTAT:02-12-2019 17:52:18 * ******************
+2019-12-02 18:55:17.9523|INFO|BkgOrderStatusServiceLogger|************************** Calling SendNotificationForFingerprintingExceededTAT:02-12-2019 18:55:17 * ******************
+2019-12-02 18:56:14.3113|INFO|BkgOrderStatusServiceLogger|************************** Calling SendNotificationForFingerprintingExceededTAT:02-12-2019 18:56:14 * ******************
+2019-12-02 19:23:13.2313|INFO|BkgOrderStatusServiceLogger|************************** Calling SendNotificationForFingerprintingExceededTAT:02-12-2019 19:23:13 * ******************
+2019-12-02 19:31:20.9203|INFO|BkgOrderStatusServiceLogger|************************** Calling SendNotificationForFingerprintingExceededTAT:02-12-2019 19:31:20 * ******************
+2019-12-02 19:31:31.4033|INFO|BkgOrderStatusServiceLogger|******************* Start Creating Excel - Finger Printing Exceeded TAT: 02-12-2019 19:31:31 *******************
+2019-12-02 19:31:33.3123|INFO|BkgOrderStatusServiceLogger|******************* End Creating Excel - Finger Printing Exceeded TAT: 02-12-2019 19:31:33 *******************
+2019-12-02 19:31:33.3123|INFO|BkgOrderStatusServiceLogger|******************* Start Saving Excel Report - Finger Printing Exceeded TAT: 02-12-2019 19:31:33 *******************
+2019-12-02 19:31:33.4103|INFO|BkgOrderStatusServiceLogger|******************* End Saving Excel Report - Finger Printing Exceeded TAT: 02-12-2019 19:31:33 *******************

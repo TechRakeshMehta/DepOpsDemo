@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A28FA692-5D4B-44EC-BEA0-B994516798EB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Business</RootNamespace>
+    <AssemblyName>Business</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+    <PublishUrl>http://localhost/BESTX.Business/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\WebSites\CoreWeb\ComplioEmptyRuleSet.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\WebSites\CoreWeb\ComplioEmptyRuleSet.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugConnectedToDatabase|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\DebugConnectedToDatabase\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\LPSFS.Business.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>..\WebSites\CoreWeb\ComplioEmptyRuleSet.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ExpressionEvaluator">
+      <HintPath>..\Library\RuleEngine\ExpressionEvaluator.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HtmlAgilityPack.1.6.17\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\Library\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NLog">
+      <HintPath>..\Library\ThirdParty\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BALUtils.cs" />
+    <Compile Include="ComplianceRulesProcessor.cs" />
+    <Compile Include="DataFeed Framework\DataFeed Formatter\DataFeedFormatterCSV.cs" />
+    <Compile Include="DataFeed Framework\DataFeed Formatter\DataFeedFormatterFactory.cs" />
+    <Compile Include="DataFeed Framework\DataFeed Formatter\IDataFeedFormatter.cs" />
+    <Compile Include="EnumConverter.cs" />
+    <Compile Include="ExtensionMethod.cs" />
+    <Compile Include="Interfaces\IClearStarCCF.cs" />
+    <Compile Include="Observer\Subject.cs" />
+    <Compile Include="Observer\Observer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="RepoManagers\AdminEntryPortalManager.cs" />
+    <Compile Include="RepoManagers\AgencyHierarchyManager.cs" />
+    <Compile Include="RepoManagers\AgencyJobBoardManager.cs" />
+    <Compile Include="RepoManagers\AgencyReviewManager.cs" />
+    <Compile Include="RepoManagers\AlumniManager.cs" />
+    <Compile Include="RepoManagers\ApiSecurityManager.cs" />
+    <Compile Include="RepoManagers\ApplicantClinicalRotationManager.cs" />
+    <Compile Include="RepoManagers\ApplicantRequirementManager.cs" />
+    <Compile Include="RepoManagers\ApplicationDataManager.cs" />
+    <Compile Include="RepoManagers\BackgroundCaptureOrderManager.cs" />
+    <Compile Include="RepoManagers\BackgroundPricingManager.cs" />
+    <Compile Include="RepoManagers\BackgroundProcessOrderManager.cs" />
+    <Compile Include="RepoManagers\BackgroundServiceIntegrityManager.cs" />
+    <Compile Include="RepoManagers\BaseManager.cs" />
+    <Compile Include="RepoManagers\BackgroundSetupManager.cs" />
+    <Compile Include="RepoManagers\BackgroungRuleManager.cs" />
+    <Compile Include="RepoManagers\CBIBillingStatusManagers.cs" />
+    <Compile Include="RepoManagers\ClientSecurityManager.cs" />
+    <Compile Include="RepoManagers\ClinicalRotationManager.cs" />
+    <Compile Include="RepoManagers\CommunicationManager.cs" />
+    <Compile Include="RepoManagers\ComplianceDataManager.cs" />
+    <Compile Include="RepoManagers\ComplianceSetupManager.cs" />
+    <Compile Include="RepoManagers\ClientContactManager.cs" />
+    <Compile Include="RepoManagers\ContractManager.cs" />
+    <Compile Include="RepoManagers\FingerPrintDataManager.cs" />
+    <Compile Include="RepoManagers\FingerPrintSetUpManager.cs" />
+    <Compile Include="RepoManagers\PlacementMatchingSetupManager.cs" />
+    <Compile Include="RepoManagers\ReconciliationManager.cs" />
+    <Compile Include="RepoManagers\SharedRequirementRuleManager.cs" />
+    <Compile Include="RepoManagers\PackageBundleManager.cs" />
+    <Compile Include="RepoManagers\RequirementRuleManager.cs" />
+    <Compile Include="RepoManagers\RequirementVerificationManager.cs" />
+    <Compile Include="RepoManagers\SharedRequirementPackageManager.cs" />
+    <Compile Include="RepoManagers\SharedUserClinicalRotationManager.cs" />
+    <Compile Include="RepoManagers\DataFeedManager.cs" />
+    <Compile Include="RepoManagers\DocumentManager.cs" />
+    <Compile Include="RepoManagers\ExternalVendorOrderManager.cs" />
+    <Compile Include="RepoManagers\IntegrityManager.cs" />
+    <Compile Include="RepoManagers\LookupManager.cs" />
+    <Compile Include="RepoManagers\MessageManager.cs" />
+    <Compile Include="RepoManagers\MobilityManager.cs" />
+    <Compile Include="RepoManagers\ProfileSharingManager.cs" />
+    <Compile Include="RepoManagers\QueueImagingManager.cs" />
+    <Compile Include="RepoManagers\QueueManagementManager.cs" />
+    <Compile Include="RepoManagers\QueueManager.cs" />
+    <Compile Include="RepoManagers\ReportManager.cs" />
+    <Compile Include="RepoManagers\RequirementPackageManager.cs" />
+    <Compile Include="RepoManagers\RuleManager.cs" />
+    <Compile Include="RepoManagers\SearchManager.cs" />
+    <Compile Include="RepoManagers\SecurityManager.cs" />
+    <Compile Include="RepoManagers\ShellManager.cs" />
+    <Compile Include="RepoManagers\SMSNotificationManager.cs" />
+    <Compile Include="RepoManagers\StoredProcedureManagers.cs" />
+    <Compile Include="RepoManagers\TemplatesManager.cs" />
+    <Compile Include="RepoManagers\TicketsCentreManager.cs" />
+    <Compile Include="RepoManagers\UniversalMappingDataManager.cs" />
+    <Compile Include="RepoManagers\WebSiteManager.cs" />
+    <Compile Include="SearchAbstractFactory\ConcreteProducts\Alert.cs" />
+    <Compile Include="SearchAbstractFactory\ConcreteProducts\Applicants.cs" />
+    <Compile Include="SearchAbstractFactory\ConcreteProducts\Chat.cs" />
+    <Compile Include="SearchAbstractFactory\ConcreteProducts\CommunicationType.cs" />
+    <Compile Include="SearchAbstractFactory\ConcreteProducts\Email.cs" />
+    <Compile Include="SearchAbstractFactory\ConcreteProducts\Messages.cs" />
+    <Compile Include="SearchAbstractFactory\ConcreteProducts\SMS.cs" />
+    <Compile Include="SearchAbstractFactory\ConcreteProducts\Student.cs" />
+    <Compile Include="SearchAbstractFactory\Factories\ISearchEntities.cs" />
+    <Compile Include="SearchAbstractFactory\Factories\ISearchFactory.cs" />
+    <Compile Include="SearchAbstractFactory\Factories\Message.cs" />
+    <Compile Include="SearchAbstractFactory\Factories\NonMessage.cs" />
+    <Compile Include="SearchAbstractFactory\Factories\SearchFactory.cs" />
+    <Compile Include="Web References\ReportExecutionService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AppService\INTSOF.ServiceDataContracts\INTSOF.ServiceDataContracts.csproj">
+      <Project>{55ee654e-2092-4d8f-baf6-502d728daf73}</Project>
+      <Name>INTSOF.ServiceDataContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{08db341b-b6ce-41e2-8cbe-fe3243eebb30}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entity\Entity.csproj">
+      <Project>{CE8D45E6-4B39-4D12-82F9-11F691D64E21}</Project>
+      <Name>Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\INTSOF.Contracts\INTSOF.Contracts.csproj">
+      <Project>{B31B85AB-9B51-42C3-8101-70C1966A1D5A}</Project>
+      <Name>INTSOF.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\INTSOF.Logger\INTSOF.Logger.csproj">
+      <Project>{20595140-2FD9-4DF4-83E3-0D0ED819D4D1}</Project>
+      <Name>INTSOF.Logger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\INTSOF.ServiceModelInterface\INTSOF.ServiceModelInterface.csproj">
+      <Project>{9e135855-8bb5-4386-8e73-0d57ff842b4d}</Project>
+      <Name>INTSOF.ServiceModelInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\INTSOF.ServiceUtil\INTSOF.ServiceUtil.csproj">
+      <Project>{FF7C94F4-C269-4A04-9C0A-2DA33F095D30}</Project>
+      <Name>INTSOF.ServiceUtil</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\INTSOF.UI.Contract\INTSOF.UI.Contract.csproj">
+      <Project>{E882F896-9BF5-425A-91ED-90F87B3174F6}</Project>
+      <Name>INTSOF.UI.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\INTSOF.UnityHelper\INTSOF.UnityHelper.csproj">
+      <Project>{e58f438b-a81c-4cc8-8330-ba497d9fa1f5}</Project>
+      <Name>INTSOF.UnityHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\INTSOF.Utils\INTSOF.Utils.csproj">
+      <Project>{79F18A05-E628-4C59-AD95-40640F0260DA}</Project>
+      <Name>INTSOF.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\Foundational\IntsofSecurityModel.Interface\IntsofSecurityModel.Interface.csproj">
+      <Project>{d800ce86-2851-4081-ade4-32ba9b978d1f}</Project>
+      <Name>IntsofSecurityModel.Interface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ReportExecutionService\DocumentMapNode.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportExecutionService\ExecutionInfo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportExecutionService\ExecutionInfo2.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportExecutionService\Extension.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportExecutionService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ReportExecutionService\ReportExecution2005.wsdl" />
+    <None Include="Web References\ReportExecutionService\Warning.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://172.16.1.14:3569/ReportServer_SQL2012/ReportExecution2005.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ReportExecutionService\</RelPath>
+      <UpdateFromURL>http://172.16.1.14:3569/ReportServer_SQL2012/ReportExecution2005.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Business_ReportExecutionService_ReportExecutionService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\AWSSDK.S3.3.3.101.12\analyzers\dotnet\cs\AWSSDK.S3.CodeAnalysis.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

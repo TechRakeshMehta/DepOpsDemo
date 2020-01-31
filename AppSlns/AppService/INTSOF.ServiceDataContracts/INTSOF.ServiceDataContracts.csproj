@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{55EE654E-2092-4D8F-BAF6-502D728DAF73}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>INTSOF.ServiceDataContracts</RootNamespace>
+    <AssemblyName>INTSOF.ServiceDataContracts</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\..\WebSites\CoreWeb\ComplioEmptyRuleSet.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Channels" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\MessageInspector.cs" />
+    <Compile Include="Core\ResponseStatus.cs" />
+    <Compile Include="Core\ServiceBehavior.cs" />
+    <Compile Include="Modules\AgencyHierarchy\AgencyHierarchyPackage.cs" />
+    <Compile Include="Modules\AgencyHierarchy\AgencyHierarchyContract.cs" />
+    <Compile Include="Modules\AgencyHierarchy\AgencyHierarchyDataContract.cs" />
+    <Compile Include="Modules\AgencyHierarchy\AgencyHierarchyProfileSharePermissionDataContract.cs" />
+    <Compile Include="Modules\AgencyHierarchy\AgencyHierarchyRotationFieldOptionContract.cs" />
+    <Compile Include="Modules\AgencyHierarchy\AgencyHierarchySettingContract.cs" />
+    <Compile Include="Modules\AgencyHierarchy\AgencyHierarchyUserContract.cs" />
+    <Compile Include="Modules\AgencyHierarchy\AgencyNodeContract.cs" />
+    <Compile Include="Modules\AgencyHierarchy\AgencyNodeMappingContract.cs" />
+    <Compile Include="Modules\AgencyHierarchy\RequirementApprovalNotificationDocumentContract.cs" />
+    <Compile Include="Modules\AgencyHierarchy\SchoolNodeAssociationContract.cs" />
+    <Compile Include="Modules\AgencyHierarchy\SchoolNodeAssociationDataContract.cs" />
+    <Compile Include="Modules\AgencyJobBoard\AgencyJobContract.cs" />
+    <Compile Include="Modules\AgencyJobBoard\AgencyLogoContract.cs" />
+    <Compile Include="Modules\AgencyJobBoard\JobSearchContract.cs" />
+    <Compile Include="Modules\ApplicantClinicalRotation\ApplicantDocumentContract.cs" />
+    <Compile Include="Modules\ApplicantClinicalRotation\ApplicantFieldDocumentMappingContract.cs" />
+    <Compile Include="Modules\ApplicantClinicalRotation\ApplicantRequirementCategoryDataContract.cs" />
+    <Compile Include="Modules\ApplicantClinicalRotation\ApplicantRequirementFieldDataContract.cs" />
+    <Compile Include="Modules\ApplicantClinicalRotation\ApplicantRequirementItemDataContract.cs" />
+    <Compile Include="Modules\ApplicantClinicalRotation\ApplicantRequirementParameterContract.cs" />
+    <Compile Include="Modules\ApplicantClinicalRotation\RequirementExpiryContract.cs" />
+    <Compile Include="Modules\ApplicantClinicalRotation\RequirementItemPaymentContract.cs" />
+    <Compile Include="Modules\ApplicantClinicalRotation\RequirementPackageSubscriptionContract.cs" />
+    <Compile Include="Modules\ApplicantClinicalRotation\RequirementRuleObject.cs" />
+    <Compile Include="Modules\ApplicantClinicalRotation\RotationRequirementContract.cs" />
+    <Compile Include="Modules\ClientContact\AgencyUserAuditHistoryDataContract.cs" />
+    <Compile Include="Modules\ClientContact\ClientContactNotesContract.cs" />
+    <Compile Include="Modules\ClientContact\ClientContactSyllabusDocumentContract.cs" />
+    <Compile Include="Modules\ClinicalRotation\AgencyDataContract.cs" />
+    <Compile Include="Modules\ClinicalRotation\AgencyReviewQueueContract.cs" />
+    <Compile Include="Modules\ClinicalRotation\ApplicantRequirementDataAuditContract.cs" />
+    <Compile Include="Modules\ClinicalRotation\ApplicantRequirementDataAuditSearchContract.cs" />
+    <Compile Include="Modules\ClinicalRotation\BatchRotationUploadContract.cs" />
+    <Compile Include="Modules\ClinicalRotation\ClinicalRotationAgencyContract.cs" />
+    <Compile Include="Modules\ClinicalRotation\ClinicalRotationCustomAttributeContract.cs" />
+    <Compile Include="Modules\ClinicalRotation\ClinicalRotationRequirementPackageContract.cs" />
+    <Compile Include="Modules\ClinicalRotation\AttestationDocumentContract.cs" />
+    <Compile Include="Modules\ClinicalRotation\ClinicalRotationMembersContract.cs" />
+    <Compile Include="Modules\ClinicalRotation\CreateCategoryCopyContract.cs" />
+    <Compile Include="Modules\ClinicalRotation\InstructorAvailabilityContract.cs" />
+    <Compile Include="Modules\ClinicalRotation\ManageRotationMemberSearchContract.cs" />
+    <Compile Include="Modules\ClinicalRotation\NonComplianceCategoryContract.cs" />
+    <Compile Include="Modules\ClinicalRotation\ProfileSharingInvitationDetailsContract.cs" />
+    <Compile Include="Modules\ClinicalRotation\ProfileSharingInvitationSearchContract.cs" />
+    <Compile Include="Modules\ClinicalRotation\RequirementExpiringItemListContract.cs" />
+    <Compile Include="Modules\ClinicalRotation\RequirementItemRejectionContract.cs" />
+    <Compile Include="Modules\ClinicalRotation\RequirementSharesDataContract.cs" />
+    <Compile Include="Modules\ClinicalRotation\RequirementVerificationFilterDataContract.cs" />
+    <Compile Include="Modules\ClinicalRotation\RotationAndTrackingPkgStatusContract.cs" />
+    <Compile Include="Modules\ClinicalRotation\RequirementAttributeGroupContract.cs" />
+    <Compile Include="Modules\ClinicalRotation\RotationDetailFieldChanges.cs" />
+    <Compile Include="Modules\ClinicalRotation\RotationFieldUpdatedByAgencyContract.cs" />
+    <Compile Include="Modules\ClinicalRotation\RotationsMappedToAgenciesContract.cs" />
+    <Compile Include="Modules\ClinicalRotation\UpcomingCategoryExpirationContract.cs" />
+    <Compile Include="Modules\Common\MultipleAdditionalDocumentsContract.cs" />
+    <Compile Include="Modules\RequirementPackage\BulkPackageCopyContract.cs" />
+    <Compile Include="Modules\RequirementPackage\CategoryPackageMappingContract.cs" />
+    <Compile Include="Modules\RequirementPackage\PackageCategoryMappingContract.cs" />
+    <Compile Include="Modules\RequirementPackage\RequirementAgencyData.cs" />
+    <Compile Include="Modules\RequirementPackage\RequirementItemURLContract.cs" />
+    <Compile Include="Modules\RequirementPackage\RequirementObjectPropertiesContract.cs" />
+    <Compile Include="Modules\RequirementPackage\RequirementPackageObjectSynchingContract.cs" />
+    <Compile Include="Modules\RequirementPackage\RequirementPackageSubscriptionApprovedContract.cs" />
+    <Compile Include="Modules\RequirementPackage\RequirementPackageSubscriptionStatusContract.cs" />
+    <Compile Include="Modules\Common\RequirementReviewByContract.cs" />
+    <Compile Include="Modules\RequirementPackage\RequirementScheduleActionCategoryRulesContract.cs" />
+    <Compile Include="Modules\RequirementPackage\RotationDocumentContact.cs" />
+    <Compile Include="Modules\RequirementPackage\RotationMappingContract.cs" />
+    <Compile Include="Modules\ClinicalRotation\SharedInvitationContract.cs" />
+    <Compile Include="Modules\ClinicalRotation\SharedUserRotationReviewContract.cs" />
+    <Compile Include="Modules\ClinicalRotation\SharedUserRotationReviewStatusContract.cs" />
+    <Compile Include="Modules\ClinicalRotation\RequirementVerificationData.cs" />
+    <Compile Include="Modules\ClinicalRotation\RequirementVerificationDetailContract.cs" />
+    <Compile Include="Modules\ClinicalRotation\RequirementVerificationQueueContract.cs" />
+    <Compile Include="Modules\ClinicalRotation\RotationMemberSearchDetailContract.cs" />
+    <Compile Include="Modules\ClinicalRotation\RotationStudentDetailContract.cs" />
+    <Compile Include="Modules\ClinicalRotation\RequirementPackageTypeContract.cs" />
+    <Compile Include="Modules\Common\AgencyDetailContract.cs" />
+    <Compile Include="Core\BaseServiceRequest.cs" />
+    <Compile Include="Core\BaseServiceResponse.cs" />
+    <Compile Include="Modules\Common\AgencyRequirement.cs" />
+    <Compile Include="Modules\Common\AgencySearchStatusContract.cs" />
+    <Compile Include="Modules\Common\AppSettingContract.cs" />
+    <Compile Include="Modules\Common\CustomAttribteContract.cs" />
+    <Compile Include="Core\ErrorContract.cs" />
+    <Compile Include="Core\IBaseServiceResponse.cs" />
+    <Compile Include="Core\RespoinseStatus.cs" />
+    <Compile Include="Core\SearchContract.cs" />
+    <Compile Include="Core\ServiceRequest.cs" />
+    <Compile Include="Core\ServiceResponse.cs" />
+    <Compile Include="Modules\Common\OrganizationUserContract.cs" />
+    <Compile Include="Modules\Common\RequirementItemStatusContract.cs" />
+    <Compile Include="Modules\Common\SharedSystemDocTypeContract.cs" />
+    <Compile Include="Modules\Common\TenantDetailContract.cs" />
+    <Compile Include="Modules\Common\UserGroupContract.cs" />
+    <Compile Include="Modules\Common\WeekDayContract.cs" />
+    <Compile Include="Modules\ClientContact\ClientContactTypeContract.cs" />
+    <Compile Include="Modules\ClinicalRotation\ClinicalRotationDetailContract.cs" />
+    <Compile Include="Modules\ClientContact\ClientContactContract.cs" />
+    <Compile Include="Modules\Common\SharedSystemDocumentContract.cs" />
+    <Compile Include="Modules\ClinicalRotation\ClinicalRotationSearchContract.cs" />
+    <Compile Include="Modules\ClinicalRotation\ManageRotationSearchContract.cs" />
+    <Compile Include="Modules\ClinicalRotation\RotationMemberDetailContract.cs" />
+    <Compile Include="Modules\RequirementPackage\InputTypeComplianceAttributeServiceContract.cs" />
+    <Compile Include="Modules\RequirementPackage\ObjectAttributeContract.cs" />
+    <Compile Include="Modules\RequirementPackage\RequirementCategoryContract.cs" />
+    <Compile Include="Modules\RequirementPackage\RequirementFieldContract.cs" />
+    <Compile Include="Modules\RequirementPackage\RequirementFieldDataContract.cs" />
+    <Compile Include="Modules\RequirementPackage\RequirementItemContract.cs" />
+    <Compile Include="Modules\RequirementPackage\RequirementObjectTreeContract.cs" />
+    <Compile Include="Modules\RequirementPackage\RequirementPackageCompletionContract.cs" />
+    <Compile Include="Modules\RequirementPackage\RequirementPackageContract.cs" />
+    <Compile Include="Modules\RequirementPackage\RequirementPackageDetailsContract.cs" />
+    <Compile Include="Modules\RequirementPackage\RequirementPackageHierarchicalDetailsContract.cs" />
+    <Compile Include="Modules\RequirementPackage\RequirementRuleContract.cs" />
+    <Compile Include="Modules\RequirementPackage\RequirementTreeContract.cs" />
+    <Compile Include="Modules\RequirementPackage\RotationFieldDataTypeContract.cs" />
+    <Compile Include="Modules\RequirementPackage\RulesConstantTypeContract.cs" />
+    <Compile Include="Modules\RequirementPackage\SystemEntityUserPermission.cs" />
+    <Compile Include="Modules\RequirementPackage\UniversalAtrOptionMapServiceContract.cs" />
+    <Compile Include="Modules\RequirementPackage\UniversalAttributeContract.cs" />
+    <Compile Include="Modules\RequirementPackage\UniversalCategoryContract.cs" />
+    <Compile Include="Modules\RequirementPackage\UniversalItemContract.cs" />
+    <Compile Include="Modules\RequirementPackage\ViewDocumentContract.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\INTSOF.Utils\INTSOF.Utils.csproj">
+      <Project>{79f18a05-e628-4c59-ad95-40640f0260da}</Project>
+      <Name>INTSOF.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
